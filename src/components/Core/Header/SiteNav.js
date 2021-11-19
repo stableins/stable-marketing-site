@@ -14,8 +14,7 @@ const SiteNavbar = ({buttonBlock,darkLogo,customLogo,defaultLogo}) => {
         variant="dark"
         className="site-navbar"
       >
-        <Navbar.Brand>
-
+        <Navbar.Brand onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} style={{cursor: 'pointer'}}>
           {defaultLogo ? (<img src={defaultLogo} alt="site-brand"/>) : customLogo ? (
             <img src={customLogo} alt="site-brand"/>
           ) : (
