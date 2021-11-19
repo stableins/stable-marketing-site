@@ -1,0 +1,86 @@
+@media (max-width: 450px) {
+  .image-wrapper {
+    text-align: center;
+
+    .separator {
+      height: 1px;
+      max-width: 504px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 40px;
+      background-image: radial-gradient(
+        circle farthest-corner at 50% 50%,
+        #ffbf00 27%,
+        #fff
+      );
+    }
+
+    .partners-section {
+      width: 100%;
+
+      .title {
+        margin-top: 50px;
+      }
+    }
+
+    .accelerators-section {
+      // width: 100%;
+
+      .title {
+        margin-top: 20px;
+      }
+    }
+
+    .pitches-section {
+      // width: 100%;
+      .title {
+        margin-top: 90px;
+      }
+
+      .insurtech {
+        margin-top: 40px;
+      }
+
+      .innovation {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: 500px) {
+  .image-wrapper {
+    display: inline-flex;
+    
+    
+
+    .partners-section {
+      width: 35%;
+
+      .title {
+        margin-left: 90px;
+      }
+    }
+
+    .accelerators-section {
+      width: 40%;
+
+      .title {
+        margin-left: 90px;
+      }
+    }
+
+    .pitches-section {
+      width: 40%;
+
+      .innovation {
+        margin-left: 20px;
+      }
+
+      .title {
+        margin-left: 90px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
