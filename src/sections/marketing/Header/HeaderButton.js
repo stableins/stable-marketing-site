@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "~components"
-import { Button, Modal } from "react-bootstrap"
+import { Button, Modal, Form } from "react-bootstrap"
 import StableLogo from "../../../assets/image/logo/Stable_Logo.svg"
 import styled from "styled-components/macro"
 import { Box } from "~styled"
@@ -56,16 +56,35 @@ const HeaderButton = ({
             <img src={StableLogo} />
           </Modal.Title>
         </Modal.Header>
-        <div>
-          <iframe
-            className="intake-form"
-            frameborder="0"
-            style={{
-              height: "470px",
-              width: "100%",
-            }}
-            src="https://forms.zohopublic.com/josh93/form/Signups/formperma/quJzDJjqV5XYbMNTs0Ec-Ti21B4082dMjnEOK7z7K6E"
-          ></iframe>
+        <div style={{ padding: "20px" }}>
+          <Form>
+            <Form.Group className="mb-3">
+              <Form.Label>
+                Please provide the following information to get early access
+              </Form.Label>
+              <Form.Control required type="text" placeholder="First name" />
+              <br />
+              <Form.Control required type="text" placeholder="Last name" />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Control required type="number" placeholder="Zip code" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+              <Form.Label>
+                Are you a rideshare fleet or power user? (optional)
+              </Form.Label>
+
+              <Form.Control as="select">
+                <option>Choose Option</option>
+                <option value="1">Rideshare Fleet</option>
+                <option value="2">Power User</option>
+              </Form.Control>
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
         </div>
       </Modal>
       <Button
