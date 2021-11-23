@@ -1,13 +1,13 @@
 import React, { useState } from "react"
 import Counter from "./style"
-import { Modal, Button } from "react-bootstrap"
+import { Modal, Button, Form } from "react-bootstrap"
+import StableLogo from '../../../../../assets/image/logo/Stable_Logo.svg'
 import CountUp from "react-countup"
 import VisibilitySensor from "react-visibility-sensor"
 import "./index.scss"
 
 export default function CounterBlock({ ...rest }) {
-  const [open, setOpen] = useState(false)
-  console.log(open)
+  const [showModal, setShowModal] = useState(false)
   return (
     <Counter {...rest}>
       <Counter.Wrapper>
@@ -30,40 +30,51 @@ export default function CounterBlock({ ...rest }) {
           <Button
             className="btn-purple-heart"
             textTransform="capitalized"
-            onClick={() => setShow(true)}
+            onClick={() => setShowModal(true)}
           >
             Join them now
           </Button>
           <Modal
-            closeIcon
-            className="counter-modal"
-            onClose={() => setOpen(false)}
-            onOpen={() => {
-              setOpen(true)
-            }}
-            style={{ height: "66%", width: "50%" }}
-            open={open}
-            trigger={
-              <button
-                aria-current="page"
-                className="button__Button-sc-1tkahez-0 cAxprB btn-purple-heart btn"
-                href="/hi"
-              >
-                Join them now!
-              </button>
-            }
+            show={showModal}
+            onHide={() => setShowModal(false)}
+            dialogClassName="modal-90w"
+            aria-labelledby="example-custom-modal-styling-title"
           >
-            <Modal.Actions>
-              <iframe
-                frameborder="0"
-                style={{
-                  height: "450px",
-                  width: "100%",
-                  border: "1px solid black",
-                }}
-                src="https://forms.zohopublic.com/josh93/form/Signups/formperma/quJzDJjqV5XYbMNTs0Ec-Ti21B4082dMjnEOK7z7K6E"
-              ></iframe>
-            </Modal.Actions>
+            <Modal.Header closeButton>
+              <Modal.Title id="example-custom-modal-styling-title">
+                <img src={StableLogo} />
+              </Modal.Title>
+            </Modal.Header>
+            <div style={{ padding: "20px" }}>
+              <Form>
+                <Form.Group className="mb-3">
+                  <Form.Label>
+                    Please provide the following information to get early access
+                  </Form.Label>
+                  <Form.Control required type="text" placeholder="First name" />
+                  <br />
+                  <Form.Control required type="text" placeholder="Last name" />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Control required type="number" placeholder="Zip code" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                  <Form.Label>
+                    Are you a rideshare fleet or power user? (optional)
+                  </Form.Label>
+
+                  <Form.Control as="select">
+                    <option>Choose Option</option>
+                    <option value="1">Rideshare Fleet</option>
+                    <option value="2">Power User</option>
+                  </Form.Control>
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
+              </Form>
+            </div>
           </Modal>
         </Counter.Single>
       </Counter.Wrapper>

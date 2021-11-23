@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Col, Container, Row, Modal } from "react-bootstrap"
+import { Col, Container, Row, Modal, Form } from "react-bootstrap"
 import ReactTypingEffect from "react-typing-effect"
 import StableLogo from "../../../assets/image/logo/Stable_Logo.svg"
 import SingleAniamtion from "../../../components/Animation/singleAnimation"
@@ -15,7 +15,6 @@ export default function HeroSection() {
     <Hero className="position-relative bg-default">
       <Container>
         <Row>
-          {/* Welcome content Area */}
           <Col
             className="col-xl-6 col-lg-7 col-md-8 col-xs-11 order-2 order-lg-1"
             xs="12"
@@ -64,16 +63,59 @@ export default function HeroSection() {
                           <img src={StableLogo} />
                         </Modal.Title>
                       </Modal.Header>
-                      <div>
-                        <iframe
-                          className="intake-form"
-                          frameborder="0"
-                          style={{
-                            height: "470px",
-                            width: "100%",
-                          }}
-                          src="https://forms.zohopublic.com/josh93/form/Signups/formperma/quJzDJjqV5XYbMNTs0Ec-Ti21B4082dMjnEOK7z7K6E"
-                        ></iframe>
+                      <div style={{ padding: "20px" }}>
+                        <Form>
+                          <Form.Group className="mb-3">
+                            <Form.Label>
+                              Please provide the following information to get
+                              early access
+                            </Form.Label>
+                            <Form.Control
+                              required
+                              type="text"
+                              placeholder="First name"
+                            />
+                            <br />
+                            <Form.Control
+                              required
+                              type="text"
+                              placeholder="Last name"
+                            />
+                          </Form.Group>
+
+                          <Form.Group
+                            className="mb-3"
+                            controlId="formBasicPassword"
+                          >
+                            <Form.Control
+                              required
+                              type="number"
+                              placeholder="Zip code"
+                            />
+                          </Form.Group>
+                          <Form.Group
+                            className="mb-3"
+                            controlId="formBasicCheckbox"
+                          >
+                            <Form.Label>
+                              Are you a rideshare fleet or power user?
+                              (optional)
+                            </Form.Label>
+
+                            <Form.Control as="select">
+                              <option>Choose Option</option>
+                              <option value="1">Rideshare Fleet</option>
+                              <option value="2">Power User</option>
+                            </Form.Control>
+                          </Form.Group>
+                          <Button
+                            variant="primary"
+                            type="submit"
+                            className="btn btn-primary"
+                          >
+                            Submit
+                          </Button>
+                        </Form>
                       </div>
                     </Modal>
                   </Hero.Newsletter>
