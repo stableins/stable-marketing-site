@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Counter from "./style"
 import { Modal, Button, Form } from "react-bootstrap"
-import StableLogo from '../../../../../assets/image/logo/Stable_Logo.svg'
+import StableLogo from "../../../../../assets/image/logo/Stable_Logo.svg"
 import CountUp from "react-countup"
 import VisibilitySensor from "react-visibility-sensor"
 import "./index.scss"
