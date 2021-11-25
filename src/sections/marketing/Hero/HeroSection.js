@@ -24,13 +24,15 @@ export default function HeroSection() {
                 Get Early Access To Smarter&nbsp;
                 <br className="breaker" />
                 <ReactTypingEffect
-                  text={["rideshare", " carshare"]}
+                  text={["ride", "car"]}
                   className="highlight-text d-inline-block text-primary"
-                  speed="150"
+                  speed="200"
+                  cursor=" "
                   eraseSpeed="100"
                   typingDelay="400"
                   eraseDelay="800"
                 />
+                share
                 <br />
                 Insurance
               </Hero.Title>

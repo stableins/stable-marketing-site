@@ -1,5 +1,5 @@
 import { StaticImage as Img } from "gatsby-plugin-image"
-import React from "react"
+import React, { useRef } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import serviceData from "~data/marketing2/Service"
 import ServiceWidget from "./Component/Widget"
@@ -24,9 +24,9 @@ export default function ServiceSection() {
           <Row className="align-items-end justify-content-center text-start">
             <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
               <Slide down>
-              <Service.Title as="h2" mb="0">
-                Our Story
-              </Service.Title>
+                <Service.Title as="h2" mb="0">
+                  Our Story
+                </Service.Title>
               </Slide>
               <Slide right>
                 <br className="d-none d-xs-block d-lg-none d-xl-block" />

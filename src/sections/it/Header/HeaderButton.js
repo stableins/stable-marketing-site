@@ -80,7 +80,7 @@ const HeaderButton = ({btnLink,btnOneText,btnText,...rest})=>{
                 <li><a href="#"><i className="fab fa-twitter text-primary"></i></a></li>
             </ul>
             <Link target="_blank" className="btn btn-2" to={btnLink ? btnLink : "/"}>
-                {btnText}
+                {btnOneText}
             </Link>
         </HeaderButtonWrapper>
     )
