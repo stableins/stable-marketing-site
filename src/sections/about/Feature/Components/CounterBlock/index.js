@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Counter from "./style"
 import { Modal, Button, Form } from "react-bootstrap"
-import StableLogo from '../../../../../assets/image/logo/Stable_Logo.svg'
+import StableLogo from "../../../../../assets/image/logo/Stable_Logo.svg"
 import CountUp from "react-countup"
 import VisibilitySensor from "react-visibility-sensor"
 import "./index.scss"
@@ -13,11 +13,11 @@ export default function CounterBlock({ ...rest }) {
       <Counter.Wrapper>
         <Counter.Single>
           <Counter.Title as="h3" fontColor="#fff">
-            <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+            <VisibilitySensor partialVisibility offset={{ bottom: 20 }}>
               {({ isVisible }) => (
                 <div style={{ height: 30, marginBottom: "10px" }}>
                   {isVisible ? (
-                    <CountUp start={0} duration={2} end={1027} />
+                    <CountUp start={0} duration={3} end={1027} />
                   ) : null}
                   +
                 </div>
@@ -37,7 +37,7 @@ export default function CounterBlock({ ...rest }) {
           <Modal
             show={showModal}
             onHide={() => setShowModal(false)}
-            dialogClassName="modal-90w"
+            dialogClassName="modal-9/.0w"
             aria-labelledby="example-custom-modal-styling-title"
           >
             <Modal.Header closeButton>
@@ -81,3 +81,4 @@ export default function CounterBlock({ ...rest }) {
     </Counter>
   )
 }
+  

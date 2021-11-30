@@ -24,13 +24,15 @@ export default function HeroSection() {
                 Get Early Access To Smarter&nbsp;
                 <br className="breaker" />
                 <ReactTypingEffect
-                  text={["rideshare", " carshare"]}
+                  text={["ride", "car"]}
                   className="highlight-text d-inline-block text-primary"
-                  speed="150"
+                  speed="200"
+                  cursor=" "
                   eraseSpeed="100"
                   typingDelay="400"
                   eraseDelay="800"
                 />
+                share
                 <br />
                 Insurance
               </Hero.Title>
@@ -45,82 +47,24 @@ export default function HeroSection() {
               <Row>
                 <Col xs="12" className="col-xxl-10">
                   <Hero.Newsletter>
-                    <Button
-                      className="btn-purple-heart"
-                      textTransform="capitalized"
-                      onClick={() => setShow(true)}
-                    >
-                      Get Early Access
-                    </Button>
-                    <Modal
-                      show={show}
-                      onHide={() => setShow(false)}
-                      dialogClassName="modal-90w"
-                      aria-labelledby="example-custom-modal-styling-title"
-                    >
-                      <Modal.Header closeButton>
-                        <Modal.Title id="example-custom-modal-styling-title">
-                          <img src={StableLogo} />
-                        </Modal.Title>
-                      </Modal.Header>
-                      <div style={{ padding: "20px" }}>
-                        <Form>
-                          <Form.Group className="mb-3">
-                            <Form.Label>
-                              Please provide the following information to get
-                              early access
-                            </Form.Label>
-                            <Form.Control
-                              required
-                              type="text"
-                              placeholder="First name"
-                            />
-                            <br />
-                            <Form.Control
-                              required
-                              type="text"
-                              placeholder="Last name"
-                            />
-                          </Form.Group>
-
-                          <Form.Group
-                            className="mb-3"
-                            controlId="formBasicPassword"
-                          >
-                            <Form.Control
-                              required
-                              type="number"
-                              placeholder="Zip code"
-                            />
-                          </Form.Group>
-                          <Form.Group
-                            className="mb-3"
-                            controlId="formBasicCheckbox"
-                          >
-                            <Form.Label>
-                              Are you a rideshare fleet or power user?
-                              (optional)
-                            </Form.Label>
-
-                            <Form.Control as="select">
-                              <option>Choose Option</option>
-                              <option value="1">Rideshare Fleet</option>
-                              <option value="2">Power User</option>
-                            </Form.Control>
-                          </Form.Group>
-                          <Button
-                            variant="primary"
-                            type="submit"
-                            className="btn btn-primary"
-                          >
-                            Submit
-                          </Button>
-                        </Form>
-                      </div>
-                    </Modal>
+                    <form>
+                      <input
+                        type={"email"}
+                        name={"email"}
+                        placeholder="Enter your email"
+                        className="form-control"
+                      />
+                      <Button
+                        className="btn-purple-heart"
+                        textTransform="capitalized"
+                        onClick={() => setShow(true)}
+                      >
+                        Get Early Access
+                      </Button>
+                    </form>
                   </Hero.Newsletter>
                 </Col>
-              </Row>
+              </Row>  
             </Hero.Content>
           </Col>
           {/*/ .Welcome Content Area */}

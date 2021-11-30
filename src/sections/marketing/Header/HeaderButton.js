@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import { Link } from "~components"
+import { scroller } from "react-scroll"
 import { Button, Modal, Form } from "react-bootstrap"
 import StableLogo from "../../../assets/image/logo/Stable_Logo.svg"
 import styled from "styled-components/macro"
@@ -7,7 +8,6 @@ import { Box } from "~styled"
 
 export const HeaderButtonWrapper = styled(Box)`
   .btn {
-    min-width: auto;
     height: 42px;
     border-radius: 3px;
     color: var(--bs-white);
@@ -39,9 +39,33 @@ const HeaderButton = ({
   btnTwoLink,
   btnOneText,
   btnTwoText,
+  btnThreeText,
+  btnFourText,
   ...rest
 }) => {
   const [show, setShow] = useState(false)
+
+  const scrollToStory = () => {
+    scroller.scrollTo(
+      "box__Box-sc-3l6bf7-0 style__Service-sc-19mks4r-0 hdGSYh ivpkoJ border-top border-default-color-2 bg-default",
+      {
+        duration: 10,
+        delay: 0,
+        smooth: "easeInOutQuart",
+      }
+    )
+  }
+
+  const scrollToPartners = () => {
+    scroller.scrollTo(
+      "box__Box-sc-3l6bf7-0 style__Service-sc-1w81qk2-0 hdGSYh bZBNSh border-top border-default-color-2 bg-default",
+      {
+        duration: 10,
+        delay: 0,
+        smooth: "easeInOutQuart",
+      }
+    )
+  }
 
   return (
     <HeaderButtonWrapper {...rest}>
@@ -87,13 +111,31 @@ const HeaderButton = ({
           </Form>
         </div>
       </Modal>
+      <Link
+        onClick={scrollToPartners}
+        style={{ width: "100px" }}
+        target="_blank"
+        className="btn"
+        to={btnTwoLink ? btnTwoLink : "/"}
+      >
+        {btnOneText}
+      </Link>
+      <Link
+        style={{ width: "100px" }}
+        onClick={scrollToStory}
+        target="_blank"
+        className="btn"
+        to={btnTwoLink ? btnTwoLink : "/"}
+      >
+        {btnTwoText}
+      </Link>
       <Button
         onClick={() => setShow(true)}
         target="_blank"
         className="btn btn-2"
         to={btnTwoLink ? btnTwoLink : "/"}
       >
-        {btnTwoText}
+        {btnThreeText}
       </Button>
     </HeaderButtonWrapper>
   )

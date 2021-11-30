@@ -21,8 +21,11 @@ const header = {
   buttonBlock: (
     <HeaderButton
       className="ms-auto d-none d-xs-inline-flex"
-      // btnOneText="Login"
-      btnTwoText="Get Early Access"
+      btnOneText="Partners"
+      btnTwoText="Our Story"
+      btnThreeText="Get Early Access"
+      btnFourText="Support"
+      btnFiveText="Get Early Access"
       mr="15px"
       mrLG="0"
     />

@@ -30,12 +30,12 @@ const HeaderButtonWrapper = styled(Box).attrs({className:"header-btn-block"})`
         }
     }
 `
-const HeaderButton = ({btnLink,btnText,as,...rest})=>{
+const HeaderButton = ({btnLink,btnOneText,as,...rest})=>{
     return(
         <HeaderButtonWrapper {...rest}>
-            <Box as={as} target="_blank" className="btn" to={btnLink ? btnLink : "/"}>
-                {btnText}
-            </Box>
+            {/* <Box as={as} target="_blank" className="btn" to={btnLink ? btnLink : "/"}>
+                {btnOneText}
+            </Box> */}
         </HeaderButtonWrapper>
     )
 }
