@@ -31,14 +31,19 @@
 }
 @media (min-width: 641px) {
   .single-animation-container {
-    position: absolute;
+   position: absolute;
     margin-top: 70px;
-    left: auto;
-    top: 0%;
-    right: 0%;
+    height: 50px;
+    width: 25%;
+    background: gainsboro;
+    border-radius: 0 0 0 100%;
+    overflow: hidden;
+    // top: 0%;
+    width: 50%;
+    height: 75%;
     bottom: auto;
     display: flex;
-    overflow: visible;
+    // overflow: visible;
     opacity: 0.7;
     z-index: -1;
     justify-content: flex-end;
@@ -48,14 +53,17 @@
   .single-animation-container {
     position: absolute;
     margin-top: 70px;
-    left: auto;
-    top: 0%;
-    right: 0%;
-    width: 49%;
-    height: 17%;
+    height: 50px;
+    width: 25%;
+    background: gainsboro;
+    border-radius: 0 0 0 100%;
+    overflow: hidden;
+    // top: 0%;
+    width: 50%;
+    height: 75%;
     bottom: auto;
     display: flex;
-    overflow: visible;
+    // overflow: visible;
     opacity: 0.7;
     z-index: -1;
     justify-content: flex-end;
@@ -82,12 +90,17 @@
   .single-animation-container {
     position: absolute;
     margin-top: 70px;
-    top: 0%;
-    width: 53%;
+    height: 50px;
+    width: 25%;
+    background: gainsboro;
+    border-radius: 0 0 0 100%;
+    overflow: hidden;
+    // top: 0%;
+    width: 50%;
     height: 75%;
     bottom: auto;
     display: flex;
-    overflow: visible;
+    // overflow: visible;
     opacity: 0.7;
     z-index: -1;
     justify-content: flex-end;
@@ -96,14 +109,14 @@
       width: 1000px;
     }
 
-    .opacity1 {
-      width: 300px;
-      background-image: linear-gradient(to left, transparent, white);
-      height: 100vh;
-      position: absolute;
-      z-index: 1;
-      margin-right: 500px;
-    }
+    // .opacity1 {
+    //   width: 300px;
+    //   background-image: linear-gradient(to left, transparent, white);
+    //   height: 100vh;
+    //   position: absolute;
+    //   z-index: 1;
+    //   margin-right: 500px;
+    // }
   }
 }
 
@@ -111,12 +124,17 @@
   .single-animation-container {
     position: absolute;
     margin-top: 70px;
-    top: 0%;
+    height: 50px;
+    width: 25%;
+    background: gainsboro;
+    border-radius: 0 0 0 100%;
+    overflow: hidden;
+    // top: 0%;
     width: 50%;
-    height: 80%;
+    height: 75%;
     bottom: auto;
     display: flex;
-    overflow: visible;
+    // overflow: visible;
     opacity: 0.7;
     z-index: -1;
     justify-content: flex-end;
@@ -140,12 +158,17 @@
   .single-animation-container {
     position: absolute;
     margin-top: 70px;
-    top: 0%;
+    height: 50px;
+    width: 25%;
+    background: gainsboro;
+    border-radius: 0 0 0 100%;
+    overflow: hidden;
+    // top: 0%;
     width: 50%;
     height: 75%;
     bottom: auto;
     display: flex;
-    overflow: visible;
+    // overflow: visible;
     opacity: 0.7;
     z-index: -1;
     justify-content: flex-end;
@@ -169,12 +192,17 @@
   .single-animation-container {
     position: absolute;
     margin-top: 70px;
-    top: 0%;
+    height: 50px;
+    width: 25%;
+    background: gainsboro;
+    border-radius: 0 0 0 100%;
+    overflow: hidden;
+    // top: 0%;
     width: 50%;
     height: 75%;
     bottom: auto;
     display: flex;
-    overflow: visible;
+    // overflow: visible;
     opacity: 0.7;
     z-index: -1;
     justify-content: flex-end;
@@ -196,14 +224,19 @@
 
 @media (min-width: 3000px) {
   .single-animation-container {
-    position: absolute;
+   position: absolute;
     margin-top: 70px;
-    top: 0%;
+    height: 50px;
+    width: 25%;
+    background: gainsboro;
+    border-radius: 0 0 0 100%;
+    overflow: hidden;
+    // top: 0%;
     width: 50%;
     height: 75%;
     bottom: auto;
     display: flex;
-    overflow: visible;
+    // overflow: visible;
     opacity: 0.7;
     z-index: -1;
     justify-content: flex-end;

@@ -5,7 +5,10 @@ import serviceData from "~data/marketing/Service"
 import ServiceWidget from "./Component/Widget"
 import CounterBlock from "../../../sections/about/Feature/Components/CounterBlock"
 import Slide from "react-reveal/Slide"
+import CountUp from "react-countup"
+import VisibilitySensor from "react-visibility-sensor"
 import Service from "./style"
+import "./ServiceSection.scss"
 
 export default function ServiceSection() {
   return (
@@ -25,16 +28,40 @@ export default function ServiceSection() {
             <Row className="align-items-end justify-content-center text-start">
               <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
                 <Service.Title as="h2" mb="0" style={{ fontSize: "50px" }}>
-                  Help build the insurance you wish you had
+                  Help build the insurance <br />
+                  you wish you had
                   <br className="d-none d-xs-block d-lg-none d-xl-block" />
                   <Service.Text>
-                    We're working with the rideshare and carshare community to
+                    We're working with the rideshare and carshare community to{" "}
+                    <br />
                     create better insurance. To do this, we need your help:{" "}
                   </Service.Text>
                 </Service.Title>
               </Col>
               <Col xs="12" className="col-lg-5 col-md-12 col-xs-10">
-                <CounterBlock />
+                {/* <CounterBlock /> */}
+                <div className="counter-wrapper">
+                  <VisibilitySensor partialVisibility offset={{ bottom: 20 }}>
+                    {({ isVisible }) => (
+                      <>
+                        <div className="countup">
+                          {isVisible ? (
+                            <CountUp start={0} duration={3} end={1027} />
+                          ) : null}
+                          +
+                        </div>
+
+                        <div className="counter-text-and-button">
+                          <p>
+                            Vehicle owners and counting have joined the Stable
+                            community. Will you?
+                          </p>
+                          <button>Join now</button>
+                        </div>
+                      </>
+                    )}
+                  </VisibilitySensor>
+                </div>
                 {/* <Service.Text>
                 We're working with the rideshare and carshare community to
                 create better insurance. To do this, we need your help:{" "}

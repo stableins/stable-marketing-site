@@ -28,26 +28,33 @@ const Hero = styled(Box)`
     } */
 `
 Hero.Title = styled(Heading)`
-    font-size: 50px;
-    font-weight: 500;
-    letter-spacing: -1px;
-    line-height: 1.075;
-    margin-bottom: 35px;
+  font-size: 50px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  line-height: 1.075;
+  margin-bottom: 35px;
 
-    @media (min-width:480px) {
-        font-size: 60px;
-    }
+  @media (min-width: 300px) {
+    font-size: 60px;
+    margin-top: -140px;
+  }
 
-    @media (min-width:768px) {
-        font-size: 70px;
-    }
+  @media (min-width: 480px) {
+    font-size: 60px;
+    margin-top: -100px;
+  }
 
-    @media (min-width:992px) {
-        font-size: 80px;
-    }
-    .typed-cursor {
-        display: none !important;
-    }
+  @media (min-width: 768px) {
+    font-size: 70px;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 80px;
+    margin-top: -160px;
+  }
+  .typed-cursor {
+    display: none !important;
+  }
 `
 Hero.Text = styled(Paragraph)`
     color: rgba(38, 39, 41, 0.7);

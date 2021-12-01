@@ -29,7 +29,7 @@ export const HeaderButtonWrapper = styled(Box)`
       min-width: 159px;
       height: 42px;
       color: white;
-      background-color: rgb(48, 35, 174);
+      background-color: #FFAE13 !important;
       border-color: #f2f5fb;
     }
   }
@@ -111,7 +111,7 @@ const HeaderButton = ({
           </Form>
         </div>
       </Modal>
-      <Link
+      {/* <Link
         onClick={scrollToPartners}
         style={{ width: "100px" }}
         target="_blank"
@@ -119,7 +119,7 @@ const HeaderButton = ({
         to={btnTwoLink ? btnTwoLink : "/"}
       >
         {btnOneText}
-      </Link>
+      </Link> */}
       <Link
         style={{ width: "100px" }}
         onClick={scrollToStory}

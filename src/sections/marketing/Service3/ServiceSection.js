@@ -26,7 +26,9 @@ export default function ServiceSection() {
             <Row className="align-items-end justify-content-center text-start">
               <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
                 <Service.Title as="h2" mb="0">
+                  <div className="title">
                   Our Partners and Accolades
+                  </div>
                   <br className="d-none d-xs-block d-lg-none d-xl-block" />
                 </Service.Title>
               </Col>

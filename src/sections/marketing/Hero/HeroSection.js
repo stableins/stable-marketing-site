@@ -6,12 +6,14 @@ import SingleAniamtion from "../../../components/Animation/singleAnimation"
 import { Link } from "~components"
 import { Button } from "~styled"
 import ImageGroup from "./Components/ImageGroup"
+import Fade from "react-reveal/Fade"
 import Hero from "./style"
 
 export default function HeroSection() {
   const [show, setShow] = useState(false)
 
   return (
+    <Fade>
     <Hero className="position-relative bg-default">
       <Container>
         <Row>
@@ -20,7 +22,7 @@ export default function HeroSection() {
             xs="12"
           >
             <Hero.Content>
-              <Hero.Title as="h1" style={{ marginTop: "-150px" }}>
+              <Hero.Title as="h1">
                 Get Early Access To Smarter&nbsp;
                 <br className="breaker" />
                 <ReactTypingEffect
@@ -63,8 +65,12 @@ export default function HeroSection() {
                       </Button>
                     </form>
                   </Hero.Newsletter>
+                  <Hero.NewsletterText>
+                    Already have an account?{" "}
+                    <Link to="/">Login here.</Link>
+                  </Hero.NewsletterText>
                 </Col>
-              </Row>  
+              </Row>
             </Hero.Content>
           </Col>
           {/*/ .Welcome Content Area */}
@@ -78,6 +84,7 @@ export default function HeroSection() {
           {/*/ .Welcome Image Area */}
         </Row>
       </Container>
-    </Hero>
+      </Hero>
+      </Fade>
   )
 }
