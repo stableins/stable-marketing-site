@@ -109,27 +109,59 @@ const FeatureSection = ({ ...rest }) => {
                       eventKey="first"
                       className="nav-item col-lg-12 col-md-4 col-xs-6 col-8 me-md-0 me-lg-0"
                     >
-                      <TabNavWidget
-                        style={{ width: "300px", fontSize: "19px" }}
-                        // iconClass="fa fa-chart-pie"
-                        text="Mileage Based Insurance For Fleets"
-                        className="nav-widget"
-                        mb="30px"
-                        mbLG="50px"
-                      />
+                      <div className="sections-wrapper">
+                        <div className="top-row">
+                          <div className="section1">
+                            <div className="section-title-row">
+                              <div className="section-title-number">1</div>
+                              <div className="section-title-text">
+                                Mileage Based Insurance for Fleets
+                              </div>
+                            </div>
+                            <div className="text-wrapper">
+                              <div className="text-title">
+                                Do you operate a carshare or rideshare fleet in
+                                the U.S?
+                              </div>
+                              <div className="statement">
+                                Fleet Management and Insurance Savings of up to
+                                40%.
+                              </div>
+                            </div>
+                          </div>
+                          <div className="section2">
+                            <div className="section-title-row">
+                              <div className="section-title-number">2</div>
+                              <div className="section-title-text">
+                                Mileage Based Insurance for Fleets
+                              </div>
+                            </div>
+                            <div className="text-wrapper">
+                              <div className="text-title">
+                                Do you operate a carshare or rideshare fleet in
+                                the U.S?
+                              </div>
+                              <div className="statement">
+                                Fleet Management and Insurance that meets
+                                requirements for TLC vehicles.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </Nav.Link>
                     <Nav.Link
                       eventKey="second"
                       className="col-lg-12 col-md-4 col-xs-6 col-8 me-md-0 me-lg-0"
                     >
-                      <TabNavWidget
+                      {/* <TabNavWidget
                         // iconClass="far fa-flag"
                         style={{ width: "320px", fontSize: "19px" }}
                         text="New York City TLC Insurance for Fleets"
                         className="nav-widget"
                         mb="30px"
                         mbLG="50px"
-                      />
+                      /> */}
                       <br />
                     </Nav.Link>
                     <Nav.Link
@@ -137,14 +169,14 @@ const FeatureSection = ({ ...rest }) => {
                       eventKey="third"
                       className="widget widget--feature nav-item col-lg-12 col-md-4 col-xs-6 col-8 me-md-0 me-lg-0"
                     >
-                      <TabNavWidget
+                      {/* <TabNavWidget
                         // iconClass="fas fa-chart-line"
                         style={{ width: "320px", fontSize: "19px" }}
                         text="Mileage Based Rideshare for Professional Drivers"
                         className="nav-widget"
                         mb="30px"
                         mbLG="50px"
-                      />
+                      /> */}
                       <br />
                       <br />
                     </Nav.Link>
@@ -152,14 +184,14 @@ const FeatureSection = ({ ...rest }) => {
                       eventKey="fourth"
                       className="widget widget--feature nav-item col-lg-12 col-md-4 col-xs-6 col-8 me-md-0 me-lg-0"
                     >
-                      <TabNavWidget
+                      {/* <TabNavWidget
                         style={{ width: "320px", fontSize: "18px" }}
                         // iconClass="fas fa-chart-line"
                         text="Mileage Based Insurance for CarShare Platform Power Users"
                         className="nav-widget"
                         mb="30px"
                         mbLG="90px"
-                      />
+                      /> */}
                     </Nav.Link>
                   </Feature.TabNavWrapper>
                 </Col>
@@ -171,60 +203,44 @@ const FeatureSection = ({ ...rest }) => {
                     <Tab.Pane eventKey="first">
                       <Row>
                         <Col className="col-md-6 col-sm-6 col-xs-9" xs="auto">
-                          <TabContentWidget
+                          {/* <TabContentWidget
                             count="01."
                             title="Fleet Management and Insurance Savings of up to 40%"
                             // text={
                             //   'Create custom landing pages with<br class="d-none d-lg-block" /> Fastland that converts more visitors <br class="d-none d-lg-block" /> than any website.'
                             // }
-                          />
+                          /> */}
                         </Col>
                         <Col className="col-md-6 col-sm-6 col-xs-9" xs="auto">
-                          <TabContentWidget
+                          {/* <TabContentWidget
                             count="02."
                             title="Do you operate a carshare or rideshare fleet in the U.S? Using our platform, you can automate your operations, source new drivers and potentially qualify for savings of up to 40% on your annual premium."
                             // text={
                             //   'Create custom landing pages with<br class="d-none d-lg-block" /> Fastland that converts more visitors <br class="d-none d-lg-block" /> than any website.'
                             // }
-                          />
-                          <button
-                            style={{ width: "40%" }}
-                            onClick={() => setCounterModal(true)}
-                            aria-current="page"
-                            className="button__Button-sc-1tkahez-0 cAxprB btn-purple-heart btn"
-                          >
-                            Get Early Access
-                          </button>
+                          /> */}
                         </Col>
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
                       <Row>
                         <Col className="col-md-6 col-sm-6 col-xs-9" xs="auto">
-                          <TabContentWidget
+                          {/* <TabContentWidget
                             count="03."
                             title="Fleet Management and Insurance that meets requirements for TLC vehicles"
                             // text={
                             //   'Create custom landing pages with<br class="d-none d-lg-block" /> Fastland that converts more visitors <br class="d-none d-lg-block" /> than any website.'
                             // }
-                          />
+                          /> */}
                         </Col>
                         <Col className="col-md-6 col-sm-6 col-xs-9" xs="auto">
-                          <TabContentWidget
+                          {/* <TabContentWidget
                             count="04."
                             title="Do you operate a TLC fleet in NYC? Using our platform, you can automate your operations, improve your driver pool, lower claim amounts, and find better drivers"
                             // text={
                             //   'Create custom landing pages with<br class="d-none d-lg-block" /> Fastland that converts more visitors <br class="d-none d-lg-block" /> than any website.'
                             // }
-                          />
-                          <button
-                            style={{ width: "40%" }}
-                            onClick={() => setCounterModal(true)}
-                            aria-current="page"
-                            className="button__Button-sc-1tkahez-0 cAxprB btn-purple-heart btn"
-                          >
-                            Get Early Access
-                          </button>
+                          /> */}
                         </Col>
                       </Row>
                     </Tab.Pane>
@@ -245,14 +261,6 @@ const FeatureSection = ({ ...rest }) => {
                               "Do you have a second car used primarily for rideshare or carshare? You will save up to 40% on your annual premium by switching to our mileage based policy"
                             }
                           />
-                          <button
-                            style={{ width: "40%" }}
-                            onClick={() => setCounterModal(true)}
-                            aria-current="page"
-                            className="button__Button-sc-1tkahez-0 cAxprB btn-purple-heart btn"
-                          >
-                            Get Early Access
-                          </button>
                         </Col>
                       </Row>
                     </Tab.Pane>
@@ -275,20 +283,19 @@ const FeatureSection = ({ ...rest }) => {
                               "Do you purchase cars to use exclusively on carshare platforms? You can save substantially on your insurance coverage and gain tools to automate your business operations."
                             }
                           />
-                          <button
-                            style={{ width: "40%" }}
-                            onClick={() => setCounterModal(true)}
-                            aria-current="page"
-                            className="button__Button-sc-1tkahez-0 cAxprB btn-purple-heart btn"
-                          >
-                            Get Early Access
-                          </button>
                         </Col>
                       </Row>
                     </Tab.Pane>
                   </Tab.Content>
                 </Col>
               </Feature.Tab>
+              <button
+                onClick={() => setCounterModal(true)}
+                aria-current="page"
+                className="button__Button-sc-1tkahez-0 cAxprB btn-purple-heart btn"
+              >
+                Get Early Access
+              </button>
             </Tab.Container>
           </Slide>
         </Container>

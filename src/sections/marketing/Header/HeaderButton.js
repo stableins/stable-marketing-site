@@ -121,7 +121,7 @@ const HeaderButton = ({
         {btnOneText}
       </Link> */}
       <Link
-        style={{ width: "100px" }}
+        style={{ width: "130px" }}
         onClick={scrollToProduct}
         target="_blank"
         className="btn"

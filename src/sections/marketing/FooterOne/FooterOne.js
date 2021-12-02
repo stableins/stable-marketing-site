@@ -1,7 +1,7 @@
 import { Link } from "~components"
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
-import Logo from "~image/logo/Stable_Logo_Footer.png"
+import Logo from "~image/logo/Stable-logo_site.png"
 import Footer from "./style"
 import { Slide } from "react-reveal"
 export default function FooterOne() {

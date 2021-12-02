@@ -6,18 +6,19 @@ import ServiceWidget from "./Component/Widget"
 import CounterBlock from "../../about/Feature/Components/CounterBlock"
 import Slide from "react-reveal"
 import Service from "./style"
+import "./ServiceSection.scss"
 
 export default function ServiceSection() {
   return (
-    <>
+    <div className="service-section-4-wrapper">
       <Service className="border-top border-default-color-2 bg-default">
         <Service.Shape className="service-shape service-shape--l1">
-          <Img
+          {/* <Img
             src="../../../assets/image/marketing/services-shape-l1.png"
             alt="shape dot"
             layout="fullWidth"
             placeholder="blurred"
-          />
+          /> */}
         </Service.Shape>
         <Container>
           {/* Section Title */}
@@ -25,7 +26,7 @@ export default function ServiceSection() {
             <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
               <Slide down>
                 <Service.Title as="h2" mb="0">
-                  Our Story
+                  <div className="title">Our Story</div>
                 </Service.Title>
               </Slide>
               <Slide right>
@@ -59,6 +60,6 @@ export default function ServiceSection() {
           </Row>
         </Container>
       </Service>
-    </>
+    </div>
   )
 }
