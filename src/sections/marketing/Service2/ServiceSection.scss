@@ -1,0 +1,34 @@
+.service-2-service-section-wrapper {
+  .title {
+    color: #002e6d;
+    width: 90vw;
+  }
+
+  .text {
+    em {
+      color: #20477e;
+      font-style: normal;
+    }
+  }
+
+  .button-wrapper {
+    padding: 10px;
+    text-align: center;
+
+    > button {
+      width: 23.194444444444443vw;
+      color: #002e6d;
+      height: 7.092198581560283vh;
+      background: #ffae13;
+      border-radius: 6px;
+      border: none;
+      margin-top: 60px;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 30px;
+      letter-spacing: 0em;
+      text-align: center;
+    }
+  }
+}

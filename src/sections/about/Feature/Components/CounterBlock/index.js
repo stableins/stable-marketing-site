@@ -24,7 +24,7 @@ export default function CounterBlock({ ...rest }) {
               )}
             </VisibilitySensor>
           </Counter.Title>
-          <Counter.Text widthfontColor="#ffffffb3">
+          <Counter.Text widthfontColor="#ffffffb3" style={{width: '40%'}}>
             Vehicle Owners and Counting have joined the Stable community.
           </Counter.Text>
           <Button

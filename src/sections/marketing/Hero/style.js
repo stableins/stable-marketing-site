@@ -21,7 +21,7 @@ const Hero = styled(Box)`
     }
     @media (min-width:1366px) {
         padding-top: 216px;
-        padding-bottom: 187px;
+        padding-bottom: 37px;
     }
     /* .newsletter-form {
         max-width: 521px;

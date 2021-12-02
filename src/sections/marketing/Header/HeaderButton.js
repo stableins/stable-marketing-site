@@ -45,9 +45,9 @@ const HeaderButton = ({
 }) => {
   const [show, setShow] = useState(false)
 
-  const scrollToStory = () => {
+  const scrollToProduct = () => {
     scroller.scrollTo(
-      "box__Box-sc-3l6bf7-0 style__Service-sc-19mks4r-0 hdGSYh ivpkoJ border-top border-default-color-2 bg-default",
+      "box__Box-sc-3l6bf7-0 style__Feature-sc-6pgd3g-0 hdGSYh dkUHKP bg-blue-ribbon",
       {
         duration: 10,
         delay: 0,
@@ -122,7 +122,7 @@ const HeaderButton = ({
       </Link> */}
       <Link
         style={{ width: "100px" }}
-        onClick={scrollToStory}
+        onClick={scrollToProduct}
         target="_blank"
         className="btn"
         to={btnTwoLink ? btnTwoLink : "/"}

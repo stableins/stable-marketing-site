@@ -12,29 +12,32 @@ import "./ServiceSection.scss"
 
 export default function ServiceSection() {
   return (
-    <>
+    <div className="service-wrapper">
       <Service className="border-top border-default-color-2 bg-default">
-        <Service.Shape className="service-shape service-shape--l1">
+        {/* <Service.Shape className="service-shape service-shape--l1">
           <Img
             src="../../../assets/image/marketing/services-shape-l1.png"
             alt="shape dot"
             layout="fullWidth"
             placeholder="blurred"
           />
-        </Service.Shape>
+        </Service.Shape> */}
         <Container>
           {/* Section Title */}
           <Slide left>
             <Row className="align-items-end justify-content-center text-start">
               <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
                 <Service.Title as="h2" mb="0" style={{ fontSize: "50px" }}>
-                  Help build the insurance <br />
-                  you wish you had
-                  <br className="d-none d-xs-block d-lg-none d-xl-block" />
-                  <Service.Text>
-                    We're working with the rideshare and carshare community to{" "}
-                    <br />
-                    create better insurance. To do this, we need your help:{" "}
+                  <div className="title">
+                    Help build the insurance <br />
+                    you wish you had
+                  </div>
+                  <Service.Text style={{ color: "#002E6D" }}>
+                    <div className="text">
+                      We're working with the rideshare and carshare community to{" "}
+                      <br />
+                      create better insurance. To do this, we need your help:{" "}
+                    </div>
                   </Service.Text>
                 </Service.Title>
               </Col>
@@ -56,7 +59,7 @@ export default function ServiceSection() {
                             Vehicle owners and counting have joined the Stable
                             community. Will you?
                           </p>
-                          <button>Join now</button>
+                          <button>Join Now ></button>
                         </div>
                       </>
                     )}
@@ -72,8 +75,43 @@ export default function ServiceSection() {
           <Service.Box mtLG="100px" mtMD="40px">
             <Slide right>
               <Row className="justify-content-center justify-content-md-start">
+                <div className="widget-wrapper">
+                  <div className="widget">
+                    <p>icon</p>
+                    <div className="widget-title">
+                      A Community Effort <br />
+                      <p>
+                        Interact with other drivers and fleets to learn how to
+                        better operate your business and make connections to
+                        potential partners.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="widget">
+                    <p>icon</p>
+                    <div className="widget-title">
+                      A Community Effort <br />
+                      <p>
+                        Interact with other drivers and fleets to learn how to
+                        better operate your business and make connections to
+                        potential partners.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="widget">
+                    <p>icon</p>
+                    <div className="widget-title">
+                      A Community Effort <br />
+                      <p>
+                        Interact with other drivers and fleets to learn how to
+                        better operate your business and make connections to
+                        potential partners.
+                      </p>
+                    </div>
+                  </div>
+                </div>
                 {/* Single Service */}
-                {serviceData.services.map(
+                {/* {serviceData.services.map(
                   ({ title, icon, iconColor, text, id }) => {
                     return (
                       <Col className="col-lg-4 col-xs-6 col-10" key={id}>
@@ -88,12 +126,15 @@ export default function ServiceSection() {
                       </Col>
                     )
                   }
-                )}
+                )} */}
               </Row>
+              <div className="button-wrapper">
+                <button>Help Build Better Insurance</button>
+              </div>
             </Slide>
           </Service.Box>
         </Container>
       </Service>
-    </>
+    </div>
   )
 }
