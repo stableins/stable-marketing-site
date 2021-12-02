@@ -12,14 +12,14 @@ export default function ServiceSection() {
   return (
     <div className="service-2-service-section-wrapper">
       <Service className="border-top border-default-color-2 bg-default">
-        <Service.Shape className="service-shape service-shape--l1">
+        {/* <Service.Shape className="service-shape service-shape--l1">
           <Img
             src="../../../assets/image/marketing/services-shape-l1.png"
             alt="shape dot"
             layout="fullWidth"
             placeholder="blurred"
           />
-        </Service.Shape>
+        </Service.Shape> */}
         <Container>
           {/* Section Title */}
           <Row className="align-items-end justify-content-center text-start">

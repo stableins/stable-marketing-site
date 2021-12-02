@@ -49,42 +49,77 @@
 }
 
 @media (min-width: 500px) {
-
   .title {
     width: 100vw;
   }
 
   .image-wrapper {
     display: inline-flex;
-    
-    
+    width: 95%;
+    text-align: left;
+    padding: 0 00px;
 
     .partners-section {
-      width: 35%;
+      width: 50%;
+      display: block;
+      text-align: center;
+
+      .image {
+        width: 70%;
+      }
 
       .title {
-        margin-left: 90px;
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: center;
       }
     }
 
     .accelerators-section {
-      width: 40%;
+      width: 50%;
+      display: block;
+      text-align: center;
+
+      .image {
+        width: 70%;
+      }
 
       .title {
-        margin-left: 90px;
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: center;
       }
     }
 
     .pitches-section {
-      width: 40%;
+      width: 50%;
+      display: block;
+      text-align: center;
 
-      .innovation {
-        margin-left: 20px;
+      .image {
+        width: 60%;
+        margin-top: 50px;
       }
 
       .title {
-        margin-left: 90px;
-        margin-bottom: 50px;
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: center;
       }
     }
   }
