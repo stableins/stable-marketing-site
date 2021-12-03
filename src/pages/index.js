@@ -22,7 +22,7 @@ const header = {
     <HeaderButton
       className="ms-auto d-none d-xs-inline-flex"
       btnOneText="Partners"
-      btnTwoText="Our Story"
+      btnTwoText="Our Product"
       btnThreeText="Get Early Access"
       btnFourText="Support"
       btnFiveText="Get Early Access"

@@ -2,7 +2,7 @@ import styled from "styled-components/macro"
 import { Box, Heading, Paragraph } from "~styled"
 
 const Hero = styled(Box)`
-  padding-top: 180px;
+  padding-top: 0px;
     padding-bottom: 55px;
     @media (min-width:575px) {
         padding-top: 273px;
@@ -21,33 +21,40 @@ const Hero = styled(Box)`
     }
     @media (min-width:1366px) {
         padding-top: 216px;
-        padding-bottom: 187px;
+        padding-bottom: 37px;
     }
     /* .newsletter-form {
         max-width: 521px;
     } */
 `
 Hero.Title = styled(Heading)`
-    font-size: 50px;
-    font-weight: 500;
-    letter-spacing: -1px;
-    line-height: 1.075;
-    margin-bottom: 35px;
+  font-size: 50px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  line-height: 1.075;
+  margin-bottom: 35px;
 
-    @media (min-width:480px) {
-        font-size: 60px;
-    }
+  @media (min-width: 300px) {
+    font-size: 60px;
+    margin-top: 120px;
+  }
 
-    @media (min-width:768px) {
-        font-size: 70px;
-    }
+  @media (min-width: 480px) {
+    font-size: 60px;
+    margin-top: -100px;
+  }
 
-    @media (min-width:992px) {
-        font-size: 80px;
-    }
-    .typed-cursor {
-        display: none !important;
-    }
+  @media (min-width: 768px) {
+    font-size: 70px;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 80px;
+    margin-top: -140px;
+  }
+  .typed-cursor {
+    display: none !important;
+  }
 `
 Hero.Text = styled(Paragraph)`
     color: rgba(38, 39, 41, 0.7);
@@ -81,7 +88,7 @@ Hero.Newsletter = styled(Box)`
     }
     .form-control{
         width: 100%;
-        border-radius: 10px;
+        border-radius-top-left: 10px;
         border: 2px solid rgba(128, 138, 142, 0.2);
         color: rgba(37, 55, 63, 0.7);
         font-size: 16px;
@@ -92,7 +99,7 @@ Hero.Newsletter = styled(Box)`
         margin-bottom: 10px;
         height: 70px;
         @media (min-width:480px) {
-            margin-right: 7px;
+            margin-right: 0px;
             margin-bottom: 0;
         }
     }

@@ -7,6 +7,7 @@ const SiteHeader = styled.div.attrs({
   width: 100%;
   z-index: 99;
   top: 0;
+  background: white;
   @media(max-width:992px){
     padding-top:13px;
     padding-bottom:13px;

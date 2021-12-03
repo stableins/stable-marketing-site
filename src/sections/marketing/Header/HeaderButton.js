@@ -2,9 +2,10 @@ import React, { useState, useRef } from "react"
 import { Link } from "~components"
 import { scroller } from "react-scroll"
 import { Button, Modal, Form } from "react-bootstrap"
-import StableLogo from "../../../assets/image/logo/Stable_Logo.svg"
+import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import styled from "styled-components/macro"
 import { Box } from "~styled"
+import "./HeaderButton.scss"
 
 export const HeaderButtonWrapper = styled(Box)`
   .btn {
@@ -28,9 +29,11 @@ export const HeaderButtonWrapper = styled(Box)`
     &-2 {
       min-width: 159px;
       height: 42px;
-      color: white;
-      background-color: rgb(48, 35, 174);
+      font-family: Roboto;
+      color: #002e6d;
+      background-color: #ffae13 !important;
       border-color: #f2f5fb;
+      weight: 700;
     }
   }
 `
@@ -43,11 +46,12 @@ const HeaderButton = ({
   btnFourText,
   ...rest
 }) => {
-  const [show, setShow] = useState(false)
+  const [show, setModalShow] = useState(false)
+  const [showConfirmation, setShowConfirmation] = useState(false)
 
-  const scrollToStory = () => {
+  const scrollToProduct = () => {
     scroller.scrollTo(
-      "box__Box-sc-3l6bf7-0 style__Service-sc-19mks4r-0 hdGSYh ivpkoJ border-top border-default-color-2 bg-default",
+      "box__Box-sc-3l6bf7-0 style__Feature-sc-6pgd3g-0 hdGSYh dkUHKP bg-blue-ribbon",
       {
         duration: 10,
         delay: 0,
@@ -67,77 +71,111 @@ const HeaderButton = ({
     )
   }
 
+  function handleConfirmation() {
+    setShowConfirmation(true)
+  }
+
   return (
-    <HeaderButtonWrapper {...rest}>
-      <Modal
-        show={show}
-        onHide={() => setShow(false)}
-        dialogClassName="modal-90w"
-        aria-labelledby="example-custom-modal-styling-title"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-custom-modal-styling-title">
-            <img src={StableLogo} />
-          </Modal.Title>
-        </Modal.Header>
-        <div style={{ padding: "20px" }}>
-          <Form>
-            <Form.Group className="mb-3">
-              <Form.Label>
-                Please provide the following information to get early access
-              </Form.Label>
-              <Form.Control required type="text" placeholder="First name" />
-              <br />
-              <Form.Control required type="text" placeholder="Last name" />
-            </Form.Group>
+    <div className="header-button-wrapper">
+      <HeaderButtonWrapper {...rest}>
+        <Modal
+          show={show}
+          onHide={() => setModalShow(false)}
+          dialogClassName="modal-90w"
+          aria-labelledby="example-custom-modal-styling-title"
+        >
+          <Modal.Header>
+            <Modal.Title id="example-custom-modal-styling-title">
+              <img width={150} src={StableLogo} />
+            </Modal.Title>
+          </Modal.Header>
+          <div style={{ padding: "20px" }}>
+            <Form onSubmit={handleConfirmation}>
+              <Form.Group className="mb-3">
+                <Form.Label>
+                  Please provide the following information to get early access
+                </Form.Label>
+                <Form.Control required type="text" placeholder="First name" />
+                <br />
+                <Form.Control required type="text" placeholder="Last name" />
+              </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Control required type="number" placeholder="Zip code" />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Label>
-                Are you a rideshare fleet or power user? (optional)
-              </Form.Label>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Control required type="number" placeholder="Zip code" />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Label>
+                  Are you a rideshare fleet or power user? (optional)
+                </Form.Label>
 
-              <Form.Control as="select">
-                <option>Choose Option</option>
-                <option value="1">Rideshare Fleet</option>
-                <option value="2">Power User</option>
-              </Form.Control>
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-          </Form>
-        </div>
-      </Modal>
-      <Link
-        onClick={scrollToPartners}
-        style={{ width: "100px" }}
-        target="_blank"
-        className="btn"
-        to={btnTwoLink ? btnTwoLink : "/"}
-      >
-        {btnOneText}
-      </Link>
-      <Link
-        style={{ width: "100px" }}
-        onClick={scrollToStory}
-        target="_blank"
-        className="btn"
-        to={btnTwoLink ? btnTwoLink : "/"}
-      >
-        {btnTwoText}
-      </Link>
-      <Button
-        onClick={() => setShow(true)}
-        target="_blank"
-        className="btn btn-2"
-        to={btnTwoLink ? btnTwoLink : "/"}
-      >
-        {btnThreeText}
-      </Button>
-    </HeaderButtonWrapper>
+                <Form.Control as="select">
+                  <option>Choose Option</option>
+                  <option value="1">Rideshare Fleet</option>
+                  <option value="2">Power User</option>
+                </Form.Control>
+              </Form.Group>
+              <button
+                style={{
+                  width: "40%",
+                  height: "7.1vh",
+                  backgroundColor: "#ffae13",
+                  borderRadius: "8px",
+                  border: "none",
+                }}
+                className="modal-button"
+                type="submit"
+              >
+                Submit <i class="fas fa-chevron-right"></i>
+              </button>
+            </Form>
+          </div>
+        </Modal>
+        <Modal
+          show={showConfirmation}
+          onHide={() => setShowConfirmation(false)}
+          dialogClassName="modal-90w"
+          aria-labelledby="example-custom-modal-styling-title"
+        >
+          <Modal.Header>
+            <Modal.Title id="example-custom-modal-styling-title">
+              <img width={150} src={StableLogo} />
+            </Modal.Title>
+          </Modal.Header>
+          <div style={{ padding: "20px" }}>
+            <button
+              style={{
+                width: "40%",
+                height: "7.1vh",
+                backgroundColor: "#ffae13",
+                borderRadius: "8px",
+                border: "none",
+              }}
+              className="modal-button"
+              type="submit"
+            >
+              Submit <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </Modal>
+        <Link
+          style={{ width: "130px" }}
+          onClick={scrollToProduct}
+          target="_blank"
+          className="btn"
+          to={btnTwoLink ? btnTwoLink : "/"}
+        >
+          {btnTwoText}
+        </Link>
+        <Button
+          onClick={() => setModalShow(true)}
+          target="_blank"
+          className="btn btn-2"
+          to={btnTwoLink ? btnTwoLink : "/"}
+        >
+          {btnThreeText}
+        </Button>
+      </HeaderButtonWrapper>
+    </div>
   )
 }
 
