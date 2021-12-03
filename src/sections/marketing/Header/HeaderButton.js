@@ -157,7 +157,7 @@ const HeaderButton = ({
             </button>
           </div>
         </Modal>
-        <Link
+         <Link
           style={{ width: "130px" }}
           onClick={scrollToProduct}
           target="_blank"
