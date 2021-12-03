@@ -88,6 +88,7 @@ export default function ServiceSection() {
                       className="image"
                       src="../../../assets/image/logo/GRInnovation.png"
                       alt="shape dot"
+
                     />
                     <Img
                       className="image"
