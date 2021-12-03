@@ -63,7 +63,7 @@ const FeatureSection = ({ ...rest }) => {
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Control required type="number" placeholder="Zip code" />
-              </Form.Group>
+              </Form.Group> 
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Label>
                   Are you a rideshare fleet or power user? (optional)
@@ -270,20 +270,20 @@ const FeatureSection = ({ ...rest }) => {
                     <Tab.Pane eventKey="third">
                       <Row>
                         <Col className="col-md-6 col-sm-6 col-xs-9" xs="auto">
-                          <TabContentWidget
+                          {/* <TabContentWidget
                             count="05."
                             // title="Real data access"
                             title={"Insurance Savings of up to 40%."}
-                          />
+                          /> */}
                         </Col>
                         <Col className="col-md-6 col-sm-6 col-xs-9" xs="auto">
-                          <TabContentWidget
+                          {/* <TabContentWidget
                             count="06."
                             // title="Real access data "
                             title={
                               "Do you have a second car used primarily for rideshare or carshare? You will save up to 40% on your annual premium by switching to our mileage based policy"
                             }
-                          />
+                          /> */}
                         </Col>
                       </Row>
                     </Tab.Pane>

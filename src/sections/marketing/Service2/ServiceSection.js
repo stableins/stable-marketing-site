@@ -39,12 +39,6 @@ export default function ServiceSection() {
                       to determine how to charge you, offer insights and handle
                       your claims.
                     </div>
-                    <div>
-                      {" "}
-                      <i class="fas fa-chart-line">
-                        <p>Driven by data</p>
-                      </i>
-                    </div>
                   </div>
                 </Service.Text>
                 <br className="d-none d-xs-block d-lg-none d-xl-block" />
@@ -59,6 +53,12 @@ export default function ServiceSection() {
                       insurers work for them.
                     </div>
                   </Service.Text>
+                  <div>
+                    {" "}
+                    <i class="fas fa-chart-line">
+                      <p>Driven by data</p>
+                    </i>
+                  </div>
                 </Service.Text>
               </Slide>
             </Col>
@@ -72,8 +72,7 @@ export default function ServiceSection() {
           </Row>
           <div className="button-wrapper">
             <button>
-              Help Build Better Insurance {"     "}{" "}
-              <i class="fas fa-chevron-right"></i>
+              Help Build Better Insurance <i class="fas fa-chevron-right"></i>
             </button>
           </div>
         </Container>
