@@ -2,7 +2,7 @@ import styled from "styled-components/macro"
 import { Box, Heading, Paragraph } from "~styled"
 
 const Hero = styled(Box)`
-  padding-top: 180px;
+  padding-top: 0px;
     padding-bottom: 55px;
     @media (min-width:575px) {
         padding-top: 273px;
@@ -36,7 +36,7 @@ Hero.Title = styled(Heading)`
 
   @media (min-width: 300px) {
     font-size: 60px;
-    margin-top: -140px;
+    margin-top: 120px;
   }
 
   @media (min-width: 480px) {
@@ -50,7 +50,7 @@ Hero.Title = styled(Heading)`
 
   @media (min-width: 992px) {
     font-size: 80px;
-    margin-top: -160px;
+    margin-top: -140px;
   }
   .typed-cursor {
     display: none !important;
@@ -88,7 +88,7 @@ Hero.Newsletter = styled(Box)`
     }
     .form-control{
         width: 100%;
-        border-radius: 10px;
+        border-radius-top-left: 10px;
         border: 2px solid rgba(128, 138, 142, 0.2);
         color: rgba(37, 55, 63, 0.7);
         font-size: 16px;
@@ -99,7 +99,7 @@ Hero.Newsletter = styled(Box)`
         margin-bottom: 10px;
         height: 70px;
         @media (min-width:480px) {
-            margin-right: 7px;
+            margin-right: 0px;
             margin-bottom: 0;
         }
     }

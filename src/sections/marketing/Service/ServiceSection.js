@@ -59,7 +59,9 @@ export default function ServiceSection() {
                             Vehicle owners and counting have joined the Stable
                             community. Will you?
                           </p>
-                          <button>Join Now ></button>
+                          <button>
+                            Join Now <i class="fas fa-chevron-right"></i>
+                          </button>
                         </div>
                       </>
                     )}
@@ -77,7 +79,22 @@ export default function ServiceSection() {
               <Row className="justify-content-center justify-content-md-start">
                 <div className="widget-wrapper">
                   <div className="widget">
-                    <p>icon</p>
+                    <p>
+                      <i class="fas fa-tasks"></i>
+                    </p>
+                    <div className="widget-title">
+                      Manage Smartly <br />
+                      <p>
+                        Your data is valuable. We use it to provide you better
+                        insurance and valuable insights and tools on how to
+                        operate your business better.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="widget">
+                    <p>
+                      <i class="fas fa-road"></i>
+                    </p>
                     <div className="widget-title">
                       A Community Effort <br />
                       <p>
@@ -88,18 +105,9 @@ export default function ServiceSection() {
                     </div>
                   </div>
                   <div className="widget">
-                    <p>icon</p>
-                    <div className="widget-title">
-                      A Community Effort <br />
-                      <p>
-                        Interact with other drivers and fleets to learn how to
-                        better operate your business and make connections to
-                        potential partners.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="widget">
-                    <p>icon</p>
+                    <p>
+                      <i class="fas fa-sync-alt"></i>
+                    </p>{" "}
                     <div className="widget-title">
                       A Community Effort <br />
                       <p>
@@ -110,26 +118,12 @@ export default function ServiceSection() {
                     </div>
                   </div>
                 </div>
-                {/* Single Service */}
-                {/* {serviceData.services.map(
-                  ({ title, icon, iconColor, text, id }) => {
-                    return (
-                      <Col className="col-lg-4 col-xs-6 col-10" key={id}>
-                        <ServiceWidget
-                          icon={icon}
-                          title={title}
-                          text={text}
-                          iconColor={iconColor}
-                          id={id}
-                          mt="40px"
-                        />
-                      </Col>
-                    )
-                  }
-                )} */}
               </Row>
               <div className="button-wrapper">
-                <button>Help Build Better Insurance</button>
+                <button>
+                  Help Build Better Insurance{" "}
+                  <i class="fas fa-chevron-right"></i>
+                </button>
               </div>
             </Slide>
           </Service.Box>

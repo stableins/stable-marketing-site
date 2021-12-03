@@ -6,7 +6,10 @@ import Footer from "./style"
 import { Slide } from "react-reveal"
 export default function FooterOne() {
   return (
-    <Footer backgroundColor="#0c064a;">
+    <Footer
+      backgroundColor="#002E6D
+"
+    >
       <Container>
         <Footer.Box pbXL="95px">
           <Row>
@@ -14,9 +17,9 @@ export default function FooterOne() {
               <Footer.Widgets className="footer-widgets footer-widgets--l7">
                 {/* Brand Logo*/}
                 <Footer.Box mb="30px">
-                  <Link to="#">
+                  {/* <Link to="#">
                     <img src={Logo} alt="logo" />
-                  </Link>
+                  </Link> */}
                 </Footer.Box>
                 {/* <Footer.Text mb="36px">
                 The best medicines & biggest

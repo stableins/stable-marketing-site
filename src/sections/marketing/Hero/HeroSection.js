@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Col, Container, Row, Modal, Form } from "react-bootstrap"
 import ReactTypingEffect from "react-typing-effect"
-import StableLogo from "../../../assets/image/logo/Stable_Logo.svg"
+import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import SingleAniamtion from "../../../components/Animation/singleAnimation"
 import { Link } from "~components"
 import { Button } from "~styled"
@@ -25,47 +25,55 @@ export default function HeroSection() {
               >
                 <Hero.Content>
                   <Hero.Title as="h1">
-                    Get Early Access To Smarter&nbsp;
-                    <br className="breaker" />
-                    <ReactTypingEffect
-                      text={["ride", "car"]}
-                      className="highlight-text d-inline-block text-primary"
-                      speed="200"
-                      cursor=" "
-                      eraseSpeed="100"
-                      typingDelay="400"
-                      eraseDelay="800"
-                    />
-                    share
-                    <br />
-                    Insurance
+                    <div className="title">
+                      Get Early Access To Smarter&nbsp;
+                      <br className="breaker" />
+                      <ReactTypingEffect
+                        text={["ride", "car"]}
+                        className="highlight-text d-inline-block text-primary"
+                        speed="200"
+                        cursor=" "
+                        eraseSpeed="100"
+                        typingDelay="400"
+                        eraseDelay="800"
+                      />
+                      share
+                      <br />
+                      Insurance
+                    </div>
                   </Hero.Title>
                   <Hero.Text>
-                    Your current insurance doesn't provide you incentives or the
-                    ability to manage risk. Which means you are overpaying.
-                    Stable gives you tools to improve your risk and uses new
-                    data, in real-time, to better price insurance.{" "}
+                    <div className="hero-text">
+                      Your current insurance doesn't provide you incentives or
+                      the ability to manage risk. Which means you are
+                      overpaying. Stable gives you tools to improve your risk
+                      and uses new data, in real-time, to better price
+                      insurance.{" "}
+                    </div>
                     <br className="d-none d-xs-block" />
                   </Hero.Text>
                   {/* Newsletter */}
                   <Row>
                     <Col xs="12" className="col-xxl-10">
                       <Hero.Newsletter>
-                        <form>
-                          <input
-                            type={"email"}
-                            name={"email"}
-                            placeholder="Enter your email"
-                            className="form-control"
-                          />
-                          <Button
-                            className="btn-purple-heart"
-                            textTransform="capitalized"
-                            onClick={() => setShow(true)}
-                          >
-                            Get Early Access >
-                          </Button>
-                        </form>
+                        <div className="form-wrapper">
+                          <form>
+                            <input
+                              type={"email"}
+                              name={"email"}
+                              placeholder="Enter your email"
+                              className="form-control"
+                            />
+                            <button
+                              className="btn-purple-heart"
+                              textTransform="capitalized"
+                              onClick={() => setShow(true)}
+                            >
+                              Get Early Access{" "}
+                              <i class="fas fa-chevron-right"></i>
+                            </button>
+                          </form>
+                        </div>
                       </Hero.Newsletter>
                       <Hero.NewsletterText>
                         Already have an account? <Link to="/">Login here.</Link>
@@ -74,7 +82,7 @@ export default function HeroSection() {
                   </Row>
                 </Hero.Content>
                 <Hero.NewsletterText>
-                  <Link to="/">
+                  <Link className="how-stable-works">
                     <p className="see-how-text">See how Stable works</p>
                   </Link>
                 </Hero.NewsletterText>

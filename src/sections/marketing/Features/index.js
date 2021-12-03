@@ -11,7 +11,7 @@ import {
 } from "react-bootstrap"
 import { Images } from "~data"
 import TabContentWidget from "./Component/TabContentWidget"
-import StableLogo from "../../../assets/image/logo/Stable_Logo.svg"
+import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import TabNavWidget from "./Component/TabNavWidget"
 import Slide from "react-reveal/Slide"
 import Feature from "./style"
@@ -45,9 +45,9 @@ const FeatureSection = ({ ...rest }) => {
           dialogClassName="modal-90w"
           aria-labelledby="example-custom-modal-styling-title"
         >
-          <Modal.Header closeButton>
+          <Modal.Header>
             <Modal.Title id="example-custom-modal-styling-title">
-              <img src={StableLogo} />
+              <img src={StableLogo} width={150} />
             </Modal.Title>
           </Modal.Header>
           <div style={{ padding: "20px" }}>
@@ -127,6 +127,17 @@ const FeatureSection = ({ ...rest }) => {
                                 Fleet Management and Insurance Savings of up to
                                 40%.
                               </div>
+                              <div className="list">
+                                Using our platform, you can:
+                                <ul>
+                                  <li>automate your operations</li>
+                                  <li>source new drivers</li>
+                                  <li>
+                                    potentially qualify for savings of up to 40%
+                                    on your annual premium.
+                                  </li>
+                                </ul>
+                              </div>
                             </div>
                           </div>
                           <div className="section2">
@@ -138,12 +149,69 @@ const FeatureSection = ({ ...rest }) => {
                             </div>
                             <div className="text-wrapper">
                               <div className="text-title">
-                                Do you operate a carshare or rideshare fleet in
-                                the U.S?
+                                Do you operate a TLC fleet in NYC?
                               </div>
                               <div className="statement">
                                 Fleet Management and Insurance that meets
                                 requirements for TLC vehicles.
+                              </div>
+                              <div className="list">
+                                With our platform, you can:
+                                <ul>
+                                  <li>automate your operations</li>
+                                  <li>improve your driver pool</li>
+                                  <li>lower claim amounts</li>
+                                  <li>find better drivers</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="bottom-row">
+                          <div className="section3">
+                            <div className="section-title-row">
+                              <div className="section-title-number">3</div>
+                              <div className="section-title-text">
+                                Mileage Based Rideshare for Professional Drivers
+                              </div>
+                            </div>
+                            <div className="text-wrapper">
+                              <div className="text-title">
+                                Do you operate a carshare or rideshare fleet in
+                                the U.S?
+                              </div>
+                              <div className="statement">
+                                You will save up to 40% on your annual premium
+                                by switching to our mileage based policy
+                              </div>
+                              <div className="list"></div>
+                            </div>
+                          </div>
+                          <div className="section4">
+                            <div className="section-title-row">
+                              <div className="section-title-number">4</div>
+                              <div className="section-title-text">
+                                Mileage Based Insurance for CarShare Platform
+                                Power Users{" "}
+                              </div>
+                            </div>
+                            <div className="text-wrapper">
+                              <div className="text-title">
+                                Do you purchase cars to use exclusively on
+                                carshare platforms?
+                              </div>
+                              <div className="statement">
+                                You can save substantially on your insurance
+                                coverage and gain tools to automate your
+                                business operations.
+                              </div>
+                              <div className="list">
+                                {/* <ul>
+                                  <li>automate your operations</li>
+                                  <li>improve your driver pool</li>
+                                  <li>lower claim amounts</li>
+                                  <li>find better drivers</li>
+                                </ul> */}
                               </div>
                             </div>
                           </div>
@@ -154,14 +222,6 @@ const FeatureSection = ({ ...rest }) => {
                       eventKey="second"
                       className="col-lg-12 col-md-4 col-xs-6 col-8 me-md-0 me-lg-0"
                     >
-                      {/* <TabNavWidget
-                        // iconClass="far fa-flag"
-                        style={{ width: "320px", fontSize: "19px" }}
-                        text="New York City TLC Insurance for Fleets"
-                        className="nav-widget"
-                        mb="30px"
-                        mbLG="50px"
-                      /> */}
                       <br />
                     </Nav.Link>
                     <Nav.Link
@@ -169,30 +229,13 @@ const FeatureSection = ({ ...rest }) => {
                       eventKey="third"
                       className="widget widget--feature nav-item col-lg-12 col-md-4 col-xs-6 col-8 me-md-0 me-lg-0"
                     >
-                      {/* <TabNavWidget
-                        // iconClass="fas fa-chart-line"
-                        style={{ width: "320px", fontSize: "19px" }}
-                        text="Mileage Based Rideshare for Professional Drivers"
-                        className="nav-widget"
-                        mb="30px"
-                        mbLG="50px"
-                      /> */}
                       <br />
                       <br />
                     </Nav.Link>
                     <Nav.Link
                       eventKey="fourth"
                       className="widget widget--feature nav-item col-lg-12 col-md-4 col-xs-6 col-8 me-md-0 me-lg-0"
-                    >
-                      {/* <TabNavWidget
-                        style={{ width: "320px", fontSize: "18px" }}
-                        // iconClass="fas fa-chart-line"
-                        text="Mileage Based Insurance for CarShare Platform Power Users"
-                        className="nav-widget"
-                        mb="30px"
-                        mbLG="90px"
-                      /> */}
-                    </Nav.Link>
+                    ></Nav.Link>
                   </Feature.TabNavWrapper>
                 </Col>
                 <Col
@@ -202,46 +245,26 @@ const FeatureSection = ({ ...rest }) => {
                   <Tab.Content className="tab-content tab-content--feature">
                     <Tab.Pane eventKey="first">
                       <Row>
-                        <Col className="col-md-6 col-sm-6 col-xs-9" xs="auto">
-                          {/* <TabContentWidget
-                            count="01."
-                            title="Fleet Management and Insurance Savings of up to 40%"
-                            // text={
-                            //   'Create custom landing pages with<br class="d-none d-lg-block" /> Fastland that converts more visitors <br class="d-none d-lg-block" /> than any website.'
-                            // }
-                          /> */}
-                        </Col>
-                        <Col className="col-md-6 col-sm-6 col-xs-9" xs="auto">
-                          {/* <TabContentWidget
-                            count="02."
-                            title="Do you operate a carshare or rideshare fleet in the U.S? Using our platform, you can automate your operations, source new drivers and potentially qualify for savings of up to 40% on your annual premium."
-                            // text={
-                            //   'Create custom landing pages with<br class="d-none d-lg-block" /> Fastland that converts more visitors <br class="d-none d-lg-block" /> than any website.'
-                            // }
-                          /> */}
-                        </Col>
+                        <Col
+                          className="col-md-6 col-sm-6 col-xs-9"
+                          xs="auto"
+                        ></Col>
+                        <Col
+                          className="col-md-6 col-sm-6 col-xs-9"
+                          xs="auto"
+                        ></Col>
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
                       <Row>
-                        <Col className="col-md-6 col-sm-6 col-xs-9" xs="auto">
-                          {/* <TabContentWidget
-                            count="03."
-                            title="Fleet Management and Insurance that meets requirements for TLC vehicles"
-                            // text={
-                            //   'Create custom landing pages with<br class="d-none d-lg-block" /> Fastland that converts more visitors <br class="d-none d-lg-block" /> than any website.'
-                            // }
-                          /> */}
-                        </Col>
-                        <Col className="col-md-6 col-sm-6 col-xs-9" xs="auto">
-                          {/* <TabContentWidget
-                            count="04."
-                            title="Do you operate a TLC fleet in NYC? Using our platform, you can automate your operations, improve your driver pool, lower claim amounts, and find better drivers"
-                            // text={
-                            //   'Create custom landing pages with<br class="d-none d-lg-block" /> Fastland that converts more visitors <br class="d-none d-lg-block" /> than any website.'
-                            // }
-                          /> */}
-                        </Col>
+                        <Col
+                          className="col-md-6 col-sm-6 col-xs-9"
+                          xs="auto"
+                        ></Col>
+                        <Col
+                          className="col-md-6 col-sm-6 col-xs-9"
+                          xs="auto"
+                        ></Col>
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
@@ -289,13 +312,15 @@ const FeatureSection = ({ ...rest }) => {
                   </Tab.Content>
                 </Col>
               </Feature.Tab>
-              <button
-                onClick={() => setCounterModal(true)}
-                aria-current="page"
-                className="button__Button-sc-1tkahez-0 cAxprB btn-purple-heart btn"
-              >
-                Get Early Access
-              </button>
+              <div className="button-wrapper">
+                <button
+                  onClick={() => setCounterModal(true)}
+                  aria-current="page"
+                  className="button__Button-sc-1tkahez-0 cAxprB btn-purple-heart btn"
+                >
+                  Get Early Access <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
             </Tab.Container>
           </Slide>
         </Container>

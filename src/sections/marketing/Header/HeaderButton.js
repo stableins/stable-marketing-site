@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react"
 import { Link } from "~components"
 import { scroller } from "react-scroll"
 import { Button, Modal, Form } from "react-bootstrap"
-import StableLogo from "../../../assets/image/logo/Stable_Logo.svg"
+import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import styled from "styled-components/macro"
 import { Box } from "~styled"
 
@@ -75,9 +75,9 @@ const HeaderButton = ({
         dialogClassName="modal-90w"
         aria-labelledby="example-custom-modal-styling-title"
       >
-        <Modal.Header closeButton>
+        <Modal.Header >
           <Modal.Title id="example-custom-modal-styling-title">
-            <img src={StableLogo} />
+            <img width={150}src={StableLogo} />
           </Modal.Title>
         </Modal.Header>
         <div style={{ padding: "20px" }}>

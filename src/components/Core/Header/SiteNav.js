@@ -30,10 +30,10 @@ const SiteNavbar = ({buttonBlock,darkLogo,customLogo,defaultLogo}) => {
             />
           )}
         </Navbar.Brand>
-        <Navbar.Toggle
+        {/* <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           className="hamburgur"
-        />
+        /> */}
         <Menu />
         {buttonBlock}
       </Navbar>

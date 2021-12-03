@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Counter from "./style"
 import { Modal, Button, Form } from "react-bootstrap"
-import StableLogo from "../../../../../assets/image/logo/Stable_Logo.svg"
+import StableLogo from "../../../../../assets/image/logo/Stable-logo_site.png"
 import CountUp from "react-countup"
 import VisibilitySensor from "react-visibility-sensor"
 import "./index.scss"
@@ -40,9 +40,9 @@ export default function CounterBlock({ ...rest }) {
             dialogClassName="modal-9/.0w"
             aria-labelledby="example-custom-modal-styling-title"
           >
-            <Modal.Header closeButton>
+            <Modal.Header>
               <Modal.Title id="example-custom-modal-styling-title">
-                <img src={StableLogo} />
+                <img width={150}src={StableLogo} />
               </Modal.Title>
             </Modal.Header>
             <div style={{ padding: "20px" }}>
