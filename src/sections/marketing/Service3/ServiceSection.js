@@ -4,6 +4,13 @@ import { Col, Container, Row } from "react-bootstrap"
 import serviceData from "~data/marketing2/Service"
 import ServiceWidget from "./Component/Widget"
 import CounterBlock from "../../about/Feature/Components/CounterBlock"
+import InsurTechNY from "../../../assets/image/logo/InsurTechNY.png"
+import GRInnovation from "../../../assets/image/logo/GRInnovation.png"
+import Hartford from "../../../assets/image/logo/Hartford.png"
+import InsurTechRising from "../../../assets/image/logo/InsurTechRising.png"
+import SharedMobility from "../../../assets/image/logo/SharedMobility.png"
+import GuyCarpenter from "../../../assets/image/logo/GuyCarpenter.png"
+
 import Slide from "react-reveal"
 import Service from "./style"
 import "./ServiceSection.scss"
@@ -44,8 +51,8 @@ export default function ServiceSection() {
                     </Service.Text>
 
                     <div>
-                      <Img
-                        src="../../../assets/image/logo/GuyCarpenter.png"
+                      <img
+                        src={GuyCarpenter}
                         alt="shape dot"
                         className="image"
                       />
@@ -60,13 +67,14 @@ export default function ServiceSection() {
                     </Service.Text>
                     {/* <div className="separator"></div> */}
 
-                    <Img
+                    <img
                       className="ny"
-                      src="../../../assets/image/logo/InsurTechNY.png"
+                      src={InsurTechNY}
                       className="image"
                     />
-                    <Img
-                      src="../../../assets/image/logo/hartford.png"
+
+                    <img
+                      src={Hartford}
                       className="image"
                     />
                   </div>
@@ -77,22 +85,21 @@ export default function ServiceSection() {
                       <div className="title">Pitch Competitions</div>
                     </Service.Text>
 
-                    <Img
+                    <img
                       className="image"
-                      src="../../../assets/image/logo/InsurTechRising.png"
+                      src={InsurTechRising}
                       alt="shape dot"
                       // layout="fullWidth"
                       // placeholder="blurred"
                     />
-                    <Img
+                    <img
                       className="image"
-                      src="../../../assets/image/logo/GRInnovation.png"
+                      src={GRInnovation}
                       alt="shape dot"
-
                     />
-                    <Img
+                    <img
                       className="image"
-                      src="../../../assets/image/logo/SharedMobility.png"
+                      src={SharedMobility}
                       alt="shape dot"
                     />
                   </div>

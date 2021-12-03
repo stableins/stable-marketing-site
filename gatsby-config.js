@@ -12,6 +12,7 @@ module.exports = {
   // },
   plugins: [
     `gatsby-plugin-styled-components`,
+    `babel-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {
@@ -24,7 +25,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.join(__dirname, `src`, `assets`,`image`),
+        path: path.join(__dirname, `src`, `assets`, `image`),
         // `${__dirname}/src/assets/image`
       },
     },

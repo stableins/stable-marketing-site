@@ -51,7 +51,7 @@ const HeaderButton = ({
 
   const scrollToProduct = () => {
     scroller.scrollTo(
-      "box__Box-sc-3l6bf7-0 style__Feature-sc-6pgd3g-0 hdGSYh dkUHKP bg-blue-ribbon",
+      "box__Box-sc-3l6bf7-0 style__Feature-sc-6pgd3g-0 kdbiMz bcwGkg bg-blue-ribbon",
       {
         duration: 10,
         delay: 0,
