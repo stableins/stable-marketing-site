@@ -66,9 +66,8 @@ export default function ServiceSection() {
                       className="image"
                     />
                     <Img
-                      src="../../../assets/image/logo/HartfordInsurtech.png"
+                      src="../../../assets/image/logo/hartford.png"
                       className="image"
-                      // width={00}
                     />
                   </div>
                 </Slide>
