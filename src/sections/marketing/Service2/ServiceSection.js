@@ -12,16 +12,7 @@ export default function ServiceSection() {
   return (
     <div className="service-2-service-section-wrapper">
       <Service className="border-top border-default-color-2 bg-default">
-        {/* <Service.Shape className="service-shape service-shape--l1">
-          <Img
-            src="../../../assets/image/marketing/services-shape-l1.png"
-            alt="shape dot"
-            layout="fullWidth"
-            placeholder="blurred"
-          />
-        </Service.Shape> */}
         <Container>
-          {/* Section Title */}
           <Row className="align-items-end justify-content-center text-start">
             <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
               <Slide down>
@@ -34,18 +25,26 @@ export default function ServiceSection() {
               <Slide left>
                 <br className="d-none d-xs-block d-lg-none d-xl-block" />
                 <Service.Text>
-                  <div className="text">
-                    New uses for vehicles such as rideshare, carshare and
-                    delivery need to be paired with better insurance. Your
-                    insurance company should be making use of all the data
-                    available and considering it in real-time. <br /> <br />
-                    At stable we looked at data from{" "}
-                    <em>
-                      cameras, rideshare/carshare/delivery platforms, fleet
-                      management platforms and telematics from the vehicles
-                    </em>{" "}
-                    to determine how to charge you, offer insights and handle
-                    your claims.
+                  <div className="text-wrapper">
+                    <div className="text">
+                      New uses for vehicles such as rideshare, carshare and
+                      delivery need to be paired with better insurance. Your
+                      insurance company should be making use of all the data
+                      available and considering it in real-time. <br /> <br />
+                      At stable we looked at data from{" "}
+                      <em>
+                        cameras, rideshare/carshare/delivery platforms, fleet
+                        management platforms and telematics from the vehicles
+                      </em>{" "}
+                      to determine how to charge you, offer insights and handle
+                      your claims.
+                    </div>
+                    <div>
+                      {" "}
+                      <i class="fas fa-chart-line">
+                        <p>Driven by data</p>
+                      </i>
+                    </div>
                   </div>
                 </Service.Text>
                 <br className="d-none d-xs-block d-lg-none d-xl-block" />
@@ -71,9 +70,12 @@ export default function ServiceSection() {
               </Service.Text> */}
             </Col>
           </Row>
-              <div className="button-wrapper">
-                <button>Help Build Better Insurance {'     '} ></button>
-              </div>
+          <div className="button-wrapper">
+            <button>
+              Help Build Better Insurance {"     "}{" "}
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
         </Container>
       </Service>
     </div>

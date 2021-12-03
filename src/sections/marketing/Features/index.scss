@@ -1,5 +1,3 @@
-@media (min-width: 1000px) {
-}
 .features-index-wrapper {
   .title {
     color: #ffae13;
@@ -207,218 +205,224 @@
       font-size: 18px;
       font-style: normal;
       font-weight: 700;
+              height: 50px;
+
       line-height: 30px;
       letter-spacing: 0em;
-      width: 20%;
+      width: 334px;
     }
 
     i {
-      margin-left: 10px;
+      margin-left: 5px;
     }
   }
 }
 
 @media (max-width: 400px) {
-}
-.features-index-wrapper {
-  display: block;
-  .title {
-    color: #ffae13;
-    font-size: 55px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 60px;
-    letter-spacing: 0em;
-    text-align: left;
-  }
-
-  .text {
-    > p {
-      font-size: 22px;
+  .features-index-wrapper {
+    .title {
+      color: #ffae13;
+      font-size: 55px;
       font-style: normal;
       font-weight: 400;
-      line-height: 30px;
+      line-height: 60px;
       letter-spacing: 0em;
       text-align: left;
-      width: 75%;
-      margin-top: 30px;
-      height: 0vh;
     }
-  }
 
-  .sections-wrapper {
-    margin-top: 200px;
-    cursor: default;
-    text-align: left;
-    .top-row {
-      display: block;
-      .section1 {
-        width: 100%;
-        border-radius: 6px;
-
-        .section-title-row {
-          background-color: #f7f7f7;
-          border-radius: 6px;
-          width: 100%;
-          // padding: 10px 20px;
-          display: inline-flex;
-          font-weight: bold;
-          font-size: 16px;
-
-          .section-title-number {
-            color: #002e6d;
-            margin-right: 10px;
-          }
-
-          .section-title-text {
-            color: #002e6d;
-          }
-        }
-
-        .text-wrapper {
-          // padding: 20px 50px;
-
-          .text-title {
-            color: #ffb748;
-          }
-
-          .statement {
-            color: white;
-            padding: 30px 0px;
-          }
-        }
-      }
-      .section2 {
-        width: 100%;
-        border-radius: 6px;
-
-        .section-title-row {
-          background-color: #f7f7f7;
-          border-radius: 6px;
-          width: 100%;
-          display: inline-flex;
-          font-weight: bold;
-          font-size: 16px;
-
-          .section-title-number {
-            color: #002e6d;
-            margin-right: 10px;
-          }
-
-          .section-title-text {
-            color: #002e6d;
-          }
-        }
-
-        .text-wrapper {
-          width: 100%;
-          // padding: 20px 50px;
-
-          .text-title {
-            color: #ffb748;
-          }
-
-          .statement {
-            color: white;
-            // padding: 30px 0px;
-          }
-        }
+    .text {
+      > p {
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: left;
+        width: 75%;
+        margin-top: 30px;
+        height: 0vh;
       }
     }
-    .bottom-row {
-      display: block;
 
-      .section3 {
-        width: 100%;
-        border-radius: 6px;
-
-        .section-title-row {
-          background-color: #f7f7f7;
-          border-radius: 6px;
+    .sections-wrapper {
+      margin-top: 200px;
+      cursor: default;
+      text-align: center;
+      .top-row {
+        display: block;
+        .section1 {
+          display: block;
           width: 100%;
-          display: inline-flex;
-          font-weight: bold;
-          font-size: 16px;
 
-          .section-title-number {
-            color: #002e6d;
-            margin-right: 10px;
-          }
-
-          .section-title-text {
-            color: #002e6d;
+          .section-title-row {
+            background-color: #f7f7f7;
+            border-radius: 6px;
+            display: inline-flex;
             font-weight: bold;
+            width: 100%;
+
+            .section-title-number {
+              color: #002e6d;
+              margin-right: 10px;
+            }
+
+            .section-title-text {
+              color: #002e6d;
+            }
+          }
+
+          .text-wrapper {
+            width: 100%;
+            text-align: left;
+
+            .text-title {
+              color: #ffb748;
+            }
+
+            .statement {
+              color: white;
+              padding: 30px 0px;
+            }
           }
         }
-
-        .text-wrapper {
+        .section2 {
           width: 100%;
-          // padding: 20px 50px;
+          display: block;
+          .section-title-row {
+            width: 100%;
+            padding: 10px 20px;
+            background-color: #f7f7f7;
+            display: inline-flex;
+            border-radius: 6px;
+            font-weight: bold;
 
-          .text-title {
-            color: #ffb748;
+            .section-title-number {
+              color: #002e6d;
+              margin-right: 10px;
+            }
+
+            .section-title-text {
+              color: #002e6d;
+            }
           }
 
-          .statement {
-            color: white;
-            padding: 30px 0px;
+          .text-wrapper {
+            width: 100%;
+            padding: 20px 50px;
+            text-align: left;
+
+            .text-title {
+              color: #ffb748;
+            }
+
+            .statement {
+              color: white;
+              padding: 30px 0px;
+            }
           }
         }
       }
-      .section4 {
+      .bottom-row {
         width: 100%;
-        border-radius: 6px;
-
-        .section-title-row {
-          background-color: #f7f7f7;
-          border-radius: 6px;
+        display: block;
+        .section3 {
+          display: block;
           width: 100%;
-          display: inline-flex;
-          font-weight: bold;
-          font-size: 16px;
 
-          .section-title-number {
-            color: #002e6d;
-            margin-right: 10px;
+          .section-title-row {
+            background-color: #f7f7f7;
+            border-radius: 6px;
+            width: 100%;
+            padding: 10px 20px;
+            display: inline-flex;
+            font-weight: bold;
+
+            .section-title-number {
+              color: #002e6d;
+              margin-right: 40px;
+            }
+
+            .section-title-text {
+              color: #002e6d;
+              font-weight: bold;
+            }
           }
 
-          .section-title-text {
-            color: #002e6d;
+          .text-wrapper {
+            width: 100%;
+            padding: 20px 50px;
+            text-align: left;
+
+            .text-title {
+              color: #ffb748;
+            }
+
+            .statement {
+              color: white;
+              padding: 30px 0px;
+            }
           }
         }
-
-        .text-wrapper {
+        .section4 {
+          display: block;
           width: 100%;
 
-          .text-title {
-            color: #ffb748;
+          .section-title-row {
+            width: 100%;
+            padding: 10px 20px;
+            background-color: #f7f7f7;
+            display: inline-flex;
+            border-radius: 6px;
+            font-weight: bold;
+
+            .section-title-number {
+              color: #002e6d;
+              margin-right: 10px;
+            }
+
+            .section-title-text {
+              color: #002e6d;
+            }
           }
 
-          .statement {
-            color: white;
-            padding: 30px 0px;
+          .text-wrapper {
+            width: 100%;
+            padding: 20px 50px;
+            text-align: left;
+
+            .text-title {
+              color: #ffb748;
+            }
+
+            .statement {
+              color: white;
+              padding: 30px 0px;
+            }
           }
         }
       }
     }
-  }
 
-  .button-wrapper {
-    text-align: left;
-    margin: auto;
+    .button-wrapper {
+      text-align: left;
+      margin: auto;
+      margin-top: -70px;
+      margin-bottom: 30px;
 
-    button {
-      font-family: Roboto;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 30px;
-      letter-spacing: 0em;
-      width: 70%;
-    }
+      button {
+        font-family: Roboto;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: 0em;
+        width: 80%;
+        height: 50px;
+      }
 
-    i {
-      margin-left: 10px;
+      i {
+        margin-left: 5px;
+      }
     }
   }
 }

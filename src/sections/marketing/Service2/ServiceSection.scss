@@ -1,14 +1,42 @@
 .service-2-service-section-wrapper {
-  background: #F6F6F6;
+  width: 100%;
+  background: #f6f6f6;
   .title {
     color: #002e6d;
     width: 90vw;
   }
 
-  .text {
+  .text-wrapper {
+    display: inline-flex;
+    width: 100%;
+
+    .text {
+      width: 100%;
+    }
+
     em {
       color: #20477e;
       font-style: normal;
+    }
+
+    i {
+      color: #ffae13;
+      position: absolute;
+      left: 140%;
+      top: 50%;
+      font-size: 7em;
+
+      p {
+        font-size: 14px !important;
+        font-family: Rubik;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 26px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #000000;
+        width: 100%;
+      }
     }
   }
 
