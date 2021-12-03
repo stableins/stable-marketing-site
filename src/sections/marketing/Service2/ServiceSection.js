@@ -53,12 +53,6 @@ export default function ServiceSection() {
                       insurers work for them.
                     </div>
                   </Service.Text>
-                  <div>
-                    {" "}
-                    <i class="fas fa-chart-line">
-                      <p>Driven by data</p>
-                    </i>
-                  </div>
                 </Service.Text>
               </Slide>
             </Col>
@@ -70,6 +64,11 @@ export default function ServiceSection() {
               </Service.Text> */}
             </Col>
           </Row>
+          <div className="icon-wrapper">
+            <i id="task-icon" class="fas fa-chart-line">
+              <p>Driven by data</p>
+            </i>
+          </div>
           <div className="button-wrapper">
             <button>
               Help Build Better Insurance <i class="fas fa-chevron-right"></i>

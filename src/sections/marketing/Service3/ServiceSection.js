@@ -10,7 +10,7 @@ import "./ServiceSection.scss"
 
 export default function ServiceSection() {
   return (
-    <div className>
+    <div className="service-section-3-wrapper">
       <Service className="border-top border-default-color-2 bg-default">
         <Service.Shape className="service-shape service-shape--l1">
           {/* <Img
@@ -58,7 +58,7 @@ export default function ServiceSection() {
                       {" "}
                       <div className="title">Accelerators</div>
                     </Service.Text>
-                    <div className="separator"></div>
+                    {/* <div className="separator"></div> */}
 
                     <Img
                       className="ny"

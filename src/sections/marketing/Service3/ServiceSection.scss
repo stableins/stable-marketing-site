@@ -20,21 +20,52 @@
 
       .title {
         margin-top: 50px;
+        font-family: Roboto;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #000000;
       }
     }
 
     .accelerators-section {
       // width: 100%;
 
+      .image {
+        margin-top: 30px;
+      }
+
       .title {
-        margin-top: 20px;
+        margin-top: 50px;
+        font-family: Roboto;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #000000;
       }
     }
 
     .pitches-section {
+      .image {
+        margin-top: 30px;
+      }
       // width: 100%;
       .title {
-        margin-top: 90px;
+        margin-top: 50px;
+        font-family: Roboto;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #000000;
       }
 
       .insurtech {
@@ -49,79 +80,81 @@
 }
 
 @media (min-width: 500px) {
-  .title {
-    width: 100vw;
-    
-  }
-
-  .image-wrapper {
-    display: inline-flex;
-    width: 95%;
-    text-align: left;
-    padding: 0 00px;
-
-    .partners-section {
-      width: 50%;
-      display: block;
-      text-align: center;
-
-      .image {
-        width: 70%;
-      }
-
-      .title {
-        width: 100%;
-        text-align: center;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 24px;
-        letter-spacing: 0em;
-        text-align: center;
-      }
+  .service-section-3-wrapper {
+    .title {
+      width: 100vw;
+      color: #002E6D;
     }
 
-    .accelerators-section {
-      width: 50%;
-      display: block;
-      text-align: center;
+    .image-wrapper {
+      display: inline-flex;
+      width: 95%;
+      text-align: left;
+      padding: 0 00px;
 
-      .image {
-        width: 70%;
-        margin-top: 30px;
+      .partners-section {
+        width: 50%;
+        display: block;
+        text-align: center;
+
+        .image {
+          width: 70%;
+        }
+
+        .title {
+          width: 100%;
+          text-align: center;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: center;
+        }
       }
 
-      .title {
-        width: 100%;
+      .accelerators-section {
+        width: 50%;
+        display: block;
         text-align: center;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 24px;
-        letter-spacing: 0em;
-        text-align: center;
+
+        .image {
+          width: 70%;
+          margin-top: 30px;
+        }
+
+        .title {
+          width: 100%;
+          text-align: center;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: center;
+        }
       }
-    }
 
-    .pitches-section {
-      width: 50%;
-      display: block;
-      text-align: center;
-
-      .image {
-        width: 80%;
-        margin-top: 50px;
-      }
-
-      .title {
-        width: 100%;
+      .pitches-section {
+        width: 50%;
+        display: block;
         text-align: center;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 24px;
-        letter-spacing: 0em;
-        text-align: center;
+
+        .image {
+          width: 80%;
+          margin-top: 50px;
+        }
+
+        .title {
+          width: 100%;
+          text-align: center;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: center;
+        }
       }
     }
   }
