@@ -1,219 +1,109 @@
 .features-index-wrapper {
-  .title {
-    color: #ffae13;
-    font-size: 55px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 60px;
-    letter-spacing: 0em;
-    text-align: left;
-  }
-
-  .text {
-    > p {
-      font-size: 22px;
+  .inner-wrapper {
+    padding: 0 60px;
+    display: inline-flex;
+    .title {
+      font-family: Rubik;
+      font-size: 55px;
       font-style: normal;
       font-weight: 400;
-      line-height: 30px;
+      line-height: 60px;
       letter-spacing: 0em;
       text-align: left;
-      width: 75%;
-      margin-top: 30px;
-      height: 0vh;
+      width: 80vw;
+      color: #002e6d;
     }
-  }
 
-  .sections-wrapper {
-    cursor: default;
-    width: 90vw;
-    text-align: left;
-    .top-row {
-      width: 100%;
+    .section-wrapper {
       display: inline-flex;
-      .section1 {
-        width: 47%;
-        border-radius: 6px;
-        // display: inline-flex;
-        // margin: auto;
-        margin-left: 0;
-        margin-top: 0;
-        margin-bottom: auto;
+      width: 90vw;
 
-        .section-title-row {
-          background-color: #f7f7f7;
-          border-radius: 6px;
-          width: 40vw;
-          padding: 10px 20px;
-          display: inline-flex;
-          font-weight: bold;
-
-          .section-title-number {
-            color: #002e6d;
-            margin-right: 40px;
-          }
-
-          .section-title-text {
-            color: #002e6d;
-          }
-        }
-
-        .text-wrapper {
-          width: 100%;
-          padding: 20px 50px;
-
-          .text-title {
-            color: #ffb748;
-          }
-
-          .statement {
-            color: white;
-            padding: 30px 0px;
-          }
-        }
+      .left {
+        width: 110vw;
       }
-      .section2 {
-        border-radius: 6px;
-        margin: auto;
-        width: 47%;
-        margin-top: 0;
 
-        .section-title-row {
-          width: 40vw;
-          padding: 10px 20px;
-          background-color: #f7f7f7;
-          display: inline-flex;
-          border-radius: 6px;
-          font-weight: bold;
+      .right {
+        width: 70%;
 
-          .section-title-number {
-            color: #002e6d;
-            margin-right: 40px;
-          }
+        .item-wrapper {
+          width: 70%;
+          margin-top: 30px;
 
-          .section-title-text {
-            color: #002e6d;
-          }
-        }
+          .inner-item-wrapper {
+            display: inline-flex;
 
-        .text-wrapper {
-          width: 100%;
-          padding: 20px 50px;
+            i {
+              color: #ffae13;
+              margin: auto;
+              font-size: 1em;
+              padding-right: 20px;
+            }
 
-          .text-title {
-            color: #ffb748;
-          }
+            .text-wrapper {
+              .item-title {
+                font-family: Rubik;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 26px;
+                letter-spacing: 0em;
+                text-align: left;
+                font-weight: 800;
 
-          .statement {
-            color: white;
-            padding: 30px 0px;
+                color: #002e6d;
+              }
+
+              .text {
+                font-family: Rubik;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 26px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #002e6d;
+              }
+            }
           }
         }
       }
     }
-    .bottom-row {
-      width: 100%;
-      display: inline-flex;
-      .section3 {
-        width: 47%;
-        border-radius: 6px;
-        // display: inline-flex;
-        // margin: auto;
-        margin-left: 0;
-        margin-top: 0;
-        margin-bottom: auto;
 
-        .section-title-row {
-          background-color: #f7f7f7;
-          border-radius: 6px;
-          width: 40vw;
-          padding: 10px 20px;
-          display: inline-flex;
-          font-weight: bold;
-
-          .section-title-number {
-            color: #002e6d;
-            margin-right: 40px;
-          }
-
-          .section-title-text {
-            color: #002e6d;
-            font-weight: bold;
-          }
-        }
-
-        .text-wrapper {
-          width: 100%;
-          padding: 20px 50px;
-
-          .text-title {
-            color: #ffb748;
-          }
-
-          .statement {
-            color: white;
-            padding: 30px 0px;
-          }
-        }
-      }
-      .section4 {
-        border-radius: 6px;
-        margin: auto;
-        width: 47%;
-        margin-top: 0;
-
-        .section-title-row {
-          width: 40vw;
-          padding: 10px 20px;
-          background-color: #f7f7f7;
-          display: inline-flex;
-          border-radius: 6px;
-          font-weight: bold;
-
-          .section-title-number {
-            color: #002e6d;
-            margin-right: 40px;
-          }
-
-          .section-title-text {
-            color: #002e6d;
-          }
-        }
-
-        .text-wrapper {
-          width: 100%;
-          padding: 20px 50px;
-
-          .text-title {
-            color: #ffb748;
-          }
-
-          .statement {
-            color: white;
-            padding: 30px 0px;
-          }
-        }
+    .text {
+      > p {
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: left;
+        width: 75%;
+        margin-top: 30px;
+        height: 0vh;
+        color: #000000;
       }
     }
-  }
 
-  .button-wrapper {
-    text-align: center;
-    margin: auto;
+    .button-wrapper {
+      text-align: left;
+      margin: auto;
+      margin-bottom: -150px;
 
-    button {
-      font-family: Roboto;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 700;
-      height: 50px;
+      button {
+        font-family: Roboto;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        height: 50px;
 
-      line-height: 30px;
-      letter-spacing: 0em;
-      width: 334px;
-    }
+        line-height: 30px;
+        letter-spacing: 0em;
+        width: 334px;
+      }
 
-    i {
-      margin-left: 5px;
+      i {
+        margin-left: 5px;
+      }
     }
   }
 }

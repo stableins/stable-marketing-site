@@ -19,16 +19,8 @@ export default function ServiceSection() {
   return (
     <div className="service-section-3-wrapper">
       <Service className="border-top border-default-color-2 bg-default">
-        <Service.Shape className="service-shape service-shape--l1">
-          {/* <Img
-            src="../../../assets/image/marketing/services-shape-l1.png"
-            alt="shape dot"
-            layout="fullWidth"
-            placeholder="blurred"
-          /> */}
-        </Service.Shape>
+        <Service.Shape className="service-shape service-shape--l1"></Service.Shape>
         <Container>
-          {/* Section Title */}
           <Slide left>
             <Row className="align-items-end justify-content-center text-start">
               <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
@@ -41,7 +33,6 @@ export default function ServiceSection() {
             </Row>
           </Slide>
           <Service.Box mtLG="100px" mtMD="40px">
-            {/* <Slide right> */}
             <Row className="justify-content-center justify-content-md-start">
               <div className="image-wrapper">
                 <Slide left>
@@ -67,16 +58,9 @@ export default function ServiceSection() {
                     </Service.Text>
                     {/* <div className="separator"></div> */}
 
-                    <img
-                      className="ny"
-                      src={InsurTechNY}
-                      className="image"
-                    />
+                    <img className="ny" src={InsurTechNY} className="image" />
 
-                    <img
-                      src={Hartford}
-                      className="image"
-                    />
+                    <img src={Hartford} className="image" />
                   </div>
                 </Slide>
                 <Slide right>
@@ -92,11 +76,7 @@ export default function ServiceSection() {
                       // layout="fullWidth"
                       // placeholder="blurred"
                     />
-                    <img
-                      className="image"
-                      src={GRInnovation}
-                      alt="shape dot"
-                    />
+                    <img className="image" src={GRInnovation} alt="shape dot" />
                     <img
                       className="image"
                       src={SharedMobility}

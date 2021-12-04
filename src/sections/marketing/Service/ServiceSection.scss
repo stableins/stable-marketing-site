@@ -1,9 +1,17 @@
+.title {
+  color: #002e6d;
+  font-family: Rubik;
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
 @media (min-width: 1100px) {
   .service-wrapper {
     background: white;
-    .title {
-      color: #002e6d;
-    }
 
     .text {
       margin-top: 30px;
