@@ -12,7 +12,7 @@ const Service = styled(Box)`
     }
 
     @media (min-width:992px) {
-        padding-top: 70px;
+        padding-top: 100px;
         padding-bottom: 33px;
     }
 `

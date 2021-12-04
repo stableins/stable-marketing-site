@@ -23,15 +23,13 @@ const FeatureSection = ({ ...rest }) => {
 
   return (
     <div className="features-index-wrapper">
-      <Feature className="bg-blue-ribbon">
+      <Feature className="bg-blue-ribbon-2">
         <div className="inner-wrapper">
           <Container>
             <Slide left>
               <Row>
                 <Col xs="auto" className="col-xl-8 col-lg-10">
-                  <div className="title">
-                    Doing Rideshare Full-Time or Have a Fleet?
-                  </div>
+                  <div className="title">Building a Carshare Fleet?</div>
                   <div className="section-wrapper">
                     <div className="left">
                       <Feature.Box mb="35px" mbMD="80px" mbLG="148px">
@@ -42,10 +40,10 @@ const FeatureSection = ({ ...rest }) => {
                         >
                           <div className="text">
                             <p>
-                              Stable’s Rideshare insurance product works in
-                              tandem with the Rideshare platform’s insurance. So
-                              we only charge you for the times you are not
-                              driving to or with a passenger.
+                              Stable’s Carshare insurance product works in
+                              tandem with the Carshare platform’s insurance. So
+                              we only charge you for the miles your vehicle is
+                              driven off platform (e.g. maintenance runs).
                             </p>
                           </div>
                         </Feature.Title>
@@ -100,7 +98,7 @@ const FeatureSection = ({ ...rest }) => {
                                 </div>
                                 <div className="text">
                                   User based pricing that takes your driving
-                                  behaviour into account
+                                  behaviour into account.
                                 </div>
                               </div>
                             </div>

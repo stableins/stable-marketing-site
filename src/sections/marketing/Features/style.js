@@ -12,7 +12,7 @@ const Feature = styled(Box)`
     }
     @media (min-width:992px) {
         padding-top: 125px;
-        padding-bottom: 105px;
+        padding-bottom: 0px;
     }
     /* .newsletter-form {
         max-width: 521px;
