@@ -9,11 +9,14 @@ import GRInnovation from "../../../assets/image/logo/GRInnovation.png"
 import Hartford from "../../../assets/image/logo/Hartford.png"
 import InsurTechRising from "../../../assets/image/logo/InsurTechRising.png"
 import SharedMobility from "../../../assets/image/logo/SharedMobility.png"
+import Ils from "../../../assets/image/logo/ils.png"
 import GuyCarpenter from "../../../assets/image/logo/GuyCarpenter.png"
+import Mltply from "../../../assets/image/logo/mltply.png"
 
 import Slide from "react-reveal"
 import Service from "./style"
 import "./ServiceSection.scss"
+import M from "minimatch"
 
 export default function ServiceSection() {
   return (
@@ -41,49 +44,67 @@ export default function ServiceSection() {
                       <div className="title">Partners</div>
                     </Service.Text>
 
-                    <div>
-                      <img
-                        src={GuyCarpenter}
-                        alt="shape dot"
-                        className="image"
-                      />
+                    <div className="image-row">
+                      <div className="image1">
+                        <img width={200} src={GuyCarpenter} alt="shape dot" />
+                      </div>
+                      <div className="image2">
+                        <img width={200} src={Mltply} alt="shape dot" />
+                      </div>
+                      <div className="image3">
+                        <img width={250} src={Ils} alt="shape dot" />
+                      </div>
                     </div>
                   </div>
                 </Slide>
-                <Slide up>
-                  <div className="accelerators-section">
-                    <Service.Text className="title">
-                      {" "}
-                      <div className="title">Accelerators</div>
-                    </Service.Text>
-                    {/* <div className="separator"></div> */}
-
-                    <img className="ny" src={InsurTechNY} className="image" />
-
-                    <img src={Hartford} className="image" />
-                  </div>
-                </Slide>
-                <Slide right>
-                  <div className="pitches-section">
-                    <Service.Text>
-                      <div className="title">Pitch Competitions</div>
-                    </Service.Text>
-
-                    <img
-                      className="image"
-                      src={InsurTechRising}
-                      alt="shape dot"
-                      // layout="fullWidth"
-                      // placeholder="blurred"
-                    />
-                    <img className="image" src={GRInnovation} alt="shape dot" />
-                    <img
-                      className="image"
-                      src={SharedMobility}
-                      alt="shape dot"
-                    />
-                  </div>
-                </Slide>
+                <div className="lower-section-wrapper">
+                  <Slide up>
+                    <div className="left">
+                      <div className="accelerators-section">
+                        <Service.Text className="title">
+                          {" "}
+                          <div className="title">Accelerators</div>
+                        </Service.Text>
+                        <div className="image-row">
+                          <div className="image1">
+                            <img
+                              width={200}
+                              src={Hartford}
+                              alt="shape dot"
+                            />
+                          </div>
+                          <div className="image2">
+                            <img width={200} src={InsurTechNY} alt="shape dot" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Slide>
+                  <Slide right>
+                    <div className="right">
+                      <div className="pitches-section">
+                        <Service.Text>
+                          <div className="title">Pitch Competitions</div>
+                        </Service.Text>
+                        <div className="image-stack">
+                          <div className="image1">
+                            <img
+                              width={250}
+                              src={GRInnovation}
+                              alt="shape dot"
+                            />
+                          </div>
+                          <div className="image2">
+                            <img width={250} src={SharedMobility} alt="shape dot" />
+                          </div>
+                          <div className="image3">
+                            <img width={250} src={InsurTechRising} alt="shape dot" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Slide>
+                </div>
               </div>
             </Row>
             {/* </Slide> */}
