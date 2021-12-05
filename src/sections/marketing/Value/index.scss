@@ -1,21 +1,19 @@
 @media (min-width: 1000px) {
-  .features-index-wrapper1 {
+  .value-index-wrapper {
+    background-color: white !important;
     .inner-wrapper {
-      padding: 0 60px;
-      display: inline-flex;
-      margin-bottom: -100px;
 
       .title {
+        width: 700px;
+        height: 129px;
+        left: 0;
+        position: absolute;
+        bottom: 460px;
         font-family: Rubik;
-        font-size: 55px;
         font-style: normal;
-        font-weight: 400;
+        font-weight: normal;
+        font-size: 55px;
         line-height: 60px;
-        letter-spacing: 0em;
-        text-align: left;
-        width: 80vw;
-        color: #002e6d;
-        margin-bottom: 30px;
       }
 
       .section-wrapper {
@@ -115,11 +113,9 @@
 }
 
 @media (max-width: 400px) {
-  .features-index-wrapper2 {
+  .value-index-wrapper {
     .inner-wrapper {
-      padding: 0 0px;
       // display: inline-flex;
-      margin-bottom: -100px;
 
       .title {
         font-family: Rubik;
@@ -129,7 +125,6 @@
         line-height: 60px;
         letter-spacing: 0em;
         text-align: left;
-        width: 80vw;
         color: #002e6d;
         margin-bottom: 30px;
       }

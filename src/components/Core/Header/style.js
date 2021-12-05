@@ -418,7 +418,7 @@ const SiteHeader = styled.div.attrs({
       }
 
       @media (min-width: 992px) {
-        padding-left: 20px;
+        padding-left: 63px;
         padding-right: 20px;
       }
     }

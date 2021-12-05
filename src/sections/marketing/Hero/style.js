@@ -77,41 +77,40 @@ Hero.Content = styled(Box)`
     }
 `
 Hero.Newsletter = styled(Box)`
-    form{
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        flex-direction:column;
-        @media (min-width:480px){
-            flex-direction:row;
-        }
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    @media (min-width: 480px) {
+      flex-direction: row;
     }
-    .form-control{
-        width: 100%;
-        border-radius-top-left: 10px;
-        border: 2px solid rgba(128, 138, 142, 0.2);
-        color: rgba(37, 55, 63, 0.7);
-        font-size: 16px;
-        font-weight: 400;
-        letter-spacing: normal;
-        line-height: 28px;
-        padding: 5px 25px;
-        margin-bottom: 10px;
-        height: 70px;
-        @media (min-width:480px) {
-            margin-right: 0px;
-            margin-bottom: 0;
-        }
+  }
+  .form-control {
+    width: 681px;
+    border-radius-top-left: 10px;
+    border: 2px solid rgba(128, 138, 142, 0.2);
+    color: rgba(37, 55, 63, 0.7);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 28px;
+    padding: 5px 25px;
+    margin-bottom: 10px;
+    height: 50px;
+    @media (min-width: 480px) {
+      margin-right: 0px;
+      margin-bottom: 0;
     }
-    .btn {
-        min-width: 100%;
-        height: 70px;
-        border-radius: 10px;
-        @media (min-width:480px) {
-            min-width: 172px;
-        }
+  }
+  .btn {
+    min-width: 100%;
+    height: 70px;
+    border-radius: 10px;
+    @media (min-width: 480px) {
+      min-width: 172px;
     }
-
+  }
 `
 Hero.NewsletterText = styled(Paragraph)`
     font-size: 16px;

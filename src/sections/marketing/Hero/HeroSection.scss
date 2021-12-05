@@ -2,12 +2,15 @@
 }
 .hero-section-wrapper {
   background-color: #f7f7f7;
+  height: 688px;
 
   .title {
     width: 100%;
+    padding-bottom: -20px;
 
     .bold-text {
       font-weight: 700;
+      margin-top: 60px;
     }
 
     .share {
@@ -34,20 +37,34 @@
   }
 
   .hero-text {
-    margin-top: -20px;
+    position: absolute;
+    width: 750px;
+    height: 94px;
+    left: 0px;
+    top: 280px;
+    color: #303030;
+
   }
 
   .form-wrapper {
-    margin-top: -30px;
+    position: absolute;
+    bottom: 5px;
   }
   .form-control {
+    height: 50px;
+    border-radius: 8px;
   }
 
   button {
-    width: 60%;
-    height: 10.1vh;
-    background-color: #ffae13;
-    border-radius: 8px;
+    height: 50px;
+    width: 208px;
+    position: absolute;
+    left: 520px;
+    // top: 678px;
+    color: #002E6D;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+
     border: none;
   }
   i {
