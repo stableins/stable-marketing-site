@@ -6,6 +6,7 @@ import ServiceSection2 from "~sections/marketing/Service2/"
 import ServiceSection3 from "~sections/marketing/Service3/"
 import ServiceSection4 from "~sections/marketing/Service4/"
 import FeatureSection from "~sections/marketing/Features"
+import FeatureSection2 from "~sections/marketing/Features2"
 import ContentSectionOne from "~sections/marketing/ContentOne"
 import ContentSectionTwo from "~sections/marketing/ContentTwo"
 import TestimonialSection from "~sections/marketing/Testimonial"
@@ -38,6 +39,7 @@ export default function Marketing() {
       <HeroSection />
       <ServiceSection />
       <FeatureSection />
+      <FeatureSection2 />
       <ServiceSection2 />
       <ServiceSection3 />
       <ServiceSection4 />

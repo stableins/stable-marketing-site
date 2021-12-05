@@ -3,8 +3,7 @@ import { Navbar } from "react-bootstrap"
 import siteBrandDark from "~image/logo/Stable-logo_site.png"
 import siteBrandLight from "~image/logo/Stable-logo_site.png"
 import Menu from "./Menu"
-const SiteNavbar = ({buttonBlock,darkLogo,customLogo,defaultLogo}) => {
-
+const SiteNavbar = ({ buttonBlock, darkLogo, customLogo, defaultLogo }) => {
   return (
     <>
       <Navbar

@@ -1,4 +1,5 @@
 @media (max-width: 450px) {
+  
   .image-wrapper {
     text-align: center;
 
@@ -18,7 +19,7 @@
     .partners-section {
       width: 100%;
 
-      .image { 
+      .image {
         width: 100%;
       }
 
@@ -89,22 +90,37 @@
   .service-section-3-wrapper {
     .title {
       width: 100vw;
-      color: #002E6D;
+      color: #002e6d;
     }
 
     .image-wrapper {
-      display: inline-flex;
+      display: block;
       width: 95%;
       text-align: left;
-      padding: 0 00px;
+      margin-top: -90px;
 
       .partners-section {
-        width: 50%;
+        width: 100%;
         display: block;
         text-align: center;
 
-        .image {
-          width: 70%;
+        .image-row {
+          display: inline-flex;
+          // margin-top: 10px;
+          align-items: center;
+          padding: 30px;
+
+          .image {
+            margin-left: 50px;
+            margin-right: 50px;
+          }
+
+          .image1 {
+          }
+          .image2 {
+          }
+          .image3 {
+          }
         }
 
         .title {
@@ -119,47 +135,77 @@
         }
       }
 
-      .accelerators-section {
-        width: 50%;
-        display: block;
+      .lower-section-wrapper {
+        display: inline-flex;
         text-align: center;
+        padding: 0 120px;
+        width: 100%;
+        margin-top: 30px;
 
-        .image {
-          width: 70%;
-          margin-top: 30px;
+        .left {
+          width: 58%;
+          .accelerators-section {
+            display: block;
+            text-align: center;
+            .image-stack {
+              display: inline-grid;
+              margin-top: 20px;
+
+              .image {
+              }
+
+              .image1 {
+              }
+              .image2 {
+              }
+              .image2 {
+              }
+            }
+            .title {
+              width: 100%;
+              text-align: center;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 24px;
+              letter-spacing: 0em;
+              text-align: center;
+            }
+          }
         }
 
-        .title {
-          width: 100%;
-          text-align: center;
-          font-size: 18px;
-          font-style: normal;
-          font-weight: 700;
-          line-height: 24px;
-          letter-spacing: 0em;
-          text-align: center;
-        }
-      }
+        .right {
+          width: 50%;
+          .pitches-section {
+            display: block;
+            text-align: center;
+            .image-stack {
+              display: inline-grid;
+              margin-top: 5px;
 
-      .pitches-section {
-        width: 50%;
-        display: block;
-        text-align: center;
+              .image {
+                margin-top: 20px;
+              }
 
-        .image {
-          width: 80%;
-          margin-top: 50px;
-        }
-
-        .title {
-          width: 100%;
-          text-align: center;
-          font-size: 18px;
-          font-style: normal;
-          font-weight: 700;
-          line-height: 24px;
-          letter-spacing: 0em;
-          text-align: center;
+              .image1 {
+              }
+              .image2 {
+              }
+              .image3 {
+              }
+            }
+            .title {
+              width: 100%;
+              text-align: center;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 24px;
+              letter-spacing: 0em;
+              text-align: center;
+              margin-bottom: 10px;
+            }
+          }
         }
       }
     }
