@@ -22,14 +22,15 @@
     }
 
     .typing-effect {
-color: #ffae13;
+      color: #ffae13;
       font-family: Rubik;
       font-family: Roboto;
       font-style: normal;
       font-weight: 700;
-      line-height: 100px;
+      line-height: 80px;
       letter-spacing: 0em;
-      text-align: left;    }
+      text-align: left;
+    }
   }
 
   .hero-text {
@@ -59,16 +60,54 @@ color: #ffae13;
 
 @media (max-width: 400px) {
   .hero-section-wrapper {
-    background-color: #f7f7f7;
+    background-color: #475ba1;
+    color: #f6f6f6;
 
     .title {
       width: 100%;
+      color: #f7f7f7;
+
+      .bold-text {
+        font-weight: 700;
+        color: #f7f7f7;
+      }
+
+      .share {
+        color: #ffae13;
+        font-family: Rubik;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      .typing-chunk {
+        color: #f7f7f7;
+      }
+
+      .typing-effect {
+        color: #ffae13;
+        font-family: Rubik;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 80px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+    .hero-text {
+      margin-top: -60px;
+      color: #f6f6f6;
     }
     .form-control {
+      width: 334px;
     }
 
     button {
-      width: 60%;
+      width: 334px;
       height: 7.1vh;
       background-color: #ffae13;
       border-radius: 8px;

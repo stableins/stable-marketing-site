@@ -45,15 +45,24 @@ export default function ServiceSection() {
                     </Service.Text>
 
                     <div className="image-row">
-                      <div className="image1">
-                        <img width={200} src={GuyCarpenter} alt="shape dot" />
-                      </div>
-                      <div className="image2">
-                        <img width={200} src={Mltply} alt="shape dot" />
-                      </div>
-                      <div className="image3">
-                        <img width={250} src={Ils} alt="shape dot" />
-                      </div>
+                      <img
+                        className="image"
+                        width={250}
+                        src={Mltply}
+                        alt="shape dot"
+                      />
+                      <img
+                        className="image"
+                        width={200}
+                        src={GuyCarpenter}
+                        alt="shape dot"
+                      />
+                      <img
+                        className="image"
+                        width={250}
+                        src={Ils}
+                        alt="shape dot"
+                      />
                     </div>
                   </div>
                 </Slide>
@@ -65,17 +74,19 @@ export default function ServiceSection() {
                           {" "}
                           <div className="title">Accelerators</div>
                         </Service.Text>
-                        <div className="image-row">
-                          <div className="image1">
-                            <img
-                              width={200}
-                              src={Hartford}
-                              alt="shape dot"
-                            />
-                          </div>
-                          <div className="image2">
-                            <img width={200} src={InsurTechNY} alt="shape dot" />
-                          </div>
+                        <div className="image-stack">
+                          <img
+                            width={200}
+                            src={Hartford}
+                            alt="shape dot"
+                            className="image"
+                          />
+                          <img
+                            width={200}
+                            src={InsurTechNY}
+                            alt="shape dot"
+                            className="image"
+                          />
                         </div>
                       </div>
                     </div>
@@ -87,19 +98,24 @@ export default function ServiceSection() {
                           <div className="title">Pitch Competitions</div>
                         </Service.Text>
                         <div className="image-stack">
-                          <div className="image1">
-                            <img
-                              width={250}
-                              src={GRInnovation}
-                              alt="shape dot"
-                            />
-                          </div>
-                          <div className="image2">
-                            <img width={250} src={SharedMobility} alt="shape dot" />
-                          </div>
-                          <div className="image3">
-                            <img width={250} src={InsurTechRising} alt="shape dot" />
-                          </div>
+                          <img
+                            width={200}
+                            src={GRInnovation}
+                            alt="shape dot"
+                            className="image"
+                          />
+                          <img
+                            width={200}
+                            src={SharedMobility}
+                            alt="shape dot"
+                            className="image"
+                          />
+                          <img
+                            width={200}
+                            src={InsurTechRising}
+                            alt="shape dot"
+                            className="image"
+                          />
                         </div>
                       </div>
                     </div>

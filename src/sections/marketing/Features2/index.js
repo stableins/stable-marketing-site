@@ -22,7 +22,7 @@ const FeatureSection = ({ ...rest }) => {
   const [bulletPointModal, setBulletPointModal] = useState(false)
 
   return (
-    <div className="features-index-wrapper">
+    <div className="features-index-wrapper2">
       <Feature className="bg-blue-ribbon-2">
         <div className="inner-wrapper">
           <Container>
@@ -39,7 +39,7 @@ const FeatureSection = ({ ...rest }) => {
                           fontColor="#fff"
                         >
                           <div className="text">
-                            <p>
+                            <p className="p-text1">
                               Stable’s Carshare insurance product works in
                               tandem with the Carshare platform’s insurance. So
                               we only charge you for the miles your vehicle is
@@ -55,7 +55,7 @@ const FeatureSection = ({ ...rest }) => {
                           fontColor="#fff"
                         >
                           <div className="text">
-                            <p>
+                            <p className="p-text2">
                               Because of this, our premium is often lower than
                               other insurance offerings.
                             </p>

@@ -27,19 +27,20 @@ export default function HeroSection() {
                   <Hero.Title as="h1">
                     <div className="title">
                       <span className="bold-text">Get Early Access</span> To
-                      Smarter&nbsp;
-                      <ReactTypingEffect
-                        text={["Ride", "Car"]}
-                        className="typing-effect"
-                        speed="200"
-                        cursor=" "
-                        eraseSpeed="100"
-                        typingDelay="400"
-                        eraseDelay="800"
-                      />
-                      <span className="share">share</span>
+                      smarter{" "}
+                      <div className="typing-chunk">
+                        <ReactTypingEffect
+                          text={["Ride", "Car"]}
+                          className="typing-effect"
+                          speed="200"
+                          cursor=" "
+                          eraseSpeed="100"
+                          typingDelay="400"
+                          eraseDelay="800"
+                        />
+                        share Insurance
+                      </div>
                       <br />
-                      Insurance
                     </div>
                   </Hero.Title>
                   <Hero.Text>

@@ -22,7 +22,7 @@ const FeatureSection = ({ ...rest }) => {
   const [bulletPointModal, setBulletPointModal] = useState(false)
 
   return (
-    <div className="features-index-wrapper">
+    <div className="features-index-wrapper1">
       <Feature className="bg-blue-ribbon">
         <div className="inner-wrapper">
           <Container>
@@ -41,7 +41,7 @@ const FeatureSection = ({ ...rest }) => {
                           fontColor="#fff"
                         >
                           <div className="text">
-                            <p>
+                            <p className="p-text1">
                               Stable’s Rideshare insurance product works in
                               tandem with the Rideshare platform’s insurance. So
                               we only charge you for the times you are not
@@ -57,7 +57,7 @@ const FeatureSection = ({ ...rest }) => {
                           fontColor="#fff"
                         >
                           <div className="text">
-                            <p>
+                            <p className="p-text2">
                               Because of this, our premium is often lower than
                               other insurance offerings.
                             </p>
