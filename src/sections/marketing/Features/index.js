@@ -23,7 +23,7 @@ const FeatureSection = ({ ...rest }) => {
 
   return (
     <div className="features-index-wrapper1">
-      <Feature className="bg-blue-ribbon">
+      <Feature style={{background: '#EBEEFF'}}className="bg-blue-ribbon">
         <div className="inner-wrapper">
           <Container>
             <Slide left>
@@ -70,7 +70,7 @@ const FeatureSection = ({ ...rest }) => {
                           as="h2"
                           fontColor="#fff"
                         >
-                          <div className="button-wrapper">
+                          {/* <div className="button-wrapper">
                             <button
                               onClick={() => setCounterModal(true)}
                               aria-current="page"
@@ -79,7 +79,7 @@ const FeatureSection = ({ ...rest }) => {
                               Get Early Access{" "}
                               <i class="fas fa-chevron-right"></i>
                             </button>
-                          </div>
+                          </div> */}
                         </Feature.Title>
                       </Feature.Box>
                     </div>
@@ -91,7 +91,7 @@ const FeatureSection = ({ ...rest }) => {
                           as="h2"
                           fontColor="#fff"
                         >
-                          <div className="item-wrapper">
+                          <div className="item1">
                             <div className="inner-item-wrapper">
                               <i class="fas fa-user"></i>
                               <div className="text-wrapper">
@@ -105,7 +105,7 @@ const FeatureSection = ({ ...rest }) => {
                               </div>
                             </div>
                           </div>
-                          <div className="item-wrapper">
+                          <div className="item2">
                             <div className="inner-item-wrapper">
                               <i class="fas fa-tools"></i>
                               <div className="text-wrapper">
@@ -119,7 +119,7 @@ const FeatureSection = ({ ...rest }) => {
                               </div>
                             </div>
                           </div>
-                          <div className="item-wrapper">
+                          <div className="item3">
                             <div className="inner-item-wrapper">
                               <i
                                 style={{ fontSize: ".8em" }}

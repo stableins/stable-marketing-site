@@ -41,10 +41,11 @@ const FeatureSection = ({ ...rest }) => {
                           <div className="text">
                             <p className="p-text1">
                               Join Stable’s waiting list for insurance and we’ll
-                              provide you with FREE daily earning reports for
-                              your rideshare driving. One easy place to see how
-                              much you’re earning and how efficient you are
-                              across platforms.
+                              provide you with{" "}
+                              <span className="bold">FREE daily earning reports</span> for your
+                              rideshare driving. One easy place to see how much
+                              you’re earning and how efficient you are across
+                              platforms.
                             </p>
                           </div>
                         </Feature.Title>
@@ -61,7 +62,7 @@ const FeatureSection = ({ ...rest }) => {
                               aria-current="page"
                               className="button__Button-sc-1tkahez-0 cAxprB btn-purple-heart btn"
                             >
-                              Get Early Access{" "}
+                              Get your free driver report NOW
                               <i class="fas fa-chevron-right"></i>
                             </button>
                           </div>
@@ -78,48 +79,7 @@ const FeatureSection = ({ ...rest }) => {
                         >
                           <div className="item-wrapper">
                             <div className="inner-item-wrapper">
-                              <i class="fas fa-user"></i>
-                              <div className="text-wrapper">
-                                <div className="item-title">
-                                  User Based Pricing
-                                </div>
-                                <div className="text">
-                                  User based pricing that takes your driving
-                                  behaviour into account
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="item-wrapper">
-                            <div className="inner-item-wrapper">
-                              <i class="fas fa-tools"></i>
-                              <div className="text-wrapper">
-                                <div className="item-title">
-                                  Additional Tools
-                                </div>
-                                <div className="text">
-                                  Additional Tools Additional tools to help you
-                                  run your rideshare business more efficiently.
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="item-wrapper">
-                            <div className="inner-item-wrapper">
-                              <i
-                                style={{ fontSize: ".8em" }}
-                                class="fas fa-car-crash"
-                              ></i>
-
-                              <div className="text-wrapper">
-                                <div className="item-title">
-                                  Improved Claims
-                                </div>
-                                <div className="text">
-                                  An improved claims experience that helps you
-                                  resolve claims faster, available 24/7.
-                                </div>
-                              </div>
+                              <i class="far fa-newspaper"></i>{" "}
                             </div>
                           </div>
                         </Feature.Title>
@@ -134,6 +94,7 @@ const FeatureSection = ({ ...rest }) => {
         </div>
       </Feature>
       <Modal
+        className="modal"
         show={counterModal}
         onHide={() => setCounterModal(false)}
         dialogClassName="modal-90w"

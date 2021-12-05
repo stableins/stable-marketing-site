@@ -41,7 +41,7 @@ export default function Marketing() {
       <Value />
       <ServiceSection />
       <FeatureSection />
-      <FeatureSection2 />
+      {/* <FeatureSection2 /> */}
       <ServiceSection2 />
       <ServiceSection3 />
       <ServiceSection4 />
