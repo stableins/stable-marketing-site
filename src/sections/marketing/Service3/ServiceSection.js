@@ -12,7 +12,6 @@ import SharedMobility from "../../../assets/image/logo/SharedMobility.png"
 import Ils from "../../../assets/image/logo/ils.png"
 import GuyCarpenter from "../../../assets/image/logo/GuyCarpenter.png"
 import Mltply from "../../../assets/image/logo/mltply.png"
-
 import Slide from "react-reveal"
 import Service from "./style"
 import "./ServiceSection.scss"
@@ -40,10 +39,7 @@ export default function ServiceSection() {
               <div className="image-wrapper">
                 <Slide left>
                   <div className="partners-section">
-                    <Service.Text>
-                      <div className="title">Partners</div>
-                    </Service.Text>
-
+                    <div className="title">Partners</div>
                     <div className="image-row">
                       <img
                         className="mltply"
@@ -70,10 +66,7 @@ export default function ServiceSection() {
                   <Slide up>
                     <div className="left">
                       <div className="accelerators-section">
-                        <Service.Text className="title">
-                          {" "}
-                          <div className="title">Accelerators</div>
-                        </Service.Text>
+                        <div className="title">Accelerators</div>
                         <div className="image-stack">
                           <img
                             width={200}
@@ -94,9 +87,7 @@ export default function ServiceSection() {
                   <Slide right>
                     <div className="right">
                       <div className="pitches-section">
-                        <Service.Text>
-                          <div className="title">Pitch Competitions</div>
-                        </Service.Text>
+                        <div className="title">Pitch Competitions</div>
                         <div className="image-stack">
                           <img
                             width={200}
