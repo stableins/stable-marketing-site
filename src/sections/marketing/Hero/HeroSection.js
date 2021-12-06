@@ -26,9 +26,10 @@ export default function HeroSection() {
                 <Hero.Content>
                   <Hero.Title as="h1">
                     <div className="title">
-                      <span className="bold-text">Get Early Access</span> To
-                      smarter{" "}
-                      <div className="typing-chunk">
+                      <span className="bold-text">Get Early Access</span>{" "}
+                      <span className="blue-text">to</span>
+                      <p>
+                        <span className="blue-text">Smarter</span>{" "}
                         <ReactTypingEffect
                           text={["Ride", "Car"]}
                           className="typing-effect"
@@ -38,9 +39,9 @@ export default function HeroSection() {
                           typingDelay="400"
                           eraseDelay="800"
                         />
-                        share Insurance
-                      </div>
-                      <br />
+                        share
+                        <br /> <span className="blue-text"> Insurance</span>
+                      </p>
                     </div>
                   </Hero.Title>
                   <Hero.Text>
@@ -54,39 +55,42 @@ export default function HeroSection() {
                     <br className="d-none d-xs-block" />
                   </Hero.Text>
                   {/* Newsletter */}
-                  <Row>
-                    <Col xs="12" className="col-xxl-10">
-                      <Hero.Newsletter>
-                        <div className="form-wrapper">
-                          <form>
-                            <input
-                              type={"email"}
-                              name={"email"}
-                              placeholder="Enter your email"
-                              className="form-control"
-                            />
-                            <button
-                              className="btn-purple-heart"
-                              textTransform="capitalized"
-                              onClick={() => setShow(true)}
-                            >
-                              Get Early Access{" "}
-                              <i class="fas fa-chevron-right"></i>
-                            </button>
-                          </form>
-                        </div>
-                      </Hero.Newsletter>
-                      <Hero.NewsletterText>
-                        Already have an account? <Link to="/">Login here.</Link>
-                      </Hero.NewsletterText>
-                    </Col>
-                  </Row>
+                  <Col xs="12" className="col-xxl-10">
+                    <Hero.Newsletter>
+                      <div className="form-wrapper">
+                        <form>
+                          <input
+                            type={"email"}
+                            name={"email"}
+                            placeholder="Enter your email"
+                            className="form-control"
+                          />
+                          <button
+                            className="btn-purple-heart"
+                            textTransform="capitalized"
+                            onClick={() => setShow(true)}
+                          >
+                            Get Early Access{" "}
+                            <i class="fas fa-chevron-right"></i>
+                          </button>
+                        </form>
+                      </div>
+                    </Hero.Newsletter>
+                    <p className="login">
+                      Already have an account? <span>Login here</span>
+                    </p>
+                  </Col>
                 </Hero.Content>
-                <Hero.NewsletterText>
-                  <Link className="how-stable-works">
-                    <p className="see-how-text">See how Stable works</p>
-                  </Link>
-                </Hero.NewsletterText>
+                {/* <Hero.NewsletterText> */}
+                <div className="anchors">
+                  <p className="rideshare-text">
+                    Are you Rideshare <i class="fas fa-chevron-right"></i>
+                  </p>
+                  <p className="carshare-text">
+                    or carshare <i class="fas fa-chevron-right"></i>
+                  </p>
+                </div>
+                {/* </Hero.NewsletterText> */}
               </Col>
               {/*/ .Welcome Content Area */}
               {/*Welcome Image Area */}

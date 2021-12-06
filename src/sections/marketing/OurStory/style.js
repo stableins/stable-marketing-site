@@ -13,8 +13,8 @@ const Service = styled(Box)`
     }
 
     @media (min-width:992px) {
-        padding-top: 100px;
-        padding-bottom: 40px;
+        padding-top: 80px;
+        padding-bottom: 0px;
     }
 `
 Service.Title = styled(Heading)`

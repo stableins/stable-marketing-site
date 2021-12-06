@@ -3,9 +3,11 @@ import { PageWrapper } from "~components/Core"
 import HeroSection from "~sections/marketing/Hero"
 import ServiceSection from "~sections/marketing/Service"
 import ServiceSection2 from "~sections/marketing/Service2/"
+import Jayz from "~sections/marketing/JayZ/"
 import ServiceSection3 from "~sections/marketing/Service3/"
-import ServiceSection4 from "~sections/marketing/Service4/"
+import OurStory from "~sections/marketing/OurStory/"
 import FeatureSection from "~sections/marketing/Features"
+import Value from "~sections/marketing/Value"
 import FeatureSection2 from "~sections/marketing/Features2"
 import ContentSectionOne from "~sections/marketing/ContentOne"
 import ContentSectionTwo from "~sections/marketing/ContentTwo"
@@ -37,12 +39,14 @@ export default function Marketing() {
   return (
     <PageWrapper headerConfig={header}>
       <HeroSection />
-      <ServiceSection />
+      <Value />
       <FeatureSection />
-      <FeatureSection2 />
-      <ServiceSection2 />
+      <ServiceSection />
+      <Jayz />
+      {/* <FeatureSection2 /> */}
+      {/* <ServiceSection2 /> */}
       <ServiceSection3 />
-      <ServiceSection4 />
+      <OurStory />
       <FooterOne />
     </PageWrapper>
   )

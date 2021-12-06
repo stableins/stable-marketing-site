@@ -46,20 +46,20 @@ export default function ServiceSection() {
 
                     <div className="image-row">
                       <img
-                        className="image"
+                        className="mltply"
                         width={250}
                         src={Mltply}
                         alt="shape dot"
                       />
                       <img
-                        className="image"
+                        className="guy"
                         width={200}
                         src={GuyCarpenter}
                         alt="shape dot"
                       />
                       <img
-                        className="image"
-                        width={250}
+                        className="ils"
+                        width={350}
                         src={Ils}
                         alt="shape dot"
                       />
@@ -79,13 +79,13 @@ export default function ServiceSection() {
                             width={200}
                             src={Hartford}
                             alt="shape dot"
-                            className="image"
+                            className="hartford"
                           />
                           <img
                             width={200}
                             src={InsurTechNY}
                             alt="shape dot"
-                            className="image"
+                            className="insurtechny"
                           />
                         </div>
                       </div>
@@ -102,19 +102,19 @@ export default function ServiceSection() {
                             width={200}
                             src={GRInnovation}
                             alt="shape dot"
-                            className="image"
+                            className="gri"
                           />
                           <img
-                            width={200}
+                            width={275}
                             src={SharedMobility}
                             alt="shape dot"
-                            className="image"
+                            className="shared-mobility"
                           />
                           <img
-                            width={200}
+                            width={250}
                             src={InsurTechRising}
                             alt="shape dot"
-                            className="image"
+                            className="insurtech-rising"
                           />
                         </div>
                       </div>

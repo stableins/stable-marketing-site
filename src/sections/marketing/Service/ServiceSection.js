@@ -1,8 +1,9 @@
 import { StaticImage as Img } from "gatsby-plugin-image"
-import React from "react"
-import { Col, Container, Row } from "react-bootstrap"
+import React, { useState } from "react"
+import { Col, Container, Row, Modal, Form, Button } from "react-bootstrap"
 import serviceData from "~data/marketing/Service"
 import ServiceWidget from "./Component/Widget"
+import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import CounterBlock from "../../../sections/about/Feature/Components/CounterBlock"
 import Slide from "react-reveal/Slide"
 import CountUp from "react-countup"
@@ -11,8 +12,10 @@ import Service from "./style"
 import "./ServiceSection.scss"
 
 export default function ServiceSection() {
+  const [counterModal, setCounterModal] = useState(false)
+
   return (
-    <div className="service-wrapper">
+    <div className="service-wrapper1">
       <Service className="border-top border-default-color-2 bg-default">
         {/* <Service.Shape className="service-shape service-shape--l1">
           <Img
@@ -59,7 +62,7 @@ export default function ServiceSection() {
                             Vehicle owners and counting have joined the Stable
                             community. Will you?
                           </p>
-                          <button>
+                          <button onClick={() => setCounterModal(true)}>
                             Join Now <i class="fas fa-chevron-right"></i>
                           </button>
                         </div>
@@ -120,7 +123,7 @@ export default function ServiceSection() {
                 </div>
               </Row>
               <div className="button-wrapper">
-                <button>
+                <button onClick={() => setCounterModal(true)}>
                   Help Build Better Insurance{" "}
                   <i class="fas fa-chevron-right"></i>
                 </button>
@@ -129,6 +132,49 @@ export default function ServiceSection() {
           </Service.Box>
         </Container>
       </Service>
+      <Modal
+        className="modal"
+        show={counterModal}
+        onHide={() => setCounterModal(false)}
+        dialogClassName="modal-90w"
+        aria-labelledby="example-custom-modal-styling-title"
+      >
+        <Modal.Header>
+          <Modal.Title id="example-custom-modal-styling-title">
+            <img src={StableLogo} width={150} />
+          </Modal.Title>
+        </Modal.Header>
+        <div style={{ padding: "20px" }}>
+          <Form>
+            <Form.Group className="mb-3">
+              <Form.Label>
+                Please provide the following information to get early access
+              </Form.Label>
+              <Form.Control required type="text" placeholder="First name" />
+              <br />
+              <Form.Control required type="text" placeholder="Last name" />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Control required type="number" placeholder="Zip code" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+              <Form.Label>
+                Are you a rideshare fleet or power user? (optional)
+              </Form.Label>
+
+              <Form.Control as="select">
+                <option>Choose Option</option>
+                <option value="1">Rideshare Fleet</option>
+                <option value="2">Power User</option>
+              </Form.Control>
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+        </div>
+      </Modal>
     </div>
   )
 }

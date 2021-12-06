@@ -10,34 +10,23 @@ import "./ServiceSection.scss"
 
 export default function ServiceSection() {
   return (
-    <div className="service-section-4-wrapper">
+    <div className="jayz">
       <Service className="border-top border-default-color-2 bg-default">
-        <Service.Shape className="service-shape service-shape--l1">
-          {/* <Img
-            src="../../../assets/image/marketing/services-shape-l1.png"
-            alt="shape dot"
-            layout="fullWidth"
-            placeholder="blurred"
-          /> */}
-        </Service.Shape>
+        <Service.Shape className="service-shape service-shape--l1"></Service.Shape>
         <Container>
-          {/* Section Title */}
+          <div className="inner-wrapper">
           <Row className="align-items-end justify-content-center text-start">
             <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
               <Slide down>
                 <Service.Title as="h2" mb="0">
-                  <div className="title">Our Story</div>
+                  <div className="title">Vision</div>
                 </Service.Title>
               </Slide>
               <Slide right>
                 <br className="d-none d-xs-block d-lg-none d-xl-block" />
                 <Service.Text>
-                  We are rideshare fleet owners, drivers and technologists that
-                  wanted a better insurance experience than what was available
-                  in the market. After searching for one with no success, we
-                  decided to create our own platform. At Stable, our mission is
-                  to revolutionize the way you interact with mobility insurance
-                  and understand your risk profile.
+                  <p className="quote"> “I’m not a businessman, I’m a business man...”</p>
+                  <p className="jayz"> JAY-Z</p>
                 </Service.Text>
                 <br className="d-none d-xs-block d-lg-none d-xl-block" />
                 <Service.Text>
@@ -58,6 +47,7 @@ export default function ServiceSection() {
               </Service.Text> */}
             </Col>
           </Row>
+          </div>
         </Container>
       </Service>
     </div>
