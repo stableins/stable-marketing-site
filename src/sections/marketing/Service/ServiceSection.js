@@ -12,7 +12,7 @@ import "./ServiceSection.scss"
 
 export default function ServiceSection() {
   return (
-    <div className="service-wrapper">
+    <div className="service-wrapper1">
       <Service className="border-top border-default-color-2 bg-default">
         {/* <Service.Shape className="service-shape service-shape--l1">
           <Img

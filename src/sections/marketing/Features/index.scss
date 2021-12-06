@@ -254,7 +254,7 @@
     }
 
     .inner-wrapper2 {
-      height: 500px;
+      height: 570px;
       margin-top: 200px;
       .title {
         font-family: Rubik;
@@ -266,7 +266,7 @@
         letter-spacing: 0em;
         text-align: center;
         height: 86px;
-        left: 100px;
+        left: 320px;
         top: -30px;
         bottom: 200px;
         color: #002e6d;
@@ -283,8 +283,8 @@
             .p-text1 {
               position: absolute;
               text-align: center;
-              width: 940px;
-              left: 170px;
+              width: 990px;
+              left: 155px;
               top: -90px;
               bottom: 0;
               color: #303030;
@@ -295,7 +295,7 @@
               width: 940px;
               height: 163px;
               left: 160px;
-              top: 0;
+              top: 10px;
               font-family: Rubik;
               font-style: normal;
               font-weight: normal;
@@ -412,15 +412,21 @@
 
             .button {
               position: absolute;
-              left: 0%;
-              right: 0%;
-              top: 0%;
-              bottom: 0%;
-
-              /* Stable Orange Hue */
-
+              height: 50px;
+              width: 334px;
+              right: 465px;
+              top: 200px;
+              border-radius: 8px;
               background: #ffae13;
               border-radius: 8px;
+              border: none;
+              color: #002e6d;
+
+               > i {
+                               color: #002e6d;
+                z-index: -1;
+                margin-left: 5px;
+              }
             }
 
             .inner-item-wrapper {
@@ -480,8 +486,8 @@
         }
       }
 
-      .button-wrapper {
-        text-align: left;
+      .button {
+        text-align: center;
         margin: auto;
         margin-bottom: -150px;
 
@@ -491,7 +497,6 @@
           font-style: normal;
           font-weight: 700;
           height: 50px;
-
           line-height: 30px;
           letter-spacing: 0em;
           width: 334px;
@@ -499,6 +504,7 @@
 
         i {
           margin-left: 5px;
+          color: black !important;
         }
       }
     }
@@ -629,8 +635,9 @@
           width: 334px;
         }
 
-        i {
+        #i {
           margin-left: 5px;
+          color: black;
         }
       }
     }

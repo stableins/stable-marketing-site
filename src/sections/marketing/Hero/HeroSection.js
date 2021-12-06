@@ -26,9 +26,9 @@ export default function HeroSection() {
                 <Hero.Content>
                   <Hero.Title as="h1">
                     <div className="title">
-                      <span className="bold-text">Get Early Access</span> To
-                      smarter{" "}
-                      <div className="typing-chunk">
+                      <span className="bold-text">Get Early Access</span> <span className="blue-text">to</span>
+                      <p>
+                        <span className="blue-text">Smarter</span>{" "}
                         <ReactTypingEffect
                           text={["Ride", "Car"]}
                           className="typing-effect"
@@ -38,9 +38,9 @@ export default function HeroSection() {
                           typingDelay="400"
                           eraseDelay="800"
                         />
-                        share Insurance
-                      </div>
-                      <br />
+                        share
+                        <br /> <span className="blue-text"> Insurance</span>
+                      </p>
                     </div>
                   </Hero.Title>
                   <Hero.Text>
@@ -54,29 +54,31 @@ export default function HeroSection() {
                     <br className="d-none d-xs-block" />
                   </Hero.Text>
                   {/* Newsletter */}
-                    <Col xs="12" className="col-xxl-10">
-                      <Hero.Newsletter>
-                        <div className="form-wrapper">
-                          <form>
-                            <input
-                              type={"email"}
-                              name={"email"}
-                              placeholder="Enter your email"
-                              className="form-control"
-                            />
-                            <button
-                              className="btn-purple-heart"
-                              textTransform="capitalized"
-                              onClick={() => setShow(true)}
-                            >
-                              Get Early Access{" "}
-                              <i class="fas fa-chevron-right"></i>
-                            </button>
-                          </form>
-                        </div>
-                      </Hero.Newsletter>
-                        <p className="login">Already have an account? <span>Login here</span></p>
-                    </Col>
+                  <Col xs="12" className="col-xxl-10">
+                    <Hero.Newsletter>
+                      <div className="form-wrapper">
+                        <form>
+                          <input
+                            type={"email"}
+                            name={"email"}
+                            placeholder="Enter your email"
+                            className="form-control"
+                          />
+                          <button
+                            className="btn-purple-heart"
+                            textTransform="capitalized"
+                            onClick={() => setShow(true)}
+                          >
+                            Get Early Access{" "}
+                            <i class="fas fa-chevron-right"></i>
+                          </button>
+                        </form>
+                      </div>
+                    </Hero.Newsletter>
+                    <p className="login">
+                      Already have an account? <span>Login here</span>
+                    </p>
+                  </Col>
                 </Hero.Content>
                 {/* <Hero.NewsletterText> */}
                 <div className="anchors">

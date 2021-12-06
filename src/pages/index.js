@@ -4,7 +4,7 @@ import HeroSection from "~sections/marketing/Hero"
 import ServiceSection from "~sections/marketing/Service"
 import ServiceSection2 from "~sections/marketing/Service2/"
 import ServiceSection3 from "~sections/marketing/Service3/"
-import ServiceSection4 from "~sections/marketing/Service4/"
+import OurStory from "~sections/marketing/OurStory/"
 import FeatureSection from "~sections/marketing/Features"
 import Value from "~sections/marketing/value"
 import FeatureSection2 from "~sections/marketing/Features2"
@@ -38,13 +38,13 @@ export default function Marketing() {
   return (
     <PageWrapper headerConfig={header}>
       <HeroSection />
-      <Value />
-      <ServiceSection />
+      <Value /> */}
       <FeatureSection />
-      {/* <FeatureSection2 /> */}
+      <ServiceSection />
+      <FeatureSection2 />
       <ServiceSection2 />
       <ServiceSection3 />
-      <ServiceSection4 />
+      <OurStory />
       <FooterOne />
     </PageWrapper>
   )

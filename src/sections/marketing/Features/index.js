@@ -20,7 +20,6 @@ import "./index.scss"
 
 const FeatureSection = ({ ...rest }) => {
   const [counterModal, setCounterModal] = useState(false)
-  const [bulletPointModal, setBulletPointModal] = useState(false)
 
   return (
     <div className="features-index-wrapper1">
@@ -70,18 +69,7 @@ const FeatureSection = ({ ...rest }) => {
                           className="mb-5"
                           as="h2"
                           fontColor="#fff"
-                        >
-                          {/* <div className="button-wrapper">
-                            <button
-                              onClick={() => setCounterModal(true)}
-                              aria-current="page"
-                              className="button__Button-sc-1tkahez-0 cAxprB btn-purple-heart btn"
-                            >
-                              Get Early Access{" "}
-                              <i class="fas fa-chevron-right"></i>
-                            </button>
-                          </div> */}
-                        </Feature.Title>
+                        ></Feature.Title>
                       </Feature.Box>
                     </div>
 
@@ -137,7 +125,10 @@ const FeatureSection = ({ ...rest }) => {
                                 </div>
                               </div>
                             </div>
-                            <button className="button">
+                            <button
+                              className="button"
+                              onClick={() => setCounterModal(true)}
+                            >
                               Get Early Access{" "}
                               <i class="fas fa-chevron-right"></i>
                             </button>
@@ -219,14 +210,14 @@ const FeatureSection = ({ ...rest }) => {
                         >
                           <div className="item1">
                             <div className="inner-item-wrapper">
-                              <i class="fas fa-user"></i>
+                              <i class="fas fa-route"></i>{" "}
                               <div className="text-wrapper">
                                 <div className="item-title">
-                                  User Based Pricing
+                                  Usage Based Pricing{" "}
                                 </div>
                                 <div className="text">
-                                  User based pricing that takes your driving
-                                  behaviour into account
+                                  Usage based pricing that only charges you for
+                                  miles driven off the carshare platform
                                 </div>
                               </div>
                             </div>
@@ -260,6 +251,12 @@ const FeatureSection = ({ ...rest }) => {
                                   An improved claims experience that helps you
                                   resolve claims faster, available 24/7.
                                 </div>
+                                <button
+                                  className="button"
+                                  onClick={() => setCounterModal(true)}
+                                >
+                                  Get Early Access <i id="i" class="fas fa-chevron-right"></i>
+                                </button>
                               </div>
                             </div>
                           </div>
