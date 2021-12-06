@@ -58,7 +58,7 @@ const FeatureSection = ({ ...rest }) => {
                         >
                           <div className="button-wrapper">
                             <button
-                              onClick={() => setCounterModal(true)}
+                              // onClick={() => setCounterModal(true)}
                               aria-current="page"
                               className="button__Button-sc-1tkahez-0 cAxprB btn-purple-heart btn"
                             >
