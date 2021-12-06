@@ -2,7 +2,7 @@
 }
 .hero-section-wrapper {
   background-color: #f7f7f7;
-  height: 688px;
+  height: 698px;
 
   .title {
     width: 100%;
@@ -43,12 +43,12 @@
     left: 0px;
     top: 280px;
     color: #303030;
-
   }
 
   .form-wrapper {
     position: absolute;
     bottom: 5px;
+    top: 105px;
   }
   .form-control {
     height: 50px;
@@ -60,8 +60,7 @@
     width: 208px;
     position: absolute;
     left: 520px;
-    // top: 678px;
-    color: #002E6D;
+    color: #002e6d;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 
@@ -70,8 +69,50 @@
   i {
     margin-left: 10px;
   }
-  .see-how-text {
-    text-decoration: underline;
+
+  .login {
+    color: #303030;
+    position: absolute;
+    top: 165px;
+    span {
+      font-family: Rubik;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 30px;
+      letter-spacing: 0em;
+      text-align: left;
+      cursor: pointer;
+      color: #ffae13;
+    }
+  }
+
+  .anchors {
+    display: inline-flex;
+    margin-top: 75px;
+    .rideshare-text {
+      text-decoration: underline;
+      color: #ffae13;
+      font-family: Rubik;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 30px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-right: 30px;
+    }
+    .carshare-text {
+      text-decoration: underline;
+      color: #ffae13;
+      font-family: Rubik;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 30px;
+      letter-spacing: 0em;
+      text-align: left;
+      cursor: pointer;
+    }
   }
 }
 

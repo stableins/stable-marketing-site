@@ -13,6 +13,7 @@ import { Images } from "~data"
 import TabContentWidget from "./Component/TabContentWidget"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import TabNavWidget from "./Component/TabNavWidget"
+import BackgroundImage from "../../../assets/image/logo/product_bckgnd.jpg"
 import Slide from "react-reveal/Slide"
 import Feature from "./style"
 import "./index.scss"
@@ -23,8 +24,8 @@ const FeatureSection = ({ ...rest }) => {
 
   return (
     <div className="features-index-wrapper1">
-      <Feature style={{background: '#EBEEFF'}}className="bg-blue-ribbon">
-        <div className="inner-wrapper">
+      <Feature style={{ background: "#EBEEFF" }} className="bg-blue-ribbon">
+        <div className="inner-wrapper1">
           <Container>
             <Slide left>
               <Row>
@@ -46,6 +47,131 @@ const FeatureSection = ({ ...rest }) => {
                               tandem with the Rideshare platform’s insurance. So
                               we only charge you for the times you are not
                               driving to or with a passenger.
+                            </p>
+                          </div>
+                        </Feature.Title>
+                      </Feature.Box>
+                      <Feature.Box mb="35px" mbMD="80px" mbLG="148px">
+                        <Feature.Title
+                          className="mb-5"
+                          as="h2"
+                          fontColor="#fff"
+                        >
+                          <div className="text">
+                            <p className="p-text2">
+                              Because of this, our premium is often lower than
+                              other insurance offerings.
+                            </p>
+                          </div>
+                        </Feature.Title>
+                      </Feature.Box>
+                      <Feature.Box mb="35px" mbMD="80px" mbLG="148px">
+                        <Feature.Title
+                          className="mb-5"
+                          as="h2"
+                          fontColor="#fff"
+                        >
+                          {/* <div className="button-wrapper">
+                            <button
+                              onClick={() => setCounterModal(true)}
+                              aria-current="page"
+                              className="button__Button-sc-1tkahez-0 cAxprB btn-purple-heart btn"
+                            >
+                              Get Early Access{" "}
+                              <i class="fas fa-chevron-right"></i>
+                            </button>
+                          </div> */}
+                        </Feature.Title>
+                      </Feature.Box>
+                    </div>
+
+                    <div className="right">
+                      <Feature.Box mb="35px" mbMD="80px" mbLG="148px">
+                        <Feature.Title
+                          className="mb-5"
+                          as="h2"
+                          fontColor="#fff"
+                        >
+                          <div className="item1">
+                            <div className="inner-item-wrapper">
+                              <i class="fas fa-user"></i>
+                              <div className="text-wrapper">
+                                <div className="item-title">
+                                  User Based Pricing
+                                </div>
+                                <div className="text">
+                                  User based pricing that takes your driving
+                                  behaviour into account
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="item2">
+                            <div className="inner-item-wrapper">
+                              <i class="fas fa-tools"></i>
+                              <div className="text-wrapper">
+                                <div className="item-title">
+                                  Additional Tools
+                                </div>
+                                <div className="text">
+                                  Additional Tools Additional tools to help you
+                                  run your rideshare business more efficiently.
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="item3">
+                            <div className="inner-item-wrapper">
+                              <i
+                                style={{ fontSize: ".8em" }}
+                                class="fas fa-car-crash"
+                              ></i>
+
+                              <div className="text-wrapper">
+                                <div className="item-title">
+                                  Improved Claims
+                                </div>
+                                <div className="text">
+                                  An improved claims experience that helps you
+                                  resolve claims faster, available 24/7.
+                                </div>
+                              </div>
+                            </div>
+                            <button className="button">
+                              Get Early Access{" "}
+                              <i class="fas fa-chevron-right"></i>
+                            </button>
+                          </div>
+                        </Feature.Title>
+                      </Feature.Box>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Slide>
+            <Slide right></Slide>
+          </Container>
+        </div>
+        <div className="inner-wrapper2">
+          <Container>
+            <Slide left>
+              <Row>
+                <Col xs="auto" className="col-xl-8 col-lg-10">
+                  <div className="title">Building a Carshare Fleet?</div>
+                  <div className="section-wrapper">
+                    <div className="left">
+                      <Feature.Box mb="35px" mbMD="80px" mbLG="148px">
+                        <Feature.Title
+                          className="mb-5"
+                          as="h2"
+                          fontColor="#fff"
+                        >
+                          <div className="text">
+                            <p className="p-text1">
+                              Stable’s Carshare insurance product works in
+                              tandem with the Carshare platform’s insurance. So
+                              we only charge you for the miles your vehicle is
+                              driven off platform (e.g. maintenance runs).
                             </p>
                           </div>
                         </Feature.Title>

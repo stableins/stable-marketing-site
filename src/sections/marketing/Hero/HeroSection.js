@@ -54,7 +54,6 @@ export default function HeroSection() {
                     <br className="d-none d-xs-block" />
                   </Hero.Text>
                   {/* Newsletter */}
-                  <Row>
                     <Col xs="12" className="col-xxl-10">
                       <Hero.Newsletter>
                         <div className="form-wrapper">
@@ -76,17 +75,19 @@ export default function HeroSection() {
                           </form>
                         </div>
                       </Hero.Newsletter>
-                      <Hero.NewsletterText>
-                        Already have an account? <Link to="/">Login here.</Link>
-                      </Hero.NewsletterText>
+                        <p className="login">Already have an account? <span>Login here</span></p>
                     </Col>
-                  </Row>
                 </Hero.Content>
-                <Hero.NewsletterText>
-                  <Link className="how-stable-works">
-                    <p className="see-how-text">See how Stable works</p>
-                  </Link>
-                </Hero.NewsletterText>
+                {/* <Hero.NewsletterText> */}
+                <div className="anchors">
+                  <p className="rideshare-text">
+                    Are you Rideshare <i class="fas fa-chevron-right"></i>
+                  </p>
+                  <p className="carshare-text">
+                    or carshare <i class="fas fa-chevron-right"></i>
+                  </p>
+                </div>
+                {/* </Hero.NewsletterText> */}
               </Col>
               {/*/ .Welcome Content Area */}
               {/*Welcome Image Area */}
