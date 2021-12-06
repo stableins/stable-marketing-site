@@ -146,11 +146,14 @@ const FeatureSection = ({ ...rest }) => {
           </Container>
         </div>
         <div className="inner-wrapper2">
-          <Container>
+          <Container className="carshare">
             <Slide left>
               <Row>
                 <Col xs="auto" className="col-xl-8 col-lg-10">
-                  <div className="title">Building a Carshare Fleet?</div>
+                  <a className="anchor2" style={{ height: '1px'}}/>
+                    <div className="Building-a-Carshare-Fleet">
+                      Building a Carshare Fleet?
+                    </div>
                   <div className="section-wrapper">
                     <div className="left">
                       <Feature.Box mb="35px" mbMD="80px" mbLG="148px">
