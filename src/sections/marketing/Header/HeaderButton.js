@@ -49,18 +49,15 @@ const HeaderButton = ({
   const [show, setModalShow] = useState(false)
   const [showConfirmation, setShowConfirmation] = useState(false)
 
-  const scrollToProduct = () => {
-    scroller.scrollTo(
-      "box__Box-sc-3l6bf7-0 style__Feature-sc-6pgd3g-0 kdbiMz bcwGkg bg-blue-ribbon",
-      {
-        duration: 10,
-        delay: 0,
-        smooth: "easeInOutQuart",
-      }
-    )
+  const scrollToCarshare = () => {
+    scroller.scrollTo("carshare", {
+      duration: 10,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    })
   }
 
-  const scrollToPartners = () => {
+  const scrollToRideShare = () => {
     scroller.scrollTo(
       "box__Box-sc-3l6bf7-0 style__Service-sc-1w81qk2-0 hdGSYh bZBNSh border-top border-default-color-2 bg-default",
       {
@@ -157,15 +154,36 @@ const HeaderButton = ({
             </button>
           </div>
         </Modal>
-         <Link
-          style={{ width: "130px" }}
-          onClick={scrollToProduct}
+        <Link
+          style={{
+            width: "200px",
+            marginRight: "-60px",
+          }}
+          onClick={scrollToCarshare}
+          target="_blank"
+          className="btn"
+          to={btnTwoLink ? btnTwoLink : "/"}
+        >
+          {btnOneText}
+        </Link>
+        <Link
+          style={{ width: "200px", marginRight: "-45px" }}
+          onClick={scrollToCarshare}
           target="_blank"
           className="btn"
           to={btnTwoLink ? btnTwoLink : "/"}
         >
           {btnTwoText}
         </Link>
+        <div className="divider1"></div>
+        <Link
+          style={{ width: "90px" }}
+          className="btn"
+          to={btnTwoLink ? btnTwoLink : "/"}
+        >
+          {btnFourText}
+        </Link>
+        <div className="divider1"></div>
         <Button
           onClick={() => setModalShow(true)}
           target="_blank"
