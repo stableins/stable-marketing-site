@@ -24,6 +24,8 @@ const FeatureSection = ({ ...rest }) => {
   return (
     <div className="features-index-wrapper1">
       <Feature style={{ background: "#EBEEFF" }} className="bg-blue-ribbon">
+        <img src={BackgroundImage} />
+
         <div className="inner-wrapper1">
           <Container>
             <Slide left>
@@ -255,7 +257,8 @@ const FeatureSection = ({ ...rest }) => {
                                   className="button"
                                   onClick={() => setCounterModal(true)}
                                 >
-                                  Get Early Access <i id="i" class="fas fa-chevron-right"></i>
+                                  Get Early Access{" "}
+                                  <i id="i" class="fas fa-chevron-right"></i>
                                 </button>
                               </div>
                             </div>

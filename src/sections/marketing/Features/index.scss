@@ -1,5 +1,12 @@
 @media (min-width: 1000px) {
   .features-index-wrapper1 {
+    img {
+      opacity: 0.5;
+      position: absolute;
+      height: 1500px;
+      margin-top: -150px;
+    }
+
     .inner-wrapper1 {
       height: 500px;
       .title {
@@ -422,8 +429,8 @@
               border: none;
               color: #002e6d;
 
-               > i {
-                               color: #002e6d;
+              > i {
+                color: #002e6d;
                 z-index: -1;
                 margin-left: 5px;
               }
@@ -507,6 +514,18 @@
           color: black !important;
         }
       }
+    }
+  }
+}
+
+@media (min-width: 2000px) {
+  .features-index-wrapper1 {
+    img {
+      opacity: 0.5;
+      position: absolute;
+      height: 1500px;
+      width: 100%;
+      margin-top: -150px;
     }
   }
 }
