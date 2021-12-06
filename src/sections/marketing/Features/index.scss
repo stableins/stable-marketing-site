@@ -263,7 +263,7 @@
     .inner-wrapper2 {
       height: 570px;
       margin-top: 200px;
-      .Building-a-Carshare-Fleet {
+      .title {
         font-family: Rubik;
         position: absolute;
         font-size: 55px;
@@ -273,7 +273,7 @@
         letter-spacing: 0em;
         text-align: center;
         height: 86px;
-        left: 320px;
+        left: 0px;
         top: -30px;
         bottom: 200px;
         color: #002e6d;
@@ -677,7 +677,7 @@
 
             .button {
               height: 50px;
-              width: 334px;
+              width: 100%;
               right: 465px;
               top: 200px;
               border-radius: 8px;
@@ -807,7 +807,7 @@
 
           line-height: 30px;
           letter-spacing: 0em;
-          width: 334px;
+          width: 100%;
         }
 
         #i {
@@ -958,7 +958,7 @@
 
             .button {
               height: 50px;
-              width: 334px;
+              width: 100%;
               right: 465px;
               top: 200px;
               margin-top: 50px;
@@ -1044,7 +1044,7 @@
           height: 50px;
           line-height: 30px;
           letter-spacing: 0em;
-          width: 354px;
+          width: 100%;
         }
 
         i {

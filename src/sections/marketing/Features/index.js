@@ -149,9 +149,8 @@ const FeatureSection = ({ ...rest }) => {
           <Container className="carshare">
             <Slide left>
               <Row>
-                <Col xs="auto" className="col-xl-8 col-lg-10">
-                  <a className="anchor2" style={{ height: '1px'}}/>
-                    <div className="Building-a-Carshare-Fleet">
+                {/* <Col xs="auto" className="col-xl-8 col-lg-10"> */}
+                    <div className="title">
                       Building a Carshare Fleet?
                     </div>
                   <div className="section-wrapper">
@@ -192,16 +191,6 @@ const FeatureSection = ({ ...rest }) => {
                           as="h2"
                           fontColor="#fff"
                         >
-                          {/* <div className="button-wrapper">
-                            <button
-                              onClick={() => setCounterModal(true)}
-                              aria-current="page"
-                              className="button__Button-sc-1tkahez-0 cAxprB btn-purple-heart btn"
-                            >
-                              Get Early Access{" "}
-                              <i class="fas fa-chevron-right"></i>
-                            </button>
-                          </div> */}
                         </Feature.Title>
                       </Feature.Box>
                     </div>
@@ -270,7 +259,7 @@ const FeatureSection = ({ ...rest }) => {
                       </Feature.Box>
                     </div>
                   </div>
-                </Col>
+                {/* </Col> */}
               </Row>
             </Slide>
             <Slide right></Slide>
