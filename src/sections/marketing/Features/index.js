@@ -149,8 +149,7 @@ const FeatureSection = ({ ...rest }) => {
           <Container className="carshare">
             <Slide left>
               <Row>
-                <Col xs="auto" className="col-xl-8 col-lg-10">
-                  <a className="anchor2" style={{ height: '1px'}}/>
+                {/* <Col xs="auto" className="col-xl-8 col-lg-10"> */}
                     <div className="title">
                       Building a Carshare Fleet?
                     </div>
@@ -260,7 +259,7 @@ const FeatureSection = ({ ...rest }) => {
                       </Feature.Box>
                     </div>
                   </div>
-                </Col>
+                {/* </Col> */}
               </Row>
             </Slide>
             <Slide right></Slide>

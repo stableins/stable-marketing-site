@@ -29,7 +29,7 @@ const FeatureSection = ({ ...rest }) => {
             <Slide left>
               <Row>
                 <Col xs="auto" className="col-xl-8 col-lg-10">
-                  <div className="title">Building a Carshare Fleet?</div>
+                  {/* <div className="title">Building a Carshare Fleet?</div> */}
                   <div className="section-wrapper">
                     <div className="left">
                       <Feature.Box mb="35px" mbMD="80px" mbLG="148px">
