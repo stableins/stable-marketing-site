@@ -39,7 +39,7 @@ export default function Marketing() {
   return (
     <PageWrapper headerConfig={header}>
       <HeroSection />
-      <Value /> */}
+      <Value />
       <FeatureSection />
       <ServiceSection />
       <Jayz />

@@ -42,15 +42,27 @@ const FeatureSection = ({ ...rest }) => {
                             <p className="p-text1">
                               Join Stable’s waiting list for insurance and we’ll
                               provide you with{" "}
-                              <span className="bold">FREE daily earning reports</span> for your
-                              rideshare driving. One easy place to see how much
-                              you’re earning and how efficient you are across
-                              platforms.
+                              <span className="bold">
+                                FREE daily earning reports
+                              </span>{" "}
+                              for your rideshare driving. One easy place to see
+                              how much you’re earning and how efficient you are
+                              across platforms.
                             </p>
                           </div>
                         </Feature.Title>
                       </Feature.Box>
                       <Feature.Box mb="35px" mbMD="80px" mbLG="148px">
+                        <div className="right">
+                      <Feature.Box mb="35px" mbMD="80px" mbLG="148px">
+                        <Feature.Title
+                          className="mb-5"
+                          as="h2"
+                          fontColor="#fff"
+                        >
+                        </Feature.Title>
+                      </Feature.Box>
+                    </div>
                         <Feature.Title
                           className="mb-5"
                           as="h2"

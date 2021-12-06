@@ -79,6 +79,7 @@
     }
     .form-control {
       height: 50px;
+      width: 670px !important;
       border-radius: 8px;
     }
 
@@ -148,16 +149,46 @@
 
 @media (max-width: 400px) {
   .hero-section-wrapper {
-    background-color: #475ba1;
-    color: #f6f6f6;
-
+    background-color: #f7f7f7;
+    height: 840px;
     .title {
-      width: 100%;
-      color: #f7f7f7;
+      width: 360px;
+      color: #002e6d;
+      font-family: Rubik;
+      font-style: normal;
+      font-size: 40px;
+      font-weight: normal;
+
+      .blue-text {
+        font-family: Rubik;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        // line-height: 100px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #002e6d;
+      }
+
+      p {
+        font-size: 40px;
+                color: #ffae13;
+
+        .blue-text {
+          font-family: Rubik;
+          font-size: 40px;
+          font-style: normal;
+          // line-height: 100px;
+          text-align: left;
+          color: #002e6d;
+        }
+      }
 
       .bold-text {
-        font-weight: 700;
-        color: #f7f7f7;
+        font-weight: 400;
+        color: #002e6d;
+        display: inline-flex;
+        font-size: 40px;
       }
 
       .share {
@@ -173,6 +204,7 @@
 
       .typing-chunk {
         color: #f7f7f7;
+        font-size: 40px;
       }
 
       .typing-effect {
@@ -187,22 +219,71 @@
       }
     }
     .hero-text {
-      margin-top: -60px;
-      color: #f6f6f6;
+      // margin-top: -60px;
+    }
+    .form-wrapper {
+      width: 334px;
+      top: 10px;
     }
     .form-control {
-      width: 334px;
+      height: 334px;
+      border-radius: 8px;
+      margin-top: -30px;
     }
 
     button {
       width: 334px;
-      height: 7.1vh;
+      height: 50px;
       background-color: #ffae13;
       border-radius: 8px;
       border: none;
     }
     i {
       margin-left: 10px;
+    }
+
+    .login {
+      color: #303030;
+      margin-top: 10px;
+      span {
+        font-family: Rubik;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: left;
+        cursor: pointer;
+        color: #ffae13;
+      }
+    }
+
+     .anchors {
+      display: block;
+      .rideshare-text {
+        text-decoration: underline;
+        color: #ffae13;
+        font-family: Rubik;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-right: 30px;
+        cursor: pointer;
+      }
+      .carshare-text {
+        text-decoration: underline;
+        color: #ffae13;
+        font-family: Rubik;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: left;
+        cursor: pointer;
+      }
     }
     .see-how-text {
       text-decoration: underline;

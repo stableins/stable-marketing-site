@@ -26,7 +26,8 @@ export default function HeroSection() {
                 <Hero.Content>
                   <Hero.Title as="h1">
                     <div className="title">
-                      <span className="bold-text">Get Early Access</span> <span className="blue-text">to</span>
+                      <span className="bold-text">Get Early Access</span>{" "}
+                      <span className="blue-text">to</span>
                       <p>
                         <span className="blue-text">Smarter</span>{" "}
                         <ReactTypingEffect

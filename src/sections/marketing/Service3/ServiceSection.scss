@@ -1,86 +1,94 @@
 @media (max-width: 450px) {
-  .image-wrapper {
+  .service-section-3-wrapper {
     text-align: center;
-
-    .separator {
-      height: 1px;
-      max-width: 504px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 40px;
-      background-image: radial-gradient(
-        circle farthest-corner at 50% 50%,
-        #ffbf00 27%,
-        #fff
-      );
+    height: 1300px;
+    .title {
+      color: #002e6d;
+      text-align: left;
     }
+    .image-wrapper {
+      text-align: center;
 
-    .partners-section {
-      width: 100%;
-
-      .image {
-        width: 100%;
-      }
-
-      .title {
-        margin-top: 50px;
-        font-family: Roboto;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 24px;
-        letter-spacing: 0em;
-        text-align: center;
-        color: #000000;
-      }
-    }
-
-    .accelerators-section {
-      // width: 100%;
-
-      .image {
-        margin-top: 30px;
-        width: 100%;
-      }
-
-      .title {
-        margin-top: 50px;
-        font-family: Roboto;
-        font-size: 18px;
-        font-style: normal;
-        position: absolute;
-        font-weight: 700;
-        line-height: 24px;
-        letter-spacing: 0em;
-        text-align: center;
-        color: #000000;
-      }
-    }
-
-    .pitches-section {
-      .image {
-        margin-top: 30px;
-        width: 100%;
-      }
-      // width: 100%;
-      .title {
-        margin-top: 50px;
-        font-family: Roboto;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 24px;
-        letter-spacing: 0em;
-        text-align: center;
-        color: #000000;
-      }
-
-      .insurtech {
+      .separator {
+        height: 1px;
+        max-width: 504px;
+        margin-left: auto;
+        margin-right: auto;
         margin-top: 40px;
+        background-image: radial-gradient(
+          circle farthest-corner at 50% 50%,
+          #ffbf00 27%,
+          #fff
+        );
       }
 
-      .innovation {
-        margin-top: 20px;
+      .partners-section {
+        width: 100%;
+
+        .image {
+          width: 100%;
+        }
+
+        .title {
+          margin-top: 50px;
+          font-family: Roboto;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: center;
+          color: #002e6d;
+        }
+      }
+
+      .accelerators-section {
+        width: 100%;
+
+        .image {
+          margin-top: 30px;
+          width: 100%;
+        }
+
+        .title {
+          margin-top: 50px;
+          font-family: Roboto;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: center;
+          color: #000000;
+        }
+      }
+
+      .pitches-section {
+        width: 100%;
+        .image {
+          margin-top: 30px;
+          width: 100%;
+        }
+        // width: 100%;
+        .title {
+          margin-top: 50px;
+          font-family: Roboto;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-align: center;
+          color: #000000;
+        }
+
+        .insurtech {
+          margin-top: 40px;
+        }
+
+        .innovation {
+          margin-top: 20px;
+        }
       }
     }
   }

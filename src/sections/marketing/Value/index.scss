@@ -154,14 +154,13 @@
   .value-index-wrapper {
     .inner-wrapper {
       // display: inline-flex;
-
+      height: 630px;
       .title {
         font-family: Rubik;
-        font-size: 55px;
+        width: 333px;
+        font-size: 40px;
         font-style: normal;
         font-weight: 400;
-        line-height: 60px;
-        letter-spacing: 0em;
         text-align: left;
         color: #002e6d;
         margin-bottom: 30px;
@@ -169,8 +168,8 @@
 
       .section-wrapper {
         // display: inline-flex;
-        width: 96vw;
-        height: 136vh;
+        // width: 96vw;
+        // height: 136vh;
 
         .left {
           width: 100%;
@@ -198,12 +197,16 @@
 
             .inner-item-wrapper {
               // display: inline-flex;
+              text-align: center;
 
               i {
                 color: #ffae13;
                 margin: auto;
-                font-size: 1em;
-                padding-right: 20px;
+                font-size: 3.5em;
+                padding-right: 50px;
+                margin-top: -380px;
+                margin-left: -120px;
+                position: absolute;
               }
 
               .text-wrapper {
@@ -256,8 +259,7 @@
 
       .button-wrapper {
         text-align: left;
-        margin-top: 660px;
-        position: absolute;
+        margin-top: 400px;
 
         button {
           font-family: Roboto;
