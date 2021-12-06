@@ -28,7 +28,7 @@
           font-family: Rubik;
           font-size: 80px;
           font-style: normal;
-          font-weight: 400;
+          font-weight: 700;
           line-height: 100px;
           letter-spacing: 0em;
           text-align: left;
@@ -222,17 +222,17 @@
       // margin-top: -60px;
     }
     .form-wrapper {
-      width: 334px;
+      width: 100%;
       top: 10px;
     }
     .form-control {
-      height: 334px;
+      height: 100%;
       border-radius: 8px;
       margin-top: -30px;
     }
 
     button {
-      width: 334px;
+      width: 100%;
       height: 50px;
       background-color: #ffae13;
       border-radius: 8px;
