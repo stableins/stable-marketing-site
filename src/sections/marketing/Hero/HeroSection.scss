@@ -117,7 +117,7 @@
     .anchors {
       display: inline-flex;
       position: absolute;
-      bottom: -150px;
+      bottom: -140px;
       .rideshare-text {
         text-decoration: underline;
         color: #ffae13;
@@ -129,6 +129,7 @@
         letter-spacing: 0em;
         text-align: left;
         margin-right: 30px;
+        cursor: pointer;
       }
       .carshare-text {
         text-decoration: underline;

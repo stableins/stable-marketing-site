@@ -3,6 +3,7 @@ import { PageWrapper } from "~components/Core"
 import HeroSection from "~sections/marketing/Hero"
 import ServiceSection from "~sections/marketing/Service"
 import ServiceSection2 from "~sections/marketing/Service2/"
+import Jayz from "~sections/marketing/JayZ/"
 import ServiceSection3 from "~sections/marketing/Service3/"
 import OurStory from "~sections/marketing/OurStory/"
 import FeatureSection from "~sections/marketing/Features"
@@ -41,8 +42,9 @@ export default function Marketing() {
       <Value /> */}
       <FeatureSection />
       <ServiceSection />
-      <FeatureSection2 />
-      <ServiceSection2 />
+      <Jayz />
+      {/* <FeatureSection2 /> */}
+      {/* <ServiceSection2 /> */}
       <ServiceSection3 />
       <OurStory />
       <FooterOne />
