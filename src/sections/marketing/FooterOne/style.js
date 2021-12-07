@@ -187,7 +187,6 @@ Footer.Copyright = styled(Box)`
   text-align: center;
   padding-top: 25px;
   padding-bottom: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   flex-wrap: wrap;

@@ -50,7 +50,7 @@ const HeaderButton = ({
   const [showConfirmation, setShowConfirmation] = useState(false)
 
   const scrollToCarshare = () => {
-    scroller.scrollTo("carshare", {
+    scroller.scrollTo("anchor2", {
       duration: 10,
       delay: 0,
       smooth: "easeInOutQuart",
@@ -58,14 +58,11 @@ const HeaderButton = ({
   }
 
   const scrollToRideShare = () => {
-    scroller.scrollTo(
-      "box__Box-sc-3l6bf7-0 style__Service-sc-1w81qk2-0 hdGSYh bZBNSh border-top border-default-color-2 bg-default",
-      {
-        duration: 10,
-        delay: 0,
-        smooth: "easeInOutQuart",
-      }
-    )
+    scroller.scrollTo("anchor", {
+      duration: 10,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    })
   }
 
   function handleConfirmation() {
@@ -87,18 +84,18 @@ const HeaderButton = ({
             </Modal.Title>
           </Modal.Header>
           <div style={{ padding: "20px" }}>
-            <Form onSubmit={handleConfirmation}>
+            <Form>
               <Form.Group className="mb-3">
                 <Form.Label>
                   Please provide the following information to get early access
                 </Form.Label>
-                <Form.Control required type="text" placeholder="First name" />
+                <Form.Control required type="text" placeholder="Name" />
                 <br />
-                <Form.Control required type="text" placeholder="Last name" />
+                <Form.Control required type="email" placeholder="Email" />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Control required type="number" placeholder="Zip code" />
+                <Form.Control length={3} required placeholder="Zip code" />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Label>
@@ -111,19 +108,9 @@ const HeaderButton = ({
                   <option value="2">Power User</option>
                 </Form.Control>
               </Form.Group>
-              <button
-                style={{
-                  width: "40%",
-                  height: "7.1vh",
-                  backgroundColor: "#ffae13",
-                  borderRadius: "8px",
-                  border: "none",
-                }}
-                className="modal-button"
-                type="submit"
-              >
-                Submit <i class="fas fa-chevron-right"></i>
-              </button>
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
             </Form>
           </div>
         </Modal>
@@ -154,44 +141,36 @@ const HeaderButton = ({
             </button>
           </div>
         </Modal>
-        <Link
-          style={{
-            width: "200px",
-            marginRight: "-60px",
-          }}
-          onClick={scrollToCarshare}
-          target="_blank"
-          className="btn"
-          to={btnTwoLink ? btnTwoLink : "/"}
-        >
-          {btnOneText}
-        </Link>
-        <Link
-          style={{ width: "200px", marginRight: "-45px" }}
-          onClick={scrollToCarshare}
-          target="_blank"
-          className="btn"
-          to={btnTwoLink ? btnTwoLink : "/"}
+        <button
+
+          onClick={scrollToRideShare}
+          className="rideshare-button"
+          // to={btnTwoLink ? btnTwoLink : "/"}
         >
           {btnTwoText}
-        </Link>
+        </button>
+        <button
+          onClick={scrollToCarshare}
+          className="carshare-button"
+          // to={btnTwoLink ? btnTwoLink : "/"}
+        >
+          {btnOneText}
+        </button>
         <div className="divider1"></div>
-        <Link
-          style={{ width: "90px" }}
-          className="btn"
+        <button
+          className="login-button"
           to={btnTwoLink ? btnTwoLink : "/"}
         >
           {btnFourText}
-        </Link>
+        </button>
         <div className="divider1"></div>
-        <Button
+        <button
           onClick={() => setModalShow(true)}
-          target="_blank"
-          className="btn btn-2"
+          className="early-access-button"
           to={btnTwoLink ? btnTwoLink : "/"}
         >
           {btnThreeText}
-        </Button>
+        </button>
       </HeaderButtonWrapper>
     </div>
   )

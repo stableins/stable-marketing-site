@@ -83,29 +83,25 @@ export default function FooterOne() {
                       <Footer.Address className="widgets-address">
                         <div className="contact-wrapper">
                           <Footer.AddressItem>
-                            <i className="fa fa-map-marker-alt" />
-                            <span>
-                              245 8th Ave #1111
-                              <br className="d-block" />
-                              New York, NY 10011
-                            </span>
+                            <div className="item1">
+                              <i className="fa fa-map-marker-alt" />
+                              <span>245 8th Ave #1111 New York, NY 10011</span>
+                            </div>
                           </Footer.AddressItem>
                           <Footer.AddressItem>
-                            <i className="fa fa-phone-alt" />
+                            <div className="item2">
+                              <i className="fa fa-phone-alt" />
 
-                            <a href="#">
-                              +1 (347) 464-6390
-                              {/* <span className="d-block">
-                            {" "}
-                            7 Days - 8am - 10pm{" "}
-                          </span>{" "} */}
-                            </a>
+                              <a href="#">+1 (347) 464-6390</a>
+                            </div>
                           </Footer.AddressItem>
                           <Footer.AddressItem>
-                            <i className="fa fa-envelope" />
-                            <a href="mailto:hello@stableins.com">
-                              hello@stableins.com
-                            </a>
+                            <div className="item3">
+                              <i className="fa fa-envelope" />
+                              <a href="mailto:hello@stableins.com">
+                                hello@stableins.com
+                              </a>
+                            </div>
                           </Footer.AddressItem>
                         </div>
                       </Footer.Address>
@@ -153,9 +149,7 @@ export default function FooterOne() {
               </Footer.SocialShare>
               <div className="copyright-text">
                 <Footer.CopyrightText>
-                  <p>
-                  © 2021 Stable Insurance Inc. All Rights Reserved
-                  </p>
+                  <p>© 2021 Stable Insurance Inc. All Rights Reserved</p>
                 </Footer.CopyrightText>
               </div>
             </div>
