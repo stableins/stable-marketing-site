@@ -1,6 +1,48 @@
 .header-button-wrapper {
   padding: 0 110px;
   color: #002e6d;
+
+  .rideshare-button {
+    background: none;
+    width: 194px;
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  .carshare-button {
+    background: none;
+    width: 186px;
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  .early-access-button {
+    font-size: 18px;
+  }
+
+  .login-button {
+    background: none;
+    width: 69px;
+    font-family: Rubik;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 21px;
+letter-spacing: 0em;
+text-align: left;
+
+  }
+
   button {
     width: 208px;
     height: 50px;

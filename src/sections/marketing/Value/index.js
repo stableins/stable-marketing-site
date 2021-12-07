@@ -123,9 +123,7 @@ const FeatureSection = ({ ...rest }) => {
               <Form.Label>
                 Please provide the following information to get early access
               </Form.Label>
-              <Form.Control required type="text" placeholder="First name" />
-              <br />
-              <Form.Control required type="text" placeholder="Last name" />
+              <Form.Control required type="text" placeholder="Name" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">

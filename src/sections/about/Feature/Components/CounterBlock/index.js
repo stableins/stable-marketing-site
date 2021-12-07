@@ -24,7 +24,7 @@ export default function CounterBlock({ ...rest }) {
               )}
             </VisibilitySensor>
           </Counter.Title>
-          <Counter.Text widthfontColor="#ffffffb3" style={{width: '40%'}}>
+          <Counter.Text widthfontColor="#ffffffb3" style={{ width: "40%" }}>
             Vehicle Owners and Counting have joined the Stable community.
           </Counter.Text>
           <Button
@@ -42,7 +42,7 @@ export default function CounterBlock({ ...rest }) {
           >
             <Modal.Header>
               <Modal.Title id="example-custom-modal-styling-title">
-                <img width={150}src={StableLogo} />
+                <img width={150} src={StableLogo} />
               </Modal.Title>
             </Modal.Header>
             <div style={{ padding: "20px" }}>
@@ -51,13 +51,13 @@ export default function CounterBlock({ ...rest }) {
                   <Form.Label>
                     Please provide the following information to get early access
                   </Form.Label>
-                  <Form.Control required type="text" placeholder="First name" />
+                  <Form.Control required type="text" placeholder="Name" />
                   <br />
-                  <Form.Control required type="text" placeholder="Last name" />
+                  <Form.Control required type="email" placeholder="Email" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Control required type="number" placeholder="Zip code" />
+                  <Form.Control length={3} required placeholder="Zip code" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                   <Form.Label>

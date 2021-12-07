@@ -5,6 +5,7 @@ import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import SingleAniamtion from "../../../components/Animation/singleAnimation"
 import { Link } from "~components"
 import { Button } from "~styled"
+import { scroller } from "react-scroll"
 import ImageGroup from "./Components/ImageGroup"
 import Fade from "react-reveal/Fade"
 import Hero from "./style"
@@ -12,6 +13,22 @@ import "./HeroSection.scss"
 
 export default function HeroSection() {
   const [show, setShow] = useState(false)
+
+  const scrollToRideShare = () => {
+    scroller.scrollTo("anchor", {
+      duration: 10,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    })
+  }
+
+  const scrollToCarshare = () => {
+    scroller.scrollTo("anchor2", {
+      duration: 10,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    })
+  }
 
   return (
     <Fade>
@@ -83,11 +100,11 @@ export default function HeroSection() {
                 </Hero.Content>
                 {/* <Hero.NewsletterText> */}
                 <div className="anchors">
-                  <p className="rideshare-text">
+                  <p onClick={scrollToRideShare} className="rideshare-text">
                     Are you Rideshare <i class="fas fa-chevron-right"></i>
                   </p>
-                  <p className="carshare-text">
-                    or carshare <i class="fas fa-chevron-right"></i>
+                  <p onClick={scrollToCarshare} className="carshare-text">
+                    or Carshare <i class="fas fa-chevron-right"></i>
                   </p>
                 </div>
                 {/* </Hero.NewsletterText> */}

@@ -99,11 +99,11 @@ export default function ServiceSection() {
                       <i class="fas fa-road"></i>
                     </p>
                     <div className="widget-title">
-                      A Community Effort <br />
+                      Help Develop Our Roadmap <br />
                       <p>
-                        Interact with other drivers and fleets to learn how to
-                        better operate your business and make connections to
-                        potential partners.
+                        We use your input and data to help determine where we
+                        should launch next. So spread the word and get your
+                        peers involved.
                       </p>
                     </div>
                   </div>
@@ -150,13 +150,13 @@ export default function ServiceSection() {
               <Form.Label>
                 Please provide the following information to get early access
               </Form.Label>
-              <Form.Control required type="text" placeholder="First name" />
+              <Form.Control required type="text" placeholder="Name" />
               <br />
-              <Form.Control required type="text" placeholder="Last name" />
+              <Form.Control required type="email" placeholder="Email" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Control required type="number" placeholder="Zip code" />
+              <Form.Control length={3} required placeholder="Zip code" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Label>

@@ -9,6 +9,14 @@
 
     .inner-wrapper1 {
       height: 500px;
+
+      .anchor  {
+        position: absolute;
+        left: 600px;
+        height: 50px;
+        width: 50px;
+        top: 0;
+      }
       .title {
         font-family: Rubik;
         position: absolute;
@@ -263,6 +271,14 @@
     .inner-wrapper2 {
       height: 570px;
       margin-top: 200px;
+
+      .anchor2  {
+        position: absolute;
+        left: 600px;
+        height: 50px;
+        width: 50px;
+        bottom: 650px;
+      }
       .title {
         font-family: Rubik;
         position: absolute;
