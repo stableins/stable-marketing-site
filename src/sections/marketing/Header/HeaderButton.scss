@@ -1,3 +1,29 @@
+
+.confirmation-modal-content-wrapper {
+  padding: 20px;
+  .confirmation-modal-header {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 55px;
+    line-height: 60px;
+    color: #002e6d;
+  }
+  button {
+    background: #f7f7f7;
+
+    border: 2px solid #ffae13;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 194px;
+    height: 50px;
+    cursor: pointer;
+  }
+  .confirmation-modal-text {
+    color: #303030;
+  }
+}
+
 .header-button-wrapper {
   padding: 0 110px;
   color: #002e6d;
@@ -34,13 +60,12 @@
     background: none;
     width: 69px;
     font-family: Rubik;
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: 21px;
-letter-spacing: 0em;
-text-align: left;
-
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
   }
 
   button {
@@ -49,6 +74,7 @@ text-align: left;
     background-color: #ffae13;
     border-radius: 8px;
     border: none;
+    cursor: pointer;
   }
 
   .divider {

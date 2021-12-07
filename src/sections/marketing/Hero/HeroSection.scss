@@ -152,12 +152,19 @@
     background-color: #f7f7f7;
     height: 840px;
     .title {
-      width: 360px;
+      width: 450px;
       color: #002e6d;
       font-family: Rubik;
       font-style: normal;
       font-size: 40px;
       font-weight: normal;
+      font-family: Rubik;
+      font-size: 44px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 50px;
+      letter-spacing: 0em;
+      text-align: left;
 
       .blue-text {
         font-family: Rubik;
@@ -172,7 +179,7 @@
 
       p {
         font-size: 40px;
-                color: #ffae13;
+        color: #ffae13;
 
         .blue-text {
           font-family: Rubik;
@@ -220,6 +227,7 @@
     }
     .hero-text {
       // margin-top: -60px;
+      color: #303030;
     }
     .form-wrapper {
       width: 100%;
@@ -257,7 +265,7 @@
       }
     }
 
-     .anchors {
+    .anchors {
       display: block;
       .rideshare-text {
         text-decoration: underline;

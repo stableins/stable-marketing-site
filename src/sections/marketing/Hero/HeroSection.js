@@ -4,7 +4,7 @@ import ReactTypingEffect from "react-typing-effect"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import SingleAniamtion from "../../../components/Animation/singleAnimation"
 import { Link } from "~components"
-import { Button } from "~styled"
+import Intake from "../../../api/intake"
 import { scroller } from "react-scroll"
 import ImageGroup from "./Components/ImageGroup"
 import Fade from "react-reveal/Fade"
@@ -13,6 +13,12 @@ import "./HeroSection.scss"
 
 export default function HeroSection() {
   const [show, setShow] = useState(false)
+  const [emailInputValue, setEmailInputValue] = useState("")
+  const [showConfirmation, setShowConfirmation] = useState(false)
+
+  console.log(emailInputValue)
+
+  console.log(emailInputValue)
 
   const scrollToRideShare = () => {
     scroller.scrollTo("anchor", {
@@ -28,6 +34,20 @@ export default function HeroSection() {
       delay: 0,
       smooth: "easeInOutQuart",
     })
+  }
+
+  async function handleEmailSubmit(event) {
+    event.preventDefault()
+    try {
+      const response = await Intake.submit(emailInputValue)
+      console.log(response)
+
+      if (response.data.statusCode === 200) {
+        setShowConfirmation(true)
+      }
+    } catch (e) {
+      alert("Submission Error")
+    }
   }
 
   return (
@@ -75,17 +95,19 @@ export default function HeroSection() {
                   <Col xs="12" className="col-xxl-10">
                     <Hero.Newsletter>
                       <div className="form-wrapper">
-                        <form>
+                        <form onSubmit={handleEmailSubmit}>
                           <input
+                            required
                             type={"email"}
                             name={"email"}
                             placeholder="Enter your email"
                             className="form-control"
+                            onChange={e => setEmailInputValue(e.target.value)}
                           />
                           <button
+                            type="submit"
                             className="btn-purple-heart"
                             textTransform="capitalized"
-                            onClick={() => setShow(true)}
                           >
                             Get Early Access{" "}
                             <i class="fas fa-chevron-right"></i>
@@ -122,6 +144,29 @@ export default function HeroSection() {
           </Container>
         </Hero>
       </div>
+      <Modal
+        show={showConfirmation}
+        onHide={() => setShowConfirmation(false)}
+        dialogClassName="modal-120w"
+        aria-labelledby="example-custom-modal-styling-title"
+      >
+        <Modal.Header>
+          <Modal.Title id="example-custom-modal-styling-title">
+            <img width={150} src={StableLogo} />
+          </Modal.Title>
+        </Modal.Header>
+        <div className="confirmation-modal-content-wrapper">
+          <h2 className="confirmation-modal-header">
+            Thank you for submitting your details.
+          </h2>
+          <p className="confirmation-modal-text">
+            You will receive further information to your inbox. Make sure to
+            check your junk folder and add hello@stableins.com to your contacts
+            to ensure you receive further communication from us.
+          </p>
+          <button onClick={() => setShowConfirmation(false)}>Close</button>
+        </div>
+      </Modal>
     </Fade>
   )
 }

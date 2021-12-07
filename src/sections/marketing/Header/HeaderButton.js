@@ -4,6 +4,7 @@ import { scroller } from "react-scroll"
 import { Button, Modal, Form } from "react-bootstrap"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import styled from "styled-components/macro"
+import Intake from "../../../api/intake"
 import { Box } from "~styled"
 import "./HeaderButton.scss"
 
@@ -48,6 +49,10 @@ const HeaderButton = ({
 }) => {
   const [show, setModalShow] = useState(false)
   const [showConfirmation, setShowConfirmation] = useState(false)
+  const [emailInputValue, setEmailInputValue] = useState("")
+  const [nameInputValue, setNameInputValue] = useState("")
+  const [zipcodeInputValue, setZipcodeInputValue] = useState("")
+  const [dropdownInputValue, setDropdownInputValue] = useState("")
 
   const scrollToCarshare = () => {
     scroller.scrollTo("anchor2", {
@@ -64,9 +69,23 @@ const HeaderButton = ({
       smooth: "easeInOutQuart",
     })
   }
-
-  function handleConfirmation() {
-    setShowConfirmation(true)
+  async function handleSubmit(event) {
+    event.preventDefault()
+    try {
+      const response = await Intake.submit(
+        nameInputValue,
+        emailInputValue,
+        zipcodeInputValue,
+        dropdownInputValue
+      )
+      console.log(response.data.statusCode)
+      if (response.data.statusCode === 200) {
+        setModalShow(false)
+        setShowConfirmation(true)
+      }
+    } catch (e) {
+      alert(e)
+    }
   }
 
   return (
@@ -84,25 +103,42 @@ const HeaderButton = ({
             </Modal.Title>
           </Modal.Header>
           <div style={{ padding: "20px" }}>
-            <Form>
+            <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3">
                 <Form.Label>
                   Please provide the following information to get early access
                 </Form.Label>
-                <Form.Control required type="text" placeholder="Name" />
+                <Form.Control
+                  onChange={e => setNameInputValue(e.target.value)}
+                  // required
+                  type="text"
+                  placeholder="Name"
+                />
                 <br />
-                <Form.Control required type="email" placeholder="Email" />
+                <Form.Control
+                  onChange={e => setEmailInputValue(e.target.value)}
+                  required
+                  type="email"
+                  placeholder="Email"
+                />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Control length={3} required placeholder="Zip code" />
+                <Form.Control
+                  onChange={e => setZipcodeInputValue(e.target.value)}
+                  // required
+                  placeholder="Zip code"
+                />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Label>
                   Are you a rideshare fleet or power user? (optional)
                 </Form.Label>
 
-                <Form.Control as="select">
+                <Form.Control
+                  onChange={e => setDropdownInputValue(e.target.value)}
+                  as="select"
+                >
                   <option>Choose Option</option>
                   <option value="1">Rideshare Fleet</option>
                   <option value="2">Power User</option>
@@ -117,7 +153,7 @@ const HeaderButton = ({
         <Modal
           show={showConfirmation}
           onHide={() => setShowConfirmation(false)}
-          dialogClassName="modal-90w"
+          dialogClassName="modal-120w"
           aria-labelledby="example-custom-modal-styling-title"
         >
           <Modal.Header>
@@ -125,24 +161,19 @@ const HeaderButton = ({
               <img width={150} src={StableLogo} />
             </Modal.Title>
           </Modal.Header>
-          <div style={{ padding: "20px" }}>
-            <button
-              style={{
-                width: "40%",
-                height: "7.1vh",
-                backgroundColor: "#ffae13",
-                borderRadius: "8px",
-                border: "none",
-              }}
-              className="modal-button"
-              type="submit"
-            >
-              Submit <i class="fas fa-chevron-right"></i>
-            </button>
+          <div className="confirmation-modal-content-wrapper">
+            <h2 className="confirmation-modal-header">
+              Thank you for submitting your details.
+            </h2>
+            <p className="confirmation-modal-text">
+              You will receive further information to your inbox. Make sure to
+              check your junk folder and add hello@stableins.com to your
+              contacts to ensure you receive further communication from us.
+            </p>
+            <button onClick={() => setShowConfirmation(false)}>Close</button>
           </div>
         </Modal>
         <button
-
           onClick={scrollToRideShare}
           className="rideshare-button"
           // to={btnTwoLink ? btnTwoLink : "/"}
@@ -157,10 +188,7 @@ const HeaderButton = ({
           {btnOneText}
         </button>
         <div className="divider1"></div>
-        <button
-          className="login-button"
-          to={btnTwoLink ? btnTwoLink : "/"}
-        >
+        <button className="login-button" to={btnTwoLink ? btnTwoLink : "/"}>
           {btnFourText}
         </button>
         <div className="divider1"></div>

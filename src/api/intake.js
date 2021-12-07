@@ -1,12 +1,20 @@
 import axios from "axios"
 
-const postUrl = "api/underwriting/rater"
-
-const post = ({ currentDriver }) => {
-  return axios.post(postUrl, currentDriver)
+const submit = (
+  nameInputValue,
+  emailInputValue,
+  zipcodeInputValue,
+  dropdownInputValue,
+) => {
+  return axios.post("https://api.stablelabs.io/marketing", {
+    name: nameInputValue,
+    email: emailInputValue,
+    zipcode: zipcodeInputValue,
+    dropdown: dropdownInputValue,
+  })
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  post,
+  submit,
 }
