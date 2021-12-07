@@ -4,7 +4,7 @@ import ReactTypingEffect from "react-typing-effect"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import SingleAniamtion from "../../../components/Animation/singleAnimation"
 import { Link } from "~components"
-import { Button } from "~styled"
+import Intake from "../../../api/intake"
 import { scroller } from "react-scroll"
 import ImageGroup from "./Components/ImageGroup"
 import Fade from "react-reveal/Fade"
@@ -13,6 +13,11 @@ import "./HeroSection.scss"
 
 export default function HeroSection() {
   const [show, setShow] = useState(false)
+  const [emailInputValue, setEmailInputValue] = useState("")
+
+  console.log(emailInputValue);
+
+  console.log(emailInputValue)
 
   const scrollToRideShare = () => {
     scroller.scrollTo("anchor", {
@@ -28,6 +33,11 @@ export default function HeroSection() {
       delay: 0,
       smooth: "easeInOutQuart",
     })
+  }
+
+  async function handleEmailSubmit() {
+    const response = await Intake.submit({ emailInputValue })
+    console.log(response)
   }
 
   return (
@@ -75,17 +85,19 @@ export default function HeroSection() {
                   <Col xs="12" className="col-xxl-10">
                     <Hero.Newsletter>
                       <div className="form-wrapper">
-                        <form>
+                        <form onSubmit={handleEmailSubmit}>
                           <input
+                            required
                             type={"email"}
                             name={"email"}
                             placeholder="Enter your email"
                             className="form-control"
+                            onChange={e => setEmailInputValue(e.target.value)}
                           />
                           <button
+                            type="submit"
                             className="btn-purple-heart"
                             textTransform="capitalized"
-                            onClick={() => setShow(true)}
                           >
                             Get Early Access{" "}
                             <i class="fas fa-chevron-right"></i>

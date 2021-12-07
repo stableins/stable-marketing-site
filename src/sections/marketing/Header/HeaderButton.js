@@ -4,6 +4,7 @@ import { scroller } from "react-scroll"
 import { Button, Modal, Form } from "react-bootstrap"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import styled from "styled-components/macro"
+import Intake from "../../../api/intake"
 import { Box } from "~styled"
 import "./HeaderButton.scss"
 
@@ -48,6 +49,10 @@ const HeaderButton = ({
 }) => {
   const [show, setModalShow] = useState(false)
   const [showConfirmation, setShowConfirmation] = useState(false)
+  const [emailInputValue, setEmailInputValue] = useState("")
+  const [nameInputValue, setNameInputValue] = useState("")
+  const [zipcodeInputValue, setZipcodeInputValue] = useState("")
+  const [dropdownInputValue, setDropdownInputValue] = useState("")
 
   const scrollToCarshare = () => {
     scroller.scrollTo("anchor2", {
@@ -69,6 +74,10 @@ const HeaderButton = ({
     setShowConfirmation(true)
   }
 
+  async function handleSubmit() {
+    const response = await Intake.submit({ emailInputValue })
+  }
+
   return (
     <div className="header-button-wrapper">
       <HeaderButtonWrapper {...rest}>
@@ -84,25 +93,42 @@ const HeaderButton = ({
             </Modal.Title>
           </Modal.Header>
           <div style={{ padding: "20px" }}>
-            <Form>
+            <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3">
                 <Form.Label>
                   Please provide the following information to get early access
                 </Form.Label>
-                <Form.Control required type="text" placeholder="Name" />
+                <Form.Control
+                  onChange={e => setNameInputValue(e.target.value)}
+                  // required
+                  type="text"
+                  placeholder="Name"
+                />
                 <br />
-                <Form.Control required type="email" placeholder="Email" />
+                <Form.Control
+                  onChange={e => setEmailInputValue(e.target.value)}
+                  required
+                  type="email"
+                  placeholder="Email"
+                />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Control length={3} required placeholder="Zip code" />
+                <Form.Control
+                  onChange={e => setZipcodeInputValue(e.target.value)}
+                  // required
+                  placeholder="Zip code"
+                />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Label>
                   Are you a rideshare fleet or power user? (optional)
                 </Form.Label>
 
-                <Form.Control as="select">
+                <Form.Control
+                  onChange={e => setDropdownInputValue(e.target.value)}
+                  as="select"
+                >
                   <option>Choose Option</option>
                   <option value="1">Rideshare Fleet</option>
                   <option value="2">Power User</option>
@@ -142,7 +168,6 @@ const HeaderButton = ({
           </div>
         </Modal>
         <button
-
           onClick={scrollToRideShare}
           className="rideshare-button"
           // to={btnTwoLink ? btnTwoLink : "/"}
@@ -157,10 +182,7 @@ const HeaderButton = ({
           {btnOneText}
         </button>
         <div className="divider1"></div>
-        <button
-          className="login-button"
-          to={btnTwoLink ? btnTwoLink : "/"}
-        >
+        <button className="login-button" to={btnTwoLink ? btnTwoLink : "/"}>
           {btnFourText}
         </button>
         <div className="divider1"></div>
