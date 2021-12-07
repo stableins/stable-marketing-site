@@ -8,6 +8,21 @@ import "./index.scss"
 
 export default function CounterBlock({ ...rest }) {
   const [showModal, setShowModal] = useState(false)
+   const [emailInputValue, setEmailInputValue] = useState("")
+   const [nameInputValue, setNameInputValue] = useState("")
+   const [zipcodeInputValue, setZipcodeInputValue] = useState("")
+   const [dropdownInputValue, setDropdownInputValue] = useState("")
+
+  async function handleSubmit(event) {
+    event.preventDefault()
+    const response = await Intake.submit(
+      emailInputValue,
+      zipcodeInputValue,
+      nameInputValue,
+      dropdownInputValue
+    )
+  }
+
   return (
     <Counter {...rest}>
       <Counter.Wrapper>
@@ -17,7 +32,7 @@ export default function CounterBlock({ ...rest }) {
               {({ isVisible }) => (
                 <div style={{ height: 30, marginBottom: "10px" }}>
                   {isVisible ? (
-                    <CountUp start={0} duration={3} end={1027} />
+                    <CountUp start={0} duration={3} end={100} />
                   ) : null}
                   +
                 </div>
@@ -33,7 +48,7 @@ export default function CounterBlock({ ...rest }) {
             onClick={() => setShowModal(true)}
           >
             Join them now
-          </Button>
+          </Button>∫
           <Modal
             show={showModal}
             onHide={() => setShowModal(false)}
@@ -46,25 +61,42 @@ export default function CounterBlock({ ...rest }) {
               </Modal.Title>
             </Modal.Header>
             <div style={{ padding: "20px" }}>
-              <Form>
+              <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
                   <Form.Label>
                     Please provide the following information to get early access
                   </Form.Label>
-                  <Form.Control required type="text" placeholder="Name" />
+                  <Form.Control
+                    onChange={e => setNameInputValue(e.target.value)}
+                    // required
+                    type="text"
+                    placeholder="Name"
+                  />
                   <br />
-                  <Form.Control required type="email" placeholder="Email" />
+                  <Form.Control
+                    onChange={e => setEmailInputValue(e.target.value)}
+                    required
+                    type="email"
+                    placeholder="Email"
+                  />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Control length={3} required placeholder="Zip code" />
+                  <Form.Control
+                    onChange={e => setZipcodeInputValue(e.target.value)}
+                    // required
+                    placeholder="Zip code"
+                  />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                   <Form.Label>
                     Are you a rideshare fleet or power user? (optional)
                   </Form.Label>
 
-                  <Form.Control as="select">
+                  <Form.Control
+                    onChange={e => setDropdownInputValue(e.target.value)}
+                    as="select"
+                  >
                     <option>Choose Option</option>
                     <option value="1">Rideshare Fleet</option>
                     <option value="2">Power User</option>

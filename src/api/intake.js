@@ -1,9 +1,16 @@
 import axios from "axios"
 
-
-const submit = (emailInputValue) => {
+const submit = (
+  nameInputValue,
+  emailInputValue,
+  zipcodeInputValue,
+  dropdownInputValue,
+) => {
   return axios.post("https://api.stablelabs.io/marketing", {
+    name: nameInputValue,
     email: emailInputValue,
+    zipcode: zipcodeInputValue,
+    dropdown: dropdownInputValue,
   })
 }
 

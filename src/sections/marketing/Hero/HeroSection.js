@@ -14,8 +14,9 @@ import "./HeroSection.scss"
 export default function HeroSection() {
   const [show, setShow] = useState(false)
   const [emailInputValue, setEmailInputValue] = useState("")
+  const [showConfirmation, setShowConfirmation] = useState(false)
 
-  console.log(emailInputValue);
+  console.log(emailInputValue)
 
   console.log(emailInputValue)
 
@@ -35,9 +36,18 @@ export default function HeroSection() {
     })
   }
 
-  async function handleEmailSubmit() {
-    const response = await Intake.submit({ emailInputValue })
-    console.log(response)
+  async function handleEmailSubmit(event) {
+    event.preventDefault()
+    try {
+      const response = await Intake.submit(emailInputValue)
+      console.log(response)
+
+      if (response.data.statusCode === 200) {
+        setShowConfirmation(true)
+      }
+    } catch (e) {
+      alert("Submission Error")
+    }
   }
 
   return (
@@ -134,6 +144,29 @@ export default function HeroSection() {
           </Container>
         </Hero>
       </div>
+      <Modal
+        show={showConfirmation}
+        onHide={() => setShowConfirmation(false)}
+        dialogClassName="modal-120w"
+        aria-labelledby="example-custom-modal-styling-title"
+      >
+        <Modal.Header>
+          <Modal.Title id="example-custom-modal-styling-title">
+            <img width={150} src={StableLogo} />
+          </Modal.Title>
+        </Modal.Header>
+        <div className="confirmation-modal-content-wrapper">
+          <h2 className="confirmation-modal-header">
+            Thank you for submitting your details.
+          </h2>
+          <p className="confirmation-modal-text">
+            You will receive further information to your inbox. Make sure to
+            check your junk folder and add hello@stableins.com to your contacts
+            to ensure you receive further communication from us.
+          </p>
+          <button onClick={() => setShowConfirmation(false)}>Close</button>
+        </div>
+      </Modal>
     </Fade>
   )
 }
