@@ -1,6 +1,8 @@
 @media (max-width: 450px) {
   .footer-wrapper {
+height: 230px;
     .contact-wrapper {
+      margin-top: -65px;
     }
 
     .copyright-wrapper {
@@ -14,16 +16,18 @@
       font-size: 35px;
 
       p {
-        font-size: 17px;
-        text-align: left;
+        font-size: 15px;
+        text-align: center;
       }
     }
 
     .socials {
       text-align: left;
+      margin-top: -50px;
 
       i {
-        font-size: 2em;
+        font-size: 2.5em;
+
       }
     }
   }
