@@ -152,8 +152,9 @@
       top: -20px;
       font-family: Rubik;
       font-style: normal;
+      line-height: 40px;
       font-weight: normal;
-      font-size: 40px;
+      font-size: 36px;
 
       /* Stable Blue */
 
@@ -163,6 +164,8 @@
     .text {
       margin-top: 240px;
       position: absolute;
+      color: #303030;
+      
     }
 
     .button-wrapper {
@@ -248,13 +251,14 @@
       padding: 20px;
 
       .countup {
-        font-size: 60px;
+        font-size: 50px;
         text-align: center;
       }
 
       .counter-text-and-button {
         display: block;
         width: 100%;
+        text-align: center;
 
         > p {
           // width: 330px;

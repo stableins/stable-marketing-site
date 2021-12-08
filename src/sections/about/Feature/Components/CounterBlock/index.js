@@ -48,7 +48,8 @@ export default function CounterBlock({ ...rest }) {
             onClick={() => setShowModal(true)}
           >
             Join them now
-          </Button>∫
+          </Button>
+          ∫
           <Modal
             show={showModal}
             onHide={() => setShowModal(false)}
@@ -94,7 +95,17 @@ export default function CounterBlock({ ...rest }) {
                   </Form.Label>
 
                   <Form.Control
-                    onChange={e => setDropdownInputValue(e.target.value)}
+                    onChange={e => {
+                      if (e.target.value === "Choose Option") {
+                        setDropdownInputValue(null)
+                      }
+                      if (e.target.value === "1") {
+                        setDropdownInputValue("Rideshare Fleet")
+                      }
+                      if (e.target.value === "2") {
+                        setDropdownInputValue("Carshare Fleet")
+                      }
+                    }}
                     as="select"
                   >
                     <option>Choose Option</option>

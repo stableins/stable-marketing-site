@@ -10,8 +10,8 @@ import "./ServiceSection.scss"
 
 export default function ServiceSection() {
   return (
-    <div className="service-section-4-wrapper">
-      <Service className="border-top border-default-color-2 bg-default">
+    <Service className="border-top border-default-color-2 bg-default">
+        <div className="service-section-4-wrapper">
         <Service.Shape className="service-shape service-shape--l1">
         </Service.Shape>
         <Container>
@@ -53,7 +53,7 @@ export default function ServiceSection() {
             </Col>
           </Row>
         </Container>
-      </Service>
     </div>
+      </Service>
   )
 }
