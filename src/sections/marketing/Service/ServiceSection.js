@@ -20,6 +20,8 @@ export default function ServiceSection() {
   const [zipcodeInputValue, setZipcodeInputValue] = useState("")
   const [dropdownInputValue, setDropdownInputValue] = useState("")
 
+  console.log(dropdownInputValue)
+
   async function handleSubmit(event) {
     event.preventDefault()
     try {
@@ -38,6 +40,8 @@ export default function ServiceSection() {
       alert(e)
     }
   }
+
+  function handleDrodown() {}
 
   return (
     <div className="service-wrapper1">
@@ -203,7 +207,17 @@ export default function ServiceSection() {
               </Form.Label>
 
               <Form.Control
-                onChange={e => setDropdownInputValue(e.target.value)}
+                onChange={e => {
+                  if (e.target.value === "Choose Option") {
+                    setDropdownInputValue(null)
+                  }
+                  if (e.target.value === "1") {
+                    setDropdownInputValue("Rideshare Fleet")
+                  }
+                  if (e.target.value === "2") {
+                    setDropdownInputValue("Carshare Fleet")
+                  }
+                }}
                 as="select"
               >
                 <option>Choose Option</option>

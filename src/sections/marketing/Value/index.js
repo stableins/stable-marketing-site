@@ -74,7 +74,7 @@ const FeatureSection = ({ ...rest }) => {
                               aria-current="page"
                               className="button__Button-sc-1tkahez-0 cAxprB btn-purple-heart btn"
                             >
-                              Get your free driver report NOW
+                              Get Your Free Driver Report NOW
                               <i class="fas fa-chevron-right"></i>
                             </button>
                           </div>

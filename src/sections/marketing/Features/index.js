@@ -152,15 +152,15 @@ const FeatureSection = ({ ...rest }) => {
                                   An improved claims experience that helps you
                                   resolve claims faster, available 24/7.
                                 </div>
+                                <button
+                                  className="button"
+                                  onClick={() => setCounterModal(true)}
+                                >
+                                  Get Early Access{" "}
+                                  <i id="i" class="fas fa-chevron-right"></i>
+                                </button>
                               </div>
                             </div>
-                            <button
-                              className="button"
-                              onClick={() => setCounterModal(true)}
-                            >
-                              Get Early Access{" "}
-                              <i class="fas fa-chevron-right"></i>
-                            </button>
                           </div>
                         </Feature.Title>
                       </Feature.Box>
@@ -320,7 +320,17 @@ const FeatureSection = ({ ...rest }) => {
               </Form.Label>
 
               <Form.Control
-                onChange={e => setDropdownInputValue(e.target.value)}
+                onChange={e => {
+                  if (e.target.value === "Choose Option") {
+                    setDropdownInputValue(null)
+                  }
+                  if (e.target.value === "1") {
+                    setDropdownInputValue("Rideshare Fleet")
+                  }
+                  if (e.target.value === "2") {
+                    setDropdownInputValue("Carshare Fleet")
+                  }
+                }}
                 as="select"
               >
                 <option>Choose Option</option>
