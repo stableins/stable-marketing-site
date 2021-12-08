@@ -163,8 +163,14 @@
 
     .text {
       margin-top: 240px;
+      justify-content: center;
       position: absolute;
       color: #303030;
+
+      br {
+            display: none;
+
+      }
       
     }
 
@@ -194,7 +200,7 @@
     .widget-wrapper {
       display: block;
       width: 100%;
-      margin-top: 140px;
+      margin-top: 110px;
       text-align: center;
 
       .widget {
