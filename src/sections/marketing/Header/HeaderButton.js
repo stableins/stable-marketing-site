@@ -47,7 +47,7 @@ const HeaderButton = ({
   btnFourText,
   ...rest
 }) => {
-  const [show, setModalShow] = useState(false)
+  const [modal, setModal] = useState(false)
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [emailInputValue, setEmailInputValue] = useState("")
   const [nameInputValue, setNameInputValue] = useState("")
@@ -92,14 +92,14 @@ const HeaderButton = ({
     <div className="header-button-wrapper">
       <HeaderButtonWrapper {...rest}>
         <Modal
-          show={show}
-          onHide={() => setModalShow(false)}
+          show={modal}
+          onHide={() => setModal(false)}
           dialogClassName="modal-90w"
           aria-labelledby="example-custom-modal-styling-title"
         >
-          <Modal.Header>
+          <Modal.Header className="modal-header" closeButton>
             <Modal.Title id="example-custom-modal-styling-title">
-              <img width={150} src={StableLogo} />
+              <img src={StableLogo} width={150} />
             </Modal.Title>
           </Modal.Header>
           <div style={{ padding: "20px" }}>
@@ -154,9 +154,10 @@ const HeaderButton = ({
                   <option value="2">Power User</option>
                 </Form.Control>
               </Form.Group>
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
+              <button className="modal-button" variant="primary" type="submit">
+                <span>Submit</span>
+                <i class="fas fa-chevron-right"></i>
+              </button>
             </Form>
           </div>
         </Modal>
@@ -203,7 +204,7 @@ const HeaderButton = ({
         </button>
         <div className="divider1"></div>
         <button
-          onClick={() => setModalShow(true)}
+          onClick={() => setModal(true)}
           className="early-access-button"
           to={btnTwoLink ? btnTwoLink : "/"}
         >

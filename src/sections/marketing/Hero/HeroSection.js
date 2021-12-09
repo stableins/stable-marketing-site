@@ -6,6 +6,7 @@ import SingleAniamtion from "../../../components/Animation/singleAnimation"
 import { Link } from "~components"
 import Intake from "../../../api/intake"
 import { scroller } from "react-scroll"
+import smoothscroll from "smoothscroll-polyfill"
 import ImageGroup from "./Components/ImageGroup"
 import Fade from "react-reveal/Fade"
 import Hero from "./style"
@@ -26,6 +27,7 @@ export default function HeroSection() {
       delay: 0,
       smooth: "easeInOutQuart",
     })
+    document.querySelector("anchor").scrollIntoView({ behavior: "smooth" })
   }
 
   const scrollToCarshare = () => {

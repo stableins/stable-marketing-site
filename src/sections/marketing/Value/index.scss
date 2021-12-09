@@ -154,7 +154,7 @@
   .value-index-wrapper {
     .inner-wrapper {
       // display: inline-flex;
-      height: 590px;
+      height: 570px;
       .title {
         font-family: Rubik;
         width: 333px;
@@ -164,7 +164,6 @@
         text-align: left;
         color: #002e6d;
         margin-bottom: 30px;
-
         font-family: Rubik;
         font-size: 36px;
         font-style: normal;
@@ -186,6 +185,7 @@
             width: 100%;
             .p-text1 {
               width: 100%;
+              font-size: 18px;
             }
 
             .p-text2 {
@@ -196,12 +196,12 @@
         }
 
         .right {
-          margin-top: 140px;
+          margin-top: 110px;
           width: 100%;
 
           .item-wrapper {
             width: 100%;
-            margin-top: 35px;
+            margin-top: 0px;
 
             .inner-item-wrapper {
               // display: inline-flex;
@@ -267,7 +267,7 @@
 
       .button-wrapper {
         text-align: left;
-        margin-top: 400px;
+        margin-top: 380px;
 
         button {
           font-family: Roboto;
