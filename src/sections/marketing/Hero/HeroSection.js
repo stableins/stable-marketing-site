@@ -17,9 +17,10 @@ export default function HeroSection() {
   const [emailInputValue, setEmailInputValue] = useState("")
   const [showConfirmation, setShowConfirmation] = useState(false)
 
-  smoothscroll.polyfill()
+  // smoothscroll.polyfill()
 
   const scrollToRideShare = () => {
+    smoothscroll.polyfill()
     scroller.scrollTo("anchor", {
       duration: 10,
       delay: 0,
