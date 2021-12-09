@@ -63,8 +63,8 @@ export default function HeroSection() {
                 <Hero.Content>
                   <Hero.Title as="h1">
                     <div className="title">
-                      <span className="bold-text">Get Early Access</span>{" "}
-                      <span className="blue-text">to</span>
+                      <span className="bold-text">Discover What</span>{" "}
+                      <span className="blue-text"></span>
                       <p>
                         <span className="blue-text">Smarter</span>{" "}
                         <ReactTypingEffect
@@ -76,17 +76,17 @@ export default function HeroSection() {
                           typingDelay="400"
                           eraseDelay="800"
                         />
-                        share
-                        <br /> <span className="blue-text"> Insurance</span>
+                        <span className="bold-text-share">share</span> <br />{" "}
+                        <span className="blue-text"> Insurance Looks Like</span>
                       </p>
                     </div>
                   </Hero.Title>
                   <Hero.Text>
                     <div className="hero-text">
-                      Your current insurance doesn't provide you incentives or
-                      the ability to manage risk. Which means you are
-                      overpaying. Stable gives you tools to improve your risk
-                      and uses new data, in real-time, to better price
+                      You're probably overpaying for rideshare and carshare
+                      insurance. And you definitely should get more value from
+                      your insurance company. Stable gives you tools to improve
+                      your risk and uses new data, in real-time, to better price
                       insurance.{" "}
                     </div>
                     <br className="d-none d-xs-block" />

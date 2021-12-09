@@ -114,7 +114,7 @@ export default function ServiceSection() {
                     <p>
                       <i class="fas fa-tasks"></i>
                     </p>
-                    <div className="widget-title">
+                    <div className="widget-title-1">
                       Manage Smartly <br />
                       <p>
                         Your data is valuable. We use it to provide you better

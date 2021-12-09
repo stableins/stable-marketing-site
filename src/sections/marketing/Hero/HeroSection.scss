@@ -3,6 +3,16 @@
     background-color: #f7f7f7;
     height: 820px;
 
+    .scroll-to-top {
+      position: fixed;
+      bottom: 50;
+      right: 30;
+      cursor: pointer;
+      transition-duration: 0.2s;
+      transition-timing-function: linear;
+      transition-delay: 0s;
+    }
+
     .title {
       width: 791px;
       top: 5;
@@ -28,7 +38,7 @@
           font-family: Rubik;
           font-size: 80px;
           font-style: normal;
-          font-weight: 700;
+          font-weight: 400;
           line-height: 100px;
           letter-spacing: 0em;
           text-align: left;
@@ -37,7 +47,7 @@
       }
 
       .bold-text {
-        font-weight: 700;
+        font-weight: 400;
         margin-top: 60px;
       }
 
@@ -76,6 +86,7 @@
       position: absolute;
       bottom: 100px;
       top: 10px;
+      padding-top: 20px;
     }
     .form-control {
       height: 50px;
@@ -101,7 +112,7 @@
     .login {
       color: #303030;
       position: absolute;
-      bottom: -112px;
+      bottom: -125px;
       span {
         font-family: Rubik;
         font-style: normal;
@@ -117,7 +128,7 @@
     .anchors {
       display: inline-flex;
       position: absolute;
-      bottom: -140px;
+      bottom: -160px;
       .rideshare-text {
         text-decoration: underline;
         color: #ffae13;
@@ -152,7 +163,7 @@
     background-color: #f7f7f7;
     // height: 840px;
     .title {
-      width: 430px;
+      // width: 100%;
       margin-left: -5px;
       color: #002e6d;
       font-family: Rubik;
@@ -197,15 +208,14 @@
         font-size: 40px;
       }
 
-      .share {
-        color: #ffae13;
+      .bold-text-share {
         font-family: Rubik;
-        font-family: Roboto;
+        font-size: 40px;
         font-style: normal;
-        font-weight: 700;
-        line-height: 100px;
-        letter-spacing: 0em;
+        // line-height: 100px;
         text-align: left;
+        font-weight: 700;
+        color: #ffae13;
       }
 
       .typing-chunk {

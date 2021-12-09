@@ -1,0 +1,39 @@
+@media (max-width: 450px) {
+  .header-wrapper {
+    background: blue;
+
+    .back-to-top {
+      position: fixed;
+      background: #ffae13;
+      color: #002e6d;
+      border: none;
+      bottom: 50px;
+      width: 50px;
+      font-weight: 400;
+      height: 50px;
+      right: 20px;
+      font-size: 30px;
+      border-radius: 6px;
+    }
+  }
+}
+
+@media (min-width: 500px) {
+  .header-wrapper {
+    background: blue;
+
+    .back-to-top {
+      position: fixed;
+      background: #ffae13;
+      color: #002e6d;
+      border: none;
+      bottom: 10px;
+      width: 50px;
+      font-weight: 400;
+      height: 50px;
+      right: 20px;
+      font-size: 30px;
+      border-radius: 6px;
+    }
+  }
+}
