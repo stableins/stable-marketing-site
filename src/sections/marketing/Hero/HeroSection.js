@@ -6,7 +6,7 @@ import SingleAniamtion from "../../../components/Animation/singleAnimation"
 import { Link } from "~components"
 import Intake from "../../../api/intake"
 import { scroller } from "react-scroll"
-import smoothScroll from "smoothscroll-polyfill"
+import smoothscroll from "smoothscroll-polyfill"
 import ImageGroup from "./Components/ImageGroup"
 import Fade from "react-reveal/Fade"
 import Hero from "./style"
@@ -17,19 +17,14 @@ export default function HeroSection() {
   const [emailInputValue, setEmailInputValue] = useState("")
   const [showConfirmation, setShowConfirmation] = useState(false)
 
-  console.log(emailInputValue)
-
-  console.log(emailInputValue)
+  smoothscroll.polyfill()
 
   const scrollToRideShare = () => {
-    // scroller.scrollTo("anchor", {
-    //   duration: 10,
-    //   delay: 0,
-    //   smooth: "easeInOutQuart",
-    // })
-    smoothScroll.polyfill(
-      document.querySelector(".anchor").scrollIntoView({ behavior: "smooth" })
-    )
+    scroller.scrollTo("anchor", {
+      duration: 10,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    })
   }
 
   const scrollToCarshare = () => {
