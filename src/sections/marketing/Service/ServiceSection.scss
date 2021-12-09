@@ -168,10 +168,8 @@
       color: #303030;
 
       br {
-            display: none;
-
+        display: none;
       }
-      
     }
 
     .button-wrapper {
@@ -200,7 +198,7 @@
     .widget-wrapper {
       display: block;
       width: 100%;
-      margin-top: 110px;
+      margin-top: 140px;
       text-align: center;
 
       .widget {
@@ -252,7 +250,7 @@
       width: 100%;
       height: 200px;
       border-radius: 6px;
-      bottom: -200px;
+      margin-top: -10px;
       color: white;
       padding: 20px;
 
