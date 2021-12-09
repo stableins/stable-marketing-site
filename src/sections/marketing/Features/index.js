@@ -20,7 +20,7 @@ import Feature from "./style"
 import "./index.scss"
 
 const FeatureSection = ({ ...rest }) => {
-  const [counterModal, setCounterModal] = useState(false)
+  const [modal, setModal] = useState(false)
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [emailInputValue, setEmailInputValue] = useState("")
   const [nameInputValue, setNameInputValue] = useState("")
@@ -38,7 +38,7 @@ const FeatureSection = ({ ...rest }) => {
       )
       console.log(response.data.statusCode)
       if (response.data.statusCode === 200) {
-        setModalShow(false)
+        setModal(false)
         setShowConfirmation(true)
       }
     } catch (e) {
@@ -55,7 +55,7 @@ const FeatureSection = ({ ...rest }) => {
           <a className="anchor"></a>
 
           <Container>
-            <Slide left>
+            <Slide className="slide" left>
               <Row>
                 <Col xs="auto" className="col-xl-8 col-lg-10">
                   <div className="title">
@@ -154,7 +154,7 @@ const FeatureSection = ({ ...rest }) => {
                                 </div>
                                 <button
                                   className="button"
-                                  onClick={() => setCounterModal(true)}
+                                  onClick={() => setModal(true)}
                                 >
                                   Get Early Access{" "}
                                   <i id="i" class="fas fa-chevron-right"></i>
@@ -256,7 +256,7 @@ const FeatureSection = ({ ...rest }) => {
                               </div>
                               <button
                                 className="button"
-                                onClick={() => setCounterModal(true)}
+                                onClick={() => setModal(true)}
                               >
                                 Get Early Access{" "}
                                 <i id="i" class="fas fa-chevron-right"></i>
@@ -271,17 +271,17 @@ const FeatureSection = ({ ...rest }) => {
                 {/* </Col> */}
               </Row>
             </Slide>
-            <Slide right></Slide>
+            {/* <Slide right></Slide> */}
           </Container>
         </div>
       </Feature>
       <Modal
-        show={counterModal}
-        onHide={() => setCounterModal(false)}
+        show={modal}
+        onHide={() => setModal(false)}
         dialogClassName="modal-90w"
         aria-labelledby="example-custom-modal-styling-title"
       >
-        <Modal.Header>
+        <Modal.Header className="modal-header" closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
             <img src={StableLogo} width={150} />
           </Modal.Title>
@@ -338,9 +338,10 @@ const FeatureSection = ({ ...rest }) => {
                 <option value="2">Power User</option>
               </Form.Control>
             </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
+            <button className="modal-button" variant="primary" type="submit">
+              <span>Submit</span>
+              <i class="fas fa-chevron-right"></i>
+            </button>
           </Form>
         </div>
       </Modal>

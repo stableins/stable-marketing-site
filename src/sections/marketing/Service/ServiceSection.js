@@ -13,7 +13,7 @@ import Service from "./style"
 import "./ServiceSection.scss"
 
 export default function ServiceSection() {
-  const [counterModal, setCounterModal] = useState(false)
+  const [modal, setModal] = useState(false)
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [emailInputValue, setEmailInputValue] = useState("")
   const [nameInputValue, setNameInputValue] = useState("")
@@ -91,7 +91,7 @@ export default function ServiceSection() {
                             Vehicle owners and counting have joined the Stable
                             community. Will you?
                           </p>
-                          <button onClick={() => setCounterModal(true)}>
+                          <button onClick={() => setModal(true)}>
                             Join Now <i class="fas fa-chevron-right"></i>
                           </button>
                         </div>
@@ -114,7 +114,7 @@ export default function ServiceSection() {
                     <p>
                       <i class="fas fa-tasks"></i>
                     </p>
-                    <div className="widget-title">
+                    <div className="widget-title-1">
                       Manage Smartly <br />
                       <p>
                         Your data is valuable. We use it to provide you better
@@ -125,7 +125,7 @@ export default function ServiceSection() {
                   </div>
                   <div className="widget">
                     <p>
-                      <i class="fas fa-road"></i>
+                      <i id="road" class="fas fa-road"></i>
                     </p>
                     <div className="widget-title">
                       Help Develop Our Roadmap <br />
@@ -152,7 +152,7 @@ export default function ServiceSection() {
                 </div>
               </Row>
               <div className="button-wrapper">
-                <button onClick={() => setCounterModal(true)}>
+                <button onClick={() => setModal(true)}>
                   Help Build Better Insurance{" "}
                   <i class="fas fa-chevron-right"></i>
                 </button>
@@ -162,13 +162,12 @@ export default function ServiceSection() {
         </Container>
       </Service>
       <Modal
-        className="modal"
-        show={counterModal}
-        onHide={() => setCounterModal(false)}
+        show={modal}
+        onHide={() => setModal(false)}
         dialogClassName="modal-90w"
         aria-labelledby="example-custom-modal-styling-title"
       >
-        <Modal.Header>
+        <Modal.Header className="modal-header" closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
             <img src={StableLogo} width={150} />
           </Modal.Title>
@@ -225,9 +224,10 @@ export default function ServiceSection() {
                 <option value="2">Power User</option>
               </Form.Control>
             </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
+            <button className="modal-button" variant="primary" type="submit">
+              <span>Submit</span>
+              <i class="fas fa-chevron-right"></i>
+            </button>
           </Form>
         </div>
       </Modal>

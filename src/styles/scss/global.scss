@@ -16,17 +16,49 @@ a {
 }
 body {
   > div {
-  overflow: hidden;
-}
+    overflow: hidden;
+  }
 }
 
-.btn{
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
+.modal-header {
+  button {
+    background: #002e6d;
+    height: 30px;
+    width: 30px;
+    border: none;
+    color: #ffffff;
 
+    span {
+      font-size: 35px;
+    }
+  }
+}
+
+.modal-button {
+  width: 100%;
+  background: #ffae13;
+  height: 50px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  border-radius: 8px;
+  border: none;
+  // text-align: center;
+
+  i {
+    padding-left: 60px;
+    margin-right: -60px;
+  }
+}
 
 /* Animations Sonar */
 .sonar-emitter {
@@ -92,31 +124,28 @@ body {
   }
 }
 
-
-.btn-rest{
+.btn-rest {
   box-shadow: none;
-  border:0px;
-  background:transparent;
-  &:focus{
+  border: 0px;
+  background: transparent;
+  &:focus {
     outline: none;
   }
 }
 
-
-
-.card{
-  &-title{
+.card {
+  &-title {
     font-size: 18px;
-    color:red;
+    color: red;
   }
-  &-text{
-    color:green;
+  &-text {
+    color: green;
     font-size: 14px;
   }
-  &.card-active{
-    background:pink
+  &.card-active {
+    background: pink;
   }
-  &.text-center{
+  &.text-center {
     text-align: center;
   }
 }

@@ -1,0 +1,35 @@
+@media (max-width: 500px) {
+  .site-nav-wrapper {
+    display: inline-block;
+    width: 100%;
+
+    .site-navbar {
+      display: inline-block;
+      width: 100%;
+      .navbar-brand {
+        width: 84%;
+      }
+
+      .navbar-toggler {
+        width: 1%;
+
+      }
+    }
+  }
+}
+
+@media (min-width: 501px) {
+  .site-nav-wrapper {
+    .site-navbar {
+      width: auto;
+
+      .navbar-brand {
+        width: 70%;
+      }
+
+      .button-block {
+        width: auto;
+      }
+    }
+  }
+}

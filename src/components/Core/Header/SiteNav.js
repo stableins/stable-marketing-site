@@ -3,9 +3,10 @@ import { Navbar } from "react-bootstrap"
 import siteBrandDark from "~image/logo/Stable-logo_site.png"
 import siteBrandLight from "~image/logo/Stable-logo_site.png"
 import Menu from "./Menu"
+import "./SiteNav.scss"
 const SiteNavbar = ({ buttonBlock, darkLogo, customLogo, defaultLogo }) => {
   return (
-    <>
+    <div className="site-nav-wrapper">
       <Navbar
         collapseOnSelect
         expand="lg"
@@ -14,6 +15,7 @@ const SiteNavbar = ({ buttonBlock, darkLogo, customLogo, defaultLogo }) => {
         className="site-navbar"
       >
         <Navbar.Brand
+          className="navbar-brand"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           style={{ cursor: "pointer" }}
         >
@@ -29,14 +31,14 @@ const SiteNavbar = ({ buttonBlock, darkLogo, customLogo, defaultLogo }) => {
             />
           )}
         </Navbar.Brand>
-        {/* <Navbar.Toggle
+        <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           className="hamburgur"
-        /> */}
+        />
         <Menu />
-        {buttonBlock}
+        <div className="button-block">{buttonBlock}</div>
       </Navbar>
-    </>
+    </div>
   )
 }
 

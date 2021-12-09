@@ -183,8 +183,9 @@
               border: none;
               color: #002e6d;
 
-              > i {
+              #i {
                 margin-left: 5px;
+                color: #002e6d;
               }
             }
 
@@ -262,8 +263,9 @@
           width: 334px;
         }
 
-        i {
+        #i {
           margin-left: 5px;
+          color: #002E6D;
         }
       }
     }
@@ -445,7 +447,7 @@
               border: none;
               color: #002e6d;
 
-              > i {
+              > #i {
                 color: #002e6d;
                 z-index: -1;
                 margin-left: 5px;
@@ -525,7 +527,7 @@
           width: 334px;
         }
 
-        i {
+        #i {
           margin-left: 5px;
           color: black !important;
         }
@@ -562,6 +564,10 @@
       margin-top: -40px;
       // display: inline-flex;
 
+      .slide {
+        display: none;
+      }
+
       .title {
         font-family: Rubik;
         font-size: 36px;
@@ -590,7 +596,7 @@
 
             .p-text2 {
               width: 100%;
-              margin-top: 230px;
+              margin-top: 170px;
             }
           }
         }
@@ -598,13 +604,12 @@
         .right {
           // margin-top: 140px;
           // width: 100%;m
-          margin-top: -30px;
+          margin-top: 100px;
           padding: 0 20px;
 
           .item1 {
             text-align: center;
             width: auto;
-            margin-top: 150px;
 
             .inner-item-wrapper {
               display: block;
@@ -639,7 +644,7 @@
                   line-height: 26px;
                   letter-spacing: 0em;
                   text-align: center;
-                  color: #002e6d;
+                  color: #303030;
                 }
               }
             }
@@ -683,7 +688,7 @@
                   line-height: 26px;
                   letter-spacing: 0em;
                   text-align: center;
-                  color: #002e6d;
+                  color: #303030;
                 }
               }
             }
@@ -709,9 +714,8 @@
               color: #002e6d;
 
               #i {
-                color: #002e6d;
-                z-index: -1;
-                // margin-left: 5px;
+                margin-left: 5px;
+                color: black;
               }
             }
 
@@ -748,7 +752,7 @@
                   line-height: 26px;
                   letter-spacing: 0em;
                   text-align: center;
-                  color: #002e6d;
+                  color: #303030;
                 }
               }
             }
@@ -803,7 +807,7 @@
 
       .text {
         > p {
-          font-size: 22px;
+          font-size: 18px;
           font-style: normal;
           font-weight: 400;
           line-height: 30px;
@@ -859,9 +863,6 @@
             .p-text1 {
               text-align: left;
               width: 100%;
-              left: 155px;
-              // top: -90px;
-              bottom: 0;
               color: #303030;
             }
 
@@ -869,12 +870,12 @@
               width: 100%;
               height: 163px;
               left: 160px;
-              margin-top: 200px;
+              margin-top: 170px;
               top: 10px;
               font-family: Rubik;
               font-style: normal;
               font-weight: normal;
-              font-size: 22px;
+              font-size: 18px;
               line-height: 30px;
               text-align: left;
               color: #303030;
@@ -890,7 +891,7 @@
           .item1 {
             width: 100%;
             text-align: center;
-            margin-top: -70px;
+            margin-top: -100px;
 
             .inner-item-wrapper {
               display: block;
@@ -925,7 +926,7 @@
                   line-height: 26px;
                   letter-spacing: 0em;
                   text-align: center;
-                  color: #002e6d;
+                  color: #303030;
                 }
               }
             }
@@ -968,7 +969,7 @@
                   line-height: 26px;
                   letter-spacing: 0em;
                   text-align: center;
-                  color: #002e6d;
+                  color: #303030;
                 }
               }
             }
@@ -976,8 +977,6 @@
           .item3 {
             text-align: center;
             width: auto;
-            left: 930px;
-            top: 130px;
             margin-top: 50px;
 
             .button {
@@ -1032,7 +1031,7 @@
                   line-height: 26px;
                   letter-spacing: 0em;
                   text-align: center;
-                  color: #002e6d;
+                  color: #303030;
                 }
               }
             }
@@ -1042,7 +1041,7 @@
 
       .text {
         > p {
-          font-size: 22px;
+          font-size: 18px;
           font-style: normal;
           font-weight: 400;
           line-height: 30px;
