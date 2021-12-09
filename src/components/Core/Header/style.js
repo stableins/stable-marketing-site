@@ -17,6 +17,7 @@ const SiteHeader = styled.div.attrs({
     border-color: rgba(255, 255, 255, 0.5);
     color: rgba(255, 255, 255, 0.77);
     .navbar-toggler-icon {
+      width: 100%;
       background: none;
       display: flex;
       align-items: center;

@@ -55,7 +55,7 @@ const FeatureSection = ({ ...rest }) => {
           <a className="anchor"></a>
 
           <Container>
-            <Slide left>
+            {/* <Slide className="slide" left> */}
               <Row>
                 <Col xs="auto" className="col-xl-8 col-lg-10">
                   <div className="title">
@@ -168,14 +168,14 @@ const FeatureSection = ({ ...rest }) => {
                   </div>
                 </Col>
               </Row>
-            </Slide>
+            {/* </Slide> */}
             <Slide right></Slide>
           </Container>
         </div>
         <div className="inner-wrapper2">
           <a className="anchor2"></a>
           <Container>
-            <Slide left>
+            {/* <Slide left> */}
               <Row>
                 {/* <Col xs="auto" className="col-xl-8 col-lg-10"> */}
                 <div className="title">Building a Carshare Fleet?</div>
@@ -270,8 +270,8 @@ const FeatureSection = ({ ...rest }) => {
                 </div>
                 {/* </Col> */}
               </Row>
-            </Slide>
-            <Slide right></Slide>
+            {/* </Slide> */}
+            {/* <Slide right></Slide> */}
           </Container>
         </div>
       </Feature>
