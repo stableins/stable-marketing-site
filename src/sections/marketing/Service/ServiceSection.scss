@@ -69,6 +69,36 @@
           padding-right: 20px;
         }
 
+        .widget-title-1 {
+          color: #002e6d;
+          font-family: Rubik;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 26px;
+          text-align: left;
+
+          > p {
+            font-family: Rubik;
+            font-size: 18px;
+            font-style: normal;
+            color: #002e6d;
+            font-weight: 700;
+            line-height: 26px;
+            letter-spacing: 0em;
+            text-align: left;
+
+            //styleName: Body;
+            font-family: Rubik;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 26px;
+            letter-spacing: 0em;
+            text-align: left;
+          }
+        }
+
         .widget-title {
           color: #002e6d;
           font-family: Rubik;
@@ -218,8 +248,8 @@
           margin-left: -3px;
         }
 
-        .widget-title-1 { 
-         color: #002e6d;
+        .widget-title-1 {
+          color: #002e6d;
           font-family: Rubik;
           font-style: normal;
           font-weight: bold;
@@ -228,7 +258,7 @@
           text-align: left;
           margin-left: 7px;
 
-           > p {
+          > p {
             font-family: Rubik;
             font-size: 18px;
             font-style: normal;
