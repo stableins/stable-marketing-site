@@ -51,12 +51,18 @@ const Menu = ({ ...rest }) => {
   }
 
   const scrollToRideshare = () => {
-    scroller.scrollTo("anchor", {
-      duration: 10,
-      delay: 0,
-      smooth: "easeInOutQuart",
+    window.scrollTo("anchor", {
+      behavior: "smooth",
     })
   }
+
+  // const scrollToRideshare = () => {
+  //   scroller.scrollTo("anchor", {
+  //     duration: 10,
+  //     delay: 0,
+  //     smooth: "easeInOutQuart",
+  //   })
+  // }
 
   const scrollToCarshare = () => {
     scroller.scrollTo("anchor2", {

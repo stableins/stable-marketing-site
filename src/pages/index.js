@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { PageWrapper } from "~components/Core"
 import HeroSection from "~sections/marketing/Hero"
 import ServiceSection from "~sections/marketing/Service"
@@ -35,6 +35,16 @@ const header = {
 }
 
 export default function Marketing() {
+  const [hasMounted, setHasMounted] = useState(false)
+
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  if (!hasMounted) {
+    return null
+  }
+
   return (
     <PageWrapper headerConfig={header}>
       <HeroSection />
