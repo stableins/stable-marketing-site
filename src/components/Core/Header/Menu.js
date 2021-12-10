@@ -78,18 +78,20 @@ const Menu = ({ ...rest }) => {
         />
         <Nav className="mr-auto site-menu-main">
           <div className="button-wrapper">
-            <Navbar.Toggle className="toggle">
-              <button onClick={scrollToRideshare}>Rideshare Insurance</button>
-            </Navbar.Toggle>
-            <Navbar.Toggle className="toggle">
+            <button onClick={scrollToRideshare}>
               {" "}
-              <button onClick={scrollToCarshare}>Carshare Insurance</button>
-            </Navbar.Toggle>
-
-            <Navbar.Toggle className="toggle">
-              <button>Log In</button>{" "}
-            </Navbar.Toggle>
-
+              <Navbar.Toggle className="toggle">
+                Rideshare Insurance
+              </Navbar.Toggle>
+            </button>{" "}
+            <button onClick={scrollToCarshare}>
+              <Navbar.Toggle className="toggle">
+                Carshare Insurance
+              </Navbar.Toggle>
+            </button>
+            <button>
+              <Navbar.Toggle className="toggle">Log In</Navbar.Toggle>
+            </button>
             <button onClick={() => setModal(true)} className="early-access">
               Get Early Access
             </button>
