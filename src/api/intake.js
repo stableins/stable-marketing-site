@@ -5,12 +5,14 @@ const submit = (
   emailInputValue,
   zipcodeInputValue,
   dropdownInputValue,
+  contactMessage
 ) => {
   return axios.post("https://api.stablelabs.io/marketing", {
     name: nameInputValue,
     email: emailInputValue,
     zipcode: zipcodeInputValue,
     dropdown: dropdownInputValue,
+    contactMessage: contactMessage,
   })
 }
 

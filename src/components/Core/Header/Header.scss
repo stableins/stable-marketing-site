@@ -7,13 +7,22 @@
       background: #ffae13;
       color: #002e6d;
       border: none;
+      width: 10px;
       bottom: 50px;
-      width: 50px;
+      text-align: center;
+      // width: 20px;
       font-weight: 400;
       height: 50px;
       right: 20px;
       font-size: 30px;
       border-radius: 6px;
+
+      p {
+        margin-left: -15px;
+        margin-bottom: -3px;
+        // font-size: 35px;
+
+      }
     }
   }
 }

@@ -65,7 +65,7 @@ const Header = () => {
         </Container>
         {showButton && (
           <button onClick={scrollToTop} className="back-to-top">
-            &#8679;
+            <p>&#8679;</p>
           </button>
         )}
       </SiteHeader>
