@@ -18,6 +18,7 @@ import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import { scroller } from "react-scroll"
 import Intake from "../../../api/intake"
 import "./Menu.scss"
+import NavbarToggle from "react-bootstrap/esm/NavbarToggle"
 
 const isObject = function (a) {
   return !!a && a.constructor === Object
@@ -41,7 +42,7 @@ const Menu = ({ ...rest }) => {
       )
       console.log(response.data.statusCode)
       if (response.data.statusCode === 200) {
-        setModalShow(false)
+        setModal(false)
         setShowConfirmation(true)
       }
     } catch (e) {
@@ -49,7 +50,7 @@ const Menu = ({ ...rest }) => {
     }
   }
 
-  const scrollToRideShare = () => {
+  const scrollToRideshare = () => {
     scroller.scrollTo("anchor", {
       duration: 10,
       delay: 0,
@@ -77,9 +78,20 @@ const Menu = ({ ...rest }) => {
         />
         <Nav className="mr-auto site-menu-main">
           <div className="button-wrapper">
-            <button onClick={scrollToRideShare}>Rideshare Insurance</button>
-            <button>Carshare Insurance</button>
-            <button>Log In</button>
+            <button onClick={scrollToRideshare}>
+              {" "}
+              <Navbar.Toggle className="toggle">
+                Rideshare Insurance
+              </Navbar.Toggle>
+            </button>{" "}
+            <button onClick={scrollToCarshare}>
+              <Navbar.Toggle className="toggle">
+                Carshare Insurance
+              </Navbar.Toggle>
+            </button>
+            <button>
+              <Navbar.Toggle className="toggle">Log In</Navbar.Toggle>
+            </button>
             <button onClick={() => setModal(true)} className="early-access">
               Get Early Access
             </button>

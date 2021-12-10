@@ -33,7 +33,7 @@ export default function ServiceSection() {
       )
       console.log(response.data.statusCode)
       if (response.data.statusCode === 200) {
-        setModalShow(false)
+        setModal(false)
         setShowConfirmation(true)
       }
     } catch (e) {
