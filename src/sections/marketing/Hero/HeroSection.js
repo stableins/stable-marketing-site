@@ -84,10 +84,11 @@ export default function HeroSection() {
                   <Hero.Text>
                     <div className="hero-text">
                       You're probably overpaying for rideshare and carshare
-                      insurance. And you definitely should get more value from
-                      your insurance company. Stable gives you tools to improve
-                      your risk and uses new data, in real-time, to better price
-                      insurance.{" "}
+                      insurance. <br />
+                      And you definitely should get more value from your
+                      insurance <br /> company. Stable gives you tools to
+                      improve your risk and uses new
+                      <br /> data, in real-time, to better price insurance.{" "}
                     </div>
                     <br className="d-none d-xs-block" />
                   </Hero.Text>
@@ -100,7 +101,7 @@ export default function HeroSection() {
                             required
                             type={"email"}
                             name={"email"}
-                            placeholder="Enter your email"
+                            placeholder="Enter email address"
                             className="form-control"
                             onChange={e => setEmailInputValue(e.target.value)}
                           />
@@ -109,14 +110,19 @@ export default function HeroSection() {
                             className="btn-purple-heart"
                             textTransform="capitalized"
                           >
-                            Discover Now{" "}
-                            <i class="fas fa-chevron-right"></i>
+                            Discover Now <i class="fas fa-chevron-right"></i>
                           </button>
                         </form>
                       </div>
                     </Hero.Newsletter>
                     <p className="login">
-                      Already have an account? <span>Login here</span>
+                      Already have an account? <span>Login here</span>.
+                    </p>
+                    <p className="driver-report-mobile">
+                      <p>
+                        Get Your Driver Report{" "}
+                        <i class="fas fa-chevron-right"></i>
+                      </p>
                     </p>
                   </Col>
                 </Hero.Content>

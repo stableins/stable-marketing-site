@@ -18,6 +18,7 @@ export default function ServiceSection() {
             <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
               <Slide down>
                 <Service.Title as="h2" mb="0">
+                  <div className="anchor4"></div>
                   <div className="title">Get In Touch</div>
                   <div className="form-wrapper">
                     <Form>
@@ -60,7 +61,7 @@ export default function ServiceSection() {
                         variant="primary"
                         type="submit"
                       >
-                        <span>Send</span>
+                         <span>Send</span>
                         <i class="fas fa-chevron-right"></i>
                       </button>
                     </Form>

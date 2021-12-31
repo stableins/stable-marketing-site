@@ -240,7 +240,7 @@
                 margin: auto;
                 font-size: 3em;
                 padding-right: 50px;
-                margin-top: -360px;
+                margin-top: -60px;
                 margin-left: -90px;
                 position: absolute;
               }
@@ -312,6 +312,30 @@
         i {
           margin-left: 5px;
         }
+      }
+
+      .form-wrapper {
+        // position: absolute;
+        top: 400px;
+        display: block;
+        padding-top: 20px;
+
+        #button {
+          height: 50px;
+          border-radius: 8px;
+          width: 100%;
+          position: absolute;
+         border-radius: 8px;
+          // bottom: 0px;
+          top: 290px;
+          // left: 350px;
+        }
+      }
+      .form-control {
+        height: 50px;
+        border-radius: 8px;
+        top: 230px;
+        position: absolute;
       }
     }
   }

@@ -3,6 +3,7 @@ import React, { useRef } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import serviceData from "~data/marketing2/Service"
 import ServiceWidget from "./Component/Widget"
+import { scroller } from "react-scroll"
 import CounterBlock from "../../about/Feature/Components/CounterBlock"
 import Slide from "react-reveal"
 import Image from "../../../assets/image/logo/stable_graph.png"
@@ -10,6 +11,14 @@ import Service from "./style"
 import "./ServiceSection.scss"
 
 export default function ServiceSection() {
+  const scrollToAboutUs = () => {
+    scroller.scrollTo("anchor4", {
+      duration: 10,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    })
+  }
+
   return (
     <div className="jayz">
       <Service className="border-top border-default-color-2 bg-default">
@@ -76,8 +85,8 @@ export default function ServiceSection() {
                 </p>
               </Service.Text>
               <Service.Text>
-                <p className="text-row4">
-                  What should we build? Message us With your suggestions{" "}
+                <p onClick={scrollToAboutUs} className="text-row4">
+                  Send us a message to suggest what we should build
                   <i class="fas fa-chevron-right"></i>
                 </p>
               </Service.Text>
