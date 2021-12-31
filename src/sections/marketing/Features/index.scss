@@ -112,7 +112,7 @@
                   line-height: 26px;
                   letter-spacing: 0em;
                   text-align: center;
-                  color: #002e6d;
+                  color: #303030;
                   width: 362px;
                 }
               }
@@ -158,8 +158,8 @@
                   line-height: 26px;
                   letter-spacing: 0em;
                   text-align: center;
-                  color: #002e6d;
-                  width: 362px;
+                  color: #303030;
+                  width: 365px;
                 }
               }
             }
@@ -178,14 +178,15 @@
               right: 465px;
               top: 200px;
               border-radius: 8px;
-              background: #ffae13;
+              background: #3b358a;
               border-radius: 8px;
               border: none;
-              color: #002e6d;
+              color: #f6f6f6;
 
               #i {
                 margin-left: 5px;
-                color: #002e6d;
+                color: #f6f6f6;
+                margin-bottom: -3px;
               }
             }
 
@@ -222,7 +223,7 @@
                   line-height: 26px;
                   letter-spacing: 0em;
                   text-align: center;
-                  color: #002e6d;
+                  color: #303030;
                   width: 362px;
                 }
               }
@@ -265,7 +266,7 @@
 
         #i {
           margin-left: 5px;
-          color: #002E6D;
+          color: #002e6d;
         }
       }
     }
@@ -319,7 +320,7 @@
               position: absolute;
               width: 940px;
               height: 163px;
-              left: 160px;
+              left: 185px;
               top: 10px;
               font-family: Rubik;
               font-style: normal;
@@ -376,7 +377,7 @@
                   line-height: 26px;
                   letter-spacing: 0em;
                   text-align: center;
-                  color: #002e6d;
+                  color: #303030;
                   width: 362px;
                 }
               }
@@ -422,8 +423,8 @@
                   line-height: 26px;
                   letter-spacing: 0em;
                   text-align: center;
-                  color: #002e6d;
-                  width: 362px;
+                  color: #303030;
+                  width: 370px;
                 }
               }
             }
@@ -442,13 +443,13 @@
               right: 465px;
               top: 200px;
               border-radius: 8px;
-              background: #ffae13;
+              background: #3b358a;
               border-radius: 8px;
               border: none;
-              color: #002e6d;
+              color: #F6F6F6;
 
-              > #i {
-                color: #002e6d;
+              #i {
+                color: #F6F6F6;
                 z-index: -1;
                 margin-left: 5px;
               }
@@ -487,7 +488,7 @@
                   line-height: 26px;
                   letter-spacing: 0em;
                   text-align: center;
-                  color: #002e6d;
+                  color: #303030;
                   width: 362px;
                 }
               }
@@ -529,7 +530,7 @@
 
         #i {
           margin-left: 5px;
-          color: black !important;
+          color: #F6F6F6 !important;
         }
       }
     }
@@ -628,7 +629,7 @@
                   font-family: Rubik;
                   font-size: 18px;
                   font-style: normal;
-                  font-weight: 400;
+                  font-weight: bold ;
                   line-height: 26px;
                   letter-spacing: 0em;
                   text-align: center;

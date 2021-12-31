@@ -1,16 +1,8 @@
 @media (min-width: 1000px) {
-  .service-section-4-wrapper {
+  .contact-wrapper {
     text-align: center;
     width: 100%;
-    height: 350px;
-
-    .anchor3 {
-      height: 30px;
-      width: 20px;
-      position: absolute;
-      left: 400px;
-      top: -200px;
-    }
+    height: 530px;
     .title {
       text-align: center;
       color: #002e6d;
@@ -27,6 +19,48 @@
       margin-top: 80px;
       margin-left: 150px;
       width: 700px;
+    }
+
+    .form-wrapper {
+      position: absolute;
+      left: 280px;
+      top: 100px;
+      width: 100%;
+
+      input {
+                width: 751px;
+
+      }
+
+      textarea {
+        resize: none;
+        width: 751px;
+        height: 161px;
+      }
+
+      p {
+        color: #888888;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        position: absolute;
+        line-height: 30px;
+      }
+      .form-button {
+        width: 208px;
+        background: #3b358a;
+        color: white;
+        height: 50px;
+        margin-top: -0px;
+        border-radius: 8px;
+        position: absolute;
+        border: none;
+
+        span {
+          margin-right: 10px;
+        }
+      }
     }
   }
 }
@@ -51,7 +85,7 @@
       color: #303030;
       text-align: left;
       padding-right: 10px;
-      
+
       margin-top: 20px;
       width: 100%;
     }

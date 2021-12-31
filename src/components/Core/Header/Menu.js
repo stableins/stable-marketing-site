@@ -85,11 +85,10 @@ const Menu = ({ ...rest }) => {
         <Nav className="mr-auto site-menu-main">
           <div className="button-wrapper">
             <button onClick={scrollToRideshare}>
-              {" "}
               <Navbar.Toggle className="toggle">
                 Rideshare Insurance
               </Navbar.Toggle>
-            </button>{" "}
+            </button>
             <button onClick={scrollToCarshare}>
               <Navbar.Toggle className="toggle">
                 Carshare Insurance

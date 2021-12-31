@@ -5,7 +5,7 @@ import serviceData from "~data/marketing2/Service"
 import ServiceWidget from "./Component/Widget"
 import CounterBlock from "../../about/Feature/Components/CounterBlock"
 import Slide from "react-reveal"
-import Image from "../../../sections/project/Integration/IntegrationSection"
+import Image from "../../../assets/image/logo/stable_graph.png"
 import Service from "./style"
 import "./ServiceSection.scss"
 
@@ -17,13 +17,14 @@ export default function ServiceSection() {
         <Container>
           <div className="inner-wrapper">
             <div className="image-wrapper">
-              <Image /></div>
+              <img src={Image} width={650} />
+            </div>
             <div className="quote-wrapper">
               <Row className="align-items-end justify-content-center text-start">
                 <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
                   <Slide down>
                     <Service.Title as="h2" mb="0">
-                      <div className="title">Vision</div>
+                      {/* <div className="title">Vision</div> */}
                     </Service.Title>
                   </Slide>
                   <Slide right>
@@ -31,7 +32,8 @@ export default function ServiceSection() {
                     <Service.Text>
                       <p className="quote">
                         {" "}
-                        “I’m not a businessman, I’m a business man...”
+                        “I’m not a businessman, <br />
+                        I’m a business man...”
                       </p>
                       <p className="jayz"> JAY-Z</p>
                     </Service.Text>

@@ -6,6 +6,7 @@ import ServiceSection2 from "~sections/marketing/Service2/"
 import Jayz from "~sections/marketing/JayZ/"
 import ServiceSection3 from "~sections/marketing/Service3/"
 import OurStory from "~sections/marketing/OurStory/"
+import Contact from "~sections/marketing/Contact/"
 import FeatureSection from "~sections/marketing/Features"
 import Value from "~sections/marketing/Value"
 import FeatureSection2 from "~sections/marketing/Features2"
@@ -20,7 +21,6 @@ const header = {
   headerClasses:
     "site-header site-header--menu-start light-header site-header--sticky",
   containerFluid: true,
-  // customLogo: Images.HeaderLogo,
   buttonBlock: (
     <HeaderButton
       className="ms-auto d-none d-xs-inline-flex"
@@ -55,6 +55,7 @@ export default function Marketing() {
       {/* <FeatureSection2 /> */}
       {/* <ServiceSection2 /> */}
       <ServiceSection3 />
+      <Contact />
       <OurStory />
       <FooterOne />
     </PageWrapper>

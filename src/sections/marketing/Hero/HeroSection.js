@@ -109,7 +109,7 @@ export default function HeroSection() {
                             className="btn-purple-heart"
                             textTransform="capitalized"
                           >
-                            Get Early Access{" "}
+                            Discover Now{" "}
                             <i class="fas fa-chevron-right"></i>
                           </button>
                         </form>
@@ -121,14 +121,14 @@ export default function HeroSection() {
                   </Col>
                 </Hero.Content>
                 {/* <Hero.NewsletterText> */}
-                <div className="anchors">
+                {/* <div className="anchors">
                   <p onClick={scrollToRideShare} className="rideshare-text">
                     Are you Rideshare <i class="fas fa-chevron-right"></i>
                   </p>
                   <p onClick={scrollToCarshare} className="carshare-text">
                     or Carshare <i class="fas fa-chevron-right"></i>
                   </p>
-                </div>
+                </div> */}
                 {/* </Hero.NewsletterText> */}
               </Col>
               {/*/ .Welcome Content Area */}

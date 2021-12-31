@@ -11,7 +11,8 @@ import "./ServiceSection.scss"
 export default function ServiceSection() {
   return (
     <Service className="border-top border-default-color-2 bg-default">
-        <div className="service-section-4-wrapper">
+      <div className="service-section-4-wrapper">
+        <div className="anchor3"></div>
         <Service.Shape className="service-shape service-shape--l1">
         </Service.Shape>
         <Container>
@@ -19,7 +20,7 @@ export default function ServiceSection() {
             <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
               <Slide down>
                 <Service.Title as="h2" mb="0">
-                  <div className="title">Our Story</div>
+                  <div className="title">About Us</div>
                 </Service.Title>
               </Slide>
               <Slide right>

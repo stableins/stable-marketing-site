@@ -3,7 +3,7 @@
     background-color: #475ba1;
   }
   .value-index-wrapper {
-    height: 460px;
+    height: 400px;
 
     .inner-wrapper {
       height: 600px;
@@ -64,8 +64,8 @@
               i {
                 color: #ffae13;
                 font-size: 1em;
-                left: 875px;
-                bottom: 40px;
+                left: 830px;
+                bottom: 70px;
                 position: absolute;
                 padding-right: 20px;
                 font-size: 200px;
@@ -138,13 +138,41 @@
           left: 830px;
           line-height: 30px;
           letter-spacing: 0em;
-          width: 356px;
-          color: #002e6d;
+          width: 386px;
+          color: #f6f6f6;
         }
 
         i {
           margin-left: 10px;
         }
+      }
+
+      .form-wrapper {
+        position: absolute;
+        bottom: 100px;
+        top: 10px;
+        left: 700px;
+        display: inline-flex;
+        padding-top: 20px;
+
+        #button {
+          height: 50px;
+          border-radius: 8px;
+          width: 223px;
+          position: absolute;
+          border-top-left-radius: 0px;
+          border-bottom-left-radius: 0px;
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+          bottom: 0px;
+          top: 20px;
+          left: 350px;
+        }
+      }
+      .form-control {
+        height: 50px;
+        width: 500px !important;
+        border-radius: 8px;
       }
     }
   }

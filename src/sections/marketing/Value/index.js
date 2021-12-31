@@ -14,12 +14,29 @@ import TabContentWidget from "./Component/TabContentWidget"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import TabNavWidget from "./Component/TabNavWidget"
 import Slide from "react-reveal/Slide"
+import Intake from "../../../api/intake"
 import Feature from "./style"
 import "./index.scss"
 
 const FeatureSection = ({ ...rest }) => {
   const [counterModal, setCounterModal] = useState(false)
   const [bulletPointModal, setBulletPointModal] = useState(false)
+  const [emailInputValue, setEmailInputValue] = useState("")
+
+  async function handleEmailSubmit(event) {
+    event.preventDefault()
+    try {
+      const response = await Intake.submit(emailInputValue)
+      console.log(response)
+
+      if (response.data.statusCode === 200) {
+        alert("success")
+        // setShowConfirmation(true)
+      }
+    } catch (e) {
+      alert(e)
+    }
+  }
 
   return (
     <div className="value-index-wrapper">
@@ -54,29 +71,41 @@ const FeatureSection = ({ ...rest }) => {
                       </Feature.Box>
                       <Feature.Box mb="35px" mbMD="80px" mbLG="148px">
                         <div className="right">
-                      <Feature.Box mb="35px" mbMD="80px" mbLG="148px">
+                          <Feature.Box mb="35px" mbMD="80px" mbLG="148px">
+                            <Feature.Title
+                              className="mb-5"
+                              as="h2"
+                              fontColor="#fff"
+                            ></Feature.Title>
+                          </Feature.Box>
+                        </div>
                         <Feature.Title
                           className="mb-5"
                           as="h2"
                           fontColor="#fff"
                         >
-                        </Feature.Title>
-                      </Feature.Box>
-                    </div>
-                        <Feature.Title
-                          className="mb-5"
-                          as="h2"
-                          fontColor="#fff"
-                        >
-                          <div className="button-wrapper">
-                            <button
-                              // onClick={() => setCounterModal(true)}
-                              aria-current="page"
-                              className="button__Button-sc-1tkahez-0 cAxprB btn-purple-heart btn"
-                            >
-                              Get Your Free Driver Report NOW
-                              <i class="fas fa-chevron-right"></i>
-                            </button>
+                          <div className="form-wrapper">
+                            <form onSubmit={handleEmailSubmit}>
+                              <input
+                                required
+                                type={"email"}
+                                name={"email"}
+                                placeholder="Enter your email"
+                                className="form-control"
+                                onChange={e =>
+                                  setEmailInputValue(e.target.value)
+                                }
+                              />
+                              <button
+                                id="button"
+                                type="submit"
+                                className="btn-purple-heart"
+                                textTransform="capitalized"
+                              >
+                                Get Your Free Report{" "}
+                                <i class="fas fa-chevron-right"></i>
+                              </button>
+                            </form>
                           </div>
                         </Feature.Title>
                       </Feature.Box>

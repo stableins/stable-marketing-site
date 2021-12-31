@@ -64,19 +64,20 @@
     .inner-wrapper {
       text-align: center;
       width: 100%;
-      height: 800px;
+      height: 620px;
 
       .image-wrapper {
         margin-left: -250px;
-        margin-top: -150px;
+        margin-top: -30px;
         width: 85%;
+        z-index: -1;
       }
 
       .quote-wrapper {
         position: absolute;
         right: 10px;
         left: 800px;
-        top: 80px;
+        top: 0px;
 
         .title {
           text-align: center;
@@ -120,7 +121,7 @@
       position: absolute;
       text-align: left;
       right: 100px;
-      top: 310px;
+      top: 210px;
       color: #303030;
     }
     .text-row2 {
@@ -128,7 +129,7 @@
       position: absolute;
       text-align: left;
       right: 100px;
-      top: 410px;
+      top: 310px;
       color: #303030;
     }
     .text-row3 {
@@ -136,7 +137,7 @@
       position: absolute;
       text-align: left;
       right: 100px;
-      top: 510px;
+      top: 410px;
       color: #303030;
     }
     .text-row4 {
@@ -144,7 +145,7 @@
       position: absolute;
       text-align: left;
       right: 100px;
-      top: 640px;
+      top: 520px;
       color: #ff9b00;
       cursor: pointer;
 
