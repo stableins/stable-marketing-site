@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap"
 import GlobalHeaderContext from "../../../context/GlobalHeaderContext"
 import SiteNav from "./SiteNav"
 import SiteHeader from "./style"
-import './Header.scss'
+import "./Header.scss"
 
 const Header = () => {
   const [showScrolling, setShowScrolling] = useState(false)
@@ -14,18 +14,6 @@ const Header = () => {
   const headerContext = useContext(GlobalHeaderContext)
   const header = headerContext.header
 
-  // useScrollPosition(({ prevPos, currPos }) => {
-  //   if (currPos.y < 0) {
-  //     setShowScrolling(true)
-  //   } else {
-  //     setShowScrolling(false)
-  //   }
-  //   if (currPos.y < 0) {
-  //     setShowReveal(true)
-  //   } else {
-  //     setShowReveal(false)
-  //   }
-  // })
   React.useEffect(() => {
     setHasMounted(true)
 
@@ -37,17 +25,17 @@ const Header = () => {
       }
     })
   }, [])
-  
+
   if (!hasMounted) {
     return null
   }
 
-   const scrollToTop = () => {
-     window.scrollTo({
-       top: 0,
-       behavior: "smooth", 
-     })
-   }
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+  }
 
   return (
     <div className="header-wrapper">

@@ -47,7 +47,7 @@ export default function ServiceSection() {
                           class="form-control"
                           rows="5"
                           id="comment"
-                          placeholder="Enter Message"
+                          placeholder="Enter message"
                         ></textarea>
 {/* 
                         <Form.Control

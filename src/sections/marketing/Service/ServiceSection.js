@@ -148,6 +148,10 @@ export default function ServiceSection() {
                       </p>
                     </div>
                   </div>
+                  <button className="mobile-button">
+  Help Build Better Insurance
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
                 </div>
               </Row>
               {/* <div className="button-wrapper">

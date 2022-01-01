@@ -58,6 +58,10 @@
       top: 190px;
       text-align: center;
 
+      .mobile-button {
+        display: none;
+      }
+
       .widget {
         width: 55%;
         padding: 0 40px;
@@ -157,8 +161,8 @@
         button {
           width: 198px;
           height: 50px;
-          color: #3B358A;
-          background-color: #EBEEFF;
+          color: #3b358a;
+          background-color: #ebeeff;
           border-radius: 8px;
           border: none;
           margin-left: 10px;
@@ -232,6 +236,22 @@
       width: 100%;
       margin-top: 140px;
       text-align: center;
+
+      .mobile-button {
+        width: 100%;
+        height: 50px;
+
+        /* Importance */
+
+        background: #3b358a;
+        border-radius: 8px;
+        color: #F7F7F7;
+        border: none;
+
+        i {
+          margin-left: 10px;
+        }
+      }
 
       .widget {
         width: 100%;
@@ -336,7 +356,7 @@
         button {
           width: 198px;
           height: 50px;
-          background-color: #EBEEFF;
+          background-color: #ebeeff;
           border-radius: 8px;
           border: none;
           margin-left: 10px;
