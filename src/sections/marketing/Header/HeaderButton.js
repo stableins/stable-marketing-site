@@ -70,7 +70,7 @@ const HeaderButton = ({
     })
   }
 
-   const scrollToAboutUs = () => {
+   const scrollToReport = () => {
      scroller.scrollTo("anchor3", {
        duration: 10,
        delay: 0,
@@ -194,7 +194,9 @@ const HeaderButton = ({
           </div>
         </Modal>
         <div className="button-wrapper">
-          <button className="report-button">Get Your Driver Report</button>
+          <button className="report-button" onClick={scrollToReport}>
+            Get Your Driver Report
+          </button>
         </div>
         <div className="button-wrapper">
           <button onClick={scrollToRideShare} className="rideshare-button">

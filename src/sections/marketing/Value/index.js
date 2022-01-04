@@ -40,6 +40,8 @@ const FeatureSection = ({ ...rest }) => {
 
   return (
     <div className="value-index-wrapper">
+      <div className="anchor3"></div>
+
       <Feature className="bg-blue-ribbon">
         <div className="inner-wrapper">
           <Container>
