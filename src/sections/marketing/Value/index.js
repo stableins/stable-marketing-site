@@ -17,6 +17,7 @@ import TabNavWidget from "./Component/TabNavWidget"
 import Slide from "react-reveal/Slide"
 import Intake from "../../../api/intake"
 import Feature from "./style"
+import { Spinner } from "react-bootstrap"
 import "./index.scss"
 
 const FeatureSection = ({ ...rest }) => {
@@ -24,9 +25,11 @@ const FeatureSection = ({ ...rest }) => {
   const [formRedirect, setFormRedirect] = useState(false)
   const [bulletPointModal, setBulletPointModal] = useState(false)
   const [emailInputValue, setEmailInputValue] = useState("")
+  const [spinner, setSpinner] = useState(false);
 
   async function handleEmailSubmit(event) {
     event.preventDefault()
+    setSpinner(true)
     try {
       const response = await Intake.submit(emailInputValue)
       console.log(response)
@@ -45,7 +48,6 @@ const FeatureSection = ({ ...rest }) => {
   return (
     <div className="value-index-wrapper">
       <div className="anchor3"></div>
-
       <Feature className="bg-blue-ribbon">
         <div className="inner-wrapper">
           <Container>
@@ -111,6 +113,7 @@ const FeatureSection = ({ ...rest }) => {
                                 Get Your Free Report{" "}
                                 <i class="fas fa-chevron-right"></i>
                               </button>
+                              {spinner && <Spinner animation="border" />}
                             </form>
                           </div>
                         </Feature.Title>

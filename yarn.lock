@@ -14317,6 +14317,13 @@ react-app-polyfill@^2.0.0:
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
 
+react-argyle-link@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-argyle-link/-/react-argyle-link-1.1.1.tgz#839006d9d219e0ca60e330d9b43b0539073250d5"
+  integrity sha512-xOqVnrfQ/LfrhVfeZTuPggQnbUV0zuT1YdGwMySZ3h3WHxd3uJQaADkcQOzxGZNr6NOkvuUVv5V9H2TFPJdnQA==
+  dependencies:
+    react-script-hook "^1.4.1"
+
 react-bootstrap@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-1.5.2.tgz#07dabec53d10491a520c49f102170b440fa89008"
@@ -14506,6 +14513,11 @@ react-reveal@^1.2.2:
   integrity sha512-JCv3fAoU6Z+Lcd8U48bwzm4pMZ79qsedSXYwpwt6lJNtj/v5nKJYZZbw3yhaQPPgYePo3Y0NOCoYOq/jcsisuw==
   dependencies:
     prop-types "^15.5.10"
+
+react-script-hook@^1.4.1:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/react-script-hook/-/react-script-hook-1.5.0.tgz#7d7eb189c92e01cf0a8d1796113947ef8e08eed5"
+  integrity sha512-LzWXi5rxT4xz+zLwCt7nTmMuFyFs04c5m6lHCs8Ps9U8J8zHQNp+E9IcLFSFzkn4WZMiNPt2DQUVeBHLy2Ix0w==
 
 react-scripts@4.0.3:
   version "4.0.3"
