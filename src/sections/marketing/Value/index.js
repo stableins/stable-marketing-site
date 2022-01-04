@@ -10,6 +10,7 @@ import {
   Form,
 } from "react-bootstrap"
 import { Images } from "~data"
+import { Redirect } from "@reach/router"
 import TabContentWidget from "./Component/TabContentWidget"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import TabNavWidget from "./Component/TabNavWidget"
@@ -20,6 +21,7 @@ import "./index.scss"
 
 const FeatureSection = ({ ...rest }) => {
   const [counterModal, setCounterModal] = useState(false)
+  const [formRedirect, setFormRedirect] = useState(false)
   const [bulletPointModal, setBulletPointModal] = useState(false)
   const [emailInputValue, setEmailInputValue] = useState("")
 
@@ -30,14 +32,16 @@ const FeatureSection = ({ ...rest }) => {
       console.log(response)
 
       if (response.data.statusCode === 200) {
-        alert("success")
-        // setShowConfirmation(true)
+        setFormRedirect(true)
       }
     } catch (e) {
       alert(e)
     }
   }
 
+  if (formRedirect) {
+    return <Redirect noThrow to="/individual-fleet-form /" />
+  }
   return (
     <div className="value-index-wrapper">
       <div className="anchor3"></div>

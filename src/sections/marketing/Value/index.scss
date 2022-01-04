@@ -8,7 +8,7 @@
      .anchor3 {
       height: 30px;
       width: 20px;
-      background: #002e6d;
+      // background: #002e6d;
       position: absolute;
       // left: 400px;
       // top: -30px;
@@ -177,6 +177,11 @@
           bottom: 0px;
           top: 20px;
           left: 350px;
+
+          i {
+            margin-right: -5px;
+            margin-left: 10px;
+          }
         }
       }
       .form-control {
@@ -194,8 +199,7 @@
       height: 30px;
       width: 20px;
       position: absolute;
-      left: 400px;
-      top: -200px;
+      margin-top:-200px;
     }
     .inner-wrapper {
       // display: inline-flex;
