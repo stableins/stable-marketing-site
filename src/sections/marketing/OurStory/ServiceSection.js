@@ -12,7 +12,6 @@ export default function ServiceSection() {
   return (
     <Service className="border-top border-default-color-2 bg-default">
       <div className="service-section-4-wrapper">
-        <div className="anchor3"></div>
         <Service.Shape className="service-shape service-shape--l1">
         </Service.Shape>
         <Container>
