@@ -56,16 +56,16 @@ const Menu = ({ ...rest }) => {
     })
   }
 
-  // const scrollToRideshare = () => {
-  //   scroller.scrollTo("anchor", {
-  //     duration: 10,
-  //     delay: 0,
-  //     smooth: "easeInOutQuart",
-  //   })
-  // }
-
   const scrollToCarshare = () => {
     scroller.scrollTo("anchor2", {
+      duration: 10,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    })
+  }
+
+  const scrollToReport = () => {
+    scroller.scrollTo("anchor3", {
       duration: 10,
       delay: 0,
       smooth: "easeInOutQuart",
@@ -84,6 +84,11 @@ const Menu = ({ ...rest }) => {
         />
         <Nav className="mr-auto site-menu-main">
           <div className="button-wrapper">
+            <button className="report" onClick={scrollToRideshare}>
+              <Navbar.Toggle className="toggle">
+                <span> Get Your Driver Report </span>
+              </Navbar.Toggle>
+            </button>
             <button onClick={scrollToRideshare}>
               <Navbar.Toggle className="toggle">
                 Rideshare Insurance
@@ -94,12 +99,13 @@ const Menu = ({ ...rest }) => {
                 Carshare Insurance
               </Navbar.Toggle>
             </button>
+            <div className="divider"></div>
             <button>
-              <Navbar.Toggle className="toggle">Log In</Navbar.Toggle>
+              <Navbar.Toggle className="login">Log In</Navbar.Toggle>
             </button>
-            <button onClick={() => setModal(true)} className="early-access">
+            {/* <button onClick={() => setModal(true)} className="early-access">
               Get Early Access
-            </button>
+            </button> */}
           </div>
           {menuItems.map(
             (

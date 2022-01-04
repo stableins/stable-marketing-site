@@ -206,7 +206,7 @@ const HeaderButton = ({
             {btnOneText}
           </button>
         </div>
-        <div className="button-wrapper">
+        {/* <div className="button-wrapper">
           <button
             onClick={scrollToAboutUs}
             className="about-us"
@@ -214,12 +214,12 @@ const HeaderButton = ({
           >
             About Us
           </button>
-        </div>
-        <div className="button-wrapper">
+        </div> */}
+        {/* <div className="button-wrapper">
           <button className="blog-button" to={btnTwoLink ? btnTwoLink : "/"}>
             Blog
           </button>
-        </div>
+        </div> */}
         <button className="login-button" to={btnTwoLink ? btnTwoLink : "/"}>
           Log In
         </button>
