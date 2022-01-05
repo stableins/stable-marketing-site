@@ -6,7 +6,7 @@ import ServiceWidget from "./Component/Widget"
 import { scroller } from "react-scroll"
 import CounterBlock from "../../about/Feature/Components/CounterBlock"
 import Slide from "react-reveal"
-import Image from "../../../assets/image/logo/stable_graph.png"
+import Image from "../../../assets/image/logo/stable_graph_2.png"
 import Service from "./style"
 import "./ServiceSection.scss"
 
