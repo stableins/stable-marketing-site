@@ -27,7 +27,7 @@ export default function ServiceSection() {
             <Row className="align-items-end justify-content-center text-start">
               <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
                 <Service.Title as="h2" mb="0">
-                  <div className="title">Our Partners and Accolades</div>
+                  <div className="title">Our Partners</div>
                   <br className="d-none d-xs-block d-lg-none d-xl-block" />
                 </Service.Title>
               </Col>
@@ -39,7 +39,7 @@ export default function ServiceSection() {
               <div className="image-wrapper">
                 <Slide left>
                   <div className="partners-section">
-                    <div className="title">Partners</div>
+                    {/* <div className="title">Partners</div> */}
                     <div className="image-row">
                       <img
                         className="mltply"
@@ -62,7 +62,7 @@ export default function ServiceSection() {
                     </div>
                   </div>
                 </Slide>
-                <div className="lower-section-wrapper">
+                {/* <div className="lower-section-wrapper">
                   <Slide up>
                     <div className="left">
                       <div className="accelerators-section">
@@ -111,7 +111,7 @@ export default function ServiceSection() {
                       </div>
                     </div>
                   </Slide>
-                </div>
+                </div> */}
               </div>
             </Row>
             {/* </Slide> */}

@@ -1,0 +1,55 @@
+@media (min-width: 1000px) {
+  .join-stable-wrapper {
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+
+    .form {
+      width: 45%;
+      text-align: center;
+      margin: auto;
+      margin-top: 150px;
+
+      .select-wrapper {
+        display: inline-flex;
+        .select {
+          width: 250px;
+          color: black;
+        }
+
+        .select:focus {
+          background: #3b358a;
+          pointer-events: none;
+          color: white;
+        }
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .join-stable-wrapper {
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+
+    .form {
+      width: 95%;
+      text-align: center;
+      margin: auto;
+      margin-top: 150px;
+
+      .select {
+        width: 20%;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

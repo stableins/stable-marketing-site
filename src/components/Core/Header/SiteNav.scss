@@ -4,14 +4,13 @@
     width: 100%;
 
     .site-navbar {
-      display: inline-block;
       width: 100%;
       .navbar-brand {
         width: 84%;
       }
 
       .navbar-toggler {
-        width: 1%;
+        width: 100px;
 
       }
     }
@@ -28,7 +27,7 @@
       }
 
       .button-block {
-        width: auto;
+        width: 82%;
       }
     }
   }

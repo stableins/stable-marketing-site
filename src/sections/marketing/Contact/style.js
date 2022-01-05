@@ -3,9 +3,9 @@ import { Box, Heading, Paragraph } from "~styled"
 
 const Service = styled(Box)`
     padding-top: 55px;
-    padding-bottom: 55px;
+    padding-bottom: 20px;
     position: relative;
-    // background: #F6F6F6;
+    background: #F6F6F6;
 
     @media (min-width:768px) {
         padding-top: 70px;

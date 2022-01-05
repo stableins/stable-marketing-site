@@ -99,7 +99,7 @@
       width: 208px;
       position: absolute;
       left: 520px;
-      color: #002e6d;
+      color: #f6f6f6;
       border-top-right-radius: 8px;
       border-bottom-right-radius: 8px;
 
@@ -123,6 +123,11 @@
         cursor: pointer;
         color: #ffae13;
       }
+    }
+
+    .driver-report-mobile {
+      position: absolute;
+      visibility: hidden;
     }
 
     .anchors {
@@ -236,7 +241,14 @@
     }
     .hero-text {
       // margin-top: -60px;
+      width: 100%;
       color: #303030;
+      font-family: Rubik;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      margin-top: -10px;
     }
     .form-wrapper {
       width: 100%;
@@ -251,12 +263,16 @@
     button {
       width: 100%;
       height: 50px;
-      background-color: #ffae13;
+      background: #3b358a;
       border-radius: 8px;
       border: none;
     }
     i {
       margin-left: 10px;
+    }
+
+    br {
+      display: none;
     }
 
     .login {
@@ -271,6 +287,25 @@
         text-align: left;
         cursor: pointer;
         color: #ffae13;
+      }
+    }
+
+    .driver-report-mobile {
+      position: absolute;
+      color: #ffae13;
+      font-family: Rubik;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 30px;
+
+      p {
+        text-decoration: underline;
+        font-family: Rubik;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 30px;
       }
     }
 

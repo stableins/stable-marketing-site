@@ -117,9 +117,9 @@ export default function ServiceSection() {
                     <div className="widget-title-1">
                       Manage Smartly <br />
                       <p>
-                        Your data is valuable. We use it to provide you better
-                        insurance and valuable insights and tools on how to
-                        operate your business better.
+                        Put Your Data to Work Your data is valuable. We use it
+                        to provide you better insurance and valuable tools on
+                        how to operate your business better.
                       </p>
                     </div>
                   </div>
@@ -130,9 +130,9 @@ export default function ServiceSection() {
                     <div className="widget-title">
                       Help Develop Our Roadmap <br />
                       <p>
-                        We use your input and data to help determine where we
-                        should launch next. So spread the word and get your
-                        peers involved.
+                        We use interest in our insurance to help determine in
+                        which state we should launch next. So spread the word
+                        and get your peers involved.
                       </p>
                     </div>
                   </div>
@@ -144,19 +144,22 @@ export default function ServiceSection() {
                       A Community Effort <br />
                       <p>
                         Interact with other drivers and fleets to learn how to
-                        better operate your business and make connections to
-                        potential partners.
+                        better operate your business.
                       </p>
                     </div>
                   </div>
+                  <button className="mobile-button">
+  Help Build Better Insurance
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
                 </div>
               </Row>
-              <div className="button-wrapper">
+              {/* <div className="button-wrapper">
                 <button onClick={() => setModal(true)}>
                   Help Build Better Insurance{" "}
                   <i class="fas fa-chevron-right"></i>
                 </button>
-              </div>
+              </div> */}
             </Slide>
           </Service.Box>
         </Container>

@@ -71,10 +71,10 @@ const FeatureSection = ({ ...rest }) => {
                         >
                           <div className="text">
                             <p className="p-text1">
-                              Stable’s Rideshare insurance product works in
-                              tandem with the Rideshare platform’s insurance. So
-                              we only charge you for the times you are not
-                              driving to or with a passenger.
+                              Stable's rideshare insurance works with the
+                              rideshare platform's insurance,
+                              <br /> so we only charge you for the times you're
+                              not driving to or with a passenger.
                             </p>
                           </div>
                         </Feature.Title>
@@ -117,8 +117,8 @@ const FeatureSection = ({ ...rest }) => {
                                   User Based Pricing
                                 </div>
                                 <div className="text">
-                                  User based pricing that takes your driving
-                                  behaviour into account
+                                  User based pricing that takes your <br />{" "}
+                                  driving behaviour into account
                                 </div>
                               </div>
                             </div>
@@ -132,7 +132,7 @@ const FeatureSection = ({ ...rest }) => {
                                 </div>
                                 <div className="text">
                                   Additional Tools Additional tools to help you
-                                  run your rideshare business more efficiently.
+                                  run your carshare business more efficiently
                                 </div>
                               </div>
                             </div>
@@ -177,7 +177,6 @@ const FeatureSection = ({ ...rest }) => {
           <Container>
             <Slide left>
               <Row>
-                {/* <Col xs="auto" className="col-xl-8 col-lg-10"> */}
                 <div className="title">Building a Carshare Fleet?</div>
                 <div className="section-wrapper">
                   <div className="left">
@@ -185,10 +184,10 @@ const FeatureSection = ({ ...rest }) => {
                       <Feature.Title className="mb-5" as="h2" fontColor="#fff">
                         <div className="text">
                           <p className="p-text1">
-                            Stable’s Carshare insurance product works in tandem
-                            with the Carshare platform’s insurance. So we only
-                            charge you for the miles your vehicle is driven off
-                            platform (e.g. maintenance runs).
+                            Stable's carshare insurance works with the carshare
+                            platform's insurance, <br />
+                            so we only charge you for the miles your vehicle is
+                            driven off platform.
                           </p>
                         </div>
                       </Feature.Title>
@@ -223,8 +222,9 @@ const FeatureSection = ({ ...rest }) => {
                                 Usage Based Pricing{" "}
                               </div>
                               <div className="text">
-                                Usage based pricing that only charges you for
-                                miles driven off the carshare platform
+                                Usage Based Pricing Usage based pricing that
+                                only charges you for miles driven off the
+                                carshare platform
                               </div>
                             </div>
                           </div>

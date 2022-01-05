@@ -8,6 +8,18 @@
       width: 100%;
       // height: 210px;
 
+      .image-wrapper {
+        margin-top: -30px;
+        position: absolute;
+        width: 100%;
+        top: 610px;
+        margin-left: -10px;
+
+        img {
+          width: 97%;
+        }
+      }
+
       .title {
         text-align: left;
         color: #002e6d;
@@ -29,6 +41,7 @@
         left: 300px;
         width: 100%;
         line-height: 36px;
+        margin-top: -25px;
       }
 
       .jayz {
@@ -42,16 +55,17 @@
       }
 
       .text-row4 {
-      text-align: left;
-      right: 100px;
-      top: 640px;
-      color: #ff9b00;
-      cursor: pointer;
+        text-align: left;
+        right: 100px;
+        top: 640px;
+        color: #ff9b00;
+        cursor: pointer;
+        margin-bottom: 360px;
 
-      i {
-        margin-left: 13px;
+        i {
+          margin-left: 13px;
+        }
       }
-    }
     }
   }
 }
@@ -64,11 +78,11 @@
     .inner-wrapper {
       text-align: center;
       width: 100%;
-      height: 800px;
+      height: 620px;
 
       .image-wrapper {
         margin-left: -250px;
-        margin-top: -150px;
+        margin-top: -30px;
         width: 85%;
       }
 
@@ -76,7 +90,7 @@
         position: absolute;
         right: 10px;
         left: 800px;
-        top: 80px;
+        top: 0px;
 
         .title {
           text-align: center;
@@ -120,7 +134,7 @@
       position: absolute;
       text-align: left;
       right: 100px;
-      top: 310px;
+      top: 210px;
       color: #303030;
     }
     .text-row2 {
@@ -128,7 +142,7 @@
       position: absolute;
       text-align: left;
       right: 100px;
-      top: 410px;
+      top: 310px;
       color: #303030;
     }
     .text-row3 {
@@ -136,7 +150,7 @@
       position: absolute;
       text-align: left;
       right: 100px;
-      top: 510px;
+      top: 410px;
       color: #303030;
     }
     .text-row4 {
@@ -144,7 +158,7 @@
       position: absolute;
       text-align: left;
       right: 100px;
-      top: 640px;
+      top: 520px;
       color: #ff9b00;
       cursor: pointer;
 

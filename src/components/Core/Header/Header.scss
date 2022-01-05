@@ -4,10 +4,10 @@
 
     .back-to-top {
       position: fixed;
-      background: #ffae13;
-      color: #002e6d;
+      background: #475BA1;
+      color: white;
       border: none;
-      width: 10px;
+      width: 50px;
       bottom: 50px;
       text-align: center;
       // width: 20px;
@@ -15,7 +15,12 @@
       height: 50px;
       right: 20px;
       font-size: 30px;
-      border-radius: 6px;
+      border-radius: 50%;
+
+      i {
+        margin-right: -15px;
+        margin-top: -5px;
+      }
 
       p {
         margin-left: -15px;
@@ -33,19 +38,19 @@
 
     .back-to-top {
       position: fixed;
-      background: #ffae13;
-      color: #002e6d;
+      background: #475BA1;
+      color: white;
       border: none;
       bottom: 10px;
-      width: 50px;
+      width: 40px;
       font-weight: 400;
-      height: 50px;
+      height: 40px;
       right: 20px;
       font-size: 30px;
-      border-radius: 6px;
+      border-radius: 100px;
 
       p {
-        margin-bottom: -5px;
+        margin-bottom: -1px;
       }
     }
   }

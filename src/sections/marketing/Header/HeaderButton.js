@@ -69,6 +69,15 @@ const HeaderButton = ({
       smooth: "easeInOutQuart",
     })
   }
+
+   const scrollToReport = () => {
+     scroller.scrollTo("anchor3", {
+       duration: 10,
+       delay: 0,
+       smooth: "easeInOutQuart",
+     })
+   }
+
   async function handleSubmit(event) {
     event.preventDefault()
     try {
@@ -184,32 +193,46 @@ const HeaderButton = ({
             <button onClick={() => setShowConfirmation(false)}>Close</button>
           </div>
         </Modal>
-        <button
-          onClick={scrollToRideShare}
-          className="rideshare-button"
-          // to={btnTwoLink ? btnTwoLink : "/"}
-        >
-          {btnTwoText}
-        </button>
-        <button
-          onClick={scrollToCarshare}
-          className="carshare-button"
-          // to={btnTwoLink ? btnTwoLink : "/"}
-        >
-          {btnOneText}
-        </button>
-        <div className="divider1"></div>
+        <div className="button-wrapper">
+          <button className="report-button" onClick={scrollToReport}>
+            Get Your Driver Report
+          </button>
+        </div>
+        <div className="button-wrapper">
+          <button onClick={scrollToRideShare} className="rideshare-button">
+            {btnTwoText}
+          </button>
+        </div>
+        <div className="button-wrapper">
+          <button onClick={scrollToCarshare} className="carshare-button">
+            {btnOneText}
+          </button>
+        </div>
+        {/* <div className="button-wrapper">
+          <button
+            onClick={scrollToAboutUs}
+            className="about-us"
+            to={btnTwoLink ? btnTwoLink : "/"}
+          >
+            About Us
+          </button>
+        </div> */}
+        {/* <div className="button-wrapper">
+          <button className="blog-button" to={btnTwoLink ? btnTwoLink : "/"}>
+            Blog
+          </button>
+        </div> */}
         <button className="login-button" to={btnTwoLink ? btnTwoLink : "/"}>
-          {btnFourText}
+          Log In
         </button>
         <div className="divider1"></div>
-        <button
+        {/* <button
           onClick={() => setModal(true)}
           className="early-access-button"
           to={btnTwoLink ? btnTwoLink : "/"}
         >
           {btnThreeText}
-        </button>
+        </button> */}
       </HeaderButtonWrapper>
     </div>
   )
