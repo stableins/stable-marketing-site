@@ -99,7 +99,7 @@ export default function individualFleetForm() {
 
       {signupState === "argyleLink" && (
         <>
-          <div className="form-wrapper">
+          <div className="individual-form-wrapper">
             <div className="form">
               <p>The next step is to link your Uber/Lyft account(s)</p>
 
