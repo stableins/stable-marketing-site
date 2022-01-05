@@ -101,7 +101,7 @@ const Menu = ({ ...rest }) => {
             </button>
             <div className="divider"></div>
             <button>
-              <Navbar.Toggle className="login">Log In</Navbar.Toggle>
+              <Navbar.Toggle style={{textAlign: 'left'}} className="login">Log In</Navbar.Toggle>
             </button>
             {/* <button onClick={() => setModal(true)} className="early-access">
               Get Early Access
