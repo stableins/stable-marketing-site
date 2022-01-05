@@ -56,7 +56,7 @@ export default function individualFleetForm() {
   return (
     <PageWrapper headerConfig={header} innerPage={true}>
       {signupState === "onlyEmailReceived" && (
-        <div className="form-wrapper">
+        <div className="individual-form-wrapper">
           <div className="form">
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3">
