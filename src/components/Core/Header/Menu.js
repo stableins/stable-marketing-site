@@ -16,6 +16,8 @@ import { menuItems } from "../../../data/menudata"
 import Link from "../Link"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import { scroller } from "react-scroll"
+import smoothscroll from 'smoothscroll-polyfill';
+
 import Intake from "../../../api/intake"
 import "./Menu.scss"
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle"
@@ -30,6 +32,9 @@ const Menu = ({ ...rest }) => {
   const [nameInputValue, setNameInputValue] = useState("")
   const [zipcodeInputValue, setZipcodeInputValue] = useState("")
   const [dropdownInputValue, setDropdownInputValue] = useState("")
+
+  smoothscroll.polyfill()
+
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -51,14 +56,16 @@ const Menu = ({ ...rest }) => {
   }
 
   const scrollToRideshare = () => {
-    window.scrollTo("anchor", {
-      behavior: "smooth",
+    scroller.scrollTo("anchor", {
+      duration: 400,
+      delay: 0,
+      smooth: "easeInOutQuart",
     })
   }
 
   const scrollToCarshare = () => {
     scroller.scrollTo("anchor2", {
-      duration: 10,
+      duration: 400,
       delay: 0,
       smooth: "easeInOutQuart",
     })
@@ -66,7 +73,7 @@ const Menu = ({ ...rest }) => {
 
   const scrollToReport = () => {
     scroller.scrollTo("anchor3", {
-      duration: 10,
+      duration: 400,
       delay: 0,
       smooth: "easeInOutQuart",
     })

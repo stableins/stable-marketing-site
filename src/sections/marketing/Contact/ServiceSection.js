@@ -49,7 +49,7 @@ export default function ServiceSection() {
                           id="comment"
                           placeholder="Enter message"
                         ></textarea>
-{/* 
+                        {/* 
                         <Form.Control
                           style={{ height: "161px" }}
                           onChange={e => setZipcodeInputValue(e.target.value)}
@@ -61,7 +61,7 @@ export default function ServiceSection() {
                         variant="primary"
                         type="submit"
                       >
-                         <span>Send</span>
+                        <span>Send</span>&nbsp;
                         <i class="fas fa-chevron-right"></i>
                       </button>
                     </Form>

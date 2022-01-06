@@ -1,7 +1,7 @@
 @media (min-width: 1000px) {
   .hero-section-wrapper {
     background-color: #f7f7f7;
-    height: 820px;
+    height: 760px;
 
     .scroll-to-top {
       position: fixed;
@@ -80,6 +80,8 @@
       left: 0px;
       bottom: -60px;
       color: #303030;
+      font-size: 22px;
+      line-height: 30px;
     }
 
     .form-wrapper {
@@ -106,13 +108,22 @@
       border: none;
     }
     i {
-      margin-left: 10px;
     }
 
     .login {
       color: #303030;
       position: absolute;
       bottom: -200px;
+      font-family: Rubik;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 22px;
+      line-height: 30px;
+      /* or 136% */
+
+      /* Black */
+
+      color: #303030;
       span {
         font-family: Rubik;
         font-style: normal;
@@ -166,7 +177,7 @@
 @media (max-width: 450px) {
   .hero-section-wrapper {
     background-color: #f7f7f7;
-    // height: 840px;
+
     .title {
       // width: 100%;
       margin-left: -5px;
@@ -240,14 +251,13 @@
       }
     }
     .hero-text {
-      // margin-top: -60px;
       width: 100%;
       color: #303030;
       font-family: Rubik;
       font-style: normal;
       font-weight: normal;
       font-size: 16px;
-      line-height: 24px;
+      line-height: 22px;
       margin-top: -10px;
     }
     .form-wrapper {
@@ -268,7 +278,6 @@
       border: none;
     }
     i {
-      margin-left: 10px;
     }
 
     br {
@@ -278,6 +287,8 @@
     .login {
       color: #303030;
       margin-top: 10px;
+      font-size: 16px;
+      line-height: 22px;
       span {
         font-family: Rubik;
         font-style: normal;
@@ -296,16 +307,17 @@
       font-family: Rubik;
       font-style: normal;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 16px;
       line-height: 30px;
+      margin-bottom: 20px;
 
       p {
         text-decoration: underline;
         font-family: Rubik;
         font-style: normal;
         font-weight: bold;
-        font-size: 20px;
-        line-height: 30px;
+        font-size: 16px;
+        line-height: 22px;
       }
     }
 

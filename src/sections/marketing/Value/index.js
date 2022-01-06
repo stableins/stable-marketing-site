@@ -110,7 +110,7 @@ const FeatureSection = ({ ...rest }) => {
                                 className="btn-purple-heart"
                                 textTransform="capitalized"
                               >
-                                Get Your Free Report{" "}
+                                Get Your Driver Report &nbsp;
                                 <i class="fas fa-chevron-right"></i>
                               </button>
                               {spinner && <Spinner animation="border" />}

@@ -17,12 +17,12 @@ export default function HeroSection() {
   const [emailInputValue, setEmailInputValue] = useState("")
   const [showConfirmation, setShowConfirmation] = useState(false)
 
-  // smoothscroll.polyfill()
+  smoothscroll.polyfill()
 
   const scrollToRideShare = () => {
     smoothscroll.polyfill()
     scroller.scrollTo("anchor", {
-      duration: 10,
+      duration: 1000,
       delay: 0,
       smooth: "easeInOutQuart",
     })
@@ -30,7 +30,15 @@ export default function HeroSection() {
 
   const scrollToCarshare = () => {
     scroller.scrollTo("anchor2", {
-      duration: 10,
+      duration: 1000,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    })
+  }
+
+  const scrollToReport = () => {
+    scroller.scrollTo("anchor3", {
+      duration: 1000,
       delay: 0,
       smooth: "easeInOutQuart",
     })
@@ -110,7 +118,8 @@ export default function HeroSection() {
                             className="btn-purple-heart"
                             textTransform="capitalized"
                           >
-                            Discover Now <i class="fas fa-chevron-right"></i>
+                            Discover Now &nbsp;
+                            <i class="fas fa-chevron-right"></i>
                           </button>
                         </form>
                       </div>
@@ -118,9 +127,9 @@ export default function HeroSection() {
                     <p className="login">
                       Already have an account? <span>Login here</span>.
                     </p>
-                    <p className="driver-report-mobile">
+                    <p className="driver-report-mobile" onClick={scrollToReport}>
                       <p>
-                        Get Your Driver Report{" "}
+                        Get Your Driver Report &nbsp; 
                         <i class="fas fa-chevron-right"></i>
                       </p>
                     </p>

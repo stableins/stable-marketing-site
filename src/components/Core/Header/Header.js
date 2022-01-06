@@ -54,9 +54,7 @@ const Header = () => {
         </Container>
         {showButton && (
           <button onClick={scrollToTop} className="back-to-top">
-            <p>
               <i class="fas fa-chevron-up"></i>
-            </p>
           </button>
         )}
       </SiteHeader>

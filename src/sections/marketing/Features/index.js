@@ -118,7 +118,7 @@ const FeatureSection = ({ ...rest }) => {
                                 </div>
                                 <div className="text">
                                   User based pricing that takes your <br />{" "}
-                                  driving behaviour into account
+                                  driving behaviour into account.
                                 </div>
                               </div>
                             </div>
@@ -131,8 +131,8 @@ const FeatureSection = ({ ...rest }) => {
                                   Additional Tools
                                 </div>
                                 <div className="text">
-                                  Additional Tools Additional tools to help you
-                                  run your carshare business more efficiently
+                                  Additional tools to help you run your carshare
+                                  business more efficiently.
                                 </div>
                               </div>
                             </div>
@@ -156,7 +156,7 @@ const FeatureSection = ({ ...rest }) => {
                                   className="button"
                                   onClick={() => setModal(true)}
                                 >
-                                  Get Early Access{" "}
+                                  Get Early Access &nbsp;
                                   <i id="i" class="fas fa-chevron-right"></i>
                                 </button>
                               </div>
@@ -224,7 +224,7 @@ const FeatureSection = ({ ...rest }) => {
                               <div className="text">
                                 Usage Based Pricing Usage based pricing that
                                 only charges you for miles driven off the
-                                carshare platform
+                                carshare platform.
                               </div>
                             </div>
                           </div>
@@ -235,8 +235,8 @@ const FeatureSection = ({ ...rest }) => {
                             <div className="text-wrapper">
                               <div className="item-title">Additional Tools</div>
                               <div className="text">
-                                Additional Tools Additional tools to help you
-                                run your rideshare business more efficiently.
+                                Additional tools to help you run your rideshare
+                                business more efficiently.
                               </div>
                             </div>
                           </div>
@@ -258,7 +258,7 @@ const FeatureSection = ({ ...rest }) => {
                                 className="button"
                                 onClick={() => setModal(true)}
                               >
-                                Get Early Access{" "}
+                                Get Early Access &nbsp;
                                 <i id="i" class="fas fa-chevron-right"></i>
                               </button>
                             </div>

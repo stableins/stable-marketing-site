@@ -258,7 +258,6 @@
           font-style: normal;
           font-weight: 700;
           height: 50px;
-
           line-height: 30px;
           letter-spacing: 0em;
           width: 334px;
@@ -321,7 +320,7 @@
               width: 940px;
               height: 163px;
               left: 185px;
-              top: 10px;
+              top: 0;
               font-family: Rubik;
               font-style: normal;
               font-weight: normal;
@@ -451,7 +450,6 @@
               #i {
                 color: #f6f6f6;
                 z-index: -1;
-                margin-left: 5px;
               }
             }
 
@@ -529,7 +527,6 @@
         }
 
         #i {
-          margin-left: 5px;
           color: #f6f6f6 !important;
         }
       }
@@ -598,7 +595,7 @@
 
             .p-text2 {
               width: 100%;
-              margin-top: 150px;
+              margin-top: 110px;
             }
           }
         }
@@ -620,6 +617,7 @@
                 color: #ffae13;
                 margin: auto;
                 font-size: 1em;
+                margin-right: -3px;
                 padding-right: 20px;
               }
 
@@ -627,11 +625,12 @@
                 // margin: auto;
                 text-align: center;
                 .item-title {
+                  margin-top: 15px;
                   font-family: Rubik;
-                  font-size: 18px;
+                  font-size: 16px;
                   font-style: normal;
                   font-weight: bold;
-                  line-height: 26px;
+                  line-height: 22px;
                   letter-spacing: 0em;
                   text-align: center;
                   font-weight: 800;
@@ -640,10 +639,10 @@
 
                 .text {
                   font-family: Rubik;
-                  font-size: 18px;
+                  font-size: 16px;
                   font-style: normal;
                   font-weight: 400;
-                  line-height: 26px;
+                  line-height: 22px;
                   letter-spacing: 0em;
                   text-align: center;
                   color: #303030;
@@ -665,17 +664,19 @@
                 margin: auto;
                 font-size: 1em;
                 padding-right: 20px;
+                margin-right: -7px;
               }
 
               .text-wrapper {
                 margin: auto;
                 text-align: center;
                 .item-title {
+                  margin-top: 15px;
                   font-family: Rubik;
-                  font-size: 18px;
+                  font-size: 16px;
                   font-style: normal;
                   font-weight: 400;
-                  line-height: 26px;
+                  line-height: 22px;
                   letter-spacing: 0em;
                   text-align: center;
                   font-weight: 800;
@@ -684,10 +685,10 @@
 
                 .text {
                   font-family: Rubik;
-                  font-size: 18px;
+                  font-size: 16px;
                   font-style: normal;
                   font-weight: 400;
-                  line-height: 26px;
+                  line-height: 22px;
                   letter-spacing: 0em;
                   text-align: center;
                   color: #303030;
@@ -736,11 +737,13 @@
                 margin: auto;
                 text-align: center;
                 .item-title {
+                  margin-top: 15px;
+
                   font-family: Rubik;
-                  font-size: 18px;
+                  font-size: 16px;
                   font-style: normal;
                   font-weight: 400;
-                  line-height: 26px;
+                  line-height: 22px;
                   letter-spacing: 0em;
                   text-align: center;
                   font-weight: 800;
@@ -749,10 +752,10 @@
 
                 .text {
                   font-family: Rubik;
-                  font-size: 18px;
+                  font-size: 16px;
                   font-style: normal;
                   font-weight: 400;
-                  line-height: 26px;
+                  line-height: 22px;
                   letter-spacing: 0em;
                   text-align: center;
                   color: #303030;
@@ -780,10 +783,10 @@
                 width: 100%;
                 .item-title {
                   font-family: Rubik;
-                  font-size: 18px;
+                  font-size: 16px;
                   font-style: normal;
                   font-weight: 400;
-                  line-height: 26px;
+                  line-height: 22px;
                   letter-spacing: 0em;
                   text-align: left;
                   font-weight: 800;
@@ -794,10 +797,10 @@
 
                 .text {
                   font-family: Rubik;
-                  font-size: 18px;
+                  font-size: 16px;
                   font-style: normal;
                   font-weight: 400;
-                  line-height: 26px;
+                  line-height: 22px;
                   letter-spacing: 0em;
                   text-align: left;
                   color: black;
@@ -810,16 +813,16 @@
 
       .text {
         > p {
-          font-size: 18px;
+          font-size: 16px;
           font-style: normal;
           font-weight: 400;
-          line-height: 30px;
+          line-height: 22px;
           letter-spacing: 0em;
           text-align: left;
           width: 75%;
           margin-top: 30px;
           height: 0vh;
-          color: #000000;
+          color: #303030;
         }
       }
 
@@ -869,19 +872,21 @@
               text-align: left;
               width: 100%;
               color: #303030;
+              font-size: 16px;
+              line-height: 22px;
             }
 
             .p-text2 {
               width: 100%;
               height: 163px;
               left: 160px;
-              margin-top: 170px;
+              margin-top: 120px;
               top: 10px;
               font-family: Rubik;
               font-style: normal;
               font-weight: normal;
-              font-size: 18px;
-              line-height: 30px;
+              font-size: 16px;
+              line-height: 22px;
               text-align: left;
               color: #303030;
             }
@@ -912,11 +917,13 @@
                 margin: auto;
                 text-align: center;
                 .item-title {
+                  margin-top: 15px;
+
                   font-family: Rubik;
-                  font-size: 18px;
+                  font-size: 16px;
                   font-style: normal;
                   font-weight: 400;
-                  line-height: 26px;
+                  line-height: 22px;
                   letter-spacing: 0em;
                   text-align: center;
                   font-weight: 800;
@@ -925,10 +932,10 @@
 
                 .text {
                   font-family: Rubik;
-                  font-size: 18px;
+                  font-size: 16px;
                   font-style: normal;
                   font-weight: 400;
-                  line-height: 26px;
+                  line-height: 22px;
                   letter-spacing: 0em;
                   text-align: center;
                   color: #303030;
@@ -955,11 +962,13 @@
                 margin: auto;
                 text-align: center;
                 .item-title {
+                  margin-top: 15px;
+
                   font-family: Rubik;
-                  font-size: 18px;
+                  font-size: 16px;
                   font-style: normal;
                   font-weight: 400;
-                  line-height: 26px;
+                  line-height: 22px;
                   letter-spacing: 0em;
                   text-align: center;
                   font-weight: 800;
@@ -968,10 +977,10 @@
 
                 .text {
                   font-family: Rubik;
-                  font-size: 18px;
+                  font-size: 16px;
                   font-style: normal;
                   font-weight: 400;
-                  line-height: 26px;
+                  line-height: 22px;
                   letter-spacing: 0em;
                   text-align: center;
                   color: #303030;
@@ -991,13 +1000,13 @@
               top: 200px;
               margin-top: 50px;
               border-radius: 8px;
-              background: #3B358A;
+              background: #3b358a;
               border-radius: 8px;
               border: none;
-              color: #F6F6F6;
+              color: #f6f6f6;
 
               > i {
-                color: #F6F6F6 !important;
+                color: #f6f6f6 !important;
                 margin-right: -35px !important;
               }
             }
@@ -1016,11 +1025,12 @@
                 margin: auto;
                 text-align: center;
                 .item-title {
+                  margin-top: 15px;
                   font-family: Rubik;
-                  font-size: 18px;
+                  font-size: 16px;
                   font-style: normal;
                   font-weight: 400;
-                  line-height: 26px;
+                  line-height: 22px;
                   letter-spacing: 0em;
                   text-align: center;
                   font-weight: 800;
@@ -1029,10 +1039,10 @@
 
                 .text {
                   font-family: Rubik;
-                  font-size: 18px;
+                  font-size: 16px;
                   font-style: normal;
                   font-weight: 400;
-                  line-height: 26px;
+                  line-height: 22px;
                   letter-spacing: 0em;
                   text-align: center;
                   color: #303030;

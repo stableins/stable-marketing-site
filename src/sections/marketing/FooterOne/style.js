@@ -167,7 +167,6 @@ Footer.SocialShareItem = styled(Box).attrs({
     color: #fff;
     font-size: 15px;
     &::before {
-      content: ".";
       position: absolute;
       left: 0;
       bottom: 0;
