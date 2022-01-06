@@ -17,7 +17,9 @@ const SiteHeader = styled.div.attrs({
     border-color: rgba(255, 255, 255, 0.5);
     color: rgba(255, 255, 255, 0.77);
     .navbar-toggler-icon {
-      width: 100%;
+      margin-left: -30px;
+
+      width: 30%;
       background: none;
       display: flex;
       align-items: center;
@@ -415,7 +417,7 @@ const SiteHeader = styled.div.attrs({
   }
   .site-navbar {
     @media (min-width: 992px) {
-      position: static;
+      position: fixed;
     }
   }
   .container-fluid {
@@ -450,7 +452,7 @@ const SiteHeader = styled.div.attrs({
 
   &.site-header--sticky {
     &:not(.mobile-sticky-enable) {
-      position: absolute !important;
+      // position: fixed !important;
       top: 0;
       right: 0;
       width: 100%;

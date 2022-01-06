@@ -3,6 +3,7 @@ import { Link } from "~components"
 import { scroller } from "react-scroll"
 import { Button, Modal, Form } from "react-bootstrap"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
+import smoothscroll from "smoothscroll-polyfill"
 import styled from "styled-components/macro"
 import Intake from "../../../api/intake"
 import { Box } from "~styled"
@@ -53,10 +54,13 @@ const HeaderButton = ({
   const [nameInputValue, setNameInputValue] = useState("")
   const [zipcodeInputValue, setZipcodeInputValue] = useState("")
   const [dropdownInputValue, setDropdownInputValue] = useState("")
+  
+    smoothscroll.polyfill()
+
 
   const scrollToCarshare = () => {
     scroller.scrollTo("anchor2", {
-      duration: 400,
+      duration: 0,
       delay: 0,
       smooth: "easeInOutQuart",
     })
@@ -64,7 +68,7 @@ const HeaderButton = ({
 
   const scrollToRideShare = () => {
     scroller.scrollTo("anchor", {
-      duration: 400,
+      duration: 0,
       delay: 0,
       smooth: "easeInOutQuart",
     })
@@ -72,7 +76,7 @@ const HeaderButton = ({
 
    const scrollToReport = () => {
      scroller.scrollTo("anchor3", {
-       duration: 400,
+       duration: 0,
        delay: 0,
        smooth: "easeInOutQuart",
      })

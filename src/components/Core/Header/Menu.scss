@@ -24,8 +24,8 @@
 
     .logo {
       position: absolute;
-      left: 25px;
-      top: 27px;
+      left: 12px;
+      top: 25px;
       img {
         width: 130px;
       }
@@ -33,7 +33,7 @@
     .button-wrapper {
       display: grid;
       padding: 0 7px;
-      margin-top: 45px;
+      margin-top: 35px;
 
       button {
         margin-top: 0px;
@@ -69,10 +69,9 @@
         width: 100%;
         font-family: Roboto;
         font-style: normal;
-        font-weight: bold;
         font-size: 20px;
         line-height: 30px;
-        margin-top: 25px;
+        margin-top: 35px;
         margin-left: 0px;
         text-align: center;
         text-transform: capitalize;
