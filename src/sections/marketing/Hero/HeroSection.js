@@ -19,23 +19,6 @@ export default function HeroSection() {
 
   smoothscroll.polyfill()
 
-  const scrollToRideShare = () => {
-    smoothscroll.polyfill()
-    scroller.scrollTo("anchor", {
-      duration: 1000,
-      delay: 0,
-      smooth: "easeInOutQuart",
-    })
-  }
-
-  const scrollToCarshare = () => {
-    scroller.scrollTo("anchor2", {
-      duration: 1000,
-      delay: 0,
-      smooth: "easeInOutQuart",
-    })
-  }
-
   const scrollToReport = () => {
     scroller.scrollTo("anchor3", {
       duration: 1000,

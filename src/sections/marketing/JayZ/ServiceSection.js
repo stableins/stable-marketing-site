@@ -11,11 +11,12 @@ import Service from "./style"
 import "./ServiceSection.scss"
 
 export default function ServiceSection() {
+
+  
   const scrollToAboutUs = () => {
     scroller.scrollTo("anchor4", {
-      duration: 10,
-      delay: 0,
       smooth: "easeInOutQuart",
+      delay: 0,
     })
   }
 
