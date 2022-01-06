@@ -33,6 +33,7 @@ const Header = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
+      duration: 400,
       behavior: "smooth",
     })
   }
@@ -54,9 +55,7 @@ const Header = () => {
         </Container>
         {showButton && (
           <button onClick={scrollToTop} className="back-to-top">
-            <p>
               <i class="fas fa-chevron-up"></i>
-            </p>
           </button>
         )}
       </SiteHeader>

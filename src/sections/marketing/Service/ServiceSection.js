@@ -115,11 +115,11 @@ export default function ServiceSection() {
                       <i class="fas fa-tasks"></i>
                     </p>
                     <div className="widget-title-1">
-                      Manage Smartly <br />
+                      Put Your Data to Work <br />
                       <p>
-                        Put Your Data to Work Your data is valuable. We use it
-                        to provide you better insurance and valuable tools on
-                        how to operate your business better.
+                        Your data is valuable. We use it to provide you better
+                        insurance and valuable tools on how to operate your
+                        business better.
                       </p>
                     </div>
                   </div>
@@ -140,7 +140,7 @@ export default function ServiceSection() {
                     <p>
                       <i class="fas fa-sync-alt"></i>
                     </p>{" "}
-                    <div className="widget-title">
+                    <div className="widget-title3">
                       A Community Effort <br />
                       <p>
                         Interact with other drivers and fleets to learn how to
@@ -149,7 +149,7 @@ export default function ServiceSection() {
                     </div>
                   </div>
                   <button className="mobile-button">
-  Help Build Better Insurance
+                    Help Build Better Insurance
                     <i class="fas fa-chevron-right"></i>
                   </button>
                 </div>
