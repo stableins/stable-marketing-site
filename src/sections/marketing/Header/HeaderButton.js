@@ -56,7 +56,7 @@ const HeaderButton = ({
 
   const scrollToCarshare = () => {
     scroller.scrollTo("anchor2", {
-      duration: 10,
+      duration: 400,
       delay: 0,
       smooth: "easeInOutQuart",
     })
@@ -64,7 +64,7 @@ const HeaderButton = ({
 
   const scrollToRideShare = () => {
     scroller.scrollTo("anchor", {
-      duration: 10,
+      duration: 400,
       delay: 0,
       smooth: "easeInOutQuart",
     })
@@ -72,7 +72,7 @@ const HeaderButton = ({
 
    const scrollToReport = () => {
      scroller.scrollTo("anchor3", {
-       duration: 10,
+       duration: 400,
        delay: 0,
        smooth: "easeInOutQuart",
      })

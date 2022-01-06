@@ -21,7 +21,7 @@ export default function HeroSection() {
 
   const scrollToReport = () => {
     scroller.scrollTo("anchor3", {
-      duration: 1000,
+      duration: 400,
       delay: 0,
       smooth: "easeInOutQuart",
     })

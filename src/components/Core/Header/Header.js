@@ -33,6 +33,7 @@ const Header = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
+      duration: 400,
       behavior: "smooth",
     })
   }
