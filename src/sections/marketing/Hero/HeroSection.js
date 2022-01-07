@@ -32,14 +32,19 @@ export default function HeroSection() {
   async function handleEmailSubmit(event) {
     event.preventDefault()
     try {
-      const response = await axios.post(
-        "../../../../functions/sendgrid",
-        {
-          message:
-            "My email message, in the real world this would probably come from form data ",
-        }
-      )
-      alert("Thank you, your message was sent successfully!")
+      const response = await axios.put("../../../../functions/sendgrid", {
+        contacts: [
+          {
+            email: emailInputValue,
+            // postal_code: "37069",
+            custom_fields: {
+              w1_T: "email received",
+            },
+          },
+        ],
+      })
+      console.log(response);
+      alert(response)
     } catch (e) {
       console.error(e)
       alert(e)
