@@ -1,13 +1,15 @@
 import axios from "axios"
 
+const SENDGRID_API_KEY = 123
+
 const createContact = (
   nameInputValue,
   emailInputValue,
   zipcodeInputValue,
-  dropdownInputValue,
+  dropdownInputValue
   // contactMessage
 ) => {
-  return axios.post("https://api.sendgrid.com/v3/marketing/contacts", {
+  return axios.put("https://api.sendgrid.com/v3/marketing/contacts", {
     contacts: [
       {
         email: emailInputValue,
@@ -17,6 +19,9 @@ const createContact = (
         },
       },
     ],
+    headers: {
+      Authorization: `Bearer ${SENDGRID_API_KEY}`,
+    },
   })
 }
 
@@ -42,5 +47,5 @@ const submit = (
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   submit,
-  createContact
+  createContact,
 }
