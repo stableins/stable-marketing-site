@@ -1,8 +1,11 @@
-const path = require("path");
+const path = require("path")
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
+      fallback: {
+        path: require.resolve("path-browserify"),
+      },
       alias: {
         "~components": path.resolve(__dirname, "./src/components"),
         "~image": path.resolve(__dirname, "./src/assets/image"),
@@ -10,7 +13,10 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         "~sections": path.resolve(__dirname, "./src/sections"),
         "~data": path.resolve(__dirname, "./src/data"),
         "~styled": path.resolve(__dirname, "./src/styles"),
-      }
-    }
-  });
-};
+      },
+    },
+    node: {
+      fs: "empty",
+    },
+  })
+}
