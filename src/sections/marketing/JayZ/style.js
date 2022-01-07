@@ -3,9 +3,8 @@ import { Box, Heading, Paragraph } from "~styled"
 
 const Service = styled(Box)`
     padding-top: 55px;
-    padding-bottom: 40px;
+    padding-bottom: 55px;
     position: relative;
-    background: #F6F6F6;
 
     @media (min-width:768px) {
         padding-top: 70px;
@@ -13,8 +12,8 @@ const Service = styled(Box)`
     }
 
     @media (min-width:992px) {
-        padding-top: 80px;
-        padding-bottom: 0;
+        padding-top: 100px;
+        padding-bottom: 33px;
     }
 `
 Service.Title = styled(Heading)`

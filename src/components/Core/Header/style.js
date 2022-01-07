@@ -17,7 +17,9 @@ const SiteHeader = styled.div.attrs({
     border-color: rgba(255, 255, 255, 0.5);
     color: rgba(255, 255, 255, 0.77);
     .navbar-toggler-icon {
-      width: 100%;
+      margin-left: -10px;
+      margin-top: 5px;
+      width: 70px;
       background: none;
       display: flex;
       align-items: center;
@@ -360,8 +362,9 @@ const SiteHeader = styled.div.attrs({
           justify-content: center;
           margin-left: auto;
           padding: 5px;
+          margin-top: -5px;
           margin-bottom: 5px;
-          margin-right: 10px;
+          margin-right: 25px;
           border-radius: 6px;
 
           &:before {
@@ -415,7 +418,7 @@ const SiteHeader = styled.div.attrs({
   }
   .site-navbar {
     @media (min-width: 992px) {
-      position: static;
+      position: fixed;
     }
   }
   .container-fluid {
@@ -426,7 +429,7 @@ const SiteHeader = styled.div.attrs({
       }
 
       @media (min-width: 992px) {
-        padding-left: 63px;
+        padding-left: 73px;
         padding-right: 20px;
       }
     }
@@ -450,7 +453,7 @@ const SiteHeader = styled.div.attrs({
 
   &.site-header--sticky {
     &:not(.mobile-sticky-enable) {
-      position: absolute !important;
+      // position: fixed !important;
       top: 0;
       right: 0;
       width: 100%;

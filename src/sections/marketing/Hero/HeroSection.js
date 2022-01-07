@@ -23,7 +23,7 @@ export default function HeroSection() {
     scroller.scrollTo("anchor3", {
       duration: 400,
       delay: 0,
-      smooth: "easeInOutQuart",
+      smooth: "smooth",
     })
   }
 
@@ -110,9 +110,12 @@ export default function HeroSection() {
                     <p className="login">
                       Already have an account? <span>Login here</span>.
                     </p>
-                    <p className="driver-report-mobile" onClick={scrollToReport}>
+                    <p
+                      className="driver-report-mobile"
+                      onClick={scrollToReport}
+                    >
                       <p>
-                        Get Your Driver Report &nbsp; 
+                        Get Your Driver Report &nbsp;
                         <i class="fas fa-chevron-right"></i>
                       </p>
                     </p>

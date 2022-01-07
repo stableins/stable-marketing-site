@@ -18,7 +18,7 @@
     .inner-wrapper {
       height: 600px;
       .title {
-        width: 700px;
+        width: 670px;
         height: 129px;
         left: 0;
         position: absolute;
@@ -26,7 +26,7 @@
         font-family: Rubik;
         font-style: normal;
         font-weight: normal;
-        font-size: 55px;
+        font-size: 50px;
         line-height: 60px;
         color: #002e6d;
       }
@@ -39,16 +39,17 @@
           .text {
             .p-text1 {
               position: absolute;
-              top: 40px;
-              width: 662px;
+              bottom: 45px;
+              width: 680px;
+              left: 640px;
               font-family: Rubik;
               font-style: normal;
               font-weight: normal;
-              font-size: 22px;
+              font-size: 20px;
               line-height: 30px;
 
               .bold {
-                font-size: 22px;
+                font-size: 20px;
                 font-style: normal;
                 font-weight: 700;
                 line-height: 30px;
@@ -159,9 +160,8 @@
 
       .form-wrapper {
         position: absolute;
-        bottom: 100px;
-        top: 10px;
-        left: 700px;
+        bottom: 0px;
+        left: 635px;
         display: inline-flex;
         padding-top: 20px;
 
@@ -169,6 +169,7 @@
           height: 50px;
           border-radius: 8px;
           width: 223px;
+          font-size: 16px;
           position: absolute;
           border-top-left-radius: 0px;
           border-bottom-left-radius: 0px;
@@ -176,7 +177,7 @@
           border-bottom-right-radius: 8px;
           bottom: 0px;
           top: 20px;
-          left: 350px;
+          left: 460px;
 
           i {
           }
@@ -184,8 +185,9 @@
       }
       .form-control {
         height: 50px;
-        width: 500px !important;
+        width: 600px !important;
         border-radius: 8px;
+        right: 190px;
       }
     }
   }
@@ -201,7 +203,7 @@
     }
     .inner-wrapper {
       // display: inline-flex;
-      height: 520px;
+      height: 380px;
       .title {
         margin-top: -7px;
         font-family: Rubik;
@@ -260,7 +262,7 @@
         }
 
         .right {
-          margin-top: 110px;
+          margin-top: -70px;
           width: 100%;
 
           .item-wrapper {
@@ -331,7 +333,7 @@
 
       .button-wrapper {
         text-align: left;
-        margin-top: 380px;
+        margin-top: 20px;
 
         button {
           font-family: Roboto;
@@ -351,7 +353,7 @@
 
       .form-wrapper {
         // position: absolute;
-        top: 400px;
+        top: 100px;
         display: block;
         padding-top: 20px;
 

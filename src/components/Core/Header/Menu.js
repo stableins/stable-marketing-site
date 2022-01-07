@@ -91,7 +91,7 @@ const Menu = ({ ...rest }) => {
         />
         <Nav className="mr-auto site-menu-main">
           <div className="button-wrapper">
-            <button className="report" onClick={scrollToRideshare}>
+            <button className="report" onClick={scrollToReport}>
               <Navbar.Toggle className="toggle">
                 <span> Get Your Driver Report </span>
               </Navbar.Toggle>

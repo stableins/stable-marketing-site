@@ -61,8 +61,6 @@ export default function individualFleetForm() {
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3">
                 <Form.Label>
-                  Congratulations! You are eligible to obtain early access to
-                  your free driver report! <br />
                   Please provide the following details so that we may verify
                   your information:
                 </Form.Label>
