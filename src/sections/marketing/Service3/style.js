@@ -3,7 +3,7 @@ import { Box, Heading, Paragraph } from "~styled"
 
 const Service = styled(Box)`
     padding-top: 55px;
-    padding-bottom: 55px;
+    padding-bottom: 15px;
     position: relative;
 
     @media (min-width:768px) {
