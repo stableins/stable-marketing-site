@@ -5,7 +5,7 @@ const createContact = (
   emailInputValue,
   zipcodeInputValue,
   dropdownInputValue,
-  contactMessage
+  // contactMessage
 ) => {
   return axios.post("https://api.sendgrid.com/v3/marketing/contacts", {
     contacts: [
@@ -42,4 +42,5 @@ const submit = (
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   submit,
+  createContact
 }
