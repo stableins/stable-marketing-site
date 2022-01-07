@@ -19,7 +19,7 @@ const SiteHeader = styled.div.attrs({
     .navbar-toggler-icon {
       margin-left: -10px;
       margin-top: 5px;
-      width: 30%;
+      width: 70px;
       background: none;
       display: flex;
       align-items: center;
