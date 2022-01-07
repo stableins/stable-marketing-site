@@ -17,8 +17,8 @@ const SiteHeader = styled.div.attrs({
     border-color: rgba(255, 255, 255, 0.5);
     color: rgba(255, 255, 255, 0.77);
     .navbar-toggler-icon {
-      margin-left: -30px;
-
+      margin-left: -10px;
+      margin-top: 5px;
       width: 30%;
       background: none;
       display: flex;
@@ -362,8 +362,9 @@ const SiteHeader = styled.div.attrs({
           justify-content: center;
           margin-left: auto;
           padding: 5px;
+          margin-top: -5px;
           margin-bottom: 5px;
-          margin-right: 10px;
+          margin-right: 25px;
           border-radius: 6px;
 
           &:before {
@@ -428,7 +429,7 @@ const SiteHeader = styled.div.attrs({
       }
 
       @media (min-width: 992px) {
-        padding-left: 63px;
+        padding-left: 73px;
         padding-right: 20px;
       }
     }

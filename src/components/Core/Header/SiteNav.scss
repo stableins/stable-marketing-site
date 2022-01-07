@@ -13,7 +13,7 @@
 
       .navbar-brand {
         width: 84%;
-        margin-left: 16px;
+        margin-left: 8px;
       }
 
       .navbar-toggler {
@@ -25,8 +25,15 @@
 
 @media (min-width: 501px) {
   .site-nav-wrapper {
+     display: inline-block;
+    width: 1000px;
+    position: fixed;
+    background: #ffffff;
+    margin-left: -10px;
     .site-navbar {
-      width: auto;
+      width: 100%;
+          background: #ffffff;
+
 
       .navbar-brand {
         width: 70%;

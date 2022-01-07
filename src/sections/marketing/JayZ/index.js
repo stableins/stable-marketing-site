@@ -1,2 +1,1 @@
-export { default } from "./ServiceSection"
-
+export { default } from "./ServiceSection";

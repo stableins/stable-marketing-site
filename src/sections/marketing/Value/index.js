@@ -129,7 +129,7 @@ const FeatureSection = ({ ...rest }) => {
                         >
                           <div className="item-wrapper">
                             <div className="inner-item-wrapper">
-                              <i class="far fa-newspaper"></i>{" "}
+                              {/* <i class="far fa-newspaper"></i>{" "} */}
                             </div>
                           </div>
                         </Feature.Title>

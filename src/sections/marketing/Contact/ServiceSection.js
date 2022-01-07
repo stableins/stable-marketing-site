@@ -17,9 +17,14 @@ export default function ServiceSection() {
           <Row className="align-items-end justify-content-center text-start">
             <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
               <Slide down>
-                <Service.Title as="h2" mb="0">
+
                   <div className="anchor4"></div>
                   <div className="title">Get In Touch</div>
+                  <div className="text">
+                    Want to chat with us about a new insurance you need, other
+                    things <br />
+                    we're working on or to learn more? Reach out!
+                  </div>
                   <div className="form-wrapper">
                     <Form>
                       <Form.Group className="mb-3">
@@ -66,7 +71,6 @@ export default function ServiceSection() {
                       </button>
                     </Form>
                   </div>
-                </Service.Title>
               </Slide>
               <Slide right>
                 <br className="d-none d-xs-block d-lg-none d-xl-block" />
