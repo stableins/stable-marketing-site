@@ -54,9 +54,8 @@ const HeaderButton = ({
   const [nameInputValue, setNameInputValue] = useState("")
   const [zipcodeInputValue, setZipcodeInputValue] = useState("")
   const [dropdownInputValue, setDropdownInputValue] = useState("")
-  
-    smoothscroll.polyfill()
 
+  smoothscroll.polyfill()
 
   const scrollToCarshare = () => {
     scroller.scrollTo("anchor2", {
@@ -74,13 +73,13 @@ const HeaderButton = ({
     })
   }
 
-   const scrollToReport = () => {
-     scroller.scrollTo("anchor3", {
-       duration: 0,
-       delay: 0,
-       smooth: "easeInOutQuart",
-     })
-   }
+  const scrollToReport = () => {
+    scroller.scrollTo("anchor3", {
+      duration: 0,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    })
+  }
 
   async function handleSubmit(event) {
     event.preventDefault()
