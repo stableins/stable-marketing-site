@@ -203,7 +203,7 @@
     }
     .inner-wrapper {
       // display: inline-flex;
-      height: 520px;
+      height: 380px;
       .title {
         margin-top: -7px;
         font-family: Rubik;
@@ -262,7 +262,7 @@
         }
 
         .right {
-          margin-top: 110px;
+          margin-top: -70px;
           width: 100%;
 
           .item-wrapper {
@@ -333,7 +333,7 @@
 
       .button-wrapper {
         text-align: left;
-        margin-top: 380px;
+        margin-top: 20px;
 
         button {
           font-family: Roboto;
@@ -353,7 +353,7 @@
 
       .form-wrapper {
         // position: absolute;
-        top: 400px;
+        top: 100px;
         display: block;
         padding-top: 20px;
 
