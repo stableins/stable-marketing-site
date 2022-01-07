@@ -5,8 +5,10 @@ import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import SingleAniamtion from "../../../components/Animation/singleAnimation"
 import { Link } from "~components"
 import Intake from "../../../api/intake"
+import axios from "axios"
 import { scroller } from "react-scroll"
 import smoothscroll from "smoothscroll-polyfill"
+import Sendgrid from "../../../../functions/sendgrid"
 import ImageGroup from "./Components/ImageGroup"
 import Fade from "react-reveal/Fade"
 import Hero from "./style"
@@ -30,16 +32,28 @@ export default function HeroSection() {
   async function handleEmailSubmit(event) {
     event.preventDefault()
     try {
-      const response = await Intake.submit(emailInputValue)
-      console.log(response)
-
-      if (response.data.statusCode === 200) {
-        setShowConfirmation(true)
-      }
+      const response = await axios.post(
+        "../../../../functions/sendgrid",
+        {
+          message:
+            "My email message, in the real world this would probably come from form data ",
+        }
+      )
+      alert("Thank you, your message was sent successfully!")
     } catch (e) {
-      alert("Submission Error")
+      console.error(e)
+      alert(e)
     }
   }
+  //   console.log(response)
+
+  //   if (response.data.statusCode === 200) {
+  //     setShowConfirmation(true)
+  //   }
+  // } catch (e) {
+  //   alert("Submission Error")
+  // }
+  // }
 
   return (
     <Fade>
