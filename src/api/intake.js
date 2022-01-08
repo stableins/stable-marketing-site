@@ -1,6 +1,5 @@
 import axios from "axios"
 
-const SENDGRID_API_KEY = 123
 
 const createContact = (
   nameInputValue,
@@ -9,7 +8,7 @@ const createContact = (
   dropdownInputValue
   // contactMessage
 ) => {
-  return axios.put("https://api.sendgrid.com/v3/marketing/contacts", {
+  return axios.put("../../netlify/functions/sendgrid", {
     contacts: [
       {
         email: emailInputValue,
@@ -20,7 +19,7 @@ const createContact = (
       },
     ],
     headers: {
-      Authorization: `Bearer ${SENDGRID_API_KEY}`,
+      Authorization: `Bearer ${process.env}`,
     },
   })
 }
