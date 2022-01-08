@@ -58,7 +58,6 @@ const SiteNavbar = ({ buttonBlock, darkLogo, customLogo, defaultLogo }) => {
     }
 
     window.addEventListener("scroll", onScroll)
-    console.log(scrollDir)
 
     if (scrollDir === "scrolling down") {
       setIsVisible(false)
