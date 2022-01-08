@@ -8,7 +8,7 @@ import Intake from "../../../api/intake"
 import axios from "axios"
 import { scroller } from "react-scroll"
 import smoothscroll from "smoothscroll-polyfill"
-import Sendgrid from "../../../../netlify/functions/sendgrid/sendgrid"
+import Sendgrid from "../../../../netlify/functions/sendgrid"
 import ImageGroup from "./Components/ImageGroup"
 import Fade from "react-reveal/Fade"
 import Hero from "./style"
@@ -32,7 +32,7 @@ export default function HeroSection() {
   async function handleEmailSubmit(event) {
     event.preventDefault()
     try {
-      const response = await axios.put("../../../../functions/sendgrid", {
+      const response = await axios.put("/.netlify/functions/sendgrid", {
         contacts: [
           {
             email: emailInputValue,
@@ -43,9 +43,8 @@ export default function HeroSection() {
           },
         ],
       })
-      if (response.status === 200) {
-        alert("success")
-      }
+      alert("Thank you, your message was sent successfully!")
+      console.log(response)
     } catch (e) {
       console.error(e)
       alert(e)
