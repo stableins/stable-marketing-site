@@ -43,8 +43,9 @@ export default function HeroSection() {
           },
         ],
       })
-      console.log(response);
-      alert(response)
+      if (response.status === 200) {
+        alert("success")
+      }
     } catch (e) {
       console.error(e)
       alert(e)
