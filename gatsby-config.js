@@ -1,7 +1,7 @@
 const path = require(`path`)
 
 require("dotenv").config({
-  path: `process.env`,
+  path: '.env.${process.env.NODE_ENV}',
 })
 
 module.exports = {

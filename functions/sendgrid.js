@@ -2,7 +2,7 @@ import axios from "axios"
 
 const postUrl = "https://api.sendgrid.com/v3/marketing/contacts"
 
-const { SENDGRID_API_KEY } = process.env
+const token = process.env.GATSBY_SENDGRID_API_KEY
 
 const createContact = async ({
   emailInputValue,
@@ -26,7 +26,7 @@ const createContact = async ({
       },
       {
         headers: {
-          Authorization: `Bearer ${SENDGRID_API_KEY}`,
+          Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
       }

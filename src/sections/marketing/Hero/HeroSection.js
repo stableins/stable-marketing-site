@@ -20,6 +20,10 @@ export default function HeroSection() {
 
   smoothscroll.polyfill()
 
+  const token = process.env.SENDGRID_API_KEY
+
+  console.log(token)
+
   const scrollToReport = () => {
     scroller.scrollTo("anchor3", {
       duration: 400,
@@ -54,6 +58,7 @@ export default function HeroSection() {
                 <Hero.Content>
                   <Hero.Title as="h1">
                     <div className="title">
+                      {process.env.GATSBY_SENDGRID_API_KEY}
                       <span className="bold-text">Discover What</span>{" "}
                       <span className="blue-text"></span>
                       <p>
