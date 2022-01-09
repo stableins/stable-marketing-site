@@ -29,8 +29,7 @@ const createContact = async ({
           Authorization: `Bearer ${SENDGRID_API_KEY}`,
           "Content-Type": "application/json",
         },
-      },
-      
+      }
     )
     .catch(error => {
       console.log(error.response)
