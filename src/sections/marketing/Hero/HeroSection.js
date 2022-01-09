@@ -7,7 +7,7 @@ import { Link } from "~components"
 import Intake from "../../../api/intake"
 import { scroller } from "react-scroll"
 import smoothscroll from "smoothscroll-polyfill"
-import Sendgrid from "../../../../netlify/functions/sendgrid"
+import Sendgrid from "../../../../.netlify/functions/sendgrid"
 import ImageGroup from "./Components/ImageGroup"
 import Fade from "react-reveal/Fade"
 import Hero from "./style"
@@ -35,7 +35,6 @@ export default function HeroSection() {
         emailInputValue: emailInputValue
       })
       alert("Thank you, your message was sent successfully!")
-      console.log(response)
     } catch (e) {
       console.error(e)
       alert(e)
