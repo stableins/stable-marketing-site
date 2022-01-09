@@ -34,15 +34,33 @@ export default function HeroSection() {
 
   async function handleEmailSubmit(event) {
     event.preventDefault()
-    try {
-      const response = await Sendgrid.createContact({
-        emailInputValue: emailInputValue
-      })
-      alert("Thank you, your message was sent successfully!")
-    } catch (e) {
-      console.error(e)
-      alert(e)
+
+    const fields = {
+      contacts: [
+        {
+          email: emailInputValue,
+          postal_code: "37069",
+          custom_fields: {
+            w1_T: "email received",
+          },
+        },
+      ],
     }
+    fetch("../../../../functions/sendgrid", {
+      method: "PUT",
+      body: JSON.stringify(fields),
+    })
+      .then(() => alert("Form Sent!"))
+      .catch(error => alert(error))
+    // try {
+    //   const response = await Sendgrid.createContact({
+    //     emailInputValue: emailInputValue
+    //   })
+    //   alert("Thank you, your message was sent successfully!")
+    // } catch (e) {
+    //   console.error(e)
+    //   alert(e)
+    // }
   }
 
   return (
@@ -58,7 +76,6 @@ export default function HeroSection() {
                 <Hero.Content>
                   <Hero.Title as="h1">
                     <div className="title">
-                      {process.env.GATSBY_SENDGRID_API_KEY}
                       <span className="bold-text">Discover What</span>{" "}
                       <span className="blue-text"></span>
                       <p>
