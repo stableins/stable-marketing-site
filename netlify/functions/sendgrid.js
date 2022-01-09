@@ -1,29 +1,38 @@
-const sgMail = require("@sendgrid/mail")
-sgMail.setApiKey(process.env.SENDGRID_API_KEY)
-exports.handler = async (event, context, callback) => {
-  const data = JSON.parse(event.body)
-  const { email, subject } = data
-  const body = Object.keys(data)
-    .map(k => {
-      return `${k}: ${data[k]}`
-    })
-    .join("<br><br>")
-  const mail_to_send = {
-    to: "josh@stableins.com",
-    from: email,
-    subject: subject ? subject : "New Entry from Contact Form",
-    html: body,
-  }
-  try {
-    await sgMail.send(mail_to_send)
-    return {
-      statusCode: 200,
-      body: "Message sent successfully",
-    }
-  } catch (e) {
-    return {
-      statusCode: e.code,
-      body: e.message,
-    }
-  }
+import axios from "axios"
+
+const postUrl = "https://api.sendgrid.com/v3/marketing/contacts"
+
+const { SENDGRID_API_KEY } = process.env
+
+const createContact = async ({
+  emailInputValue,
+  zipcodeInputValue,
+  cellInputValue,
+  policyId,
+}) =>
+  axios
+    .put(
+      postUrl,
+      {
+        contacts: [
+          {
+            email: emailInputValue,
+            postal_code: zipcodeInputValue,
+            custom_fields: {
+              w1_T: "email received",
+            },
+          },
+        ],
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${SENDGRID_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+      }
+    )
+    .catch(error => console.log(error.response))
+
+export default {
+  createContact,
 }
