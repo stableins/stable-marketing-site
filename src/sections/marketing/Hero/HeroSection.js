@@ -20,10 +20,6 @@ export default function HeroSection() {
 
   smoothscroll.polyfill()
 
-  const token = process.env.SENDGRID_API_KEY
-
-  console.log(token)
-
   const scrollToReport = () => {
     scroller.scrollTo("anchor3", {
       duration: 400,
@@ -34,34 +30,26 @@ export default function HeroSection() {
 
   async function handleEmailSubmit(event) {
     event.preventDefault()
-
-    const fields = {
-      contacts: [
-        {
-          email: emailInputValue,
-          postal_code: "37069",
-          custom_fields: {
-            w1_T: "email received",
-          },
-        },
-      ],
+    try {
+      const response = await Sendgrid.createContact({
+        emailInputValue: emailInputValue
+      })
+      alert("Thank you, your message was sent successfully!")
+      console.log(response)
+    } catch (e) {
+      console.error(e)
+      alert(e)
     }
-    fetch("../../../../functions/sendgrid", {
-      method: "PUT",
-      body: JSON.stringify(fields),
-    })
-      .then(() => alert(fields))
-      .catch(error => alert(error))
-    // try {
-    //   const response = await Sendgrid.createContact({
-    //     emailInputValue: emailInputValue
-    //   })
-    //   alert("Thank you, your message was sent successfully!")
-    // } catch (e) {
-    //   console.error(e)
-    //   alert(e)
-    // }
   }
+  //   console.log(response)
+
+  //   if (response.data.statusCode === 200) {
+  //     setShowConfirmation(true)
+  //   }
+  // } catch (e) {
+  //   alert("Submission Error")
+  // }
+  // }
 
   return (
     <Fade>

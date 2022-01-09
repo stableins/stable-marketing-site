@@ -1,28 +1,40 @@
-exports.handler = async (event, context, callback) => {
-  const pass = body => {
-    callback(null, { statusCode: 200, body: JSON.stringify(body) })
-  }
+import axios from "axios"
 
-  try {
-    let response = await fetch(
-      "https://api.sendgrid.com/v3/marketing/contacts",
+const postUrl = "https://api.sendgrid.com/v3/marketing/contacts"
+
+const { GATSBY_SENDGRID_API_KEY } = process.env
+
+const createContact = async ({
+  emailInputValue,
+  zipcodeInputValue,
+  cellInputValue,
+  policyId,
+}) =>
+  axios
+    .put(
+      postUrl,
       {
-        method: event.httpMethod,
+        contacts: [
+          {
+            email: emailInputValue,
+            postal_code: zipcodeInputValue,
+            custom_fields: {
+              w1_T: "email received",
+            },
+          },
+        ],
+      },
+      {
         headers: {
-          Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
+          Authorization: `Bearer ${GATSBY_SENDGRID_API_KEY}`,
           "Content-Type": "application/json",
         },
-        body: event.body,
       }
     )
-    console.log(response);
-    let data = await response.json()
-    await pass(data)
-  } catch (err) {
-    let error = {
-      statusCode: err.statusCode || 500,
-      body: JSON.stringify({ error: err.message }),
-    }
-    await pass(error)
-  }
+    .catch(error => {
+      console.log(error.response)
+    })
+
+export default {
+  createContact,
 }
