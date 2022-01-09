@@ -2,7 +2,7 @@ import axios from "axios"
 
 const postUrl = "https://api.sendgrid.com/v3/marketing/contacts"
 
-const token = process.env.GATSBY_SENDGRID_API_KEY
+const token = process.env.SENDGRID_API_KEY
 
 const createContact = async ({
   emailInputValue,
