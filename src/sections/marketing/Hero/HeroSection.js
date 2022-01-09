@@ -50,7 +50,7 @@ export default function HeroSection() {
       method: "PUT",
       body: JSON.stringify(fields),
     })
-      .then(() => alert("Form Sent!"))
+      .then(() => alert(fields))
       .catch(error => alert(error))
     // try {
     //   const response = await Sendgrid.createContact({

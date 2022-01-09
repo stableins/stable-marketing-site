@@ -15,6 +15,7 @@ exports.handler = async (event, context, callback) => {
         body: event.body,
       }
     )
+    console.log(response);
     let data = await response.json()
     await pass(data)
   } catch (err) {
