@@ -1,4 +1,9 @@
 const path = require(`path`)
+
+require("dotenv").config({
+  path: `process.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Shade Gatsby`,
