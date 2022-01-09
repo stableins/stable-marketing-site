@@ -5,7 +5,6 @@ import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import SingleAniamtion from "../../../components/Animation/singleAnimation"
 import { Link } from "~components"
 import Intake from "../../../api/intake"
-import axios from "axios"
 import { scroller } from "react-scroll"
 import smoothscroll from "smoothscroll-polyfill"
 import Sendgrid from "../../../../netlify/functions/sendgrid"
@@ -32,16 +31,8 @@ export default function HeroSection() {
   async function handleEmailSubmit(event) {
     event.preventDefault()
     try {
-      const response = await axios.put("/.netlify/functions/sendgrid", {
-        contacts: [
-          {
-            email: emailInputValue,
-            // postal_code: "37069",
-            custom_fields: {
-              w1_T: "email received",
-            },
-          },
-        ],
+      const response = await Sendgrid.createContact({
+        emailInputValue: emailInputValue
       })
       alert("Thank you, your message was sent successfully!")
       console.log(response)
@@ -50,15 +41,6 @@ export default function HeroSection() {
       alert(e)
     }
   }
-  //   console.log(response)
-
-  //   if (response.data.statusCode === 200) {
-  //     setShowConfirmation(true)
-  //   }
-  // } catch (e) {
-  //   alert("Submission Error")
-  // }
-  // }
 
   return (
     <Fade>
