@@ -8,3 +8,4 @@ trash
 
 # Local Netlify folder
 .netlify
+process.env
