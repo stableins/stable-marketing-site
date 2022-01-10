@@ -11,7 +11,7 @@ exports.handler = async function (event, context, callback) {
           {
             email: body.email,
             custom_fields: {
-              w1_T: "email received",
+              w1_T: body.status,
             },
           },
         ],
@@ -19,7 +19,7 @@ exports.handler = async function (event, context, callback) {
       {
         headers: {
           Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
       }
     )
