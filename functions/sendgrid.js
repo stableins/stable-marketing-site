@@ -12,8 +12,9 @@ exports.handler = async function (event, context, callback) {
               w1_T: "email received",
             },
           },
-        ]
+        ],
       },
+      {
         headers: {
           Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
         },
