@@ -37,6 +37,7 @@ export default function HeroSection() {
         "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgrid",
         {
           email: emailInputValue,
+          status: 'email received'
         }
       )
       alert("Contact Created")
@@ -44,15 +45,6 @@ export default function HeroSection() {
       alert(e)
     }
   }
-  //   console.log(response)
-
-  //   if (response.data.statusCode === 200) {
-  //     setShowConfirmation(true)
-  //   }
-  // } catch (e) {
-  //   alert("Submission Error")
-  // }
-  // }
 
   return (
     <Fade>
