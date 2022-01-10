@@ -2,25 +2,26 @@ const axios = require("axios")
 
 exports.handler = async function (event, context, callback) {
   try {
-    console.log(event);
-    // const response = await axios.put(
-    //   "https://api.sendgrid.com/v3/marketing/contacts",
-    //   {
-    //     contacts: [
-    //       {
-    //         email: event.body.email,
-    //         custom_fields: {
-    //           w1_T: "email received",
-    //         },
-    //       },
-    //     ],
-    //   },
-    //   {
-    //     headers: {
-    //       Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
-    //     },
-    //   }
-    // )
+    console.log(event)
+    const body = JSON.parse(event.body)
+    const response = await axios.put(
+      "https://api.sendgrid.com/v3/marketing/contacts",
+      {
+        contacts: [
+          {
+            email: body.email,
+            custom_fields: {
+              w1_T: "email received",
+            },
+          },
+        ],
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
+        },
+      }
+    )
     return {
       statusCode: 202,
     }
