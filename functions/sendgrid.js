@@ -7,9 +7,9 @@ exports.handler = async function (event, context, callback) {
       {
         contacts: [
           {
-            email: emailInputValue,
+            email: event.body.email,
+            w1_T: "email received",
             custom_fields: {
-              w1_T: "email received",
             },
           },
         ],
