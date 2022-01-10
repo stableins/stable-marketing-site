@@ -5,6 +5,7 @@ import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import SingleAniamtion from "../../../components/Animation/singleAnimation"
 import { Link } from "~components"
 import Intake from "../../../api/intake"
+import axios from "axios"
 import { scroller } from "react-scroll"
 import smoothscroll from "smoothscroll-polyfill"
 import Sendgrid from "../../../../functions/sendgrid"
@@ -30,14 +31,16 @@ export default function HeroSection() {
 
   async function handleEmailSubmit(event) {
     event.preventDefault()
+
     try {
-      const response = await Sendgrid.createContact({
-        emailInputValue: emailInputValue
-      })
-      alert("Thank you, your message was sent successfully!")
-      console.log(response)
+      await axios.post(
+        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgrid",
+        {
+          email: emailInputValue,
+        }
+      )
+      alert("Contact Created")
     } catch (e) {
-      console.error(e)
       alert(e)
     }
   }

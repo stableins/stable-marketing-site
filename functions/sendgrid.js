@@ -1,40 +1,22 @@
-import axios from "axios"
+const axios = require("axios")
 
-const postUrl = "https://api.sendgrid.com/v3/marketing/contacts"
+exports.handler = async function (event, context, callback) {
 
-const { GATSBY_SENDGRID_API_KEY } = process.env
+  console.log(event, context);
 
-const createContact = async ({
-  emailInputValue,
-  zipcodeInputValue,
-  cellInputValue,
-  policyId,
-}) =>
-  axios
-    .put(
-      postUrl,
-      {
-        contacts: [
-          {
-            email: emailInputValue,
-            postal_code: zipcodeInputValue,
-            custom_fields: {
-              w1_T: "email received",
-            },
-          },
-        ],
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${GATSBY_SENDGRID_API_KEY}`,
-          "Content-Type": "application/json",
-        },
-      }
-    )
-    .catch(error => {
-      console.log(error.response)
-    })
-
-export default {
-  createContact,
+  // const createContact = emailInputValue => {
+  //   return axios.put("https://api.sendgrid.com/v3/marketing/contacts", {
+  //     contacts: [
+  //       {
+  //         email: emailInputValue,
+  //         custom_fields: {
+  //           w1_T: "email received",
+  //         },
+  //       },
+  //     ],
+  //     headers: {
+  //       Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
+  //     },
+  //   })
+  // }
 }
