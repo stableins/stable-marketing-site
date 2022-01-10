@@ -19,6 +19,7 @@ exports.handler = async function (event, context, callback) {
       {
         headers: {
           Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
+          "Content-Type": "application/json"
         },
       }
     )
