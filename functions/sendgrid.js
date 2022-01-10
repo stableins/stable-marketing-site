@@ -1,8 +1,7 @@
 const axios = require("axios")
 
 exports.handler = async function (event, context, callback) {
-
-  console.log(event, context);
+  console.log(context)
 
   // const createContact = emailInputValue => {
   //   return axios.put("https://api.sendgrid.com/v3/marketing/contacts", {
@@ -19,4 +18,7 @@ exports.handler = async function (event, context, callback) {
   //     },
   //   })
   // }
+  return {
+    statusCode: 202,
+  }
 }
