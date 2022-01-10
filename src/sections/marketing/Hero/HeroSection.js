@@ -37,7 +37,7 @@ export default function HeroSection() {
         "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgrid",
         {
           email: emailInputValue,
-          status: 'email received'
+          status: 'email has def been received'
         }
       )
       alert("Contact Created")
