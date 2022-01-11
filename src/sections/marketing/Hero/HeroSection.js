@@ -5,9 +5,11 @@ import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import SingleAniamtion from "../../../components/Animation/singleAnimation"
 import { Link } from "~components"
 import Intake from "../../../api/intake"
+import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
 import { scroller } from "react-scroll"
 import smoothscroll from "smoothscroll-polyfill"
+import { Redirect } from "@reach/router"
 import Sendgrid from "../../../../functions/sendgrid"
 import ImageGroup from "./Components/ImageGroup"
 import Fade from "react-reveal/Fade"
@@ -15,9 +17,14 @@ import Hero from "./style"
 import "./HeroSection.scss"
 
 export default function HeroSection() {
+  const dispatch = useDispatch()
   const [show, setShow] = useState(false)
   const [emailInputValue, setEmailInputValue] = useState("")
   const [showConfirmation, setShowConfirmation] = useState(false)
+  const [formRedirect, setFormRedirect] = useState(false)
+  const email = useSelector(state => state.form.email)
+
+  console.log(email)
 
   smoothscroll.polyfill()
 
@@ -29,17 +36,29 @@ export default function HeroSection() {
     })
   }
 
+  // if (!formRedirect) {
+  //   return <Redirect to="/individual-fleet-form" />
+  // }
+
   async function handleEmailSubmit(event) {
     event.preventDefault()
-
+    dispatch({
+      type: "FORM::SET_EMAIL",
+      payload: emailInputValue,
+    })
     try {
       await axios.post(
         "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgrid",
         {
           email: emailInputValue,
-          status: "email received"
+          status: "email received",
         }
       )
+      setFormRedirect(true)
+      dispatch({
+        type: "FORM::SET_EMAIL",
+        payload: emailInputValue,
+      })
     } catch (e) {
       alert(e)
     }
