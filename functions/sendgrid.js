@@ -2,7 +2,6 @@ const axios = require("axios")
 
 exports.handler = async function (event, context, callback) {
   try {
-    console.log(event)
     const body = JSON.parse(event.body)
     const response = await axios.put(
       "https://api.sendgrid.com/v3/marketing/contacts",
@@ -10,6 +9,8 @@ exports.handler = async function (event, context, callback) {
         contacts: [
           {
             email: body.email,
+            postal_code: body.zipcode,
+            first_name: body.name,
             custom_fields: {
               w1_T: body.status,
             },
