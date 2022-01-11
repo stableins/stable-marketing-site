@@ -1,3 +1,8 @@
 [dev]
-framework = “next”
-command = "yarn run dev”
+  command = "yarn start" # Command to start your dev server
+  targetPort = 3000 # The port for your application server, framework or site generator
+  port = 8888 # The port that the netlify dev will be accessible on
+  publish = "dist"
+  autoLaunch = true 
+  functionsPort = 34567
+	functions = "./functions"
