@@ -36,11 +36,13 @@ export default function HeroSection() {
     })
   }
 
-  // if (!formRedirect) {
-  //   return <Redirect to="/individual-fleet-form" />
-  // }
+  if (formRedirect) {
+    return <Redirect noThrow to="/individual-fleet-form" />
+  }
 
   async function handleEmailSubmit(event) {
+    setFormRedirect(true)
+
     event.preventDefault()
     dispatch({
       type: "FORM::SET_EMAIL",
