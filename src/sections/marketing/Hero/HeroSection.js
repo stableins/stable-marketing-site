@@ -37,7 +37,7 @@ export default function HeroSection() {
   }
 
   if (formRedirect) {
-    return <Redirect noThrow to="/individual-fleet-form" />
+    return <Redirect noThrow to="/join-stable" />
   }
 
   async function handleEmailSubmit(event) {
