@@ -4,6 +4,8 @@ import "./node_modules/react-modal-video/css/modal-video.min.css"
 import "./src/assets/fonts/fontawesome-5/css/all.min.css"
 import { Layout } from "./src/components/Core"
 import { GlobalHeaderProvider } from "./src/context/GlobalHeaderContext"
+import { Provider } from "react-redux"
+import store from "./src/store"
 import "./src/styles/scss/bootstrap.scss"
 import "./src/styles/scss/global.scss"
 
@@ -12,5 +14,7 @@ export function wrapPageElement({ element, props }) {
 }
 
 export const wrapRootElement = ({ element }) => (
-  <GlobalHeaderProvider>{element}</GlobalHeaderProvider>
+  <GlobalHeaderProvider>
+    <Provider store={store}>{element}</Provider>
+  </GlobalHeaderProvider>
 )
