@@ -1,0 +1,3 @@
+[dev]
+framework = “next”
+command = yarn run dev”
