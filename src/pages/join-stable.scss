@@ -9,9 +9,16 @@
       text-align: center;
       margin: auto;
       margin-top: 150px;
+       h4 {
+          margin-top: 10px;
+        }
 
       .select-wrapper {
+      
+        margin-top: 10px;
         display: inline-flex;
+
+        
         .select {
           width: 250px;
           color: black;
@@ -25,7 +32,9 @@
       }
 
       button {
-        width: 100%;
+        width: 80%;
+        margin-top: 20px;
+
       }
     }
   }
