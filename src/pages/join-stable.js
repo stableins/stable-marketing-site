@@ -35,8 +35,15 @@ export default function individualFleetForm() {
   const [zipcodeInputValue, setZipcodeInputValue] = useState("")
   const [signupState, setSignupState] = useState("onlyEmailReceived")
   const [dropdownInputValue, setDropdownInputValue] = useState("")
+  const [hasMounted, setHasMounted] = useState(false)
 
-  useEffect(() => {}, [])
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  if (!hasMounted) {
+    return null
+  }
 
   async function handleSubmit(event) {
     event.preventDefault()
