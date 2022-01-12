@@ -6,7 +6,7 @@ exports.handler = async function (event, context, callback) {
 
   const data = {
     to: "josh@stableins.com",
-    from: email,
+    from: "info@stableins.com",
     subject: `New message from ${name} (${email})`,
     html: message,
   }
