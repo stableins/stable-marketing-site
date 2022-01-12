@@ -51,7 +51,7 @@ export default function individualFleetForm() {
 
   useEffect(() => {
     setHasMounted(true)
-  }, [])
+  }, [resetSelect1, resetSelect2])
 
   if (!hasMounted) {
     return null
@@ -125,9 +125,11 @@ export default function individualFleetForm() {
                     required={true}
                     onChange={e => setEmailInputValue(e.target.value)}
                     // required
-                    type="text"
+                    type="email"
                     placeholder="Email"
                   />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Control
                     required={true}
                     onChange={e => setNameInputValue(e.target.value)}
@@ -329,6 +331,63 @@ export default function individualFleetForm() {
                   // onClick={() => di}
                 >
                   <span>Submit</span>
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </Form.Group>
+              {/* <Form.Label>
+                We've sent you an email to confirm your email address. If you
+                don't see something from us shortly, please check your junk
+                mail.
+              </Form.Label> */}
+            </Form>
+          </div>
+        </div>
+      )}
+
+      {status === "emailAndEligible" && (
+        <div className="join-stable-wrapper">
+          <div className="form">
+            <Form onSubmit={handleSubmit}>
+              <Form.Label>
+                Tell us more about you. You'll get early access to tools to
+                better run your mobility business. We'll also let you know when
+                Stable's insurance will be live in your state. <br />
+                We're launching in Illinois this Spring with more states coming
+                online through the year!
+              </Form.Label>
+
+              <Form.Group className="mb-3">
+                <br />
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Control
+                    required={true}
+                    onChange={e => setNameInputValue(e.target.value)}
+                    // required
+                    type="text"
+                    placeholder="Name"
+                  />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Control
+                    required={true}
+                    type="zipcode"
+                    onChange={e => setZipcodeInputValue(e.target.value)}
+                    // required
+                    placeholder="ZipCode"
+                  />
+                </Form.Group>
+                <button
+                  className="modal-button"
+                  variant="primary"
+                  type="submit"
+                  onClick={() =>
+                    dispatch({
+                      type: "FORM::SET_STATUS",
+                      payload: "emailZipAndNameAndEligible",
+                    })
+                  }
+                >
+                  <span>Get Driver Report</span>
                   <i class="fas fa-chevron-right"></i>
                 </button>
               </Form.Group>
