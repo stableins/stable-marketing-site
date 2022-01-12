@@ -7,9 +7,11 @@ import ServiceWidget from "./Component/Widget"
 import CounterBlock from "../../about/Feature/Components/CounterBlock"
 import Slide from "react-reveal"
 import Service from "./style"
+import { useDispatch } from 'react-redux'
 import "./ServiceSection.scss"
 
 export default function ServiceSection() {
+  const dispatch = useDispatch()
   const [formRedirect, setFormRedirect] = useState(false)
   const [emailInputValue, setEmailInputValue] = useState("")
   const [messageInputValue, setMessageInputValue] = useState("")
