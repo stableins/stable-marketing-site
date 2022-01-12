@@ -15,35 +15,53 @@ import TabContentWidget from "./Component/TabContentWidget"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import TabNavWidget from "./Component/TabNavWidget"
 import Slide from "react-reveal/Slide"
+import axios from "axios"
 import Intake from "../../../api/intake"
 import Feature from "./style"
 import { Spinner } from "react-bootstrap"
 import "./index.scss"
+import { useDispatch } from "react-redux"
 
 const FeatureSection = ({ ...rest }) => {
+  const dispatch = useDispatch()
   const [counterModal, setCounterModal] = useState(false)
   const [formRedirect, setFormRedirect] = useState(false)
   const [bulletPointModal, setBulletPointModal] = useState(false)
   const [emailInputValue, setEmailInputValue] = useState("")
-  const [spinner, setSpinner] = useState(false);
+  const [spinner, setSpinner] = useState(false)
 
   async function handleEmailSubmit(event) {
-    event.preventDefault()
-    setSpinner(true)
-    try {
-      const response = await Intake.submit(emailInputValue)
-      console.log(response)
+    setFormRedirect(true)
 
-      if (response.data.statusCode === 200) {
-        setFormRedirect(true)
-      }
+    event.preventDefault()
+    dispatch({
+      type: "FORM::SET_EMAIL",
+      payload: emailInputValue,
+    })
+    dispatch({
+      type: "FORM::SET_STATUS",
+      payload: "emailZipAndNameAndEligible",
+    })
+    try {
+      await axios.post(
+        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgrid",
+        {
+          email: emailInputValue,
+          status: "email received",
+        }
+      )
+      setFormRedirect(true)
+      dispatch({
+        type: "FORM::SET_EMAIL",
+        payload: emailInputValue,
+      })
     } catch (e) {
       alert(e)
     }
   }
 
   if (formRedirect) {
-    return <Redirect noThrow to="/individual-fleet-form /" />
+    return <Redirect noThrow to="/join-stable" />
   }
   return (
     <div className="value-index-wrapper">

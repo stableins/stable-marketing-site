@@ -5,7 +5,7 @@ import { Form, Button } from "react-bootstrap"
 import { ArgyleLink } from "../components/Argyle/ArgyleLink.tsx"
 import HeaderButton from "../sections/marketing/Header"
 import Intake from "../api/intake"
-import "./individual-fleet-form.scss"
+import "./driver-report-signup.scss"
 
 const header = {
   headerClasses:
@@ -31,7 +31,7 @@ export default function individualFleetForm() {
   const [argyleLinked, setArgyleLinked] = useState(false)
   const [nameInputValue, setNameInputValue] = useState("")
   const [zipcodeInputValue, setZipcodeInputValue] = useState("")
-  const [signupState, setSignupState] = useState("onlyEmailReceived")
+  const [signupState, setSignupState] = useState("emailAndEligible")
 
   useEffect(() => {}, [])
 
@@ -55,14 +55,16 @@ export default function individualFleetForm() {
 
   return (
     <PageWrapper headerConfig={header} innerPage={true}>
-      {signupState === "onlyEmailReceived" && (
-        <div className="individual-form-wrapper">
+      {signupState === "emailAndEligible" && (
+        <div className="report-form-wrapper">
           <div className="form">
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3">
                 <Form.Label>
-                  Please provide the following details so that we may verify
-                  your information:
+                  Tell us more about you. In addition to getting access to your
+                  free driver report, we'll let you know when Stable's insurance
+                  will live in your state. We're launching in Illinois this
+                  Spring with more states coming online through the year!
                 </Form.Label>
                 <Form.Control
                   required={true}

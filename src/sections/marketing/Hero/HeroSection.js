@@ -23,9 +23,9 @@ export default function HeroSection() {
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [formRedirect, setFormRedirect] = useState(false)
   const email = useSelector(state => state.form.email)
+  const status = useSelector(state => state.form.status)
 
-  console.log(email)
-
+console.log(status);
   smoothscroll.polyfill()
 
   const scrollToReport = () => {
@@ -48,6 +48,10 @@ export default function HeroSection() {
       type: "FORM::SET_EMAIL",
       payload: emailInputValue,
     })
+     dispatch({
+       type: "FORM::SET_STATUS",
+       payload: "emailAndPotentiallyEligible",
+     })
     try {
       await axios.post(
         "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgrid",

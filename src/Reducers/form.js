@@ -1,5 +1,6 @@
 const initialState = {
   email: null,
+  status: "emailAndPotentiallyEligible",
 }
 
 export default function User(state = initialState, action) {
@@ -8,6 +9,12 @@ export default function User(state = initialState, action) {
       return {
         ...state,
         email: action.payload,
+      }
+
+    case "FORM::SET_STATUS":
+      return {
+        ...state,
+        status: action.payload,
       }
 
     default:
