@@ -10,12 +10,13 @@ import Service from "./style"
 import "./ServiceSection.scss"
 
 export default function ServiceSection() {
+  const [formRedirect, setFormRedirect] = useState(false)
   const [emailInputValue, setEmailInputValue] = useState("")
   const [messageInputValue, setMessageInputValue] = useState("")
   const [nameInputValue, setNameInputValue] = useState("")
 
   async function handleMessageSubmit(event) {
-    //  setFormRedirect(true)
+     setFormRedirect(true)
     event.preventDefault()
     //  dispatch({
     //    type: "FORM::SET_EMAIL",
