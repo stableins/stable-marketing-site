@@ -1,12 +1,11 @@
 const client = require("@sendgrid/mail")
-const { SENDGRID_API_KEY, } = process.env
 
 exports.handler = async function (event, context, callback) {
   const { message, email, name } = JSON.parse(event.body)
-  client.setApiKey(SENDGRID_API_KEY)
+  client.setApiKey(process.env.SENDGRID_API_KEY)
 
   const data = {
-    to: 'josh@stableins.com',
+    to: "josh@stableins.com",
     from: email,
     subject: `New message from ${name} (${email})`,
     html: message,
