@@ -44,7 +44,7 @@ const FeatureSection = ({ ...rest }) => {
     })
     try {
       await axios.post(
-        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgrid",
+        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgridContact",
         {
           email: emailInputValue,
           status: "email received",

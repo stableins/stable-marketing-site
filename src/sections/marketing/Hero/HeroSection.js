@@ -10,7 +10,7 @@ import axios from "axios"
 import { scroller } from "react-scroll"
 import smoothscroll from "smoothscroll-polyfill"
 import { Redirect } from "@reach/router"
-import Sendgrid from "../../../../functions/sendgrid"
+import Sendgrid from "../../../../functions/sendgridEmail"
 import ImageGroup from "./Components/ImageGroup"
 import Fade from "react-reveal/Fade"
 import Hero from "./style"
@@ -54,7 +54,7 @@ console.log(status);
      })
     try {
       await axios.post(
-        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgrid",
+        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgridContact",
         {
           email: emailInputValue,
           status: "email received",

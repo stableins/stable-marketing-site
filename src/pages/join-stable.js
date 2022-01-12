@@ -99,7 +99,6 @@ export default function individualFleetForm() {
           status: "email address and additional info received",
         }
       )
-      setFormRedirect(true)
     } catch (e) {
       alert(e)
     }
