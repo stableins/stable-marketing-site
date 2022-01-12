@@ -67,15 +67,27 @@ export default function individualFleetForm() {
       })
     }
 
-    if (
-      dropdownInputValue2 === "Rideshare Fleet" ||
-      ("CarShare Fleet" && dropdownInputValue2 === "Carshare Owner")
-    ) {
+    if (dropdownInputValue1 === "Carshare Owner") {
       dispatch({
         type: "FORM::SET_STATUS",
-        payload: "123",
+        payload: "infoReceivedIneligible",
       })
     }
+
+    if (dropdownInputValue2 === "Carshare Fleet") {
+      dispatch({
+        type: "FORM::SET_STATUS",
+        payload: "infoReceivedIneligible",
+      })
+    }
+
+    if (dropdownInputValue2 === "Rideshare Fleet") {
+      dispatch({
+        type: "FORM::SET_STATUS",
+        payload: "infoReceivedIneligible",
+      })
+    }
+
     try {
       await axios.post(
         "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgrid",
@@ -153,7 +165,7 @@ export default function individualFleetForm() {
                         setDropdownInputValue2(null)
                       }
                       if (e.target.value === "2") {
-                        setDropdownInputValue1("CarShare Owner")
+                        setDropdownInputValue1("Carshare Owner")
                         setDropdownInputValue2(null)
                       }
                     }}
@@ -183,7 +195,7 @@ export default function individualFleetForm() {
                         setDropdownInputValue1(null)
                       }
                       if (e.target.value === "4") {
-                        setDropdownInputValue2("CarShare Fleet")
+                        setDropdownInputValue2("Carshare Fleet")
                         setDropdownInputValue1(null)
                       }
                     }}
@@ -193,7 +205,7 @@ export default function individualFleetForm() {
                       Fleet (Choose Option)
                     </option>
                     <option value="3">Rideshare Fleet</option>
-                    <option value="4">CarShare Fleet</option>
+                    <option value="4">Carshare Fleet</option>
                   </Form.Control>
                 </div>
                 <button
@@ -267,7 +279,7 @@ export default function individualFleetForm() {
                         setDropdownInputValue2(null)
                       }
                       if (e.target.value === "2") {
-                        setDropdownInputValue1("CarShare Owner")
+                        setDropdownInputValue1("Carshare Owner")
                         setDropdownInputValue2(null)
                       }
                     }}
@@ -297,7 +309,7 @@ export default function individualFleetForm() {
                         setDropdownInputValue1(null)
                       }
                       if (e.target.value === "4") {
-                        setDropdownInputValue2("CarShare Fleet")
+                        setDropdownInputValue2("Carshare Fleet")
                         setDropdownInputValue1(null)
                       }
                     }}
@@ -307,7 +319,7 @@ export default function individualFleetForm() {
                       Fleet (Choose Option)
                     </option>
                     <option value="3">Rideshare Fleet</option>
-                    <option value="4">CarShare Fleet</option>
+                    <option value="4">Carshare Fleet</option>
                   </Form.Control>
                 </div>
                 <button
@@ -388,6 +400,24 @@ export default function individualFleetForm() {
                 </button>
               </>
             )}
+          </div>
+        </div>
+      )}
+
+      {status === "infoReceivedIneligible" && (
+        <div className="join-stable-wrapper">
+          <div className="form">
+            <p>
+              Great! We've sent you an email to confirm your email address. If
+              you don't see something from us shortly, please check your junk
+              mail.
+            </p>
+            <p>
+              Want to connect for a quick 15-30 minute call so we can learn more
+              about your needs? We take all product suggestions seriously and
+              would like to hear what your thoughts! Pick a time below.
+            </p>
+            <button className="primary">Let's connect!</button>
           </div>
         </div>
       )}
