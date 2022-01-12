@@ -40,7 +40,7 @@ const FeatureSection = ({ ...rest }) => {
     })
     dispatch({
       type: "FORM::SET_STATUS",
-      payload: "emailZipAndNameAndEligible",
+      payload: "emailAndEligible",
     })
     try {
       await axios.post(
