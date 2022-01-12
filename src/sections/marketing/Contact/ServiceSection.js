@@ -7,7 +7,7 @@ import ServiceWidget from "./Component/Widget"
 import CounterBlock from "../../about/Feature/Components/CounterBlock"
 import Slide from "react-reveal"
 import Service from "./style"
-import { useDispatch } from 'react-redux'
+import { useDispatch } from "react-redux"
 import "./ServiceSection.scss"
 
 export default function ServiceSection() {
@@ -18,7 +18,7 @@ export default function ServiceSection() {
   const [nameInputValue, setNameInputValue] = useState("")
 
   async function handleMessageSubmit(event) {
-     setFormRedirect(true)
+    setFormRedirect(true)
     event.preventDefault()
     //  dispatch({
     //    type: "FORM::SET_EMAIL",
