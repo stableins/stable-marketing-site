@@ -14,9 +14,8 @@ export default function ServiceSection() {
   const [messageInputValue, setMessageInputValue] = useState("")
   const [nameInputValue, setNameInputValue] = useState("")
 
-  async function handleEmailSubmit(event) {
+  async function handleMessageSubmit(event) {
     //  setFormRedirect(true)
-
     event.preventDefault()
     //  dispatch({
     //    type: "FORM::SET_EMAIL",
@@ -61,7 +60,7 @@ export default function ServiceSection() {
                   we're working on or to learn more? Reach out!
                 </div>
                 <div className="form-wrapper">
-                  <Form>
+                  <Form onSubmit={handleMessageSubmit}>
                     <Form.Group className="mb-3">
                       <Form.Control
                         onChange={e => setNameInputValue(e.target.value)}
