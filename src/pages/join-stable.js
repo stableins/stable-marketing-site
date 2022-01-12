@@ -229,6 +229,129 @@ export default function individualFleetForm() {
           </div>
         </div>
       )}
+      {status === "" && (
+        <div className="join-stable-wrapper">
+          <div className="form">
+            <Form onSubmit={handleSubmit}>
+              <Form.Label>
+                Tell us more about you. You'll get early access to tools to
+                better run your mobility business. We'll also let you know when
+                Stable's insurance will be live in your state. <br />
+                We're launching in Illinois this Spring with more states coming
+                online through the year!
+              </Form.Label>
+
+              <Form.Group className="mb-3">
+                <br />
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Control
+                    required={true}
+                    onChange={e => setEmailInputValue(e.target.value)}
+                    // required
+                    type="email"
+                    placeholder="Email"
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Control
+                    required={true}
+                    onChange={e => setNameInputValue(e.target.value)}
+                    // required
+                    type="text"
+                    placeholder="Name"
+                  />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Control
+                    required={true}
+                    type="zipcode"
+                    onChange={e => setZipcodeInputValue(e.target.value)}
+                    // required
+                    placeholder="ZipCode"
+                  />
+                </Form.Group>
+                <h4>I am a...</h4>
+
+                <div className="select-wrapper">
+                  <Form.Control
+                    required={true}
+                    onClick={() => {
+                      setClicked("1")
+                      setResetSelect2(true)
+                      setResetSelect1(false)
+                    }}
+                    className={`select-1-${clicked}`}
+                    onChange={e => {
+                      if (e.target.value === "Choose Option") {
+                        setDropdownInputValue1(null)
+                      }
+                      if (e.target.value === "1") {
+                        setDropdownInputValue1("Rideshare Driver")
+                        setDropdownInputValue2(null)
+                      }
+                      if (e.target.value === "2") {
+                        setDropdownInputValue1("Carshare Owner")
+                        setDropdownInputValue2(null)
+                      }
+                    }}
+                    as="select"
+                  >
+                    <option selected={resetSelect1}>
+                      Driver (Choose Option)
+                    </option>
+                    <option value="1" data-sync="1">
+                      Rideshare Driver
+                    </option>
+                    <option value="2">Carshare Owner</option>
+                  </Form.Control>
+                  <Form.Control
+                    onClick={() => {
+                      setClicked("2")
+                      setResetSelect1(true)
+                      setResetSelect2(false)
+                    }}
+                    className={`select-2-${clicked}`}
+                    onChange={e => {
+                      if (e.target.value === "Choose Option") {
+                        setDropdownInputValue2(null)
+                      }
+                      if (e.target.value === "3") {
+                        setDropdownInputValue2("Rideshare Fleet")
+                        setDropdownInputValue1(null)
+                      }
+                      if (e.target.value === "4") {
+                        setDropdownInputValue2("Carshare Fleet")
+                        setDropdownInputValue1(null)
+                      }
+                    }}
+                    as="select"
+                  >
+                    <option selected={resetSelect2}>
+                      Fleet (Choose Option)
+                    </option>
+                    <option value="3">Rideshare Fleet</option>
+                    <option value="4">Carshare Fleet</option>
+                  </Form.Control>
+                </div>
+                <button
+                  className="modal-button"
+                  variant="primary"
+                  type="submit"
+                  // onClick={() => di}
+                >
+                  <span>Submit</span>
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </Form.Group>
+              {/* <Form.Label>
+                We've sent you an email to confirm your email address. If you
+                don't see something from us shortly, please check your junk
+                mail.
+              </Form.Label> */}
+            </Form>
+          </div>
+        </div>
+      )}
       {status === "emailAndPotentiallyEligible" && (
         <div className="join-stable-wrapper">
           <div className="form">
