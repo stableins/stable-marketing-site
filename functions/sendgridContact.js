@@ -2,7 +2,6 @@ const axios = require("axios")
 
 
 exports.handler = async function (event, context, callback) {
-console.log("hi")
 
   try {
     const body = JSON.parse(event.body)
