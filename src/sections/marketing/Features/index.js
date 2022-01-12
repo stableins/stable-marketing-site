@@ -10,7 +10,9 @@ import {
   Form,
 } from "react-bootstrap"
 import { Images } from "~data"
+import axios from "axios"
 import TabContentWidget from "./Component/TabContentWidget"
+import {Link} from '@reach/router'
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import TabNavWidget from "./Component/TabNavWidget"
 import BackgroundImage from "../../../assets/image/logo/product_bckgnd.jpg"
@@ -18,8 +20,10 @@ import Slide from "react-reveal/Slide"
 import Intake from "../../../api/intake"
 import Feature from "./style"
 import "./index.scss"
+import { useDispatch } from "react-redux"
 
 const FeatureSection = ({ ...rest }) => {
+  const dispatch = useDispatch()
   const [modal, setModal] = useState(false)
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [emailInputValue, setEmailInputValue] = useState("")
@@ -29,21 +33,42 @@ const FeatureSection = ({ ...rest }) => {
 
   async function handleSubmit(event) {
     event.preventDefault()
-    try {
-      const response = await Intake.submit(
-        nameInputValue,
-        emailInputValue,
-        zipcodeInputValue,
-        dropdownInputValue
-      )
-      console.log(response.data.statusCode)
-      if (response.data.statusCode === 200) {
-        setModal(false)
-        setShowConfirmation(true)
-      }
-    } catch (e) {
-      alert(e)
-    }
+
+    // try {
+    //   await axios.post(
+    //     "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgrid",
+    //     {
+    //       email: emailInputValue,
+    //       status: "email received",
+    //     }
+    //   )
+    //   setFormRedirect(true)
+    //   dispatch({
+    //     type: "FORM::SET_EMAIL",
+    //     payload: emailInputValue,
+    //   })
+    //    dispatch({
+    //      type: "FORM::SET_STATUS",
+    //      payload: "allDataForm",
+    //    })
+    // } catch (e) {
+    //   alert(e)
+    // }
+    // try {
+    //   const response = await Intake.submit(
+    //     nameInputValue,
+    //     emailInputValue,
+    //     zipcodeInputValue,
+    //     dropdownInputValue
+    //   )
+    //   console.log(response.data.statusCode)
+    //   if (response.data.statusCode === 200) {
+    //     setModal(false)
+    //     setShowConfirmation(true)
+    //   }
+    // } catch (e) {
+    //   alert(e)
+    // }
   }
 
   return (
@@ -152,13 +177,20 @@ const FeatureSection = ({ ...rest }) => {
                                   An improved claims experience that helps you
                                   resolve claims faster, available 24/7.
                                 </div>
-                                <button
-                                  className="button"
-                                  onClick={() => setModal(true)}
-                                >
-                                  Get Early Access &nbsp;
-                                  <i id="i" class="fas fa-chevron-right"></i>
-                                </button>
+                                <Link to="/join-stable">
+                                  <button
+                                    className="button"
+                                    onClick={() =>
+                                      dispatch({
+                                        type: "FORM::SET_STATUS",
+                                        payload: "allDataForm",
+                                      })
+                                    }
+                                  >
+                                    Get Early Access &nbsp;
+                                    <i id="i" class="fas fa-chevron-right"></i>
+                                  </button>
+                                </Link>
                               </div>
                             </div>
                           </div>
@@ -254,13 +286,20 @@ const FeatureSection = ({ ...rest }) => {
                                 An improved claims experience that helps you
                                 resolve claims faster, available 24/7.
                               </div>
-                              <button
-                                className="button"
-                                onClick={() => setModal(true)}
-                              >
-                                Get Early Access &nbsp;
-                                <i id="i" class="fas fa-chevron-right"></i>
-                              </button>
+                              <Link to="/join-stable">
+                                <button
+                                  className="button"
+                                  onClick={() =>
+                                    dispatch({
+                                      type: "FORM::SET_STATUS",
+                                      payload: "allDataForm",
+                                    })
+                                  }
+                                >
+                                  Get Early Access &nbsp;
+                                  <i id="i" class="fas fa-chevron-right"></i>
+                                </button>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -275,7 +314,7 @@ const FeatureSection = ({ ...rest }) => {
           </Container>
         </div>
       </Feature>
-      <Modal
+      {/* <Modal
         show={modal}
         onHide={() => setModal(false)}
         dialogClassName="modal-90w"
@@ -367,7 +406,7 @@ const FeatureSection = ({ ...rest }) => {
           </p>
           <button onClick={() => setShowConfirmation(false)}>Close</button>
         </div>
-      </Modal>
+      </Modal> */}
     </div>
   )
 }
