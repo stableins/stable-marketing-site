@@ -91,7 +91,7 @@ export default function individualFleetForm() {
 
     try {
       await axios.post(
-        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgrid",
+        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgridContact",
         {
           email: email ? email : emailInputValue,
           zipcode: zipcodeInputValue,
