@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { PageWrapper } from "~components/Core"
+import axios from "axios"
 import FooterOne from "../sections/marketing/FooterOne"
 import { Form, Button } from "react-bootstrap"
+import { Link } from "@reach/router"
+import { useDispatch } from "react-redux"
 import { ArgyleLink } from "../components/Argyle/ArgyleLink.tsx"
 import HeaderButton from "../sections/marketing/Header"
 import Intake from "../api/intake"
@@ -26,6 +29,7 @@ const header = {
 }
 
 export default function individualFleetForm() {
+  const dispatch = useDispatch()
   const [modal, setModal] = useState(false)
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [emailInputValue, setEmailInputValue] = useState("")
@@ -33,9 +37,15 @@ export default function individualFleetForm() {
   const email = useSelector(state => state.form.email)
   const [nameInputValue, setNameInputValue] = useState("")
   const [zipcodeInputValue, setZipcodeInputValue] = useState("")
-  const [signupState, setSignupState] = useState("onlyEmailReceived")
-  const [dropdownInputValue, setDropdownInputValue] = useState("")
+  const [signupState, setSignupState] = useState("")
+  const [dropdownInputValue1, setDropdownInputValue1] = useState("")
+  const [dropdownInputValue2, setDropdownInputValue2] = useState("")
   const [hasMounted, setHasMounted] = useState(false)
+  const [handleSelectChange, setHandleSelectChange] = useState(true)
+  const [clicked, setClicked] = useState("1")
+  const status = useSelector(state => state.form.status)
+  const [resetSelect1, setResetSelect1] = useState(false)
+  const [resetSelect2, setResetSelect2] = useState(false)
 
   useEffect(() => {
     setHasMounted(true)
@@ -47,6 +57,13 @@ export default function individualFleetForm() {
 
   async function handleSubmit(event) {
     event.preventDefault()
+
+    if (dropdownInputValue1 === "Rideshare Driver") {
+      dispatch({
+        type: "FORM::SET_STATUS",
+        payload: "emailZipAndNameAndEligible",
+      })
+    }
     try {
       await axios.post(
         "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgrid",
@@ -58,10 +75,6 @@ export default function individualFleetForm() {
         }
       )
       setFormRedirect(true)
-      dispatch({
-        type: "FORM::SET_EMAIL",
-        payload: emailInputValue,
-      })
     } catch (e) {
       alert(e)
     }
@@ -69,14 +82,18 @@ export default function individualFleetForm() {
 
   return (
     <PageWrapper headerConfig={header} innerPage={true}>
-      {signupState === "onlyEmailReceived" && (
+      {status === "emailAndPotentiallyEligible" && (
         <div className="join-stable-wrapper">
           <div className="form">
             <Form onSubmit={handleSubmit}>
               <Form.Label>
-                Please provide the following details so that we may verify your
-                information:
+                Tell us more about you. You'll get early access to tools to
+                better run your mobility business. We'll also let you know when
+                Stable's insurance will be live in your state. <br />
+                We're launching in Illinois this Spring with more states coming
+                online through the year!
               </Form.Label>
+
               <Form.Group className="mb-3">
                 <br />
                 <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -85,76 +102,252 @@ export default function individualFleetForm() {
                     onChange={e => setNameInputValue(e.target.value)}
                     // required
                     type="text"
-                    placeholder="Full Name"
+                    placeholder="Name"
                   />
                 </Form.Group>
                 <Form.Group>
                   <Form.Control
                     required={true}
+                    type="zipcode"
                     onChange={e => setZipcodeInputValue(e.target.value)}
                     // required
-                    placeholder="Zip code"
+                    placeholder="ZipCode"
                   />
                 </Form.Group>
                 <h4>I am a...</h4>
 
                 <div className="select-wrapper">
                   <Form.Control
-                    autoFocus
-                    className="select"
+                    required={true}
+                    onClick={() => {
+                      setClicked("1")
+                      setResetSelect2(true)
+                      setResetSelect1(false)
+                    }}
+                    className={`select-1-${clicked}`}
                     onChange={e => {
                       if (e.target.value === "Choose Option") {
-                        setDropdownInputValue(null)
+                        setDropdownInputValue1(null)
                       }
                       if (e.target.value === "1") {
-                        setDropdownInputValue("Rideshare Fleet")
+                        setDropdownInputValue1("Rideshare Driver")
+                        setDropdownInputValue2(null)
                       }
                       if (e.target.value === "2") {
-                        setDropdownInputValue("Carshare Fleet")
+                        setDropdownInputValue1("CarShare Owner")
+                        setDropdownInputValue2(null)
                       }
                     }}
                     as="select"
                   >
-                    <option>Driver</option>
-                    <option value="1">Rideshare Driver</option>
+                    <option selected={resetSelect1}>
+                      Driver (Choose Option)
+                    </option>
+                    <option value="1" data-sync="1">
+                      Rideshare Driver
+                    </option>
                     <option value="2">Carshare Owner</option>
                   </Form.Control>
                   <Form.Control
-                    className="select"
+                    onClick={() => {
+                      setClicked("2")
+                      setResetSelect1(true)
+                      setResetSelect2(false)
+                    }}
+                    className={`select-2-${clicked}`}
                     onChange={e => {
                       if (e.target.value === "Choose Option") {
-                        setDropdownInputValue(null)
+                        setDropdownInputValue2(null)
                       }
-                      if (e.target.value === "1") {
-                        setDropdownInputValue("Rideshare Fleet")
+                      if (e.target.value === "3") {
+                        setDropdownInputValue2("Rideshare Fleet")
+                        setDropdownInputValue1(null)
                       }
-                      if (e.target.value === "2") {
-                        setDropdownInputValue("Carshare Fleet")
+                      if (e.target.value === "4") {
+                        setDropdownInputValue2("CarShare Fleet")
+                        setDropdownInputValue1(null)
                       }
                     }}
                     as="select"
                   >
-                    <option>Fleet</option>
-                    <option value="1">Rideshare Fleet</option>
-                    <option value="2">CarShare Fleet</option>
+                    <option selected={resetSelect2}>
+                      Fleet (Choose Option)
+                    </option>
+                    <option value="3">Rideshare Fleet</option>
+                    <option value="4">CarShare Fleet</option>
                   </Form.Control>
                 </div>
                 <button
-                  // onClick={() => setSignupState("argyleLink")}
                   className="modal-button"
                   variant="primary"
                   type="submit"
+                  // onClick={() => di}
                 >
                   <span>Submit</span>
                   <i class="fas fa-chevron-right"></i>
                 </button>
               </Form.Group>
-              {/* <Button variant="primary" type="submit">
-                Submit
-              </Button> */}
+              <Form.Label>
+                We've sent you an email to confirm your email address. If you
+                don't see something from us shortly, please check your junk
+                mail.
+              </Form.Label>
             </Form>
           </div>
         </div>
+      )}
+
+      {status === "emailZipAndNameAndEligible" && (
+        <div className="join-stable-wrapper">
+          <div className="form">
+            <p>
+              To deliver better insurance and tools (like our Free Driver
+              Report) to you, we need to connect to your rideshare account(s).
+              This is done securely and you can turn off our access to your
+              account at any time. Right now, we only can connect to Uber and
+              Lyft, but we will add access to more rideshare and delivery
+              platforms soon.{" "}
+            </p>
+            <ArgyleLink
+              style={{
+                padding: "10px 10px",
+                borderRadius: 10,
+                fontSize: 15,
+                fontWeight: "bold",
+                backgroundColor: "#ffae13",
+                color: "black",
+                border: "none",
+                cursor: "pointer",
+                width: "70%",
+                marginTop: "20px",
+              }}
+              open={true}
+              options={{
+                pluginKey: "017aac27-2893-ab5b-bc83-c27a83233bae",
+                linkItems: ["uber", "lyft"],
+                apiHost: "https://api-sandbox.argyle.io/v1",
+                customizationId: "38XAT8YO",
+                showCategories: false,
+                showSearch: false,
+                onUserCreated: async params => {
+                  setArgyleLinked(true)
+                },
+              }}
+            >
+              Let's Connect
+            </ArgyleLink>
+            {argyleLinked && (
+              <>
+                <br />
+                <p>Done Linking your account(s)?</p>
+                <button
+                  onClick={() =>
+                    dispatch({
+                      type: "FORM::SET_STATUS",
+                      payload: "createPassword",
+                    })
+                  }
+                  className="modal-button"
+                  variant="primary"
+                  // type="submit"
+                >
+                  Complete the final step &nbsp;
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+
+      {signupState === "createPassword" && (
+        <>
+          <h1>The next step is to link your Uber/Lyft account(s)</h1>
+
+          <div className="join-stable-wrapper">
+            <div className="form">
+              <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3">
+                  <Form.Label>
+                    It can take a few moments for us to generate this report.
+                    We'll send you an email when its ready. In the meantime
+                    let's get an account set up for you so you can come back and
+                    check out your updates as often as you like.
+                  </Form.Label>
+                  <Form.Control
+                    required={true}
+                    onChange={e => setNameInputValue(e.target.value)}
+                    // required
+                    type="text"
+                    placeholder="Password"
+                  />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Control
+                    required={true}
+                    onChange={e => setZipcodeInputValue(e.target.value)}
+                    // required
+                    placeholder="Verify Password"
+                  />
+                </Form.Group>
+                <button
+                  className="modal-button"
+                  variant="primary"
+                  type="submit"
+                  onClick={() => setSignupState("done")}
+                >
+                  <span>Ready to Register!</span>
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </Form>
+            </div>
+          </div>
+        </>
+      )}
+
+      {signupState === "done" && (
+        <>
+          <h1>The next step is to link your Uber/Lyft account(s)</h1>
+
+          <div className="join-stable-wrapper">
+            <div className="form">
+              <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3">
+                  <Form.Label>
+                    And you're done! You can access your daily updated driver
+                    report anytime by logging in to your account or choose to
+                    have it sent to you by email or text (coming soon).
+                  </Form.Label>
+                  {/* <Form.Control
+                    required={true}
+                    onChange={e => setNameInputValue(e.target.value)}
+                    // required
+                    type="text"
+                    placeholder="Password"
+                  /> */}
+                </Form.Group>
+
+                {/* <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Control
+                    required={true}
+                    onChange={e => setZipcodeInputValue(e.target.value)}
+                    // required
+                    placeholder="Verify Password"
+                  />
+                </Form.Group> */}
+                <Link className="link" to="/">
+                  <button
+                    className="modal-button"
+                    variant="primary"
+                    type="submit"
+                  >
+                    <span>Back to Stable Home</span>
+                  </button>
+                </Link>
+              </Form>
+            </div>
+          </div>
+        </>
       )}
 
       <FooterOne />

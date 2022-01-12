@@ -9,32 +9,46 @@
       text-align: center;
       margin: auto;
       margin-top: 150px;
-       h4 {
-          margin-top: 10px;
-        }
+      h4 {
+        margin-top: 10px;
+      }
 
       .select-wrapper {
-      
         margin-top: 10px;
         display: inline-flex;
 
-        
-        .select {
+        .select-1-2 {
           width: 250px;
           color: black;
+          background: white;
         }
 
-        .select:focus {
-          background: #3b358a;
-          pointer-events: none;
+        .select-1-1 {
+          width: 250px;
           color: white;
+          background: #3b358a;
+        }
+
+        .select-2-1 {
+          width: 250px;
+          color: black;
+          background: white;
+        }
+
+        .select-2-2 {
+          width: 250px;
+          color: white;
+          background: #3b358a;
         }
       }
 
-      button {
-        width: 80%;
-        margin-top: 20px;
+      .link {
+        width: 100%;
+      }
 
+      button {
+        width: 50%;
+        margin-top: 20px;
       }
     }
   }
