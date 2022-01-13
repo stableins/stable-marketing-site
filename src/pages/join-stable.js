@@ -308,9 +308,7 @@ export default function individualFleetForm() {
                         }}
                         as="select"
                       >
-                        <option selected={resetSelect1}>
-                          Driver (Choose Option)
-                        </option>
+                        <option selected={resetSelect1}>Driver</option>
                         <option value="1" data-sync="1">
                           Rideshare Driver
                         </option>
@@ -338,22 +336,23 @@ export default function individualFleetForm() {
                         }}
                         as="select"
                       >
-                        <option selected={resetSelect2}>
-                          Fleet (Choose Option)
-                        </option>
+                        <option selected={resetSelect2}>Fleet</option>
                         <option value="3">Rideshare Fleet</option>
                         <option value="4">Carshare Fleet</option>
                       </Form.Control>
                     </div>
-                    <div className="check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="flexCheckIndeterminate"
-                      />
+                    <div className="check-wrapper">
+                      <div className="checkbox">
+                        <input
+                          required={true}
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckIndeterminate"
+                        />
 
-                      <p>I agree to the Stable terms and privacy policy.</p>
+                        <p>I agree to the Stable terms and privacy policy.</p>
+                      </div>
                     </div>
                     <br />
 
@@ -363,7 +362,7 @@ export default function individualFleetForm() {
                       type="submit"
                       // onClick={() => di}
                     >
-                      <span>Submit</span>
+                      <span>Get Access</span>
                     </button>
                   </Form.Group>
                   {/* <Form.Label>
