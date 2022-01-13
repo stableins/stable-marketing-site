@@ -1,6 +1,6 @@
 const initialState = {
   email: null,
-  status: "emailAndEligible",
+  status: "done",
 }
 
 export default function User(state = initialState, action) {

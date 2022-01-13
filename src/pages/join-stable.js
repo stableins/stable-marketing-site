@@ -572,7 +572,6 @@ export default function individualFleetForm() {
                     <button
                       className="button"
                       variant="primary"
-                      className="input"
                       type="submit"
                       onClick={() =>
                         dispatch({
@@ -598,27 +597,21 @@ export default function individualFleetForm() {
           {status === "emailZipAndNameAndEligible" && (
             <div className="join-stable-wrapper">
               <div className="form">
-                <p>
-                  To deliver better insurance and tools (like our Free Driver
-                  Report) to you, we need to connect to your rideshare
-                  account(s). This is done securely and you can turn off our
-                  access to your account at any time. Right now, we only can
-                  connect to Uber and Lyft, but we will add access to more
-                  rideshare and delivery platforms soon.{" "}
+                <p className="text">
+                  <span className="bold">
+                    To deliver better insurance and tools (like our Free Driver
+                    Report) to you, we need to connect to your rideshare
+                    account(s).
+                  </span>{" "}
+                  <br /> <br />
+                  This is done securely and you can turn off our access to your
+                  account at any time.
+                  <br /> <br />
+                  Right now, we only can connect to Uber and Lyft, but we will
+                  add access to more rideshare and delivery platforms soon.
                 </p>
                 <ArgyleLink
-                  style={{
-                    padding: "10px 10px",
-                    borderRadius: 10,
-                    fontSize: 15,
-                    fontWeight: "bold",
-                    backgroundColor: "#ffae13",
-                    color: "black",
-                    border: "none",
-                    cursor: "pointer",
-                    width: "70%",
-                    marginTop: "20px",
-                  }}
+                  className="button"
                   open={true}
                   options={{
                     pluginKey: "017aac27-2893-ab5b-bc83-c27a83233bae",
@@ -676,97 +669,99 @@ export default function individualFleetForm() {
             </div>
           )}
 
-          {signupState === "createPassword" && (
-            <>
-              <h1>The next step is to link your Uber/Lyft account(s)</h1>
+          {status === "createPassword" && (
+            <div className="join-stable-wrapper">
+              <div className="form">
+                <Form onSubmit={handleSubmit}>
+                  <Form.Group className="mb-3">
+                    <Form.Label>
+                      <p className="text">
+                        <span className="bold">
+                          To deliver better insurance and tools (like our Free
+                          Driver Report) to you, we need to connect to your
+                          rideshare account(s).
+                        </span>{" "}
+                        <br /> <br />
+                        In the meantime let's get an account set up for you so
+                        you can come back and check out your updates as often as
+                        you like.
+                      </p>
+                    </Form.Label>
+                    <Form.Control
+                      required={true}
+                      className="input"
+                      onChange={e => setNameInputValue(e.target.value)}
+                      // required
+                      type="text"
+                      placeholder="Password"
+                    />
+                  </Form.Group>
 
-              <div className="join-stable-wrapper">
-                <div className="form">
-                  <Form onSubmit={handleSubmit}>
-                    <Form.Group className="mb-3">
-                      <Form.Label>
-                        It can take a few moments for us to generate this
-                        report. We'll send you an email when its ready. In the
-                        meantime let's get an account set up for you so you can
-                        come back and check out your updates as often as you
-                        like.
-                      </Form.Label>
-                      <Form.Control
-                        required={true}
-                        onChange={e => setNameInputValue(e.target.value)}
-                        // required
-                        type="text"
-                        placeholder="Password"
-                      />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Control
-                        required={true}
-                        onChange={e => setZipcodeInputValue(e.target.value)}
-                        // required
-                        placeholder="Verify Password"
-                      />
-                    </Form.Group>
-                    <button
-                      className="modal-button"
-                      variant="primary"
-                      type="submit"
-                      onClick={() => setSignupState("done")}
-                    >
-                      <span>Ready to Register!</span>
-                      <i class="fas fa-chevron-right"></i>
-                    </button>
-                  </Form>
-                </div>
+                  <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Control
+                      required={true}
+                      className="input"
+                      onChange={e => setZipcodeInputValue(e.target.value)}
+                      // required
+                      placeholder="Verify Password"
+                    />
+                  </Form.Group>
+                  <button
+                    className="button"
+                    variant="primary"
+                    type="submit"
+                    onClick={() => setSignupState("done")}
+                  >
+                    <span>Register Me! &nbsp;</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                </Form>
               </div>
-            </>
+            </div>
           )}
 
-          {signupState === "done" && (
-            <>
-              <h1>The next step is to link your Uber/Lyft account(s)</h1>
+          {status === "done" && (
+            <div className="join-stable-wrapper">
+              <div className="form">
+                <Form onSubmit={handleSubmit}>
+                  <Form.Group className="mb-3">
+                    <Form.Label>
+                      <p className="text">
+                        <span className="bold">And you're Done!</span> <br />{" "}
+                        <br />
+                        You can access your daily updated driver report anytime
+                        by logging in to your account or choose to have it sent
+                        to you by email or text (coming soon).
+                      </p>
+                    </Form.Label>
+                    {/* <Form.Control
+                      required={true}
+                      className="input"
+                      onChange={e => setNameInputValue(e.target.value)}
+                      // required
+                      type="text"
+                      placeholder="Password"
+                    /> */}
+                  </Form.Group>
 
-              <div className="join-stable-wrapper">
-                <div className="form">
-                  <Form onSubmit={handleSubmit}>
-                    <Form.Group className="mb-3">
-                      <Form.Label>
-                        And you're done! You can access your daily updated
-                        driver report anytime by logging in to your account or
-                        choose to have it sent to you by email or text (coming
-                        soon).
-                      </Form.Label>
-                      {/* <Form.Control
-                    required={true}
-                    onChange={e => setNameInputValue(e.target.value)}
-                    // required
-                    type="text"
-                    placeholder="Password"
-                  /> */}
-                    </Form.Group>
-
-                    {/* <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Control
-                    required={true}
-                    onChange={e => setZipcodeInputValue(e.target.value)}
-                    // required
-                    placeholder="Verify Password"
-                  />
-                </Form.Group> */}
-                    <Link className="link" to="/">
-                      <button
-                        className="modal-button"
-                        variant="primary"
-                        type="submit"
-                      >
-                        <span>Back to Stable Home</span>
-                      </button>
-                    </Link>
-                  </Form>
-                </div>
+                  {/* <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Control
+                      required={true}
+                      className="input"
+                      onChange={e => setZipcodeInputValue(e.target.value)}
+                      // required
+                      placeholder="Verify Password"
+                    />
+                  </Form.Group> */}
+                  <Link to="/">
+                    <button className="button" variant="primary" type="submit">
+                      <span>Back to Stable Home &nbsp;</span>
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </Link>
+                </Form>
               </div>
-            </>
+            </div>
           )}
 
           <FooterOne />
