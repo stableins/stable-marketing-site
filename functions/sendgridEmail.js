@@ -19,8 +19,8 @@ exports.handler = async function (event, context, callback) {
     }
   } catch (err) {
     return {
-      statusCode: err.code,
-      body: JSON.stringify({ msg: err.message }),
+      statusCode: 500,
+      body: err,
     }
   }
 }

@@ -113,11 +113,14 @@ export default function individualFleetForm() {
               <div className="form">
                 <Form onSubmit={handleSubmit}>
                   <Form.Label>
-                    Tell us more about you. You'll get early access to tools to
-                    better run your mobility business. We'll also let you know
-                    when Stable's insurance will be live in your state. <br />
-                    We're launching in Illinois this Spring with more states
-                    coming online through the year!
+                    <p className="text">
+                      Tell us more about you. You'll get early access to tools
+                      to better run your mobility business. We'll also let you
+                      know when Stable's insurance will be live in your state.{" "}
+                      <br />
+                      We're launching in Illinois this Spring with more states
+                      coming online through the year!
+                    </p>
                   </Form.Label>
 
                   <Form.Group className="mb-3">
@@ -236,17 +239,22 @@ export default function individualFleetForm() {
               <div className="form">
                 <Form onSubmit={handleSubmit}>
                   <Form.Label>
-                    Tell us more about you. You'll get early access to tools to
-                    better run your mobility business. We'll also let you know
-                    when Stable's insurance will be live in your state. <br />
-                    We're launching in Illinois this Spring with more states
-                    coming online through the year!
+                    <p className="text">
+                      <span className="bold">Tell us more about you.</span>{" "}
+                      <br /> <br />
+                      You'll get early access to tools to better run your
+                      mobility business. We'll also let you know when Stable's
+                      insurance will be live in your state. <br /> <br />
+                      We're launching in Illinois this Spring with more states
+                      coming online through the year!
+                    </p>
                   </Form.Label>
 
                   <Form.Group className="mb-3">
                     <br />
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                       <Form.Control
+                        className="input"
                         required={true}
                         onChange={e => setEmailInputValue(e.target.value)}
                         // required
@@ -256,6 +264,7 @@ export default function individualFleetForm() {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                       <Form.Control
+                        className="input"
                         required={true}
                         onChange={e => setNameInputValue(e.target.value)}
                         // required
@@ -265,6 +274,7 @@ export default function individualFleetForm() {
                     </Form.Group>
                     <Form.Group>
                       <Form.Control
+                        className="input"
                         required={true}
                         type="zipcode"
                         onChange={e => setZipcodeInputValue(e.target.value)}
@@ -335,14 +345,25 @@ export default function individualFleetForm() {
                         <option value="4">Carshare Fleet</option>
                       </Form.Control>
                     </div>
+                    <div className="check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckIndeterminate"
+                      />
+
+                      <p>I agree to the Stable terms and privacy policy.</p>
+                    </div>
+                    <br />
+
                     <button
-                      className="modal-button"
+                      className="button"
                       variant="primary"
                       type="submit"
                       // onClick={() => di}
                     >
                       <span>Submit</span>
-                      <i class="fas fa-chevron-right"></i>
                     </button>
                   </Form.Group>
                   {/* <Form.Label>
