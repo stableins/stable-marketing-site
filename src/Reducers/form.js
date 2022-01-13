@@ -1,6 +1,6 @@
 const initialState = {
   email: null,
-  status: "createPassword",
+  status: "",
 }
 
 export default function User(state = initialState, action) {
