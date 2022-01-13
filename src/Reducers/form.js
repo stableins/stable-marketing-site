@@ -1,6 +1,6 @@
 const initialState = {
   email: null,
-  status: "",
+  status: "done",
 }
 
 export default function User(state = initialState, action) {

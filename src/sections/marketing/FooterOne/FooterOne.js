@@ -149,7 +149,7 @@ export default function FooterOne() {
               </Footer.SocialShare>
               <div className="copyright-text">
                 <Footer.CopyrightText>
-                  <p>© 2021 Stable Insurance Inc. All Rights Reserved</p>
+                  <p>© 2022 Stable Insurance Inc. All Rights Reserved</p>
                 </Footer.CopyrightText>
               </div>
             </div>
