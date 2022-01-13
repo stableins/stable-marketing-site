@@ -37,6 +37,8 @@ export default function individualFleetForm() {
   const [argyleLinked, setArgyleLinked] = useState(false)
   const email = useSelector(state => state.form.email)
   const [nameInputValue, setNameInputValue] = useState("")
+  const [passwordInputValue, setPasswordInputValue] = useState("")
+  const [passwordConfirmInputValue, setPasswordConfirmInputValue] = useState("")
   const [zipcodeInputValue, setZipcodeInputValue] = useState("")
   const [signupState, setSignupState] = useState("")
   const [dropdownInputValue1, setDropdownInputValue1] = useState("")
@@ -47,8 +49,7 @@ export default function individualFleetForm() {
   const status = useSelector(state => state.form.status)
   const [resetSelect1, setResetSelect1] = useState(false)
   const [resetSelect2, setResetSelect2] = useState(false)
-
-  console.log(status)
+  const [passwordMismatch, setPasswordMismatch] = useState(false)
 
   useEffect(() => {
     setHasMounted(true)
@@ -89,6 +90,22 @@ export default function individualFleetForm() {
       })
     }
 
+    if (passwordConfirmInputValue != passwordInputValue) {
+      setPasswordMismatch(true)
+    }
+    if (passwordConfirmInputValue === passwordInputValue) {
+      setPasswordMismatch(false)
+      dispatch({
+        type: "FORM::SET_STATUS",
+        payload: "done",
+      })
+    }
+
+    // need API call to stable backend for status tracking, user creation, session info, and argyle data association.
+
+    // non rideshare driver form submissions need to go to zoho + stable backend
+
+    // rideshare driver submissions go to sendgrid + stable backend.
     try {
       await axios.post(
         "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgridContact",
@@ -638,7 +655,7 @@ export default function individualFleetForm() {
                           payload: "createPassword",
                         })
                       }
-                      className="modal-button"
+                      className="button"
                       variant="primary"
                       // type="submit"
                     >
@@ -690,9 +707,9 @@ export default function individualFleetForm() {
                     <Form.Control
                       required={true}
                       className="input"
-                      onChange={e => setNameInputValue(e.target.value)}
+                      onChange={e => setPasswordInputValue(e.target.value)}
                       // required
-                      type="text"
+                      type="password"
                       placeholder="Password"
                     />
                   </Form.Group>
@@ -701,17 +718,16 @@ export default function individualFleetForm() {
                     <Form.Control
                       required={true}
                       className="input"
-                      onChange={e => setZipcodeInputValue(e.target.value)}
+                      onChange={e =>
+                        setPasswordConfirmInputValue(e.target.value)
+                      }
                       // required
                       placeholder="Verify Password"
+                      type="password"
                     />
                   </Form.Group>
-                  <button
-                    className="button"
-                    variant="primary"
-                    type="submit"
-                    onClick={() => setSignupState("done")}
-                  >
+                  {passwordMismatch && <p>Passwords do not match</p>}
+                  <button className="button" variant="primary" type="submit">
                     <span>Register Me! &nbsp;</span>
                     <i class="fas fa-chevron-right"></i>
                   </button>
