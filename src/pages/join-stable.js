@@ -51,6 +51,8 @@ export default function individualFleetForm() {
   const [resetSelect2, setResetSelect2] = useState(false)
   const [passwordMismatch, setPasswordMismatch] = useState(false)
 
+  console.log(status);
+
   useEffect(() => {
     setHasMounted(true)
   }, [resetSelect1, resetSelect2])
@@ -83,7 +85,7 @@ export default function individualFleetForm() {
         )
       }
 
-      if (status === "createPassword" && passwordConfirmInputValue === passwordInputValue) {
+      if (status === "createPassword" && || passwordConfirmInputValue === passwordInputValue) {
         setPasswordMismatch(false)
         alert("done")
         dispatch({
