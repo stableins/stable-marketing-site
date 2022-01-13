@@ -85,7 +85,7 @@ export default function individualFleetForm() {
         )
       }
 
-      if (status === "createPassword" && || passwordConfirmInputValue === passwordInputValue) {
+      if (status === "createPassword" && passwordConfirmInputValue === passwordInputValue) {
         setPasswordMismatch(false)
         alert("done")
         dispatch({
