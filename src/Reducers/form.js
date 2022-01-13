@@ -1,6 +1,6 @@
 const initialState = {
   email: null,
-  status: "allDataForm",
+  status: "emailAndEligible",
 }
 
 export default function User(state = initialState, action) {
