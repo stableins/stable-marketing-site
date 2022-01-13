@@ -62,60 +62,47 @@ export default function individualFleetForm() {
   async function handleSubmit(event) {
     event.preventDefault()
 
-    if (dropdownInputValue1 === "Rideshare Driver") {
-      dispatch({
-        type: "FORM::SET_STATUS",
-        payload: "emailZipAndNameAndEligible",
-      })
-    }
-
-    if (dropdownInputValue1 === "Carshare Owner") {
-      dispatch({
-        type: "FORM::SET_STATUS",
-        payload: "infoReceivedIneligible",
-      })
-    }
-
-    if (dropdownInputValue2 === "Carshare Fleet") {
-      dispatch({
-        type: "FORM::SET_STATUS",
-        payload: "infoReceivedIneligible",
-      })
-    }
-
-    if (dropdownInputValue2 === "Rideshare Fleet") {
-      dispatch({
-        type: "FORM::SET_STATUS",
-        payload: "infoReceivedIneligible",
-      })
-    }
-
     if (passwordConfirmInputValue != passwordInputValue) {
       setPasswordMismatch(true)
     }
-    if (passwordConfirmInputValue === passwordInputValue) {
-      setPasswordMismatch(false)
-      dispatch({
-        type: "FORM::SET_STATUS",
-        payload: "done",
-      })
-    }
 
-    // need API call to stable backend for status tracking, user creation, session info, and argyle data association.
-
-    // non rideshare driver form submissions need to go to zoho + stable backend
-
-    // rideshare driver submissions go to sendgrid + stable backend.
     try {
-      await axios.post(
-        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgridContact",
-        {
-          email: email ? email : emailInputValue,
-          zipcode: zipcodeInputValue,
-          name: nameInputValue,
-          status: "email address and additional info received",
-        }
-      )
+      if (dropdownInputValue1 === "Rideshare Driver" ) {
+        dispatch({
+          type: "FORM::SET_STATUS",
+          payload: "emailZipAndNameAndEligible",
+        })
+        await axios.post(
+          "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgridContact",
+          {
+            email: email ? email : emailInputValue,
+            zipcode: zipcodeInputValue,
+            name: nameInputValue,
+            status: "email address and additional info received",
+          }
+        )
+      }
+
+      if (passwordConfirmInputValue === passwordInputValue) {
+        setPasswordMismatch(false)
+        alert('done')
+        dispatch({
+          type: "FORM::SET_STATUS",
+          payload: "done",
+        })
+      }
+
+      if (
+        dropdownInputValue1 === "Carshare Owner" ||
+        dropdownInputValue1 === "Carshare Fleet" ||
+        dropdownInputValue1 === "Rideshare Fleet"
+      ) {
+        alert("infoReceivedIneligible")
+        dispatch({
+          type: "FORM::SET_STATUS",
+          payload: "infoReceivedIneligible",
+        })
+      }
     } catch (e) {
       alert(e)
     }
