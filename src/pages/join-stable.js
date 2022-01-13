@@ -37,6 +37,8 @@ export default function individualFleetForm() {
   const [argyleLinked, setArgyleLinked] = useState(false)
   const email = useSelector(state => state.form.email)
   const [nameInputValue, setNameInputValue] = useState("")
+  const [passwordInputValue, setPasswordInputValue] = useState("")
+  const [passwordConfirmInputValue, setPasswordConfirmInputValue] = useState("")
   const [zipcodeInputValue, setZipcodeInputValue] = useState("")
   const [signupState, setSignupState] = useState("")
   const [dropdownInputValue1, setDropdownInputValue1] = useState("")
@@ -47,8 +49,7 @@ export default function individualFleetForm() {
   const status = useSelector(state => state.form.status)
   const [resetSelect1, setResetSelect1] = useState(false)
   const [resetSelect2, setResetSelect2] = useState(false)
-
-  console.log(status)
+  const [passwordMismatch, setPasswordMismatch] = useState(false)
 
   useEffect(() => {
     setHasMounted(true)
@@ -61,44 +62,47 @@ export default function individualFleetForm() {
   async function handleSubmit(event) {
     event.preventDefault()
 
-    if (dropdownInputValue1 === "Rideshare Driver") {
-      dispatch({
-        type: "FORM::SET_STATUS",
-        payload: "emailZipAndNameAndEligible",
-      })
-    }
-
-    if (dropdownInputValue1 === "Carshare Owner") {
-      dispatch({
-        type: "FORM::SET_STATUS",
-        payload: "infoReceivedIneligible",
-      })
-    }
-
-    if (dropdownInputValue2 === "Carshare Fleet") {
-      dispatch({
-        type: "FORM::SET_STATUS",
-        payload: "infoReceivedIneligible",
-      })
-    }
-
-    if (dropdownInputValue2 === "Rideshare Fleet") {
-      dispatch({
-        type: "FORM::SET_STATUS",
-        payload: "infoReceivedIneligible",
-      })
+    if (passwordConfirmInputValue != passwordInputValue) {
+      setPasswordMismatch(true)
     }
 
     try {
-      await axios.post(
-        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgridContact",
-        {
-          email: email ? email : emailInputValue,
-          zipcode: zipcodeInputValue,
-          name: nameInputValue,
-          status: "email address and additional info received",
-        }
-      )
+      if (dropdownInputValue1 === "Rideshare Driver" ) {
+        dispatch({
+          type: "FORM::SET_STATUS",
+          payload: "emailZipAndNameAndEligible",
+        })
+        await axios.post(
+          "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgridContact",
+          {
+            email: email ? email : emailInputValue,
+            zipcode: zipcodeInputValue,
+            name: nameInputValue,
+            status: "email address and additional info received",
+          }
+        )
+      }
+
+      if (passwordConfirmInputValue === passwordInputValue) {
+        setPasswordMismatch(false)
+        alert('done')
+        dispatch({
+          type: "FORM::SET_STATUS",
+          payload: "done",
+        })
+      }
+
+      if (
+        dropdownInputValue1 === "Carshare Owner" ||
+        dropdownInputValue1 === "Carshare Fleet" ||
+        dropdownInputValue1 === "Rideshare Fleet"
+      ) {
+        alert("infoReceivedIneligible")
+        dispatch({
+          type: "FORM::SET_STATUS",
+          payload: "infoReceivedIneligible",
+        })
+      }
     } catch (e) {
       alert(e)
     }
@@ -638,7 +642,7 @@ export default function individualFleetForm() {
                           payload: "createPassword",
                         })
                       }
-                      className="modal-button"
+                      className="button"
                       variant="primary"
                       // type="submit"
                     >
@@ -690,9 +694,9 @@ export default function individualFleetForm() {
                     <Form.Control
                       required={true}
                       className="input"
-                      onChange={e => setNameInputValue(e.target.value)}
+                      onChange={e => setPasswordInputValue(e.target.value)}
                       // required
-                      type="text"
+                      type="password"
                       placeholder="Password"
                     />
                   </Form.Group>
@@ -701,17 +705,16 @@ export default function individualFleetForm() {
                     <Form.Control
                       required={true}
                       className="input"
-                      onChange={e => setZipcodeInputValue(e.target.value)}
+                      onChange={e =>
+                        setPasswordConfirmInputValue(e.target.value)
+                      }
                       // required
                       placeholder="Verify Password"
+                      type="password"
                     />
                   </Form.Group>
-                  <button
-                    className="button"
-                    variant="primary"
-                    type="submit"
-                    onClick={() => setSignupState("done")}
-                  >
+                  {passwordMismatch && <p>Passwords do not match</p>}
+                  <button className="button" variant="primary" type="submit">
                     <span>Register Me! &nbsp;</span>
                     <i class="fas fa-chevron-right"></i>
                   </button>
