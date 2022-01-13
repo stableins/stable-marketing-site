@@ -67,7 +67,7 @@ export default function individualFleetForm() {
     }
 
     try {
-      if (dropdownInputValue1 === "Rideshare Driver" ) {
+      if (dropdownInputValue1 === "Rideshare Driver") {
         dispatch({
           type: "FORM::SET_STATUS",
           payload: "emailZipAndNameAndEligible",
@@ -85,7 +85,7 @@ export default function individualFleetForm() {
 
       if (passwordConfirmInputValue === passwordInputValue) {
         setPasswordMismatch(false)
-        alert('done')
+        alert("done")
         dispatch({
           type: "FORM::SET_STATUS",
           payload: "done",

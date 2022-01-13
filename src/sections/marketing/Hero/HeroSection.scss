@@ -1,6 +1,7 @@
 @media (min-width: 1000px) {
   .hero-section-wrapper {
-    background-color: #f7f7f7;
+    background: linear-gradient(251.6deg, #5b84c4 60.73%, #3b358a 90.24%);
+    transform: matrix(1, 0, 0, -1, 0, 0);
     height: 760px;
 
     .scroll-to-top {
@@ -16,7 +17,7 @@
     .title {
       width: 791px;
       top: 5;
-      color: #002e6d;
+      color: #f7f7f7;
       font-size: 80px;
       position: relative;
       font-size: 70px;
@@ -30,7 +31,7 @@
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
-        color: #002e6d;
+        color: #f7f7f7;
       }
 
       p {
@@ -46,7 +47,7 @@
           text-align: left;
           font-size: 70px;
           line-height: 85px;
-          color: #002e6d;
+          color: #f7f7f7;
         }
       }
 
@@ -85,7 +86,7 @@
       width: 750px;
       left: 0px;
       bottom: -60px;
-      color: #303030;
+      color: #f7f7f7;
       font-size: 20px;
       line-height: 30px;
     }
@@ -117,7 +118,7 @@
     }
 
     .login {
-      color: #303030;
+      color: #f7f7f7;
       position: absolute;
       bottom: -200px;
       font-family: Rubik;
@@ -125,7 +126,6 @@
       font-weight: normal;
       font-size: 20px;
       line-height: 30px;
-      color: #303030;
 
       span {
         font-family: Rubik;
@@ -179,12 +179,12 @@
 
 @media (max-width: 450px) {
   .hero-section-wrapper {
-    background-color: #f7f7f7;
-
+    background: linear-gradient(251.6deg, #5b84c4 40.73%, #3b358a 90.24%);
+    transform: matrix(1, 0, 0, -1, 0, 0);
     .title {
       // width: 100%;
       margin-left: -5px;
-      color: #002e6d;
+      color: #f7f7f7;
       font-family: Rubik;
       font-style: normal;
       font-weight: normal;
@@ -203,7 +203,7 @@
         // line-height: 100px;
         letter-spacing: 0em;
         text-align: left;
-        color: #002e6d;
+        color: #f7f7f7;
       }
 
       p {
@@ -216,13 +216,13 @@
           font-style: normal;
           // line-height: 100px;
           text-align: left;
-          color: #002e6d;
+          color: #f7f7f7;
         }
       }
 
       .bold-text {
         font-weight: 400;
-        color: #002e6d;
+        color: #f7f7f7;
         display: inline-flex;
         font-size: 40px;
       }
@@ -255,7 +255,7 @@
     }
     .hero-text {
       width: 100%;
-      color: #303030;
+      color: #f7f7f7;
       font-family: Rubik;
       font-style: normal;
       font-weight: normal;
@@ -288,7 +288,7 @@
     }
 
     .login {
-      color: #303030;
+      color: #f7f7f7;
       margin-top: 10px;
       font-size: 16px;
       line-height: 22px;
