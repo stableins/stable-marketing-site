@@ -42,7 +42,7 @@ export default function individualFleetForm() {
   const [zipcodeInputValue, setZipcodeInputValue] = useState("")
   const [signupState, setSignupState] = useState("")
   const [dropdownInputValue1, setDropdownInputValue1] = useState("")
-  const [dropdownInputValue2, setDropdownInputValue2] = useState("")
+  const [dropdownInputValue2, setDropdownInputValue2] = useState("1")
   const [hasMounted, setHasMounted] = useState(false)
   const [handleSelectChange, setHandleSelectChange] = useState(true)
   const [clicked, setClicked] = useState("1")
