@@ -1,4 +1,4 @@
-@media (min-width: 1000px) {
+@media (min-width: 1025px) {
   .modal {
     background-color: #475ba1;
   }
@@ -22,7 +22,7 @@
         height: 129px;
         left: 0;
         position: absolute;
-        bottom: 70px;
+        bottom: 68px;
         font-family: Rubik;
         font-style: normal;
         font-weight: normal;
@@ -193,7 +193,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 1024px) {
   .value-index-wrapper {
     .anchor3 {
       height: 30px;

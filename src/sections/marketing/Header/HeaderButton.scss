@@ -1,137 +1,231 @@
-.confirmation-modal-content-wrapper {
-  padding: 20px;
-  .confirmation-modal-header {
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 55px;
-    line-height: 60px;
+@media (max-width: 1024px) {
+  .header-button-wrapper {
+    display: none;
+    text-align: right;
+    // padding: 0 400px;
+    width: 100%;
     color: #002e6d;
-  }
-  button {
-    background: #f7f7f7;
 
-    border: 2px solid #ffae13;
-    box-sizing: border-box;
-    border-radius: 8px;
-    width: 194px;
-    height: 50px;
-    cursor: pointer;
-  }
-  .confirmation-modal-text {
-    color: #303030;
+    .rideshare-button {
+      background: none;
+      width: 194px;
+      font-family: Rubik;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-top: -30px;
+    }
+
+    .carshare-button {
+      background: none;
+      width: 186px;
+      font-family: Rubik;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-top: -30px;
+    }
+
+    .early-access-button {
+      font-size: 18px;
+    }
+
+    .about-us {
+      background: none;
+      width: 99px;
+      font-family: Rubik;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-top: -30px;
+    }
+
+    .button-wrapper {
+      border-right: 2px solid black;
+      height: 20px;
+      margin-top: 13px;
+      margin-right: 10px;
+    }
+
+    .report-button {
+      background: none;
+      // width: 60px;
+      font-family: Rubik;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 21px;
+      margin-right: 10px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-top: -30px;
+    }
+
+    .blog-button {
+      background: none;
+      width: 60px;
+      font-family: Rubik;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-top: -30px;
+    }
+
+    .login-button {
+      background: none;
+      width: 69px;
+      font-family: Rubik;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    button {
+      width: 208px;
+      height: 50px;
+      background: none;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .divider {
+      background: #002e6d;
+      height: 25px;
+      width: 1px;
+      margin-left: 30px;
+      margin-top: 10px;
+    }
   }
 }
 
-.header-button-wrapper {
-  text-align: right;
-  // padding: 0 400px;
-  width: 100%;
-  color: #002e6d;
+@media (min-width: 1025px) {
+  .header-button-wrapper {
+    text-align: right;
+    // padding: 0 400px;
+    width: 100%;
+    color: #002e6d;
 
-  .rideshare-button {
-    background: none;
-    width: 194px;
-    font-family: Rubik;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px;
-    letter-spacing: 0em;
-    text-align: left;
-    margin-top: -30px;
-  }
+    .rideshare-button {
+      background: none;
+      width: 194px;
+      font-family: Rubik;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-top: -30px;
+    }
 
-  .carshare-button {
-    background: none;
-    width: 186px;
-    font-family: Rubik;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px;
-    letter-spacing: 0em;
-    text-align: left;
-    margin-top: -30px;
-  }
+    .carshare-button {
+      background: none;
+      width: 186px;
+      font-family: Rubik;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-top: -30px;
+    }
 
-  .early-access-button {
-    font-size: 18px;
-  }
+    .early-access-button {
+      font-size: 18px;
+    }
 
-  .about-us {
-    background: none;
-    width: 99px;
-    font-family: Rubik;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px;
-    letter-spacing: 0em;
-    text-align: left;
-    margin-top: -30px;
-  }
+    .about-us {
+      background: none;
+      width: 99px;
+      font-family: Rubik;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-top: -30px;
+    }
 
-  .button-wrapper {
-    border-right: 2px solid black;
-    height: 20px;
-    margin-top: 13px;
-    margin-right: 10px;
-  }
+    .button-wrapper {
+      border-right: 2px solid black;
+      height: 20px;
+      margin-top: 13px;
+      margin-right: 10px;
+    }
 
-  .report-button {
-    background: none;
-    // width: 60px;
-    font-family: Rubik;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 21px;
-    margin-right: 10px;
-    letter-spacing: 0em;
-    text-align: left;
-    margin-top: -30px;
-  }
+    .report-button {
+      background: none;
+      // width: 60px;
+      font-family: Rubik;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 21px;
+      margin-right: 10px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-top: -30px;
+    }
 
-  .blog-button {
-    background: none;
-    width: 60px;
-    font-family: Rubik;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px;
-    letter-spacing: 0em;
-    text-align: left;
-    margin-top: -30px;
-  }
+    .blog-button {
+      background: none;
+      width: 60px;
+      font-family: Rubik;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-top: -30px;
+    }
 
-  .login-button {
-    background: none;
-    width: 69px;
-    font-family: Rubik;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px;
-    letter-spacing: 0em;
-    text-align: left;
-  }
+    .login-button {
+      background: none;
+      width: 69px;
+      font-family: Rubik;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
 
-  button {
-    width: 208px;
-    height: 50px;
-    background: none;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-  }
+    button {
+      width: 208px;
+      height: 50px;
+      background: none;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
 
-  .divider {
-    background: #002e6d;
-    height: 25px;
-    width: 1px;
-    margin-left: 30px;
-    margin-top: 10px;
+    .divider {
+      background: #002e6d;
+      height: 25px;
+      width: 1px;
+      margin-left: 30px;
+      margin-top: 10px;
+    }
   }
 }
+
