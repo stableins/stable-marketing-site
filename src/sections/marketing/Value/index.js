@@ -40,17 +40,16 @@ const FeatureSection = ({ ...rest }) => {
           email: emailInputValue,
         }
       )
-      setStatusResponse(response.data.status)
 
       if (response.data.userType) {
         dispatch({
           type: "FORM::SET_USER_TYPE",
-          payload: response.data.status,
+          payload: response.data.userType,
         })
       }
       dispatch({
         type: "FORM::SET_STATUS",
-        payload: statusResponse,
+        payload: response.data.status,
       })
 
       setFormRedirect(true)
