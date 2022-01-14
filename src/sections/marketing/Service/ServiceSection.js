@@ -23,8 +23,6 @@ export default function ServiceSection() {
   const [zipcodeInputValue, setZipcodeInputValue] = useState("")
   const [dropdownInputValue, setDropdownInputValue] = useState("")
 
-  console.log(dropdownInputValue)
-
   async function handleSubmit(event) {
     event.preventDefault()
     try {
@@ -34,7 +32,6 @@ export default function ServiceSection() {
         zipcodeInputValue,
         dropdownInputValue
       )
-      console.log(response.data.statusCode)
       if (response.data.statusCode === 200) {
         setModal(false)
         setShowConfirmation(true)

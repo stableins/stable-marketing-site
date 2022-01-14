@@ -24,8 +24,7 @@ export default function HeroSection() {
   const [formRedirect, setFormRedirect] = useState(false)
   const email = useSelector(state => state.form.email)
   const status = useSelector(state => state.form.status)
-
-console.log(status);
+  
   smoothscroll.polyfill()
 
   const scrollToReport = () => {

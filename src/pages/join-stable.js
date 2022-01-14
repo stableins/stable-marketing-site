@@ -52,8 +52,6 @@ export default function individualFleetForm() {
   const [resetSelect2, setResetSelect2] = useState(false)
   const [passwordMismatch, setPasswordMismatch] = useState(false)
 
-  console.log(status)
-
   useEffect(() => {
     setHasMounted(true)
   }, [resetSelect1, resetSelect2])
@@ -667,7 +665,6 @@ export default function individualFleetForm() {
                 <PopupButton
                   className="button"
                   onClick={() => {
-                    console.log('clicked');
                   }}
                   text="Let's Connect!"
                   url="https://calendly.com/call-john-salvucci"
