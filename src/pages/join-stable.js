@@ -51,7 +51,7 @@ export default function individualFleetForm() {
   const [resetSelect2, setResetSelect2] = useState(false)
   const [passwordMismatch, setPasswordMismatch] = useState(false)
 
-  console.log(status);
+  console.log(status)
 
   useEffect(() => {
     setHasMounted(true)
@@ -85,7 +85,10 @@ export default function individualFleetForm() {
         )
       }
 
-      if (status === "createPassword" && passwordConfirmInputValue === passwordInputValue) {
+      if (
+        status === "createPassword" &&
+        passwordConfirmInputValue === passwordInputValue
+      ) {
         setPasswordMismatch(false)
         alert("done")
         dispatch({
@@ -575,17 +578,7 @@ export default function individualFleetForm() {
                       </div>
                     </div>
                     <br />
-                    <button
-                      className="button"
-                      variant="primary"
-                      type="submit"
-                      onClick={() =>
-                        dispatch({
-                          type: "FORM::SET_STATUS",
-                          payload: "emailZipAndNameAndEligible",
-                        })
-                      }
-                    >
+                    <button className="button" variant="primary" type="submit">
                       <span>Get Driver Report</span>
                       <i class="fas fa-chevron-right"></i>
                     </button>
