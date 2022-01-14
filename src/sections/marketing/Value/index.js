@@ -27,33 +27,42 @@ const FeatureSection = ({ ...rest }) => {
   const [counterModal, setCounterModal] = useState(false)
   const [formRedirect, setFormRedirect] = useState(false)
   const [bulletPointModal, setBulletPointModal] = useState(false)
+  const [statusResponse, setStatusResponse] = useState("")
   const [emailInputValue, setEmailInputValue] = useState("")
   const [spinner, setSpinner] = useState(false)
 
   async function handleEmailSubmit(event) {
-    setFormRedirect(true)
-
     event.preventDefault()
-    dispatch({
-      type: "FORM::SET_EMAIL",
-      payload: emailInputValue,
-    })
-    dispatch({
-      type: "FORM::SET_STATUS",
-      payload: "emailAndEligible",
-    })
     try {
-      await axios.post(
-        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgridContact",
+      const response = await axios.post(
+        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/saveEmail",
         {
           email: emailInputValue,
-          status: "email received",
         }
       )
+      setStatusResponse(response.data.status)
+
+      if (response.data.userType) {
+        dispatch({
+          type: "FORM::SET_USER_TYPE",
+          payload: response.data.status,
+        })
+      }
+      dispatch({
+        type: "FORM::SET_STATUS",
+        payload: statusResponse,
+      })
+
       setFormRedirect(true)
+
       dispatch({
         type: "FORM::SET_EMAIL",
         payload: emailInputValue,
+      })
+
+      dispatch({
+        type: "FORM::SET_DRIVER_REPORT",
+        payload: true,
       })
     } catch (e) {
       alert(e)

@@ -1,6 +1,8 @@
 const initialState = {
   email: null,
-  status: "infoReceivedIneligible",
+  status: "",
+  driverReport: false,
+  userType: null,
 }
 
 export default function User(state = initialState, action) {
@@ -15,6 +17,18 @@ export default function User(state = initialState, action) {
       return {
         ...state,
         status: action.payload,
+      }
+
+    case "FORM::SET_DRIVER_REPORT":
+      return {
+        ...state,
+        driverReport: action.payload,
+      }
+
+    case "FORM::SET_USER_TYPE":
+      return {
+        ...state,
+        userType: action.payload,
       }
 
     default:
