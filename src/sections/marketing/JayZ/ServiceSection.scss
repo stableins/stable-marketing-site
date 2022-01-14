@@ -5,8 +5,6 @@
 
     .image {
       position: absolute;
-      width: 10px;
-      height: 129px;
       left: 0px;
       bottom: 30px;
       top: -20px;
@@ -19,6 +17,10 @@
       /* Stable Blue */
 
       color: #002e6d;
+
+      img {
+        width: 690px;
+      }
     }
 
     .image {

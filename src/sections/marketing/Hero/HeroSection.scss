@@ -2,8 +2,13 @@
   .hero-section-wrapper {
     background: linear-gradient(251.6deg, #5b84c4 60.73%, #3b358a 90.24%);
     transform: matrix(1, 0, 0, -1, 0, 0);
-    height: 760px;
-
+    height: 720px;
+    
+    .image {
+      width: 130%;
+      margin-left: -30px;
+      margin-top: -110px;
+    }
     .scroll-to-top {
       position: fixed;
       bottom: 50;
