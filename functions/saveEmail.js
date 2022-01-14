@@ -63,8 +63,10 @@ exports.handler = async (event, context, callback) => {
 
   return {
     statusCode,
-    status,
-    email,
-    userType,
+    body: JSON.stringify({
+      status,
+      email,
+      userType,
+    }),
   }
 }
