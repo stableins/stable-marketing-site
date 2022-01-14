@@ -51,12 +51,12 @@ export default function HeroSection() {
         }
       )
 
-      const responseBody = JSON.parse(response.data)
-      
+      console.log(response)
+
       if (responseBody.userType) {
         dispatch({
           type: "FORM::SET_USER_TYPE",
-          payload: responseBody.userType,
+          payload: response.data.userType,
         })
       }
 
@@ -66,7 +66,7 @@ export default function HeroSection() {
       })
       dispatch({
         type: "FORM::SET_STATUS",
-        payload: responseBody.status,
+        payload: response.data.status,
       })
       setFormRedirect(true)
 
