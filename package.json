@@ -26,6 +26,7 @@
     "gatsby-transformer-remark": "^3.0.0",
     "gatsby-transformer-sharp": "^3.0.0",
     "install": "^0.13.0",
+    "mongodb": "^4.3.0",
     "netlify-cli": "^8.6.15",
     "polished": "^4.0.5",
     "prop-types": "^15.7.2",

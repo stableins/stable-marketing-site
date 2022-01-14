@@ -23,6 +23,7 @@ export default function HeroSection() {
   const [emailInputValue, setEmailInputValue] = useState("")
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [formRedirect, setFormRedirect] = useState(false)
+  const [responseStatus, setResponseStatus] = useState("")
   const email = useSelector(state => state.form.email)
   const status = useSelector(state => state.form.status)
 
@@ -48,18 +49,19 @@ export default function HeroSection() {
       type: "FORM::SET_EMAIL",
       payload: emailInputValue,
     })
-    dispatch({
-      type: "FORM::SET_STATUS",
-      payload: "emailAndPotentiallyEligible",
-    })
     try {
-      await axios.post(
-        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgridContact",
+      const response = await axios.post(
+        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/saveEmail",
         {
           email: emailInputValue,
-          status: "email received",
         }
       )
+      setResponseStatus(response.data.status)
+
+      dispatch({
+        type: "FORM::SET_STATUS",
+        payload: responseStatus,
+      })
       setFormRedirect(true)
       dispatch({
         type: "FORM::SET_EMAIL",
@@ -167,7 +169,7 @@ export default function HeroSection() {
                 xs={12}
                 className="col-xl-6 col-lg-5 col-md-10 order-1 order-lg-2 position-static"
               >
-                <img src={HeroImage} className="image"/>
+                <img src={HeroImage} className="image" />
               </Col>
               {/*/ .Welcome Image Area */}
             </Row>
