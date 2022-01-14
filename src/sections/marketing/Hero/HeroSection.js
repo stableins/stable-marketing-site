@@ -43,10 +43,6 @@ export default function HeroSection() {
 
   async function handleEmailSubmit(event) {
     event.preventDefault()
-    dispatch({
-      type: "FORM::SET_EMAIL",
-      payload: emailInputValue,
-    })
     try {
       const response = await axios.post(
         "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/saveEmail",
@@ -55,7 +51,8 @@ export default function HeroSection() {
         }
       )
 
-      const responseBody = JSON.parse(response.data.body)
+      const responseBody = JSON.parse(response.data)
+      
       if (responseBody.userType) {
         dispatch({
           type: "FORM::SET_USER_TYPE",
@@ -63,6 +60,10 @@ export default function HeroSection() {
         })
       }
 
+      dispatch({
+        type: "FORM::SET_EMAIL",
+        payload: emailInputValue,
+      })
       dispatch({
         type: "FORM::SET_STATUS",
         payload: responseBody.status,
