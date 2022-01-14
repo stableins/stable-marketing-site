@@ -7,6 +7,7 @@ import { Link } from "@reach/router"
 import { useDispatch } from "react-redux"
 import Fade from "react-reveal/Fade"
 import { ArgyleLink } from "../components/Argyle/ArgyleLink.tsx"
+import { PopupButton } from "react-calendly"
 import HeaderButton from "../sections/marketing/Header"
 import Intake from "../api/intake"
 import "./join-stable.scss"
@@ -653,18 +654,24 @@ export default function individualFleetForm() {
           {status === "infoReceivedIneligible" && (
             <div className="join-stable-wrapper">
               <div className="form">
-                <p>
-                  Great! We've sent you an email to confirm your email address.
-                  If you don't see something from us shortly, please check your
-                  junk mail.
+                <p className="text">
+                  <span className="bold">
+                    Want to connect for a quick 15-30 minute call so we can
+                    learn more about your needs?
+                  </span>{" "}
+                  <br /> <br />
+                  We take all product suggestions seriously and would like to
+                  hear what your thoughts! Pick a time below.
                 </p>
-                <p>
-                  Want to connect for a quick 15-30 minute call so we can learn
-                  more about your needs? We take all product suggestions
-                  seriously and would like to hear what your thoughts! Pick a
-                  time below.
-                </p>
-                <button className="primary">Let's connect!</button>
+
+                <PopupButton
+                  className="button"
+                  onClick={() => {
+                    console.log('clicked');
+                  }}
+                  text="Let's Connect!"
+                  url="https://calendly.com/call-john-salvucci"
+                />
               </div>
             </div>
           )}
