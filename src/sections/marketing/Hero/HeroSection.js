@@ -5,6 +5,7 @@ import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import SingleAniamtion from "../../../components/Animation/singleAnimation"
 import { Link } from "~components"
 import Intake from "../../../api/intake"
+import HeroImage from "../../../assets/image/logo/hero_car_img.png"
 import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
 import { scroller } from "react-scroll"
@@ -24,7 +25,7 @@ export default function HeroSection() {
   const [formRedirect, setFormRedirect] = useState(false)
   const email = useSelector(state => state.form.email)
   const status = useSelector(state => state.form.status)
-  
+
   smoothscroll.polyfill()
 
   const scrollToReport = () => {
@@ -47,10 +48,10 @@ export default function HeroSection() {
       type: "FORM::SET_EMAIL",
       payload: emailInputValue,
     })
-     dispatch({
-       type: "FORM::SET_STATUS",
-       payload: "emailAndPotentiallyEligible",
-     })
+    dispatch({
+      type: "FORM::SET_STATUS",
+      payload: "emailAndPotentiallyEligible",
+    })
     try {
       await axios.post(
         "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgridContact",
@@ -166,7 +167,7 @@ export default function HeroSection() {
                 xs={12}
                 className="col-xl-6 col-lg-5 col-md-10 order-1 order-lg-2 position-static"
               >
-                <SingleAniamtion />
+                <img src={HeroImage} className="image"/>
               </Col>
               {/*/ .Welcome Image Area */}
             </Row>
