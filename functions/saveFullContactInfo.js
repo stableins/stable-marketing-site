@@ -1,36 +1,36 @@
-const { MongoClient } = require('mongodb');
-const axios = require('axios');
+const { MongoClient } = require("mongodb")
+const axios = require("axios")
 
 exports.handler = async (event, context, callback) => {
-  const { email, zip, name, shareType, driverType } = JSON.parse(event.body);
-  const nameSplit = name.split(' ');
-  let statusCode = 200;
-  let status = 'Email Address & Additional Info';
+  const { email, zip, name, userType } = JSON.parse(event.body)
+  const nameSplit = name.split(" ")
+  let statusCode = 200
+  let status = "Email Address & Additional Info"
 
-  const uri = process.env.MONGO_URI.replace('<password>', process.env.MONGO_PASSWORD);
-  const client = new MongoClient(uri);
+  const uri = process.env.MONGO_URI.replace(
+    "<password>",
+    process.env.MONGO_PASSWORD
+  )
+  const client = new MongoClient(uri)
 
   try {
-    await client.connect();
-    const database = client.db('marketing');
-    const users = database.collection('users');
+    await client.connect()
+    const database = client.db("marketing")
+    const users = database.collection("users")
 
-    const user = await users.findOne({ email: email });
+    const user = await users.findOne({ email: email })
     if (!user) {
       await users.insertOne({
         email: email,
         zip: zip,
         name: name,
-        sessionInfo: [
-          sessionInfo,
-        ],
+        sessionInfo: [sessionInfo],
         status: status,
-        shareType: shareType,
-        driverType: driverType,
-      });
+        userType: userType,
+      })
 
       await axios.put(
-        'https://api.sendgrid.com/v3/marketing/contacts',
+        "https://api.sendgrid.com/v3/marketing/contacts",
         {
           contacts: [
             {
@@ -40,7 +40,7 @@ exports.handler = async (event, context, callback) => {
               last_name: nameSplit[nameSplit.length - 1],
               custom_fields: {
                 w1_T: status,
-                w2_T: `${shareType} ${driverType}`,
+                w2_T: userType,
                 e3_T: name,
               },
             },
@@ -49,27 +49,30 @@ exports.handler = async (event, context, callback) => {
         {
           headers: {
             Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
         }
-      );
-
+      )
     } else {
-      if (user.status !== 'Email Address Collected') {
-        status = user.status;
+      if (user.status !== "Email Address Collected") {
+        status = user.status
       }
-      user.sessionInfo.push(sessionInfo);
-      await users.updateOne({ _id: user._id }, { $set: {
-        zip: zip,
-        name: name,
-        sessionInfo: sessionInfo,
-        status: status,
-        shareType: shareType,
-        driverType: driverType,
-      }});
+      user.sessionInfo.push(sessionInfo)
+      await users.updateOne(
+        { _id: user._id },
+        {
+          $set: {
+            zip: zip,
+            name: name,
+            sessionInfo: sessionInfo,
+            status: status,
+            userType: userType,
+          },
+        }
+      )
 
       await axios.put(
-        'https://api.sendgrid.com/v3/marketing/contacts',
+        "https://api.sendgrid.com/v3/marketing/contacts",
         {
           contacts: [
             {
@@ -79,7 +82,7 @@ exports.handler = async (event, context, callback) => {
               last_name: nameSplit[nameSplit.length - 1],
               custom_fields: {
                 w1_T: status,
-                w2_T: `${shareType} ${driverType}`,
+                w2_T: userType,
                 e3_T: name,
               },
             },
@@ -88,21 +91,22 @@ exports.handler = async (event, context, callback) => {
         {
           headers: {
             Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
         }
-      ); 
+      )
 
       // if not individual rideshare driver, send to Zoho
     }
   } catch (e) {
-    statusCode = 500;
-    status = e.message;
+    statusCode = 500
+    status = e.message
   } finally {
     return {
       statusCode,
       status,
       email,
-    };
+      userType,
+    }
   }
-};
+}

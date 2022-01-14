@@ -26,6 +26,7 @@ export default function HeroSection() {
   const [responseStatus, setResponseStatus] = useState("")
   const email = useSelector(state => state.form.email)
   const status = useSelector(state => state.form.status)
+  const userType = useSelector(state => state.form.userType)
 
   smoothscroll.polyfill()
 
@@ -42,8 +43,6 @@ export default function HeroSection() {
   }
 
   async function handleEmailSubmit(event) {
-    setFormRedirect(true)
-
     event.preventDefault()
     dispatch({
       type: "FORM::SET_EMAIL",
@@ -58,14 +57,27 @@ export default function HeroSection() {
       )
       setResponseStatus(response.data.status)
 
+      if (response.data.userType) {
+        dispatch({
+          type: "FORM::SET_USER_TYPE",
+          payload: response.data.userType,
+        })
+      }
+
       dispatch({
         type: "FORM::SET_STATUS",
         payload: responseStatus,
       })
       setFormRedirect(true)
+
       dispatch({
         type: "FORM::SET_EMAIL",
         payload: emailInputValue,
+      })
+
+      dispatch({
+        type: "FORM::SET_DRIVER_REPORT",
+        payload: false,
       })
     } catch (e) {
       alert(e)
