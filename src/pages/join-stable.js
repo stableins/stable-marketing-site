@@ -631,13 +631,13 @@ export default function individualFleetForm() {
                     <br />
                     <p>Done Linking your account(s)?</p>
                     <button
-                      onClick={() =>
+                      onClick={() => {
                         dispatch({
                           type: "FORM::SET_STATUS",
                           payload: "createPassword",
                         })
                         setDropdownInputValue1(null)
-                      }
+                      }}
                       className="button"
                       variant="primary"
                       // type="submit"
