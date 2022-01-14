@@ -12,7 +12,7 @@ import {
 import { Images } from "~data"
 import axios from "axios"
 import TabContentWidget from "./Component/TabContentWidget"
-import {Link} from '@reach/router'
+import { Link } from "@reach/router"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import TabNavWidget from "./Component/TabNavWidget"
 import BackgroundImage from "../../../assets/image/logo/product_bckgnd.jpg"
@@ -183,7 +183,7 @@ const FeatureSection = ({ ...rest }) => {
                                     onClick={() =>
                                       dispatch({
                                         type: "FORM::SET_STATUS",
-                                        payload: "allDataForm",
+                                        payload: "",
                                       })
                                     }
                                   >
@@ -292,7 +292,7 @@ const FeatureSection = ({ ...rest }) => {
                                   onClick={() =>
                                     dispatch({
                                       type: "FORM::SET_STATUS",
-                                      payload: "allDataForm",
+                                      payload: "",
                                     })
                                   }
                                 >

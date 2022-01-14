@@ -23,7 +23,6 @@ export default function HeroSection() {
   const [emailInputValue, setEmailInputValue] = useState("")
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [formRedirect, setFormRedirect] = useState(false)
-  const [responseStatus, setResponseStatus] = useState("")
   const email = useSelector(state => state.form.email)
   const status = useSelector(state => state.form.status)
   const userType = useSelector(state => state.form.userType)
@@ -66,7 +65,7 @@ export default function HeroSection() {
 
       dispatch({
         type: "FORM::SET_STATUS",
-        payload: responseStatus,
+        payload: response.data.status,
       })
       setFormRedirect(true)
 
