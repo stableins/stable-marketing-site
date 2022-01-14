@@ -39,7 +39,6 @@ export default function ServiceSection() {
         zipcodeInputValue,
         dropdownInputValue
       )
-      console.log(response.data.statusCode)
       if (response.data.statusCode === 200) {
         setModal(false)
         setShowConfirmation(true)
