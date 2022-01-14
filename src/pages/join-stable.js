@@ -135,14 +135,15 @@ export default function individualFleetForm() {
           userType: userType,
         }
       )
+      const responseBody = JSON.parse(response.data.body)
       dispatch({
         type: "FORM::SET_STATUS",
-        payload: response.data.status,
+        payload: responseBody.status,
       })
 
       dispatch({
         type: "FORM::SET_USER_TYPE",
-        payload: response.data.userType,
+        payload: responseBody.userType,
       })
     } catch (e) {
       console.log(e)
@@ -297,7 +298,7 @@ export default function individualFleetForm() {
           {status === "Email Address Collected" && !driverReport && (
             <div className="join-stable-wrapper">
               <div className="form">
-                <Form onSubmit={handleSubmit}>
+                <Form onSubmit={handleAdditionalInfoSubmit}>
                   <Form.Label>
                     <p className="text">
                       <span className="bold">Tell us more about you.</span>{" "}

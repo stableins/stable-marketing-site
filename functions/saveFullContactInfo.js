@@ -104,9 +104,11 @@ exports.handler = async (event, context, callback) => {
   } finally {
     return {
       statusCode,
-      status,
-      email,
-      userType,
+      body: JSON.stringify({
+        status,
+        email,
+        userType,
+      }),
     }
   }
 }
