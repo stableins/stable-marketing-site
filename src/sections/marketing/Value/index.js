@@ -41,7 +41,7 @@ const FeatureSection = ({ ...rest }) => {
         }
       )
 
-        const responseBody = JSON.parse(response.data.body)
+      const responseBody = JSON.parse(response.data)
 
       if (responseBody.userType) {
         dispatch({

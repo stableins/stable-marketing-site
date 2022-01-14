@@ -31,7 +31,6 @@ exports.handler = async function (event, context, callback) {
     }
   } catch (e) {
     for (const error of e.response.data.errors) {
-      console.log(error)
     }
     return {
       statusCode: 500,

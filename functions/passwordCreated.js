@@ -44,6 +44,7 @@ exports.handler = async (event, context, callback) => {
   } catch (e) {
     statusCode = 500
     status = e.message
+    console.error(e)
   } finally {
     await client.close()
   }

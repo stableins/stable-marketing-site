@@ -135,7 +135,7 @@ export default function individualFleetForm() {
           userType: userType,
         }
       )
-      const responseBody = JSON.parse(response.data.body)
+      const responseBody = JSON.parse(response.data)
       dispatch({
         type: "FORM::SET_STATUS",
         payload: responseBody.status,
