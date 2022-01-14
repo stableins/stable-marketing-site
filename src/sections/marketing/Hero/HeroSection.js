@@ -53,7 +53,7 @@ export default function HeroSection() {
 
       console.log(response)
 
-      if (responseBody.userType) {
+      if (response.data.userType) {
         dispatch({
           type: "FORM::SET_USER_TYPE",
           payload: response.data.userType,

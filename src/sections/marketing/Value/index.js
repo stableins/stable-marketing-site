@@ -41,17 +41,15 @@ const FeatureSection = ({ ...rest }) => {
         }
       )
 
-      const responseBody = JSON.parse(response.data)
-
-      if (responseBody.userType) {
+      if (response.data.userType) {
         dispatch({
           type: "FORM::SET_USER_TYPE",
-          payload: responseBody.userType,
+          payload: response.data.userType,
         })
       }
       dispatch({
         type: "FORM::SET_STATUS",
-        payload: responseBody.status,
+        payload: response.data.status,
       })
 
       setFormRedirect(true)
