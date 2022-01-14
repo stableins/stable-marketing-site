@@ -636,6 +636,7 @@ export default function individualFleetForm() {
                           type: "FORM::SET_STATUS",
                           payload: "createPassword",
                         })
+                        setDropdownInputValue1(null)
                       }
                       className="button"
                       variant="primary"
