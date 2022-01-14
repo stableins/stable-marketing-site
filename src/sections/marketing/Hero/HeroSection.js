@@ -54,7 +54,8 @@ export default function HeroSection() {
           email: emailInputValue,
         }
       )
-      setResponseStatus(response.data.status)
+
+      console.log(response);
 
       if (response.data.userType) {
         dispatch({
