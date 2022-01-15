@@ -40,16 +40,25 @@ exports.handler = async (event, context, callback) => {
       }
     )
 
-    await axios.put("https://api.sendgrid.com/v3/marketing/contacts", {
-      contacts: [
-        {
-          email: email,
-          custom_fields: {
-            w1_T: status,
+    await axios.put(
+      "https://api.sendgrid.com/v3/marketing/contacts",
+      {
+        contacts: [
+          {
+            email: email,
+            custom_fields: {
+              w1_T: status,
+            },
           },
+        ],
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
+          "Content-Type": "application/json",
         },
-      ],
-    })
+      }
+    )
   } catch (e) {
     statusCode = 500
     status = e.message
