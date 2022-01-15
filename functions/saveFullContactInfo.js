@@ -57,14 +57,18 @@ exports.handler = async (event, context, callback) => {
       if (user.status !== "Email Address Collected") {
         status = user.status
       }
-      user.sessionInfo.push(sessionInfo)
+      if (user.sessionInfo && sessionInfo) {
+        user.sessionInfo.push(sessionInfo)
+      } else if (sessionInfo) {
+        user.sessionInfo = [sessionInfo] 
+      }
       await users.updateOne(
         { _id: user._id },
         {
           $set: {
             zip: zip,
             name: name,
-            sessionInfo: sessionInfo,
+            sessionInfo: user.sessionInfo,
             status: status,
             userType: userType,
           },

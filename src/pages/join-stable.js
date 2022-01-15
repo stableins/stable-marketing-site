@@ -135,6 +135,12 @@ export default function individualFleetForm() {
           userType: userType,
         }
       )
+
+      dispatch({
+        type: "FORM::SET_EMAIL",
+        payload: response.data.email,
+      })
+
       dispatch({
         type: "FORM::SET_STATUS",
         payload: response.data.status,
@@ -146,6 +152,30 @@ export default function individualFleetForm() {
       })
     } catch (e) {
       console.log(e)
+    }
+  }
+
+  async function handlePasswordSubmit(event) {
+    event.preventDefault()
+
+    if (passwordConfirmInputValue === passwordInputValue) {
+      try {
+        const response = await axios.post(
+          "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/passwordCreated",
+          {
+            email: email,
+            password: passwordInputValue,
+            confirmPassword: passwordConfirmInputValue,
+          }
+        )
+
+        dispatch({
+          type: "FORM::SET_STATUS",
+          payload: response.data.status,
+        })
+      } catch (e) {
+        console.log(e)
+      }
     }
   }
 
@@ -510,12 +540,25 @@ export default function individualFleetForm() {
                     options={{
                       pluginKey: "017aac27-2893-ab5b-bc83-c27a83233bae",
                       linkItems: ["uber", "lyft"],
-                      apiHost: "https://api-sandbox.argyle.io/v1",
+                      apiHost: "https://api.argyle.io/v1",
                       customizationId: "38XAT8YO",
                       showCategories: false,
                       showSearch: false,
-                      onUserCreated: async params => {
-                        setArgyleLinked(true)
+                      onAccountCreated: async ({ accountId, userId }) => {
+                        try {
+                          const response = await axios.post(
+                            "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/linkArgyleAccount",
+                            {
+                              email: email,
+                              argyleUserId: userId,
+                              argyleAccountId: accountId,
+                            }
+                          )
+
+                          setArgyleLinked(true)
+                        } catch (e) {
+                          console.log(e)
+                        }
                       },
                     }}
                   >
@@ -529,7 +572,7 @@ export default function individualFleetForm() {
                         onClick={() => {
                           dispatch({
                             type: "FORM::SET_STATUS",
-                            payload: "createPassword",
+                            payload: "Argyle Authenticated",
                           })
                           setDropdownInputValue1(null)
                         }}
@@ -561,7 +604,6 @@ export default function individualFleetForm() {
 
                   <PopupButton
                     className="button"
-                    onClick={() => {}}
                     text="Let's Connect!"
                     url="https://calendly.com/stableins_john/fleetinsurance"
                   />
@@ -569,10 +611,10 @@ export default function individualFleetForm() {
               </div>
             )}
 
-          {status === "createPassword" && (
+          {status === "Argyle Authenticated" && (
             <div className="join-stable-wrapper">
               <div className="form">
-                <Form onSubmit={handleSubmit}>
+                <Form onSubmit={handlePasswordSubmit}>
                   <Form.Group className="mb-3">
                     <Form.Label>
                       <p className="text">
@@ -619,7 +661,7 @@ export default function individualFleetForm() {
             </div>
           )}
 
-          {status === "done" && (
+          {status === "Argyle Authenticated and Account Created" && (
             <div className="join-stable-wrapper">
               <div className="form">
                 <Form onSubmit={handleSubmit}>
