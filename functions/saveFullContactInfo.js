@@ -2,7 +2,7 @@ const { MongoClient } = require("mongodb")
 const axios = require("axios")
 
 exports.handler = async (event, context, callback) => {
-  const { email, zip, name, userType } = JSON.parse(event.body)
+  const { email, zip, name, userType, sessionInfo} = JSON.parse(event.body)
   const nameSplit = name.split(" ")
   let statusCode = 200
   let status = "Email Address & Additional Info"
