@@ -180,12 +180,22 @@ const FeatureSection = ({ ...rest }) => {
                                 <Link to="/join-stable">
                                   <button
                                     className="button"
-                                    onClick={() =>
+                                    onClick={() => {
                                       dispatch({
                                         type: "FORM::SET_STATUS",
                                         payload: "",
                                       })
-                                    }
+
+                                      dispatch({
+                                        type: "FORM::SET_EMAIL",
+                                        payload: null,
+                                      })
+
+                                      dispatch({
+                                        type: "FORM::SET_DRIVER_REPORT",
+                                        payload: false,
+                                      })
+                                    }}
                                   >
                                     Get Early Access &nbsp;
                                     <i id="i" class="fas fa-chevron-right"></i>
@@ -289,12 +299,22 @@ const FeatureSection = ({ ...rest }) => {
                               <Link to="/join-stable">
                                 <button
                                   className="button"
-                                  onClick={() =>
+                                  onClick={() => {
                                     dispatch({
                                       type: "FORM::SET_STATUS",
                                       payload: "",
                                     })
-                                  }
+
+                                    dispatch({
+                                      type: "FORM::SET_EMAIL",
+                                      payload: null,
+                                    })
+
+                                    dispatch({
+                                      type: "FORM::SET_DRIVER_REPORT",
+                                      payload: false,
+                                    })
+                                  }}
                                 >
                                   Get Early Access &nbsp;
                                   <i id="i" class="fas fa-chevron-right"></i>

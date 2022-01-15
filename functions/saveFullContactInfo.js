@@ -2,7 +2,7 @@ const { MongoClient } = require("mongodb")
 const axios = require("axios")
 
 exports.handler = async (event, context, callback) => {
-  const { email, zip, name, userType, sessionInfo} = JSON.parse(event.body)
+  const { email, zipcode, name, userType, sessionInfo} = JSON.parse(event.body)
   const nameSplit = name.split(" ")
   let statusCode = 200
   let status = "Email Address & Additional Info"
@@ -27,7 +27,7 @@ exports.handler = async (event, context, callback) => {
       }
       await users.insertOne({
         email: email,
-        zip: zip,
+        zipcode: zipcode,
         name: name,
         sessionInfo: userSessionInfo,
         status: status,
@@ -40,7 +40,7 @@ exports.handler = async (event, context, callback) => {
           contacts: [
             {
               email: email,
-              postal_code: zip,
+              postal_code: zipcode,
               first_name: nameSplit[0],
               last_name: nameSplit[nameSplit.length - 1],
               custom_fields: {
@@ -67,7 +67,7 @@ exports.handler = async (event, context, callback) => {
         { _id: user._id },
         {
           $set: {
-            zip: zip,
+            zipcode: zipcode,
             name: name,
             status: status,
             userType: userType,
@@ -92,7 +92,7 @@ exports.handler = async (event, context, callback) => {
           contacts: [
             {
               email: email,
-              postal_code: zip,
+              postal_code: zipcode,
               first_name: nameSplit[0],
               last_name: nameSplit[nameSplit.length - 1],
               custom_fields: {
