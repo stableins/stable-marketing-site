@@ -17,13 +17,18 @@ exports.handler = async (event, context, callback) => {
     await client.connect()
     const database = client.db("marketing")
     const users = database.collection("users")
+    const userSessionInfo = []
+
+    if (sessionInfo) {
+      userSessionInfo.push(sessionInfo)
+    }
 
     const user = await users.findOne({ email: email })
     if (!user) {
       await users.insertOne({
         email: email,
         status: status,
-        sessionInfo: [sessionInfo],
+        sessionInfo: userSessionInfo,
       })
 
       await axios.put(
@@ -48,11 +53,16 @@ exports.handler = async (event, context, callback) => {
     } else {
       userType = user.userType
       status = user.status
-      user.sessionInfo.push(sessionInfo)
-      await users.updateOne(
-        { _id: user._id },
-        { $set: { sessionInfo: user.sessionInfo } }
-      )
+      if (sessionInfo) {
+        await users.updateOne(
+          { _id: user._id },
+          {
+            $push: {
+              sessionInfo: sessionInfo,
+            },
+          }
+        )
+      }
     }
   } catch (e) {
     statusCode = 500
