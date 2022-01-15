@@ -1,3 +1,6 @@
+const { MongoClient } = require("mongodb")
+const axios = require("axios")
+
 exports.handler = async (event, context, callback) => {
   const { email, argyleUserId, argyleAccountId } = JSON.parse(event.body)
   let status = "Argyle Authenticated"
