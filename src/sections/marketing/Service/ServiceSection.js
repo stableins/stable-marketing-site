@@ -7,7 +7,7 @@ import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import CounterBlock from "../../../sections/about/Feature/Components/CounterBlock"
 import Slide from "react-reveal/Slide"
 import Intake from "../../../api/intake"
-import { Link } from '@reach/router'
+import { Link } from "@reach/router"
 import { useDispatch } from "react-redux"
 import CountUp from "react-countup"
 import VisibilitySensor from "react-visibility-sensor"
@@ -93,12 +93,17 @@ export default function ServiceSection() {
                           </p>
                           <Link to="/join-stable">
                             <button
-                              onClick={() =>
+                              onClick={() => {
                                 dispatch({
-                                  type: "FORM::SET_STATUS",
-                                  payload: "allDataForm",
+                                  type: "FORM::SET_DRIVER_REPORT",
+                                  payload: false,
                                 })
-                              }
+
+                                dispatch({
+                                  type: "FORM::SET_CALENDLY_SCHEDULED",
+                                  payload: false,
+                                })
+                              }}
                             >
                               Join Now <i class="fas fa-chevron-right"></i>
                             </button>
