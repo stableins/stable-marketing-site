@@ -539,9 +539,9 @@ export default function individualFleetForm() {
                     className="button"
                     open={true}
                     options={{
-                      pluginKey: "017aac27-2893-ab5b-bc83-c27a83233bae",
+                      pluginKey: "017aac27-2894-ac65-9c91-f956858ad649",
                       linkItems: ["uber", "lyft"],
-                      apiHost: "https://api-sandbox.argyle.io/v1",
+                      apiHost: "https://sandbox.argyle.io/v1",
                       customizationId: "38XAT8YO",
                       showCategories: false,
                       showSearch: false,

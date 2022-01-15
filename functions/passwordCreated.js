@@ -1,3 +1,4 @@
+const { MongoClient } = require("mongodb")
 const axios = require("axios")
 
 exports.handler = async (event, context, callback) => {
@@ -6,8 +7,8 @@ exports.handler = async (event, context, callback) => {
     return {
       statusCode: 400,
       body: JSON.stringify({
-        message: 'Passwords must match'
-      })
+        message: "Passwords must match",
+      }),
     }
   }
   let status = "Argyle Authenticated and Account Created"
