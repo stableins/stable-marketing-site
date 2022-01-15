@@ -23,7 +23,7 @@ export default function User(state = initialState, action) {
     case "FORM::SET_CALENDLY_SCHEDULED":
       return {
         ...state,
-        status: action.payload,
+        calendlyScheduled: action.payload,
       }
 
     case "FORM::SET_DRIVER_REPORT":
