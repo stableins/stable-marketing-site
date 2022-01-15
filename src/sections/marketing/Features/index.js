@@ -195,6 +195,11 @@ const FeatureSection = ({ ...rest }) => {
                                         type: "FORM::SET_DRIVER_REPORT",
                                         payload: false,
                                       })
+
+                                      dispatch({
+                                        type: "FORM::SET_CALENDLY_SCHEDULED",
+                                        payload: false,
+                                      })
                                     }}
                                   >
                                     Get Early Access &nbsp;
@@ -312,6 +317,11 @@ const FeatureSection = ({ ...rest }) => {
 
                                     dispatch({
                                       type: "FORM::SET_DRIVER_REPORT",
+                                      payload: false,
+                                    })
+
+                                    dispatch({
+                                      type: "FORM::SET_CALENDLY_SCHEDULED",
                                       payload: false,
                                     })
                                   }}
