@@ -63,6 +63,11 @@ const FeatureSection = ({ ...rest }) => {
         type: "FORM::SET_DRIVER_REPORT",
         payload: true,
       })
+
+      dispatch({
+        type: "FORM::SET_CALENDLY_SCHEDULED",
+        payload: false,
+      })
     } catch (e) {
       alert(e)
     }

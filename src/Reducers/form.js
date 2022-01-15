@@ -1,9 +1,9 @@
 const initialState = {
-  email: "email@email.com",
-  status: "Email Address & Additional Info",
+  email: "",
+  status: "",
   driverReport: false,
-  userType: "Rideshare Fleet",
-  calendlyScheduled: true,
+  userType: "",
+  calendlyScheduled: false,
 }
 
 export default function User(state = initialState, action) {

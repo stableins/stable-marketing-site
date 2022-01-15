@@ -75,6 +75,11 @@ export default function HeroSection() {
         type: "FORM::SET_DRIVER_REPORT",
         payload: false,
       })
+
+      dispatch({
+        type: "FORM::SET_CALENDLY_SCHEDULED",
+        payload: false,
+      })
     } catch (e) {
       alert(e)
     }
