@@ -20,11 +20,16 @@ exports.handler = async (event, context, callback) => {
 
     const user = await users.findOne({ email: email })
     if (!user) {
+      const userSessionInfo = []
+
+      if (sessionInfo) {
+        userSessionInfo.push(sessionInfo)
+      }
       await users.insertOne({
         email: email,
         zip: zip,
         name: name,
-        sessionInfo: [sessionInfo],
+        sessionInfo: userSessionInfo,
         status: status,
         userType: userType,
       })
@@ -57,23 +62,29 @@ exports.handler = async (event, context, callback) => {
       if (user.status !== "Email Address Collected") {
         status = user.status
       }
-      if (user.sessionInfo && sessionInfo) {
-        user.sessionInfo.push(sessionInfo)
-      } else if (sessionInfo) {
-        user.sessionInfo = [sessionInfo] 
-      }
+
       await users.updateOne(
         { _id: user._id },
         {
           $set: {
             zip: zip,
             name: name,
-            sessionInfo: user.sessionInfo,
             status: status,
             userType: userType,
           },
         }
       )
+
+      if (sessionInfo) {
+        await users.updateOne(
+          { _id: user._id },
+          {
+            $push: {
+              sessionInfo: sessionInfo,
+            },
+          }
+        )
+      }
 
       await axios.put(
         "https://api.sendgrid.com/v3/marketing/contacts",
