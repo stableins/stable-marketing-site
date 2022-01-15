@@ -51,8 +51,6 @@ export default function HeroSection() {
         }
       )
 
-      console.log(response)
-
       if (response.data.userType) {
         dispatch({
           type: "FORM::SET_USER_TYPE",

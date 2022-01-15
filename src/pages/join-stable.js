@@ -559,7 +559,6 @@ export default function individualFleetForm() {
                       showSearch: false,
                       onAccountCreated: async ({ accountId, userId }) => {
                         try {
-                          console.log(accountId)
                           const response = await axios.post(
                             "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/linkArgyleAccount",
                             {
@@ -568,7 +567,6 @@ export default function individualFleetForm() {
                               argyleAccountId: accountId,
                             }
                           )
-                          console.log(response)
                           setArgyleLinked(true)
                         } catch (e) {
                           console.log(e)
