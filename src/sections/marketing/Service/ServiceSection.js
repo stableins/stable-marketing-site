@@ -95,6 +95,16 @@ export default function ServiceSection() {
                             <button
                               onClick={() => {
                                 dispatch({
+                                  type: "FORM::SET_STATUS",
+                                  payload: "",
+                                })
+
+                                dispatch({
+                                  type: "FORM::SET_EMAIL",
+                                  payload: null,
+                                })
+
+                                dispatch({
                                   type: "FORM::SET_DRIVER_REPORT",
                                   payload: false,
                                 })
