@@ -38,16 +38,6 @@ export default function individualFleetForm() {
   async function handleSubmit(event) {
     event.preventDefault()
     try {
-      // const response = await Intake.submit(
-      //   nameInputValue,
-      //   zipcodeInputValue
-      //   // sessionInfo, prospectState, brokerageId, identifyingId
-      // )
-      // console.log(response.data.statusCode)
-      // if (response.data.statusCode === 200) {
-      //   setModal(false)
-      //   setShowConfirmation(true)
-      // }
     } catch (e) {
       alert(e)
     }
