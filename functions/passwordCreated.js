@@ -1,7 +1,15 @@
 const axios = require("axios")
 
 exports.handler = async (event, context, callback) => {
-  const { email, password } = JSON.parse(event.body)
+  const { email, password, confirmPassword } = JSON.parse(event.body)
+  if (password !== confirmPassword) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({
+        message: 'Passwords must match'
+      })
+    }
+  }
   let status = "Argyle Authenticated and Account Created"
   let statusCode = 200
 
