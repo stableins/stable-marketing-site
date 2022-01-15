@@ -1,8 +1,9 @@
 const initialState = {
-  email: null,
-  status: "",
+  email: "email@email.com",
+  status: "Email Address & Additional Info",
   driverReport: false,
-  userType: null,
+  userType: "Rideshare Fleet",
+  calendlyScheduled: true,
 }
 
 export default function User(state = initialState, action) {
@@ -14,6 +15,12 @@ export default function User(state = initialState, action) {
       }
 
     case "FORM::SET_STATUS":
+      return {
+        ...state,
+        status: action.payload,
+      }
+
+    case "FORM::SET_CALENDLY_SCHEDULED":
       return {
         ...state,
         status: action.payload,

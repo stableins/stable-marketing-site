@@ -51,6 +51,7 @@ export default function individualFleetForm() {
   const status = useSelector(state => state.form.status)
   const userType = useSelector(state => state.form.userType)
   const driverReport = useSelector(state => state.form.driverReport)
+  const calendlyScheduled = useSelector(state => state.form.calendlyScheduled)
   const [resetSelect1, setResetSelect1] = useState(false)
   const [resetSelect2, setResetSelect2] = useState(false)
   const [passwordMismatch, setPasswordMismatch] = useState(false)
@@ -58,6 +59,17 @@ export default function individualFleetForm() {
   useEffect(() => {
     setHasMounted(true)
   }, [resetSelect1, resetSelect2])
+
+  useEffect(() => {
+    window.addEventListener("message", function (e) {
+      if (e.data.event === "calendly.event_scheduled") {
+        dispatch({
+          type: "FORM::SET_CALENDLY_SCHEDULED",
+          payload: true,
+        })
+      }
+    })
+  }, [])
 
   if (!hasMounted) {
     return null
@@ -591,7 +603,8 @@ export default function individualFleetForm() {
             )}
 
           {status === "Email Address & Additional Info" &&
-            userType !== "Rideshare Driver" && (
+            userType !== "Rideshare Driver" &&
+            !calendlyScheduled && (
               <div className="join-stable-wrapper">
                 <div className="form">
                   <p className="text">
@@ -675,6 +688,48 @@ export default function individualFleetForm() {
                         You can access your daily updated driver report anytime
                         by logging in to your account or choose to have it sent
                         to you by email or text (coming soon).
+                      </p>
+                    </Form.Label>
+                    {/* <Form.Control
+                      required={true}
+                      className="input"
+                      onChange={e => setNameInputValue(e.target.value)}
+                      // required
+                      type="text"
+                      placeholder="Password"
+                    /> */}
+                  </Form.Group>
+
+                  {/* <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Control
+                      required={true}
+                      className="input"
+                      onChange={e => setZipcodeInputValue(e.target.value)}
+                      // required
+                      placeholder="Verify Password"
+                    />
+                  </Form.Group> */}
+                  <Link to="/">
+                    <button className="button" variant="primary" type="submit">
+                      <span>Back to Stable Home &nbsp;</span>
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </Link>
+                </Form>
+              </div>
+            </div>
+          )}
+
+          {status === "Email Address & Additional Info" && calendlyScheduled && (
+            <div className="join-stable-wrapper">
+              <div className="form">
+                <Form onSubmit={handleSubmit}>
+                  <Form.Group className="mb-3">
+                    <Form.Label>
+                      <p className="text">
+                        <span className="bold">
+                          We'll send you an email so you can add this to your calendar. We look forward to speaking with you!
+                        </span>{" "}
                       </p>
                     </Form.Label>
                     {/* <Form.Control
