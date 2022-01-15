@@ -61,15 +61,11 @@ export default function HeroSection() {
       }
 
       dispatch({
-        type: "FORM::SET_EMAIL",
-        payload: emailInputValue,
-      })
-      dispatch({
         type: "FORM::SET_STATUS",
         payload: response.data.status,
       })
       setFormRedirect(true)
-      
+
       dispatch({
         type: "FORM::SET_EMAIL",
         payload: emailInputValue,
