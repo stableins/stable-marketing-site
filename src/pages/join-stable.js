@@ -12,6 +12,7 @@ import HeaderButton from "../sections/marketing/Header"
 import Intake from "../api/intake"
 import "./join-stable.scss"
 import { useSelector } from "react-redux"
+import Lottie from "react-lottie"
 
 const header = {
   headerClasses:
@@ -538,14 +539,15 @@ export default function individualFleetForm() {
                     className="button"
                     open={true}
                     options={{
-                      pluginKey: "017aac27-2894-ac65-9c91-f956858ad649",
+                      pluginKey: "017aac27-2893-ab5b-bc83-c27a83233bae",
                       linkItems: ["uber", "lyft"],
-                      apiHost: "https://api.argyle.io/v1",
+                      apiHost: "https://api-sandbox.argyle.io/v1",
                       customizationId: "38XAT8YO",
                       showCategories: false,
                       showSearch: false,
                       onAccountCreated: async ({ accountId, userId }) => {
                         try {
+                          console.log(accountId)
                           const response = await axios.post(
                             "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/linkArgyleAccount",
                             {
@@ -554,7 +556,7 @@ export default function individualFleetForm() {
                               argyleAccountId: accountId,
                             }
                           )
-
+                          console.log(response)
                           setArgyleLinked(true)
                         } catch (e) {
                           console.log(e)
