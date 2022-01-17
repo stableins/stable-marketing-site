@@ -218,6 +218,10 @@ export default function HeroSection() {
                       email: emailInputValue,
                     }
                   )
+                  dispatch({
+                    type: "FORM::SET_STATUS",
+                    payload: "",
+                  })
                   setFormRedirect(true)
                 }}
                 className="button"
