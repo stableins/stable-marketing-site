@@ -2,14 +2,13 @@ const { MongoClient } = require("mongodb")
 const axios = require("axios")
 
 exports.handler = async (event, context, callback) => {
+  const { email } = JSON.parse(event.body)
   try {
-    const { email } = JSON.parse(event.body)
     const status = "Email Address Collected"
 
     await client.connect()
     const database = client.db("marketing")
     const users = database.collection("users")
-    const userSessionInfo = []
 
     const user = await users.findOne({ email: email })
     if (!user) {

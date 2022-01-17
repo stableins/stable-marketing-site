@@ -31,6 +31,7 @@ const FeatureSection = ({ ...rest }) => {
   const [statusResponse, setStatusResponse] = useState("")
   const [emailInputValue, setEmailInputValue] = useState("")
   const [spinner, setSpinner] = useState(false)
+  console.log(emailInputValue);
 
   async function handleEmailSubmit(event) {
     event.preventDefault()
@@ -201,7 +202,7 @@ const FeatureSection = ({ ...rest }) => {
             </Form.Group>
             <Button
               onClick={async () => {
-                const response = await axios.post(
+                const response = await axios.put(
                   "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/resetContact",
                   {
                     email: emailInputValue,
