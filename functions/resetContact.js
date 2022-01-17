@@ -3,15 +3,15 @@ const axios = require("axios")
 
 exports.handler = async (event, context, callback) => {
   try {
-    const { email } = JSON.parse(event.body);
-    const status = 'Email Address Collected';
+    const { email } = JSON.parse(event.body)
+    const status = "Email Address Collected"
 
-    await client.connect();
-    const database = client.db("marketing");
-    const users = database.collection("users");
-    const userSessionInfo = [];
+    await client.connect()
+    const database = client.db("marketing")
+    const users = database.collection("users")
+    const userSessionInfo = []
 
-    const user = await users.findOne({email: email });
+    const user = await users.findOne({ email: email })
     if (!user) {
       return {
         statusCode: 200,
@@ -19,7 +19,7 @@ exports.handler = async (event, context, callback) => {
           email,
           status,
         }),
-      };
+      }
     }
 
     await axios.put(
@@ -40,9 +40,9 @@ exports.handler = async (event, context, callback) => {
           "Content-Type": "application/json",
         },
       }
-    );
+    )
 
-    await users.updateOne({ _id: user._id }, { $set: { status: status }});
+    await users.updateOne({ _id: user._id }, { $set: { status: status } })
 
     return {
       status: 200,
@@ -50,7 +50,7 @@ exports.handler = async (event, context, callback) => {
         email,
         status,
       }),
-    };
+    }
   } catch (e) {
     return {
       statusCode: 500,
@@ -58,6 +58,6 @@ exports.handler = async (event, context, callback) => {
         email: email,
         status: e.message,
       }),
-    };
+    }
   }
-};
+}
