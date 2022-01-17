@@ -7,6 +7,12 @@ exports.handler = async (event, context, callback) => {
   try {
     const status = "Email Address Collected"
 
+    const uri = process.env.MONGO_URI.replace(
+      "<password>",
+      process.env.MONGO_PASSWORD
+    )
+    const client = new MongoClient(uri)
+
     await client.connect()
     const database = client.db("marketing")
     const users = database.collection("users")
@@ -45,7 +51,7 @@ exports.handler = async (event, context, callback) => {
     await users.updateOne({ _id: user._id }, { $set: { status: status } })
 
     return {
-      status: 200,
+      statusCode: 200,
       body: JSON.stringify({
         email,
         status,
