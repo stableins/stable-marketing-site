@@ -36,6 +36,7 @@ exports.handler = async (event, context, callback) => {
             email: email,
             custom_fields: {
               w1_T: status,
+              w2_T: '',
             },
           },
         ],
@@ -48,7 +49,10 @@ exports.handler = async (event, context, callback) => {
       }
     )
 
-    await users.updateOne({ _id: user._id }, { $set: { status: status } })
+    await users.updateOne(
+      { _id: user._id },
+      { $set: { status: status, userType: null } }
+    )
 
     return {
       statusCode: 200,

@@ -239,10 +239,10 @@ export default function individualFleetForm() {
                       <Form.Control
                         required={true}
                         className="input"
-                        type="zipcode"
+                        type="zipode"
                         onChange={e => setZipcodeInputValue(e.target.value)}
                         // required
-                        placeholder="ZipCode"
+                        placeholder="Zip Code"
                       />
                     </Form.Group>
                     <h4>I am a...</h4>
@@ -373,7 +373,7 @@ export default function individualFleetForm() {
                         type="zipcode"
                         onChange={e => setZipcodeInputValue(e.target.value)}
                         // required
-                        placeholder="ZipCode"
+                        placeholder="Zip Code"
                       />
                     </Form.Group>
                     <h4>I am a...</h4>
@@ -499,7 +499,7 @@ export default function individualFleetForm() {
                         className="input"
                         onChange={e => setZipcodeInputValue(e.target.value)}
                         // required
-                        placeholder="ZipCode"
+                        placeholder="Zip Code"
                       />
                     </Form.Group>
                     <div className="check-wrapper">
