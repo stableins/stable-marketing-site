@@ -200,7 +200,13 @@ const FeatureSection = ({ ...rest }) => {
               </Form.Label>
             </Form.Group>
             <Button
-              onClick={() => {
+              onClick={async () => {
+                const response = await axios.post(
+                  "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/resetContact",
+                  {
+                    email: emailInputValue,
+                  }
+                )
                 dispatch({
                   type: "FORM::SET_STATUS",
                   payload: "",

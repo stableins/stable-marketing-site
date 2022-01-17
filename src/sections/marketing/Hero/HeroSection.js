@@ -214,7 +214,7 @@ export default function HeroSection() {
             <Button
               onClick={async () => {
                 const response = await axios.post(
-                  "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/saveEmail",
+                  "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/resetContact",
                   {
                     email: emailInputValue,
                   }
