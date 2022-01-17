@@ -3,6 +3,7 @@ const axios = require("axios")
 
 exports.handler = async (event, context, callback) => {
   const { email } = JSON.parse(event.body)
+
   try {
     const status = "Email Address Collected"
 
@@ -51,6 +52,7 @@ exports.handler = async (event, context, callback) => {
       }),
     }
   } catch (e) {
+    console.error(e)
     return {
       statusCode: 500,
       body: JSON.stringify({
