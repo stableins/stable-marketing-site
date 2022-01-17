@@ -52,34 +52,35 @@ export default function HeroSection() {
         }
       )
 
+      if (response.data.userType) {
+        dispatch({
+          type: "FORM::SET_USER_TYPE",
+          payload: response.data.userType,
+        })
+      }
+      dispatch({
+        type: "FORM::SET_STATUS",
+        payload: response.data.status,
+      })
+
+      dispatch({
+        type: "FORM::SET_EMAIL",
+        payload: emailInputValue,
+      })
+
+      dispatch({
+        type: "FORM::SET_DRIVER_REPORT",
+        payload: false,
+      })
+
+      dispatch({
+        type: "FORM::SET_CALENDLY_SCHEDULED",
+        payload: false,
+      })
+
       if (response.data.status !== "Email Address Collected") {
         setShowModal(true)
       } else {
-        if (response.data.userType) {
-          dispatch({
-            type: "FORM::SET_USER_TYPE",
-            payload: response.data.userType,
-          })
-        }
-        dispatch({
-          type: "FORM::SET_STATUS",
-          payload: response.data.status,
-        })
-
-        dispatch({
-          type: "FORM::SET_EMAIL",
-          payload: emailInputValue,
-        })
-
-        dispatch({
-          type: "FORM::SET_DRIVER_REPORT",
-          payload: false,
-        })
-
-        dispatch({
-          type: "FORM::SET_CALENDLY_SCHEDULED",
-          payload: false,
-        })
         setFormRedirect(true)
       }
     } catch (e) {
@@ -218,6 +219,12 @@ export default function HeroSection() {
                       email: emailInputValue,
                     }
                   )
+
+                  dispatch({
+                    type: "FORM::SET_USER_TYPE",
+                    payload: null,
+                  })
+
                   dispatch({
                     type: "FORM::SET_STATUS",
                     payload: response.data.status,
@@ -228,15 +235,6 @@ export default function HeroSection() {
                     payload: emailInputValue,
                   })
 
-                  dispatch({
-                    type: "FORM::SET_DRIVER_REPORT",
-                    payload: false,
-                  })
-
-                  dispatch({
-                    type: "FORM::SET_CALENDLY_SCHEDULED",
-                    payload: false,
-                  })
                   setFormRedirect(true)
                 }}
                 className="button"
@@ -249,6 +247,7 @@ export default function HeroSection() {
                 className="button"
                 onClick={() => {
                   setShowModal(false)
+                  setFormRedirect(true)
                 }}
                 variant="primary"
                 type="submit"
