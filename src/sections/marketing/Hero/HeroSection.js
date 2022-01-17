@@ -203,7 +203,11 @@ export default function HeroSection() {
             </Modal.Title>
           </Modal.Header>
           <div style={{ padding: "20px" }}>
-            <Form>
+            <Form
+              onSubmit={() => {
+                event.preventDefault()
+              }}
+            >
               <Form.Group className="mb-3">
                 <Form.Label>
                   It looks like you've already submitted some information to us.

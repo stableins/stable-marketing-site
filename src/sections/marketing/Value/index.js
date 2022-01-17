@@ -31,10 +31,11 @@ const FeatureSection = ({ ...rest }) => {
   const [statusResponse, setStatusResponse] = useState("")
   const [emailInputValue, setEmailInputValue] = useState("")
   const [spinner, setSpinner] = useState(false)
-  console.log(emailInputValue);
+  console.log(emailInputValue)
 
   async function handleEmailSubmit(event) {
     event.preventDefault()
+
     try {
       const response = await axios.post(
         "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/saveEmail",
@@ -43,39 +44,39 @@ const FeatureSection = ({ ...rest }) => {
         }
       )
 
+      if (response.data.userType) {
+        dispatch({
+          type: "FORM::SET_USER_TYPE",
+          payload: response.data.userType,
+        })
+      }
+      dispatch({
+        type: "FORM::SET_STATUS",
+        payload: response.data.status,
+      })
+
+      dispatch({
+        type: "FORM::SET_EMAIL",
+        payload: emailInputValue,
+      })
+
+      dispatch({
+        type: "FORM::SET_DRIVER_REPORT",
+        payload: false,
+      })
+
+      dispatch({
+        type: "FORM::SET_CALENDLY_SCHEDULED",
+        payload: false,
+      })
+
       if (response.data.status !== "Email Address Collected") {
         setShowModal(true)
       } else {
-        if (response.data.userType) {
-          dispatch({
-            type: "FORM::SET_USER_TYPE",
-            payload: response.data.userType,
-          })
-        }
-        dispatch({
-          type: "FORM::SET_STATUS",
-          payload: response.data.status,
-        })
-
-        dispatch({
-          type: "FORM::SET_EMAIL",
-          payload: emailInputValue,
-        })
-
-        dispatch({
-          type: "FORM::SET_DRIVER_REPORT",
-          payload: true,
-        })
-
-        dispatch({
-          type: "FORM::SET_CALENDLY_SCHEDULED",
-          payload: false,
-        })
-
         setFormRedirect(true)
       }
     } catch (e) {
-      alert(e)
+      console.log(e)
     }
   }
 
@@ -192,7 +193,11 @@ const FeatureSection = ({ ...rest }) => {
           </Modal.Title>
         </Modal.Header>
         <div style={{ padding: "20px" }}>
-          <Form>
+          <Form
+            onSubmit={() => {
+              event.preventDefault()
+            }}
+          >
             <Form.Group className="mb-3">
               <Form.Label>
                 It looks like you've already submitted some information to us.
@@ -202,27 +207,41 @@ const FeatureSection = ({ ...rest }) => {
             </Form.Group>
             <Button
               onClick={async () => {
-                const response = await axios.put(
+                const response = await axios.post(
                   "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/resetContact",
                   {
                     email: emailInputValue,
                   }
                 )
+
+                dispatch({
+                  type: "FORM::SET_USER_TYPE",
+                  payload: null,
+                })
+
                 dispatch({
                   type: "FORM::SET_STATUS",
-                  payload: "",
+                  payload: response.data.status,
                 })
+
+                dispatch({
+                  type: "FORM::SET_EMAIL",
+                  payload: emailInputValue,
+                })
+
                 setFormRedirect(true)
               }}
+              className="button"
               variant="primary"
               type="submit"
             >
               Restart
             </Button>
             <Button
+              className="button"
               onClick={() => {
-                setFormRedirect(true)
                 setShowModal(false)
+                setFormRedirect(true)
               }}
               variant="primary"
               type="submit"
