@@ -43,6 +43,7 @@ export default function HeroSection() {
 
   async function handleEmailSubmit(event) {
     event.preventDefault()
+
     try {
       const response = await axios.post(
         "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/saveEmail",
@@ -53,38 +54,82 @@ export default function HeroSection() {
 
       if (response.data.status !== "Email Address Collected") {
         setShowModal(true)
-      }
-
-      if (response.data.userType) {
+      } else {
+        if (response.data.userType) {
+          dispatch({
+            type: "FORM::SET_USER_TYPE",
+            payload: response.data.userType,
+          })
+        }
         dispatch({
-          type: "FORM::SET_USER_TYPE",
-          payload: response.data.userType,
+          type: "FORM::SET_STATUS",
+          payload: response.data.status,
         })
+
+        dispatch({
+          type: "FORM::SET_EMAIL",
+          payload: emailInputValue,
+        })
+
+        dispatch({
+          type: "FORM::SET_DRIVER_REPORT",
+          payload: true,
+        })
+
+        dispatch({
+          type: "FORM::SET_CALENDLY_SCHEDULED",
+          payload: false,
+        })
+        setFormRedirect(true)
+
+
+      } catch (e) {
+        alert(e)
       }
-
-      dispatch({
-        type: "FORM::SET_STATUS",
-        payload: response.data.status,
-      })
-      setFormRedirect(true)
-
-      dispatch({
-        type: "FORM::SET_EMAIL",
-        payload: emailInputValue,
-      })
-
-      dispatch({
-        type: "FORM::SET_DRIVER_REPORT",
-        payload: false,
-      })
-
-      dispatch({
-        type: "FORM::SET_CALENDLY_SCHEDULED",
-        payload: false,
-      })
-    } catch (e) {
-      alert(e)
     }
+
+    // try {
+    //   const response = await axios.post(
+    //     "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/saveEmail",
+    //     {
+    //       email: emailInputValue,
+    //     }
+    //   )
+
+    //   if (response.data.status !== "Email Address Collected") {
+    //     setShowModal(true)
+    //   }
+
+    //   if (response.data.userType) {
+    //     dispatch({
+    //       type: "FORM::SET_USER_TYPE",
+    //       payload: response.data.userType,
+    //     })
+    //   }
+
+    //   dispatch({
+    //     type: "FORM::SET_STATUS",
+    //     payload: response.data.status,
+    //   })
+    //   setFormRedirect(true)
+
+    //   dispatch({
+    //     type: "FORM::SET_EMAIL",
+    //     payload: emailInputValue,
+    //   })
+
+    //   dispatch({
+    //     type: "FORM::SET_DRIVER_REPORT",
+    //     payload: false,
+    //   })
+
+    //   dispatch({
+    //     type: "FORM::SET_CALENDLY_SCHEDULED",
+    //     payload: false,
+    //   })
+    // } catch (e) {
+    //   alert(e)
+    // }
   }
 
   return (
