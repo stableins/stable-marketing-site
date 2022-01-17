@@ -190,54 +190,56 @@ export default function HeroSection() {
             </Row>
           </Container>
         </Hero>
+        <Modal
+          show={showModal}
+          onHide={() => setShowModal(false)}
+          dialogClassName="modal-9/.0w"
+          aria-labelledby="example-custom-modal-styling-title"
+        >
+          <Modal.Header>
+            <Modal.Title id="example-custom-modal-styling-title">
+              <img width={150} src={StableLogo} />
+            </Modal.Title>
+          </Modal.Header>
+          <div style={{ padding: "20px" }}>
+            <Form>
+              <Form.Group className="mb-3">
+                <Form.Label>
+                  It looks like you've already submitted some information to us.
+                  Would you like to continue the sign up process for you left
+                  off at? If not, select "Restart" below.
+                </Form.Label>
+              </Form.Group>
+              <Button
+                onClick={async () => {
+                  const response = await axios.post(
+                    "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/resetContact",
+                    {
+                      email: emailInputValue,
+                    }
+                  )
+                  setFormRedirect(true)
+                }}
+                className="button"
+                variant="primary"
+                type="submit"
+              >
+                Restart
+              </Button>
+              <Button
+                className="button"
+                onClick={() => {
+                  setShowModal(false)
+                }}
+                variant="primary"
+                type="submit"
+              >
+                Continue
+              </Button>
+            </Form>
+          </div>
+        </Modal>
       </div>
-      <Modal
-        show={showModal}
-        onHide={() => setShowModal(false)}
-        dialogClassName="modal-9/.0w"
-        aria-labelledby="example-custom-modal-styling-title"
-      >
-        <Modal.Header>
-          <Modal.Title id="example-custom-modal-styling-title">
-            <img width={150} src={StableLogo} />
-          </Modal.Title>
-        </Modal.Header>
-        <div style={{ padding: "20px" }}>
-          <Form>
-            <Form.Group className="mb-3">
-              <Form.Label>
-                It looks like you've already submitted some information to us.
-                Would you like to continue the sign up process for you left off
-                at? If not, select "Restart" below.
-              </Form.Label>
-            </Form.Group>
-            <Button
-              onClick={async () => {
-                const response = await axios.post(
-                  "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/resetContact",
-                  {
-                    email: emailInputValue,
-                  }
-                )
-              }}
-              variant="primary"
-              type="submit"
-            >
-              Restart
-            </Button>
-            <Button
-              onClick={() => {
-                setFormRedirect(true)
-                setShowModal(false)
-              }}
-              variant="primary"
-              type="submit"
-            >
-              Continue
-            </Button>
-          </Form>
-        </div>
-      </Modal>
     </Fade>
   )
 }
