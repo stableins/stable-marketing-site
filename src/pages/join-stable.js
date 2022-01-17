@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from "react"
 import { PageWrapper } from "~components/Core"
 import axios from "axios"
 import FooterOne from "../sections/marketing/FooterOne"
-import { Form, Button } from "react-bootstrap"
+import StableLogo from "../assets/image/logo/Stable-logo_site.png"
+import { Form, Button, Modal } from "react-bootstrap"
 import { Link } from "@reach/router"
 import { useDispatch } from "react-redux"
 import Fade from "react-reveal/Fade"
@@ -33,7 +34,7 @@ const header = {
 
 export default function individualFleetForm() {
   const dispatch = useDispatch()
-  const [modal, setModal] = useState(false)
+  const [showModal, setShowModal] = useState(true)
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [emailInputValue, setEmailInputValue] = useState("")
   const [argyleLinked, setArgyleLinked] = useState(false)
@@ -532,146 +533,153 @@ export default function individualFleetForm() {
 
           {status === "Email Address & Additional Info" &&
             userType === "Rideshare Driver" && (
-              <div className="join-stable-wrapper">
-                <div className="form">
-                  <p className="text">
-                    <span className="bold">
-                      To deliver better insurance and tools (like our Free
-                      Driver Report) to you, we need to connect to your
-                      rideshare account(s).
-                    </span>{" "}
-                    <br /> <br />
-                    This is done securely and you can turn off our access to
-                    your account at any time.
-                    <br /> <br />
-                    Right now, we only can connect to Uber and Lyft, but we will
-                    add access to more rideshare and delivery platforms soon.
-                  </p>
-                  <ArgyleLink
-                    className="button"
-                    open={true}
-                    options={{
-                      pluginKey: "017aac27-2894-ac65-9c91-f956858ad649",
-                      linkItems: ["uber", "lyft"],
-                      apiHost: "https://api.argyle.io/v1",
-                      customizationId: "38XAT8YO",
-                      showCategories: false,
-                      showSearch: false,
-                      onAccountCreated: async ({ accountId, userId }) => {
-                        try {
-                          const response = await axios.post(
-                            "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/linkArgyleAccount",
-                            {
-                              email: email,
-                              argyleUserId: userId,
-                              argyleAccountId: accountId,
-                            }
-                          )
-                          setArgyleLinked(true)
-                        } catch (e) {
-                          console.log(e)
-                        }
-                      },
-                    }}
-                  >
-                    Let's Connect
-                  </ArgyleLink>
-                  {argyleLinked && (
-                    <>
-                      <br />
-                      <p>Done Linking your account(s)?</p>
-                      <button
-                        onClick={() => {
-                          dispatch({
-                            type: "FORM::SET_STATUS",
-                            payload: "Argyle Authenticated",
-                          })
-                          setDropdownInputValue1(null)
-                        }}
-                        className="button"
-                        variant="primary"
-                        // type="submit"
-                      >
-                        Complete the final step &nbsp;
-                      </button>
-                    </>
-                  )}
+              <>
+                <div className="join-stable-wrapper">
+                  <div className="form">
+                    <p className="text">
+                      <span className="bold">
+                        To deliver better insurance and tools (like our Free
+                        Driver Report) to you, we need to connect to your
+                        rideshare account(s).
+                      </span>{" "}
+                      <br /> <br />
+                      This is done securely and you can turn off our access to
+                      your account at any time.
+                      <br /> <br />
+                      Right now, we only can connect to Uber and Lyft, but we
+                      will add access to more rideshare and delivery platforms
+                      soon.
+                    </p>
+                    <ArgyleLink
+                      className="button"
+                      open={true}
+                      options={{
+                        pluginKey: "017aac27-2894-ac65-9c91-f956858ad649",
+                        linkItems: ["uber", "lyft"],
+                        apiHost: "https://api.argyle.io/v1",
+                        customizationId: "38XAT8YO",
+                        showCategories: false,
+                        showSearch: false,
+                        onAccountCreated: async ({ accountId, userId }) => {
+                          try {
+                            const response = await axios.post(
+                              "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/linkArgyleAccount",
+                              {
+                                email: email,
+                                argyleUserId: userId,
+                                argyleAccountId: accountId,
+                              }
+                            )
+                            setArgyleLinked(true)
+                          } catch (e) {
+                            console.log(e)
+                          }
+                        },
+                      }}
+                    >
+                      Let's Connect
+                    </ArgyleLink>
+                    {argyleLinked && (
+                      <>
+                        <br />
+                        <p>Done Linking your account(s)?</p>
+                        <button
+                          onClick={() => {
+                            dispatch({
+                              type: "FORM::SET_STATUS",
+                              payload: "Argyle Authenticated",
+                            })
+                            setDropdownInputValue1(null)
+                          }}
+                          className="button"
+                          variant="primary"
+                          // type="submit"
+                        >
+                          Complete the final step &nbsp;
+                        </button>
+                      </>
+                    )}
+                  </div>
                 </div>
-              </div>
+              </>
             )}
 
           {status === "Email Address & Additional Info" &&
             userType !== "Rideshare Driver" &&
             !calendlyScheduled && (
-              <div className="join-stable-wrapper">
-                <div className="form">
-                  <p className="text">
-                    <span className="bold">
-                      Want to connect for a quick 15-30 minute call so we can
-                      learn more about your needs?
-                    </span>{" "}
-                    <br /> <br />
-                    We take all product suggestions seriously and would like to
-                    hear what your thoughts! Pick a time below.
-                  </p>
+              <>
+                <div className="join-stable-wrapper">
+                  <div className="form">
+                    <p className="text">
+                      <span className="bold">
+                        Want to connect for a quick 15-30 minute call so we can
+                        learn more about your needs?
+                      </span>{" "}
+                      <br /> <br />
+                      We take all product suggestions seriously and would like
+                      to hear what your thoughts! Pick a time below.
+                    </p>
 
-                  <PopupButton
-                    className="button"
-                    text="Let's Connect!"
-                    url="https://calendly.com/stableins_john/fleetinsurance"
-                  />
+                    <PopupButton
+                      className="button"
+                      text="Let's Connect!"
+                      url="https://calendly.com/stableins_john/fleetinsurance"
+                    />
+                  </div>
                 </div>
-              </div>
+              </>
             )}
 
           {status === "Argyle Authenticated" && (
-            <div className="join-stable-wrapper">
-              <div className="form">
-                <Form onSubmit={handlePasswordSubmit}>
-                  <Form.Group className="mb-3">
-                    <Form.Label>
-                      <p className="text">
-                        <span className="bold">
-                          To deliver better insurance and tools (like our Free
-                          Driver Report) to you, we need to connect to your
-                          rideshare account(s).
-                        </span>{" "}
-                        <br /> <br />
-                        In the meantime let's get an account set up for you so
-                        you can come back and check out your updates as often as
-                        you like.
-                      </p>
-                    </Form.Label>
-                    <Form.Control
-                      required={true}
-                      className="input"
-                      onChange={e => setPasswordInputValue(e.target.value)}
-                      // required
-                      type="password"
-                      placeholder="Password"
-                    />
-                  </Form.Group>
+            <>
+              <div className="join-stable-wrapper">
+                <div className="form">
+                  <Form onSubmit={handlePasswordSubmit}>
+                    <Form.Group className="mb-3">
+                      <Form.Label>
+                        <p className="text">
+                          <span className="bold">
+                            To deliver better insurance and tools (like our Free
+                            Driver Report) to you, we need to connect to your
+                            rideshare account(s).
+                          </span>{" "}
+                          <br /> <br />
+                          In the meantime let's get an account set up for you so
+                          you can come back and check out your updates as often
+                          as you like.
+                        </p>
+                      </Form.Label>
+                      <Form.Control
+                        required={true}
+                        className="input"
+                        onChange={e => setPasswordInputValue(e.target.value)}
+                        // required
+                        type="password"
+                        placeholder="Password"
+                      />
+                    </Form.Group>
 
-                  <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control
-                      required={true}
-                      className="input"
-                      onChange={e =>
-                        setPasswordConfirmInputValue(e.target.value)
-                      }
-                      // required
-                      placeholder="Verify Password"
-                      type="password"
-                    />
-                  </Form.Group>
-                  {passwordMismatch && <p>Passwords do not match</p>}
-                  <button className="button" variant="primary" type="submit">
-                    <span>Register Me! &nbsp;</span>
-                    <i class="fas fa-chevron-right"></i>
-                  </button>
-                </Form>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                      <Form.Control
+                        required={true}
+                        className="input"
+                        onChange={e =>
+                          setPasswordConfirmInputValue(e.target.value)
+                        }
+                        // required
+                        placeholder="Verify Password"
+                        type="password"
+                      />
+                    </Form.Group>
+                    {passwordMismatch && <p>Passwords do not match</p>}
+                    <button className="button" variant="primary" type="submit">
+                      <span>Register Me! &nbsp;</span>
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </Form>
+                </div>
               </div>
-            </div>
+            </>
           )}
 
           {status === "Argyle Authenticated and Account Created" && (
@@ -719,18 +727,20 @@ export default function individualFleetForm() {
           )}
 
           {status === "Email Address & Additional Info" && calendlyScheduled && (
-            <div className="join-stable-wrapper">
-              <div className="form">
-                <Form onSubmit={handleSubmit}>
-                  <Form.Group className="mb-3">
-                    <Form.Label>
-                      <p className="text">
-                        <span className="bold">
-                          We'll send you an email so you can add this to your calendar. We look forward to speaking with you!
-                        </span>{" "}
-                      </p>
-                    </Form.Label>
-                    {/* <Form.Control
+            <>
+              <div className="join-stable-wrapper">
+                <div className="form">
+                  <Form onSubmit={handleSubmit}>
+                    <Form.Group className="mb-3">
+                      <Form.Label>
+                        <p className="text">
+                          <span className="bold">
+                            We'll send you an email so you can add this to your
+                            calendar. We look forward to speaking with you!
+                          </span>{" "}
+                        </p>
+                      </Form.Label>
+                      {/* <Form.Control
                       required={true}
                       className="input"
                       onChange={e => setNameInputValue(e.target.value)}
@@ -738,9 +748,9 @@ export default function individualFleetForm() {
                       type="text"
                       placeholder="Password"
                     /> */}
-                  </Form.Group>
+                    </Form.Group>
 
-                  {/* <Form.Group className="mb-3" controlId="formBasicPassword">
+                    {/* <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Control
                       required={true}
                       className="input"
@@ -749,15 +759,20 @@ export default function individualFleetForm() {
                       placeholder="Verify Password"
                     />
                   </Form.Group> */}
-                  <Link to="/">
-                    <button className="button" variant="primary" type="submit">
-                      <span>Back to Stable Home &nbsp;</span>
-                      <i class="fas fa-chevron-right"></i>
-                    </button>
-                  </Link>
-                </Form>
+                    <Link to="/">
+                      <button
+                        className="button"
+                        variant="primary"
+                        type="submit"
+                      >
+                        <span>Back to Stable Home &nbsp;</span>
+                        <i class="fas fa-chevron-right"></i>
+                      </button>
+                    </Link>
+                  </Form>
+                </div>
               </div>
-            </div>
+            </>
           )}
 
           <FooterOne />

@@ -19,7 +19,7 @@ import "./HeroSection.scss"
 
 export default function HeroSection() {
   const dispatch = useDispatch()
-  const [show, setShow] = useState(false)
+  const [showModal, setShowModal] = useState(false)
   const [emailInputValue, setEmailInputValue] = useState("")
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [formRedirect, setFormRedirect] = useState(false)
@@ -50,6 +50,10 @@ export default function HeroSection() {
           email: emailInputValue,
         }
       )
+
+      if (response.data.status !== "Email Address Collected") {
+        setShowModal(true)
+      }
 
       if (response.data.userType) {
         dispatch({
@@ -188,9 +192,9 @@ export default function HeroSection() {
         </Hero>
       </div>
       <Modal
-        show={showConfirmation}
-        onHide={() => setShowConfirmation(false)}
-        dialogClassName="modal-120w"
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        dialogClassName="modal-9/.0w"
         aria-labelledby="example-custom-modal-styling-title"
       >
         <Modal.Header>
@@ -198,16 +202,38 @@ export default function HeroSection() {
             <img width={150} src={StableLogo} />
           </Modal.Title>
         </Modal.Header>
-        <div className="confirmation-modal-content-wrapper">
-          <h2 className="confirmation-modal-header">
-            Thank you for submitting your details.
-          </h2>
-          <p className="confirmation-modal-text">
-            You will receive further information to your inbox. Make sure to
-            check your junk folder and add hello@stableins.com to your contacts
-            to ensure you receive further communication from us.
-          </p>
-          <button onClick={() => setShowConfirmation(false)}>Close</button>
+        <div style={{ padding: "20px" }}>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3">
+              <Form.Label>
+                It looks like you've already submitted some information to us.
+                Would you like to continue the sign up process for you left off
+                at? If not, select "Restart" below.
+              </Form.Label>
+            </Form.Group>
+            <Button
+              onClick={() => {
+                dispatch({
+                  type: "FORM::SET_STATUS",
+                  payload: "",
+                })
+              }}
+              variant="primary"
+              type="submit"
+            >
+              Restart
+            </Button>
+            <Button
+              onClick={() => {
+                setFormRedirect(true)
+                setShowModal(false)
+              }}
+              variant="primary"
+              type="submit"
+            >
+              Continue
+            </Button>
+          </Form>
         </div>
       </Modal>
     </Fade>
