@@ -25,6 +25,7 @@ import { useDispatch } from "react-redux"
 const FeatureSection = ({ ...rest }) => {
   const dispatch = useDispatch()
   const [counterModal, setCounterModal] = useState(false)
+  const [showModal, setShowModal] = useState(false)
   const [formRedirect, setFormRedirect] = useState(false)
   const [bulletPointModal, setBulletPointModal] = useState(false)
   const [statusResponse, setStatusResponse] = useState("")
@@ -41,33 +42,37 @@ const FeatureSection = ({ ...rest }) => {
         }
       )
 
-      if (response.data.userType) {
+      if (response.data.status !== "Email Address Collected") {
+        setShowModal(true)
+      } else {
+        if (response.data.userType) {
+          dispatch({
+            type: "FORM::SET_USER_TYPE",
+            payload: response.data.userType,
+          })
+        }
         dispatch({
-          type: "FORM::SET_USER_TYPE",
-          payload: response.data.userType,
+          type: "FORM::SET_STATUS",
+          payload: response.data.status,
         })
+
+        dispatch({
+          type: "FORM::SET_EMAIL",
+          payload: emailInputValue,
+        })
+
+        dispatch({
+          type: "FORM::SET_DRIVER_REPORT",
+          payload: true,
+        })
+
+        dispatch({
+          type: "FORM::SET_CALENDLY_SCHEDULED",
+          payload: false,
+        })
+
+        setFormRedirect(true)
       }
-      dispatch({
-        type: "FORM::SET_STATUS",
-        payload: response.data.status,
-      })
-
-      setFormRedirect(true)
-
-      dispatch({
-        type: "FORM::SET_EMAIL",
-        payload: emailInputValue,
-      })
-
-      dispatch({
-        type: "FORM::SET_DRIVER_REPORT",
-        payload: true,
-      })
-
-      dispatch({
-        type: "FORM::SET_CALENDLY_SCHEDULED",
-        payload: false,
-      })
     } catch (e) {
       alert(e)
     }
@@ -175,42 +180,52 @@ const FeatureSection = ({ ...rest }) => {
         </div>
       </Feature>
       <Modal
-        className="modal"
-        show={counterModal}
-        onHide={() => setCounterModal(false)}
-        dialogClassName="modal-90w"
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        dialogClassName="modal-9/.0w"
         aria-labelledby="example-custom-modal-styling-title"
       >
         <Modal.Header>
           <Modal.Title id="example-custom-modal-styling-title">
-            <img src={StableLogo} width={150} />
+            <img width={150} src={StableLogo} />
           </Modal.Title>
         </Modal.Header>
         <div style={{ padding: "20px" }}>
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>
-                Please provide the following information to get early access
+                It looks like you've already submitted some information to us.
+                Would you like to continue the sign up process for you left off
+                at? If not, select "Restart" below.
               </Form.Label>
-              <Form.Control required type="text" placeholder="Name" />
             </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Control required type="number" placeholder="Zip code" />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Label>
-                Are you a rideshare fleet or power user? (optional)
-              </Form.Label>
-
-              <Form.Control as="select">
-                <option>Choose Option</option>
-                <option value="1">Rideshare Fleet</option>
-                <option value="2">Power User</option>
-              </Form.Control>
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
+            <Button
+              onClick={async () => {
+                const response = await axios.post(
+                  "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/resetContact",
+                  {
+                    email: emailInputValue,
+                  }
+                )
+                dispatch({
+                  type: "FORM::SET_STATUS",
+                  payload: "",
+                })
+              }}
+              variant="primary"
+              type="submit"
+            >
+              Restart
+            </Button>
+            <Button
+              onClick={() => {
+                setFormRedirect(true)
+                setShowModal(false)
+              }}
+              variant="primary"
+              type="submit"
+            >
+              Continue
             </Button>
           </Form>
         </div>
