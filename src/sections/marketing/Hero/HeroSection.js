@@ -220,7 +220,22 @@ export default function HeroSection() {
                   )
                   dispatch({
                     type: "FORM::SET_STATUS",
-                    payload: "",
+                    payload: response.data.status,
+                  })
+
+                  dispatch({
+                    type: "FORM::SET_EMAIL",
+                    payload: emailInputValue,
+                  })
+
+                  dispatch({
+                    type: "FORM::SET_DRIVER_REPORT",
+                    payload: false,
+                  })
+
+                  dispatch({
+                    type: "FORM::SET_CALENDLY_SCHEDULED",
+                    payload: false,
                   })
                   setFormRedirect(true)
                 }}
