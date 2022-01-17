@@ -73,7 +73,7 @@ export default function HeroSection() {
 
         dispatch({
           type: "FORM::SET_DRIVER_REPORT",
-          payload: true,
+          payload: false,
         })
 
         dispatch({
