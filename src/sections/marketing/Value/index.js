@@ -211,6 +211,7 @@ const FeatureSection = ({ ...rest }) => {
                   type: "FORM::SET_STATUS",
                   payload: "",
                 })
+                setFormRedirect(true)
               }}
               variant="primary"
               type="submit"
