@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Col, Container, Row, Modal, Form } from "react-bootstrap"
+import { Col, Container, Row, Modal, Form, Button } from "react-bootstrap"
 import ReactTypingEffect from "react-typing-effect"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import SingleAniamtion from "../../../components/Animation/singleAnimation"
@@ -203,7 +203,7 @@ export default function HeroSection() {
           </Modal.Title>
         </Modal.Header>
         <div style={{ padding: "20px" }}>
-          <Form onSubmit={handleSubmit}>
+          <Form>
             <Form.Group className="mb-3">
               <Form.Label>
                 It looks like you've already submitted some information to us.
@@ -212,11 +212,13 @@ export default function HeroSection() {
               </Form.Label>
             </Form.Group>
             <Button
-              onClick={() => {
-                dispatch({
-                  type: "FORM::SET_STATUS",
-                  payload: "",
-                })
+              onClick={async () => {
+                const response = await axios.post(
+                  "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/saveEmail",
+                  {
+                    email: emailInputValue,
+                  }
+                )
               }}
               variant="primary"
               type="submit"

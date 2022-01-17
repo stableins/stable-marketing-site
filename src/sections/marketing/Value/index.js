@@ -191,7 +191,7 @@ const FeatureSection = ({ ...rest }) => {
           </Modal.Title>
         </Modal.Header>
         <div style={{ padding: "20px" }}>
-          <Form onSubmit={handleSubmit}>
+          <Form>
             <Form.Group className="mb-3">
               <Form.Label>
                 It looks like you've already submitted some information to us.
