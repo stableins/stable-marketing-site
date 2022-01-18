@@ -206,6 +206,7 @@ const FeatureSection = ({ ...rest }) => {
               </Form.Label>
             </Form.Group>
             <Button
+              style={{ width: "150px" }}
               onClick={async () => {
                 const response = await axios.post(
                   "/.netlify/functions/resetContact",
@@ -238,6 +239,7 @@ const FeatureSection = ({ ...rest }) => {
               Restart
             </Button>
             <Button
+              style={{ marginLeft: "10px", width: "150px" }}
               className="button"
               onClick={() => {
                 setShowModal(false)

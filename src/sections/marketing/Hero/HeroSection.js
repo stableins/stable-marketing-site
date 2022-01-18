@@ -19,7 +19,7 @@ import "./HeroSection.scss"
 
 export default function HeroSection() {
   const dispatch = useDispatch()
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(true)
   const [emailInputValue, setEmailInputValue] = useState("")
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [formRedirect, setFormRedirect] = useState(false)
@@ -155,7 +155,10 @@ export default function HeroSection() {
                       </div>
                     </Hero.Newsletter>
                     <p className="login">
-                      Already have an account? <Link to="https://driver.stablelabs.io"><span>Login here</span></Link>
+                      Already have an account?{" "}
+                      <Link to="https://driver.stablelabs.io">
+                        <span>Login here</span>
+                      </Link>
                     </p>
                     <p
                       className="driver-report-mobile"
@@ -216,6 +219,7 @@ export default function HeroSection() {
                 </Form.Label>
               </Form.Group>
               <Button
+                style={{  width: "150px" }}
                 onClick={async () => {
                   const response = await axios.post(
                     "/.netlify/functions/resetContact",
@@ -241,19 +245,17 @@ export default function HeroSection() {
 
                   setFormRedirect(true)
                 }}
-                className="button"
-                variant="primary"
                 type="submit"
               >
                 Restart
               </Button>
               <Button
-                className="button"
+                style={{ marginLeft: "10px", width: "150px" }}
+                className="hero-modal-button"
                 onClick={() => {
                   setShowModal(false)
                   setFormRedirect(true)
                 }}
-                variant="primary"
                 type="submit"
               >
                 Continue
