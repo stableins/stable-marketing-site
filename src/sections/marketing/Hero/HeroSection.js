@@ -19,7 +19,7 @@ import "./HeroSection.scss"
 
 export default function HeroSection() {
   const dispatch = useDispatch()
-  const [showModal, setShowModal] = useState(true)
+  const [showModal, setShowModal] = useState(false)
   const [emailInputValue, setEmailInputValue] = useState("")
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [formRedirect, setFormRedirect] = useState(false)
