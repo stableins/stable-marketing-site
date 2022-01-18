@@ -58,9 +58,9 @@ export default function ServiceSection() {
                 <div className="anchor4"></div>
                 <div className="title">Get In Touch</div>
                 <div className="text">
-                  Want to chat with us about a new insurance you need, other
-                  things <br />
-                  we're working on or to learn more? Reach out!
+                  Want to chat with us about a new type of insurance you need,
+                  other things we’re working on, or to learn more? Reach
+                  out!
                 </div>
                 <div className="form-wrapper">
                   <Form onSubmit={handleMessageSubmit}>

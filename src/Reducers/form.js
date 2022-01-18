@@ -1,8 +1,8 @@
 const initialState = {
   email: "",
-  status: "Email Address & Additional Info",
+  status: "Email Address Collected",
   driverReport: false,
-  userType: "Rideshare Driver",
+  userType: "",
   calendlyScheduled: false,
 }
 

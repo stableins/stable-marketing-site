@@ -1,5 +1,5 @@
 @media (min-width: 1000px) {
-  .join-stable-wrapper {
+  .privacy-policy-wrapper {
     text-align: center;
     padding: 20px;
     width: 100%;
@@ -7,153 +7,11 @@
     background: #ebeeff;
     margin-top: 20px;
 
-    .form {
+    .title {
       width: 45%;
       text-align: center;
       margin: auto;
       margin-top: 120px;
-
-      .input {
-        width: 335px;
-        margin: auto;
-        size: 18px;
-      }
-
-      .text {
-        color: #000000;
-        text-align: left;
-        width: 334px;
-        margin-bottom: -0;
-
-        .bold {
-          font-family: Rubik;
-          color: #002e6d;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 18px;
-          line-height: 22px;
-        }
-      }
-
-      h4 {
-        font-family: Rubik;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 22px;
-        margin-top: 30px;
-        /* or 122% */
-
-        text-align: center;
-
-        /* Stable Blue */
-
-        color: #002e6d;
-      }
-
-      p {
-        font-family: Rubik;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 24px;
-        margin: auto;
-        /* or 171% */
-
-        color: #000000;
-
-        span {
-          color: blue;
-        }
-      }
-
-      .select-wrapper {
-        margin: auto;
-        margin-top: 10px;
-        display: inline-flex;
-
-        .select-1-2 {
-          width: 168px;
-          color: black;
-          background: white;
-          -webkit-transition: none;
-          transition: none;
-          margin: auto;
-        }
-
-        .select-1-1 {
-          width: 168px;
-          color: white;
-          background: #3b358a;
-          -webkit-transition: none;
-          transition: none;
-          margin: auto;
-        }
-
-        .select-2-1 {
-          width: 168px;
-          color: black;
-          background: white;
-          -webkit-transition: none;
-          transition: none;
-          margin: auto;
-        }
-
-        .select-2-2 {
-          width: 168px;
-          color: white;
-          background: #3b358a;
-          -webkit-transition: none;
-          transition: none;
-          margin: auto;
-        }
-      }
-
-      .check-wrapper {
-        width: 100%;
-        display: block;
-        margin-bottom: -30px;
-        margin-top: 20px;
-        text-align: center;
-
-        .checkbox {
-          display: inline-flex;
-          margin: auto;
-          p {
-            width: 100%;
-          }
-
-          input {
-            margin-right: 12px;
-            text-align: center;
-          }
-        }
-      }
-
-      .link {
-        width: 100%;
-      }
-
-      .button {
-        background: #3b358a;
-        border-radius: 8px;
-        width: 334px;
-        margin-top: 20px;
-        height: 50px;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 30px;
-        /* or 187% */
-
-        text-align: center;
-        text-transform: capitalize;
-        outline: none;
-        border: none;
-
-        /* Font colour white */
-
-        color: #f7f7f7 !important;
-      }
     }
   }
 }
@@ -262,7 +120,7 @@
         }
       }
 
-        .check-wrapper {
+      .check-wrapper {
         width: 100%;
         display: block;
         margin-bottom: -30px;

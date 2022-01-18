@@ -314,7 +314,10 @@ export default function individualFleetForm() {
                           id="flexCheckIndeterminate"
                         />
 
-                        <p>I agree to the Stable terms and privacy policy.</p>
+                        <p>
+                          I agree to the Stable <span>terms</span> and{" "}
+                          <span>privacy policy</span>.
+                        </p>
                       </div>
                     </div>
                     <br />
@@ -324,7 +327,7 @@ export default function individualFleetForm() {
                       type="submit"
                       // onClick={() => di}
                     >
-                      <span>Submit</span>
+                      <span>Submit &nbsp;</span>
                       <i class="fas fa-chevron-right"></i>
                     </button>
                   </Form.Group>
@@ -445,12 +448,15 @@ export default function individualFleetForm() {
                           id="flexCheckIndeterminate"
                         />
 
-                        <p>I agree to the Stable terms and privacy policy.</p>
+                        <p>
+                          I agree to the Stable <span>terms</span> and{" "}
+                          <span>privacy policy</span>.
+                        </p>
                       </div>
                     </div>
                     <br />
                     <button className="button" variant="primary" type="submit">
-                      <span>Submit</span>
+                      <span>Submit &nbsp;</span>
                       <i class="fas fa-chevron-right"></i>
                     </button>
                   </Form.Group>
@@ -512,12 +518,15 @@ export default function individualFleetForm() {
                           id="flexCheckIndeterminate"
                         />
 
-                        <p>I agree to the Stable terms and privacy policy.</p>
+                        <p>
+                          I agree to the Stable <span>terms</span> and{" "}
+                          <span>privacy policy</span>.
+                        </p>
                       </div>
                     </div>
                     <br />
                     <button className="button" variant="primary" type="submit">
-                      <span>Get Driver Report</span>
+                      <span>Get Driver Report&nbsp;</span>
                       <i class="fas fa-chevron-right"></i>
                     </button>
                   </Form.Group>

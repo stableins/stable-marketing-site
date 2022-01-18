@@ -12,8 +12,7 @@ export default function ServiceSection() {
   return (
     <Service className="border-top border-default-color-2 bg-default">
       <div className="service-section-4-wrapper">
-        <Service.Shape className="service-shape service-shape--l1">
-        </Service.Shape>
+        <Service.Shape className="service-shape service-shape--l1"></Service.Shape>
         <Container>
           <Row className="align-items-end justify-content-center text-start">
             <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
@@ -25,12 +24,14 @@ export default function ServiceSection() {
               <Slide right>
                 <br className="d-none d-xs-block d-lg-none d-xl-block" />
                 <Service.Text>
-                 <p> We are rideshare fleet owners, drivers and technologists that
-                  wanted a better insurance experience than what was available
-                  in the market. After searching for one with no success, we
-                  decided to create our own platform. At Stable, our mission is
-                  to revolutionize the way you interact with mobility insurance
-                  and understand your risk profile.
+                  <p>
+                    {" "}
+                    We are rideshare fleet owners, drivers and technologists
+                    that wanted a better insurance experience than what was
+                    available in the market. After searching for one with no
+                    success, we decided to create our own platform. At Stable,
+                    our mission is create all the tools you need to more
+                    efficiently and profitably run your mobility business.
                   </p>
                 </Service.Text>
                 <br className="d-none d-xs-block d-lg-none d-xl-block" />
@@ -53,7 +54,7 @@ export default function ServiceSection() {
             </Col>
           </Row>
         </Container>
-    </div>
-      </Service>
+      </div>
+    </Service>
   )
 }

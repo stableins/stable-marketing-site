@@ -103,6 +103,18 @@ export default function FooterOne() {
                               </a>
                             </div>
                           </Footer.AddressItem>
+                          <Footer.AddressItem>
+                            <div className="item4">
+                              <i className="fa" />
+                              <a>Privacy Policy</a>
+                            </div>
+                          </Footer.AddressItem>
+                          <Footer.AddressItem>
+                            <div className="item5">
+                              <i className="fa" />
+                              <a>Terms</a>
+                            </div>
+                          </Footer.AddressItem>
                         </div>
                       </Footer.Address>
                     </Footer.Widgets>

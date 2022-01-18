@@ -32,7 +32,7 @@
   }
 }
 
-@media (min-width: 1025px) { 
+@media (min-width: 1025px) {
   .footer-wrapper {
     .contact-wrapper {
       text-align: left;
@@ -58,6 +58,23 @@
       }
       .item3 {
         width: 400px;
+        i {
+          margin-right: -5px;
+        }
+      }
+      .item4 {
+        width: 400px;
+        margin-left: -163px;
+        margin-top: 5px;
+        i {
+          margin-right: -5px;
+        }
+      }
+      .item5 {
+        width: 400px;
+        margin-left: -213px;
+        margin-top: 7px;
+
         i {
           margin-right: -5px;
         }
