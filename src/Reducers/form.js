@@ -1,6 +1,6 @@
 const initialState = {
   email: "",
-  status: "Email Address Collected",
+  status: "",
   driverReport: false,
   userType: "",
   calendlyScheduled: false,
