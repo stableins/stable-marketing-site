@@ -161,7 +161,6 @@ const FeatureSection = ({ ...rest }) => {
                                     }}
                                   >
                                     Get Early Access &nbsp;
-                                    <i id="i" class="fas fa-chevron-right"></i>
                                   </button>
                                 </Link>
                               </div>
@@ -285,7 +284,6 @@ const FeatureSection = ({ ...rest }) => {
                                   }}
                                 >
                                   Get Early Access &nbsp;
-                                  <i id="i" class="fas fa-chevron-right"></i>
                                 </button>
                               </Link>
                             </div>

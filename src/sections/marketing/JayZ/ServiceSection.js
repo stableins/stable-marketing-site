@@ -100,7 +100,6 @@ export default function ServiceSection() {
                 <div className="bullet-4" onClick={scrollToMessage}>
                   <p>
                     What should we build next? Message us&nbsp;
-                    <i class="fas fa-chevron-right"></i>
                   </p>
                 </div>
                 {/* <Service.Text>
@@ -187,7 +186,6 @@ export default function ServiceSection() {
             </Form.Group>
             <button className="modal-button" variant="primary" type="submit">
               <span>Submit</span>
-              <i class="fas fa-chevron-right"></i>
             </button>
           </Form>
         </div>

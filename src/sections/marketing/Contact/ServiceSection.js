@@ -102,7 +102,6 @@ export default function ServiceSection() {
                       type="submit"
                     >
                       <span>Send</span>&nbsp;
-                      <i class="fas fa-chevron-right"></i>
                     </button>
                   </Form>
                 </div>

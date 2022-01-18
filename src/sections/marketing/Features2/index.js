@@ -75,7 +75,6 @@ const FeatureSection = ({ ...rest }) => {
                               className="button__Button-sc-1tkahez-0 cAxprB btn-purple-heart btn"
                             >
                               Get Early Access{" "}
-                              <i class="fas fa-chevron-right"></i>
                             </button>
                           </div>
                         </Feature.Title>

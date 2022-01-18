@@ -80,7 +80,6 @@ export default function individualFleetForm() {
                 type="submit"
               >
                 <span>Submit</span>
-                <i class="fas fa-chevron-right"></i>
               </button>
             </Form>
           </div>
@@ -131,7 +130,6 @@ export default function individualFleetForm() {
                     // type="submit"
                   >
                     Complete the final step
-                    <i class="fas fa-chevron-right"></i>
                   </button>
                 </>
               )}
@@ -174,7 +172,6 @@ export default function individualFleetForm() {
                   type="submit"
                 >
                   <span>Create Stable Account</span>
-                  <i class="fas fa-chevron-right"></i>
                 </button>
               </Form>
             </div>

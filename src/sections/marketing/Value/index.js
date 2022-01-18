@@ -149,7 +149,6 @@ const FeatureSection = ({ ...rest }) => {
                                 textTransform="capitalized"
                               >
                                 Get Your Driver Report &nbsp;
-                                <i class="fas fa-chevron-right"></i>
                               </button>
                               {spinner && <Spinner animation="border" />}
                             </form>

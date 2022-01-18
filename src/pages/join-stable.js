@@ -347,7 +347,6 @@ export default function individualFleetForm() {
                       // onClick={() => di}
                     >
                       <span>Submit &nbsp;</span>
-                      <i class="fas fa-chevron-right"></i>
                     </button>
                   </Form.Group>
                   {/* <Form.Label>
@@ -490,7 +489,6 @@ export default function individualFleetForm() {
                     <br />
                     <button className="button" variant="primary" type="submit">
                       <span>Submit &nbsp;</span>
-                      <i class="fas fa-chevron-right"></i>
                     </button>
                   </Form.Group>
                   {/* <Form.Label>
@@ -570,7 +568,6 @@ export default function individualFleetForm() {
                     <br />
                     <button className="button" variant="primary" type="submit">
                       <span>Get Driver Report&nbsp;</span>
-                      <i class="fas fa-chevron-right"></i>
                     </button>
                   </Form.Group>
                   {/* <Form.Label>
@@ -726,7 +723,6 @@ export default function individualFleetForm() {
                     {passwordMismatch && <p>Passwords do not match</p>}
                     <button className="button" variant="primary" type="submit">
                       <span>Register Me! &nbsp;</span>
-                      <i class="fas fa-chevron-right"></i>
                     </button>
                   </Form>
                 </div>
@@ -770,7 +766,6 @@ export default function individualFleetForm() {
                   <Link to="/">
                     <button className="button" variant="primary" type="submit">
                       <span>Back to Stable Home &nbsp;</span>
-                      <i class="fas fa-chevron-right"></i>
                     </button>
                   </Link>
                 </Form>
@@ -818,7 +813,6 @@ export default function individualFleetForm() {
                         type="submit"
                       >
                         <span>Back to Stable Home &nbsp;</span>
-                        <i class="fas fa-chevron-right"></i>
                       </button>
                     </Link>
                   </Form>
