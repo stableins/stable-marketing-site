@@ -11,7 +11,7 @@ const createContact = (
     contacts: [
       {
         email: emailInputValue,
-        postal_code: zipcodeInputValue,
+      postal_code: zipcodeInputValue,
         custom_fields: {
           w1_T: "email received",
         },
