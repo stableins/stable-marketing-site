@@ -155,7 +155,7 @@ export default function HeroSection() {
                       </div>
                     </Hero.Newsletter>
                     <p className="login">
-                      Already have an account? <span>Login here</span>.
+                      Already have an account? <Link to="https://driver.stablelabs.io"><span>Login here</span></Link>
                     </p>
                     <p
                       className="driver-report-mobile"
