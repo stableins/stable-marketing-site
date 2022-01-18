@@ -30,7 +30,7 @@ export default function ServiceSection() {
     //  })
     try {
       await axios.post(
-        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgridEmail",
+        "/.netlify/functions/sendgridEmail",
         {
           email: emailInputValue,
           message: messageInputValue,

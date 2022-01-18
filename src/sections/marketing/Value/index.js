@@ -38,7 +38,7 @@ const FeatureSection = ({ ...rest }) => {
 
     try {
       const response = await axios.post(
-        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/saveEmail",
+        "/.netlify/functions/saveEmail",
         {
           email: emailInputValue,
         }
@@ -208,7 +208,7 @@ const FeatureSection = ({ ...rest }) => {
             <Button
               onClick={async () => {
                 const response = await axios.post(
-                  "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/resetContact",
+                  "/.netlify/functions/resetContact",
                   {
                     email: emailInputValue,
                   }
