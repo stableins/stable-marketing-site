@@ -16,7 +16,7 @@ import { menuItems } from "../../../data/menudata"
 import Link from "../Link"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import { scroller } from "react-scroll"
-import smoothscroll from 'smoothscroll-polyfill';
+import smoothscroll from "smoothscroll-polyfill"
 
 import Intake from "../../../api/intake"
 import "./Menu.scss"
@@ -34,7 +34,6 @@ const Menu = ({ ...rest }) => {
   const [dropdownInputValue, setDropdownInputValue] = useState("")
 
   smoothscroll.polyfill()
-
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -106,9 +105,13 @@ const Menu = ({ ...rest }) => {
               </Navbar.Toggle>
             </button>
             <div className="divider"></div>
-            <button>
-              <Navbar.Toggle style={{textAlign: 'left'}} className="login">Log In</Navbar.Toggle>
-            </button>
+            <Link to="https://driver.stablelabs.io/">
+              <button>
+                <Navbar.Toggle style={{ textAlign: "left" }} className="login">
+                  Log In
+                </Navbar.Toggle>
+              </button>
+            </Link>
             {/* <button onClick={() => setModal(true)} className="early-access">
               Get Early Access
             </button> */}

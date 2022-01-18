@@ -42,13 +42,13 @@ export default function individualFleetForm() {
   const [nameInputValue, setNameInputValue] = useState("")
   const [passwordInputValue, setPasswordInputValue] = useState("")
   const [passwordConfirmInputValue, setPasswordConfirmInputValue] = useState("")
-  const [zipcodeInputValue, setZipcodeInputValue] = useState("")
+  const [zipcodeInputValue, setZipcodeInputValue] = useState(null)
   const [signupState, setSignupState] = useState("")
   const [dropdownInputValue1, setDropdownInputValue1] = useState("")
   const [dropdownInputValue2, setDropdownInputValue2] = useState("")
   const [hasMounted, setHasMounted] = useState(false)
-  const [handleSelectChange, setHandleSelectChange] = useState(true)
-  const [clicked, setClicked] = useState("1")
+  const [handleSelectChange, setHandleSelectChange] = useState(false)
+  const [clicked, setClicked] = useState("0")
   const status = useSelector(state => state.form.status)
   const userType = useSelector(state => state.form.userType)
   const driverReport = useSelector(state => state.form.driverReport)
@@ -193,6 +193,13 @@ export default function individualFleetForm() {
     }
   }
 
+  function numberOnly(id) {
+    // Get element by id which passed as parameter within HTML element event
+    var element = document.getElementById(id)
+    // This removes any other character but numbers as entered by user
+    element.value = element.value.replace(/[^0-9]/gi, "")
+  }
+
   return (
     <>
       <Fade>
@@ -239,7 +246,11 @@ export default function individualFleetForm() {
                       <Form.Control
                         required={true}
                         className="input"
-                        type="zipode"
+                        type="tel"
+                        maxlength="5"
+                        onInput={e =>
+                          (e.target.value = e.target.value.slice(0, 5))
+                        }
                         onChange={e => setZipcodeInputValue(e.target.value)}
                         // required
                         placeholder="Zip Code"
@@ -249,7 +260,7 @@ export default function individualFleetForm() {
 
                     <div className="select-wrapper">
                       <Form.Control
-                        required={true}
+                        required
                         onClick={() => {
                           setClicked("1")
                           setResetSelect2(true)
@@ -271,13 +282,14 @@ export default function individualFleetForm() {
                         }}
                         as="select"
                       >
-                        <option selected={resetSelect1}>Driver</option>
+                        <option value="" selected={resetSelect1}>Driver</option>
                         <option value="1" data-sync="1">
                           Rideshare Driver
                         </option>
                         <option value="2">Carshare Owner</option>
                       </Form.Control>
                       <Form.Control
+                        required
                         onClick={() => {
                           setClicked("2")
                           setResetSelect1(true)
@@ -308,15 +320,21 @@ export default function individualFleetForm() {
                       <div className="checkbox">
                         <input
                           required={true}
-                          class="form-check-input"
+                          className="form-check-input"
                           type="checkbox"
                           value=""
                           id="flexCheckIndeterminate"
                         />
 
                         <p>
-                          I agree to the Stable <span>terms</span> and{" "}
-                          <span>privacy policy</span>.
+                          I agree to the Stable{" "}
+                          <Link to="/terms">
+                            <span> Terms </span>{" "}
+                          </Link>{" "}
+                          and{" "}
+                          <Link to="/privacy-policy">
+                            <span> Privacy Policy</span>.
+                          </Link>
                         </p>
                       </div>
                     </div>
@@ -373,7 +391,10 @@ export default function individualFleetForm() {
                       <Form.Control
                         required={true}
                         className="input"
-                        type="zipcode"
+                        type="number"
+                        onInput={e =>
+                          (e.target.value = e.target.value.slice(0, 5))
+                        }
                         onChange={e => setZipcodeInputValue(e.target.value)}
                         // required
                         placeholder="Zip Code"
@@ -383,7 +404,7 @@ export default function individualFleetForm() {
 
                     <div className="select-wrapper">
                       <Form.Control
-                        required={true}
+                        required
                         onClick={() => {
                           setClicked("1")
                           setResetSelect2(true)
@@ -412,6 +433,7 @@ export default function individualFleetForm() {
                         <option value="2">Carshare Owner</option>
                       </Form.Control>
                       <Form.Control
+                        required={true}
                         onClick={() => {
                           setClicked("2")
                           setResetSelect1(true)
@@ -434,8 +456,8 @@ export default function individualFleetForm() {
                         as="select"
                       >
                         <option selected={resetSelect2}>Fleet</option>
-                        <option value="3">Rideshare Fleet</option>
-                        <option value="4">Carshare Fleet</option>
+                        <option required={true} value="3">Rideshare Fleet</option>
+                        <option required={true} value="4">Carshare Fleet</option>
                       </Form.Control>
                     </div>
                     <div className="check-wrapper">
@@ -449,8 +471,14 @@ export default function individualFleetForm() {
                         />
 
                         <p>
-                          I agree to the Stable <span>terms</span> and{" "}
-                          <span>privacy policy</span>.
+                          I agree to the Stable{" "}
+                          <Link to="/terms">
+                            <span> Terms </span>{" "}
+                          </Link>{" "}
+                          and{" "}
+                          <Link to="/privacy-policy">
+                            <span> Privacy Policy</span>.
+                          </Link>
                         </p>
                       </div>
                     </div>
@@ -501,8 +529,12 @@ export default function individualFleetForm() {
                     <Form.Group>
                       <Form.Control
                         required={true}
-                        type="zipcode"
                         className="input"
+                        type="tel"
+                        maxlength="5"
+                        onInput={e =>
+                          (e.target.value = e.target.value.slice(0, 5))
+                        }
                         onChange={e => setZipcodeInputValue(e.target.value)}
                         // required
                         placeholder="Zip Code"
@@ -519,8 +551,14 @@ export default function individualFleetForm() {
                         />
 
                         <p>
-                          I agree to the Stable <span>terms</span> and{" "}
-                          <span>privacy policy</span>.
+                          I agree to the Stable{" "}
+                          <Link to="/terms">
+                            <span> Terms </span>{" "}
+                          </Link>{" "}
+                          and{" "}
+                          <Link to="/privacy-policy">
+                            <span> Privacy Policy</span>.
+                          </Link>
                         </p>
                       </div>
                     </div>

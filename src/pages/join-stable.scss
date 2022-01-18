@@ -12,11 +12,26 @@
       text-align: center;
       margin: auto;
       margin-top: 120px;
+      color: #92afd6;
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        color: #92afd6;
+      }
+
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+        color: #92afd6;
+      }
 
       .input {
         width: 335px;
         margin: auto;
         size: 18px;
+        color: #92afd6;
       }
 
       .text {
@@ -63,7 +78,9 @@
         color: #000000;
 
         span {
-          color: blue;
+          color: #ffae13;
+          font-weight: bold;
+          cursor: pointer;
         }
       }
 
@@ -81,10 +98,28 @@
           margin: auto;
         }
 
+        .select-1-0 {
+          width: 168px;
+          color: white;
+          background: #3b358a;
+          -webkit-transition: none;
+          transition: none;
+          margin: auto;
+        }
+
         .select-1-1 {
           width: 168px;
           color: white;
           background: #3b358a;
+          -webkit-transition: none;
+          transition: none;
+          margin: auto;
+        }
+
+        .select-2-0 {
+          width: 168px;
+          color: black;
+          background: white;
           -webkit-transition: none;
           transition: none;
           margin: auto;
@@ -262,7 +297,7 @@
         }
       }
 
-        .check-wrapper {
+      .check-wrapper {
         width: 100%;
         display: block;
         margin-bottom: -30px;
