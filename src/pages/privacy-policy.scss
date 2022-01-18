@@ -1,0 +1,50 @@
+.wrapper-policy { 
+  padding: 70px;  
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+      color: black;
+
+  overflow: hidden;
+  line-height: 1.5;
+  margin-top: 100px;
+
+  .heading {
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .paragraph-2 {
+    display: inline-block;
+    margin-left: 3px;
+    font-size: 16px;
+  }
+
+  .paragraph-4 {
+    margin-top: 40px;
+  }
+
+  .paragraph-5 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .paragraph-6 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .paragraph-7 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .policy__title {
+    margin-top: 30px;
+  }
+
+  .list {
+    list-style-type: decimal;
+  }
+}

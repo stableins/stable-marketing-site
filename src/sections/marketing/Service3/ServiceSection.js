@@ -42,21 +42,21 @@ export default function ServiceSection() {
                     {/* <div className="title">Partners</div> */}
                     <div className="image-row">
                       <img
-                        className="mltply"
-                        width={250}
+                        className="ils"
+                        width={230}
                         src={Mltply}
                         alt="shape dot"
                       />
+                        <img
+                          className="guy"
+                          width={320}
+                          src={Ils}
+                          alt="shape dot"
+                        />
                       <img
-                        className="guy"
-                        width={200}
+                        className="mltply"
+                        width={220}
                         src={GuyCarpenter}
-                        alt="shape dot"
-                      />
-                      <img
-                        className="ils"
-                        width={350}
-                        src={Ils}
                         alt="shape dot"
                       />
                     </div>

@@ -114,7 +114,7 @@ const FeatureSection = ({ ...rest }) => {
                                   Additional Tools
                                 </div>
                                 <div className="text">
-                                  Additional tools to help you run your carshare
+                                  Additional tools to help you run your rideshare
                                   business more efficiently.
                                 </div>
                               </div>
@@ -240,7 +240,7 @@ const FeatureSection = ({ ...rest }) => {
                             <div className="text-wrapper">
                               <div className="item-title">Additional Tools</div>
                               <div className="text">
-                                Additional tools to help you run your rideshare
+                                Additional tools to help you run your carshare
                                 business more efficiently.
                               </div>
                             </div>

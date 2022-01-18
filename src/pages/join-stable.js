@@ -90,7 +90,7 @@ export default function individualFleetForm() {
           payload: "emailZipAndNameAndEligible",
         })
         await axios.post(
-          "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgridContact",
+          "/.netlify/functions/sendgridContact",
           {
             email: email ? email : emailInputValue,
             zipcode: zipcodeInputValue,
@@ -141,7 +141,7 @@ export default function individualFleetForm() {
         userType = dropdownInputValue2
       }
       const response = await axios.post(
-        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/saveFullContactInfo",
+        "/.netlify/functions/saveFullContactInfo",
         {
           email: email ?? emailInputValue,
           zipcode: zipcodeInputValue,
@@ -175,7 +175,7 @@ export default function individualFleetForm() {
     if (passwordConfirmInputValue === passwordInputValue) {
       try {
         const response = await axios.post(
-          "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/passwordCreated",
+          "/.netlify/functions/passwordCreated",
           {
             email: email,
             password: passwordInputValue,
@@ -314,7 +314,10 @@ export default function individualFleetForm() {
                           id="flexCheckIndeterminate"
                         />
 
-                        <p>I agree to the Stable terms and privacy policy.</p>
+                        <p>
+                          I agree to the Stable <span>terms</span> and{" "}
+                          <span>privacy policy</span>.
+                        </p>
                       </div>
                     </div>
                     <br />
@@ -324,7 +327,7 @@ export default function individualFleetForm() {
                       type="submit"
                       // onClick={() => di}
                     >
-                      <span>Submit</span>
+                      <span>Submit &nbsp;</span>
                       <i class="fas fa-chevron-right"></i>
                     </button>
                   </Form.Group>
@@ -445,12 +448,15 @@ export default function individualFleetForm() {
                           id="flexCheckIndeterminate"
                         />
 
-                        <p>I agree to the Stable terms and privacy policy.</p>
+                        <p>
+                          I agree to the Stable <span>terms</span> and{" "}
+                          <span>privacy policy</span>.
+                        </p>
                       </div>
                     </div>
                     <br />
                     <button className="button" variant="primary" type="submit">
-                      <span>Submit</span>
+                      <span>Submit &nbsp;</span>
                       <i class="fas fa-chevron-right"></i>
                     </button>
                   </Form.Group>
@@ -512,12 +518,15 @@ export default function individualFleetForm() {
                           id="flexCheckIndeterminate"
                         />
 
-                        <p>I agree to the Stable terms and privacy policy.</p>
+                        <p>
+                          I agree to the Stable <span>terms</span> and{" "}
+                          <span>privacy policy</span>.
+                        </p>
                       </div>
                     </div>
                     <br />
                     <button className="button" variant="primary" type="submit">
-                      <span>Get Driver Report</span>
+                      <span>Get Driver Report&nbsp;</span>
                       <i class="fas fa-chevron-right"></i>
                     </button>
                   </Form.Group>
@@ -563,7 +572,7 @@ export default function individualFleetForm() {
                         onAccountCreated: async ({ accountId, userId }) => {
                           try {
                             const response = await axios.post(
-                              "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/linkArgyleAccount",
+                              "/.netlify/functions/linkArgyleAccount",
                               {
                                 email: email,
                                 argyleUserId: userId,

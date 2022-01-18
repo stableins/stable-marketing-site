@@ -66,7 +66,7 @@ export default function ServiceSection() {
               <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
                 <Service.Title as="h2" mb="0" style={{ fontSize: "50px" }}>
                   <div className="image">
-                    <img src={Image}/>
+                    <img src={Image} />
                   </div>
                 </Service.Title>
               </Col>
@@ -75,7 +75,7 @@ export default function ServiceSection() {
                 <div className="quote-wrapper">
                   <p>
                     “I’m not a businessman, <br />
-                    I’m a business man...”
+                    I’m a business, man...”
                   </p>
                   <p>JAY-Z</p>
                 </div>
@@ -99,7 +99,7 @@ export default function ServiceSection() {
                 </div>
                 <div className="bullet-4" onClick={scrollToMessage}>
                   <p>
-                    Send us a message to suggest what we should build&nbsp;
+                    What should we build next? Message us&nbsp;
                     <i class="fas fa-chevron-right"></i>
                   </p>
                 </div>
