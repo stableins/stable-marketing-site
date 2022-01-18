@@ -92,9 +92,9 @@
         .select-1-0 {
           width: 168px;
           height: 56px;
-          border: 1px solid #92AFD6;
-box-sizing: border-box;
-border-radius: 8px 0px 0px 0px;
+          border: 1px solid #92afd6;
+          box-sizing: border-box;
+          border-radius: 8px 0px 0px 0px;
           color: black;
           background: white;
           -webkit-transition: none;
@@ -104,48 +104,80 @@ border-radius: 8px 0px 0px 0px;
 
         .select-1-1 {
           width: 168px;
-          color: white;
-          background: #3b358a;
+          height: 56px;
+          border: 1px solid #92afd6;
+          box-sizing: border-box;
+          border-radius: 8px 0px 0px 0px;
           -webkit-transition: none;
           transition: none;
           margin: auto;
+          color: white;
+          background: #3b358a;
         }
-       
+
         .select-1-2 {
           width: 168px;
           height: 56px;
-          color: black;
-          background: white;
+          border: 1px solid #92afd6;
+          box-sizing: border-box;
+          border-radius: 8px 0px 0px 0px;
           -webkit-transition: none;
           transition: none;
           margin: auto;
+          color: black;
+          background: white;
+        }
+
+        .select-1-0 {
+          width: 168px;
+          height: 56px;
+          border: 1px solid #92afd6;
+          box-sizing: border-box;
+          border-radius: 8px 0px 0px 0px;
+          -webkit-transition: none;
+          transition: none;
+          margin: auto;
+          color: black;
+          background: white;
         }
 
         .select-2-0 {
           width: 168px;
-          color: black;
-          background: white;
+          height: 56px;
+          border: 1px solid #92afd6;
+          box-sizing: border-box;
+          border-radius: 0px 8px 0px 0px;
           -webkit-transition: none;
           transition: none;
           margin: auto;
+          color: black;
+          background: white;
         }
 
         .select-2-1 {
           width: 168px;
-          color: black;
-          background: white;
+          height: 56px;
+          border: 1px solid #92afd6;
+          box-sizing: border-box;
+          border-radius: 0px 8px 0px 0px;
           -webkit-transition: none;
           transition: none;
           margin: auto;
+          color: black;
+          background: white;
         }
 
         .select-2-2 {
           width: 168px;
-          color: white;
-          background: #3b358a;
+          height: 56px;
+          border: 1px solid #92afd6;
+          box-sizing: border-box;
+          border-radius: 0px 8px 0px 0px;
           -webkit-transition: none;
           transition: none;
           margin: auto;
+          color: white;
+          background: #3b358a;
         }
       }
 
@@ -175,6 +207,29 @@ border-radius: 8px 0px 0px 0px;
       }
 
       .button {
+        background: #3b358a;
+        border-radius: 8px;
+        width: 334px;
+        margin-top: 20px;
+        height: 50px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 30px;
+        /* or 187% */
+
+        text-align: center;
+        text-transform: capitalize;
+        outline: none;
+        border: none;
+
+        /* Font colour white */
+
+        color: #f7f7f7 !important;
+      }
+
+      .button:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
         background: #3b358a;
         border-radius: 8px;
         width: 334px;

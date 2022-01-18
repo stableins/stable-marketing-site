@@ -36,6 +36,7 @@ export default function individualFleetForm() {
   const dispatch = useDispatch()
   const [showModal, setShowModal] = useState(true)
   const [showConfirmation, setShowConfirmation] = useState(false)
+  const [required, setRequired] = useState(true)
   const [emailInputValue, setEmailInputValue] = useState("")
   const [argyleLinked, setArgyleLinked] = useState(false)
   const email = useSelector(state => state.form.email)
@@ -289,24 +290,27 @@ export default function individualFleetForm() {
                     <div className="select-wrapper">
                       <select
                         primary
-                        required
                         onClick={() => {
                           setClicked("1")
                           setResetSelect2(true)
                           setResetSelect1(false)
+                          setDropdownInputValue2("")
                         }}
                         className={`select-1-${clicked}`}
                         onChange={e => {
                           if (e.target.value === "") {
                             setDropdownInputValue1("")
+                            setRequired(true)
                           }
                           if (e.target.value === "1") {
                             setDropdownInputValue1("Rideshare Driver")
                             setDropdownInputValue2("")
+                            setRequired(false)
                           }
                           if (e.target.value === "2") {
                             setDropdownInputValue1("Carshare Owner")
                             setDropdownInputValue2("")
+                            setRequired(false)
                           }
                         }}
                         as="select"
@@ -321,25 +325,28 @@ export default function individualFleetForm() {
                           Carshare Owner
                         </option>
                       </select>
-                      <Form.Control
-                        required
+                      <select
                         onClick={() => {
                           setClicked("2")
                           setResetSelect1(true)
                           setResetSelect2(false)
+                          setDropdownInputValue1("")
                         }}
                         className={`select-2-${clicked}`}
                         onChange={e => {
-                          if (e.target.value === "Choose Option") {
-                            setDropdownInputValue2(null)
+                          if (e.target.value === "") {
+                            setDropdownInputValue2("")
+                            setRequired(true)
                           }
                           if (e.target.value === "3") {
                             setDropdownInputValue2("Rideshare Fleet")
-                            setDropdownInputValue1(null)
+                            setDropdownInputValue1("")
+                            setRequired(false)
                           }
                           if (e.target.value === "4") {
                             setDropdownInputValue2("Carshare Fleet")
-                            setDropdownInputValue1(null)
+                            setDropdownInputValue1("")
+                            setRequired(false)
                           }
                         }}
                         as="select"
@@ -347,7 +354,7 @@ export default function individualFleetForm() {
                         <option selected={resetSelect2}>Fleet</option>
                         <option value="3">Rideshare Fleet</option>
                         <option value="4">Carshare Fleet</option>
-                      </Form.Control>
+                      </select>
                     </div>
                     <div className="check-wrapper">
                       <div className="checkbox">
@@ -373,6 +380,11 @@ export default function individualFleetForm() {
                     </div>
                     <br />
                     <button
+                      disabled={
+                        dropdownInputValue1 === "" && dropdownInputValue2 === ""
+                          ? true
+                          : false
+                      }
                       className="button"
                       variant="primary"
                       type="submit"
@@ -381,11 +393,6 @@ export default function individualFleetForm() {
                       <span>Submit &nbsp;</span>
                     </button>
                   </Form.Group>
-                  {/* <Form.Label>
-                We've sent you an email to confirm your email address. If you
-                don't see something from us shortly, please check your junk
-                mail.
-              </Form.Label> */}
                 </Form>
               </div>
             </div>
@@ -445,15 +452,15 @@ export default function individualFleetForm() {
                         className={`select-1-${clicked}`}
                         onChange={e => {
                           if (e.target.value === "Choose Option") {
-                            setDropdownInputValue1(null)
+                            setDropdownInputValue1("")
                           }
                           if (e.target.value === "1") {
                             setDropdownInputValue1("Rideshare Driver")
-                            setDropdownInputValue2(null)
+                            setDropdownInputValue2("")
                           }
                           if (e.target.value === "2") {
                             setDropdownInputValue1("Carshare Owner")
-                            setDropdownInputValue2(null)
+                            setDropdownInputValue2("")
                           }
                         }}
                         as="select"
@@ -474,15 +481,15 @@ export default function individualFleetForm() {
                         className={`select-2-${clicked}`}
                         onChange={e => {
                           if (e.target.value === "Choose Option") {
-                            setDropdownInputValue2(null)
+                            setDropdownInputValue2("")
                           }
                           if (e.target.value === "3") {
                             setDropdownInputValue2("Rideshare Fleet")
-                            setDropdownInputValue1(null)
+                            setDropdownInputValue1("")
                           }
                           if (e.target.value === "4") {
                             setDropdownInputValue2("Carshare Fleet")
-                            setDropdownInputValue1(null)
+                            setDropdownInputValue1("")
                           }
                         }}
                         as="select"
