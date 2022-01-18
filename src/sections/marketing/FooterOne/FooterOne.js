@@ -1,6 +1,6 @@
-import { Link } from "~components"
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
+import { Link } from "@reach/router"
 import Logo from "~image/logo/Stable-logo_site.png"
 import Footer from "./style"
 import { Slide } from "react-reveal"
@@ -103,18 +103,22 @@ export default function FooterOne() {
                               </a>
                             </div>
                           </Footer.AddressItem>
-                          <Footer.AddressItem>
-                            <div className="item4">
-                              <i className="fa" />
-                              <a>Privacy Policy</a>
-                            </div>
-                          </Footer.AddressItem>
-                          <Footer.AddressItem>
-                            <div className="item5">
-                              <i className="fa" />
-                              <a>Terms</a>
-                            </div>
-                          </Footer.AddressItem>
+                          <Link to="/privacy-policy">
+                            <Footer.AddressItem>
+                              <div className="item4">
+                                <i className="fa" />
+                                <a>Privacy Policy</a>
+                              </div>
+                            </Footer.AddressItem>
+                          </Link>
+                          <Link to="/terms">
+                            <Footer.AddressItem>
+                              <div className="item5">
+                                <i className="fa" />
+                                <a>Terms</a>
+                              </div>
+                            </Footer.AddressItem>
+                          </Link>
                         </div>
                       </Footer.Address>
                     </Footer.Widgets>

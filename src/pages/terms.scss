@@ -1,12 +1,11 @@
-.wrapper-policy { 
-  padding: 70px;  
+.terms-wrapper {
+  padding: 100px;
+  margin-top: 80px;
+  color:black;
+  width: 100%;
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-      color: black;
-
-  overflow: hidden;
+  font-size: 20px;
   line-height: 1.5;
-  margin-top: 100px;
 
   .heading {
     font-family: 'Roboto', sans-serif;
@@ -15,14 +14,26 @@
     text-align: center;
   }
 
-  .paragraph-2 {
-    display: inline-block;
-    margin-left: 3px;
-    font-size: 16px;
+  .terms-of-use-title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 20px;
   }
 
-  .paragraph-4 {
-    margin-top: 40px;
+  .sub-list--letter {
+  list-style-type: lower-alpha;
+}
+
+  .list-2 {
+  list-style-type: lower-alpha;
+}
+
+  .list {
+    list-style-type: decimal;
+  }
+
+  .list-no-style {
+    margin-bottom: 20px;
   }
 
   .paragraph-5 {
@@ -38,13 +49,5 @@
   .paragraph-7 {
     margin-top: 40px;
     margin-bottom: 20px;
-  }
-
-  .policy__title {
-    margin-top: 30px;
-  }
-
-  .list {
-    list-style-type: decimal;
   }
 }
