@@ -89,15 +89,12 @@ export default function individualFleetForm() {
           type: "FORM::SET_STATUS",
           payload: "emailZipAndNameAndEligible",
         })
-        await axios.post(
-          "/.netlify/functions/sendgridContact",
-          {
-            email: email ? email : emailInputValue,
-            zipcode: zipcodeInputValue,
-            name: nameInputValue,
-            status: "email address and additional info received",
-          }
-        )
+        await axios.post("/.netlify/functions/sendgridContact", {
+          email: email ? email : emailInputValue,
+          zipcode: zipcodeInputValue,
+          name: nameInputValue,
+          status: "email address and additional info received",
+        })
       }
 
       if (
@@ -282,11 +279,15 @@ export default function individualFleetForm() {
                         }}
                         as="select"
                       >
-                        <option value="" selected={resetSelect1}>Driver</option>
-                        <option value="1" data-sync="1">
+                        <option required value="" selected={resetSelect1}>
+                          Driver
+                        </option>
+                        <option required value="1" data-sync="1">
                           Rideshare Driver
                         </option>
-                        <option value="2">Carshare Owner</option>
+                        <option required value="2">
+                          Carshare Owner
+                        </option>
                       </Form.Control>
                       <Form.Control
                         required
@@ -456,8 +457,12 @@ export default function individualFleetForm() {
                         as="select"
                       >
                         <option selected={resetSelect2}>Fleet</option>
-                        <option required={true} value="3">Rideshare Fleet</option>
-                        <option required={true} value="4">Carshare Fleet</option>
+                        <option required={true} value="3">
+                          Rideshare Fleet
+                        </option>
+                        <option required={true} value="4">
+                          Carshare Fleet
+                        </option>
                       </Form.Control>
                     </div>
                     <div className="check-wrapper">
