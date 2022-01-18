@@ -77,7 +77,7 @@ return(
                       <a href="#">6</a>
                     </li>
                     <li>
-                      <a href="#"><i className="fa fa-chevron-right" /></a>
+                      <a href="#"></a>
                     </li>
                   </Blog.Paginations>
               </Col>

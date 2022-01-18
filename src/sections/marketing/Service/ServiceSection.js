@@ -115,7 +115,7 @@ export default function ServiceSection() {
                                 })
                               }}
                             >
-                              Join Now <i class="fas fa-chevron-right"></i>
+                              Join Now
                             </button>
                           </Link>
                         </div>
@@ -174,7 +174,6 @@ export default function ServiceSection() {
                   </div>
                   <button className="mobile-button">
                     Help Build Better Insurance
-                    <i class="fas fa-chevron-right"></i>
                   </button>
                 </div>
               </Row>

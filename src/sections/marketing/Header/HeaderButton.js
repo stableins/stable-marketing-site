@@ -167,7 +167,6 @@ const HeaderButton = ({
               </Form.Group>
               <button className="modal-button" variant="primary" type="submit">
                 <span>Submit</span>
-                <i class="fas fa-chevron-right"></i>
               </button>
             </Form>
           </div>

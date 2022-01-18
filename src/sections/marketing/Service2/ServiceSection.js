@@ -71,7 +71,7 @@ export default function ServiceSection() {
           </div>
           <div className="button-wrapper">
             <button>
-              Help Build Better Insurance <i class="fas fa-chevron-right"></i>
+              Help Build Better Insurance
             </button>
           </div>
         </Container>

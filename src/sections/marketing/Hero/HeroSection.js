@@ -149,7 +149,6 @@ export default function HeroSection() {
                             textTransform="capitalized"
                           >
                             Discover Now &nbsp;
-                            <i class="fas fa-chevron-right"></i>
                           </button>
                         </form>
                       </div>
@@ -166,7 +165,6 @@ export default function HeroSection() {
                     >
                       <p>
                         Get Your Driver Report &nbsp;
-                        <i class="fas fa-chevron-right"></i>
                       </p>
                     </p>
                   </Col>
