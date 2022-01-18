@@ -51,16 +51,7 @@ export default function ServiceSection() {
   return (
     <div className="jayz-wrapper">
       <Service className="border-top border-default-color-2 bg-default">
-        {/* <Service.Shape className="service-shape service-shape--l1">
-          <Img
-            src="../../../assets/image/marketing/services-shape-l1.png"
-            alt="shape dot"
-            layout="fullWidth"
-            placeholder="blurred"
-          />
-        </Service.Shape> */}
         <Container>
-          {/* Section Title */}
           <Slide left>
             <Row className="align-items-end justify-content-center text-start">
               <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
@@ -102,21 +93,11 @@ export default function ServiceSection() {
                     What should we build next? Message us&nbsp;
                   </p>
                 </div>
-                {/* <Service.Text>
-                We're working with the rideshare and carshare community to
-                create better insurance. To do this, we need your help:{" "}
-              </Service.Text> */}
               </Col>
             </Row>
           </Slide>
           <Service.Box mtLG="100px" mtMD="40px">
             <Slide right>
-              {/* <div className="button-wrapper">
-                <button onClick={() => setModal(true)}>
-                  Help Build Better Insurance{" "}
-                  <i class="fas fa-chevron-right"></i>
-                </button>
-              </div> */}
             </Slide>
           </Service.Box>
         </Container>
