@@ -90,7 +90,7 @@ export default function individualFleetForm() {
           payload: "emailZipAndNameAndEligible",
         })
         await axios.post(
-          "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/sendgridContact",
+          "/.netlify/functions/sendgridContact",
           {
             email: email ? email : emailInputValue,
             zipcode: zipcodeInputValue,
@@ -141,7 +141,7 @@ export default function individualFleetForm() {
         userType = dropdownInputValue2
       }
       const response = await axios.post(
-        "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/saveFullContactInfo",
+        "/.netlify/functions/saveFullContactInfo",
         {
           email: email ?? emailInputValue,
           zipcode: zipcodeInputValue,
@@ -175,7 +175,7 @@ export default function individualFleetForm() {
     if (passwordConfirmInputValue === passwordInputValue) {
       try {
         const response = await axios.post(
-          "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/passwordCreated",
+          "/.netlify/functions/passwordCreated",
           {
             email: email,
             password: passwordInputValue,
@@ -610,7 +610,7 @@ export default function individualFleetForm() {
                         onAccountCreated: async ({ accountId, userId }) => {
                           try {
                             const response = await axios.post(
-                              "https://determined-aryabhata-e13781.netlify.app/.netlify/functions/linkArgyleAccount",
+                              "/.netlify/functions/linkArgyleAccount",
                               {
                                 email: email,
                                 argyleUserId: userId,
