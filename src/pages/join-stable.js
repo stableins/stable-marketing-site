@@ -57,6 +57,8 @@ export default function individualFleetForm() {
   const [resetSelect2, setResetSelect2] = useState(false)
   const [passwordMismatch, setPasswordMismatch] = useState(false)
 
+  console.log(dropdownInputValue1)
+
   useEffect(() => {
     setHasMounted(true)
   }, [resetSelect1, resetSelect2])
@@ -227,6 +229,16 @@ export default function individualFleetForm() {
                         // required
                         type="email"
                         placeholder="Email"
+                        onClick={() => {
+                          if (clicked === "1") setClicked("0")
+                          if (clicked === "2") setClicked("0")
+                          if (clicked === "1" && dropdownInputValue1 !== "") {
+                            setClicked(clicked)
+                          }
+                          if (clicked === "2" && dropdownInputValue2 !== "") {
+                            setClicked(clicked)
+                          }
+                        }}
                       />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -237,6 +249,16 @@ export default function individualFleetForm() {
                         // required
                         type="text"
                         placeholder="Name"
+                        onClick={() => {
+                          if (clicked === "1") setClicked("0")
+                          if (clicked === "2") setClicked("0")
+                          if (clicked === "1" && dropdownInputValue1 !== "") {
+                            setClicked(clicked)
+                          }
+                          if (clicked === "2" && dropdownInputValue2 !== "") {
+                            setClicked(clicked)
+                          }
+                        }}
                       />
                     </Form.Group>
                     <Form.Group>
@@ -249,14 +271,24 @@ export default function individualFleetForm() {
                           (e.target.value = e.target.value.slice(0, 5))
                         }
                         onChange={e => setZipcodeInputValue(e.target.value)}
-                        // required
                         placeholder="Zip Code"
+                        onClick={() => {
+                          if (clicked === "1") setClicked("0")
+                          if (clicked === "2") setClicked("0")
+                          if (clicked === "1" && dropdownInputValue1 !== "") {
+                            setClicked(clicked)
+                          }
+                          if (clicked === "2" && dropdownInputValue2 !== "") {
+                            setClicked(clicked)
+                          }
+                        }}
                       />
                     </Form.Group>
                     <h4>I am a...</h4>
 
                     <div className="select-wrapper">
-                      <Form.Control
+                      <select
+                        primary
                         required
                         onClick={() => {
                           setClicked("1")
@@ -265,16 +297,16 @@ export default function individualFleetForm() {
                         }}
                         className={`select-1-${clicked}`}
                         onChange={e => {
-                          if (e.target.value === "Choose Option") {
-                            setDropdownInputValue1(null)
+                          if (e.target.value === "") {
+                            setDropdownInputValue1("")
                           }
                           if (e.target.value === "1") {
                             setDropdownInputValue1("Rideshare Driver")
-                            setDropdownInputValue2(null)
+                            setDropdownInputValue2("")
                           }
                           if (e.target.value === "2") {
                             setDropdownInputValue1("Carshare Owner")
-                            setDropdownInputValue2(null)
+                            setDropdownInputValue2("")
                           }
                         }}
                         as="select"
@@ -288,7 +320,7 @@ export default function individualFleetForm() {
                         <option required value="2">
                           Carshare Owner
                         </option>
-                      </Form.Control>
+                      </select>
                       <Form.Control
                         required
                         onClick={() => {

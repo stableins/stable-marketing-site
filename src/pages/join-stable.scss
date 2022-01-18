@@ -89,19 +89,14 @@
         margin-top: 10px;
         display: inline-flex;
 
-        .select-1-2 {
-          width: 168px;
-          color: black;
-          background: white;
-          -webkit-transition: none;
-          transition: none;
-          margin: auto;
-        }
-
         .select-1-0 {
           width: 168px;
-          color: white;
-          background: #3b358a;
+          height: 56px;
+          border: 1px solid #92AFD6;
+box-sizing: border-box;
+border-radius: 8px 0px 0px 0px;
+          color: black;
+          background: white;
           -webkit-transition: none;
           transition: none;
           margin: auto;
@@ -111,6 +106,16 @@
           width: 168px;
           color: white;
           background: #3b358a;
+          -webkit-transition: none;
+          transition: none;
+          margin: auto;
+        }
+       
+        .select-1-2 {
+          width: 168px;
+          height: 56px;
+          color: black;
+          background: white;
           -webkit-transition: none;
           transition: none;
           margin: auto;
