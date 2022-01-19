@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { PageWrapper } from "~components/Core"
+import { useSelector } from "react-redux"
 import HeroSection from "~sections/marketing/Hero"
 import ServiceSection from "~sections/marketing/Service"
 import ServiceSection2 from "~sections/marketing/Service2/"
@@ -17,6 +18,8 @@ import CounterSection from "~sections/marketing/Counter"
 import CtaSection from "~sections/marketing/Cta"
 import FooterOne from "~sections/marketing/FooterOne"
 import HeaderButton from "~sections/marketing/Header"
+import { scroller } from "react-scroll"
+
 const header = {
   headerClasses:
     "site-header site-header--menu-start light-header site-header--sticky",
@@ -34,8 +37,64 @@ const header = {
   ),
 }
 
+const scrollToCarshare = () => {
+  scroller.scrollTo("anchor2", {
+    duration: 0,
+    delay: 0,
+    smooth: "easeInOutQuart",
+  })
+}
+
+const scrollToRideShare = () => {
+  scroller.scrollTo("anchor", {
+    duration: 0,
+    delay: 0,
+    smooth: "easeInOutQuart",
+  })
+}
+
+const scrollToReport = () => {
+  scroller.scrollTo("anchor3", {
+    duration: 0,
+    delay: 0,
+    smooth: "easeInOutQuart",
+  })
+}
+
+
 export default function Marketing() {
   const [hasMounted, setHasMounted] = useState(false)
+  const scrollStatus = useSelector(state => state.siteBehavior.scrollStatus)
+
+  console.log(scrollStatus)
+
+  useEffect(() => {
+    const scrollToReport = () => {
+      scroller.scrollTo("anchor3", {
+        duration: 400,
+        delay: 0,
+        smooth: "smooth",
+      })
+    }
+
+    const scrollToCarshare = () => {
+      scroller.scrollTo("anchor2", {
+        duration: 0,
+        delay: 0,
+        smooth: "easeInOutQuart",
+      })
+    }
+
+    const scrollToRideShare = () => {
+      scroller.scrollTo("anchor", {
+        duration: 0,
+        delay: 0,
+        smooth: "easeInOutQuart",
+      })
+    }
+
+    scrollToCarshare()
+  }, [])
 
   useEffect(() => {
     setHasMounted(true)
@@ -44,6 +103,8 @@ export default function Marketing() {
   if (!hasMounted) {
     return null
   }
+
+  
 
   return (
     <PageWrapper headerConfig={header}>
