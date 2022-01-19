@@ -69,7 +69,6 @@ export default function HeroSection() {
     } else if (scrollStatus === undefined) {
       return null
     }
-
   }, [])
 
   const scrollToReport = () => {
@@ -177,12 +176,12 @@ export default function HeroSection() {
                   </Hero.Title>
                   <Hero.Text>
                     <div className="hero-text">
-                      You're probably overpaying for rideshare and carshare
-                      insurance. <br />
-                      And you definitely should get more value from your
-                      insurance <br /> company. Stable gives you tools to
-                      improve your risk and uses new
-                      <br /> data, in real-time, to better price insurance.{" "}
+                      Rideshare, carshare, and delivery vehicle owners need more
+                      than just peace <br />
+                      of mind from their insurance company. Stable is building
+                      tools and additional services alongside its insurance
+                      product that will help you more efficiently and profitably
+                      run your business.
                     </div>
                     <br className="d-none d-xs-block" />
                   </Hero.Text>

@@ -2,7 +2,7 @@
   .hero-section-wrapper {
     background: linear-gradient(251.6deg, #5b84c4 60.73%, #3b358a 90.24%);
     height: 720px;
-    
+
     .hero-modal-button {
       background: blue !important;
     }
@@ -105,8 +105,6 @@
       }
     }
 
-    
-
     @-moz-document url-prefix() {
       .hero-text {
         margin-bottom: -30px;
@@ -161,6 +159,7 @@
       height: 50px;
       width: 670px !important;
       border-radius: 8px;
+      color: #92afd6;
     }
 
     button {
@@ -239,8 +238,7 @@
 
 @media (max-width: 1024px) {
   .hero-section-wrapper {
-    background: linear-gradient(190.47deg, #5b84c4 63.15%, #3b358a 86.87%);
-
+background: linear-gradient(1.76deg, #5B84C4 37.18%, #3B358A 71.78%);
     .image {
       display: none;
     }
@@ -334,6 +332,8 @@
       height: 100%;
       border-radius: 8px;
       margin-top: -30px;
+                    color: #92afd6;
+
     }
 
     button {
