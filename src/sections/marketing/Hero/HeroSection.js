@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Col, Container, Row, Modal, Form, Button } from "react-bootstrap"
 import ReactTypingEffect from "react-typing-effect"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
@@ -26,14 +26,70 @@ export default function HeroSection() {
   const email = useSelector(state => state.form.email)
   const status = useSelector(state => state.form.status)
   const userType = useSelector(state => state.form.userType)
+  const scrollStatus = useSelector(state => state.siteBehavior.scrollStatus)
+
+  console.log(scrollStatus)
 
   smoothscroll.polyfill()
+
+  useEffect(() => {
+    const scrollToReport = () => {
+      scroller.scrollTo("anchor3", {
+        duration: 400,
+        delay: 0,
+        smooth: "smooth",
+      })
+    }
+
+    const scrollToCarshare = () => {
+      scroller.scrollTo("anchor2", {
+        duration: 0,
+        delay: 0,
+        smooth: "easeInOutQuart",
+      })
+    }
+
+    const scrollToRideshare = () => {
+      scroller.scrollTo("anchor", {
+        duration: 0,
+        delay: 0,
+        smooth: "easeInOutQuart",
+      })
+    }
+    if (scrollStatus === "scrollToReport") {
+      scrollToReport()
+    }
+
+    if (scrollStatus === "scrollToRideshare") {
+      scrollToRideshare()
+    }
+
+    if (scrollStatus === "scrollToCarshare") {
+      scrollToCarshare()
+    }
+  }, [])
 
   const scrollToReport = () => {
     scroller.scrollTo("anchor3", {
       duration: 400,
       delay: 0,
       smooth: "smooth",
+    })
+  }
+
+  const scrollToCarshare = () => {
+    scroller.scrollTo("anchor2", {
+      duration: 0,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    })
+  }
+
+  const scrollToRideShare = () => {
+    scroller.scrollTo("anchor", {
+      duration: 0,
+      delay: 0,
+      smooth: "easeInOutQuart",
     })
   }
 
@@ -45,12 +101,9 @@ export default function HeroSection() {
     event.preventDefault()
 
     try {
-      const response = await axios.post(
-        "/.netlify/functions/saveEmail",
-        {
-          email: emailInputValue,
-        }
-      )
+      const response = await axios.post("/.netlify/functions/saveEmail", {
+        email: emailInputValue,
+      })
 
       if (response.data.userType) {
         dispatch({
@@ -163,9 +216,7 @@ export default function HeroSection() {
                       className="driver-report-mobile"
                       onClick={scrollToReport}
                     >
-                      <p>
-                        Get Your Driver Report &nbsp;
-                      </p>
+                      <p>Get Your Driver Report &nbsp;</p>
                     </p>
                   </Col>
                 </Hero.Content>
@@ -211,13 +262,13 @@ export default function HeroSection() {
             >
               <Form.Group className="mb-3">
                 <Form.Label>
-                  It looks like you've already submitted some information to us.
-                  Would you like to continue the sign up process for you left
-                  off at? If not, select "Restart" below.
+                  It looks like you’ve already submitted some information to us.
+                  Select Continue to pick-up where you left off. Or click
+                  Restart to begin again.
                 </Form.Label>
               </Form.Group>
               <Button
-                style={{  width: "150px" }}
+                style={{ width: "150px" }}
                 onClick={async () => {
                   const response = await axios.post(
                     "/.netlify/functions/resetContact",

@@ -199,9 +199,9 @@ const FeatureSection = ({ ...rest }) => {
           >
             <Form.Group className="mb-3">
               <Form.Label>
-                It looks like you've already submitted some information to us.
-                Would you like to continue the sign up process for you left off
-                at? If not, select "Restart" below.
+                It looks like you’ve already submitted some information to us.
+                Select Continue to pick-up where you left off. Or click Restart
+                to begin again.
               </Form.Label>
             </Form.Group>
             <Button
