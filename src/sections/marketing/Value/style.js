@@ -11,7 +11,7 @@ const Feature = styled(Box)`
         padding-bottom: 40px;
     }
     @media (min-width:992px) {
-        padding-top: 125px;
+        padding-top: 160px;
         padding-bottom: 0px;
     }
     /* .newsletter-form {
