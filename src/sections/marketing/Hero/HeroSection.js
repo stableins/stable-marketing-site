@@ -26,7 +26,7 @@ export default function HeroSection() {
   const email = useSelector(state => state.form.email)
   const status = useSelector(state => state.form.status)
   const userType = useSelector(state => state.form.userType)
-  const scrollStatus = useSelector(state => state.siteBehavior.scrollStatus)
+  const scrollStatus = useSelector(state => state?.siteBehavior.scrollStatus)
 
   console.log(scrollStatus)
 
@@ -66,7 +66,10 @@ export default function HeroSection() {
 
     if (scrollStatus === "scrollToCarshare") {
       scrollToCarshare()
+    } else if (scrollStatus === undefined) {
+      return null
     }
+
   }, [])
 
   const scrollToReport = () => {
