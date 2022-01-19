@@ -1,4 +1,4 @@
-@media (max-width: 500px) {
+@media (max-width: 1024px) {
   .site-nav-wrapper {
     display: inline-block;
     width: 100%;
@@ -23,25 +23,53 @@
   }
 }
 
-@media (min-width: 501px) {
+@media (min-width: 1025px) {
   .site-nav-wrapper {
-     display: inline-block;
+    display: inline-block;
     width: 1000px;
     position: fixed;
     background: #ffffff;
     margin-left: -10px;
     .site-navbar {
       width: 100%;
-          background: #ffffff;
-
+      background: #ffffff;
+      position: absolute;
 
       .navbar-brand {
-        width: 70%;
+        width: 100%;
       }
 
       .button-block {
         width: 82%;
       }
     }
+  }
+}
+
+@media (min-width: 1501px) {
+  .navbar-brand {
+    width: 100%;
+    margin-left: 110px;
+  }
+}
+
+@media (min-width: 1901px) {
+  .navbar-brand {
+    width: 100%;
+    margin-left: 235px;
+  }
+}
+
+@media (min-width: 2500px) {
+  .navbar-brand {
+    width: 100%;
+    margin-left: 550px;
+  }
+}
+
+@media (min-width: 3500px) {
+  .navbar-brand {
+    width: 100%;
+    margin-left: 1450px;
   }
 }

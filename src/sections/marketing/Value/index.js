@@ -12,6 +12,7 @@ import {
 import { Images } from "~data"
 import { Redirect } from "@reach/router"
 import TabContentWidget from "./Component/TabContentWidget"
+import DriverReport from "../../../assets/image/logo/driver-report.png"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import TabNavWidget from "./Component/TabNavWidget"
 import Slide from "react-reveal/Slide"
@@ -122,7 +123,9 @@ const FeatureSection = ({ ...rest }) => {
                             ></Feature.Title>
                           </Feature.Box>
                         </div>
-                        <img className="image" src={StableLogo} />
+                        <div className="image">
+                          <img src={DriverReport} />
+                        </div>
                         <Feature.Title
                           className="mb-5"
                           as="h2"
