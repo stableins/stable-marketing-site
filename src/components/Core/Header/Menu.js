@@ -12,12 +12,12 @@ import {
   Button,
   Dropdown,
 } from "react-bootstrap"
+import { useDispatch } from "react-redux"
 import { menuItems } from "../../../data/menudata"
 import Link from "../Link"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import { scroller } from "react-scroll"
 import smoothscroll from "smoothscroll-polyfill"
-
 import Intake from "../../../api/intake"
 import "./Menu.scss"
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle"
@@ -26,6 +26,7 @@ const isObject = function (a) {
   return !!a && a.constructor === Object
 }
 const Menu = ({ ...rest }) => {
+  const dispatch = useDispatch()
   const [modal, setModal] = useState(false)
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [emailInputValue, setEmailInputValue] = useState("")
@@ -89,21 +90,52 @@ const Menu = ({ ...rest }) => {
         />
         <Nav className="mr-auto site-menu-main">
           <div className="button-wrapper">
-            <button className="report" onClick={scrollToReport}>
-              <Navbar.Toggle className="toggle">
-                <span> Get Your Driver Report </span>
-              </Navbar.Toggle>
-            </button>
-            <button onClick={scrollToRideshare}>
-              <Navbar.Toggle className="toggle">
-                Rideshare Insurance
-              </Navbar.Toggle>
-            </button>
-            <button onClick={scrollToCarshare}>
-              <Navbar.Toggle className="toggle">
-                Carshare Insurance
-              </Navbar.Toggle>
-            </button>
+            <Link to="/">
+              <button
+                className="report"
+                onClick={() => {
+                  dispatch({
+                    type: "SITE::SET_SCROLL_STATUS",
+                    payload: "scrollToReport",
+                  })
+                  scrollToReport()
+                }}
+              >
+                <Navbar.Toggle className="toggle">
+                  <span> Get Your Driver Report </span>
+                </Navbar.Toggle>
+              </button>
+            </Link>
+            <Link to="/">
+              <button
+                onClick={() => {
+                  dispatch({
+                    type: "SITE::SET_SCROLL_STATUS",
+                    payload: "scrollToRideshare",
+                  })
+                  scrollToRideshare()
+                }}
+              >
+                <Navbar.Toggle className="toggle">
+                  Rideshare Insurance
+                </Navbar.Toggle>
+              </button>
+            </Link>
+            <Link to="/">
+              <button
+                onClick={() => {
+                  dispatch({
+                    type: "SITE::SET_SCROLL_STATUS",
+                    payload: "scrollToCarshare",
+                  })
+                  scrollToCarshare()
+                }}
+              >
+                <Navbar.Toggle className="toggle">
+                  Carshare Insurance
+                </Navbar.Toggle>
+              </button>
+            </Link>
             <div className="divider"></div>
             <Link to="https://driver.stablelabs.io/">
               <button>

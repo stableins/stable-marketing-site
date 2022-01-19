@@ -127,7 +127,7 @@ export default function FooterOne() {
             <Modal.Title id="example-custom-modal-styling-title">
               <img src={StableLogo} width={150} />
             </Modal.Title>
-            Terms and Conditions
+            Terms
           </Modal.Header>
           <div className="terms-wrapper">
             <h1 className="heading">
