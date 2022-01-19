@@ -37,12 +37,9 @@ const FeatureSection = ({ ...rest }) => {
     event.preventDefault()
 
     try {
-      const response = await axios.post(
-        "/.netlify/functions/saveEmail",
-        {
-          email: emailInputValue,
-        }
-      )
+      const response = await axios.post("/.netlify/functions/saveEmail", {
+        email: emailInputValue,
+      })
 
       if (response.data.userType) {
         dispatch({
@@ -92,7 +89,7 @@ const FeatureSection = ({ ...rest }) => {
             <Slide left>
               <Row>
                 <Col xs="auto" className="col-xl-8 col-lg-10">
-                  <div className="title">Get Value from Us Before you Buy </div>
+                  <div className="title">Get Your Free Driver Report </div>
                   <div className="section-wrapper">
                     <div className="left">
                       <Feature.Box mb="35px" mbMD="80px" mbLG="148px">
@@ -103,13 +100,13 @@ const FeatureSection = ({ ...rest }) => {
                         >
                           <div className="text">
                             <p className="p-text1">
-                              Join Stable’s waiting list for insurance and we’ll
-                              provide you with{" "}
                               <span className="bold">
-                                FREE daily earning reports
+                                Our first tool. Available to All.
                               </span>{" "}
-                              for your rideshare driving. One easy place to see
-                              how much you’re earning and how efficient you are
+                              Join Stable’s waiting list for insurance and we’ll
+                              provide you with FREE daily earning reports for
+                              your rideshare driving. One easy place to see how
+                              much you’re earning and how efficient you are
                               across platforms.
                             </p>
                           </div>
@@ -125,6 +122,7 @@ const FeatureSection = ({ ...rest }) => {
                             ></Feature.Title>
                           </Feature.Box>
                         </div>
+                        <img className="image" src={StableLogo} />
                         <Feature.Title
                           className="mb-5"
                           as="h2"

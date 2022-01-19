@@ -39,7 +39,6 @@ export default function ServiceSection() {
               <div className="image-wrapper">
                 <Slide left>
                   <div className="partners-section">
-                    {/* <div className="title">Partners</div> */}
                     <div className="image-row">
                       <img
                         className="ils"
@@ -47,12 +46,12 @@ export default function ServiceSection() {
                         src={Mltply}
                         alt="shape dot"
                       />
-                        <img
-                          className="guy"
-                          width={320}
-                          src={Ils}
-                          alt="shape dot"
-                        />
+                      <img
+                        className="guy"
+                        width={320}
+                        src={Ils}
+                        alt="shape dot"
+                      />
                       <img
                         className="mltply"
                         width={220}
@@ -62,59 +61,8 @@ export default function ServiceSection() {
                     </div>
                   </div>
                 </Slide>
-                {/* <div className="lower-section-wrapper">
-                  <Slide up>
-                    <div className="left">
-                      <div className="accelerators-section">
-                        <div className="title">Accelerators</div>
-                        <div className="image-stack">
-                          <img
-                            width={200}
-                            src={Hartford}
-                            alt="shape dot"
-                            className="hartford"
-                          />
-                          <img
-                            width={200}
-                            src={InsurTechNY}
-                            alt="shape dot"
-                            className="insurtechny"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </Slide>
-                  <Slide right>
-                    <div className="right">
-                      <div className="pitches-section">
-                        <div className="title">Pitch Competitions</div>
-                        <div className="image-stack">
-                          <img
-                            width={200}
-                            src={GRInnovation}
-                            alt="shape dot"
-                            className="gri"
-                          />
-                          <img
-                            width={275}
-                            src={SharedMobility}
-                            alt="shape dot"
-                            className="shared-mobility"
-                          />
-                          <img
-                            width={250}
-                            src={InsurTechRising}
-                            alt="shape dot"
-                            className="insurtech-rising"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </Slide>
-                </div> */}
               </div>
             </Row>
-            {/* </Slide> */}
           </Service.Box>
         </Container>
       </Service>

@@ -1,8 +1,51 @@
 @media (max-width: 1024px) {
   .footer-wrapper {
-    height: 230px;
+    height: 282px;
     .contact-wrapper {
       margin-top: -65px;
+
+      .item1 {
+        width: 400px;
+        margin-right: -20px;
+
+        i {
+          margin-right: -5px;
+        }
+      }
+      .item2 {
+        width: 400px;
+        margin-right: -160px;
+        i {
+          margin-right: -4px;
+        }
+      }
+      .item3 {
+        width: 400px;
+        margin-top: 2px;
+        i {
+          margin-right: -5px;
+        }
+      }
+      .item4 {
+        width: 400px;
+        margin-left: -30px;
+        margin-top: 7px;
+        cursor: pointer;
+        i {
+          margin-right: -5px;
+        }
+      }
+      .item5 {
+        width: 400px;
+        margin-top: 9px;
+                margin-left: -30px;
+
+        cursor: pointer;
+
+        i {
+          margin-right: -5px;
+        }
+      }
     }
 
     .copyright-wrapper {
@@ -34,6 +77,7 @@
 
 @media (min-width: 1025px) {
   .footer-wrapper {
+    height: 270px;
     .contact-wrapper {
       text-align: left;
       display: inline-flex;

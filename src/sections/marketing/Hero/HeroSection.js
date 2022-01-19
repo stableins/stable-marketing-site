@@ -26,7 +26,7 @@ export default function HeroSection() {
   const email = useSelector(state => state.form.email)
   const status = useSelector(state => state.form.status)
   const userType = useSelector(state => state.form.userType)
-  const scrollStatus = useSelector(state => state.siteBehavior.scrollStatus)
+  const scrollStatus = useSelector(state => state?.siteBehavior.scrollStatus)
 
   console.log(scrollStatus)
 
@@ -66,6 +66,8 @@ export default function HeroSection() {
 
     if (scrollStatus === "scrollToCarshare") {
       scrollToCarshare()
+    } else if (scrollStatus === undefined) {
+      return null
     }
   }, [])
 
@@ -174,12 +176,12 @@ export default function HeroSection() {
                   </Hero.Title>
                   <Hero.Text>
                     <div className="hero-text">
-                      You're probably overpaying for rideshare and carshare
-                      insurance. <br />
-                      And you definitely should get more value from your
-                      insurance <br /> company. Stable gives you tools to
-                      improve your risk and uses new
-                      <br /> data, in real-time, to better price insurance.{" "}
+                      Rideshare, carshare, and delivery vehicle owners need more
+                      than just peace <br />
+                      of mind from their insurance company. Stable is building
+                      tools and additional services alongside its insurance
+                      product that will help you more efficiently and profitably
+                      run your business.
                     </div>
                     <br className="d-none d-xs-block" />
                   </Hero.Text>

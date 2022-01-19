@@ -22,13 +22,13 @@ export default function ServiceSection() {
   const [zipcodeInputValue, setZipcodeInputValue] = useState("")
   const [dropdownInputValue, setDropdownInputValue] = useState("")
 
-   const scrollToMessage = () => {
-     scroller.scrollTo("anchor4", {
-       duration: 400,
-       delay: 0,
-       smooth: "easeInOutQuart",
-     })
-   }
+  const scrollToMessage = () => {
+    scroller.scrollTo("anchor4", {
+      duration: 400,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    })
+  }
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -72,33 +72,31 @@ export default function ServiceSection() {
                 </div>
                 <div className="bullet-1">
                   <p>
-                    Rideshare drivers and carshare owners are business owners,
-                    but no one is building the tools they need to thrive.
+                    Rideshare/Delivery drivers and carshare owners are business
+                    owners, but no one is building the tools they need to
+                    thrive.
                   </p>
                 </div>
                 <div className="bullet-2">
                   <p>
-                    Stable solved the hardest problem these customers face:
-                    insurance.
+                    Stable has solved for the hardest problem these customers
+                    face: insurance.
                   </p>
                 </div>
                 <div className="bullet-3">
                   <p>
-                    Our vision is to provide all the tools necessary for these
-                    businesses to thrive.
+                    But our ultimate vision is to provide all the tools
+                    necessary for these businesses to thrive.
                   </p>
                 </div>
                 <div className="bullet-4" onClick={scrollToMessage}>
-                  <p>
-                    What should we build next? Message us&nbsp;
-                  </p>
+                  <p>What should we build next? Message us&nbsp;</p>
                 </div>
               </Col>
             </Row>
           </Slide>
           <Service.Box mtLG="100px" mtMD="40px">
-            <Slide right>
-            </Slide>
+            <Slide right></Slide>
           </Service.Box>
         </Container>
       </Service>
