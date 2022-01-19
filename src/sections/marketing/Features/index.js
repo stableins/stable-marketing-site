@@ -226,7 +226,7 @@ const FeatureSection = ({ ...rest }) => {
                                 Usage Based Pricing{" "}
                               </div>
                               <div className="text">
-                                Usage Based Pricing Usage based pricing that
+                                Usage based pricing that
                                 only charges you for miles driven off the
                                 carshare platform.
                               </div>
