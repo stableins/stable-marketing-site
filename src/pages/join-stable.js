@@ -300,11 +300,6 @@ export default function individualFleetForm() {
                           setDropdownInputValue2("")
                           setDisableOption1(true)
                         }}
-                        onBlur={() => {
-                          setDisableOption1(false)
-                          setResetSelect1(false)
-                          setResetSelect2(true)
-                        }}
                         onClick={() => {
                           setClicked("1")
                           setResetSelect1(true)
@@ -330,10 +325,10 @@ export default function individualFleetForm() {
                         <option
                           required
                           value=""
-                          disabled={disableOption1}
+                          // disabled={disableOption1}
                           selected={!resetSelect1}
                         >
-                          Driver
+                          {clicked === "1" ? "Select Option" : "Driver"}
                         </option>
                         <option
                           disabled={clicked === "1" ? false : true}
@@ -380,10 +375,10 @@ export default function individualFleetForm() {
                         as="select"
                       >
                         <option
-                          disabled={clicked === "2" ? true : false}
+                          // disabled={clicked === "2" ? true : false}
                           selected={!resetSelect2}
                         >
-                          Fleet
+                          {clicked === "2" ? "Select Option" : "Fleet"}
                         </option>
                         <option
                           value="3"
@@ -402,6 +397,26 @@ export default function individualFleetForm() {
                     <div className="check-wrapper">
                       <div className="checkbox">
                         <input
+                          onFocus={() => {
+                            if (clicked === "1") setClicked("0")
+                            if (clicked === "2") setClicked("0")
+                            if (clicked === "1" && dropdownInputValue1 !== "") {
+                              setClicked(clicked)
+                            }
+                            if (clicked === "2" && dropdownInputValue2 !== "") {
+                              setClicked(clicked)
+                            }
+                          }}
+                          onClick={() => {
+                            if (clicked === "1") setClicked("0")
+                            if (clicked === "2") setClicked("0")
+                            if (clicked === "1" && dropdownInputValue1 !== "") {
+                              setClicked(clicked)
+                            }
+                            if (clicked === "2" && dropdownInputValue2 !== "") {
+                              setClicked(clicked)
+                            }
+                          }}
                           required={true}
                           className="form-check-input"
                           type="checkbox"
