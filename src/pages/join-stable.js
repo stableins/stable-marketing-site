@@ -61,7 +61,7 @@ export default function individualFleetForm() {
   const [disableOption1, setDisableOption1] = useState(false)
   const [disableOption2, setDisableOption2] = useState(false)
 
-  console.log(clicked)
+ console.log(dropdownInputValue1, dropdownInputValue2)
 
   useEffect(() => {
     setHasMounted(true)
@@ -375,6 +375,7 @@ export default function individualFleetForm() {
                         as="select"
                       >
                         <option
+                          value=""
                           // disabled={clicked === "2" ? true : false}
                           selected={!resetSelect2}
                         >
