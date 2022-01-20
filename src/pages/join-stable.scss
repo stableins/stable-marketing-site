@@ -1,4 +1,12 @@
 @media (min-width: 1000px) {
+   .loader {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      margin-top: -50px;
+      margin-left: -100px;
+      z-index: 1;
+    }
   .join-stable-wrapper {
     text-align: center;
     padding: 20px;
@@ -273,6 +281,14 @@
 }
 
 @media (max-width: 999px) {
+   .loader {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      margin-top: -50px;
+      margin-left: -100px;
+      z-index: 1;
+    }
   .join-stable-wrapper {
     text-align: center;
     padding: 20px;
@@ -458,10 +474,10 @@
             width: 100%;
 
             span {
-          color: #ffae13;
-          font-weight: bold;
-          cursor: pointer;
-        }
+              color: #ffae13;
+              font-weight: bold;
+              cursor: pointer;
+            }
           }
 
           input {

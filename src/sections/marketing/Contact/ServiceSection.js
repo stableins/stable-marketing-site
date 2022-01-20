@@ -9,6 +9,7 @@ import CounterBlock from "../../about/Feature/Components/CounterBlock"
 import Slide from "react-reveal"
 import Service from "./style"
 import { useDispatch } from "react-redux"
+import PulseLoader from "react-spinners/PulseLoader"
 import "./ServiceSection.scss"
 
 export default function ServiceSection() {
@@ -18,6 +19,8 @@ export default function ServiceSection() {
   const [emailInputValue, setEmailInputValue] = useState("")
   const [messageInputValue, setMessageInputValue] = useState("")
   const [nameInputValue, setNameInputValue] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [color, setColor] = useState("#3b358a;")
 
   async function handleMessageSubmit(event) {
     event.preventDefault()
@@ -42,6 +45,9 @@ export default function ServiceSection() {
     <>
       <Service className="border-top border-default-color-2 bg-default">
         <div className="contact-wrapper">
+          <div className="loader">
+            <PulseLoader color={color} loading={loading} size={50} />
+          </div>
           <Service.Shape className="service-shape service-shape--l1"></Service.Shape>
           <Container>
             <Row className="align-items-end justify-content-center text-start">

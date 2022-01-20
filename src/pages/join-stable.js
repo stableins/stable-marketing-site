@@ -13,6 +13,7 @@ import HeaderButton from "../sections/marketing/Header"
 import Intake from "../api/intake"
 import "./join-stable.scss"
 import { useSelector } from "react-redux"
+import PulseLoader from "react-spinners/PulseLoader"
 import Lottie from "react-lottie"
 
 const header = {
@@ -60,6 +61,8 @@ export default function individualFleetForm() {
   const [passwordMismatch, setPasswordMismatch] = useState(false)
   const [disableOption1, setDisableOption1] = useState(false)
   const [disableOption2, setDisableOption2] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [color, setColor] = useState("#3b358a;")
 
   console.log(dropdownInputValue1, dropdownInputValue2)
 
@@ -84,23 +87,30 @@ export default function individualFleetForm() {
 
   async function handleSubmit(event) {
     event.preventDefault()
+    setLoading(true)
 
     if (passwordConfirmInputValue != passwordInputValue) {
       setPasswordMismatch(true)
     }
-
     try {
       if (dropdownInputValue1 === "Rideshare Driver") {
         dispatch({
           type: "FORM::SET_STATUS",
           payload: "emailZipAndNameAndEligible",
         })
-        await axios.post("/.netlify/functions/sendgridContact", {
-          email: email ? email : emailInputValue,
-          zipcode: zipcodeInputValue,
-          name: nameInputValue,
-          status: "email address and additional info received",
-        })
+        const response = await axios.post(
+          "/.netlify/functions/sendgridContact",
+          {
+            email: email ? email : emailInputValue,
+            zipcode: zipcodeInputValue,
+            name: nameInputValue,
+            status: "email address and additional info received",
+          }
+        )
+      }
+
+      if (response.data) {
+        setLoading(false)
       }
 
       if (
@@ -133,6 +143,8 @@ export default function individualFleetForm() {
 
   async function handleAdditionalInfoSubmit(event) {
     event.preventDefault()
+    setLoading(true)
+
     try {
       let userType
 
@@ -152,6 +164,9 @@ export default function individualFleetForm() {
           userType: userType,
         }
       )
+      if (response.data) {
+        setLoading(false)
+      }
 
       dispatch({
         type: "FORM::SET_EMAIL",
@@ -169,11 +184,13 @@ export default function individualFleetForm() {
       })
     } catch (e) {
       console.log(e)
+      setLoading(false)
     }
   }
 
   async function handlePasswordSubmit(event) {
     event.preventDefault()
+    setLoading(true)
 
     if (passwordConfirmInputValue === passwordInputValue) {
       try {
@@ -185,6 +202,10 @@ export default function individualFleetForm() {
             confirmPassword: passwordConfirmInputValue,
           }
         )
+
+        if (response.data) {
+          setLoading(false)
+        }
 
         dispatch({
           type: "FORM::SET_STATUS",
@@ -205,6 +226,9 @@ export default function individualFleetForm() {
 
   return (
     <>
+      <div className="loader">
+        <PulseLoader color={color} loading={loading} size={50} />
+      </div>
       <Fade>
         <PageWrapper headerConfig={header} innerPage={true}>
           {status === "" && (
