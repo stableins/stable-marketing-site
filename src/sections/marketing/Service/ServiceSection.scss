@@ -213,7 +213,7 @@
 @media (max-width: 1024px) {
   .service-wrapper1 {
     background: white;
-    height: 1080px;
+    height: 1040px;
 
     .mobile-button {
       display: none;
@@ -222,6 +222,7 @@
     .title {
       height: 129px;
       left: 0px;
+      width: 240px;
       bottom: 30px;
       top: -20px;
       font-family: Rubik;
@@ -229,10 +230,11 @@
       line-height: 40px;
       font-weight: normal;
       font-size: 36px;
-
-      /* Stable Blue */
-
       color: #002e6d;
+
+      br {
+        display: none;
+      }
     }
 
     .text {
@@ -274,7 +276,7 @@
     .widget-wrapper {
       display: block;
       width: 100%;
-      margin-top: 80px;
+      margin-top: 50px;
       text-align: center;
 
       .mobile-button {

@@ -65,15 +65,13 @@ export default function ServiceSection() {
                 {/* <CounterBlock /> */}
                 <div className="quote-wrapper">
                   <p>
-                    “I’m not a businessman, <br />
-                    I’m a business, man...”
+                    <span>You...</span> are the business.
                   </p>
-                  <p>JAY-Z</p>
                 </div>
                 <div className="bullet-1">
                   <p>
-                    Rideshare/Delivery drivers and carshare owners are business
-                    owners, but no one is building the tools they need to
+                    Rideshare/Delivery drivers and carshare owners are
+                    businesses, but no one is building the tools they need to
                     thrive.
                   </p>
                 </div>
