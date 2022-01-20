@@ -18,6 +18,8 @@ import TabNavWidget from "./Component/TabNavWidget"
 import Slide from "react-reveal/Slide"
 import axios from "axios"
 import Intake from "../../../api/intake"
+import PulseLoader from "react-spinners/PulseLoader"
+
 import Feature from "./style"
 import { Spinner } from "react-bootstrap"
 import "./index.scss"
@@ -31,16 +33,21 @@ const FeatureSection = ({ ...rest }) => {
   const [bulletPointModal, setBulletPointModal] = useState(false)
   const [statusResponse, setStatusResponse] = useState("")
   const [emailInputValue, setEmailInputValue] = useState("")
-  const [spinner, setSpinner] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [color, setColor] = useState("#3b358a;")
   console.log(emailInputValue)
 
   async function handleEmailSubmit(event) {
     event.preventDefault()
-
+    setLoading(true)
     try {
       const response = await axios.post("/.netlify/functions/saveEmail", {
         email: emailInputValue,
       })
+
+      if (response.data) {
+        setLoading(false)
+      }
 
       if (response.data.userType) {
         dispatch({
@@ -75,6 +82,7 @@ const FeatureSection = ({ ...rest }) => {
       }
     } catch (e) {
       console.log(e)
+      setLoading(false)
     }
   }
 
@@ -83,6 +91,9 @@ const FeatureSection = ({ ...rest }) => {
   }
   return (
     <div className="value-index-wrapper">
+      <div className="loader">
+        <PulseLoader color={color} loading={loading} size={50} />
+      </div>
       <div className="anchor3"></div>
       <Feature className="bg-blue-ribbon">
         <div className="inner-wrapper">
@@ -151,7 +162,6 @@ const FeatureSection = ({ ...rest }) => {
                               >
                                 Get Your Driver Report &nbsp;
                               </button>
-                              {spinner && <Spinner animation="border" />}
                             </form>
                           </div>
                         </Feature.Title>
