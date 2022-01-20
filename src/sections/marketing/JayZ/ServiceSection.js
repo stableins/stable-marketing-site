@@ -65,7 +65,7 @@ export default function ServiceSection() {
                 {/* <CounterBlock /> */}
                 <div className="quote-wrapper">
                   <p>
-                    <span>You...</span> are the business.
+                    The tools <span>YOU</span> need to run your business.{" "}
                   </p>
                 </div>
                 <div className="bullet-1">
