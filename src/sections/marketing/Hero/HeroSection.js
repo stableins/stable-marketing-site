@@ -15,6 +15,7 @@ import Sendgrid from "../../../../functions/sendgridContact"
 import ImageGroup from "./Components/ImageGroup"
 import Fade from "react-reveal/Fade"
 import Hero from "./style"
+import PulseLoader from "react-spinners/PulseLoader"
 import "./HeroSection.scss"
 
 export default function HeroSection() {
@@ -27,6 +28,8 @@ export default function HeroSection() {
   const status = useSelector(state => state.form.status)
   const userType = useSelector(state => state.form.userType)
   const scrollStatus = useSelector(state => state?.siteBehavior.scrollStatus)
+  const [loading, setLoading] = useState(false)
+  const [color, setColor] = useState("#3b358a;")
 
   console.log(scrollStatus)
 
@@ -101,11 +104,15 @@ export default function HeroSection() {
 
   async function handleEmailSubmit(event) {
     event.preventDefault()
+    setLoading(true)
 
     try {
       const response = await axios.post("/.netlify/functions/saveEmail", {
         email: emailInputValue,
       })
+      if (response.data) {
+        setLoading(false)
+      }
 
       if (response.data.userType) {
         dispatch({
@@ -146,6 +153,9 @@ export default function HeroSection() {
   return (
     <Fade>
       <div className="hero-section-wrapper">
+        <div className="loader">
+          <PulseLoader color={color} loading={loading} size={50} />
+        </div>
         <Hero className="position-relative bg-default">
           <Container>
             <Row>
@@ -198,6 +208,7 @@ export default function HeroSection() {
                             className="form-control"
                             onChange={e => setEmailInputValue(e.target.value)}
                           />
+
                           <button
                             type="submit"
                             className="btn-purple-heart"

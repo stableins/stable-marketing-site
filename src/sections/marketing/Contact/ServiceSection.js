@@ -34,92 +34,98 @@ export default function ServiceSection() {
       })
       setShowConfirmation(true)
     } catch (e) {
-      alert(e)
+      console.log(e)
     }
   }
 
   return (
-    <Service className="border-top border-default-color-2 bg-default">
-      <div className="contact-wrapper">
-        <Service.Shape className="service-shape service-shape--l1"></Service.Shape>
-        <Container>
-          <Row className="align-items-end justify-content-center text-start">
-            <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
-              <Slide down>
-                <div className="anchor4"></div>
-                <div className="title">Get In Touch</div>
-                <div className="text">
-                  Want to chat with us about a new type of insurance you need,
-                  other things we’re working on, or to learn more? Reach out!
-                </div>
-                <div className="form-wrapper">
-                  <Form onSubmit={handleMessageSubmit}>
-                    <Form.Group className="mb-3">
-                      <Form.Control
-                        onChange={e => setNameInputValue(e.target.value)}
-                        required
-                        type="text"
-                        placeholder="Full Name"
-                      />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                      <Form.Control
-                        onChange={e => setEmailInputValue(e.target.value)}
-                        required
-                        type="email"
-                        placeholder="Email"
-                      />
-                    </Form.Group>
+    <>
+      <Service className="border-top border-default-color-2 bg-default">
+        <div className="contact-wrapper">
+          <Service.Shape className="service-shape service-shape--l1"></Service.Shape>
+          <Container>
+            <Row className="align-items-end justify-content-center text-start">
+              <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
+                <Slide down>
+                  <div className="anchor4"></div>
+                  <div className="title">Get In Touch</div>
+                  <div className="text">
+                    Want to chat with us about a new type of insurance you need,
+                    other things we’re working on, or to learn more? Reach out!
+                  </div>
+                  <div className="form-wrapper">
+                    <Form onSubmit={handleMessageSubmit}>
+                      <Form.Group className="mb-3">
+                        <Form.Control
+                          onChange={e => setNameInputValue(e.target.value)}
+                          required
+                          type="text"
+                          placeholder="Full Name"
+                        />
+                      </Form.Group>
+                      <Form.Group className="mb-3">
+                        <Form.Control
+                          onChange={e => setEmailInputValue(e.target.value)}
+                          required
+                          type="email"
+                          placeholder="Email"
+                        />
+                      </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <textarea
-                        class="form-control"
-                        onChange={e => setMessageInputValue(e.target.value)}
-                        rows="5"
-                        id="comment"
-                        placeholder="Enter message"
-                      ></textarea>
-                      {/* 
+                      <Form.Group
+                        className="mb-3"
+                        controlId="formBasicPassword"
+                      >
+                        <textarea
+                          class="form-control"
+                          onChange={e => setMessageInputValue(e.target.value)}
+                          rows="5"
+                          id="comment"
+                          placeholder="Enter message"
+                        ></textarea>
+                        {/* 
                         <Form.Control
                           style={{ height: "161px" }}
                           onChange={e => setZipcodeInputValue(e.target.value)}
                           // required
                         ></Form.Control> */}
-                    </Form.Group>
-                    <button
-                      className="form-button"
-                      variant="primary"
-                      type="submit"
-                    >
-                      <span>Send</span>&nbsp;
-                    </button>
-                  </Form>
-                </div>
-              </Slide>
-              <Slide right>
-                <br className="d-none d-xs-block d-lg-none d-xl-block" />
-                <br className="d-none d-xs-block d-lg-none d-xl-block" />
-                <Service.Text>
-                  {/* <Service.Text>
+                      </Form.Group>
+                      <button
+                        className="form-button"
+                        variant="primary"
+                        type="submit"
+                      >
+                        <span>Send</span>&nbsp;
+                      </button>
+                    </Form>
+                  </div>
+                </Slide>
+                <Slide right>
+                  <br className="d-none d-xs-block d-lg-none d-xl-block" />
+                  <br className="d-none d-xs-block d-lg-none d-xl-block" />
+                  <Service.Text>
+                    {/* <Service.Text>
                     This data is extremely valuable to your insurance company.
                     If you're both paying for it and finding solutions to
                     collect this data, you can do better. Work with Stable for a
                     wholistic solution. Don't do your insurers work for them.
                   </Service.Text> */}
-                </Service.Text>
-              </Slide>
-            </Col>
-            <Col xs="12" className="col-lg-5 col-md-12 col-xs-10">
-              {/* <CounterBlock /> */}
-              {/* <Service.Text>
+                  </Service.Text>
+                </Slide>
+              </Col>
+              <Col xs="12" className="col-lg-5 col-md-12 col-xs-10">
+                {/* <CounterBlock /> */}
+                {/* <Service.Text>
                 We're working with the rideshare and carshare community to
                 create better insurance. To do this, we need your help:{" "}
               </Service.Text> */}
-            </Col>
-          </Row>
-        </Container>
-      </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      </Service>
       <Modal
+        className="modal"
         show={showConfirmation}
         onHide={() => setShowConfirmation(false)}
         dialogClassName="modal-120w"
@@ -135,11 +141,14 @@ export default function ServiceSection() {
             Thank you for sending us a message.
           </h2>
           <p className="confirmation-modal-text">
-            We value your feedback and will reach out if need any additional details. 
+            We value your feedback and will reach out if we need any additional
+            details.
           </p>
-          <button onClick={() => setShowConfirmation(false)}>Close</button>
+          <button className="button" onClick={() => setShowConfirmation(false)}>
+            Close
+          </button>
         </div>
       </Modal>
-    </Service>
+    </>
   )
 }
