@@ -102,6 +102,10 @@
       /* Secondary */
 
       color: #475ba1;
+
+      span {
+        font-weight: bold;
+      }
     }
 
     .bullet-1 {
@@ -109,7 +113,7 @@
       width: 600px;
       height: 200px;
       border-radius: 6px;
-      bottom: -430px;
+      bottom: -330px;
       width: 419px;
       right: 120px;
       font-family: Rubik;
@@ -124,7 +128,7 @@
       width: 600px;
       height: 200px;
       border-radius: 6px;
-      bottom: -530px;
+      bottom: -430px;
       width: 419px;
       right: 120px;
       font-family: Rubik;
@@ -140,7 +144,7 @@
       width: 600px;
       height: 200px;
       border-radius: 6px;
-      bottom: -610px;
+      bottom: -510px;
       width: 419px;
       right: 120px;
       font-family: Rubik;
@@ -156,7 +160,7 @@
       width: 600px;
       height: 200px;
       border-radius: 6px;
-      bottom: -700px;
+      bottom: -590px;
       width: 419px;
       right: 120px;
       font-size: 16px;
@@ -173,13 +177,13 @@
 @media (max-width: 1024px) {
   .jayz-wrapper {
     background: #f7f7f7;
-    height: 850px;
+    height: 710px;
 
     .image {
       position: absolute;
       width: 710px;
       height: 129px;
-      left: -0px;
+      left: -3px;
       bottom: 30px;
       bottom: -140px;
       font-family: Rubik;
@@ -230,25 +234,20 @@
     }
 
     .quote-wrapper {
-      // position: absolute;
       width: 100%;
-      height: 200px;
+      height: 90px;
       border-radius: 6px;
-      // bottom: -260px;
-      // right: 50px;
-
       font-family: Rubik;
       font-style: normal;
       font-weight: normal;
       font-size: 30px;
       line-height: 36px;
-      /* or 117% */
-
       text-align: left;
-
-      /* Secondary */
-
       color: #475ba1;
+
+      span {
+        font-weight: bold;
+      }
     }
 
     .bullet-1 {
