@@ -1,8 +1,9 @@
 import { StaticImage as Img } from "gatsby-plugin-image"
 import React, { useRef, useState } from "react"
-import { Col, Container, Row, Form } from "react-bootstrap"
+import { Col, Container, Row, Form, Modal } from "react-bootstrap"
 import serviceData from "~data/marketing2/Service"
 import axios from "axios"
+import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import ServiceWidget from "./Component/Widget"
 import CounterBlock from "../../about/Feature/Components/CounterBlock"
 import Slide from "react-reveal"
@@ -12,36 +13,26 @@ import "./ServiceSection.scss"
 
 export default function ServiceSection() {
   const dispatch = useDispatch()
+  const [showConfirmation, setShowConfirmation] = useState(false)
   const [formRedirect, setFormRedirect] = useState(false)
   const [emailInputValue, setEmailInputValue] = useState("")
   const [messageInputValue, setMessageInputValue] = useState("")
   const [nameInputValue, setNameInputValue] = useState("")
 
   async function handleMessageSubmit(event) {
-    setFormRedirect(true)
     event.preventDefault()
-    //  dispatch({
-    //    type: "FORM::SET_EMAIL",
-    //    payload: emailInputValue,
-    //  })
-    //  dispatch({
-    //    type: "FORM::SET_STATUS",
-    //    payload: "emailAndPotentiallyEligible",
-    //  })
+
     try {
-      await axios.post(
-        "/.netlify/functions/sendgridEmail",
-        {
-          email: emailInputValue,
-          message: messageInputValue,
-          name: nameInputValue,
-        }
-      )
-      setFormRedirect(true)
+      await axios.post("/.netlify/functions/sendgridEmail", {
+        email: emailInputValue,
+        message: messageInputValue,
+        name: nameInputValue,
+      })
       dispatch({
         type: "FORM::SET_EMAIL",
         payload: emailInputValue,
       })
+      setShowConfirmation(true)
     } catch (e) {
       alert(e)
     }
@@ -59,8 +50,7 @@ export default function ServiceSection() {
                 <div className="title">Get In Touch</div>
                 <div className="text">
                   Want to chat with us about a new type of insurance you need,
-                  other things we’re working on, or to learn more? Reach
-                  out!
+                  other things we’re working on, or to learn more? Reach out!
                 </div>
                 <div className="form-wrapper">
                   <Form onSubmit={handleMessageSubmit}>
@@ -129,6 +119,27 @@ export default function ServiceSection() {
           </Row>
         </Container>
       </div>
+      <Modal
+        show={showConfirmation}
+        onHide={() => setShowConfirmation(false)}
+        dialogClassName="modal-120w"
+        aria-labelledby="example-custom-modal-styling-title"
+      >
+        <Modal.Header>
+          <Modal.Title id="example-custom-modal-styling-title">
+            <img width={150} src={StableLogo} />
+          </Modal.Title>
+        </Modal.Header>
+        <div className="confirmation-modal-content-wrapper">
+          <h2 className="confirmation-modal-header">
+            Thank you for sending us a message.
+          </h2>
+          <p className="confirmation-modal-text">
+            We value your feedback and will reach out if need any additional details. 
+          </p>
+          <button onClick={() => setShowConfirmation(false)}>Close</button>
+        </div>
+      </Modal>
     </Service>
   )
 }
