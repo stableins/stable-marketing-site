@@ -24,9 +24,9 @@ export default function ServiceSection() {
 
   async function handleMessageSubmit(event) {
     event.preventDefault()
-
+    setLoading(true)
     try {
-      await axios.post("/.netlify/functions/sendgridEmail", {
+      const response = await axios.post("/.netlify/functions/sendgridEmail", {
         email: emailInputValue,
         message: messageInputValue,
         name: nameInputValue,
@@ -35,7 +35,10 @@ export default function ServiceSection() {
         type: "FORM::SET_EMAIL",
         payload: emailInputValue,
       })
-      setShowConfirmation(true)
+      if (response) {
+        setLoading(false)
+        setShowConfirmation(true)
+      }
     } catch (e) {
       console.log(e)
     }
