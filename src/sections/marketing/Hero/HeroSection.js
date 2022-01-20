@@ -31,8 +31,6 @@ export default function HeroSection() {
   const [loading, setLoading] = useState(false)
   const [color, setColor] = useState("#3b358a;")
 
-  console.log(scrollStatus)
-
   smoothscroll.polyfill()
 
   useEffect(() => {

@@ -61,7 +61,7 @@ export default function individualFleetForm() {
   const [disableOption1, setDisableOption1] = useState(false)
   const [disableOption2, setDisableOption2] = useState(false)
 
- console.log(dropdownInputValue1, dropdownInputValue2)
+  console.log(dropdownInputValue1, dropdownInputValue2)
 
   useEffect(() => {
     setHasMounted(true)
@@ -507,70 +507,106 @@ export default function individualFleetForm() {
                     <div className="select-wrapper">
                       <select
                         primary
+                        onFocus={() => {
+                          setClicked("1")
+                          setResetSelect1(true)
+                          setResetSelect2(false)
+                          setDropdownInputValue2("")
+                          setDisableOption1(true)
+                        }}
                         onClick={() => {
                           setClicked("1")
-                          setResetSelect2(true)
-                          setResetSelect1(false)
+                          setResetSelect1(true)
+                          setResetSelect2(false)
                           setDropdownInputValue2("")
                         }}
                         className={`select-1-${clicked}`}
                         onChange={e => {
                           if (e.target.value === "") {
                             setDropdownInputValue1("")
-                            setClicked("0")
                           }
                           if (e.target.value === "1") {
                             setDropdownInputValue1("Rideshare Driver")
                             setDropdownInputValue2("")
-                            setClicked("1")
                           }
                           if (e.target.value === "2") {
                             setDropdownInputValue1("Carshare Owner")
                             setDropdownInputValue2("")
-                            setClicked("1")
                           }
                         }}
                         as="select"
                       >
-                        <option required value="" selected={resetSelect1}>
-                          Driver
+                        <option
+                          required
+                          value=""
+                          // disabled={disableOption1}
+                          selected={!resetSelect1}
+                        >
+                          {clicked === "1" ? "Select Option" : "Driver"}
                         </option>
-                        <option required value="1" data-sync="1">
+                        <option
+                          disabled={clicked === "1" ? false : true}
+                          required
+                          value="1"
+                        >
                           Rideshare Driver
                         </option>
-                        <option required value="2">
+                        <option
+                          disabled={clicked === "1" ? false : true}
+                          required
+                          value="2"
+                        >
                           Carshare Owner
                         </option>
                       </select>
                       <select
+                        onFocus={() => {
+                          setClicked("2")
+                          setResetSelect1(false)
+                          setResetSelect2(true)
+                          setDropdownInputValue1("")
+                        }}
                         onClick={() => {
                           setClicked("2")
-                          setResetSelect1(true)
-                          setResetSelect2(false)
+                          setResetSelect1(false)
+                          setResetSelect2(true)
                           setDropdownInputValue1("")
                         }}
                         className={`select-2-${clicked}`}
                         onChange={e => {
                           if (e.target.value === "") {
                             setDropdownInputValue2("")
-                            setClicked("0")
                           }
                           if (e.target.value === "3") {
                             setDropdownInputValue2("Rideshare Fleet")
                             setDropdownInputValue1("")
-                            setClicked("2")
                           }
                           if (e.target.value === "4") {
                             setDropdownInputValue2("Carshare Fleet")
                             setDropdownInputValue1("")
-                            setClicked("2")
                           }
                         }}
                         as="select"
                       >
-                        <option selected={resetSelect2}>Fleet</option>
-                        <option value="3">Rideshare Fleet</option>
-                        <option value="4">Carshare Fleet</option>
+                        <option
+                          value=""
+                          // disabled={clicked === "2" ? true : false}
+                          selected={!resetSelect2}
+                        >
+                          {clicked === "2" ? "Select Option" : "Fleet"}
+                        </option>
+                        <option
+                          value="3"
+                          disabled={clicked === "2" ? false : true}
+                        >
+                          Rideshare Fleet
+                        </option>
+                        <option
+                          value="4"
+                          disabled={clicked === "2" ? false : true}
+                        >
+                          Carshare Fleet
+                        </option>
                       </select>
                     </div>
                     <div className="check-wrapper">
