@@ -85,6 +85,22 @@
     }
   }
 }
+.modal {
+  .confirmation-modal-content-wrapper {
+    padding: 20px;
+    height: 280px;
+    .button {
+      width: 208px;
+      background: #3b358a;
+      color: white;
+      height: 50px;
+      margin-top: -0px;
+      border-radius: 8px;
+      position: absolute;
+      border: none;
+    }
+  }
+}
 
 @media (max-width: 1024px) {
   .contact-wrapper {
