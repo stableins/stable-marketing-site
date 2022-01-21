@@ -557,6 +557,17 @@ export default function individualFleetForm() {
                     <div className="select-wrapper">
                       <select
                         primary
+                        onMouseEnter={
+                          isMobile
+                            ? () => {
+                                setClicked("1")
+                                setResetSelect1(true)
+                                setResetSelect2(false)
+                                setDropdownInputValue2("")
+                                setDisableOption1(true)
+                              }
+                            : null
+                        }
                         onFocus={() => {
                           setClicked("1")
                           setResetSelect1(true)
@@ -610,6 +621,16 @@ export default function individualFleetForm() {
                         </option>
                       </select>
                       <select
+                        onMouseEnter={
+                          isMobile
+                            ? () => {
+                                setClicked("2")
+                                setResetSelect1(false)
+                                setResetSelect2(true)
+                                setDropdownInputValue1("")
+                              }
+                            : null
+                        }
                         onFocus={() => {
                           setClicked("2")
                           setResetSelect1(false)
