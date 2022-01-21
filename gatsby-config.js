@@ -15,13 +15,25 @@ module.exports = {
   //   DEV_SSR: true,
   //   FAST_REFRESH: true,
   // },
-  plugins: [
+  plugins: [  
     `gatsby-plugin-styled-components`,
     `babel-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {
         implementation: require("sass"),
+      },
+    },
+      {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "UA-118217398-1",
+          "G-W6SQ1VMHXW",
+        ],
+        pluginConfig: {
+          head: true,
+        },
       },
     },
     `gatsby-plugin-react-helmet`,
