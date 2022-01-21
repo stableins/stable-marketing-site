@@ -1,12 +1,12 @@
 @media (min-width: 1000px) {
-   .loader {
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      margin-top: -50px;
-      margin-left: -100px;
-      z-index: 1;
-    }
+  .loader {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    z-index: 1;
+  }
   .join-stable-wrapper {
     text-align: center;
     padding: 20px;
@@ -281,14 +281,14 @@
 }
 
 @media (max-width: 999px) {
-   .loader {
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      margin-top: -50px;
-      margin-left: -100px;
-      z-index: 1;
-    }
+  .loader {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    z-index: 1;
+  }
   .join-stable-wrapper {
     text-align: center;
     padding: 20px;
@@ -357,6 +357,7 @@
 
         .select-1-0 {
           width: 168px;
+          cursor: pointer;
           height: 56px;
           border: 1px solid #92afd6;
           padding: 0 10px;
@@ -372,6 +373,8 @@
 
         .select-1-1 {
           width: 168px;
+          cursor: pointer;
+
           height: 56px;
           padding: 0 10px;
           -webkit-appearance: none;
@@ -387,6 +390,8 @@
 
         .select-1-2 {
           width: 168px;
+          cursor: pointer;
+
           height: 56px;
           border: 1px solid #92afd6;
           padding: 0 10px;
@@ -402,6 +407,8 @@
 
         .select-1-0 {
           width: 168px;
+          cursor: pointer;
+
           height: 56px;
           border: 1px solid #92afd6;
           padding: 0 10px;
@@ -417,6 +424,8 @@
 
         .select-2-0 {
           width: 168px;
+          cursor: pointer;
+
           height: 56px;
           border: 1px solid #92afd6;
           padding: 0 10px;
@@ -432,6 +441,8 @@
 
         .select-2-1 {
           width: 168px;
+          cursor: pointer;
+
           height: 56px;
           border: 1px solid #92afd6;
           padding: 0 10px;
@@ -447,6 +458,8 @@
 
         .select-2-2 {
           width: 168px;
+          cursor: pointer;
+
           height: 56px;
           border: 1px solid #92afd6;
           padding: 0 10px;
