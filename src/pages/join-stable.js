@@ -1,5 +1,11 @@
 import React, { useState, useEffect, useRef } from "react"
 import { PageWrapper } from "~components/Core"
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile,
+} from "react-device-detect"
 import axios from "axios"
 import FooterOne from "../sections/marketing/FooterOne"
 import StableLogo from "../assets/image/logo/Stable-logo_site.png"
@@ -254,7 +260,6 @@ export default function individualFleetForm() {
                         required={true}
                         className="input"
                         onChange={e => setEmailInputValue(e.target.value)}
-                        // required
                         type="email"
                         placeholder="Email"
                         onClick={() => {
@@ -317,6 +322,17 @@ export default function individualFleetForm() {
                     <div className="select-wrapper">
                       <select
                         primary
+                        onMouseEnter={
+                          isMobile
+                            ? () => {
+                                setClicked("1")
+                                setResetSelect1(true)
+                                setResetSelect2(false)
+                                setDropdownInputValue2("")
+                                setDisableOption1(true)
+                              }
+                            : null
+                        }
                         onFocus={() => {
                           setClicked("1")
                           setResetSelect1(true)
@@ -370,6 +386,16 @@ export default function individualFleetForm() {
                         </option>
                       </select>
                       <select
+                        onMouseEnter={
+                          isMobile
+                            ? () => {
+                                setClicked("2")
+                                setResetSelect1(false)
+                                setResetSelect2(true)
+                                setDropdownInputValue1("")
+                              }
+                            : null
+                        }
                         onFocus={() => {
                           setClicked("2")
                           setResetSelect1(false)
