@@ -38,6 +38,9 @@ export default function ServiceSection() {
       if (response) {
         setLoading(false)
         setShowConfirmation(true)
+        setMessageInputValue("")
+        setNameInputValue("")
+        setEmailInputValue("")
       }
     } catch (e) {
       console.log(e)
