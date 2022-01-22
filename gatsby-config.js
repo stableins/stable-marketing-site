@@ -27,7 +27,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-clarity`,
       options: {
-        clarity_project_id: "aaujprt08a",
+        clarity_project_id: aaujprt08a,
         // Boolean value for enabling clarity while developing
         // true will enable clarity tracking code on both development and production environments
         // false will enable clarity tracking code on production environment only
