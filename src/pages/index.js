@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import axios from "axios"
 import { PageWrapper } from "~components/Core"
 import { useSelector } from "react-redux"
 import HeroSection from "~sections/marketing/Hero"
@@ -61,7 +62,6 @@ const scrollToReport = () => {
   })
 }
 
-
 export default function Marketing() {
   const [hasMounted, setHasMounted] = useState(false)
   const scrollStatus = useSelector(state => state.siteBehavior.scrollStatus)
@@ -100,11 +100,18 @@ export default function Marketing() {
     setHasMounted(true)
   }, [])
 
+  useEffect(() => {
+    async function getData() {
+      const res = await axios.get("https://geolocation-db.com/json/")
+      console.log(res.data)
+      setIP(res.data.IPv4)
+    }
+    getData()
+  }, [])
+
   if (!hasMounted) {
     return null
   }
-
-  
 
   return (
     <PageWrapper headerConfig={header}>
