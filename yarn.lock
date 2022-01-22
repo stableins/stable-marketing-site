@@ -10341,6 +10341,13 @@ gatsby-page-utils@^1.3.0:
     lodash "^4.17.21"
     micromatch "^4.0.2"
 
+gatsby-plugin-clarity@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-clarity/-/gatsby-plugin-clarity-1.0.0.tgz#0ef5dd898957c8ac80f6d00d125e9c638b5330fa"
+  integrity sha512-tRr//9Z3mdQl2YltUSb8yyVR7MQGLWjaQTuvKzFxnqhr8B8CsOvLzYoMJ72wtR1P4YSam04wT8CfsYjflFZ2qQ==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+
 gatsby-plugin-fontawesome-css@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-fontawesome-css/-/gatsby-plugin-fontawesome-css-1.1.0.tgz#bd3d38215fa38136b4cc1d2adeae765170c7cfd8"
