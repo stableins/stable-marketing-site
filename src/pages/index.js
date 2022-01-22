@@ -102,9 +102,11 @@ export default function Marketing() {
 
   useEffect(() => {
     async function getData() {
-      const res = await axios.get("https://geolocation-db.com/json/")
+      const res = await axios.get(
+        "https://geolocation-db.com/json/d802faa0-10bd-11ec-b2fe-47a0872c6708"
+      )
       console.log(res.data)
-      setIP(res.data.IPv4)
+      // setIP(res.data.IPv4)
     }
     getData()
   }, [])
