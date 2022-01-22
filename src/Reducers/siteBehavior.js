@@ -1,5 +1,6 @@
 const initialState = {
   scrollStatus: "",
+  sessionInfo: null,
 }
 
 export default function User(state = initialState, action) {
@@ -8,6 +9,12 @@ export default function User(state = initialState, action) {
       return {
         ...state,
         scrollStatus: action.payload,
+      }
+
+    case "SITE::SET_SESSION_INFO":
+      return {
+        ...state,
+        sessionInfo: action.payload,
       }
 
     default:

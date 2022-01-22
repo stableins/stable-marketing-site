@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react"
+import axios from "axios"
 import { PageWrapper } from "~components/Core"
 import { useSelector } from "react-redux"
 import HeroSection from "~sections/marketing/Hero"
+import { useDispatch } from "react-redux"
 import ServiceSection from "~sections/marketing/Service"
 import ServiceSection2 from "~sections/marketing/Service2/"
 import Jayz from "~sections/marketing/JayZ/"
@@ -61,12 +63,13 @@ const scrollToReport = () => {
   })
 }
 
-
 export default function Marketing() {
+  const dispatch = useDispatch()
   const [hasMounted, setHasMounted] = useState(false)
   const scrollStatus = useSelector(state => state.siteBehavior.scrollStatus)
+  const sessionInfo = useSelector(state => state.siteBehavior.sessionInfo)
 
-  console.log(scrollStatus)
+  console.log(sessionInfo)
 
   useEffect(() => {
     const scrollToReport = () => {
@@ -100,11 +103,29 @@ export default function Marketing() {
     setHasMounted(true)
   }, [])
 
+  useEffect(() => {
+    async function getData() {
+      const res = await axios.get(
+        "https://geolocation-db.com/json/d802faa0-10bd-11ec-b2fe-47a0872c6708"
+      )
+      dispatch({
+        type: "SITE::SET_SESSION_INFO",
+        payload: res.data,
+      })
+
+      if (res) {
+        const res2 = await axios.post(
+          "https://geolocation-db.com/json/d802faa0-10bd-11ec-b2fe-47a0872c6708"
+        )
+      }
+    }
+
+    getData()
+  }, [])
+
   if (!hasMounted) {
     return null
   }
-
-  
 
   return (
     <PageWrapper headerConfig={header}>
