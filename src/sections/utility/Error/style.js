@@ -10,44 +10,52 @@ const ErrorPage = styled(Box)`
         padding-bottom: 70px;
     }
     @media (min-width:992px){
-        padding-top: 100px;
+        padding-top: 0px;
         padding-bottom: 110px;
     }
 `
 ErrorPage.BigTitle = styled(Heading)`
-    font-size: 50px;
-    font-weight: 500;
-    font-style: normal;
-    letter-spacing: -2px;
-    line-height: 1.27272;
-    color: #fd346e;
-    margin-bottom: 0;
-    @media (min-width:575px){
-        font-size: 60px;
-    }
-    @media (min-width:768px){
-        font-size: 80px;
-    }
-    @media (min-width:992px){
-        font-size: 110px;
-    }
+  font-size: 50px;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: -2px;
+  line-height: 1.27272;
+  color: #062f6e;
+  @media (max-width: 1024px) {
+    font-size: 60px;
+    margin-top: -50px;
+  }
+
+  @media (min-width: 1025px) {
+    margin-top: -150px;
+  }
+
+  @media (min-width: 575px) {
+    font-size: 60px;
+  }
+  @media (min-width: 768px) {
+    font-size: 80px;
+  }
+  @media (min-width: 992px) {
+    font-size: 110px;
+  }
 `
 ErrorPage.Title = styled(Heading)`
-    font-size: 32px;
-    font-weight: 500;
-    letter-spacing: normal;
-    line-height: 1.3;
-    margin-bottom: 15px;
-    color: #25373f;
-    position:relative;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 1.3;
+  margin-bottom: 15px;
+  color: #062f6e;
+  position: relative;
 
-    @media (min-width:768px) {
-      font-size: 35px;
-    }
+  @media (min-width: 768px) {
+    font-size: 35px;
+  }
 
-    @media (min-width:992px) {
-      font-size: 45px;
-    }
+  @media (min-width: 992px) {
+    font-size: 45px;
+  }
 `
 ErrorPage.Text = styled(Paragraph)`
     font-size: 18px;
@@ -60,34 +68,38 @@ ErrorPage.Text = styled(Paragraph)`
 `
 
 ErrorPage.Image = styled(Paragraph)`
-
+  margin-top: -30px;
 `
 ErrorPage.ButtonGroup = styled(Box)`
     text-align: center;
 `
 ErrorPage.Button = styled(Button)`
-    margin: 0 10px;
+  margin: 0 10px;
 
-    &.btn-1{
-        min-width: 142px;
-        height: 56px;
-        color: #fff;
-        border-radius: 500px;
-        box-shadow: -12px 12px 50px rgba(255, 30, 56, 0.3);
-        &:hover{
-            color: #fff;
-        }
+  &.btn-1 {
+    min-width: 142px;
+    height: 56px;
+    color: #fff;
+    border: none;
+    background-color: #062f6e;
+    border-radius: 500px;
+    box-shadow: -12px 12px 50px #062f6e;
+    &:hover {
+      color: #fff;
     }
-    &.btn-2{
-        min-width: 164px;
-        height: 56px;
-        border-radius: 500px;
-        &:hover{
-            color: #fff;
-            background-color: #fd346e;
-            box-shadow: -12px 12px 50px rgba(255, 30, 56, 0.3);
-        }
+  }
+  &.btn-2 {
+    min-width: 164px;
+    height: 56px;
+    border: 1px solid black;
+    color: black;
+    border-radius: 500px;
+    &:hover {
+      color: #fff;
+      background-color: #062f6e;
+      box-shadow: -12px 12px 50px 062f6e;
     }
+  }
 `
 ErrorPage.Box = styled(Box)`
 
