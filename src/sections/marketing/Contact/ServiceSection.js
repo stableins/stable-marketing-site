@@ -26,19 +26,28 @@ export default function ServiceSection() {
     event.preventDefault()
     setLoading(true)
     try {
-      const response = await axios.post("/.netlify/functions/sendgridEmail", {
-        email: emailInputValue,
-        message: messageInputValue,
-        name: nameInputValue,
-      })
-      dispatch({
-        type: "FORM::SET_EMAIL",
-        payload: emailInputValue,
-      })
-      if (response) {
-        setLoading(false)
-        setShowConfirmation(true)
-      }
+      const validationResponse = await axios.post(
+        "/.netlify/functions/sendgridValidation",
+        {
+          email: emailInputValue,
+        }
+      )
+
+      console.log(validationResponse)
+
+      // const response = await axios.post("/.netlify/functions/sendgridEmail", {
+      //   email: emailInputValue,
+      //   message: messageInputValue,
+      //   name: nameInputValue,
+      // })
+      // dispatch({
+      //   type: "FORM::SET_EMAIL",
+      //   payload: emailInputValue,
+      // })
+      // if (response) {
+      //   setLoading(false)
+      //   setShowConfirmation(true)
+      // }
     } catch (e) {
       console.log(e)
     }
@@ -106,12 +115,10 @@ export default function ServiceSection() {
                 <Slide right>
                   <br className="d-none d-xs-block d-lg-none d-xl-block" />
                   <br className="d-none d-xs-block d-lg-none d-xl-block" />
-                  <Service.Text>
-                  </Service.Text>
+                  <Service.Text></Service.Text>
                 </Slide>
               </Col>
-              <Col xs="12" className="col-lg-5 col-md-12 col-xs-10">
-              </Col>
+              <Col xs="12" className="col-lg-5 col-md-12 col-xs-10"></Col>
             </Row>
           </Container>
         </div>
