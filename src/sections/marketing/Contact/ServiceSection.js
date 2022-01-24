@@ -38,9 +38,6 @@ export default function ServiceSection() {
       if (response) {
         setLoading(false)
         setShowConfirmation(true)
-        setMessageInputValue("")
-        setNameInputValue("")
-        setEmailInputValue("")
       }
     } catch (e) {
       console.log(e)
@@ -95,12 +92,6 @@ export default function ServiceSection() {
                           id="comment"
                           placeholder="Enter message"
                         ></textarea>
-                        {/* 
-                        <Form.Control
-                          style={{ height: "161px" }}
-                          onChange={e => setZipcodeInputValue(e.target.value)}
-                          // required
-                        ></Form.Control> */}
                       </Form.Group>
                       <button
                         className="form-button"
@@ -116,21 +107,10 @@ export default function ServiceSection() {
                   <br className="d-none d-xs-block d-lg-none d-xl-block" />
                   <br className="d-none d-xs-block d-lg-none d-xl-block" />
                   <Service.Text>
-                    {/* <Service.Text>
-                    This data is extremely valuable to your insurance company.
-                    If you're both paying for it and finding solutions to
-                    collect this data, you can do better. Work with Stable for a
-                    wholistic solution. Don't do your insurers work for them.
-                  </Service.Text> */}
                   </Service.Text>
                 </Slide>
               </Col>
               <Col xs="12" className="col-lg-5 col-md-12 col-xs-10">
-                {/* <CounterBlock /> */}
-                {/* <Service.Text>
-                We're working with the rideshare and carshare community to
-                create better insurance. To do this, we need your help:{" "}
-              </Service.Text> */}
               </Col>
             </Row>
           </Container>
