@@ -1,5 +1,6 @@
 const { MongoClient } = require("mongodb")
 const axios = require("axios")
+const zipcodes = require("zipcodes")
 
 exports.handler = async (event, context, callback) => {
   const { email, zipcode, name, userType, sessionInfo} = JSON.parse(event.body)
@@ -21,10 +22,17 @@ exports.handler = async (event, context, callback) => {
     const user = await users.findOne({ email: email })
     if (!user) {
       const userSessionInfo = []
-
+      
       if (sessionInfo) {
         userSessionInfo.push(sessionInfo)
       }
+
+      const zip = zipcodes.lookup(zipcode)
+      let state = ""
+      if (zip && zip.state) {
+        state = zip.state
+      }
+
       await users.insertOne({
         email: email,
         zipcode: zipcode,
@@ -32,6 +40,7 @@ exports.handler = async (event, context, callback) => {
         sessionInfo: userSessionInfo,
         status: status,
         userType: userType,
+        state: state,
       })
 
       await axios.put(
@@ -43,6 +52,7 @@ exports.handler = async (event, context, callback) => {
               postal_code: zipcode,
               first_name: nameSplit[0],
               last_name: nameSplit[nameSplit.length - 1],
+              state_province_region: state,
               custom_fields: {
                 w1_T: status,
                 w2_T: userType,
