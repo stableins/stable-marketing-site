@@ -16,7 +16,7 @@ exports.handler = async function (event, context, callback) {
   }
 
   try {
-    await client.send(request).then(([response, body]) => {
+    await client.request(request).then(([response, body]) => {
       console.log(response.statusCode)
       console.log(response.body)
     })
