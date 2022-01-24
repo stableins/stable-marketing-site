@@ -19,11 +19,11 @@ exports.handler = async function (event, context, callback) {
     await client.request(request).then(([response, body]) => {
       console.log(response.statusCode)
       console.log(response.body)
+      return {
+        statusCode: 200,
+        body: response.body,
+      }
     })
-    return {
-      statusCode: 200,
-      body: response.body,
-    }
   } catch (err) {
     console.error(err)
     return {
