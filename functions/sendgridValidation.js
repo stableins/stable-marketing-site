@@ -1,4 +1,4 @@
-const client = require("@sendgrid/mail")
+const client = require("@sendgrid/client")
 
 exports.handler = async function (event, context, callback) {
   const { message, email, name } = JSON.parse(event.body)
