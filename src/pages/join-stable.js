@@ -20,7 +20,6 @@ import Intake from "../api/intake"
 import "./join-stable.scss"
 import { useSelector } from "react-redux"
 import PulseLoader from "react-spinners/PulseLoader"
-import Lottie from "react-lottie"
 
 const header = {
   headerClasses:
