@@ -22,7 +22,7 @@ exports.handler = async function (event, context, callback) {
     })
     return {
       statusCode: 200,
-      body: "Valid Email",
+      body: response.body,
     }
   } catch (err) {
     console.error(err)
