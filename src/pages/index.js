@@ -71,6 +71,14 @@ export default function Marketing() {
   const email = useSelector(state => state.form.email)
 
   useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  if (!hasMounted) {
+    return null
+  }
+
+  useEffect(() => {
     const scrollToReport = () => {
       scroller.scrollTo("anchor3", {
         duration: 400,
@@ -98,16 +106,8 @@ export default function Marketing() {
     scrollToCarshare()
   }, [])
 
-  // useEffect(() => {
-  //   setHasMounted(true)
-  // }, [])
-
-  // if (!hasMounted) {
-  //   return null
-  // }
-
   useEffect(() => {
-    SessionInfoCapture({email})
+    SessionInfoCapture({ email })
   }, [])
 
   return (
