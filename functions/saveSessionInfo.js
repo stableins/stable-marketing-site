@@ -14,6 +14,7 @@ exports.handler = async (event, context, callback) => {
     await client.connect()
     const database = client.db("marketing")
     const sessions = database.collection("sessions")
+    session.createDate = new Date()
     await sessions.insertOne(session)
   } catch (e) {
     statusCode = 500
@@ -22,7 +23,7 @@ exports.handler = async (event, context, callback) => {
   } finally {
     return {
       statusCode,
-      body: JSON.stringify({ status })
+      body: JSON.stringify({ status }),
     }
   }
 }
