@@ -72,43 +72,35 @@ export default function Marketing() {
 
   useEffect(() => {
     setHasMounted(true)
+    SessionInfoCapture({ email })
   }, [])
 
   if (!hasMounted) {
     return null
   }
+  const scrollToReport = () => {
+    scroller.scrollTo("anchor3", {
+      duration: 400,
+      delay: 0,
+      smooth: "smooth",
+    })
+  }
 
-  useEffect(() => {
-    const scrollToReport = () => {
-      scroller.scrollTo("anchor3", {
-        duration: 400,
-        delay: 0,
-        smooth: "smooth",
-      })
-    }
+  const scrollToCarshare = () => {
+    scroller.scrollTo("anchor2", {
+      duration: 0,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    })
+  }
 
-    const scrollToCarshare = () => {
-      scroller.scrollTo("anchor2", {
-        duration: 0,
-        delay: 0,
-        smooth: "easeInOutQuart",
-      })
-    }
-
-    const scrollToRideShare = () => {
-      scroller.scrollTo("anchor", {
-        duration: 0,
-        delay: 0,
-        smooth: "easeInOutQuart",
-      })
-    }
-
-    scrollToCarshare()
-  }, [])
-
-  useEffect(() => {
-    SessionInfoCapture({ email })
-  }, [])
+  const scrollToRideShare = () => {
+    scroller.scrollTo("anchor", {
+      duration: 0,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    })
+  }
 
   return (
     <PageWrapper headerConfig={header}>
