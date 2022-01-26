@@ -17,9 +17,10 @@ import { ArgyleLink } from "../components/Argyle/ArgyleLink.tsx"
 import { PopupButton } from "react-calendly"
 import HeaderButton from "../sections/marketing/Header"
 import Intake from "../api/intake"
-import "./join-stable.scss"
 import { useSelector } from "react-redux"
+import SessionInfoCapture from "../utility/sessionInfo"
 import PulseLoader from "react-spinners/PulseLoader"
+import "./join-stable.scss"
 
 const header = {
   headerClasses:
@@ -74,6 +75,10 @@ export default function individualFleetForm() {
   useEffect(() => {
     setHasMounted(true)
   }, [resetSelect1, resetSelect2])
+
+  useEffect(() => {
+    SessionInfoCapture({ email })
+  }, [])
 
   useEffect(() => {
     window.addEventListener("message", function (e) {
@@ -149,6 +154,8 @@ export default function individualFleetForm() {
   async function handleAdditionalInfoSubmit(event) {
     event.preventDefault()
     setLoading(true)
+
+    SessionInfoCapture({ email })
 
     try {
       let userType

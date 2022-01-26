@@ -2,7 +2,7 @@ const { MongoClient } = require("mongodb")
 const axios = require("axios")
 
 exports.handler = async (event, context, callback) => {
-  const { email, sessionInfo } = JSON.parse(event.body)
+  const { email } = JSON.parse(event.body)
   let status = "Email Address Collected"
   let statusCode = 200
   let userType
@@ -17,18 +17,12 @@ exports.handler = async (event, context, callback) => {
     await client.connect()
     const database = client.db("marketing")
     const users = database.collection("users")
-    const userSessionInfo = []
-
-    if (sessionInfo) {
-      userSessionInfo.push(sessionInfo)
-    }
 
     const user = await users.findOne({ email: email })
     if (!user) {
       await users.insertOne({
         email: email,
         status: status,
-        sessionInfo: userSessionInfo,
       })
 
       await axios.put(
@@ -53,16 +47,6 @@ exports.handler = async (event, context, callback) => {
     } else {
       userType = user.userType
       status = user.status
-      if (sessionInfo) {
-        await users.updateOne(
-          { _id: user._id },
-          {
-            $push: {
-              sessionInfo: sessionInfo,
-            },
-          }
-        )
-      }
     }
   } catch (e) {
     statusCode = 500

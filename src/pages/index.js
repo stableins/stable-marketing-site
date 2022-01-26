@@ -20,6 +20,7 @@ import CounterSection from "~sections/marketing/Counter"
 import CtaSection from "~sections/marketing/Cta"
 import FooterOne from "~sections/marketing/FooterOne"
 import HeaderButton from "~sections/marketing/Header"
+import SessionInfoCapture from "../utility/sessionInfo"
 import { scroller } from "react-scroll"
 
 const header = {
@@ -67,9 +68,7 @@ export default function Marketing() {
   const dispatch = useDispatch()
   const [hasMounted, setHasMounted] = useState(false)
   const scrollStatus = useSelector(state => state.siteBehavior.scrollStatus)
-  const sessionInfo = useSelector(state => state.siteBehavior.sessionInfo)
-
-  console.log(sessionInfo)
+  const email = useSelector(state => state.form.email)
 
   useEffect(() => {
     const scrollToReport = () => {
@@ -99,33 +98,17 @@ export default function Marketing() {
     scrollToCarshare()
   }, [])
 
-  useEffect(() => {
-    setHasMounted(true)
-  }, [])
+  // useEffect(() => {
+  //   setHasMounted(true)
+  // }, [])
+
+  // if (!hasMounted) {
+  //   return null
+  // }
 
   useEffect(() => {
-    async function getData() {
-      const res = await axios.get(
-        "https://geolocation-db.com/json/d802faa0-10bd-11ec-b2fe-47a0872c6708"
-      )
-      dispatch({
-        type: "SITE::SET_SESSION_INFO",
-        payload: res.data,
-      })
-
-      if (res) {
-        const res2 = await axios.post(
-          "https://geolocation-db.com/json/d802faa0-10bd-11ec-b2fe-47a0872c6708"
-        )
-      }
-    }
-
-    getData()
+    SessionInfoCapture({email})
   }, [])
-
-  if (!hasMounted) {
-    return null
-  }
 
   return (
     <PageWrapper headerConfig={header}>
