@@ -1,8 +1,8 @@
 import axios from "axios"
 import { useSelector } from "react-redux"
+import window from "global"
 
-export default async function getData({email}) {
-
+export default async function getData({ email }) {
   try {
     const res = await axios.get(
       "https://geolocation-db.com/json/d802faa0-10bd-11ec-b2fe-47a0872c6708"
@@ -10,7 +10,6 @@ export default async function getData({email}) {
     const deviceInfo = window.navigator.userAgent
     const referrer = document.referrer
     const url = window.location.href
-
 
     const response = await axios.post("/.netlify/functions/saveSessionInfo", {
       session: {
