@@ -155,7 +155,7 @@ export default function individualFleetForm() {
     event.preventDefault()
     setLoading(true)
 
-    SessionInfoCapture({ email })
+    SessionInfoCapture({ email: emailInputValue })
 
     try {
       let userType
