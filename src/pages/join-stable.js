@@ -992,17 +992,17 @@ export default function individualFleetForm() {
                           </span>
                         </p>
                       </Form.Label>
-                      <a href="https://driver.stablelabs.io/" target="_blank">
-                        <button className="button" variant="primary">
-                          <span>Driver Portal</span>
-                        </button>
-                        <Link to="/">
-                          <button className="button" variant="primary">
-                            <span>Back to home</span>
-                          </button>
-                        </Link>
-                      </a>
                     </Form>
+                    <a href="https://driver.stablelabs.io/" target="_blank">
+                      <button className="button" variant="primary">
+                        <span>Driver Portal</span>
+                      </button>
+                    </a>
+                    <Link to="/">
+                      <button className="button" variant="primary">
+                        <span>Back to home</span>
+                      </button>
+                    </Link>
                   </div>
                 )}
               </div>
