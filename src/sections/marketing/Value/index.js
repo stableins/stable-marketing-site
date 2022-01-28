@@ -94,7 +94,7 @@ const FeatureSection = ({ ...rest }) => {
       <div className="loader">
         <PulseLoader color={color} loading={loading} size={50} />
       </div>
-      <div className="anchor3"></div>
+      <a name="driver-report" className="anchor3"></a>
       <Feature className="bg-blue-ribbon">
         <div className="inner-wrapper">
           <Container>
