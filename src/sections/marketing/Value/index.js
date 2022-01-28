@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import {
   Col,
   Container,
@@ -34,6 +34,7 @@ const FeatureSection = ({ ...rest }) => {
   const [statusResponse, setStatusResponse] = useState("")
   const [emailInputValue, setEmailInputValue] = useState("")
   const [loading, setLoading] = useState(false)
+  const [hasMounted, setHasMounted] = useState(null)
   const [color, setColor] = useState("#3b358a;")
   console.log(emailInputValue)
 
@@ -86,6 +87,14 @@ const FeatureSection = ({ ...rest }) => {
     }
   }
 
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  if (!hasMounted) {
+    return null
+  }
+
   if (formRedirect) {
     return <Redirect noThrow to="/join-stable" />
   }
@@ -98,7 +107,7 @@ const FeatureSection = ({ ...rest }) => {
       <Feature className="bg-blue-ribbon">
         <div className="inner-wrapper">
           <Container>
-            <Slide left>
+            <Slide up>
               <Row>
                 <Col xs="auto" className="col-xl-8 col-lg-10">
                   <div className="title">Get Your Free Driver Report </div>
