@@ -65,6 +65,7 @@ export default function individualFleetForm() {
   const [resetSelect1, setResetSelect1] = useState(false)
   const [resetSelect2, setResetSelect2] = useState(false)
   const [passwordMismatch, setPasswordMismatch] = useState(false)
+  const [existingAccount, setExistingAccount] = useState(false)
   const [disableOption1, setDisableOption1] = useState(false)
   const [disableOption2, setDisableOption2] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -204,7 +205,10 @@ export default function individualFleetForm() {
     event.preventDefault()
     setLoading(true)
 
-    if (passwordConfirmInputValue === passwordInputValue) {
+    if (passwordConfirmInputValue !== passwordInputValue) {
+      setPasswordMismatch(true)
+    } else if (passwordConfirmInputValue === passwordInputValue) {
+      setPasswordMismatch(false)
       try {
         const response = await axios.post(
           "/.netlify/functions/passwordCreated",
@@ -225,6 +229,8 @@ export default function individualFleetForm() {
         })
       } catch (e) {
         console.log(e)
+        setLoading(false)
+        setExistingAccount(true)
       }
     }
   }
@@ -910,50 +916,95 @@ export default function individualFleetForm() {
           {status === "Argyle Authenticated" && (
             <>
               <div className="join-stable-wrapper">
-                <div className="form">
-                  <Form onSubmit={handlePasswordSubmit}>
-                    <Form.Group className="mb-3">
+                {!existingAccount && (
+                  <div className="form">
+                    <Form onSubmit={handlePasswordSubmit}>
+                      <Form.Group className="mb-3">
+                        <Form.Label>
+                          <p className="text">
+                            <span className="bold">
+                              To deliver better insurance and tools (like our
+                              Free Driver Report) to you, we need to connect to
+                              your rideshare account(s).
+                            </span>{" "}
+                            <br /> <br />
+                            In the meantime let's get an account set up for you
+                            so you can come back and check out your updates as
+                            often as you like.
+                          </p>
+                        </Form.Label>
+                        <Form.Control
+                          required={true}
+                          className="input"
+                          onChange={e => setPasswordInputValue(e.target.value)}
+                          // required
+                          type="password"
+                          placeholder="Password"
+                        />
+                      </Form.Group>
+
+                      <Form.Group
+                        className="mb-3"
+                        controlId="formBasicPassword"
+                      >
+                        <Form.Control
+                          required={true}
+                          className="input"
+                          onChange={e =>
+                            setPasswordConfirmInputValue(e.target.value)
+                          }
+                          // required
+                          placeholder="Verify Password"
+                          type="password"
+                        />
+                      </Form.Group>
+                      {passwordMismatch && (
+                        <Form.Label>
+                          <p className="text">
+                            <span className="bold">
+                              The passwords do not match.
+                            </span>
+                          </p>
+                        </Form.Label>
+                      )}
+                      <button
+                        className="button"
+                        variant="primary"
+                        type="submit"
+                      >
+                        <span>Register Me! &nbsp;</span>
+                      </button>
+                    </Form>
+                  </div>
+                )}
+                {existingAccount && (
+                  <div className="form">
+                    <Form onSubmit={handlePasswordSubmit}>
                       <Form.Label>
                         <p className="text">
                           <span className="bold">
-                            To deliver better insurance and tools (like our Free
-                            Driver Report) to you, we need to connect to your
-                            rideshare account(s).
-                          </span>{" "}
-                          <br /> <br />
-                          In the meantime let's get an account set up for you so
-                          you can come back and check out your updates as often
-                          as you like.
+                            It looks like you've already created an account with
+                            us. Please click the button below and log in with
+                            your driver portal credentials.
+                          </span>
                         </p>
                       </Form.Label>
-                      <Form.Control
-                        required={true}
-                        className="input"
-                        onChange={e => setPasswordInputValue(e.target.value)}
-                        // required
-                        type="password"
-                        placeholder="Password"
-                      />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Control
-                        required={true}
-                        className="input"
-                        onChange={e =>
-                          setPasswordConfirmInputValue(e.target.value)
-                        }
-                        // required
-                        placeholder="Verify Password"
-                        type="password"
-                      />
-                    </Form.Group>
-                    {passwordMismatch && <p>Passwords do not match</p>}
-                    <button className="button" variant="primary" type="submit">
-                      <span>Register Me! &nbsp;</span>
-                    </button>
-                  </Form>
-                </div>
+                      <Link
+                        to="https://driver.stablelabs.io/login"
+                        target="_blank"
+                      >
+                        <button
+                          className="button"
+                          variant="primary"
+                          type="submit"
+                        >
+                          <span>Driver Portal</span>
+                        </button>
+                      </Link>
+                      )}
+                    </Form>
+                  </div>
+                )}
               </div>
             </>
           )}
