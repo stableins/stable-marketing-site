@@ -102,17 +102,21 @@ export default function Marketing() {
     })
   }
 
+  const browser = typeof window !== "undefined" && window
+
   return (
-    <PageWrapper headerConfig={header}>
-      <HeroSection />
-      <Value />
-      <FeatureSection />
-      <ServiceSection />
-      <Jayz />
-      <ServiceSection3 />
-      <Contact />
-      <OurStory />
-      <FooterOne />
-    </PageWrapper>
+    browser && (
+      <PageWrapper headerConfig={header}>
+        <HeroSection />
+        <Value />
+        <FeatureSection />
+        <ServiceSection />
+        <Jayz />
+        <ServiceSection3 />
+        <Contact />
+        <OurStory />
+        <FooterOne />
+      </PageWrapper>
+    )
   )
 }
