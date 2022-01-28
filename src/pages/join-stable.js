@@ -207,7 +207,7 @@ export default function individualFleetForm() {
 
     if (passwordConfirmInputValue !== passwordInputValue) {
       setPasswordMismatch(true)
-      setLoading(true)
+      setLoading(false)
     } else if (passwordConfirmInputValue === passwordInputValue) {
       setPasswordMismatch(false)
       try {
@@ -996,7 +996,6 @@ export default function individualFleetForm() {
                         <button
                           className="button"
                           variant="primary"
-                          type="submit"
                         >
                           <span>Driver Portal</span>
                         </button>
