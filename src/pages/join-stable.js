@@ -992,7 +992,7 @@ export default function individualFleetForm() {
                           </span>
                         </p>
                       </Form.Label>
-                      <Link to="https://driver.stablelabs.io/">
+                      <a href="https://driver.stablelabs.io/">
                         <button
                           className="button"
                           variant="primary"
@@ -1000,7 +1000,7 @@ export default function individualFleetForm() {
                         >
                           <span>Driver Portal</span>
                         </button>
-                      </Link>
+                      </a>
                     </Form>
                   </div>
                 )}
