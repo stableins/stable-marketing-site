@@ -207,6 +207,7 @@ export default function individualFleetForm() {
 
     if (passwordConfirmInputValue !== passwordInputValue) {
       setPasswordMismatch(true)
+      setLoading(true)
     } else if (passwordConfirmInputValue === passwordInputValue) {
       setPasswordMismatch(false)
       try {
@@ -936,6 +937,7 @@ export default function individualFleetForm() {
                         <Form.Control
                           required={true}
                           className="input"
+                          minLength="8"
                           onChange={e => setPasswordInputValue(e.target.value)}
                           // required
                           type="password"
@@ -950,6 +952,7 @@ export default function individualFleetForm() {
                         <Form.Control
                           required={true}
                           className="input"
+                          minLength="8"
                           onChange={e =>
                             setPasswordConfirmInputValue(e.target.value)
                           }
@@ -989,10 +992,7 @@ export default function individualFleetForm() {
                           </span>
                         </p>
                       </Form.Label>
-                      <Link
-                        to="https://driver.stablelabs.io/login"
-                        target="_blank"
-                      >
+                      <Link to="https://driver.stablelabs.io/">
                         <button
                           className="button"
                           variant="primary"
@@ -1001,7 +1001,6 @@ export default function individualFleetForm() {
                           <span>Driver Portal</span>
                         </button>
                       </Link>
-                      )}
                     </Form>
                   </div>
                 )}
