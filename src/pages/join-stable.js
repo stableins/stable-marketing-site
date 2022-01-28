@@ -77,10 +77,6 @@ export default function individualFleetForm() {
     setHasMounted(true)
   }, [resetSelect1, resetSelect2])
 
-  if (!hasMounted) {
-    return null
-  }
-
   useEffect(() => {
     SessionInfoCapture({ email })
   }, [])
@@ -96,7 +92,9 @@ export default function individualFleetForm() {
     })
   }, [])
 
-  
+  if (!hasMounted) {
+    return null
+  }
 
   async function handleSubmit(event) {
     event.preventDefault()
