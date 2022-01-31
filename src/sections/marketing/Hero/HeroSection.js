@@ -309,17 +309,18 @@ export default function HeroSection() {
               >
                 Restart
               </Button>
-              <Button
-                style={{ marginLeft: "10px", width: "150px" }}
-                className="hero-modal-button"
-                onClick={() => {
-                  setShowModal(false)
-                  setFormRedirect(true)
-                }}
-                type="submit"
-              >
-                Continue
-              </Button>
+              <Link to="/join-stable/">
+                <Button
+                  style={{ marginLeft: "10px", width: "150px" }}
+                  className="hero-modal-button"
+                  onClick={() => {
+                    setShowModal(false)
+                  }}
+                  type="submit"
+                >
+                  Continue
+                </Button>
+              </Link>
             </Form>
           </div>
         </Modal>
