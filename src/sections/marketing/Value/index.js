@@ -10,7 +10,7 @@ import {
   Form,
 } from "react-bootstrap"
 import { Images } from "~data"
-import { Redirect } from "@reach/router"
+import { Redirect, Link } from "@reach/router"
 import TabContentWidget from "./Component/TabContentWidget"
 import DriverReport from "../../../assets/image/logo/driver-report.png"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
@@ -19,7 +19,6 @@ import Slide from "react-reveal/Slide"
 import axios from "axios"
 import Intake from "../../../api/intake"
 import PulseLoader from "react-spinners/PulseLoader"
-
 import Feature from "./style"
 import { Spinner } from "react-bootstrap"
 import "./index.scss"
@@ -78,7 +77,7 @@ const FeatureSection = ({ ...rest }) => {
       if (response.data.status !== "Email Address Collected") {
         setShowModal(true)
       } else {
-        setFormRedirect(true)
+        // setFormRedirect(true)
       }
     } catch (e) {
       console.log(e)
@@ -86,9 +85,9 @@ const FeatureSection = ({ ...rest }) => {
     }
   }
 
-  if (formRedirect) {
-    return <Redirect noThrow to="/join-stable/" />
-  }
+  // if (formRedirect) {
+  //   return <Redirect noThrow to="/join-stable/" />
+  // }
   return (
     <div className="value-index-wrapper">
       <div className="loader">
@@ -248,18 +247,19 @@ const FeatureSection = ({ ...rest }) => {
             >
               Restart
             </Button>
-            <Button
-              style={{ marginLeft: "10px", width: "150px" }}
-              className="button"
-              onClick={() => {
-                setShowModal(false)
-                setFormRedirect(true)
-              }}
-              variant="primary"
-              type="submit"
-            >
-              Continue
-            </Button>
+            <Link to="/join-stable/">
+              <Button
+                style={{ marginLeft: "10px", width: "150px" }}
+                className="button"
+                onClick={() => {
+                  setShowModal(false)
+                }}
+                variant="primary"
+                type="submit"
+              >
+                Continue
+              </Button>
+            </Link>
           </Form>
         </div>
       </Modal>
