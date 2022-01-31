@@ -18,3 +18,10 @@ export const wrapRootElement = ({ element }) => (
     <Provider store={store}>{element}</Provider>
   </GlobalHeaderProvider>
 )
+
+export const constonInitialClientRender = () => {
+  window.addEventListener(
+    "popstate",
+    () => (window.location.href = window.location.href)
+  )
+}

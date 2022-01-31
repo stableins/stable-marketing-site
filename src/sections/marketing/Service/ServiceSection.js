@@ -91,7 +91,7 @@ export default function ServiceSection() {
                             Vehicle owners and counting have joined the Stable
                             community. Will you?
                           </p>
-                          <Link to="/join-stable">
+                          <Link to="/join-stable/">
                             <button
                               onClick={() => {
                                 dispatch({
