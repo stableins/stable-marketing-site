@@ -135,7 +135,7 @@ const FeatureSection = ({ ...rest }) => {
                                   An improved claims experience that helps you
                                   resolve claims faster, available 24/7.
                                 </div>
-                                <Link to="/join-stable">
+                                <Link to="/join-stable/">
                                   <button
                                     className="button"
                                     onClick={() => {
@@ -258,7 +258,7 @@ const FeatureSection = ({ ...rest }) => {
                                 An improved claims experience that helps you
                                 resolve claims faster, available 24/7.
                               </div>
-                              <Link to="/join-stable">
+                              <Link to="/join-stable/">
                                 <button
                                   className="button"
                                   onClick={() => {

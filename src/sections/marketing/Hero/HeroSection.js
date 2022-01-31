@@ -97,7 +97,7 @@ export default function HeroSection() {
   }
 
   if (formRedirect) {
-    return <Redirect noThrow to="/join-stable" />
+    return <Redirect noThrow to="/join-stable/" />
   }
 
   async function handleEmailSubmit(event) {
