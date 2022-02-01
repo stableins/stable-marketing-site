@@ -10,7 +10,7 @@ import {
   Form,
 } from "react-bootstrap"
 import { Images } from "~data"
-import { Redirect, Link } from "@reach/router"
+import { Redirect, Link, Navigate} from "@reach/router"
 import TabContentWidget from "./Component/TabContentWidget"
 import DriverReport from "../../../assets/image/logo/driver-report.png"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
@@ -85,9 +85,9 @@ const FeatureSection = ({ ...rest }) => {
     }
   }
 
-  // if (formRedirect) {
-  //   return <Redirect noThrow to="/join-stable/" />
-  // }
+  if (formRedirect) {
+    return <Navigate noThrow to="/join-stable/" />
+  }
   return (
     <div className="value-index-wrapper">
       <div className="loader">

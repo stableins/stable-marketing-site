@@ -7,7 +7,7 @@ import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import CounterBlock from "../../../sections/about/Feature/Components/CounterBlock"
 import Slide from "react-reveal/Slide"
 import Intake from "../../../api/intake"
-import { Link } from "@reach/router"
+import { Link, navigate } from "@reach/router"
 import { useDispatch } from "react-redux"
 import CountUp from "react-countup"
 import VisibilitySensor from "react-visibility-sensor"
@@ -91,7 +91,7 @@ export default function ServiceSection() {
                             Vehicle owners and counting have joined the Stable
                             community. Will you?
                           </p>
-                          <Link to="/join-stable/">
+                          {/* <Link to="/join-stable/"> */}
                             <button
                               onClick={() => {
                                 dispatch({
@@ -113,11 +113,12 @@ export default function ServiceSection() {
                                   type: "FORM::SET_CALENDLY_SCHEDULED",
                                   payload: false,
                                 })
+                              navigate('/join-stable/')
                               }}
                             >
                               Join Now
                             </button>
-                          </Link>
+                          {/* </Link> */}
                         </div>
                       </>
                     )}
