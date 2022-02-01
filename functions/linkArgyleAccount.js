@@ -1,11 +1,11 @@
 const { MongoClient } = require("mongodb")
 const axios = require("axios")
 
-const mongoUri = process.env.MONGO_URI.replace('<password>', process.env.MONGO_PASSWORD)
-let client = new MongoClient(mongoUri, {
-  useNewUrlParser: true, useUnifiedTopology: true
-})
-const clientPromise = client.connect()
+const uri = process.env.MONGO_URI.replace(
+  "<password>",
+  process.env.MONGO_PASSWORD
+)
+const client = new MongoClient(uri)
 
 exports.handler = async (event, context, callback) => {
   const { email, argyleUserId, argyleAccountId } = JSON.parse(event.body)
@@ -14,7 +14,7 @@ exports.handler = async (event, context, callback) => {
   let confirmed = false
 
   try {
-    client = await clientPromise
+    await client.connect()
     const database = client.db("marketing")
     const users = database.collection("users")
 
@@ -41,15 +41,19 @@ exports.handler = async (event, context, callback) => {
 
     const hariDatabase = client.db("hari")
     const hariUsers = hariDatabase.collection("users")
-    hariUsers.findOneAndReplace({ email: email }, {
-      email: email,
-      argyleUserId: argyleUserId,
-      name: user.name,
-      zipcode: user.zipcode,
-      state: user.state,
-    }, {
-      upsert: true,
-    })
+    hariUsers.findOneAndReplace(
+      { email: email },
+      {
+        email: email,
+        argyleUserId: argyleUserId,
+        name: user.name,
+        zipcode: user.zipcode,
+        state: user.state,
+      },
+      {
+        upsert: true,
+      }
+    )
 
     if (user.confirmed) {
       await axios.put(

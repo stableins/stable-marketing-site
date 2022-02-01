@@ -2,13 +2,13 @@ const { MongoClient } = require("mongodb")
 const axios = require("axios")
 const FormData = require("form-data")
 const zipcodes = require("zipcodes")
-const uuidv4 = require("uuid").v4;
+const uuidv4 = require("uuid").v4
 
-const mongoUri = process.env.MONGO_URI.replace('<password>', process.env.MONGO_PASSWORD)
-let client = new MongoClient(mongoUri, {
-  useNewUrlParser: true, useUnifiedTopology: true
-})
-const clientPromise = client.connect()
+const uri = process.env.MONGO_URI.replace(
+  "<password>",
+  process.env.MONGO_PASSWORD
+)
+const client = new MongoClient(uri)
 
 exports.handler = async (event, context, callback) => {
   const { email, zipcode, name, userType } = JSON.parse(event.body)
@@ -24,15 +24,13 @@ exports.handler = async (event, context, callback) => {
   }
 
   try {
-    client = await clientPromise
+    await client.connect()
     const database = client.db("marketing")
     const users = database.collection("users")
-    
 
     const user = await users.findOne({ email: email })
     if (!user) {
-            
-      const confirmationId = uuidv4();
+      const confirmationId = uuidv4()
 
       await users.insertOne({
         email: email,
@@ -63,19 +61,24 @@ exports.handler = async (event, context, callback) => {
         const createResponse = await axios.post(
           "https://www.zohoapis.com/crm/v2/contacts",
           {
-            data: [{
-              Last_Name: nameSplit[nameSplit.length - 1],
-              First_Name: nameSplit[0],
-              Email: email,
-              Mailing_State: state,
-              Mailing_Zip: zipcode,
-              Type_of_Contact: userType === "Carshare Owner" ? "CarShare Individual" : userType,
-            }],
+            data: [
+              {
+                Last_Name: nameSplit[nameSplit.length - 1],
+                First_Name: nameSplit[0],
+                Email: email,
+                Mailing_State: state,
+                Mailing_Zip: zipcode,
+                Type_of_Contact:
+                  userType === "Carshare Owner"
+                    ? "CarShare Individual"
+                    : userType,
+              },
+            ],
           },
           {
             headers: {
-              Authorization: `Zoho-oauthtoken ${response.data.access_token}`
-            }
+              Authorization: `Zoho-oauthtoken ${response.data.access_token}`,
+            },
           }
         )
       }
@@ -90,7 +93,7 @@ exports.handler = async (event, context, callback) => {
             {
               to: [
                 {
-                  email: email
+                  email: email,
                 },
               ],
               dynamic_template_data: {
@@ -154,7 +157,6 @@ exports.handler = async (event, context, callback) => {
 
         // TODO: if not rideshare driver, send updated info to Zoho
       }
-
     }
   } catch (e) {
     statusCode = 500

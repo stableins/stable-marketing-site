@@ -2,11 +2,11 @@ const { MongoClient } = require("mongodb")
 const axios = require("axios")
 const jwt = require("jwt-decode")
 
-const mongoUri = process.env.MONGO_URI.replace('<password>', process.env.MONGO_PASSWORD)
-let client = new MongoClient(mongoUri, {
-  useNewUrlParser: true, useUnifiedTopology: true
-})
-const clientPromise = client.connect()
+const uri = process.env.MONGO_URI.replace(
+  "<password>",
+  process.env.MONGO_PASSWORD
+)
+const client = new MongoClient(uri)
 
 exports.handler = async (event, context, callback) => {
   const { email, password, confirmPassword } = JSON.parse(event.body)
@@ -23,14 +23,17 @@ exports.handler = async (event, context, callback) => {
   let confirmed = false
 
   try {
-    client = await clientPromise
+    await client.connect()
     const database = client.db("marketing")
     const users = database.collection("users")
 
-    const response = await axios.post("https://auth.stablelabs.io/api/users/signup", {
-      email: email,
-      password: password,
-    })
+    const response = await axios.post(
+      "https://auth.stablelabs.io/api/users/signup",
+      {
+        email: email,
+        password: password,
+      }
+    )
 
     const { token } = response.data
     const decoded = jwt(token)
@@ -49,11 +52,14 @@ exports.handler = async (event, context, callback) => {
 
     const hariDb = client.db("hari")
     const hariUsers = hariDb.collection("users")
-    hariUsers.findOneAndUpdate({ email: email }, {
-      $set: {
-        userId: decoded.id
+    hariUsers.findOneAndUpdate(
+      { email: email },
+      {
+        $set: {
+          userId: decoded.id,
+        },
       }
-    })
+    )
 
     if (user.confirmed) {
       await axios.put(
