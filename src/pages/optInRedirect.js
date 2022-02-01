@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import axios from "axios"
+import { useDispatch } from "react-redux"
 import { navigate } from "gatsby"
 import { useQueryParam, NumberParam, StringParam } from "use-query-params"
 import PulseLoader from "react-spinners/PulseLoader"
@@ -23,7 +24,7 @@ import "./optInRedirect.scss"
 // }
 
 export default function Redirect() {
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const [confirmationId, setConfirmationId] = useQueryParam(
     "confirmationId",
     StringParam
