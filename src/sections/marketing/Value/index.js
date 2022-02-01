@@ -87,7 +87,7 @@ const FeatureSection = ({ ...rest }) => {
   }
 
   if (formRedirect) {
-    return navigate("/join-stable/")
+    return <Redirect from="/" to="/join-stable/" noThrow />
   }
   return (
     <div className="value-index-wrapper">

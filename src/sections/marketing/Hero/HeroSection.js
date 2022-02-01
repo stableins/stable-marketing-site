@@ -97,11 +97,10 @@ export default function HeroSection() {
     })
   }
 
-  
   async function handleEmailSubmit(event) {
     event.preventDefault()
     setLoading(true)
-        setFormRedirect(true)
+    setFormRedirect(true)
 
     try {
       const response = await axios.post("/.netlify/functions/saveEmail", {
@@ -148,9 +147,8 @@ export default function HeroSection() {
   }
 
   if (formRedirect) {
-    return navigate("/join-stable/")
+    return <Redirect from="/" to="/join-stable/" noThrow />
   }
-
 
   return (
     <Fade>
@@ -313,16 +311,16 @@ export default function HeroSection() {
               >
                 Restart
               </Button>
-                <Button
-                  style={{ marginLeft: "10px", width: "150px" }}
-                  className="hero-modal-button"
-                  onClick={() => {
-                    setShowModal(false)
-                  }}
-                  type="submit"
-                >
-                  Continue
-                </Button>
+              <Button
+                style={{ marginLeft: "10px", width: "150px" }}
+                className="hero-modal-button"
+                onClick={() => {
+                  setShowModal(false)
+                }}
+                type="submit"
+              >
+                Continue
+              </Button>
             </Form>
           </div>
         </Modal>
