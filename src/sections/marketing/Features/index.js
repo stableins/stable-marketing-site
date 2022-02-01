@@ -21,6 +21,7 @@ import Intake from "../../../api/intake"
 import Feature from "./style"
 import "./index.scss"
 import { useDispatch } from "react-redux"
+import { navigate } from "gatsby"
 
 const FeatureSection = ({ ...rest }) => {
   const dispatch = useDispatch()
@@ -258,7 +259,6 @@ const FeatureSection = ({ ...rest }) => {
                                 An improved claims experience that helps you
                                 resolve claims faster, available 24/7.
                               </div>
-                              <Link to="/join-stable/">
                                 <button
                                   className="button"
                                   onClick={() => {
@@ -281,11 +281,11 @@ const FeatureSection = ({ ...rest }) => {
                                       type: "FORM::SET_CALENDLY_SCHEDULED",
                                       payload: false,
                                     })
+                                    navigate('/join-stable/')
                                   }}
                                 >
                                   Get Early Access &nbsp;
                                 </button>
-                              </Link>
                             </div>
                           </div>
                         </div>

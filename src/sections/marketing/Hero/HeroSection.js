@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
 import { scroller } from "react-scroll"
 import smoothscroll from "smoothscroll-polyfill"
-import { Redirect } from "@reach/router"
+import { Redirect, navigate } from "@reach/router"
 import Sendgrid from "../../../../functions/sendgridContact"
 import ImageGroup from "./Components/ImageGroup"
 import Fade from "react-reveal/Fade"
@@ -96,13 +96,11 @@ export default function HeroSection() {
     })
   }
 
-  if (formRedirect) {
-    return <Redirect noThrow from="/" to="/join-stable/" />
-  }
-
+  
   async function handleEmailSubmit(event) {
     event.preventDefault()
     setLoading(true)
+        setFormRedirect(true)
 
     try {
       const response = await axios.post("/.netlify/functions/saveEmail", {
@@ -147,6 +145,11 @@ export default function HeroSection() {
       console.log(e)
     }
   }
+
+  if (formRedirect) {
+    return navigate('/join-stable/')
+  }
+
 
   return (
     <Fade>
@@ -309,7 +312,6 @@ export default function HeroSection() {
               >
                 Restart
               </Button>
-              <Link to="/join-stable/">
                 <Button
                   style={{ marginLeft: "10px", width: "150px" }}
                   className="hero-modal-button"
@@ -320,7 +322,6 @@ export default function HeroSection() {
                 >
                   Continue
                 </Button>
-              </Link>
             </Form>
           </div>
         </Modal>
