@@ -62,6 +62,8 @@ export default function individualFleetForm() {
   const userType = useSelector(state => state.form.userType)
   const driverReport = useSelector(state => state.form.driverReport)
   const calendlyScheduled = useSelector(state => state.form.calendlyScheduled)
+  const confirmed = useSelector(state => state.form.confirmed)
+
   const [resetSelect1, setResetSelect1] = useState(false)
   const [resetSelect2, setResetSelect2] = useState(false)
   const [passwordMismatch, setPasswordMismatch] = useState(false)
@@ -195,6 +197,11 @@ export default function individualFleetForm() {
         type: "FORM::SET_USER_TYPE",
         payload: response.data.userType,
       })
+
+      dispatch({
+        type: "FORM::SET_CONFIRMED",
+        payload: response.data.confirmed,
+      })
     } catch (e) {
       console.log(e)
       setLoading(false)
@@ -227,6 +234,11 @@ export default function individualFleetForm() {
         dispatch({
           type: "FORM::SET_STATUS",
           payload: response.data.status,
+        })
+
+        dispatch({
+          type: "FORM::SET_CONFIRMED",
+          payload: response.data.confirmed,
         })
       } catch (e) {
         console.log(e)
@@ -854,6 +866,11 @@ export default function individualFleetForm() {
                                 argyleAccountId: accountId,
                               }
                             )
+                            dispatch({
+                              type: "FORM::SET_CONFIRMED",
+                              payload: response.data.confirmed,
+                            })
+
                             setArgyleLinked(true)
                           } catch (e) {
                             console.log(e)

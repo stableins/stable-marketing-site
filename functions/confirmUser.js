@@ -2,9 +2,13 @@ const { MongoClient } = require("mongodb")
 const axios = require("axios")
 const FormData = require("form-data")
 
-const mongoUri = process.env.MONGO_URI.replace('<password>', process.env.MONGO_PASSWORD)
+const mongoUri = process.env.MONGO_URI.replace(
+  "<password>",
+  process.env.MONGO_PASSWORD
+)
 let client = new MongoClient(mongoUri, {
-  useNewUrlParser: true, useUnifiedTopology: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 })
 const clientPromise = client.connect()
 
@@ -13,13 +17,14 @@ exports.handler = async (event, context, callback) => {
   let status = ""
   let email = ""
   let confirmed = false
+  let userType = ""
   try {
-    const { confirmationId } = JSON.parse(event.body);
+    const { confirmationId } = JSON.parse(event.body)
     client = await clientPromise
     const database = client.db("marketing")
     const users = database.collection("users")
 
-    const user = await users.findOne({ confirmationId: confirmationId });
+    const user = await users.findOne({ confirmationId: confirmationId })
     console.log(user)
     if (!user) {
       statusCode = 404
@@ -27,15 +32,19 @@ exports.handler = async (event, context, callback) => {
       return
     }
 
-    await users.updateOne({ _id: user._id }, {
-      $set: {
-        confirmed: true,
-      },
-    })
+    await users.updateOne(
+      { _id: user._id },
+      {
+        $set: {
+          confirmed: true,
+        },
+      }
+    )
 
     confirmed = true
     status = user.status
     email = user.email
+    userType = user.userType
 
     const nameSplit = user.name?.split(" ")
     await axios.put(
@@ -82,22 +91,27 @@ exports.handler = async (event, context, callback) => {
       const createResponse = await axios.post(
         "https://www.zohoapis.com/crm/v2/contacts",
         {
-          data: [{
-            Last_Name: nameSplit[nameSplit.length - 1],
-            First_Name: nameSplit[0],
-            Email: user.email,
-            Mailing_State: user.state,
-            Mailing_Zip: user.zipcode,
-            Type_of_Contact: user.userType === "Carshare Owner" ? "CarShare Individual" : user.userType,
-          }],
+          data: [
+            {
+              Last_Name: nameSplit[nameSplit.length - 1],
+              First_Name: nameSplit[0],
+              Email: user.email,
+              Mailing_State: user.state,
+              Mailing_Zip: user.zipcode,
+              Type_of_Contact:
+                user.userType === "Carshare Owner"
+                  ? "CarShare Individual"
+                  : user.userType,
+            },
+          ],
         },
         {
           headers: {
-            Authorization: `Zoho-oauthtoken ${response.data.access_token}`
-          }
+            Authorization: `Zoho-oauthtoken ${response.data.access_token}`,
+          },
         }
       )
-    }    
+    }
   } catch (e) {
     statusCode = 500
     status = e.message
@@ -109,6 +123,7 @@ exports.handler = async (event, context, callback) => {
         status,
         email,
         confirmed,
+        userType,
       }),
     }
   }

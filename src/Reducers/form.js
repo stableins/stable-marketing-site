@@ -4,6 +4,7 @@ const initialState = {
   driverReport: false,
   userType: "",
   calendlyScheduled: false,
+  confirmed: false,
 }
 
 export default function User(state = initialState, action) {
@@ -18,6 +19,12 @@ export default function User(state = initialState, action) {
       return {
         ...state,
         status: action.payload,
+      }
+
+    case "FORM::SET_CONFIRMED":
+      return {
+        ...state,
+        confirmed: action.payload,
       }
 
     case "FORM::SET_CALENDLY_SCHEDULED":
