@@ -78,7 +78,7 @@ const FeatureSection = ({ ...rest }) => {
       if (response.data.status !== "Email Address Collected") {
         setShowModal(true)
       } else {
-        setFormRedirect(true)
+        navigate("/join-stable/")
       }
     } catch (e) {
       console.log(e)
@@ -86,9 +86,6 @@ const FeatureSection = ({ ...rest }) => {
     }
   }
 
-  if (formRedirect) {
-    return <Redirect from="/" to="/join-stable/" noThrow />
-  }
   return (
     <div className="value-index-wrapper">
       <div className="loader">
@@ -240,7 +237,7 @@ const FeatureSection = ({ ...rest }) => {
                   payload: emailInputValue,
                 })
 
-                setFormRedirect(true)
+                navigate("/join-stable/")
               }}
               className="button"
               variant="primary"
@@ -248,17 +245,18 @@ const FeatureSection = ({ ...rest }) => {
             >
               Restart
             </Button>
-              <Button
-                style={{ marginLeft: "10px", width: "150px" }}
-                className="button"
-                onClick={() => {
-                  setShowModal(false)
-                }}
-                variant="primary"
-                type="submit"
-              >
-                Continue
-              </Button>
+            <Button
+              style={{ marginLeft: "10px", width: "150px" }}
+              className="button"
+              onClick={() => {
+                setShowModal(false)
+                navigate("/join-stable/")
+              }}
+              variant="primary"
+              type="submit"
+            >
+              Continue
+            </Button>
           </Form>
         </div>
       </Modal>
