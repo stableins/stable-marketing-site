@@ -1,5 +1,12 @@
 const { MongoClient } = require("mongodb")
 const axios = require("axios")
+const jwt = require("jwt-decode")
+
+const mongoUri = process.env.MONGO_URI.replace('<password>', process.env.MONGO_PASSWORD)
+let client = new MongoClient(mongoUri, {
+  useNewUrlParser: true, useUnifiedTopology: true
+})
+const clientPromise = client.connect()
 
 exports.handler = async (event, context, callback) => {
   const { email, password, confirmPassword } = JSON.parse(event.body)
@@ -13,22 +20,20 @@ exports.handler = async (event, context, callback) => {
   }
   let status = "Argyle Authenticated and Account Created"
   let statusCode = 200
-
-  const uri = process.env.MONGO_URI.replace(
-    "<password>",
-    process.env.MONGO_PASSWORD
-  )
-  const client = new MongoClient(uri)
+  let confirmed = false
 
   try {
-    await client.connect()
+    client = await clientPromise
     const database = client.db("marketing")
     const users = database.collection("users")
 
-    await axios.post("https://auth.stablelabs.io/api/users/signup", {
+    const response = await axios.post("https://auth.stablelabs.io/api/users/signup", {
       email: email,
       password: password,
     })
+
+    const { token } = response.data
+    const decoded = jwt(token)
 
     const user = await users.findOne({ email: email })
     await users.updateOne(
@@ -36,29 +41,41 @@ exports.handler = async (event, context, callback) => {
       {
         $set: {
           status: status,
+          userId: decoded.id,
         },
       }
     )
+    confirmed = user.confirmed
 
-    await axios.put(
-      "https://api.sendgrid.com/v3/marketing/contacts",
-      {
-        contacts: [
-          {
-            email: email,
-            custom_fields: {
-              w1_T: status,
-            },
-          },
-        ],
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
-          "Content-Type": "application/json",
-        },
+    const hariDb = client.db("hari")
+    const hariUsers = hariDb.collection("users")
+    hariUsers.findOneAndUpdate({ email: email }, {
+      $set: {
+        userId: decoded.id
       }
-    )
+    })
+
+    if (user.confirmed) {
+      await axios.put(
+        "https://api.sendgrid.com/v3/marketing/contacts",
+        {
+          contacts: [
+            {
+              email: email,
+              custom_fields: {
+                w1_T: status,
+              },
+            },
+          ],
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+        }
+      )
+    }
   } catch (e) {
     statusCode = 500
     status = e.message
@@ -72,6 +89,7 @@ exports.handler = async (event, context, callback) => {
     body: JSON.stringify({
       status,
       email,
+      confirmed,
     }),
   }
 }

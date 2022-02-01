@@ -25,11 +25,13 @@
     "gatsby-plugin-sass": "^4.0.2",
     "gatsby-plugin-sharp": "^3.0.1",
     "gatsby-plugin-styled-components": "^4.0.0",
+    "gatsby-plugin-use-query-params": "^1.0.1",
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-transformer-remark": "^3.0.0",
     "gatsby-transformer-sharp": "^3.0.0",
     "global": "^4.4.0",
     "install": "^0.13.0",
+    "jwt-decode": "^3.1.2",
     "mongodb": "^4.3.0",
     "netlify-cli": "^8.6.15",
     "polished": "^4.0.5",
@@ -63,6 +65,8 @@
     "smoothscroll-polyfill": "^0.4.4",
     "styled-components": "^5.2.1",
     "url-loader": "^4.1.1",
+    "use-query-params": "^1.2.3",
+    "uuid": "^8.3.2",
     "zipcodes": "^8.0.0"
   },
   "devDependencies": {
