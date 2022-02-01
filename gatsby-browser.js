@@ -19,20 +19,3 @@ export const wrapRootElement = ({ element }) => (
     <Provider store={store}>{element}</Provider>
   </GlobalHeaderProvider>
 )
-
-export const constonInitialClientRender = () => {
-  window.addEventListener(
-    "popstate",
-    () => (window.location.href = window.location.href)
-  )
-}
-
-
-export const onInitialClientRender = () => {
-  /**
-   * This is a workaround for a bug in Gatsby
-   *
-   * See https://github.com/gatsbyjs/gatsby/issues/8357 for more details
-   */
-  globalHistory._onTransitionComplete()
-}
