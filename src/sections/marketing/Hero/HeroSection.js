@@ -3,6 +3,7 @@ import { Col, Container, Row, Modal, Form, Button } from "react-bootstrap"
 import ReactTypingEffect from "react-typing-effect"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import SingleAniamtion from "../../../components/Animation/singleAnimation"
+import { navigate } from "gatsby"
 import { Link } from "~components"
 import Intake from "../../../api/intake"
 import HeroImage from "../../../assets/image/logo/hero_car_img.png"
@@ -147,7 +148,7 @@ export default function HeroSection() {
   }
 
   if (formRedirect) {
-    return redirectTo("/join-stable/")
+    return navigate("/join-stable/")
   }
 
 
