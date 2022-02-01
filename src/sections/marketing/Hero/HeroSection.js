@@ -315,6 +315,7 @@ export default function HeroSection() {
                 className="hero-modal-button"
                 onClick={() => {
                   setShowModal(false)
+                  navigate("/join-stable/")
                 }}
                 type="submit"
               >
