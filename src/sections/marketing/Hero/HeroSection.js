@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
 import { scroller } from "react-scroll"
 import smoothscroll from "smoothscroll-polyfill"
-import { Redirect, navigate } from "@reach/router"
+import { Redirect, navigate, redirectTo } from "@reach/router"
 import Sendgrid from "../../../../functions/sendgridContact"
 import ImageGroup from "./Components/ImageGroup"
 import Fade from "react-reveal/Fade"
@@ -147,7 +147,7 @@ export default function HeroSection() {
   }
 
   if (formRedirect) {
-    return navigate('/join-stable/')
+    return redirectTo("/join-stable/")
   }
 
 
