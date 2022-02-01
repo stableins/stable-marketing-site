@@ -1,23 +1,25 @@
 const { MongoClient } = require("mongodb")
 const axios = require("axios")
 
+const mongoUri = process.env.MONGO_URI.replace('<password>', process.env.MONGO_PASSWORD)
+let client = new MongoClient(mongoUri, {
+  useNewUrlParser: true, useUnifiedTopology: true
+})
+const clientPromise = client.connect()
+
 exports.handler = async (event, context, callback) => {
   const { email, argyleUserId, argyleAccountId } = JSON.parse(event.body)
   let status = "Argyle Authenticated"
   let statusCode = 200
-
-  const uri = process.env.MONGO_URI.replace(
-    "<password>",
-    process.env.MONGO_PASSWORD
-  )
-  const client = new MongoClient(uri)
+  let confirmed = false
 
   try {
-    await client.connect()
+    client = await clientPromise
     const database = client.db("marketing")
     const users = database.collection("users")
 
     const user = await users.findOne({ email: email })
+    confirmed = user.confirmed
     let argyleAccounts
     if (user.argyleAccounts) {
       argyleAccounts = user.argyleAccounts
@@ -37,25 +39,39 @@ exports.handler = async (event, context, callback) => {
       }
     )
 
-    await axios.put(
-      "https://api.sendgrid.com/v3/marketing/contacts",
-      {
-        contacts: [
-          {
-            email: email,
-            custom_fields: {
-              w1_T: status,
+    const hariDatabase = client.db("hari")
+    const hariUsers = hariDatabase.collection("users")
+    hariUsers.findOneAndReplace({ email: email }, {
+      email: email,
+      argyleUserId: argyleUserId,
+      name: user.name,
+      zipcode: user.zipcode,
+      state: user.state,
+    }, {
+      upsert: true,
+    })
+
+    if (user.confirmed) {
+      await axios.put(
+        "https://api.sendgrid.com/v3/marketing/contacts",
+        {
+          contacts: [
+            {
+              email: email,
+              custom_fields: {
+                w1_T: status,
+              },
             },
-          },
-        ],
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
-          "Content-Type": "application/json",
+          ],
         },
-      }
-    )
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+        }
+      )
+    }
   } catch (e) {
     statusCode = 500
     status = e.message
@@ -69,6 +85,7 @@ exports.handler = async (event, context, callback) => {
     body: JSON.stringify({
       status,
       email,
+      confirmed,
     }),
   }
 }

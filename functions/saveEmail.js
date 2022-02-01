@@ -1,41 +1,55 @@
 const { MongoClient } = require("mongodb")
 const axios = require("axios")
+const uuidv4 = require("uuid").v4;
+
+const mongoUri = process.env.MONGO_URI.replace('<password>', process.env.MONGO_PASSWORD)
+let client = new MongoClient(mongoUri, {
+  useNewUrlParser: true, useUnifiedTopology: true
+})
+const clientPromise = client.connect()
 
 exports.handler = async (event, context, callback) => {
   const { email } = JSON.parse(event.body)
   let status = "Email Address Collected"
   let statusCode = 200
   let userType
-
-  const uri = process.env.MONGO_URI.replace(
-    "<password>",
-    process.env.MONGO_PASSWORD
-  )
-  const client = new MongoClient(uri)
+  let confirmed = false
 
   try {
-    await client.connect()
+    client = await clientPromise
     const database = client.db("marketing")
     const users = database.collection("users")
 
     const user = await users.findOne({ email: email })
     if (!user) {
+      const confirmationId = uuidv4();
+
       await users.insertOne({
         email: email,
         status: status,
+        confirmed: false,
+        confirmationId: confirmationId,
       })
 
-      await axios.put(
-        "https://api.sendgrid.com/v3/marketing/contacts",
+      await axios.post(
+        "https://api.sendgrid.com/v3/mail/send",
         {
-          contacts: [
+          from: {
+            email: "info@stableins.com",
+          },
+          personalizations: [
             {
-              email: email,
-              custom_fields: {
-                w1_T: status,
+              to: [
+                {
+                  email: email
+                },
+              ],
+              dynamic_template_data: {
+                userId: confirmationId,
               },
             },
           ],
+          template_id: "d-883e7940206249f6a7345f2cab64b60e",
         },
         {
           headers: {
@@ -47,6 +61,7 @@ exports.handler = async (event, context, callback) => {
     } else {
       userType = user.userType
       status = user.status
+      confirmed = user.confirmed ?? false
     }
   } catch (e) {
     statusCode = 500
@@ -62,6 +77,7 @@ exports.handler = async (event, context, callback) => {
       status,
       email,
       userType,
+      confirmed,
     }),
   }
 }
