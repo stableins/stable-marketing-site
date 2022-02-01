@@ -18,8 +18,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     `babel-plugin-styled-components`,
-    `gatsby-plugin-remove-trailing-slashes`,
-
     {
       resolve: `gatsby-plugin-sass`,
       options: {

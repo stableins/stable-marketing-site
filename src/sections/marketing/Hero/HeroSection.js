@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
 import { scroller } from "react-scroll"
 import smoothscroll from "smoothscroll-polyfill"
-import { Redirect, redirectTo } from "@reach/router"
+import { Redirect, redirectTo, browserHistory } from "@reach/router"
 import Sendgrid from "../../../../functions/sendgridContact"
 import ImageGroup from "./Components/ImageGroup"
 import Fade from "react-reveal/Fade"
@@ -100,7 +100,6 @@ export default function HeroSection() {
   async function handleEmailSubmit(event) {
     event.preventDefault()
     setLoading(true)
-    setFormRedirect(true)
 
     try {
       const response = await axios.post("/.netlify/functions/saveEmail", {
@@ -139,16 +138,16 @@ export default function HeroSection() {
       if (response.data.status !== "Email Address Collected") {
         setShowModal(true)
       } else {
-        setFormRedirect(true)
+        navigate("/join-stable/")
       }
     } catch (e) {
       console.log(e)
     }
   }
 
-  if (formRedirect) {
-    return <Redirect from="/" to="/join-stable/" noThrow />
-  }
+  // if (formRedirect) {
+  //   return <Redirect from="/" to="/join-stable/" noThrow />
+  // }
 
   return (
     <Fade>
@@ -305,7 +304,7 @@ export default function HeroSection() {
                     payload: emailInputValue,
                   })
 
-                  setFormRedirect(true)
+                  navigate("/join-stable/")
                 }}
                 type="submit"
               >
