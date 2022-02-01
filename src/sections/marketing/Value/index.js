@@ -10,7 +10,7 @@ import {
   Form,
 } from "react-bootstrap"
 import { Images } from "~data"
-import { Redirect, Link, Navigate} from "@reach/router"
+import { Redirect, Link, navigate} from "@reach/router"
 import TabContentWidget from "./Component/TabContentWidget"
 import DriverReport from "../../../assets/image/logo/driver-report.png"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
@@ -77,7 +77,7 @@ const FeatureSection = ({ ...rest }) => {
       if (response.data.status !== "Email Address Collected") {
         setShowModal(true)
       } else {
-        // setFormRedirect(true)
+        setFormRedirect(true)
       }
     } catch (e) {
       console.log(e)
@@ -86,7 +86,7 @@ const FeatureSection = ({ ...rest }) => {
   }
 
   if (formRedirect) {
-    return <Navigate noThrow to="/join-stable/" />
+    return navigate("/join-stable/")
   }
   return (
     <div className="value-index-wrapper">
@@ -247,7 +247,6 @@ const FeatureSection = ({ ...rest }) => {
             >
               Restart
             </Button>
-            <Link to="/join-stable/">
               <Button
                 style={{ marginLeft: "10px", width: "150px" }}
                 className="button"
@@ -259,7 +258,6 @@ const FeatureSection = ({ ...rest }) => {
               >
                 Continue
               </Button>
-            </Link>
           </Form>
         </div>
       </Modal>
