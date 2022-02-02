@@ -41,7 +41,7 @@ exports.handler = async (event, context, callback) => {
 
     const hariDatabase = client.db("hari")
     const hariUsers = hariDatabase.collection("users")
-    hariUsers.findOneAndReplace(
+    await hariUsers.findOneAndReplace(
       { email: email },
       {
         email: email,
