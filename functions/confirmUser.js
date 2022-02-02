@@ -15,6 +15,7 @@ exports.handler = async (event, context, callback) => {
   let confirmed = false
   let userType = ""
   try {
+    await client.connect()
     const { confirmationId } = JSON.parse(event.body)
     const database = client.db("marketing")
     const users = database.collection("users")
