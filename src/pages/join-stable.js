@@ -204,7 +204,7 @@ export default function individualFleetForm() {
         payload: response.data.confirmed,
       })
 
-      if (emailInputValue !== "") {
+      if (response.data.confirmed === false) {
         setShowNewUserModal(true)
       }
     } catch (e) {
