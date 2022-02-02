@@ -41,7 +41,7 @@ const header = {
 
 export default function individualFleetForm() {
   const dispatch = useDispatch()
-  const [showNewUserModal, setShowNewUserModal] = useState(false)
+  const [showNewUserModal, setShowShowNewUserModal] = useState(false)
   const [showTermsModal, setShowTermsModal] = useState(false)
   const [showPrivacyModal, setShowPrivacyModal] = useState(false)
   const [showConfirmation, setShowConfirmation] = useState(false)
@@ -203,10 +203,6 @@ export default function individualFleetForm() {
         type: "FORM::SET_CONFIRMED",
         payload: response.data.confirmed,
       })
-
-      if (emailInputValue !== "") {
-        setShowNewUserModal(true)
-      }
     } catch (e) {
       console.log(e)
       setLoading(false)
