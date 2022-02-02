@@ -833,7 +833,8 @@ export default function individualFleetForm() {
           )}
 
           {status === "Email Address & Additional Info" &&
-            userType === "Rideshare Driver" && (
+            userType === "Rideshare Driver" &&
+            !!calendlyScheduled && (
               <>
                 <div className="join-stable-wrapper">
                   <div className="form">
