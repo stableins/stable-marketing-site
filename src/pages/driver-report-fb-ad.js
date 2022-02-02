@@ -14,9 +14,7 @@ import { Link } from "@reach/router"
 import { useDispatch } from "react-redux"
 import Fade from "react-reveal/Fade"
 import { ArgyleLink } from "../components/Argyle/ArgyleLink.tsx"
-import { PopupButton } from "react-calendly"
 import HeaderButton from "../sections/marketing/Header"
-import Intake from "../api/intake"
 import { useSelector } from "react-redux"
 import SessionInfoCapture from "../utility/sessionInfo"
 import PulseLoader from "react-spinners/PulseLoader"
@@ -55,16 +53,13 @@ export default function individualFleetForm() {
   const [zipcodeInputValue, setZipcodeInputValue] = useState(null)
   const [signupState, setSignupState] = useState("")
   const [dropdownInputValue1, setDropdownInputValue1] = useState("")
-  const [dropdownInputValue2, setDropdownInputValue2] = useState("")
   const [hasMounted, setHasMounted] = useState(false)
   const [handleSelectChange, setHandleSelectChange] = useState(false)
   const [clicked, setClicked] = useState("0")
   const status = useSelector(state => state.form.status)
   const userType = useSelector(state => state.form.userType)
   const driverReport = useSelector(state => state.form.driverReport)
-  const calendlyScheduled = useSelector(state => state.form.calendlyScheduled)
   const confirmed = useSelector(state => state.form.confirmed)
-
   const [resetSelect1, setResetSelect1] = useState(false)
   const [resetSelect2, setResetSelect2] = useState(false)
   const [passwordMismatch, setPasswordMismatch] = useState(false)
@@ -74,8 +69,6 @@ export default function individualFleetForm() {
   const [loading, setLoading] = useState(false)
   const [color, setColor] = useState("#3b358a;")
 
-  console.log(dropdownInputValue1, dropdownInputValue2)
-
   useEffect(() => {
     setHasMounted(true)
   }, [resetSelect1, resetSelect2])
@@ -84,75 +77,8 @@ export default function individualFleetForm() {
     SessionInfoCapture({ email })
   }, [])
 
-  useEffect(() => {
-    window.addEventListener("message", function (e) {
-      if (e.data.event === "calendly.event_scheduled") {
-        dispatch({
-          type: "FORM::SET_CALENDLY_SCHEDULED",
-          payload: true,
-        })
-      }
-    })
-  }, [])
-
   if (!hasMounted) {
     return null
-  }
-
-  async function handleSubmit(event) {
-    event.preventDefault()
-    setLoading(true)
-
-    if (passwordConfirmInputValue != passwordInputValue) {
-      setPasswordMismatch(true)
-    }
-    try {
-      if (dropdownInputValue1 === "Rideshare Driver") {
-        dispatch({
-          type: "FORM::SET_STATUS",
-          payload: "emailZipAndNameAndEligible",
-        })
-        const response = await axios.post(
-          "/.netlify/functions/sendgridContact",
-          {
-            email: email ? email : emailInputValue,
-            zipcode: zipcodeInputValue,
-            name: nameInputValue,
-            status: "email address and additional info received",
-          }
-        )
-      }
-
-      if (response.data) {
-        setLoading(false)
-      }
-
-      if (
-        status === "createPassword" &&
-        passwordConfirmInputValue === passwordInputValue
-      ) {
-        setPasswordMismatch(false)
-        alert("done")
-        dispatch({
-          type: "FORM::SET_STATUS",
-          payload: "done",
-        })
-      }
-
-      if (
-        dropdownInputValue1 === "Carshare Owner" ||
-        dropdownInputValue1 === "Carshare Fleet" ||
-        dropdownInputValue1 === "Rideshare Fleet"
-      ) {
-        alert("infoReceivedIneligible")
-        dispatch({
-          type: "FORM::SET_STATUS",
-          payload: "infoReceivedIneligible",
-        })
-      }
-    } catch (e) {
-      alert(e)
-    }
   }
 
   async function handleAdditionalInfoSubmit(event) {
@@ -162,15 +88,8 @@ export default function individualFleetForm() {
     SessionInfoCapture({ email: email ? email : emailInputValue })
 
     try {
-      let userType
+      const userType = "Rideshare Driver"
 
-      if (driverReport) {
-        userType = "Rideshare Driver"
-      } else if (dropdownInputValue1 && dropdownInputValue1 !== "") {
-        userType = dropdownInputValue1
-      } else if (dropdownInputValue2 && dropdownInputValue2 !== "") {
-        userType = dropdownInputValue2
-      }
       const response = await axios.post(
         "/.netlify/functions/saveFullContactInfo",
         {
@@ -251,13 +170,6 @@ export default function individualFleetForm() {
         setExistingAccount(true)
       }
     }
-  }
-
-  function numberOnly(id) {
-    // Get element by id which passed as parameter within HTML element event
-    var element = document.getElementById(id)
-    // This removes any other character but numbers as entered by user
-    element.value = element.value.replace(/[^0-9]/gi, "")
   }
 
   return (
@@ -347,134 +259,6 @@ export default function individualFleetForm() {
                         }}
                       />
                     </Form.Group>
-                    <h4>I am a...</h4>
-
-                    <div className="select-wrapper">
-                      <select
-                        primary
-                        onMouseEnter={
-                          isMobile
-                            ? () => {
-                                setClicked("1")
-                                setResetSelect1(true)
-                                setResetSelect2(false)
-                                setDropdownInputValue2("")
-                                setDisableOption1(true)
-                              }
-                            : null
-                        }
-                        onFocus={() => {
-                          setClicked("1")
-                          setResetSelect1(true)
-                          setResetSelect2(false)
-                          setDropdownInputValue2("")
-                          setDisableOption1(true)
-                        }}
-                        onClick={() => {
-                          setClicked("1")
-                          setResetSelect1(true)
-                          setResetSelect2(false)
-                          setDropdownInputValue2("")
-                        }}
-                        className={`select-1-${clicked}`}
-                        onChange={e => {
-                          if (e.target.value === "") {
-                            setDropdownInputValue1("")
-                          }
-                          if (e.target.value === "1") {
-                            setDropdownInputValue1("Rideshare Driver")
-                            setDropdownInputValue2("")
-                          }
-                          if (e.target.value === "2") {
-                            setDropdownInputValue1("Carshare Owner")
-                            setDropdownInputValue2("")
-                          }
-                        }}
-                        as="select"
-                      >
-                        <option
-                          required
-                          value=""
-                          // disabled={disableOption1}
-                          selected={!resetSelect1}
-                        >
-                          {clicked === "1" ? "Select Option" : "Driver"}
-                        </option>
-                        <option
-                          disabled={clicked === "1" ? false : true}
-                          required
-                          value="1"
-                        >
-                          Rideshare Driver
-                        </option>
-                        <option
-                          disabled={clicked === "1" ? false : true}
-                          required
-                          value="2"
-                        >
-                          Carshare Owner
-                        </option>
-                      </select>
-                      <select
-                        onMouseEnter={
-                          isMobile
-                            ? () => {
-                                setClicked("2")
-                                setResetSelect1(false)
-                                setResetSelect2(true)
-                                setDropdownInputValue1("")
-                              }
-                            : null
-                        }
-                        onFocus={() => {
-                          setClicked("2")
-                          setResetSelect1(false)
-                          setResetSelect2(true)
-                          setDropdownInputValue1("")
-                        }}
-                        onClick={() => {
-                          setClicked("2")
-                          setResetSelect1(false)
-                          setResetSelect2(true)
-                          setDropdownInputValue1("")
-                        }}
-                        className={`select-2-${clicked}`}
-                        onChange={e => {
-                          if (e.target.value === "") {
-                            setDropdownInputValue2("")
-                          }
-                          if (e.target.value === "3") {
-                            setDropdownInputValue2("Rideshare Fleet")
-                            setDropdownInputValue1("")
-                          }
-                          if (e.target.value === "4") {
-                            setDropdownInputValue2("Carshare Fleet")
-                            setDropdownInputValue1("")
-                          }
-                        }}
-                        as="select"
-                      >
-                        <option
-                          value=""
-                          // disabled={clicked === "2" ? true : false}
-                          selected={!resetSelect2}
-                        >
-                          {clicked === "2" ? "Select Option" : "Fleet"}
-                        </option>
-                        <option
-                          value="3"
-                          disabled={clicked === "2" ? false : true}
-                        >
-                          Rideshare Fleet
-                        </option>
-                        <option
-                          value="4"
-                          disabled={clicked === "2" ? false : true}
-                        >
-                          Carshare Fleet
-                        </option>
-                      </select>
-                    </div>
                     <div className="check-wrapper">
                       <div className="checkbox">
                         <input
@@ -522,11 +306,11 @@ export default function individualFleetForm() {
                     </div>
                     <br />
                     <button
-                      disabled={
-                        dropdownInputValue1 === "" && dropdownInputValue2 === ""
-                          ? true
-                          : false
-                      }
+                      // disabled={
+                      //   dropdownInputValue1 === "" && dropdownInputValue2 === ""
+                      //     ? true
+                      //     : false
+                      // }
                       className="button"
                       variant="primary"
                       type="submit"
@@ -535,298 +319,6 @@ export default function individualFleetForm() {
                       <span>Submit &nbsp;</span>
                     </button>
                   </Form.Group>
-                </Form>
-              </div>
-            </div>
-          )}
-
-          {status === "Email Address Collected" && !driverReport && (
-            <div className="join-stable-wrapper">
-              <div className="form">
-                <Form onSubmit={handleAdditionalInfoSubmit}>
-                  <Form.Label>
-                    <p className="text">
-                      <span className="bold">Tell us more about you.</span>{" "}
-                      <br /> <br />
-                      You'll get early access to tools to better run your
-                      mobility business. We'll also let you know when Stable's
-                      insurance will be live in your state. <br /> <br />
-                      We're launching in Illinois this Spring with more states
-                      coming online through the year!
-                    </p>
-                  </Form.Label>
-
-                  <Form.Group className="mb-3">
-                    <br />
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Control
-                        required={true}
-                        className="input"
-                        onChange={e => setNameInputValue(e.target.value)}
-                        // required
-                        type="text"
-                        placeholder="Name"
-                      />
-                    </Form.Group>
-                    <Form.Group minLength="5">
-                      <Form.Control
-                        required={true}
-                        className="input"
-                        minLength="5"
-                        type="number"
-                        onInput={e =>
-                          (e.target.value = e.target.value.slice(0, 5))
-                        }
-                        onChange={e => setZipcodeInputValue(e.target.value)}
-                        // required
-                        placeholder="Zip Code"
-                      />
-                    </Form.Group>
-                    <h4>I am a...</h4>
-
-                    <div className="select-wrapper">
-                      <select
-                        primary
-                        onMouseEnter={
-                          isMobile
-                            ? () => {
-                                setClicked("1")
-                                setResetSelect1(true)
-                                setResetSelect2(false)
-                                setDropdownInputValue2("")
-                                setDisableOption1(true)
-                              }
-                            : null
-                        }
-                        onFocus={() => {
-                          setClicked("1")
-                          setResetSelect1(true)
-                          setResetSelect2(false)
-                          setDropdownInputValue2("")
-                          setDisableOption1(true)
-                        }}
-                        onClick={() => {
-                          setClicked("1")
-                          setResetSelect1(true)
-                          setResetSelect2(false)
-                          setDropdownInputValue2("")
-                        }}
-                        className={`select-1-${clicked}`}
-                        onChange={e => {
-                          if (e.target.value === "") {
-                            setDropdownInputValue1("")
-                          }
-                          if (e.target.value === "1") {
-                            setDropdownInputValue1("Rideshare Driver")
-                            setDropdownInputValue2("")
-                          }
-                          if (e.target.value === "2") {
-                            setDropdownInputValue1("Carshare Owner")
-                            setDropdownInputValue2("")
-                          }
-                        }}
-                        as="select"
-                      >
-                        <option
-                          required
-                          value=""
-                          // disabled={disableOption1}
-                          selected={!resetSelect1}
-                        >
-                          {clicked === "1" ? "Select Option" : "Driver"}
-                        </option>
-                        <option
-                          disabled={clicked === "1" ? false : true}
-                          required
-                          value="1"
-                        >
-                          Rideshare Driver
-                        </option>
-                        <option
-                          disabled={clicked === "1" ? false : true}
-                          required
-                          value="2"
-                        >
-                          Carshare Owner
-                        </option>
-                      </select>
-                      <select
-                        onMouseEnter={
-                          isMobile
-                            ? () => {
-                                setClicked("2")
-                                setResetSelect1(false)
-                                setResetSelect2(true)
-                                setDropdownInputValue1("")
-                              }
-                            : null
-                        }
-                        onFocus={() => {
-                          setClicked("2")
-                          setResetSelect1(false)
-                          setResetSelect2(true)
-                          setDropdownInputValue1("")
-                        }}
-                        onClick={() => {
-                          setClicked("2")
-                          setResetSelect1(false)
-                          setResetSelect2(true)
-                          setDropdownInputValue1("")
-                        }}
-                        className={`select-2-${clicked}`}
-                        onChange={e => {
-                          if (e.target.value === "") {
-                            setDropdownInputValue2("")
-                          }
-                          if (e.target.value === "3") {
-                            setDropdownInputValue2("Rideshare Fleet")
-                            setDropdownInputValue1("")
-                          }
-                          if (e.target.value === "4") {
-                            setDropdownInputValue2("Carshare Fleet")
-                            setDropdownInputValue1("")
-                          }
-                        }}
-                        as="select"
-                      >
-                        <option
-                          value=""
-                          // disabled={clicked === "2" ? true : false}
-                          selected={!resetSelect2}
-                        >
-                          {clicked === "2" ? "Select Option" : "Fleet"}
-                        </option>
-                        <option
-                          value="3"
-                          disabled={clicked === "2" ? false : true}
-                        >
-                          Rideshare Fleet
-                        </option>
-                        <option
-                          value="4"
-                          disabled={clicked === "2" ? false : true}
-                        >
-                          Carshare Fleet
-                        </option>
-                      </select>
-                    </div>
-                    <div className="check-wrapper">
-                      <div className="checkbox">
-                        <input
-                          required={true}
-                          class="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="flexCheckIndeterminate"
-                        />
-
-                        <p>
-                          I agree to the Stable{" "}
-                          <span onClick={() => setTermsModalShow(true)}>
-                            {" "}
-                            Terms{" "}
-                          </span>{" "}
-                          and{" "}
-                          <span onClick={() => setShowPrivacyModal(true)}>
-                            {" "}
-                            Privacy Policy
-                          </span>
-                          .
-                        </p>
-                      </div>
-                    </div>
-                    <br />
-                    <button className="button" variant="primary" type="submit">
-                      <span>Submit &nbsp;</span>
-                    </button>
-                  </Form.Group>
-                  {/* <Form.Label>
-                We've sent you an email to confirm your email address. If you
-                don't see something from us shortly, please check your junk
-                mail.
-              </Form.Label> */}
-                </Form>
-              </div>
-            </div>
-          )}
-
-          {status === "Email Address Collected" && driverReport && (
-            <div className="join-stable-wrapper">
-              <div className="form">
-                <Form onSubmit={handleAdditionalInfoSubmit}>
-                  <Form.Label>
-                    <p className="text">
-                      <span className="bold">Tell us more about you.</span>{" "}
-                      <br /> <br />
-                      You'll get early access to tools to better run your
-                      mobility business. We'll also let you know when Stable's
-                      insurance will be live in your state. <br /> <br />
-                      We're launching in Illinois this Spring with more states
-                      coming online through the year!
-                    </p>
-                  </Form.Label>
-
-                  <Form.Group className="mb-3">
-                    <br />
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Control
-                        required={true}
-                        className="input"
-                        onChange={e => setNameInputValue(e.target.value)}
-                        // required
-                        type="text"
-                        placeholder="Name"
-                      />
-                    </Form.Group>
-                    <Form.Group>
-                      <Form.Control
-                        required={true}
-                        className="input"
-                        type="tel"
-                        minLength="5"
-                        onInput={e =>
-                          (e.target.value = e.target.value.slice(0, 5))
-                        }
-                        onChange={e => setZipcodeInputValue(e.target.value)}
-                        // required
-                        placeholder="Zip Code"
-                      />
-                    </Form.Group>
-                    <div className="check-wrapper">
-                      <div className="checkbox">
-                        <input
-                          required={true}
-                          class="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="flexCheckIndeterminate"
-                        />
-
-                        <p>
-                          I agree to the Stable{" "}
-                          <span onClick={() => setTermsModalShow(true)}>
-                            {" "}
-                            Terms{" "}
-                          </span>{" "}
-                          and{" "}
-                          <span onClick={() => setShowPrivacyModal(true)}>
-                            {" "}
-                            Privacy Policy
-                          </span>
-                          .
-                        </p>
-                      </div>
-                    </div>
-                    <br />
-                    <button className="button" variant="primary" type="submit">
-                      <span>Get Driver Report&nbsp;</span>
-                    </button>
-                  </Form.Group>
-                  {/* <Form.Label>
-                We've sent you an email to confirm your email address. If you
-                don't see something from us shortly, please check your junk
-                mail.
-              </Form.Label> */}
                 </Form>
               </div>
             </div>
@@ -905,32 +397,6 @@ export default function individualFleetForm() {
                         </button>
                       </>
                     )}
-                  </div>
-                </div>
-              </>
-            )}
-
-          {status === "Email Address & Additional Info" &&
-            userType !== "Rideshare Driver" &&
-            !calendlyScheduled && (
-              <>
-                <div className="join-stable-wrapper">
-                  <div className="form">
-                    <p className="text">
-                      <span className="bold">
-                        Want to connect for a quick 15-30 minute call so we can
-                        learn more about your needs?
-                      </span>{" "}
-                      <br /> <br />
-                      We take all product suggestions seriously and would like
-                      to hear what your thoughts! Pick a time below.
-                    </p>
-
-                    <PopupButton
-                      className="button"
-                      text="Let's Connect!"
-                      url="https://calendly.com/stableins_john/fleetinsurance"
-                    />
                   </div>
                 </div>
               </>
@@ -1045,7 +511,25 @@ export default function individualFleetForm() {
                         to you by email or text (coming soon).
                       </p>
                     </Form.Label>
+                    {/* <Form.Control
+                      required={true}
+                      className="input"
+                      onChange={e => setNameInputValue(e.target.value)}
+                      // required
+                      type="text"
+                      placeholder="Password"
+                    /> */}
                   </Form.Group>
+
+                  {/* <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Control
+                      required={true}
+                      className="input"
+                      onChange={e => setZipcodeInputValue(e.target.value)}
+                      // required
+                      placeholder="Verify Password"
+                    />
+                  </Form.Group> */}
                   <Link to="/">
                     <button className="button" variant="primary" type="submit">
                       <span>Back to Stable Home &nbsp;</span>
@@ -1054,36 +538,6 @@ export default function individualFleetForm() {
                 </Form>
               </div>
             </div>
-          )}
-
-          {status === "Email Address & Additional Info" && calendlyScheduled && (
-            <>
-              <div className="join-stable-wrapper">
-                <div className="form">
-                  <Form onSubmit={handleSubmit}>
-                    <Form.Group className="mb-3">
-                      <Form.Label>
-                        <p className="text">
-                          <span className="bold">
-                            We'll send you an email so you can add this to your
-                            calendar. We look forward to speaking with you!
-                          </span>{" "}
-                        </p>
-                      </Form.Label>
-                    </Form.Group>
-                    <Link to="/">
-                      <button
-                        className="button"
-                        variant="primary"
-                        type="submit"
-                      >
-                        <span>Back to Stable Home &nbsp;</span>
-                      </button>
-                    </Link>
-                  </Form>
-                </div>
-              </div>
-            </>
           )}
 
           <Modal
