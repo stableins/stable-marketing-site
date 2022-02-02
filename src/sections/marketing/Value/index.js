@@ -22,8 +22,8 @@ import Intake from "../../../api/intake"
 import PulseLoader from "react-spinners/PulseLoader"
 import Feature from "./style"
 import { Spinner } from "react-bootstrap"
-import "./index.scss"
 import { useDispatch } from "react-redux"
+import "./index.scss"
 
 const FeatureSection = ({ ...rest }) => {
   const dispatch = useDispatch()
@@ -51,6 +51,11 @@ const FeatureSection = ({ ...rest }) => {
           type: "FORM::SET_USER_TYPE",
           payload: response.data.userType,
         })
+      } else {
+        dispatch({
+          type: "FORM::SET_USER_TYPE",
+          payload: "Rideshare Driver",
+        })
       }
       dispatch({
         type: "FORM::SET_STATUS",
@@ -64,7 +69,7 @@ const FeatureSection = ({ ...rest }) => {
 
       dispatch({
         type: "FORM::SET_DRIVER_REPORT",
-        payload: false,
+        payload: true,
       })
 
       dispatch({
