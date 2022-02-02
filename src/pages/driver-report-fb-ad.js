@@ -85,7 +85,7 @@ export default function individualFleetForm() {
     event.preventDefault()
     setLoading(true)
 
-    SessionInfoCapture({ email: email ? email : emailInputValue })
+    SessionInfoCapture({ email: emailInputValue })
 
     try {
       const userType = "Rideshare Driver"
@@ -93,7 +93,7 @@ export default function individualFleetForm() {
       const response = await axios.post(
         "/.netlify/functions/saveFullContactInfo",
         {
-          email: email ?? emailInputValue,
+          email: emailInputValue,
           zipcode: zipcodeInputValue,
           name: nameInputValue,
           userType: userType,
