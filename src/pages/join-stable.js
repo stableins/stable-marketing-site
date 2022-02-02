@@ -41,7 +41,6 @@ const header = {
 
 export default function individualFleetForm() {
   const dispatch = useDispatch()
-  const [showNewUserModal, setShowShowNewUserModal] = useState(false)
   const [showTermsModal, setShowTermsModal] = useState(false)
   const [showPrivacyModal, setShowPrivacyModal] = useState(false)
   const [showConfirmation, setShowConfirmation] = useState(false)
@@ -2223,47 +2222,7 @@ export default function individualFleetForm() {
               </p>
             </div>
           </Modal>
-          <Modal
-            show={showNewUserModal}
-            onHide={() => {
-              setShowShowNewUserModal(false)
-              // navigate("/join-stable/")
-            }}
-            dialogClassName="modal-9/.0w"
-            aria-labelledby="example-custom-modal-styling-title"
-          >
-            <Modal.Header>
-              <Modal.Title id="example-custom-modal-styling-title">
-                <img width={150} src={StableLogo} />
-              </Modal.Title>
-            </Modal.Header>
-            <div style={{ padding: "20px" }}>
-              <Form
-                onSubmit={() => {
-                  event.preventDefault()
-                }}
-              >
-                <Form.Group className="mb-3">
-                  <Form.Label>
-                    We've sent you an email to confirm your information. Please
-                    confirm your email addresss to ensure you receive future
-                    emails from Stable Insurance.
-                  </Form.Label>
-                </Form.Group>
-                <Button
-                  style={{ marginLeft: "10px", width: "150px" }}
-                  className="hero-modal-button"
-                  onClick={() => {
-                    setShowShowNewUserModal(false)
-                    // navigate("/join-stable/")
-                  }}
-                  type="submit"
-                >
-                  Ok!
-                </Button>
-              </Form>
-            </div>
-          </Modal>
+
           <FooterOne />
         </PageWrapper>
       </Fade>
