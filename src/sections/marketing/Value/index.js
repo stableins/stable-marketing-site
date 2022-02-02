@@ -27,15 +27,12 @@ import { useDispatch } from "react-redux"
 
 const FeatureSection = ({ ...rest }) => {
   const dispatch = useDispatch()
-  const [counterModal, setCounterModal] = useState(false)
-  const [showModal, setShowModal] = useState(false)
-  const [formRedirect, setFormRedirect] = useState(false)
-  const [bulletPointModal, setBulletPointModal] = useState(false)
+  const [showExistingEmailModal, setShowExistingEmailModal] = useState(false)
+  const [showNewUserModal, setShowNewUserModal] = useState(false)
   const [statusResponse, setStatusResponse] = useState("")
   const [emailInputValue, setEmailInputValue] = useState("")
   const [loading, setLoading] = useState(false)
   const [color, setColor] = useState("#3b358a;")
-  console.log(emailInputValue)
 
   async function handleEmailSubmit(event) {
     event.preventDefault()
@@ -76,12 +73,13 @@ const FeatureSection = ({ ...rest }) => {
       })
 
       if (response.data.status !== "Email Address Collected") {
-        setShowModal(true)
+        setShowExistingEmailModal(true)
       } else {
+        setShowNewUserModal(true)
         navigate("/join-stable/")
       }
     } catch (e) {
-      console.log(e)
+      alert("Request failed please try again")
       setLoading(false)
     }
   }
@@ -189,8 +187,8 @@ const FeatureSection = ({ ...rest }) => {
         </div>
       </Feature>
       <Modal
-        show={showModal}
-        onHide={() => setShowModal(false)}
+        show={showExistingEmailModal}
+        onHide={() => setShowExistingEmailModal(false)}
         dialogClassName="modal-9/.0w"
         aria-labelledby="example-custom-modal-styling-title"
       >
@@ -239,23 +237,58 @@ const FeatureSection = ({ ...rest }) => {
 
                 navigate("/join-stable/")
               }}
-              className="button"
-              variant="primary"
               type="submit"
             >
               Restart
             </Button>
             <Button
               style={{ marginLeft: "10px", width: "150px" }}
-              className="button"
+              className="hero-modal-button"
               onClick={() => {
-                setShowModal(false)
+                setShowExistingEmailModal(false)
                 navigate("/join-stable/")
               }}
-              variant="primary"
               type="submit"
             >
               Continue
+            </Button>
+          </Form>
+        </div>
+      </Modal>
+      <Modal
+        show={showNewUserModal}
+        onHide={() => setShowNewUserModal(false)}
+        dialogClassName="modal-9/.0w"
+        aria-labelledby="example-custom-modal-styling-title"
+      >
+        <Modal.Header>
+          <Modal.Title id="example-custom-modal-styling-title">
+            <img width={150} src={StableLogo} />
+          </Modal.Title>
+        </Modal.Header>
+        <div style={{ padding: "20px" }}>
+          <Form
+            onSubmit={() => {
+              event.preventDefault()
+            }}
+          >
+            <Form.Group className="mb-3">
+              <Form.Label>
+                We've sent you an email to confirm your information. Please
+                confirm your email addresss to ensure you receive future emails
+                from Stable Insurance.
+              </Form.Label>
+            </Form.Group>
+            <Button
+              style={{ marginLeft: "10px", width: "150px" }}
+              className="hero-modal-button"
+              onClick={() => {
+                setShowNewUserModal(false)
+                // navigate("/join-stable/")
+              }}
+              type="submit"
+            >
+              Ok!
             </Button>
           </Form>
         </div>
