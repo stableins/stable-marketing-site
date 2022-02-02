@@ -43,46 +43,6 @@ exports.handler = async (event, context, callback) => {
         confirmationId: confirmationId,
       })
 
-      // if not individual rideshare driver, send to Zoho
-      if (userType !== "Rideshare Driver") {
-        const form = new FormData()
-        form.append("refresh_token", process.env.ZOHO_REFRESH_TOKEN)
-        form.append("client_id", process.env.ZOHO_CLIENT_ID)
-        form.append("client_secret", process.env.ZOHO_CLIENT_SECRET)
-        form.append("grant_type", "refresh_token")
-        const response = await axios.post(
-          "https://accounts.zoho.com/oauth/v2/token",
-          form,
-          {
-            headers: form.getHeaders(),
-          }
-        )
-
-        const createResponse = await axios.post(
-          "https://www.zohoapis.com/crm/v2/contacts",
-          {
-            data: [
-              {
-                Last_Name: nameSplit[nameSplit.length - 1],
-                First_Name: nameSplit[0],
-                Email: email,
-                Mailing_State: state,
-                Mailing_Zip: zipcode,
-                Type_of_Contact:
-                  userType === "Carshare Owner"
-                    ? "CarShare Individual"
-                    : userType,
-              },
-            ],
-          },
-          {
-            headers: {
-              Authorization: `Zoho-oauthtoken ${response.data.access_token}`,
-            },
-          }
-        )
-      }
-
       await axios.post(
         "https://api.sendgrid.com/v3/mail/send",
         {
