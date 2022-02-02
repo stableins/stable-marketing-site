@@ -47,7 +47,7 @@ exports.handler = async (event, context, callback) => {
         "https://api.sendgrid.com/v3/mail/send",
         {
           from: {
-            email: "info@stableins.com",
+            email: "hello@stableins.com",
           },
           personalizations: [
             {
