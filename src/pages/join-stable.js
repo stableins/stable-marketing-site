@@ -2230,7 +2230,7 @@ export default function individualFleetForm() {
           <Modal
             show={showNewUserModal}
             onHide={() => {
-              setShowNewUserModal(false)
+              setShowShowNewUserModal(false)
               // navigate("/join-stable/")
             }}
             dialogClassName="modal-9/.0w"
@@ -2258,7 +2258,7 @@ export default function individualFleetForm() {
                   style={{ marginLeft: "10px", width: "150px" }}
                   className="hero-modal-button"
                   onClick={() => {
-                    setShowNewUserModal(false)
+                    setShowShowNewUserModal(false)
                     // navigate("/join-stable/")
                   }}
                   type="submit"
