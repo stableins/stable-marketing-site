@@ -139,7 +139,7 @@ export default function HeroSection() {
         setShowExistingEmailModal(true)
       } else {
         setShowShowNewUserModal(true)
-        navigate("/join-stable/")
+        // navigate("/join-stable/")
       }
     } catch (e) {
       alert("Request failed please try again")
@@ -324,7 +324,10 @@ export default function HeroSection() {
         </Modal>
         <Modal
           show={showShowNewUserModal}
-          onHide={() => setShowShowNewUserModal(false)}
+          onHide={() => {
+            setShowShowNewUserModal(false)
+            navigate("/join-stable/")
+          }}
           dialogClassName="modal-9/.0w"
           aria-labelledby="example-custom-modal-styling-title"
         >

@@ -76,7 +76,7 @@ const FeatureSection = ({ ...rest }) => {
         setShowExistingEmailModal(true)
       } else {
         setShowNewUserModal(true)
-        navigate("/join-stable/")
+        // navigate("/join-stable/")
       }
     } catch (e) {
       alert("Request failed please try again")
@@ -257,7 +257,10 @@ const FeatureSection = ({ ...rest }) => {
       </Modal>
       <Modal
         show={showNewUserModal}
-        onHide={() => setShowNewUserModal(false)}
+        onHide={() => {
+          setShowNewUserModal(false)
+          navigate("/join-stable/")
+        }}
         dialogClassName="modal-9/.0w"
         aria-labelledby="example-custom-modal-styling-title"
       >
@@ -284,7 +287,7 @@ const FeatureSection = ({ ...rest }) => {
               className="hero-modal-button"
               onClick={() => {
                 setShowNewUserModal(false)
-                // navigate("/join-stable/")
+                navigate("/join-stable/")
               }}
               type="submit"
             >
