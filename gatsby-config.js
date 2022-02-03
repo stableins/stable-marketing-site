@@ -19,7 +19,6 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `babel-plugin-styled-components`,
     "gatsby-plugin-use-query-params",
-    "gatsby-plugin-react-svg",
 
     {
       resolve: `gatsby-plugin-sass`,
