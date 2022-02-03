@@ -36,6 +36,7 @@ exports.handler = async (event, context, callback) => {
         {
           from: {
             email: "hello@stableins.com",
+            name: "Stable Insurance"
           },
           personalizations: [
             {
