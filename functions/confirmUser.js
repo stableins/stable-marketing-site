@@ -2,14 +2,19 @@ const { MongoClient } = require("mongodb")
 const axios = require("axios")
 const FormData = require("form-data")
 
-const mongoUri = process.env.MONGO_URI.replace(
+const uri = process.env.MONGO_URI.replace(
   "<password>",
   process.env.MONGO_PASSWORD
 )
-let client = new MongoClient(mongoUri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+const client = new MongoClient(uri)
+// const mongoUri = process.env.MONGO_URI.replace(
+//   "<password>",
+//   process.env.MONGO_PASSWORD
+// )
+// let client = new MongoClient(mongoUri, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// })
 exports.handler = async (event, context, callback) => {
   let statusCode = 200
   let status = ""
@@ -17,8 +22,8 @@ exports.handler = async (event, context, callback) => {
   let confirmed = false
   let userType = ""
   try {
+    await client.connect()
     const { confirmationId } = JSON.parse(event.body)
-    const clientPromise = client.connect()
     const database = client.db("marketing")
     const users = database.collection("users")
 
