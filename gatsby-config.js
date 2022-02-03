@@ -27,6 +27,14 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        // rule: {
+        //   include: /assets/,
+        // },
+      },
+    },
+    {
       resolve: `gatsby-plugin-clarity`,
       options: {
         clarity_project_id: "aaujprt08a",
