@@ -196,7 +196,7 @@ export default function individualFleetForm() {
                       </span>{" "}
                       Get on the waitlist to keep in the know about our
                       rideshare insurance and we'll provide you with a FREE
-                      daily earnings report for your rideshare driving One easy
+                      daily earnings report for your rideshare driving. One easy
                       place to see how much you’re earning and how efficient you
                       are across platforms.
                     </p>
