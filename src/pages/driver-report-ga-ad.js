@@ -190,10 +190,11 @@ export default function individualFleetForm() {
                       <span className="bold">
                         Our first tool. Available to All.
                       </span>{" "}
-                      Join Stable’s waiting list for insurance and we’ll provide
-                      you with FREE daily earning reports for your rideshare
-                      driving. One easy place to see how much you’re earning and
-                      how efficient you are across platforms.
+                      Get on the waitlist to keep in the know about our
+                      rideshare insurance and we'll provide you with a FREE
+                      daily earnings report for your rideshare driving One easy
+                      place to see how much you’re earning and how efficient you
+                      are across platforms.
                     </p>
                     <p className="text">
                       <br /> <br />
