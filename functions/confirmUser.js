@@ -34,12 +34,14 @@ exports.handler = async (event, context, callback) => {
       status = "Confirmation id not found"
       return
     }
-
+    status =
+      user.status === "Email Contact" ? "Email Address Collected" : user.status
     await users.updateOne(
       { _id: user._id },
       {
         $set: {
           confirmed: true,
+          status: status,
         },
       }
     )
