@@ -58,7 +58,11 @@ export default function Redirect() {
         payload: response.data.userType,
       })
 
-      navigate("/join-stable/")
+      if (response.data.status === "Email Contact") {
+        navigate("/")
+      } else {
+        navigate("/join-stable/")
+      }
     } catch (e) {
       console.log(e)
     }
@@ -67,7 +71,7 @@ export default function Redirect() {
   return (
     // <PageWrapper headerConfig={header} innerPage={true}>
     <>
-      <img src="/Stable-S-logo_RGB.svg" width={1}/>
+      <img src="/Stable-S-logo_RGB.svg" width={1} />
       <div className="redirect-wrapper"></div>
 
       {/* <FooterOne /> */}
