@@ -9,6 +9,7 @@ import {
 import axios from "axios"
 import FooterOne from "../sections/marketing/FooterOne"
 import StableLogo from "../assets/image/logo/Stable-logo_site.png"
+import DriverReport from "../../static/driver-report.png"
 import { Form, Button, Modal } from "react-bootstrap"
 import { Link } from "@reach/router"
 import { useDispatch } from "react-redux"
@@ -18,7 +19,7 @@ import HeaderButton from "../sections/marketing/Header"
 import { useSelector } from "react-redux"
 import SessionInfoCapture from "../utility/sessionInfo"
 import PulseLoader from "react-spinners/PulseLoader"
-import "./join-stable.scss"
+import "./driver-report-ads.scss"
 
 const header = {
   headerClasses:
@@ -95,7 +96,7 @@ export default function individualFleetForm() {
           userType: userType,
         }
       )
-      console.log(response);
+      console.log(response)
       if (response.data) {
         setLoading(false)
       }
@@ -177,18 +178,28 @@ export default function individualFleetForm() {
       <Fade>
         <PageWrapper headerConfig={header} innerPage={true}>
           {status === "" && (
-            <div className="join-stable-wrapper">
+            <div className="driver-report-ads-wrapper">
+              <div className="title">Get Your Free Driver Report </div>
+              <div className="image">
+                <img src={DriverReport} width={300} />
+              </div>
               <div className="form">
                 <Form onSubmit={handleAdditionalInfoSubmit}>
                   <Form.Label>
+                    <p className="p-text1">
+                      <span className="bold">
+                        Our first tool. Available to All.
+                      </span>{" "}
+                      Join Stable’s waiting list for insurance and we’ll provide
+                      you with FREE daily earning reports for your rideshare
+                      driving. One easy place to see how much you’re earning and
+                      how efficient you are across platforms.
+                    </p>
                     <p className="text">
-                      <span className="bold">Tell us more about you.</span>{" "}
                       <br /> <br />
-                      You'll get early access to tools to better run your
-                      mobility business. We'll also let you know when Stable's
-                      insurance will be live in your state. <br /> <br />
-                      We're launching in Illinois this Spring with more states
-                      coming online through the year!
+                      To start, fill in below. We'll then connect to your
+                      rideshare accounts and with a few simple steps can
+                      generate your <span>Free Driver Report!</span>
                     </p>
                   </Form.Label>
 
