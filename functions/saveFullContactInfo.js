@@ -116,6 +116,48 @@ exports.handler = async (event, context, callback) => {
         )
 
         // TODO: if not rideshare driver, send updated info to Zoho
+        if (
+          user.userType &&
+          user.userType !== "Rideshare Driver" &&
+          user.name
+        ) {
+          const form = new FormData()
+          form.append("refresh_token", process.env.ZOHO_REFRESH_TOKEN)
+          form.append("client_id", process.env.ZOHO_CLIENT_ID)
+          form.append("client_secret", process.env.ZOHO_CLIENT_SECRET)
+          form.append("grant_type", "refresh_token")
+          const response = await axios.post(
+            "https://accounts.zoho.com/oauth/v2/token",
+            form,
+            {
+              headers: form.getHeaders(),
+            }
+          )
+
+          const createResponse = await axios.post(
+            "https://www.zohoapis.com/crm/v2/contacts",
+            {
+              data: [
+                {
+                  Last_Name: nameSplit[nameSplit.length - 1],
+                  First_Name: nameSplit[0],
+                  Email: user.email,
+                  Mailing_State: user.state,
+                  Mailing_Zip: user.zipcode,
+                  Type_of_Contact:
+                    user.userType === "Carshare Owner"
+                      ? "CarShare Individual"
+                      : user.userType,
+                },
+              ],
+            },
+            {
+              headers: {
+                Authorization: `Zoho-oauthtoken ${response.data.access_token}`,
+              },
+            }
+          )
+        }
       }
     }
   } catch (e) {
