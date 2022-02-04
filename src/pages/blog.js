@@ -4,7 +4,6 @@ import FooterSection from "~sections/marketing/FooterOne"
 import { PageWrapper } from "~components/Core"
 import HeaderButton from "~sections/marketing/Header"
 
-
 export default function blogsRequler() {
   const header = {
     headerClasses:
