@@ -1,6 +1,6 @@
 import React from "react"
 import { BlogRegular } from "~sections/Blog"
-import FooterSection from "~sections/Marketing/FooterOne"
+import FooterSection from "~sections/marketing/FooterOne"
 import { PageWrapper } from "~components/Core"
 import HeaderButton from "~sections/marketing/Header"
 
