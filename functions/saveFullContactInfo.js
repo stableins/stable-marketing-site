@@ -117,9 +117,7 @@ exports.handler = async (event, context, callback) => {
 
         // TODO: if not rideshare driver, send updated info to Zoho
         if (
-          user.userType &&
-          user.userType !== "Rideshare Driver" &&
-          user.name
+          userType !== "Rideshare Driver"
         ) {
           const form = new FormData()
           form.append("refresh_token", process.env.ZOHO_REFRESH_TOKEN)
@@ -141,13 +139,13 @@ exports.handler = async (event, context, callback) => {
                 {
                   Last_Name: nameSplit[nameSplit.length - 1],
                   First_Name: nameSplit[0],
-                  Email: user.email,
-                  Mailing_State: user.state,
-                  Mailing_Zip: user.zipcode,
+                  Email: email,
+                  Mailing_State: state,
+                  Mailing_Zip: zipcode,
                   Type_of_Contact:
-                    user.userType === "Carshare Owner"
+                    userType === "Carshare Owner"
                       ? "CarShare Individual"
-                      : user.userType,
+                      : userType,
                 },
               ],
             },
