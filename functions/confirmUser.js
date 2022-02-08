@@ -28,14 +28,14 @@ exports.handler = async (event, context, callback) => {
     const users = database.collection("users")
 
     const user = await users.findOne({ confirmationId: confirmationId })
-    console.log(user)
     if (!user) {
       statusCode = 404
       status = "Confirmation id not found"
       return
     }
+    const addToCompanyUpdates = user.status === "Marketing List"
     status =
-      user.status === "Email Contact" ? "Email Address Collected" : user.status
+      user.status === "Marketing List" ? "Email Address Collected" : user.status
     await users.updateOne(
       { _id: user._id },
       {
@@ -52,24 +52,30 @@ exports.handler = async (event, context, callback) => {
     userType = user.userType
 
     const nameSplit = user.name?.split(" ")
+    const contactData = {
+      contacts: [
+        {
+          email: user.email,
+          postal_code: user.zipcode,
+          first_name: nameSplit ? nameSplit[0] : null,
+          last_name: nameSplit ? nameSplit[nameSplit.length - 1] : null,
+          state_province_region: user.state,
+          custom_fields: {
+            w1_T: user.status,
+            w2_T: user.userType,
+            e3_T: user.name,
+          },
+        },
+      ],
+    }
+
+    if (addToCompanyUpdates) {
+      contactData.list_ids = ['07246af7-c1da-40ee-9b8c-b5f79653a1f5']
+    }
+    console.log(contactData)
     await axios.put(
       "https://api.sendgrid.com/v3/marketing/contacts",
-      {
-        contacts: [
-          {
-            email: user.email,
-            postal_code: user.zipcode,
-            first_name: nameSplit ? nameSplit[0] : null,
-            last_name: nameSplit ? nameSplit[nameSplit.length - 1] : null,
-            state_province_region: user.state,
-            custom_fields: {
-              w1_T: user.status,
-              w2_T: user.userType,
-              e3_T: user.name,
-            },
-          },
-        ],
-      },
+      contactData,
       {
         headers: {
           Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
