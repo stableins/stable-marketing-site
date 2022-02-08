@@ -463,3 +463,94 @@
     }
   }
 }
+
+
+@media (max-width: 600px) {
+  .service-section-3-wrapper {
+    text-align: center;
+    height: 390px;
+    .title {
+      color: #002e6d;
+      text-align: left;
+      font-family: Rubik;
+      font-style: normal;
+      left: 0;
+      font-weight: normal;
+      font-size: 36px;
+      line-height: 40px;
+    }
+    .image-wrapper {
+      display: block;
+      width: 95%;
+      text-align: left;
+      margin-top: 100px;
+
+      .partners-section {
+        display: block;
+        text-align: center;
+
+        .image-row {
+          display: block;
+          // margin-top: 10px;
+
+          .mltply {
+            // position: absolute;
+            // right: 140px;
+            top: 100px;
+            left: 0;
+          }
+
+          .guy {
+            margin-top: 30px;
+            left: -55px;
+          }
+
+          .ils {
+            // position: absolute;
+            left: -25px;
+            top: -70px;
+          }
+
+          @-moz-document url-prefix() {
+            .mltply {
+            position: absolute;
+            right: 140px;
+            top: 45px;
+          }
+
+          .guy {
+            position: absolute;
+            right: 415px;
+            top: 35px;
+          }
+
+          .ils {
+            position: absolute;
+            left: 200px;
+            top: 48px;
+          }
+          }
+
+          .image1 {
+          }
+          .image2 {
+          }
+          .image3 {
+          }
+        }
+
+        .title {
+          font-size: 18px;
+          font-style: normal;
+          position: absolute;
+          right: 270px;
+          top: 50px;
+          font-weight: 700;
+          line-height: 24px;
+          letter-spacing: 0em;
+          color: #303030;
+        }
+      }
+    }
+  }
+}
