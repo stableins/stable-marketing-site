@@ -1025,13 +1025,12 @@
 
     .counter-wrapper {
       background-color: #475ba1;
-      position: absolute;
-      width: 430px;
-      height: 200px;
+      width: 100% !important;
+      height: 250px;
+      margin-bottom: -200px;
+      margin-top: 200px !important;
       border-radius: 6px;
-      bottom: -200px;
       right: 0px;
-
       color: white;
       padding: 20px 40px;
 
@@ -1040,7 +1039,7 @@
       }
 
       .counter-text-and-button {
-        display: inline-flex;
+        display: block !important;
         width: 100%;
 
         > p {

@@ -58,7 +58,7 @@ export default function Redirect() {
         payload: response.data.userType,
       })
 
-      if (response.data.status === "Email Contact") {
+      if (response.data.status === "Marketing List") {
         navigate("/")
       } else {
         navigate("/join-stable/")
