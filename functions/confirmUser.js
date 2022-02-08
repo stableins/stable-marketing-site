@@ -62,8 +62,8 @@ exports.handler = async (event, context, callback) => {
           state_province_region: user.state,
           custom_fields: {
             w1_T: user.status,
-            w2_T: user.userType,
-            e3_T: user.name,
+            w2_T: user.userType ?? "",
+            e3_T: user.name ?? "",
           },
         },
       ],
