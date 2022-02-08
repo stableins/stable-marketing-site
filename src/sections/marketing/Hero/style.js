@@ -40,10 +40,6 @@ Hero.Title = styled(Heading)`
     margin-top: 120px;
   }
 
-  @media (min-width: 480px) {
-    font-size: 60px;
-    margin-top: -100px;
-  }
 
   @media (min-width: 768px) {
     font-size: 70px;
@@ -98,18 +94,11 @@ Hero.Newsletter = styled(Box)`
     padding: 5px 25px;
     margin-bottom: 10px;
     height: 50px;
-    @media (min-width: 480px) {
-      margin-right: 0px;
-      margin-bottom: 0;
-    }
   }
   .btn {
     min-width: 100%;
     height: 70px;
     border-radius: 10px;
-    @media (min-width: 480px) {
-      min-width: 172px;
-    }
   }
 `
 Hero.NewsletterText = styled(Paragraph)`
