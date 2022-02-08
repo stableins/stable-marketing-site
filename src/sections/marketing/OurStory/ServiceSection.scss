@@ -59,3 +59,35 @@ line-height: 24px;
 }
 
 
+
+
+@media (max-width: 900px) {
+  .service-section-4-wrapper {
+    text-align: left;
+    width: 100%;
+    height: 215px;
+    .title {
+      font-family: Rubik;
+      font-style: normal;
+      font-weight: normal;
+      text-align: left;
+      color: #002e6d;
+      left: 500px;
+      font-size: 36px;
+      line-height: 40px;
+      width: 100%;
+    }
+    p {
+      font-family: Rubik;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
+      width: 100%;
+      margin-left: 0px;
+      /* or 137% */
+
+      color: #000000;
+    }
+  }
+}
