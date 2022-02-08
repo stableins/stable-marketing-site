@@ -27,7 +27,7 @@ line-height: 24px;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1400px) {
   .service-section-4-wrapper {
     text-align: left;
     width: 100%;
@@ -47,12 +47,15 @@ line-height: 24px;
       font-family: Rubik;
       font-style: normal;
       font-weight: normal;
-      font-size: 16px;
+      font-size: 14px;
       line-height: 22px;
       width: 100%;
+      margin-left: 130px;
       /* or 137% */
 
       color: #000000;
     }
   }
 }
+
+

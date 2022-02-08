@@ -5,7 +5,7 @@
   .value-index-wrapper {
     height: 630px;
 
-     .loader {
+    .loader {
       position: absolute;
       top: 150%;
       left: 50%;
@@ -167,15 +167,15 @@
         }
       }
 
-      .image {
-        position: absolute;
-        left: 870px;
-        top: -215px;
+      // .image {
+      //   position: absolute;
+      //   left: 870px;
+      //   top: -215px;
 
-        img {
-          width: 240px;
-        }
-      }
+      //   img {
+      //     width: 240px;
+      //   }
+      // }
 
       .form-wrapper {
         position: absolute;
@@ -215,8 +215,7 @@
 
 @media (max-width: 1024px) {
   .value-index-wrapper {
-
-     .loader {
+    .loader {
       position: absolute;
       top: 185%;
       left: 50%;
@@ -224,7 +223,6 @@
       margin-left: -100px;
       z-index: 1;
     }
-
 
     .anchor3 {
       height: 30px;
@@ -423,6 +421,34 @@
 
         border: 1px solid black;
         position: absolute;
+      }
+    }
+  }
+}
+
+@media (min-width: 1005px) {
+  .value-index-wrapper {
+    .image {
+      position: absolute;
+      left: 680px;
+      top: -215px;
+
+      img {
+        width: 240px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1205px) {
+  .value-index-wrapper {
+    .image {
+      position: absolute;
+      left: 900px;
+      top: -215px;
+
+      img {
+        width: 240px;
       }
     }
   }
