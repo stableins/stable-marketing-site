@@ -280,3 +280,186 @@
     }
   }
 }
+
+
+@media (max-width: 1400px) {
+  .service-section-3-wrapper {
+    text-align: center;
+    height: 280px;
+    .title {
+      color: #002e6d;
+      text-align: center;
+      position: absolute;
+      left: 430px;
+      font-weight: 400;
+      font-size: 50px;
+      line-height: 60px;
+      margin-top: -30px;
+    }
+
+    .image-wrapper {
+      display: block;
+      width: 95%;
+      text-align: left;
+      margin-top: -90px;
+
+      .partners-section {
+        display: block;
+        text-align: center;
+
+        .image-row {
+          display: inline-flex;
+          // margin-top: 10px;
+          align-items: center;
+          padding: 30px;
+
+          .mltply {
+            position: absolute;
+            right: 110px;
+            top: -10px;
+          }
+
+          .guy {
+            position: absolute;
+            right: 305px;
+            top: -20px;
+          }
+
+          .ils {
+            position: absolute;
+            left: 200px;
+            top: -5px;
+          }
+
+          @-moz-document url-prefix() {
+            .mltply {
+            position: absolute;
+            right: 140px;
+            top: 45px;
+          }
+
+          .guy {
+            position: absolute;
+            right: 415px;
+            top: 35px;
+          }
+
+          .ils {
+            position: absolute;
+            left: 200px;
+            top: 48px;
+          }
+          }
+
+          .image1 {
+          }
+          .image2 {
+          }
+          .image3 {
+          }
+        }
+
+        .title {
+          font-size: 18px;
+          font-style: normal;
+          position: absolute;
+          right: 270px;
+          top: 50px;
+          font-weight: 700;
+          line-height: 24px;
+          letter-spacing: 0em;
+          color: #303030;
+        }
+      }
+
+      .lower-section-wrapper {
+        display: inline-flex;
+        text-align: center;
+        padding: 0 120px;
+        width: 100%;
+        margin-top: 30px;
+
+        .left {
+          width: 58%;
+          .accelerators-section {
+            display: block;
+            text-align: center;
+            .image-stack {
+              margin-top: 20px;
+
+              .hartford {
+                position: absolute;
+                left: 200px;
+                top: 295px;
+              }
+
+              .insurtechny {
+                position: absolute;
+                left: 200px;
+                top: 400px;
+              }
+            }
+            .title {
+              text-align: center;
+              font-size: 18px;
+              font-style: normal;
+              position: absolute;
+              left: 197px;
+              width: 200px;
+              top: 136px;
+              font-weight: 700;
+              line-height: 24px;
+              letter-spacing: 0em;
+              color: #303030;
+            }
+          }
+        }
+
+        .right {
+          width: 50%;
+          .pitches-section {
+            display: block;
+            text-align: center;
+            .image-stack {
+              // display: inline-grid;
+              margin-top: 5px;
+
+              .image {
+                margin-top: 20px;
+              }
+
+              .gri {
+                position: absolute;
+                right: 160px;
+                top: 315px;
+              }
+              .shared-mobility {
+                position: absolute;
+                right: 130px;
+                top: 385px;
+              }
+              .insurtech-rising {
+                position: absolute;
+                right: 130px;
+                top: 475px;
+              }
+            }
+            .title {
+              text-align: center;
+              font-size: 18px;
+              font-style: normal;
+              position: absolute;
+              left: 100px;
+              width: 200px;
+              top: 237px;
+              font-weight: 700;
+              line-height: 24px;
+              letter-spacing: 0em;
+              color: #303030;
+            }
+          }
+        }
+      }
+    }
+  }
+}
