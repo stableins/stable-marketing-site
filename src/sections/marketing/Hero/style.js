@@ -13,15 +13,16 @@ const Hero = styled(Box)`
     }
     @media (min-width:992px) {
         padding-top: 210px;
-        padding-bottom: 130px;
+        padding-bottom: 65px;
+};
     }
     @media (min-width:1200px) {
-        padding-top: 140px;
-        padding-bottom: 100px;
+        padding-top: 216px;
+        padding-bottom: 40px;
     }
     @media (min-width:1366px) {
         padding-top: 216px;
-        padding-bottom: 37px;
+        padding-bottom: 17px;
     }
     /* .newsletter-form {
         max-width: 521px;
@@ -57,24 +58,24 @@ Hero.Title = styled(Heading)`
   }
 `
 Hero.Text = styled(Paragraph)`
-    color: rgba(38, 39, 41, 0.7);
-    font-size: 18px;
-    font-weight: 400;
-    letter-spacing: normal;
-    line-height: 34px;
-    margin-bottom: 53px;
-    @media (min-width:992px) {
-        font-size: 21px;
-    }
-    @media (min-width:1200px) {
-        // padding-right: 150px;
-    }
+  color: rgba(38, 39, 41, 0.7);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 34px;
+  margin-bottom: 53px;
+  @media (min-width: 992px) {
+    font-size: 21px;
+  }
+  @media (min-width: 1200px) {
+    // padding-right: 150px;
+  }
 `
 Hero.Content = styled(Box)`
-     margin-top: 80px;
-    @media (min-width:992px) {
-        margin-top: 0;
-    }
+  margin-top: 80px;
+  @media (min-width: 992px) {
+    margin-top: 0;
+  }
 `
 Hero.Newsletter = styled(Box)`
   form {
@@ -112,15 +113,14 @@ Hero.Newsletter = styled(Box)`
   }
 `
 Hero.NewsletterText = styled(Paragraph)`
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: normal;
-    line-height: 28px;
-    margin-top: 18px;
-    margin-bottom: 0;
-    a{
-        color:var(--bs-primary)
-    }
-
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 28px;
+  margin-top: 18px;
+  margin-bottom: 0;
+  a {
+    color: var(--bs-primary);
+  }
 `
 export default Hero

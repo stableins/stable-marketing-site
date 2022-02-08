@@ -141,7 +141,7 @@ export default function HeroSection() {
         setShowShowNewUserModal(true)
         // navigate("/join-stable/")
       } else {
-        navigate('/join-stable/')
+        navigate("/join-stable/")
       }
     } catch (e) {
       alert("Request failed please try again")
@@ -186,11 +186,12 @@ export default function HeroSection() {
                   <Hero.Text>
                     <div className="hero-text">
                       Rideshare, carshare, and delivery vehicle owners need more
-                      than just peace <br />
-                      of mind from their insurance company. Stable is building
+                      than <br /> just peace of mind from their insurance
+                      company. Stable is building <br />
                       tools and additional services alongside its insurance
-                      product that will help you more efficiently and profitably
-                      run your business.
+                      product that <br />
+                      will help you more efficiently and profitably run your
+                      business.
                     </div>
                     <br className="d-none d-xs-block" />
                   </Hero.Text>
