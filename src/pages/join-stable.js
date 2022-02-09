@@ -750,7 +750,16 @@ export default function individualFleetForm() {
                       </div>
                     </div>
                     <br />
-                    <button className="button" variant="primary" type="submit">
+                    <button
+                      disabled={
+                        dropdownInputValue1 === "" && dropdownInputValue2 === ""
+                          ? true
+                          : false
+                      }
+                      className="button"
+                      variant="primary"
+                      type="submit"
+                    >
                       <span>Submit &nbsp;</span>
                     </button>
                   </Form.Group>
