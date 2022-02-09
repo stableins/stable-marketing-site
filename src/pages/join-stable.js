@@ -74,7 +74,7 @@ export default function individualFleetForm() {
   const [loading, setLoading] = useState(false)
   const [color, setColor] = useState("#3b358a;")
 
-  console.log(dropdownInputValue1, dropdownInputValue2)
+  console.log(status);
 
   useEffect(() => {
     setHasMounted(true)
@@ -214,6 +214,7 @@ export default function individualFleetForm() {
       }
     } else {
       setInvalidZip(true)
+      setLoading(false)
     }
   }
 
@@ -329,6 +330,7 @@ export default function individualFleetForm() {
                       />
                     </Form.Group>
                     <Form.Group>
+                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
                       <Form.Control
                         required={true}
                         className="input"
@@ -539,7 +541,6 @@ export default function individualFleetForm() {
                       // onClick={() => di}
                     >
                       <span>Submit &nbsp;</span>
-                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
                     </button>
                   </Form.Group>
                 </Form>
@@ -576,6 +577,8 @@ export default function individualFleetForm() {
                       />
                     </Form.Group>
                     <Form.Group minLength="5">
+                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
+
                       <Form.Control
                         required={true}
                         className="input"
@@ -787,6 +790,8 @@ export default function individualFleetForm() {
                       />
                     </Form.Group>
                     <Form.Group>
+                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
+
                       <Form.Control
                         required={true}
                         className="input"
