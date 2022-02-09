@@ -52,7 +52,7 @@ export default function individualFleetForm() {
   const [nameInputValue, setNameInputValue] = useState("")
   const [passwordInputValue, setPasswordInputValue] = useState("")
   const [passwordConfirmInputValue, setPasswordConfirmInputValue] = useState("")
-  const [zipcodeInputValue, setZipcodeInputValue] = useState(null)
+  const [zipcodeInputValue, setZipcodeInputValue] = useState()
   const [signupState, setSignupState] = useState("")
   const [dropdownInputValue1, setDropdownInputValue1] = useState("")
   const [dropdownInputValue2, setDropdownInputValue2] = useState("")
@@ -74,7 +74,7 @@ export default function individualFleetForm() {
   const [loading, setLoading] = useState(false)
   const [color, setColor] = useState("#3b358a;")
 
-  console.log(dropdownInputValue1, dropdownInputValue2)
+  console.log(status)
 
   useEffect(() => {
     setHasMounted(true)
@@ -160,55 +160,64 @@ export default function individualFleetForm() {
     setLoading(true)
 
     SessionInfoCapture({ email: email ? email : emailInputValue })
-    try {
-      let userType
 
-      if (driverReport) {
-        userType = "Rideshare Driver"
-      } else if (dropdownInputValue1 && dropdownInputValue1 !== "") {
-        userType = dropdownInputValue1
-      } else if (dropdownInputValue2 && dropdownInputValue2 !== "") {
-        userType = dropdownInputValue2
-      }
-      const response = await axios.post(
-        "/.netlify/functions/saveFullContactInfo",
-        {
-          email: email ?? emailInputValue,
-          zipcode: zipcodeInputValue,
-          name: nameInputValue,
-          userType: userType,
+    if (zipcodeInputValue.length === 5) {
+      setInvalidZip(false)
+
+      try {
+        let userType
+
+        if (driverReport) {
+          userType = "Rideshare Driver"
+        } else if (dropdownInputValue1 && dropdownInputValue1 !== "") {
+          userType = dropdownInputValue1
+        } else if (dropdownInputValue2 && dropdownInputValue2 !== "") {
+          userType = dropdownInputValue2
         }
-      )
-      if (response.data) {
+        const response = await axios.post(
+          "/.netlify/functions/saveFullContactInfo",
+          {
+            email: email ?? emailInputValue,
+            zipcode: zipcodeInputValue,
+            name: nameInputValue,
+            userType: userType,
+          }
+        )
+        if (response.data) {
+          setLoading(false)
+        }
+
+        dispatch({
+          type: "FORM::SET_EMAIL",
+          payload: response.data.email,
+        })
+
+        dispatch({
+          type: "FORM::SET_STATUS",
+          payload: response.data.status,
+        })
+
+        dispatch({
+          type: "FORM::SET_USER_TYPE",
+          payload: response.data.userType,
+        })
+
+        dispatch({
+          type: "FORM::SET_CONFIRMED",
+          payload: response.data.confirmed,
+        })
+
+        if (response.data.confirmed === false) {
+          setShowNewUserModal(true)
+        }
+      } catch (e) {
+        console.log(e)
         setLoading(false)
       }
-
-      dispatch({
-        type: "FORM::SET_EMAIL",
-        payload: response.data.email,
-      })
-
-      dispatch({
-        type: "FORM::SET_STATUS",
-        payload: response.data.status,
-      })
-
-      dispatch({
-        type: "FORM::SET_USER_TYPE",
-        payload: response.data.userType,
-      })
-
-      dispatch({
-        type: "FORM::SET_CONFIRMED",
-        payload: response.data.confirmed,
-      })
-
-      if (response.data.confirmed === false) {
-        setShowNewUserModal(true)
-      }
-    } catch (e) {
-      console.log(e)
+    } else {
+      setInvalidZip(true)
       setLoading(false)
+      console.log("failed")
     }
   }
 
@@ -324,6 +333,7 @@ export default function individualFleetForm() {
                       />
                     </Form.Group>
                     <Form.Group>
+                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
                       <Form.Control
                         required={true}
                         className="input"
@@ -534,7 +544,6 @@ export default function individualFleetForm() {
                       // onClick={() => di}
                     >
                       <span>Submit &nbsp;</span>
-                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
                     </button>
                   </Form.Group>
                 </Form>
@@ -571,6 +580,8 @@ export default function individualFleetForm() {
                       />
                     </Form.Group>
                     <Form.Group minLength="5">
+                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
+
                       <Form.Control
                         required={true}
                         className="input"
@@ -739,7 +750,16 @@ export default function individualFleetForm() {
                       </div>
                     </div>
                     <br />
-                    <button className="button" variant="primary" type="submit">
+                    <button
+                      disabled={
+                        dropdownInputValue1 === "" && dropdownInputValue2 === ""
+                          ? true
+                          : false
+                      }
+                      className="button"
+                      variant="primary"
+                      type="submit"
+                    >
                       <span>Submit &nbsp;</span>
                     </button>
                   </Form.Group>
@@ -782,6 +802,8 @@ export default function individualFleetForm() {
                       />
                     </Form.Group>
                     <Form.Group>
+                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
+
                       <Form.Control
                         required={true}
                         className="input"
