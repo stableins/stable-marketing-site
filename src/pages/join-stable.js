@@ -162,6 +162,8 @@ export default function individualFleetForm() {
     SessionInfoCapture({ email: email ? email : emailInputValue })
 
     if (zipcodeInputValue === 5) {
+      setLoading(true)
+      setInvalidZip(false)
       try {
         let userType
 
@@ -214,8 +216,7 @@ export default function individualFleetForm() {
       }
     } else if (zipcodeInputValue !== 5) {
       setInvalidZip(true)
-              setLoading(false)
-
+      setLoading(false)
     }
   }
 
