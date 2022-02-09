@@ -64,13 +64,13 @@ export default function individualFleetForm() {
   const driverReport = useSelector(state => state.form.driverReport)
   const calendlyScheduled = useSelector(state => state.form.calendlyScheduled)
   const confirmed = useSelector(state => state.form.confirmed)
-
   const [resetSelect1, setResetSelect1] = useState(false)
   const [resetSelect2, setResetSelect2] = useState(false)
   const [passwordMismatch, setPasswordMismatch] = useState(false)
   const [existingAccount, setExistingAccount] = useState(false)
   const [disableOption1, setDisableOption1] = useState(false)
   const [disableOption2, setDisableOption2] = useState(false)
+  const [invalidZip, setInvalidZip] = useState(false)
   const [loading, setLoading] = useState(false)
   const [color, setColor] = useState("#3b358a;")
 
@@ -161,55 +161,61 @@ export default function individualFleetForm() {
 
     SessionInfoCapture({ email: email ? email : emailInputValue })
 
-    try {
-      let userType
+    if (zipcodeInputValue === 5) {
+      try {
+        let userType
 
-      if (driverReport) {
-        userType = "Rideshare Driver"
-      } else if (dropdownInputValue1 && dropdownInputValue1 !== "") {
-        userType = dropdownInputValue1
-      } else if (dropdownInputValue2 && dropdownInputValue2 !== "") {
-        userType = dropdownInputValue2
-      }
-      const response = await axios.post(
-        "/.netlify/functions/saveFullContactInfo",
-        {
-          email: email ?? emailInputValue,
-          zipcode: zipcodeInputValue,
-          name: nameInputValue,
-          userType: userType,
+        if (driverReport) {
+          userType = "Rideshare Driver"
+        } else if (dropdownInputValue1 && dropdownInputValue1 !== "") {
+          userType = dropdownInputValue1
+        } else if (dropdownInputValue2 && dropdownInputValue2 !== "") {
+          userType = dropdownInputValue2
         }
-      )
-      if (response.data) {
+        const response = await axios.post(
+          "/.netlify/functions/saveFullContactInfo",
+          {
+            email: email ?? emailInputValue,
+            zipcode: zipcodeInputValue,
+            name: nameInputValue,
+            userType: userType,
+          }
+        )
+        if (response.data) {
+          setLoading(false)
+        }
+
+        dispatch({
+          type: "FORM::SET_EMAIL",
+          payload: response.data.email,
+        })
+
+        dispatch({
+          type: "FORM::SET_STATUS",
+          payload: response.data.status,
+        })
+
+        dispatch({
+          type: "FORM::SET_USER_TYPE",
+          payload: response.data.userType,
+        })
+
+        dispatch({
+          type: "FORM::SET_CONFIRMED",
+          payload: response.data.confirmed,
+        })
+
+        if (response.data.confirmed === false) {
+          setShowNewUserModal(true)
+        }
+      } catch (e) {
+        console.log(e)
         setLoading(false)
       }
+    } else if (zipcodeInputValue !== 5) {
+      setInvalidZip(true)
+              setLoading(false)
 
-      dispatch({
-        type: "FORM::SET_EMAIL",
-        payload: response.data.email,
-      })
-
-      dispatch({
-        type: "FORM::SET_STATUS",
-        payload: response.data.status,
-      })
-
-      dispatch({
-        type: "FORM::SET_USER_TYPE",
-        payload: response.data.userType,
-      })
-
-      dispatch({
-        type: "FORM::SET_CONFIRMED",
-        payload: response.data.confirmed,
-      })
-
-      if (response.data.confirmed === false) {
-        setShowNewUserModal(true)
-      }
-    } catch (e) {
-      console.log(e)
-      setLoading(false)
     }
   }
 
@@ -325,11 +331,15 @@ export default function individualFleetForm() {
                       />
                     </Form.Group>
                     <Form.Group>
+                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
+
                       <Form.Control
                         required={true}
                         className="input"
                         type="tel"
-                        minLength="5"
+                        pattern=".{3,}"
+                        minlength="5"
+                        maxlength="5"
                         onInput={e =>
                           (e.target.value = e.target.value.slice(0, 5))
                         }
@@ -569,10 +579,13 @@ export default function individualFleetForm() {
                       />
                     </Form.Group>
                     <Form.Group minLength="5">
+                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
                       <Form.Control
                         required={true}
                         className="input"
-                        minLength="5"
+                        pattern=".{3,}"
+                        minlength="5"
+                        maxlength="5"
                         type="number"
                         onInput={e =>
                           (e.target.value = e.target.value.slice(0, 5))
@@ -583,7 +596,6 @@ export default function individualFleetForm() {
                       />
                     </Form.Group>
                     <h4>I am a...</h4>
-
                     <div className="select-wrapper">
                       <select
                         primary
@@ -779,11 +791,15 @@ export default function individualFleetForm() {
                       />
                     </Form.Group>
                     <Form.Group>
+                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
+
                       <Form.Control
                         required={true}
                         className="input"
                         type="tel"
-                        minLength="5"
+                        pattern=".{3,}"
+                        minlength="5"
+                        maxlength="5"
                         onInput={e =>
                           (e.target.value = e.target.value.slice(0, 5))
                         }
@@ -833,8 +849,7 @@ export default function individualFleetForm() {
           )}
 
           {status === "Email Address & Additional Info" &&
-            userType === "Rideshare Driver" &&
-             (
+            userType === "Rideshare Driver" && (
               <>
                 <div className="join-stable-wrapper">
                   <div className="form">

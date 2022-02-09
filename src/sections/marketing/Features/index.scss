@@ -2433,11 +2433,12 @@
 
             .button {
               height: 50px;
-              width: 300px;
+              width: 100%;
+
               // right: 465px;
               // top: 200px;
               margin-top: -20px;
-              // margin-left: -10px;
+              margin-left: 10px;
               border-radius: 8px;
               background: #3b358a;
               border-radius: 8px;
@@ -2569,7 +2570,7 @@
 
           line-height: 30px;
           letter-spacing: 0em;
-          width: 300px;
+          width: 100%;
         }
 
         #i {
@@ -2729,7 +2730,7 @@
 
             .button {
               height: 50px;
-              width: 300px;
+              width: 100%;
               right: 465px;
               top: 120px;
               margin-top: 50px;
