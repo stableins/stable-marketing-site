@@ -160,56 +160,62 @@ export default function individualFleetForm() {
     setLoading(true)
 
     SessionInfoCapture({ email: email ? email : emailInputValue })
-    try {
-      let userType
+  
+    if (zipcodeInputValue === 5) {
+      try {
+        let userType
 
-      if (driverReport) {
-        userType = "Rideshare Driver"
-      } else if (dropdownInputValue1 && dropdownInputValue1 !== "") {
-        userType = dropdownInputValue1
-      } else if (dropdownInputValue2 && dropdownInputValue2 !== "") {
-        userType = dropdownInputValue2
-      }
-      const response = await axios.post(
-        "/.netlify/functions/saveFullContactInfo",
-        {
-          email: email ?? emailInputValue,
-          zipcode: zipcodeInputValue,
-          name: nameInputValue,
-          userType: userType,
+        if (driverReport) {
+          userType = "Rideshare Driver"
+        } else if (dropdownInputValue1 && dropdownInputValue1 !== "") {
+          userType = dropdownInputValue1
+        } else if (dropdownInputValue2 && dropdownInputValue2 !== "") {
+          userType = dropdownInputValue2
         }
-      )
-      if (response.data) {
+        const response = await axios.post(
+          "/.netlify/functions/saveFullContactInfo",
+          {
+            email: email ?? emailInputValue,
+            zipcode: zipcodeInputValue,
+            name: nameInputValue,
+            userType: userType,
+          }
+        )
+        if (response.data) {
+          setLoading(false)
+        }
+
+        dispatch({
+          type: "FORM::SET_EMAIL",
+          payload: response.data.email,
+        })
+
+        dispatch({
+          type: "FORM::SET_STATUS",
+          payload: response.data.status,
+        })
+
+        dispatch({
+          type: "FORM::SET_USER_TYPE",
+          payload: response.data.userType,
+        })
+
+        dispatch({
+          type: "FORM::SET_CONFIRMED",
+          payload: response.data.confirmed,
+        })
+
+        if (response.data.confirmed === false) {
+          setShowNewUserModal(true)
+        }
+      } catch (e) {
+        console.log(e)
         setLoading(false)
+      } else {
+        setInvalidZip(true)
       }
-
-      dispatch({
-        type: "FORM::SET_EMAIL",
-        payload: response.data.email,
-      })
-
-      dispatch({
-        type: "FORM::SET_STATUS",
-        payload: response.data.status,
-      })
-
-      dispatch({
-        type: "FORM::SET_USER_TYPE",
-        payload: response.data.userType,
-      })
-
-      dispatch({
-        type: "FORM::SET_CONFIRMED",
-        payload: response.data.confirmed,
-      })
-
-      if (response.data.confirmed === false) {
-        setShowNewUserModal(true)
-      }
-    } catch (e) {
-      console.log(e)
-      setLoading(false)
     }
+    
   }
 
   async function handlePasswordSubmit(event) {
