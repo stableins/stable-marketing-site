@@ -160,62 +160,54 @@ export default function individualFleetForm() {
     setLoading(true)
 
     SessionInfoCapture({ email: email ? email : emailInputValue })
+    try {
+      let userType
 
-    if (zipcodeInputValue === 5) {
-      setLoading(true)
-      setInvalidZip(false)
-      try {
-        let userType
-
-        if (driverReport) {
-          userType = "Rideshare Driver"
-        } else if (dropdownInputValue1 && dropdownInputValue1 !== "") {
-          userType = dropdownInputValue1
-        } else if (dropdownInputValue2 && dropdownInputValue2 !== "") {
-          userType = dropdownInputValue2
+      if (driverReport) {
+        userType = "Rideshare Driver"
+      } else if (dropdownInputValue1 && dropdownInputValue1 !== "") {
+        userType = dropdownInputValue1
+      } else if (dropdownInputValue2 && dropdownInputValue2 !== "") {
+        userType = dropdownInputValue2
+      }
+      const response = await axios.post(
+        "/.netlify/functions/saveFullContactInfo",
+        {
+          email: email ?? emailInputValue,
+          zipcode: zipcodeInputValue,
+          name: nameInputValue,
+          userType: userType,
         }
-        const response = await axios.post(
-          "/.netlify/functions/saveFullContactInfo",
-          {
-            email: email ?? emailInputValue,
-            zipcode: zipcodeInputValue,
-            name: nameInputValue,
-            userType: userType,
-          }
-        )
-        if (response.data) {
-          setLoading(false)
-        }
-
-        dispatch({
-          type: "FORM::SET_EMAIL",
-          payload: response.data.email,
-        })
-
-        dispatch({
-          type: "FORM::SET_STATUS",
-          payload: response.data.status,
-        })
-
-        dispatch({
-          type: "FORM::SET_USER_TYPE",
-          payload: response.data.userType,
-        })
-
-        dispatch({
-          type: "FORM::SET_CONFIRMED",
-          payload: response.data.confirmed,
-        })
-
-        if (response.data.confirmed === false) {
-          setShowNewUserModal(true)
-        }
-      } catch (e) {
-        console.log(e)
+      )
+      if (response.data) {
         setLoading(false)
       }
-    } else if (zipcodeInputValue !== 5) {
-      setInvalidZip(true)
+
+      dispatch({
+        type: "FORM::SET_EMAIL",
+        payload: response.data.email,
+      })
+
+      dispatch({
+        type: "FORM::SET_STATUS",
+        payload: response.data.status,
+      })
+
+      dispatch({
+        type: "FORM::SET_USER_TYPE",
+        payload: response.data.userType,
+      })
+
+      dispatch({
+        type: "FORM::SET_CONFIRMED",
+        payload: response.data.confirmed,
+      })
+
+      if (response.data.confirmed === false) {
+        setShowNewUserModal(true)
+      }
+    } catch (e) {
+      console.log(e)
       setLoading(false)
     }
   }
@@ -332,8 +324,6 @@ export default function individualFleetForm() {
                       />
                     </Form.Group>
                     <Form.Group>
-                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
-
                       <Form.Control
                         required={true}
                         className="input"
@@ -544,6 +534,7 @@ export default function individualFleetForm() {
                       // onClick={() => di}
                     >
                       <span>Submit &nbsp;</span>
+                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
                     </button>
                   </Form.Group>
                 </Form>
@@ -580,7 +571,6 @@ export default function individualFleetForm() {
                       />
                     </Form.Group>
                     <Form.Group minLength="5">
-                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
                       <Form.Control
                         required={true}
                         className="input"
@@ -792,8 +782,6 @@ export default function individualFleetForm() {
                       />
                     </Form.Group>
                     <Form.Group>
-                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
-
                       <Form.Control
                         required={true}
                         className="input"
