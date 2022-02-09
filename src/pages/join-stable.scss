@@ -524,6 +524,30 @@
 
         color: #f7f7f7;
       }
+
+      button:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        background: #3b358a;
+        border-radius: 8px;
+        width: 334px;
+        margin-top: 20px;
+        height: 50px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 30px;
+
+        /* or 187% */
+
+        text-align: center;
+        text-transform: capitalize;
+        outline: none;
+        border: none;
+
+        /* Font colour white */
+
+        color: #f7f7f7 !important;
+      }
     }
   }
 }

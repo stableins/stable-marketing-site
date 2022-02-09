@@ -52,7 +52,7 @@ export default function individualFleetForm() {
   const [nameInputValue, setNameInputValue] = useState("")
   const [passwordInputValue, setPasswordInputValue] = useState("")
   const [passwordConfirmInputValue, setPasswordConfirmInputValue] = useState("")
-  const [zipcodeInputValue, setZipcodeInputValue] = useState(null)
+  const [zipcodeInputValue, setZipcodeInputValue] = useState()
   const [signupState, setSignupState] = useState("")
   const [dropdownInputValue1, setDropdownInputValue1] = useState("")
   const [dropdownInputValue2, setDropdownInputValue2] = useState("")
@@ -74,7 +74,7 @@ export default function individualFleetForm() {
   const [loading, setLoading] = useState(false)
   const [color, setColor] = useState("#3b358a;")
 
-  console.log(status);
+  console.log(status)
 
   useEffect(() => {
     setHasMounted(true)
@@ -161,7 +161,9 @@ export default function individualFleetForm() {
 
     SessionInfoCapture({ email: email ? email : emailInputValue })
 
-    if (zipcodeInputValue === 5) {
+    if (zipcodeInputValue.length === 5) {
+      setInvalidZip(false)
+
       try {
         let userType
 
@@ -215,6 +217,7 @@ export default function individualFleetForm() {
     } else {
       setInvalidZip(true)
       setLoading(false)
+      console.log("failed")
     }
   }
 
