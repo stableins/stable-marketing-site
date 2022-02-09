@@ -155,7 +155,6 @@
   }
 }
 
-
 @media (max-width: 1400px) {
   .footer-wrapper {
     height: 302px;
@@ -271,7 +270,7 @@
       .item4 {
         width: 400px;
         margin-left: -33px;
-        margin-top:160px;
+        margin-top: 160px;
         text-align: left;
         cursor: pointer;
         i {
@@ -306,6 +305,22 @@
       p {
         font-size: 15px;
         text-align: center;
+      }
+    }
+
+    @media not all and (min-resolution: 0.001dpcm) {
+      @supports (-webkit-appearance: none) {
+        .copyright-text {
+          width: 100%;
+          margin-top: 40px;
+          font-size: 35px;
+          margin-left: -30px;
+
+          p {
+            font-size: 15px;
+            text-align: center;
+          }
+        }
       }
     }
 

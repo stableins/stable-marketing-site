@@ -30,7 +30,7 @@ const SiteNavbar = ({ buttonBlock, darkLogo, customLogo, defaultLogo }) => {
   useEffect(() => {
     setHomeRedirect(false)
 
-    const threshold = 100
+    const threshold = 30
     let lastScrollY = window.pageYOffset
     let ticking = false
 

@@ -356,14 +356,29 @@
     button {
       height: 50px;
       width: 208px;
-          margin-top: -10px;
+      margin-top: -10px;
       position: absolute;
       left: 420px;
       color: #f6f6f6;
       border-top-right-radius: 8px;
       border-bottom-right-radius: 8px;
-
       border: none;
+    }
+
+    @media not all and (min-resolution: 0.001dpcm) {
+      @supports (-webkit-appearance: none) {
+        button {
+          height: 50px;
+          width: 208px;
+          margin-top: -5px;
+          position: absolute;
+          left: 420px;
+          color: #f6f6f6;
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+          border: none;
+        }
+      }
     }
     .image {
       width: 130%;

@@ -3,46 +3,50 @@ import { StaticImage as Img } from 'gatsby-plugin-image'
 import SideBar from "./style"
 import { Link } from '~components'
 export default function SideBarSection(){
-return(
-<SideBar>
-  {/* Single Widgets */}
-  <SideBar.Widgets>
-    <SideBar.Title>Search</SideBar.Title>
-    <SideBar.Search>
-      <form action="./">
+return (
+  <SideBar>
+    {/* Single Widgets */}
+    {/* <SideBar.Widgets> */}
+    {/* <SideBar.Title>Search</SideBar.Title> */}
+    {/* <SideBar.Search> */}
+    {/* <form action="./">
         <i className="fa fa-search" />
         <input type="text" placeholder="Type to search" />
       </form>
-    </SideBar.Search>
-  </SideBar.Widgets>
-  {/*/ .Single Widgets */}
+    </SideBar.Search> */}
+    {/* </SideBar.Widgets> */}
+    {/*/ .Single Widgets */}
     {/* Single Widgets */}
     <SideBar.Widgets>
-    <SideBar.Title>Recent Posts</SideBar.Title>
-    <SideBar.RecentPost>
-      <SideBar.RecentPostList>
-        <Link to="#">
-          <SideBar.RecentPostTitle>How To Blow Through Capital At An Incredible Rate</SideBar.RecentPostTitle>
-          <SideBar.RecentPostDate>Jan 14, 2020</SideBar.RecentPostDate>
-        </Link>
-      </SideBar.RecentPostList>
-      <SideBar.RecentPostList>
-        <Link to="#">
-          <SideBar.RecentPostTitle>Design Studios That Everyone Should Know About?</SideBar.RecentPostTitle>
-          <SideBar.RecentPostDate>Jan 14, 2020</SideBar.RecentPostDate>
-        </Link>
-      </SideBar.RecentPostList>
-      <SideBar.RecentPostList>
+      <SideBar.Title>Recent Posts</SideBar.Title>
+      <SideBar.RecentPost>
+        <SideBar.RecentPostList>
+          <Link to="/blog-post-1-view">
+            <SideBar.RecentPostTitle>
+              Rideshare Drivers:
+            </SideBar.RecentPostTitle>
+            <SideBar.RecentPostDate>Feb 14, 2022</SideBar.RecentPostDate>
+          </Link>
+        </SideBar.RecentPostList>
+        <SideBar.RecentPostList>
+          <Link to="/blog-post-2-view">
+            <SideBar.RecentPostTitle>
+              Carshare Drivers:
+            </SideBar.RecentPostTitle>
+            <SideBar.RecentPostDate>Feb 29, 2022</SideBar.RecentPostDate>
+          </Link>
+        </SideBar.RecentPostList>
+        {/* <SideBar.RecentPostList>
         <Link to="#">
           <SideBar.RecentPostTitle>How did we get 1M+ visitors in 30 days without anything!</SideBar.RecentPostTitle>
           <SideBar.RecentPostDate>Jan 14, 2020</SideBar.RecentPostDate>
         </Link>
-      </SideBar.RecentPostList>
-    </SideBar.RecentPost>
-  </SideBar.Widgets>
-  {/*/ .Single Widgets */}
+      </SideBar.RecentPostList> */}
+      </SideBar.RecentPost>
+    </SideBar.Widgets>
+    {/*/ .Single Widgets */}
     {/* Single Widgets */}
-    <SideBar.Widgets>
+    {/* <SideBar.Widgets>
     <SideBar.Title>Recent Tweets</SideBar.Title>
     <SideBar.Twitter>
       <SideBar.TwitterList>
@@ -66,10 +70,10 @@ return(
         </Link>
       </SideBar.TwitterList>
     </SideBar.Twitter>
-  </SideBar.Widgets>
-  {/*/ .Single Widgets */}
-  {/* Single Widgets */}
-  <SideBar.Widgets>
+  </SideBar.Widgets> */}
+    {/*/ .Single Widgets */}
+    {/* Single Widgets */}
+    {/* <SideBar.Widgets>
     <SideBar.Title>Categories</SideBar.Title>
       <SideBar.CateGory>
         <SideBar.CateGorySingle>
@@ -109,12 +113,12 @@ return(
           </Link>
         </SideBar.CateGorySingle>
       </SideBar.CateGory>
-  </SideBar.Widgets>
-  {/*/ .Single Widgets */}
+  </SideBar.Widgets> */}
+    {/*/ .Single Widgets */}
     {/* Single Widgets */}
-    <SideBar.Ads>
+    {/* <SideBar.Ads>
     <Link to="#"><Img className="w-100" src="../../../assets/image/mixed/ads-img.png" alt="app" layout="fullWidth" placeholder="blurred"/></Link>
-  </SideBar.Ads>
+  </SideBar.Ads> */}
     {/*/ .Single Widgets */}
   </SideBar>
 )

@@ -14,22 +14,28 @@ const Blog = styled(Box)`
 
     @media (min-width:992px) {
         padding-top: 125px;
-        padding-bottom: 130px;
+        padding-bottom: 60px;
     }
 `
 Blog.Title = styled(Heading)`
-    font-size: 32px;
-    font-weight: 500;
-    letter-spacing: normal;
-    line-height: 1.3;
-    position:relative;
-    @media (min-width:768px) {
-      font-size: 35px;
-    }
+  font-family: Rubik !important;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  color: #062f6e;
+  letter-spacing: normal;
+  line-height: 1.3;
+  position: relative;
+  @media (min-width: 768px) {
+    font-size: 35px;
+  }
 
-    @media (min-width:992px) {
-      font-size: 45px;
-    }
+  @media (min-width: 992px) {
+    font-family: Rubik !important;
+
+    font-size: 45px;
+  }
 `
 Blog.Subtitle = styled(Heading)`
     font-size: 16px;

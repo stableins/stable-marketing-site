@@ -136,6 +136,21 @@ const Menu = ({ ...rest }) => {
                 </Navbar.Toggle>
               </button>
             </Link>
+            <Link to="/">
+              <button
+                onClick={() => {
+                  dispatch({
+                    type: "SITE::SET_SCROLL_STATUS",
+                    payload: "scrollToCarshare",
+                  })
+                  scrollToCarshare()
+                }}
+              >
+                <Navbar.Toggle className="toggle">
+                  Blog
+                </Navbar.Toggle>
+              </button>
+            </Link>
             <div className="divider"></div>
             <Link to="https://driver.stablelabs.io/">
               <button>

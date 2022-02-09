@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 import { Box, Heading,Button,Paragraph } from '~styled';
 
 const Details = styled(Box)`
-    padding-top: 50px;
+    padding-top: 100px;
     padding-bottom: 40px;
     @media (min-width: 768px){
     padding-top: 70px;
@@ -37,34 +37,34 @@ Details.MetaInfo = styled(Box)`
     flex-wrap: wrap;
 `
 Details.Link = styled(Button)`
-padding:0;
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: normal;
-    line-height: 32px;
-    padding-right: 15px;
-    padding-left: 55px;
-    &:focus{
-        box-shadow: none;
-    }
-    &:hover{
-        color: #cc461b;
-    }
-    @media (min-width: 768px){
-        padding-left: 70px;
-        padding-right: 25px;
-        font-size: 18px;
-    }
-    position: relative;
-    &::before {
-        content: "";
-        position: absolute;
-        width: 41px;
-        height: 1px;
-        left: 0;
-        top: 50%;
-        background-color: #ff5722;
-    }
+  padding: 0;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 32px;
+  padding-right: 15px;
+  padding-left: 55px;
+  &:focus {
+    box-shadow: none;
+  }
+  &:hover {
+    color: #cc461b;
+  }
+  @media (min-width: 768px) {
+    padding-left: 70px;
+    padding-right: 25px;
+    font-size: 18px;
+  }
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 41px;
+    height: 1px;
+    left: 0;
+    top: 50%;
+    background-color: #003765;
+  }
 `
 
 Details.Image = styled(Box)`
@@ -72,6 +72,7 @@ Details.Image = styled(Box)`
 
 `
 Details.Text = styled(Paragraph)`
+    font-family: Rubik;
     font-size: 18px;
     font-weight: 400;
     letter-spacing: normal;

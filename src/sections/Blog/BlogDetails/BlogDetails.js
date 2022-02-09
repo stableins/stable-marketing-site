@@ -15,8 +15,8 @@ return(
         <Details.Box mb="30px" mbLG="55px">
           <Details.Title as="h1">Creativo Para Jóvenes:<br /> A UI/UX Designer’s Checklist.</Details.Title>
           <Details.MetaInfo>
-            <Details.Link to="/" as={Link}>By David Jones</Details.Link>
-            <Details.Link to="/" as={Link}>Jan 14, 2021</Details.Link>
+            <Details.Link to="/" as={Link}>By Douglas Ver Mlm</Details.Link>
+            <Details.Link to="/" as={Link}>Feb 14, 2022</Details.Link>
           </Details.MetaInfo>
         </Details.Box>
         <Details.Box>
