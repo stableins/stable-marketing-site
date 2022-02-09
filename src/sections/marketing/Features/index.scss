@@ -1657,7 +1657,7 @@
 
 @media (max-width: 800px) {
   .features-index-wrapper1 {
-    height: 100% !important;
+    height: 100%;
     img {
       opacity: 0.2;
       position: absolute;
@@ -2040,7 +2040,7 @@
 
             .p-text2 {
               margin: auto;
-              width: 70%;
+              width: 80% !important;
               margin-top: -100px;
               line-height: 22px;
               left: 0;
