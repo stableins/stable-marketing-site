@@ -64,13 +64,13 @@ export default function individualFleetForm() {
   const driverReport = useSelector(state => state.form.driverReport)
   const calendlyScheduled = useSelector(state => state.form.calendlyScheduled)
   const confirmed = useSelector(state => state.form.confirmed)
-
   const [resetSelect1, setResetSelect1] = useState(false)
   const [resetSelect2, setResetSelect2] = useState(false)
   const [passwordMismatch, setPasswordMismatch] = useState(false)
   const [existingAccount, setExistingAccount] = useState(false)
   const [disableOption1, setDisableOption1] = useState(false)
   const [disableOption2, setDisableOption2] = useState(false)
+  const [invalidZip, setInvalidZip] = useState(false)
   const [loading, setLoading] = useState(false)
   const [color, setColor] = useState("#3b358a;")
 
@@ -160,17 +160,8 @@ export default function individualFleetForm() {
     setLoading(true)
 
     SessionInfoCapture({ email: email ? email : emailInputValue })
-
-<<<<<<< HEAD
-    if (zipcodeInputValue === 5) {
-      setLoading(true)
-      setInvalidZip(false)
-      try {
-        let userType
-=======
     try {
       let userType
->>>>>>> parent of 85550b2 (zipcode validation)
 
       if (driverReport) {
         userType = "Rideshare Driver"
@@ -215,13 +206,8 @@ export default function individualFleetForm() {
       if (response.data.confirmed === false) {
         setShowNewUserModal(true)
       }
-<<<<<<< HEAD
-    } else if (zipcodeInputValue !== 5) {
-      setInvalidZip(true)
-=======
     } catch (e) {
       console.log(e)
->>>>>>> parent of 85550b2 (zipcode validation)
       setLoading(false)
     }
   }
@@ -342,7 +328,9 @@ export default function individualFleetForm() {
                         required={true}
                         className="input"
                         type="tel"
-                        minLength="5"
+                        pattern=".{3,}"
+                        minlength="5"
+                        maxlength="5"
                         onInput={e =>
                           (e.target.value = e.target.value.slice(0, 5))
                         }
@@ -546,6 +534,7 @@ export default function individualFleetForm() {
                       // onClick={() => di}
                     >
                       <span>Submit &nbsp;</span>
+                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
                     </button>
                   </Form.Group>
                 </Form>
@@ -585,7 +574,9 @@ export default function individualFleetForm() {
                       <Form.Control
                         required={true}
                         className="input"
-                        minLength="5"
+                        pattern=".{3,}"
+                        minlength="5"
+                        maxlength="5"
                         type="number"
                         onInput={e =>
                           (e.target.value = e.target.value.slice(0, 5))
@@ -596,7 +587,6 @@ export default function individualFleetForm() {
                       />
                     </Form.Group>
                     <h4>I am a...</h4>
-
                     <div className="select-wrapper">
                       <select
                         primary
@@ -796,7 +786,9 @@ export default function individualFleetForm() {
                         required={true}
                         className="input"
                         type="tel"
-                        minLength="5"
+                        pattern=".{3,}"
+                        minlength="5"
+                        maxlength="5"
                         onInput={e =>
                           (e.target.value = e.target.value.slice(0, 5))
                         }
@@ -846,8 +838,7 @@ export default function individualFleetForm() {
           )}
 
           {status === "Email Address & Additional Info" &&
-            userType === "Rideshare Driver" &&
-             (
+            userType === "Rideshare Driver" && (
               <>
                 <div className="join-stable-wrapper">
                   <div className="form">
