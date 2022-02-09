@@ -1657,6 +1657,7 @@
 
 @media (max-width: 800px) {
   .features-index-wrapper1 {
+    height: 100%;
     img {
       opacity: 0.2;
       position: absolute;
@@ -1732,14 +1733,15 @@
         .right {
           margin-top: -10px;
           padding: 0 20px;
-          width: 100%;
+          width: 100% !important;
           display: block !important;
+          margin-left: 10px;
 
           .item1 {
             text-align: center;
             position: relative;
             margin-top: 60px;
-            top: 170px;
+            top: 140px;
             left: 0;
 
             .inner-item-wrapper {
@@ -1789,7 +1791,7 @@
             text-align: center;
             width: auto;
             position: relative;
-            margin-top: 100px;
+            margin-top: 110px;
             left: 0px;
 
             .inner-item-wrapper {
@@ -1836,7 +1838,7 @@
           }
           .item3 {
             text-align: center;
-            width: auto;
+            width: 100% !important;
             left: -0px;
             top: 150px;
             position: relative;
@@ -1845,7 +1847,7 @@
             .button {
               left: 0;
               height: 50px;
-              width: 100%;
+              width: 100% !important;
               // right: 465px;
               // top: 200px;
               margin-top: -10px;
@@ -1983,7 +1985,7 @@
 
           line-height: 30px;
           letter-spacing: 0em;
-          width: 300px;
+          width: 100% !important;
         }
 
         #i {
@@ -2038,7 +2040,7 @@
 
             .p-text2 {
               margin: auto;
-              width: 70%;
+              width: 80% !important;
               margin-top: -100px;
               line-height: 22px;
               left: 0;
@@ -2729,7 +2731,7 @@
 
             .button {
               height: 50px;
-              width: 300px;
+              width: 100%; 
               right: 465px;
               top: 120px;
               margin-top: 50px;
