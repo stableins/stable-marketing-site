@@ -149,7 +149,7 @@ const HeaderButton = ({
             </button>
           </Link>
         </div>
-        <div className="button-wrapper">
+        {/* <div className="button-wrapper">
           <Link to="/blog">
             <button
               className="blog-button"
@@ -157,7 +157,7 @@ const HeaderButton = ({
               Blog
             </button>
           </Link>
-        </div>
+        </div> */}
         <Link to="https://driver.stablelabs.io/">
           <button className="login-button" to={btnTwoLink ? btnTwoLink : "/"}>
             Log In

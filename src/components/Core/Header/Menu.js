@@ -136,11 +136,11 @@ const Menu = ({ ...rest }) => {
                 </Navbar.Toggle>
               </button>
             </Link>
-            <Link to="/blog">
+            {/* <Link to="/blog">
               <button>
                 <Navbar.Toggle className="toggle">Blog</Navbar.Toggle>
               </button>
-            </Link>
+            </Link> */}
             <div className="divider"></div>
             <Link to="https://driver.stablelabs.io/">
               <button>
