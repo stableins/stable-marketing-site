@@ -2,7 +2,7 @@ import styled from "styled-components/macro"
 import { Box, Heading, Paragraph } from "~styled"
 
 const Service = styled(Box)`
-    padding-top: 55px;
+    padding-top: 35px;
     padding-bottom: 55px;
     position: relative;
 

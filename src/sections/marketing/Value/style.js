@@ -4,7 +4,7 @@ import { Box, Heading, Paragraph } from "~styled"
 const Feature = styled(Box)`
     position: relative;
     overflow: hidden;
-    padding-top: 55px;
+    padding-top: 25px;
     padding-bottom: 20px;
     @media (min-width:768px) {
         padding-top: 70px;
