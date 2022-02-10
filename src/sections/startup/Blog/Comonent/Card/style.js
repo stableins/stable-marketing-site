@@ -16,18 +16,17 @@ const Card = styled(Box)`
     }
 `
 Card.Title = styled(Link)`
-font-size: 18px;
-font-weight: 500;
-letter-spacing: normal;
-line-height: 25px;
-margin-bottom: 19px;
-color:#fff;
-display: block;
-transition: 0.4s;
-&:hover {
-    color: #ff5722;
-}
-
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 25px;
+  margin-bottom: 19px;
+  color: #fff;
+  display: block;
+  transition: 0.4s;
+  &:hover {
+    color: #3b358a;
+  }
 `
 Card.Badge = styled(Button)`
 font-size: 11px;

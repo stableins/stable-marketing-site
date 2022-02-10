@@ -58,23 +58,23 @@ SideBar.RecentPost = styled(Box).attrs({className:"list-unstyled", as:"ul"})
 `
 `
 SideBar.RecentPostList = styled(Box)`
-    border-bottom: 1px solid rgba(38, 39, 41, 0.1);
-    padding-top: 20px;
-    padding-bottom: 13px;
-    &:first-child {
+  border-bottom: 1px solid rgba(38, 39, 41, 0.1);
+  padding-top: 20px;
+  padding-bottom: 13px;
+  &:first-child {
     padding-top: 0;
-    }
-    &:last-child {
+  }
+  &:last-child {
     border-bottom: 1px solid rgba(38, 39, 41, 0);
     padding-bottom: 0px;
+  }
+  &:hover {
+    a {
+      .widget__recent-post__title {
+        color: #003765;
+      }
     }
-    &:hover {
-        a {
-            .widget__recent-post__title {
-            color: #ff5722;
-            }
-        }
-    }
+  }
 `
 SideBar.RecentPostTitle = styled(Heading).attrs({className:"widget__recent-post__title", as:"h4"})`
     font-size: 18px;

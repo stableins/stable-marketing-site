@@ -1,0 +1,35 @@
+@media (min-width: 1025px) {
+  
+  .blog-wrapper {
+  }
+  .card-row-wrapper {
+    display: inline-flex;
+    margin-left: -110px;
+    .card1 {
+      width: 300px;
+      margin: auto;
+      margin-right: 50px;
+    }
+    .card2 {
+      margin: auto;
+      width: 300px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  
+  .blog-wrapper {
+  }
+  .card-row-wrapper {
+    .card1 {
+      width: 300px;
+      margin: auto;
+    }
+    .card2 {
+      margin: auto;
+      width: 300px;
+    }
+  }
+}
+

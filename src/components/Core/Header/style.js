@@ -309,7 +309,7 @@ const SiteHeader = styled.div.attrs({
       top: 0;
       background: #002e6d;
       left: -100%;
-      height: 100%;
+      height: 110vh;
       transition: left 0.4s;
       z-index: 999999;
       box-shadow: 0 0 87px 0 rgba(0, 0, 0, 0.09);
@@ -429,7 +429,7 @@ const SiteHeader = styled.div.attrs({
       }
 
       @media (min-width: 992px) {
-        padding-left: 73px;
+            padding-left: calc(30% - 369px);
         padding-right: 20px;
       }
     }

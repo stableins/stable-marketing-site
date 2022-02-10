@@ -82,7 +82,7 @@ Footer.AddressItem = styled(Box).attrs({ className: "list-items", as: "li" })`
     line-height: 30px;
     transition: 0.4s;
     &:hover {
-      color: #fd346e !important;
+      color: #92afd6 !important;
     }
   }
   i {

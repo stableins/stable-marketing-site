@@ -19,7 +19,7 @@
       width: 45%;
       text-align: center;
       margin: auto;
-      margin-top: 120px;
+      margin-top: 90px;
       color: #92afd6;
 
       input::-webkit-outer-spin-button,
@@ -39,7 +39,10 @@
         width: 335px;
         margin: auto;
         size: 18px;
+        border-radius: 8px;
+        padding: 0.7rem 0.9rem;
         color: #92afd6;
+        border: 1px solid #92AFD6;
       }
 
       .text {

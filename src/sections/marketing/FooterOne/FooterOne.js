@@ -51,7 +51,7 @@ export default function FooterOne() {
                             </div>
                           </Footer.AddressItem>
                             <Footer.AddressItem>
-                              <div className="item4" onClick={() => setShowPrivacyModal(true)}>
+                              <div id="expand" className="item4" onClick={() => setShowPrivacyModal(true)}>
                                 <i className="fa" />
                                 <a>Privacy Policy</a>
                               </div>
@@ -994,7 +994,7 @@ export default function FooterOne() {
             </Modal.Title>
             Privacy Policy
           </Modal.Header>
-          <div className="wrapper-policy">
+          <div className="policy-wrapper">
             <h1 className="heading">
               STABLE INSURANCE, INC.
               <br />
