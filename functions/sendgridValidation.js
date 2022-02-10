@@ -1,7 +1,7 @@
 const client = require("@sendgrid/client")
 
 exports.handler = async function (event, context, callback) {
-  const { message, email, name } = JSON.parse(event.body)
+  const { message, email } = JSON.parse(event.body)
   client.setApiKey(process.env.SENDGRID_EMAIL_VALIDATION)
 
   const data = {
@@ -15,16 +15,16 @@ exports.handler = async function (event, context, callback) {
     body: data,
   }
 
-  client
-    .request(request)
-    .then(([response, body]) => {
-      const validaitonResponse = response.body.result
-    })
-    .catch(error => {
-      console.error(error)
-    })
-  return {
-    statusCode: 200,
-    body: JSON.stringify(validaitonResponse),
+  try {
+    const response = await client.request(request)
+    return {
+      statusCode: 200,
+      body: JSON.stringify(response),
+    }
+  } catch (err) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify(err),
+    }
   }
 }
