@@ -60,19 +60,17 @@
   }
 }
 
-
-
 @media (min-width: 1399px) {
   .navbar-brand {
     width: 100%;
-    margin-left:0;
+    margin-left: 5px;
   }
 }
 
 @media (min-width: 1590px) {
   .navbar-brand {
     width: 100%;
-    margin-left: 80px;
+    margin-left: 35px;
   }
 }
 
@@ -86,22 +84,21 @@
 @media (min-width: 1750px) {
   .navbar-brand {
     width: 100%;
-    margin-left: 175px;
+    margin-left: 75px;
   }
 }
 
 @media (min-width: 1900px) {
   .navbar-brand {
     width: 100%;
-    margin-left: 235px;
+    margin-left: 100px;
   }
 }
-
 
 @media (min-width: 2150px) {
   .navbar-brand {
     width: 100%;
-    margin-left: 360px;
+    margin-left: 155px;
   }
 }
 
@@ -115,20 +112,43 @@
 @media (min-width: 2850px) {
   .navbar-brand {
     width: 100%;
-    margin-left: 720px;
+    margin-left: 300px;
   }
 }
 @media (min-width: 4310px) {
   .navbar-brand {
     width: 100%;
-    margin-left: 1430px;
+    margin-left: 590px;
   }
 }
 
-
-@media (min-width:5750px) {
+@media (min-width: 5750px) {
   .navbar-brand {
     width: 100%;
-    margin-left: 2150px;
+    margin-left: 870px;
+  }
+}
+
+//safari styles
+
+@media (min-width: 1693px) {
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+      .navbar-brand {
+        width: 100%;
+        margin-left: 55px;
+      }
+    }
+  }
+}
+
+@media (min-width: 2879px) {
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+      .navbar-brand {
+        width: 100%;
+        margin-left: 305px;
+      }
+    }
   }
 }

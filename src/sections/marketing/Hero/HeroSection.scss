@@ -1212,13 +1212,13 @@
 
 @media (max-width: 575px) {
   .hero-section-wrapper {
-    height: 685px;
+    height: 600px !important;
     // max-width: fit-content;
     display: block;
 
     .driver-report-mobile {
       position: absolute;
-      top: 570px;
+      top: 480px !important;
     }
 
     br {
@@ -1227,7 +1227,7 @@
 
     .login {
       color: #f7f7f7;
-      bottom: -270px;
+      top: 430px !important;
       font-family: Rubik;
       font-style: normal;
       font-weight: normal;
@@ -1252,9 +1252,10 @@
       top: 10px;
       padding-top: 20px;
     }
+
     .form-control {
       height: 50px;
-      margin-top: 20px;
+      margin-top: 50px !important;
       width: 100% !important;
       border-radius: 8px;
       color: #92afd6;
@@ -1264,7 +1265,7 @@
       height: 50px;
       width: 100% !important;
       left: 0;
-      margin-top: 100px !important;
+      margin-top: 160px !important;
       font-size: 18px;
       color: #f6f6f6;
       border-top-right-radius: 8px;
@@ -1283,9 +1284,9 @@
       max-width: 400px !important;
 
       left: 0px;
-      top: 240px;
+      top: 254px;
       color: #f7f7f7;
-      font-size: 20px;
+      font-size: 16px;
       line-height: 22px;
     }
 
@@ -1358,6 +1359,164 @@
         line-height: 1.075;
         letter-spacing: 0em;
         text-align: left;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+      .hero-section-wrapper {
+        height: 670px !important;
+        // max-width: fit-content;
+        display: block;
+
+        .driver-report-mobile {
+          position: absolute;
+          top: 550px !important;
+        }
+
+        br {
+          display: none;
+        }
+
+        .login {
+          color: #f7f7f7;
+          top: 500px !important;
+          font-family: Rubik;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 15px;
+
+          span {
+            font-family: Rubik;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 30px;
+            letter-spacing: 0em;
+            text-align: left;
+            cursor: pointer;
+            color: #ffae13;
+          }
+        }
+
+        .form-wrapper {
+          display: block;
+          width: 100% !important;
+          top: 50px;
+          padding-top: 20px;
+        }
+
+        .form-control {
+          height: 50px;
+          margin-top: 50px !important;
+          width: 100% !important;
+          border-radius: 8px;
+          color: #92afd6;
+        }
+
+        button {
+          height: 50px;
+          width: 100% !important;
+          left: 0;
+          margin-top:80px !important;
+          font-size: 18px;
+          color: #f6f6f6;
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+
+          border: none;
+        }
+        .image {
+          width: 150%;
+          margin-left: -50px;
+          margin-top: -50px;
+        }
+        .hero-text {
+          position: absolute;
+          width: 100%;
+          max-width: 400px !important;
+
+          left: 0px;
+          top: 254px;
+          color: #f7f7f7;
+          font-size: 16px;
+          line-height: 22px;
+        }
+
+        .title {
+          color: #f7f7f7;
+          font-family: Rubik;
+          font-size: 38px;
+          margin-top: -55px;
+          width: 100%;
+          max-width: 350px !important;
+          line-height: 1.075;
+          font-style: normal;
+          font-weight: 400;
+          letter-spacing: 0;
+          text-align: left;
+
+          .blue-text {
+            font-family: Rubik;
+            font-size: 38px;
+            line-height: 1.075;
+            font-style: normal;
+            font-weight: 400;
+            letter-spacing: 0em;
+            text-align: left;
+            color: #f7f7f7;
+          }
+
+          p {
+            color: #ffae13;
+            font-size: 38px;
+            line-height: 1.075;
+            .blue-text {
+              font-family: Rubik;
+              font-style: normal;
+              font-weight: 400;
+              letter-spacing: 0em;
+              text-align: left;
+              font-size: 38px;
+              line-height: 1.075;
+              color: #f7f7f7;
+            }
+          }
+
+          .bold-text {
+            font-weight: 400;
+            font-size: 38px;
+            line-height: 1.075;
+            // margin-top: 60px;
+          }
+
+          .share {
+            color: #ffae13;
+            font-family: Rubik;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 38px;
+            line-height: 100px;
+            letter-spacing: 0em;
+            text-align: left;
+          }
+
+          .typing-effect {
+            color: #ffae13;
+            font-family: Rubik;
+            font-family: Roboto;
+            font-style: normal;
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 1.075;
+            letter-spacing: 0em;
+            text-align: left;
+          }
+        }
       }
     }
   }

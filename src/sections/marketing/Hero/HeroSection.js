@@ -229,7 +229,7 @@ export default function HeroSection() {
                       className="driver-report-mobile"
                       onClick={scrollToReport}
                     >
-                      <p>Get Your Driver Report &nbsp;</p>
+                      <p>Get Your Driver Report</p>
                     </p>
                   </Col>
                 </Hero.Content>
