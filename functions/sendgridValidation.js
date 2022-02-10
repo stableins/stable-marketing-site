@@ -1,4 +1,5 @@
 const client = require("@sendgrid/client")
+const fetch = require("node-fetch")
 
 exports.handler = async function (event, context, callback) {
   const { message, email, name } = JSON.parse(event.body)
@@ -15,20 +16,11 @@ exports.handler = async function (event, context, callback) {
     body: data,
   }
 
-  try {
-    await client.request(request).then(([response, body]) => {
-      console.log(response.statusCode)
-      console.log(response.body)
-      return {
-        statusCode: 200,
-        body: response.body,
-      }
-    })
-  } catch (err) {
-    console.error(err)
-    return {
-      statusCode: 500,
-      body: err,
-    }
-  }
+  return fetch(request, { headers: { Accept: "application/json" } })
+    .then(response => response.json())
+    .then(data => ({
+      statusCode: 200,
+      body: data.joke,
+    }))
+    .catch(error => ({ statusCode: 422, body: String(error) }))
 }
