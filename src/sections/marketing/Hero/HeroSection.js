@@ -31,11 +31,13 @@ export default function HeroSection() {
   const userType = useSelector(state => state.form.userType)
   const scrollStatus = useSelector(state => state?.siteBehavior.scrollStatus)
   const [loading, setLoading] = useState(false)
+  const [invalidEmail, setInvalidEmail] = useState(false)
   const [color, setColor] = useState("#3b358a;")
 
   smoothscroll.polyfill()
 
   useEffect(() => {
+    setInvalidEmail(false)
     const scrollToReport = () => {
       scroller.scrollTo("anchor3", {
         duration: 400,
@@ -102,56 +104,63 @@ export default function HeroSection() {
     event.preventDefault()
     setLoading(true)
 
-    const response = await axios.post("/.netlify/functions/sendgridValidation", {
-      email: emailInputValue,
-    })
-
-    console.log(response);
-
-    try {
-      const response = await axios.post("/.netlify/functions/saveEmail", {
+    const response = await axios.post(
+      "/.netlify/functions/sendgridValidation",
+      {
         email: emailInputValue,
-      })
-      if (response.data) {
+      }
+    )
+
+    if (response.data[1].result.verdict !== "Invalid") {
+      setInvalidEmail(false)
+      try {
+        const response = await axios.post("/.netlify/functions/saveEmail", {
+          email: emailInputValue,
+        })
+        if (response.data) {
+          setLoading(false)
+        }
+
+        if (response.data.userType) {
+          dispatch({
+            type: "FORM::SET_USER_TYPE",
+            payload: response.data.userType,
+          })
+        }
+        dispatch({
+          type: "FORM::SET_STATUS",
+          payload: response.data.status,
+        })
+
+        dispatch({
+          type: "FORM::SET_EMAIL",
+          payload: emailInputValue,
+        })
+
+        dispatch({
+          type: "FORM::SET_DRIVER_REPORT",
+          payload: false,
+        })
+
+        dispatch({
+          type: "FORM::SET_CALENDLY_SCHEDULED",
+          payload: false,
+        })
+
+        if (response.data.status !== "Email Address Collected") {
+          setShowExistingEmailModal(true)
+        } else if (!response.data.confirmed) {
+          setShowShowNewUserModal(true)
+          // navigate("/join-stable/")
+        } else {
+          navigate("/join-stable/")
+        }
+      } catch (e) {
+        alert("Request failed please try again")
         setLoading(false)
       }
-
-      if (response.data.userType) {
-        dispatch({
-          type: "FORM::SET_USER_TYPE",
-          payload: response.data.userType,
-        })
-      }
-      dispatch({
-        type: "FORM::SET_STATUS",
-        payload: response.data.status,
-      })
-
-      dispatch({
-        type: "FORM::SET_EMAIL",
-        payload: emailInputValue,
-      })
-
-      dispatch({
-        type: "FORM::SET_DRIVER_REPORT",
-        payload: false,
-      })
-
-      dispatch({
-        type: "FORM::SET_CALENDLY_SCHEDULED",
-        payload: false,
-      })
-
-      if (response.data.status !== "Email Address Collected") {
-        setShowExistingEmailModal(true)
-      } else if (!response.data.confirmed) {
-        setShowShowNewUserModal(true)
-        // navigate("/join-stable/")
-      } else {
-        navigate("/join-stable/")
-      }
-    } catch (e) {
-      alert("Request failed please try again")
+    } else {
+      setInvalidEmail(true)
       setLoading(false)
     }
   }
@@ -224,6 +233,11 @@ export default function HeroSection() {
                             Discover Now &nbsp;
                           </button>
                         </form>
+                        {invalidEmail && (
+                          <p className="invalid-email">
+                            Please enter a valid email address
+                          </p>
+                        )}
                       </div>
                     </Hero.Newsletter>
                     <p className="login">
