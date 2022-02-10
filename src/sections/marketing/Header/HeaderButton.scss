@@ -130,33 +130,33 @@
 @media (min-width: 1025px) {
   .header-button-wrapper {
     text-align: right;
-    // padding: 0 400px;
+    right: 40%;
     width: 100%;
     color: #002e6d;
 
     .rideshare-button {
       background: none;
-      width: 194px;
+      width: 185px;
       font-family: Rubik;
-      font-size: 18px;
+      font-size: 16px;
       font-style: normal;
       font-weight: 400;
       line-height: 21px;
       letter-spacing: 0em;
-      text-align: left;
+      text-align: center;
       margin-top: -30px;
     }
 
     .carshare-button {
       background: none;
-      width: 186px;
+      width: 180px;
       font-family: Rubik;
-      font-size: 18px;
+      font-size: 16px;
       font-style: normal;
       font-weight: 400;
       line-height: 21px;
       letter-spacing: 0em;
-      text-align: left;
+      text-align: center;
       margin-top: -30px;
     }
 
@@ -168,7 +168,7 @@
       background: none;
       width: 99px;
       font-family: Rubik;
-      font-size: 18px;
+      font-size: 16px;
       font-style: normal;
       font-weight: 400;
       line-height: 21px;
@@ -188,11 +188,11 @@
       background: none;
       // width: 60px;
       font-family: Rubik;
-      font-size: 18px;
+      font-size: 16px;
       font-style: normal;
       font-weight: 500;
       line-height: 21px;
-      margin-right: 10px;
+      margin-right: -10px;
       letter-spacing: 0em;
       text-align: left;
       margin-top: -30px;
@@ -200,22 +200,22 @@
 
     .blog-button {
       background: none;
-      width: 60px;
+      width: 65px;
       font-family: Rubik;
-      font-size: 18px;
+      font-size: 16px;
       font-style: normal;
       font-weight: 400;
       line-height: 21px;
       letter-spacing: 0em;
-      text-align: left;
-      margin-top: -30px;
+      text-align: center;
+      margin-top: -36px;
     }
 
     .login-button {
       background: none;
       width: 69px;
       font-family: Rubik;
-      font-size: 18px;
+      font-size: 16px;
       font-style: normal;
       font-weight: 400;
       line-height: 21px;
@@ -239,6 +239,93 @@
       margin-left: 30px;
       margin-top: 10px;
     }
+  }
+}
+
+@media (min-width: 1266px) {
+  .header-button-wrapper {
+    width: 100%;
+    margin-left: -10px;
+  }
+}
+
+@media (min-width: 1350px) {
+  .header-button-wrapper {
+    width: 100%;
+    margin-left: -50px;
+  }
+}
+
+
+
+@media (min-width: 1399px) {
+  .header-button-wrapper {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1590px) {
+  .header-button-wrapper {
+    width: 100%;
+    margin-left: -80px;
+  }
+}
+
+@media (min-width: 1670px) {
+  .header-button-wrapper {
+    width: 100%;
+    margin-left: -115px;
+  }
+}
+
+@media (min-width: 1750px) {
+  .header-button-wrapper {
+    width: 100%;
+    margin-left: -175px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .header-button-wrapper {
+    width: 100%;
+    margin-left: -235px;
+  }
+}
+
+
+@media (min-width: 2150px) {
+  .header-button-wrapper {
+    width: 100%;
+    margin-left: -360px;
+  }
+}
+
+@media (min-width: 2550px) {
+  .header-button-wrapper {
+    width: 100%;
+    margin-left: -550px;
+  }
+}
+
+@media (min-width: 2850px) {
+  .header-button-wrapper {
+    width: 100%;
+    margin-left: -720px;
+  }
+}
+@media (min-width: 4310px) {
+  .header-button-wrapper {
+    width: 100%;
+    margin-left: -1430px;
+  }
+}
+
+
+@media (min-width:5750px) {
+  .header-button-wrapper {
+    width: 100%;
+    margin-left: -2150px;
   }
 }
 

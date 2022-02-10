@@ -16,17 +16,6 @@ const SiteNavbar = ({ buttonBlock, darkLogo, customLogo, defaultLogo }) => {
     return <Redirect noThrow to="home" />
   }
 
-  // React.useEffect(() => {
-  //   setHomeRedirect(false)
-  // }, [])
-
-  // useEffect(() => {
-  //   setHomeRedirect(false)
-
-  //   window.addEventListener("scroll", listenToScroll)
-  //   return () => window.removeEventListener("scroll", listenToScroll)
-  // }, [])
-
   useEffect(() => {
     setHomeRedirect(false)
 

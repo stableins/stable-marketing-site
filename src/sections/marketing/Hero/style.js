@@ -85,15 +85,14 @@ Hero.Newsletter = styled(Box)`
   }
   .form-control {
     border-radius-top-left: 10px;
-    border: 2px solid rgba(128, 138, 142, 0.2);
+    border: 1px solid #92afd6;
     color: #92afd6;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: normal;
     line-height: 28px;
-    padding: 5px 25px;
+    padding: 0.7rem 0.9rem;
     margin-bottom: 10px;
-    height: 50px;
   }
   .btn {
     min-width: 100%;

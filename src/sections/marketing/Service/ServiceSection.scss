@@ -902,7 +902,7 @@
 
       > button {
         color: #002e6d;
-        width: 334px;
+        width: 100% !important;
         height: 50px;
         background: #ffae13;
         border-radius: 6px;
@@ -1047,14 +1047,14 @@
           width: 330px;
         }
         button {
-          width: 198px;
+          width: 100% !important;
           height: 50px;
           color: #3b358a;
           background-color: #ebeeff;
           border-radius: 8px;
           border: none;
           margin: 10px;
-          margin-left: 10px;
+          margin-left: 0px;
 
           i {
             margin-left: 10px;
