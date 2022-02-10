@@ -203,6 +203,14 @@
           }
         }
       }
+       .invalid-email {
+      font-size: 17px;
+      margin-top: -18px;
+      font-weight: bold;
+      letter-spacing: normal;
+      color: #ffae13;
+      position: absolute;
+    }
       .form-control {
         width: 570px !important;
         border-radius: 8px;
@@ -417,6 +425,14 @@
           // left : 350px;
         }
       }
+      .invalid-email {
+      font-size: 17px;
+      margin-top: 280px;
+      font-weight: bold;
+      letter-spacing: normal;
+      color: #ffae13;
+      position: absolute;
+    }
       .form-control {
         height: 50px;
         border-radius: 8px;

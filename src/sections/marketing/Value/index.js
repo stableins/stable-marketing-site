@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import {
   Col,
   Container,
@@ -32,61 +32,74 @@ const FeatureSection = ({ ...rest }) => {
   const [statusResponse, setStatusResponse] = useState("")
   const [emailInputValue, setEmailInputValue] = useState("")
   const [loading, setLoading] = useState(false)
+  const [invalidEmail, setInvalidEmail] = useState(false)
   const [color, setColor] = useState("#3b358a;")
+
+  useEffect(() => {
+    setInvalidEmail(false)
+  }, [])
 
   async function handleEmailSubmit(event) {
     event.preventDefault()
     setLoading(true)
-    try {
-      const response = await axios.post("/.netlify/functions/saveEmail", {
-        email: emailInputValue,
-      })
 
-      if (response.data) {
+    const response = await axios.post(
+      "/.netlify/functions/sendgridValidation",
+      {
+        email: emailInputValue,
+      }
+    )
+
+    if (response.data[1].result.verdict !== "Invalid") {
+      setInvalidEmail(false)
+      try {
+        const response = await axios.post("/.netlify/functions/saveEmail", {
+          email: emailInputValue,
+        })
+        if (response.data) {
+          setLoading(false)
+        }
+
+        if (response.data.userType) {
+          dispatch({
+            type: "FORM::SET_USER_TYPE",
+            payload: response.data.userType,
+          })
+        }
+        dispatch({
+          type: "FORM::SET_STATUS",
+          payload: response.data.status,
+        })
+
+        dispatch({
+          type: "FORM::SET_EMAIL",
+          payload: emailInputValue,
+        })
+
+        dispatch({
+          type: "FORM::SET_DRIVER_REPORT",
+          payload: false,
+        })
+
+        dispatch({
+          type: "FORM::SET_CALENDLY_SCHEDULED",
+          payload: false,
+        })
+
+        if (response.data.status !== "Email Address Collected") {
+          setShowExistingEmailModal(true)
+        } else if (!response.data.confirmed) {
+          setShowShowNewUserModal(true)
+          // navigate("/join-stable/")
+        } else {
+          navigate("/join-stable/")
+        }
+      } catch (e) {
+        alert("Request failed please try again")
         setLoading(false)
       }
-
-      if (response.data.userType) {
-        dispatch({
-          type: "FORM::SET_USER_TYPE",
-          payload: response.data.userType,
-        })
-      } else {
-        dispatch({
-          type: "FORM::SET_USER_TYPE",
-          payload: "Rideshare Driver",
-        })
-      }
-      dispatch({
-        type: "FORM::SET_STATUS",
-        payload: response.data.status,
-      })
-
-      dispatch({
-        type: "FORM::SET_EMAIL",
-        payload: emailInputValue,
-      })
-
-      dispatch({
-        type: "FORM::SET_DRIVER_REPORT",
-        payload: true,
-      })
-
-      dispatch({
-        type: "FORM::SET_CALENDLY_SCHEDULED",
-        payload: false,
-      })
-
-      if (response.data.status !== "Email Address Collected") {
-        setShowExistingEmailModal(true)
-      } else if (!response.data.confirmed) {
-        setShowShowNewUserModal(true)
-        // navigate("/join-stable/")
-      } else {
-        navigate("/join-stable/")
-      }
-    } catch (e) {
-      alert("Request failed please try again")
+    } else {
+      setInvalidEmail(true)
       setLoading(false)
     }
   }
@@ -165,6 +178,11 @@ const FeatureSection = ({ ...rest }) => {
                                 Get Your Driver Report &nbsp;
                               </button>
                             </form>
+                            {invalidEmail && (
+                              <p className="invalid-email">
+                                Please enter a valid email address
+                              </p>
+                            )}
                           </div>
                         </Feature.Title>
                       </Feature.Box>
