@@ -14,6 +14,7 @@ import {
   CommentsFormSection,
 } from "../sections/Blog/BlogDetails/Component"
 export default function BlogDetails() {
+  
   const header = {
     headerClasses:
       "site-header site-header--menu-start light-header site-header--sticky",

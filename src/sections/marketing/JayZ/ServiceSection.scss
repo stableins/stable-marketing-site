@@ -1020,7 +1020,7 @@
       }
     }
 
-    @media not all and (min-resolution: 0.001dpcm) {
+     @media not all and (min-resolution: 0.001dpcm) {
       @supports (-webkit-appearance: none) {
         .image {
           margin-top: -30px;
@@ -1042,7 +1042,7 @@
           margin-bottom: 0px;
         }
       }
-    }
+  }
 
     .image {
     }
