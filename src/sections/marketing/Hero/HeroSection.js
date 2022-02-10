@@ -101,6 +101,13 @@ export default function HeroSection() {
   async function handleEmailSubmit(event) {
     event.preventDefault()
     setLoading(true)
+
+    const response = await axios.post("/.netlify/functions/sendgridValidation", {
+      email: emailInputValue,
+    })
+
+    console.log(response);
+
     try {
       const response = await axios.post("/.netlify/functions/saveEmail", {
         email: emailInputValue,
@@ -229,7 +236,7 @@ export default function HeroSection() {
                       className="driver-report-mobile"
                       onClick={scrollToReport}
                     >
-                      <p>Get Your Driver Report</p>
+                      <p>Get Your Driver Report;</p>
                     </p>
                   </Col>
                 </Hero.Content>
