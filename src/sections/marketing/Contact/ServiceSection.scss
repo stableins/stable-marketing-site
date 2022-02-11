@@ -58,6 +58,15 @@
       top: 250px;
       width: 100%;
 
+       .invalid-email {
+      font-size: 17px;
+      margin-top: -25px;
+      margin-left: 30px;
+      font-weight: bold;
+      color: #ffae13;
+      position: absolute;
+    }
+
       input {
         width: 751px;
         padding: 0.7rem 0.9rem;
@@ -371,6 +380,28 @@
       margin-left: 0;
       top: 200px;
       width: 100%;
+
+       @media not all and (min-resolution: 0.001dpcm) {
+      @supports (-webkit-appearance: none) {
+         .invalid-email {
+      font-size: 17px;
+      margin-top: -22px;
+      margin-left: -160px;
+      font-weight: bold;
+      color: #ffae13;
+      position: absolute;
+    }
+      }
+  }
+
+       .invalid-email {
+      font-size: 17px;
+      margin-top: -22px;
+      margin-left: -180px;
+      font-weight: bold;
+      color: #ffae13;
+      position: absolute;
+    }
 
       input {
         width: 90%;
