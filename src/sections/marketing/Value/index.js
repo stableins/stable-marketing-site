@@ -95,7 +95,7 @@ const FeatureSection = ({ ...rest }) => {
           navigate("/join-stable/")
         }
       } catch (e) {
-        alert("Request failed please try again")
+        alert(e)
         setLoading(false)
       }
     } else {
