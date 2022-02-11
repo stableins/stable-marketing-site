@@ -26,14 +26,13 @@ export default function ServiceSection() {
   async function handleMessageSubmit(event) {
     event.preventDefault()
     setLoading(true)
-    
+
     const response = await axios.post(
       "/.netlify/functions/sendgridValidation",
       {
         email: emailInputValue,
       }
     )
-
 
     if (response.data[1].result.verdict !== "Invalid") {
       setInvalidEmail(false)
@@ -43,7 +42,6 @@ export default function ServiceSection() {
           message: messageInputValue,
           name: nameInputValue,
         })
-        console.log(response);
         dispatch({
           type: "FORM::SET_EMAIL",
           payload: emailInputValue,

@@ -1,26 +1,30 @@
-const client = require("@sendgrid/mail")
+const sendGridMail = require("@sendgrid/mail")
 
 exports.handler = async function (event, context, callback) {
-  const { message, email, name } = JSON.parse(event.body)
-  client.setApiKey(process.env.SENDGRID_API_KEY)
-
-  const data = {
-    to: "hello@stableins.com",
-    from: "Marketing Site Contact Form",
-    subject: `New message from ${name} (${email})`,
-    html: message,
-  }
-
   try {
-    await client.send(data)
+    const { name, email, message } = JSON.parse(event.body)
+
+    console.log(`name: ${name}, email: ${email}, message: ${message}`)
+
+    sendGridMail.setApiKey(process.env.SENDGRID_API_KEY)
+    const html = `
+      <div> 
+        ${message ? message : "No content"}
+      </div>
+    `
+    const mail = {
+      from: email,
+      name: name,
+      to: "josh@stableins.com",
+      subject: `Contact Form Message from ${email}`,
+      html,
+    }
+    await sendGridMail.send(mail)
     return {
       statusCode: 200,
-      body: "Message sent",
+      body: JSON.stringify({ message: "Email sent" }),
     }
-  } catch (err) {
-    return {
-      statusCode: 500,
-      body: err,
-    }
+  } catch (error) {
+    return { statusCode: 422, body: String(error) }
   }
 }
