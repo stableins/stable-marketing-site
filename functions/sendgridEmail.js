@@ -18,6 +18,7 @@ exports.handler = async function (event, context, callback) {
       body: "Message sent",
     }
   } catch (err) {
+    console.log(err);
     return {
       statusCode: 500,
       body: err,
