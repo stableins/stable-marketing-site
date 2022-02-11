@@ -117,9 +117,6 @@ export default function HeroSection() {
         const response = await axios.post("/.netlify/functions/saveEmail", {
           email: emailInputValue,
         })
-
-                console.log(response)
-
         if (response.data) {
           setLoading(false)
         }
