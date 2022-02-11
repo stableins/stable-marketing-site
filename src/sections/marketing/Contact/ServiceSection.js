@@ -26,38 +26,24 @@ export default function ServiceSection() {
   async function handleMessageSubmit(event) {
     event.preventDefault()
     setLoading(true)
-    
-    const response = await axios.post(
-      "/.netlify/functions/sendgridValidation",
-      {
+
+    try {
+      const response = await axios.post("/.netlify/functions/sendgridEmail", {
         email: emailInputValue,
+        message: messageInputValue,
+        name: nameInputValue,
+      })
+      console.log(response)
+      dispatch({
+        type: "FORM::SET_EMAIL",
+        payload: emailInputValue,
+      })
+      if (response) {
+        setLoading(false)
+        setShowConfirmation(true)
       }
-    )
-
-
-    if (response.data[1].result.verdict !== "Invalid") {
-      setInvalidEmail(false)
-      try {
-        const response = await axios.post("/.netlify/functions/sendgridEmail", {
-          email: emailInputValue,
-          message: messageInputValue,
-          name: nameInputValue,
-        })
-        console.log(response);
-        dispatch({
-          type: "FORM::SET_EMAIL",
-          payload: emailInputValue,
-        })
-        if (response) {
-          setLoading(false)
-          setShowConfirmation(true)
-        }
-      } catch (e) {
-        console.log(e)
-      }
-    } else {
-      setInvalidEmail(true)
-      setLoading(false)
+    } catch (e) {
+      console.log(e)
     }
   }
 
