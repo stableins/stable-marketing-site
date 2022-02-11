@@ -133,7 +133,7 @@ exports.handler = async (event, context, callback) => {
           )
 
           const createResponse = await axios.post(
-            "https://www.zohoapis.com/crm/v2/contacts",
+            "https://www.zohoapis.com/crm/v2/contacts/upsert",
             {
               data: [
                 {
