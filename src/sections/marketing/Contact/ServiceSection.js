@@ -20,35 +20,43 @@ export default function ServiceSection() {
   const [messageInputValue, setMessageInputValue] = useState("")
   const [nameInputValue, setNameInputValue] = useState("")
   const [loading, setLoading] = useState(false)
+  const [invalidEmail, setInvalidEmail] = useState(false)
   const [color, setColor] = useState("#3b358a;")
 
   async function handleMessageSubmit(event) {
     event.preventDefault()
     setLoading(true)
-    try {
-      // const validationResponse = await axios.post(
-      //   "/.netlify/functions/sendgridValidation",
-      //   {
-      //     email: emailInputValue,
-      //   }
-      // )
-
-      // console.log(validationResponse)
-      const response = await axios.post("/.netlify/functions/sendgridEmail", {
+    
+    const response = await axios.post(
+      "/.netlify/functions/sendgridValidation",
+      {
         email: emailInputValue,
-        message: messageInputValue,
-        name: nameInputValue,
-      })
-      dispatch({
-        type: "FORM::SET_EMAIL",
-        payload: emailInputValue,
-      })
-      if (response) {
-        setLoading(false)
-        setShowConfirmation(true)
       }
-    } catch (e) {
-      console.log(e)
+    )
+
+
+    if (response.data[1].result.verdict !== "Invalid") {
+      setInvalidEmail(false)
+      try {
+        const response = await axios.post("/.netlify/functions/sendgridEmail", {
+          email: emailInputValue,
+          message: messageInputValue,
+          name: nameInputValue,
+        })
+        dispatch({
+          type: "FORM::SET_EMAIL",
+          payload: emailInputValue,
+        })
+        if (response) {
+          setLoading(false)
+          setShowConfirmation(true)
+        }
+      } catch (e) {
+        console.log(e)
+      }
+    } else {
+      setInvalidEmail(true)
+      setLoading(false)
     }
   }
 
@@ -72,6 +80,11 @@ export default function ServiceSection() {
                   </div>
                   <div className="form-wrapper">
                     <Form onSubmit={handleMessageSubmit}>
+                      {invalidEmail && (
+                        <p className="invalid-email">
+                          Please enter a valid email address
+                        </p>
+                      )}
                       <Form.Group className="mb-3">
                         <Form.Control
                           onChange={e => setNameInputValue(e.target.value)}
