@@ -1,3 +1,28 @@
+@media (max-width: 780px) {
+  .site-nav-wrapper {
+    display: inline-block;
+    width: 100%;
+    position: fixed;
+    background: #ffffff;
+    margin-left: -12px;
+    margin-top: -20px;
+
+    .site-navbar {
+      width: 100%;
+      height: 100px;
+
+      .navbar-brand {
+        width: 190px !important;
+        margin-left: 8px;
+      }
+
+      .navbar-toggler {
+        // width: 100px;
+      }
+    }
+  }
+}
+
 @media (max-width: 1024px) {
   .site-nav-wrapper {
     display: inline-block;
