@@ -56,8 +56,6 @@ const FeatureSection = ({ ...rest }) => {
         const response = await axios.post("/.netlify/functions/saveEmail", {
           email: emailInputValue,
         })
-
-        console.log(response);
         if (response.data) {
           setLoading(false)
         }
@@ -97,7 +95,7 @@ const FeatureSection = ({ ...rest }) => {
           navigate("/join-stable/")
         }
       } catch (e) {
-        alert(e)
+        alert("Request failed please try again")
         setLoading(false)
       }
     } else {

@@ -156,7 +156,7 @@ export default function HeroSection() {
           navigate("/join-stable/")
         }
       } catch (e) {
-        alert(e)
+        alert("Request failed please try again")
         setLoading(false)
       }
     } else {
