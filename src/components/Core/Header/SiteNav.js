@@ -97,9 +97,9 @@ const SiteNavbar = ({ buttonBlock, darkLogo, customLogo, defaultLogo }) => {
                 style={{ cursor: "pointer" }}
               >
                 {defaultLogo ? (
-                  <img width={200} src={defaultLogo} alt="site-brand" />
+                  <img width={250} src={defaultLogo} alt="site-brand" />
                 ) : customLogo ? (
-                  <img width={200} src={customLogo} alt="site-brand" />
+                  <img width={250} src={customLogo} alt="site-brand" />
                 ) : (
                   <img
                     src={darkLogo ? siteBrandDark : siteBrandLight}
