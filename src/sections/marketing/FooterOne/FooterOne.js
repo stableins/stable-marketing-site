@@ -45,17 +45,24 @@ export default function FooterOne() {
                           <Footer.AddressItem>
                             <div className="item3">
                               <i className="fa fa-envelope" />
-                              <a href="mailto:hello@stableins.com">
+                              <a
+                                href="mailto:hello@stableins.com"
+                                target="_blank"
+                              >
                                 hello@stableins.com
                               </a>
                             </div>
                           </Footer.AddressItem>
-                            <Footer.AddressItem>
-                              <div id="expand" className="item4" onClick={() => setShowPrivacyModal(true)}>
-                                <i className="fa" />
-                                <a>Privacy Policy</a>
-                              </div>
-                            </Footer.AddressItem>
+                          <Footer.AddressItem>
+                            <div
+                              id="expand"
+                              className="item4"
+                              onClick={() => setShowPrivacyModal(true)}
+                            >
+                              <i className="fa" />
+                              <a>Privacy Policy</a>
+                            </div>
+                          </Footer.AddressItem>
                           <Footer.AddressItem
                             onClick={() => setShowTermsModal(true)}
                           >

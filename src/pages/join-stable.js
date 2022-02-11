@@ -73,11 +73,13 @@ export default function individualFleetForm() {
   const [invalidZip, setInvalidZip] = useState(false)
   const [loading, setLoading] = useState(false)
   const [color, setColor] = useState("#3b358a;")
+  const [invalidEmail, setInvalidEmail] = useState(true)
 
   console.log(status)
 
   useEffect(() => {
     setHasMounted(true)
+    setInvalidEmail(false)
   }, [resetSelect1, resetSelect2])
 
   useEffect(() => {
@@ -164,60 +166,73 @@ export default function individualFleetForm() {
     if (zipcodeInputValue.length === 5) {
       setInvalidZip(false)
 
-      try {
-        let userType
-
-        if (driverReport) {
-          userType = "Rideshare Driver"
-        } else if (dropdownInputValue1 && dropdownInputValue1 !== "") {
-          userType = dropdownInputValue1
-        } else if (dropdownInputValue2 && dropdownInputValue2 !== "") {
-          userType = dropdownInputValue2
+      const response = await axios.post(
+        "/.netlify/functions/sendgridValidation",
+        {
+          email: emailInputValue,
         }
-        const response = await axios.post(
-          "/.netlify/functions/saveFullContactInfo",
-          {
-            email: email ?? emailInputValue,
-            zipcode: zipcodeInputValue,
-            name: nameInputValue,
-            userType: userType,
+      )
+
+      console.log(response)
+      if (response.data[1].result.verdict !== "Invalid") {
+        setInvalidEmail(false)
+        try {
+          let userType
+
+          if (driverReport) {
+            userType = "Rideshare Driver"
+          } else if (dropdownInputValue1 && dropdownInputValue1 !== "") {
+            userType = dropdownInputValue1
+          } else if (dropdownInputValue2 && dropdownInputValue2 !== "") {
+            userType = dropdownInputValue2
           }
-        )
-        if (response.data) {
+          const response = await axios.post(
+            "/.netlify/functions/saveFullContactInfo",
+            {
+              email: email ?? emailInputValue,
+              zipcode: zipcodeInputValue,
+              name: nameInputValue,
+              userType: userType,
+            }
+          )
+          if (response.data) {
+            setLoading(false)
+          }
+
+          dispatch({
+            type: "FORM::SET_EMAIL",
+            payload: response.data.email,
+          })
+
+          dispatch({
+            type: "FORM::SET_STATUS",
+            payload: response.data.status,
+          })
+
+          dispatch({
+            type: "FORM::SET_USER_TYPE",
+            payload: response.data.userType,
+          })
+
+          dispatch({
+            type: "FORM::SET_CONFIRMED",
+            payload: response.data.confirmed,
+          })
+
+          if (response.data.confirmed === false) {
+            setShowNewUserModal(true)
+          }
+        } catch (e) {
+          console.log(e)
           setLoading(false)
         }
-
-        dispatch({
-          type: "FORM::SET_EMAIL",
-          payload: response.data.email,
-        })
-
-        dispatch({
-          type: "FORM::SET_STATUS",
-          payload: response.data.status,
-        })
-
-        dispatch({
-          type: "FORM::SET_USER_TYPE",
-          payload: response.data.userType,
-        })
-
-        dispatch({
-          type: "FORM::SET_CONFIRMED",
-          payload: response.data.confirmed,
-        })
-
-        if (response.data.confirmed === false) {
-          setShowNewUserModal(true)
-        }
-      } catch (e) {
-        console.log(e)
+      } else {
+        setInvalidEmail(true)
         setLoading(false)
       }
     } else {
       setInvalidZip(true)
       setLoading(false)
-      console.log("failed")
     }
   }
 
@@ -294,6 +309,11 @@ export default function individualFleetForm() {
                   <Form.Group className="mb-3">
                     <br />
                     <Form.Group className="mb-3" controlId="formBasicPassword">
+                      {invalidEmail && (
+                        <p className="invalid-email">
+                          Please enter a valid email address
+                        </p>
+                      )}
                       <Form.Control
                         required={true}
                         className="input"
