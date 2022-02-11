@@ -169,7 +169,7 @@ export default function individualFleetForm() {
       const response = await axios.post(
         "/.netlify/functions/sendgridValidation",
         {
-          email: emailInputValue,
+          email: email && email !== "" ? email : emailInputValue,
         }
       )
 
