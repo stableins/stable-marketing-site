@@ -43,6 +43,7 @@ export default function ServiceSection() {
           message: messageInputValue,
           name: nameInputValue,
         })
+        console.log(response);
         dispatch({
           type: "FORM::SET_EMAIL",
           payload: emailInputValue,
