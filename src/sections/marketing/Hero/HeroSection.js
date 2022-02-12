@@ -172,7 +172,7 @@ export default function HeroSection() {
           <PulseLoader color={color} loading={loading} size={50} />
         </div>
         <Hero className="position-relative bg-default">
-          <Container>
+          <Container className="container">
             <Row>
               <Col
                 className="col-xl-6 col-lg-7 col-md-8 col-xs-11 order-2 order-lg-1"
