@@ -78,7 +78,7 @@ const FeatureSection = ({ ...rest }) => {
 
         dispatch({
           type: "FORM::SET_DRIVER_REPORT",
-          payload: false,
+          payload: true,
         })
 
         dispatch({
