@@ -112,7 +112,7 @@ const FeatureSection = ({ ...rest }) => {
       <a name="driver-report" className="anchor3"></a>
       <Feature className="bg-blue-ribbon">
         <div className="inner-wrapper">
-          <Container>
+          <Container className="container">
             <Slide left>
               <Row>
                 <Col xs="auto" className="col-xl-8 col-lg-10">

@@ -36,7 +36,7 @@
       font-family: Rubik;
       font-style: normal;
       font-weight: normal;
-      text-align: left;
+      text-align: center !important;
       color: #002e6d;
       left: 500px;
       font-size: 36px;
@@ -49,8 +49,9 @@
       font-weight: normal;
       font-size: 14px;
       line-height: 22px;
-      width: 100%;
-      margin-left: 130px;
+      width: 630px !important;
+      margin-left: 25px !important;
+      text-align: center;
       /* or 137% */
 
       color: #000000;

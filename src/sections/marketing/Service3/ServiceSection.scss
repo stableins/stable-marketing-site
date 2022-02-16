@@ -1,98 +1,149 @@
 @media (max-width: 1024px) {
   .service-section-3-wrapper {
     text-align: center;
-    // height: 1140px;
+    height: 260px !important;
+
+    .container {
+      max-width: 100%;
+    }
     .title {
       color: #002e6d;
       text-align: left;
       font-family: Rubik;
       font-style: normal;
       font-weight: normal;
-      font-size: 36px;
+      font-size: 36px !important;
+      margin-left: -143px;
       line-height: 40px;
     }
     .image-wrapper {
-      text-align: center;
-
-      .separator {
-        height: 1px;
-        max-width: 504px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 40px;
-        background-image: radial-gradient(
-          circle farthest-corner at 50% 50%,
-          #ffbf00 27%,
-          #fff
-        );
-      }
+      display: block;
+      width: 95%;
+      text-align: left;
+      margin-top: -90px;
 
       .partners-section {
-        width: 100%;
+        display: block;
+        text-align: center;
 
-        .image {
-          width: 100%;
+        .image-row {
+          display: inline-flex;
+          // margin-top: 10px;
+          align-items: center;
+          padding: 30px;
+
+          .mltply {
+            position: absolute;
+            left: 270px;
+            top: 35px !important;
+          }
+
+          .guy {
+            position: absolute;
+            left: 480px;
+            top: 25px !important;
+          }
+
+          .ils {
+            position: absolute;
+            left: -20px !important;
+            top: 40px !important;
+          }
+
+          @-moz-document url-prefix() {
+            .mltply {
+              position: absolute;
+              right: 140px;
+              top: 45px;
+            }
+
+            .guy {
+              position: absolute;
+              right: 415px;
+              top: 35px;
+            }
+
+            .ils {
+              position: absolute;
+              left: 200px;
+              top: 48px;
+            }
+          }
+
+          .image1 {
+          }
+          .image2 {
+          }
+          .image3 {
+          }
         }
 
+        @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+      .image-row {
+          display: inline-flex;
+          // margin-top: 10px;
+          align-items: center;
+          padding: 30px;
+
+          .mltply {
+            position: absolute;
+            left: 250px;
+            top:100px !important;
+          }
+
+          .guy {
+            position: absolute;
+            left: 460px;
+            top:90px !important;
+          }
+
+          .ils {
+            position: absolute;
+            left: -20px !important;
+            top:100px !important;
+          }
+
+          @-moz-document url-prefix() {
+            .mltply {
+              position: absolute;
+              right: 140px;
+              top: 45px;
+            }
+
+            .guy {
+              position: absolute;
+              right: 415px;
+              top: 35px;
+            }
+
+            .ils {
+              position: absolute;
+              left: 200px;
+              top: 48px;
+            }
+          }
+
+          .image1 {
+          }
+          .image2 {
+          }
+          .image3 {
+          }
+        }
+    }
+  }
+
         .title {
-          margin-top: 50px;
-          font-family: Roboto;
           font-size: 18px;
           font-style: normal;
+          position: absolute;
+          right: 270px;
+          top: 50px;
           font-weight: 700;
           line-height: 24px;
           letter-spacing: 0em;
-          text-align: center;
-          color: #002e6d;
-        }
-      }
-
-      .accelerators-section {
-        width: 100%;
-
-        .image {
-          margin-top: 30px;
-          width: 100%;
-        }
-
-        .title {
-          margin-top: 50px;
-          font-family: Roboto;
-          font-size: 18px;
-          font-style: normal;
-          font-weight: 700;
-          line-height: 24px;
-          letter-spacing: 0em;
-          text-align: center;
-          color: #000000;
-        }
-      }
-
-      .pitches-section {
-        width: 100%;
-        .image {
-          margin-top: 30px;
-          width: 100%;
-        }
-        // width: 100%;
-        .title {
-          margin-top: 50px;
-          font-family: Roboto;
-          font-size: 18px;
-          font-style: normal;
-          font-weight: 700;
-          line-height: 24px;
-          letter-spacing: 0em;
-          text-align: center;
-          color: #000000;
-        }
-
-        .insurtech {
-          margin-top: 40px;
-        }
-
-        .innovation {
-          margin-top: 20px;
+          color: #303030;
         }
       }
     }
@@ -150,22 +201,22 @@
 
           @-moz-document url-prefix() {
             .mltply {
-            position: absolute;
-            right: 140px;
-            top: 45px;
-          }
+              position: absolute;
+              right: 140px;
+              top: 45px;
+            }
 
-          .guy {
-            position: absolute;
-            right: 415px;
-            top: 35px;
-          }
+            .guy {
+              position: absolute;
+              right: 415px;
+              top: 35px;
+            }
 
-          .ils {
-            position: absolute;
-            left: 200px;
-            top: 48px;
-          }
+            .ils {
+              position: absolute;
+              left: 200px;
+              top: 48px;
+            }
           }
 
           .image1 {
@@ -280,7 +331,6 @@
     }
   }
 }
-
 
 @media (max-width: 1400px) {
   .service-section-3-wrapper {
@@ -333,22 +383,22 @@
 
           @-moz-document url-prefix() {
             .mltply {
-            position: absolute;
-            right: 140px;
-            top: 45px;
-          }
+              position: absolute;
+              right: 140px;
+              top: 45px;
+            }
 
-          .guy {
-            position: absolute;
-            right: 415px;
-            top: 35px;
-          }
+            .guy {
+              position: absolute;
+              right: 415px;
+              top: 35px;
+            }
 
-          .ils {
-            position: absolute;
-            left: 200px;
-            top: 48px;
-          }
+            .ils {
+              position: absolute;
+              left: 200px;
+              top: 48px;
+            }
           }
 
           .image1 {
@@ -464,7 +514,6 @@
   }
 }
 
-
 @media (max-width: 600px) {
   .service-section-3-wrapper {
     text-align: center;
@@ -513,22 +562,22 @@
 
           @-moz-document url-prefix() {
             .mltply {
-            position: absolute;
-            right: 140px;
-            top: 45px;
-          }
+              position: absolute;
+              right: 140px;
+              top: 45px;
+            }
 
-          .guy {
-            position: absolute;
-            right: 415px;
-            top: 35px;
-          }
+            .guy {
+              position: absolute;
+              right: 415px;
+              top: 35px;
+            }
 
-          .ils {
-            position: absolute;
-            left: 200px;
-            top: 48px;
-          }
+            .ils {
+              position: absolute;
+              left: 200px;
+              top: 48px;
+            }
           }
 
           .image1 {
@@ -603,22 +652,22 @@
 
           @-moz-document url-prefix() {
             .mltply {
-            position: absolute;
-            right: 140px;
-            top: 45px;
-          }
+              position: absolute;
+              right: 140px;
+              top: 45px;
+            }
 
-          .guy {
-            position: absolute;
-            right: 415px;
-            top: 35px;
-          }
+            .guy {
+              position: absolute;
+              right: 415px;
+              top: 35px;
+            }
 
-          .ils {
-            position: absolute;
-            left: 200px;
-            top: 48px;
-          }
+            .ils {
+              position: absolute;
+              left: 200px;
+              top: 48px;
+            }
           }
 
           .image1 {
@@ -693,22 +742,22 @@
 
           @-moz-document url-prefix() {
             .mltply {
-            position: absolute;
-            right: 140px;
-            top: 45px;
-          }
+              position: absolute;
+              right: 140px;
+              top: 45px;
+            }
 
-          .guy {
-            position: absolute;
-            right: 415px;
-            top: 35px;
-          }
+            .guy {
+              position: absolute;
+              right: 415px;
+              top: 35px;
+            }
 
-          .ils {
-            position: absolute;
-            left: 200px;
-            top: 48px;
-          }
+            .ils {
+              position: absolute;
+              left: 200px;
+              top: 48px;
+            }
           }
 
           .image1 {
