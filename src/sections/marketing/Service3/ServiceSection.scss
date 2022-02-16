@@ -60,7 +60,7 @@
             .guy {
               position: absolute;
               right: 415px;
-              top: 35px;
+              top: 25px;
             }
 
             .ils {
@@ -89,19 +89,19 @@
           .mltply {
             position: absolute;
             left: 250px;
-            top:100px !important;
+            top:30px !important;
           }
 
           .guy {
             position: absolute;
             left: 460px;
-            top:90px !important;
+            top:20px !important;
           }
 
           .ils {
             position: absolute;
             left: -20px !important;
-            top:100px !important;
+            top:35px !important;
           }
 
           @-moz-document url-prefix() {
@@ -517,7 +517,7 @@
 @media (max-width: 600px) {
   .service-section-3-wrapper {
     text-align: center;
-    height: 375px;
+    min-height: 505px;
     .title {
       color: #002e6d;
       text-align: left;
@@ -527,6 +527,7 @@
       font-weight: normal;
       font-size: 36px;
       line-height: 40px;
+      margin-left: 0;
     }
     .image-wrapper {
       display: block;
@@ -551,12 +552,12 @@
 
           .guy {
             margin-top: 30px;
-            left: 30px;
+            left: 90px;
           }
 
           .ils {
             // position: absolute;
-            left: 65px;
+            left: 85px;
             top: -70px;
           }
 
@@ -587,6 +588,63 @@
           .image3 {
           }
         }
+
+          @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+      .image-row {
+          display: inline-flex;
+          // margin-top: 10px;
+          align-items: center;
+          padding: 30px;
+
+          .mltply {
+            position: absolute;
+            left:55px;
+            top:70px !important;
+          }
+
+          .guy {
+            position: absolute;
+            left: 20px;
+            top:150px !important;
+          }
+
+          .ils {
+            position: absolute;
+            left: 55px !important;
+            top:-35px !important;
+          }
+
+          @-moz-document url-prefix() {
+            .mltply {
+              position: absolute;
+              right: 140px;
+              top: 45px;
+            }
+
+            .guy {
+              position: absolute;
+              right: 415px;
+              top: 35px;
+            }
+
+            .ils {
+              position: absolute;
+              left: 200px;
+              top: 48px;
+            }
+          }
+
+          .image1 {
+          }
+          .image2 {
+          }
+          .image3 {
+          }
+        }
+    }
+  }
+
 
         .title {
           font-size: 18px;

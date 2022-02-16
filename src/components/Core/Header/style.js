@@ -8,7 +8,7 @@ const SiteHeader = styled.div.attrs({
   z-index: 99;
   top: 0;
   background: white;
-  @media (max-width: 992px) {
+  @media (max-width: 1024px) {
     padding-top: 13px;
     padding-bottom: 13px;
   }
@@ -51,7 +51,7 @@ const SiteHeader = styled.div.attrs({
       transition: opacity 0.5s ease, top 0.5s ease, margin-top 0.5s ease,
         background-color 0.5s ease;
       margin-top: 25px;
-      @media (min-width: 992px) {
+      @media (min-width: 1024px) {
         box-shadow: -2px 2px 70px -25px rgba(0, 0, 0, 0.3);
         position: absolute;
         opacity: 0;
@@ -73,7 +73,7 @@ const SiteHeader = styled.div.attrs({
         font-weight: 400;
         transition: top 0.4s linear;
       }
-      @media (max-width: 992px) {
+      @media (max-width: 1024px) {
         border-color: transparent;
         padding-top: 0;
         padding-bottom: 0;
@@ -87,12 +87,12 @@ const SiteHeader = styled.div.attrs({
         font-style: normal;
         /* letter-spacing: -0.6px; */
         position: relative;
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
           border-bottom: 1px solid #ececec;
           padding-left: 20px;
           padding-right: 20px;
         }
-        @media (min-width: 992px) {
+        @media (min-width: 1025px) {
           color: #fff;
           padding-top: 17px !important;
           padding-bottom: 15px !important;
@@ -103,7 +103,7 @@ const SiteHeader = styled.div.attrs({
       // &.show,{
       &:hover {
         & > .dropdown-menu {
-          @media (min-width: 992px) {
+          @media (min-width: 1025px) {
             top: 98%;
             margin-top: 0;
             visibility: visible;
@@ -121,7 +121,7 @@ const SiteHeader = styled.div.attrs({
       font-weight: 400;
       padding-top: 0px;
       padding-bottom: 0px;
-      @media (min-width: 992px) {
+      @media (min-width: 1025px) {
         padding-left: 30px;
         padding-right: 30px;
         padding-top: 10px;
@@ -141,13 +141,13 @@ const SiteHeader = styled.div.attrs({
         padding-top: 10px;
         padding-bottom: 10px;
         font-weight: inherit;
-        @media (min-width: 992px) {
+        @media (min-width: 1025px) {
           padding-left: 0;
           padding-right: 0;
           padding-top: 0;
           padding-bottom: 0;
         }
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
           padding-left: 30px;
           padding-right: 20px;
           border-bottom: 1px solid #ececec;
@@ -161,7 +161,7 @@ const SiteHeader = styled.div.attrs({
     }
     .innerDropdown {
       & > .dropdown-menu {
-        @media (min-width: 992px) {
+        @media (min-width: 1025px) {
           transform: translate(-95%);
           pointer-events: none;
         }
@@ -169,7 +169,7 @@ const SiteHeader = styled.div.attrs({
       & > .dropdown-toggle {
         display: flex !important;
         justify-content: space-between;
-        @media (min-width: 992px) {
+        @media (min-width: 1025px) {
           &:after {
             top: 0px;
             transform: rotate(-90deg);
@@ -186,7 +186,7 @@ const SiteHeader = styled.div.attrs({
       //&.show, {
       &:hover {
         & > .dropdown-menu {
-          @media (min-width: 992px) {
+          @media (min-width: 1025px) {
             top: 0%;
             margin-top: 0;
             visibility: visible;
@@ -199,7 +199,7 @@ const SiteHeader = styled.div.attrs({
           }
         }
         & > .dropdown-toggle {
-          @media (min-width: 992px) {
+          @media (min-width: 1025px) {
             &:after {
               transform: rotate(0deg);
             }
@@ -210,20 +210,20 @@ const SiteHeader = styled.div.attrs({
 
     .megadropdown {
       transition: 0.4s top;
-      @media (min-width: 992px) {
+      @media (min-width: 1025px) {
         position: static;
       }
       > .dropdown-menu {
         min-width: 100%;
         max-width: 100%;
         transform: translate(0);
-        @media (min-width: 992px) {
+        @media (min-width: 1025px) {
           padding: 30px;
           pointer-events: none;
           transition: top 0.4s linear;
         }
         .row {
-          @media (max-width: 992px) {
+          @media (max-width: 1024px) {
             display: block;
             padding: 0 0;
             margin-left: 0;
@@ -238,20 +238,20 @@ const SiteHeader = styled.div.attrs({
       // &.show, {
       &:hover {
         .dropdown-menu {
-          @media (min-width: 992px) {
+          @media (min-width: 1025px) {
             top: 90%;
             pointer-events: visible;
           }
         }
       }
       .mega-dropdown-menu-block {
-        @media (min-width: 992px) {
+        @media (min-width: 1025px) {
           justify-content: space-between;
         }
       }
       .megamenu-column-title {
         display: none;
-        @media (min-width: 992px) {
+        @media (min-width: 1025px) {
           opacity: 0.5;
           color: #0d152e;
           font-size: 15px;
@@ -272,7 +272,7 @@ const SiteHeader = styled.div.attrs({
         padding-top: 14px;
         padding-bottom: 14px;
         display: block;
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
           display: block;
           padding-top: 0px;
           padding-bottom: 0px;
@@ -280,7 +280,7 @@ const SiteHeader = styled.div.attrs({
         > a {
           color: #000;
           text-decoration: none;
-          @media (max-width: 992px) {
+          @media (max-width: 1024px) {
             display: block;
             border-bottom: 1px solid #ececec;
             padding-top: 10px;
@@ -292,7 +292,7 @@ const SiteHeader = styled.div.attrs({
             color: #ff5722 !important;
           }
         }
-        @media (min-width: 992px) {
+        @media (min-width: 1025px) {
           padding-left: 0px;
           padding-right: 10px;
           padding-top: 10px;
@@ -302,7 +302,7 @@ const SiteHeader = styled.div.attrs({
     }
   }
   .navbar-collapse {
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
       position: fixed;
       display: block !important;
       position: fixed;
@@ -379,7 +379,7 @@ const SiteHeader = styled.div.attrs({
     }
   }
   .dropdown-toggle {
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
       display: flex !important;
       justify-content: space-between;
       min-width: 50px;
@@ -387,7 +387,7 @@ const SiteHeader = styled.div.attrs({
       width: 100%;
     }
     &[aria-expanded="true"]:after {
-      @media (max-width: 992px) {
+      @media (max-width: 1024px) {
         content: "\f068";
       }
     }
@@ -403,7 +403,7 @@ const SiteHeader = styled.div.attrs({
       transition: 0.4s;
       transform-origin: center;
       transform-box: view-box;
-      @media (max-width: 992px) {
+      @media (max-width: 1024px) {
         margin-right: 9px;
         content: "\f067";
       }
@@ -411,24 +411,24 @@ const SiteHeader = styled.div.attrs({
   }
   .main-nav-item.show {
     > .dropdown-toggle:after {
-      @media (min-width: 992px) {
+      @media (min-width: 1025px) {
         transform: rotate(-180deg);
       }
     }
   }
   .site-navbar {
-    @media (min-width: 992px) {
+    @media (min-width: 1025px) {
       position: fixed;
     }
   }
   .container-fluid {
     .site-navbar {
-      @media (min-width: 768px) {
+      @media (min-width: 1025px) {
         padding-left: 10px;
         padding-right: 10px;
       }
 
-      @media (min-width: 992px) {
+      @media (min-width: 1025px) {
             padding-left: calc(30% - 369px);
         padding-right: 20px;
       }
@@ -438,13 +438,13 @@ const SiteHeader = styled.div.attrs({
   .show {
     & > .dropdown-toggle {
       &:after {
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
           content: "\f068";
         }
       }
     }
     & > .dropdown-menu {
-      @media (max-width: 992px) {
+      @media (max-width: 1024px) {
         display: block;
         margin-top: 0 !important;
       }
@@ -459,7 +459,7 @@ const SiteHeader = styled.div.attrs({
       width: 100%;
       z-index: 999;
 
-      @media (min-width: 992px) {
+      @media (min-width: 1025px) {
         position: fixed !important;
         transition: 0.4s;
 
@@ -479,7 +479,7 @@ const SiteHeader = styled.div.attrs({
         }
       }
       &.reveal-header {
-        @media (min-width: 992px) {
+        @media (min-width: 1025px) {
           padding-top: 10px;
           z-index: 999;
           padding-bottom: 10px;
@@ -492,7 +492,7 @@ const SiteHeader = styled.div.attrs({
       right: 0;
       width: 100%;
       z-index: 999;
-      position: fixed !important;
+      // position: fixed !important;
       transition: 0.4s;
       &.scrolling {
         transform: translateY(-100%);
@@ -533,7 +533,7 @@ const SiteHeader = styled.div.attrs({
 
   &.site-header--menu-center {
     .navbar-collapse {
-      @media (min-width: 992px) {
+      @media (min-width: 1025px) {
         justify-content: center;
         margin-right: calc(-214px / 2);
       }
@@ -547,7 +547,7 @@ const SiteHeader = styled.div.attrs({
   &.site-header--menu-start {
     .container-fluid {
       .navbar-collapse {
-        @media (min-width: 992px) {
+        @media (min-width: 1025px) {
           padding-left: 15px;
           margin-left: 3.125rem !important;
         }
@@ -558,7 +558,7 @@ const SiteHeader = styled.div.attrs({
   /* Header Buttons */
 
   &.site-header--menu-sep {
-    @media (min-width: 992px) {
+    @media (min-width: 1025px) {
       .navbar-collapse {
         margin-right: 20px;
         padding-right: 10px;
@@ -584,7 +584,7 @@ const SiteHeader = styled.div.attrs({
         margin-left: auto;
         margin-right: 20px;
       }
-      @media (min-width: 992px) {
+      @media (min-width: 1025px) {
         margin-right: 0px;
         margin-left: 20px;
         &:before {
@@ -603,7 +603,7 @@ const SiteHeader = styled.div.attrs({
 
   &.site-header--with-border {
     .navbar-brand {
-      @media (min-width: 992px) {
+      @media (min-width: 1025px) {
         position: relative;
         &:before {
           content: "";
@@ -621,7 +621,7 @@ const SiteHeader = styled.div.attrs({
   }
   &.site-header--services {
     .navbar-collapse {
-      @media (min-width: 992px) {
+      @media (min-width: 1025px) {
         margin-right: 55px;
       }
     }

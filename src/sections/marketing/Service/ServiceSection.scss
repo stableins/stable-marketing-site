@@ -859,7 +859,7 @@
     @supports (-webkit-appearance: none) {
       .service-wrapper1 {
         background: white;
-        height: 1140px !important;
+        height: 1000px !important;
 
         @media not all and (min-resolution: 0.001dpcm) {
           @supports (-webkit-appearance: none) {
@@ -931,10 +931,10 @@
 
         .widget-wrapper {
           display: block;
-          width: 100%;
+          width: 100% !important;
           position: absolute;
-          top: 450px;
-          left: -50px;
+          top: 450px !important;
+          left: -40px !important;
           // margin: auto;
           text-align: center;
 
@@ -946,7 +946,7 @@
             display: inline-flex;
             margin: auto;
             width: 100%;
-            margin-top: 100px !important;
+            margin-top: 30px !important;
             text-align: center;
 
             i {
@@ -975,7 +975,8 @@
                 margin: auto;
                 letter-spacing: 0em;
                 text-align: left;
-                width: 65vw !important;
+                width: 250px !important;
+                max-width: 250px;
                 //styleName: Body;
                 font-family: Rubik;
                 font-style: normal;
@@ -1000,6 +1001,8 @@
                 font-style: normal;
                 font-weight: 700;
                 line-height: 24px;
+                                max-width: 250px;
+
                 width: 65vw;
                 letter-spacing: 0em;
                 text-align: left;
@@ -1027,6 +1030,8 @@
                 font-style: normal;
                 font-weight: 400;
                 width: 65vw;
+                                max-width: 250px;
+
                 line-height: 24px;
                 letter-spacing: 0em;
                 text-align: left;
@@ -1048,6 +1053,7 @@
 
           .countup {
             font-size: 60px;
+            text-align: center !important;
           }
 
           .counter-text-and-button {
@@ -1056,7 +1062,9 @@
 
             > p {
               width: 270px;
+              margin-top: -20px;
               margin-left: -10px !important;
+              text-align: center !important;
             }
             button {
               width: 100% !important;
@@ -1066,7 +1074,8 @@
               border-radius: 8px;
               border: none;
               margin: 10px;
-              margin-left: 0px;
+              margin-left: -105px !important;
+              margin-top:-10px !important;
 
               i {
                 margin-left: 10px;
@@ -1080,7 +1089,7 @@
 }
 
 // iOS styling
-@media (max-width: 800px) {
+@media (max-width: 880px) {
   @media not all and (min-resolution: 0.001dpcm) {
     @supports (-webkit-appearance: none) {
       .service-wrapper1 {
@@ -1156,8 +1165,8 @@
           display: block;
           width: 100%;
           position: absolute;
-          top: 450px;
           left: -50px;
+          top: 0px;
           // margin: auto;
           text-align: center;
 
@@ -1302,10 +1311,10 @@
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 880px) {
   .service-wrapper1 {
     background: white;
-    height: 950px;
+    height: 880px;
     .title {
       position: absolute;
       width: 240px;
@@ -1363,7 +1372,7 @@
       display: block;
       width: 60%;
       position: relative;
-      top: 380px;
+      top: 300px;
       // left: -50px;
       margin: auto;
       text-align: center;
