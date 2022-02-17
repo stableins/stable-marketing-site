@@ -229,7 +229,7 @@
       width: 480px !important;
       bottom: 30px;
       top: 0px;
-      margin-top: 50px !important;
+      margin-top: -100px !important;
       font-family: Rubik;
       font-style: normal;
       line-height: 40px;
@@ -243,10 +243,11 @@
     }
 
     .text {
-      margin-top: 240px;
+      margin-top: 200px;
       // justify-content: center;
       position: absolute;
       color: #303030;
+      max-width: 500px;
       font-size: 16px;
       line-height: 22px;
 
@@ -281,7 +282,7 @@
     .widget-wrapper {
       display: block;
       width: 100%;
-      margin-top: 50px;
+      margin-top: -50px;
       text-align: center;
 
       .mobile-button {
@@ -896,7 +897,8 @@
 
         .text {
           top: 250px !important;
-          margin-top: 230px !important;
+          margin-top: 0px !important;
+          margin-top: 0px !important;
           position: absolute;
           max-width: 350px;
           color: #303030;
@@ -1094,7 +1096,7 @@
     @supports (-webkit-appearance: none) {
       .service-wrapper1 {
         background: white;
-        height: 1040px;
+        min-height: 1000px;
 
         @media not all and (min-resolution: 0.001dpcm) {
           @supports (-webkit-appearance: none) {
@@ -1117,7 +1119,8 @@
           height: 129px;
           left: 0px;
           bottom: 30px;
-          top: -20px;
+          margin-top: 100px;
+          top: 100px !important;
           font-family: Rubik;
           font-style: normal;
           font-weight: normal;
@@ -1130,7 +1133,7 @@
         }
 
         .text {
-          top: 150px !important;
+          top: 370px !important;
           position: absolute;
           color: #303030;
           font-size: 17px;
@@ -1166,7 +1169,8 @@
           width: 100%;
           position: absolute;
           left: -50px;
-          top: 0px;
+          top: 30px;
+          margin-top: 100px;
           // margin: auto;
           text-align: center;
 
@@ -1314,7 +1318,7 @@
 @media (max-width: 880px) {
   .service-wrapper1 {
     background: white;
-    height: 880px;
+    min-height: 940px;
     .title {
       position: absolute;
       width: 240px;
@@ -1340,6 +1344,7 @@
       position: absolute;
       color: #303030;
       font-size: 17px;
+      left: 0;
       // margin-left: -63px;
       line-height: 30px;
     }
@@ -1372,7 +1377,7 @@
       display: block;
       width: 60%;
       position: relative;
-      top: 300px;
+      top: 360px;
       // left: -50px;
       margin: auto;
       text-align: center;
@@ -1961,3 +1966,5 @@
     }
   }
 }
+
+
