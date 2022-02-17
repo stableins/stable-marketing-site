@@ -22,7 +22,7 @@ export default function ServiceSection() {
     <div className="service-section-3-wrapper">
       <Service className="border-top border-default-color-2 bg-default">
         <Service.Shape className="service-shape service-shape--l1"></Service.Shape>
-        <Container>
+        <Container className="container">
           <Slide left>
             <Row className="align-items-end justify-content-center text-start">
               <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">

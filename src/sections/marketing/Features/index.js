@@ -38,7 +38,7 @@ const FeatureSection = ({ ...rest }) => {
         <img src={BackgroundImage} />
         <div className="inner-wrapper1">
           <a className="anchor"></a>
-          <Container>
+          <Container className="container">
             <Slide className="slide" left>
               <Row>
                 <Col xs="auto" className="col-xl-8 col-lg-10">
@@ -57,8 +57,9 @@ const FeatureSection = ({ ...rest }) => {
                             <p className="p-text1">
                               Stable's rideshare insurance works with the
                               rideshare platform's insurance,
-                              <br /> so we only charge you for the times you're
-                              not driving to or with a passenger.
+                              <br />
+                              so we only charge you for the times you're not
+                              driving to or with a passenger.
                             </p>
                           </div>
                         </Feature.Title>
@@ -92,6 +93,7 @@ const FeatureSection = ({ ...rest }) => {
                           className="mb-5"
                           as="h2"
                           fontColor="#fff"
+                          className="features"
                         >
                           <div className="item1">
                             <div className="inner-item-wrapper">
@@ -115,8 +117,8 @@ const FeatureSection = ({ ...rest }) => {
                                   Additional Tools
                                 </div>
                                 <div className="text">
-                                  Additional tools to help you run your rideshare
-                                  business more efficiently.
+                                  Additional tools to help you run your
+                                  rideshare business more efficiently.
                                 </div>
                               </div>
                             </div>
@@ -218,7 +220,12 @@ const FeatureSection = ({ ...rest }) => {
 
                   <div className="right">
                     <Feature.Box mb="35px" mbMD="80px" mbLG="148px">
-                      <Feature.Title className="mb-5" as="h2" fontColor="#fff">
+                      <Feature.Title
+                        className="mb-5"
+                        as="h2"
+                        fontColor="#fff"
+                        className="features"
+                      >
                         <div className="item1">
                           <div className="inner-item-wrapper">
                             <i class="fas fa-route"></i>{" "}
@@ -227,9 +234,8 @@ const FeatureSection = ({ ...rest }) => {
                                 Usage Based Pricing{" "}
                               </div>
                               <div className="text">
-                                Usage based pricing that
-                                only charges you for miles driven off the
-                                carshare platform.
+                                Usage based pricing that only charges you for
+                                miles driven off the carshare platform.
                               </div>
                             </div>
                           </div>
@@ -259,33 +265,33 @@ const FeatureSection = ({ ...rest }) => {
                                 An improved claims experience that helps you
                                 resolve claims faster, available 24/7.
                               </div>
-                                <button
-                                  className="button"
-                                  onClick={() => {
-                                    dispatch({
-                                      type: "FORM::SET_STATUS",
-                                      payload: "",
-                                    })
+                              <button
+                                className="button"
+                                onClick={() => {
+                                  dispatch({
+                                    type: "FORM::SET_STATUS",
+                                    payload: "",
+                                  })
 
-                                    dispatch({
-                                      type: "FORM::SET_EMAIL",
-                                      payload: null,
-                                    })
+                                  dispatch({
+                                    type: "FORM::SET_EMAIL",
+                                    payload: null,
+                                  })
 
-                                    dispatch({
-                                      type: "FORM::SET_DRIVER_REPORT",
-                                      payload: false,
-                                    })
+                                  dispatch({
+                                    type: "FORM::SET_DRIVER_REPORT",
+                                    payload: false,
+                                  })
 
-                                    dispatch({
-                                      type: "FORM::SET_CALENDLY_SCHEDULED",
-                                      payload: false,
-                                    })
-                                    navigate('/join-stable/')
-                                  }}
-                                >
-                                  Get Early Access &nbsp;
-                                </button>
+                                  dispatch({
+                                    type: "FORM::SET_CALENDLY_SCHEDULED",
+                                    payload: false,
+                                  })
+                                  navigate("/join-stable/")
+                                }}
+                              >
+                                Get Early Access &nbsp;
+                              </button>
                             </div>
                           </div>
                         </div>
