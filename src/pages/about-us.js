@@ -34,6 +34,13 @@ export default function AboutUs() {
       <PageWrapper headerConfig={header} innerPage={true}>
         <div className="about-us-wrapper">
           <h1 className="title">About Us</h1>
+          <p>
+            We are rideshare fleet owners, drivers and technologists that wanted
+            a better insurance experience than what was available in the market.
+            After searching for one with no success, we decided to create our
+            own platform. At Stable, our mission is create all the tools you
+            need to more efficiently and profitably run your mobility business.
+          </p>
           <div className="card-wrapper">
             <Card className="card">
               <Card.Img variant="top" src={Doug} className="card-image" />
