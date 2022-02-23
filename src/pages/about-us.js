@@ -6,8 +6,7 @@ import John from "../../static/john.png"
 import Dylan from "../../static/dylan.png"
 import Evan from "../../static/evan.png"
 import Stephen from "../../static/stephen.png"
-
-import FooterSection from "~sections/marketing/FooterOne"
+import Footer from "~sections/marketing/FooterOne"
 import { PageWrapper } from "~components/Core"
 import HeaderButton from "~sections/marketing/Header"
 import "./about-us.scss"
@@ -123,6 +122,7 @@ export default function AboutUs() {
           </div>
         </div>
       </PageWrapper>
+      <Footer />
     </>
   )
 }
