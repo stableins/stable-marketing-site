@@ -67,7 +67,7 @@ export default function ServiceSection() {
             <PulseLoader color={color} loading={loading} size={50} />
           </div>
           <Service.Shape className="service-shape service-shape--l1"></Service.Shape>
-          <Container>
+          <Container classNamer="container">
             <Row className="align-items-end justify-content-center text-start">
               <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
                 <Slide down>
