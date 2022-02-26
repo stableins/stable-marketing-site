@@ -3,7 +3,7 @@
     background-color: #475ba1;
   }
   .value-index-wrapper {
-    height: 630px;
+    height: 1000px;
 
     .loader {
       position: absolute;
@@ -25,7 +25,7 @@
     }
 
     .inner-wrapper {
-      height: 600px;
+      height: 1350px;
       .title {
         width: 490px;
         height: 129px;
@@ -48,9 +48,32 @@
           .text {
             .p-text1 {
               position: absolute;
-              bottom: -100px;
+              bottom: 45px;
               width: 600px;
-              left: 0px;
+              left: 640px;
+              font-family: Rubik;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 20px;
+              line-height: 30px;
+
+              .bold {
+                font-size: 18px;
+                line-height: 28px;
+                font-style: normal;
+                font-weight: 700;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #0a3774;
+              }
+            }
+
+            .p-text2 {
+              position: absolute;
+              bottom: -195px;
+              width: 640px;
+              color: #475ba1;
+              left: 640px;
               font-family: Rubik;
               font-style: normal;
               font-weight: normal;
@@ -67,6 +90,14 @@
                 color: #0a3774;
               }
             }
+          }
+
+          .vimeo-player {
+            position: absolute;
+            left: 640px;
+            top: 320px;
+            width: 596px;
+            height: 360px;
           }
         }
 
@@ -179,8 +210,8 @@
 
       .form-wrapper {
         position: absolute;
-        bottom: -180px;
-        left: 0px;
+        bottom: -25px;
+        left: 640px;
         display: inline-flex;
         padding-top: 20px;
 
@@ -242,7 +273,8 @@
     }
     .inner-wrapper {
       // display: inline-flex;
-      height: 80px;
+      height: 1170px;
+      
       .title {
         margin-top: -7px;
         font-family: Rubik;
@@ -273,7 +305,7 @@
 
         .left {
           width: 100%;
-          margin-top: 500px;
+          margin-top: 0px;
 
           .text {
             width: 100%;
@@ -300,8 +332,34 @@
 
             .p-text2 {
               width: 100%;
-              margin-top: 230px;
+              margin-top: 690px;
+              position: absolute;
+              font-size: 18px;
+              font-family: Rubik;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 16px;
+              color: #475ba1;
+              line-height: 22px;
+
+              .bold {
+                font-style: normal;
+                font-weight: 700;
+                line-height: 22px;
+                letter-spacing: 0em;
+                text-align: left;
+                display: inline-block;
+
+                color: #0a3774;
+              }
             }
+          }
+          .vimeo-player {
+            position: absolute;
+            // left: 640px;
+            top: 770px;
+            width: 100%;
+            height: 360px;
           }
         }
 
@@ -324,7 +382,7 @@
                 padding-right: 50px;
                 margin-top: -110px;
                 margin-left: -90px;
-                position: absolute;
+                // position: absolute;
               }
 
               .text-wrapper {
@@ -396,20 +454,20 @@
       }
       .image {
         text-align: center;
-        width: 33%;
-        left: 20px;
+        // width: 33%;
+        left: 10px;
         margin: auto;
         img {
-          width: 230px;
+          width: 331px;
           position: absolute;
-          margin-top: -310px;
+          margin-top: -150px;
         }
       }
 
       .form-wrapper {
-        width: 100%;
-        position: absolute;
-        margin-top: -300px;
+        // position: absolute;
+        top: -40px;
+        margin-top: 500px;
         display: block;
         padding-top: 20px;
 
@@ -421,7 +479,7 @@
           border-radius: 8px;
           border: none;
           // bottom: 0px;
-          top: 10px;
+          top: 190px;
           // left : 350px;
         }
       }
@@ -436,7 +494,7 @@
       .form-control {
         height: 50px;
         border-radius: 8px;
-        top: 180px;
+        top: 130px;
         color: #92afd6;
 
         border: 1px solid black;
@@ -1168,11 +1226,11 @@
   .value-index-wrapper {
     .image {
       position: absolute;
-      left: 900px;
-      top: -215px;
+      left: 20px;
+      top: -20px;
 
       img {
-        width: 240px;
+        width: 451px;
       }
     }
   }
