@@ -203,14 +203,14 @@
           }
         }
       }
-       .invalid-email {
-      font-size: 17px;
-      margin-top: -18px;
-      font-weight: bold;
-      letter-spacing: normal;
-      color: #ffae13;
-      position: absolute;
-    }
+      .invalid-email {
+        font-size: 17px;
+        margin-top: -18px;
+        font-weight: bold;
+        letter-spacing: normal;
+        color: #ffae13;
+        position: absolute;
+      }
       .form-control {
         width: 570px !important;
         border-radius: 8px;
@@ -242,12 +242,7 @@
     }
     .inner-wrapper {
       // display: inline-flex;
-<<<<<<< HEAD
-      height: 1170px;
-      
-=======
-      height: 850px;
->>>>>>> parent of ed52127 (slide 2 redesign init)
+      height: 80px;
       .title {
         margin-top: -7px;
         font-family: Rubik;
@@ -298,7 +293,6 @@
                 letter-spacing: 0em;
                 text-align: left;
                 display: inline-block;
-
                 color: #0a3774;
               }
             }
@@ -364,7 +358,6 @@
           }
         }
       }
-      
 
       .text {
         > p {
@@ -413,8 +406,9 @@
       }
 
       .form-wrapper {
-        // position: absolute;
-        top: 100px;
+        width: 100%;
+        position: absolute;
+        margin-top: -300px;
         display: block;
         padding-top: 20px;
 
@@ -426,18 +420,18 @@
           border-radius: 8px;
           border: none;
           // bottom: 0px;
-          top: 240px;
+          top: 10px;
           // left : 350px;
         }
       }
       .invalid-email {
-      font-size: 17px;
-      margin-top: 280px;
-      font-weight: bold;
-      letter-spacing: normal;
-      color: #ffae13;
-      position: absolute;
-    }
+        font-size: 17px;
+        margin-top: 280px;
+        font-weight: bold;
+        letter-spacing: normal;
+        color: #ffae13;
+        position: absolute;
+      }
       .form-control {
         height: 50px;
         border-radius: 8px;
@@ -1183,18 +1177,13 @@
   }
 }
 
-<<<<<<< HEAD
 @media (max-width: 500px) {
-=======
-
-@media (max-width: 321px) {
->>>>>>> parent of ed52127 (slide 2 redesign init)
   .value-index-wrapper {
     .loader {
       position: absolute;
       top: 185%;
       left: 50%;
-      margin-top: -50px;  
+      margin-top: -50px;
       margin-left: -100px;
       z-index: 1;
     }
@@ -1400,7 +1389,6 @@
       }
     }
   }
-<<<<<<< HEAD
 }
 
 /* ----------- iPad Pro ----------- */
@@ -1651,6 +1639,3 @@
   and (-webkit-min-device-pixel-ratio: 1.5) {
 
 }
-=======
-}
->>>>>>> parent of ed52127 (slide 2 redesign init)
