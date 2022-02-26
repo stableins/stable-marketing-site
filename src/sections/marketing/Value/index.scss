@@ -203,14 +203,14 @@
           }
         }
       }
-       .invalid-email {
-      font-size: 17px;
-      margin-top: -18px;
-      font-weight: bold;
-      letter-spacing: normal;
-      color: #ffae13;
-      position: absolute;
-    }
+      .invalid-email {
+        font-size: 17px;
+        margin-top: -18px;
+        font-weight: bold;
+        letter-spacing: normal;
+        color: #ffae13;
+        position: absolute;
+      }
       .form-control {
         width: 570px !important;
         border-radius: 8px;
@@ -293,7 +293,6 @@
                 letter-spacing: 0em;
                 text-align: left;
                 display: inline-block;
-
                 color: #0a3774;
               }
             }
@@ -359,7 +358,6 @@
           }
         }
       }
-      
 
       .text {
         > p {
@@ -426,13 +424,13 @@
         }
       }
       .invalid-email {
-      font-size: 17px;
-      margin-top: 280px;
-      font-weight: bold;
-      letter-spacing: normal;
-      color: #ffae13;
-      position: absolute;
-    }
+        font-size: 17px;
+        margin-top: 280px;
+        font-weight: bold;
+        letter-spacing: normal;
+        color: #ffae13;
+        position: absolute;
+      }
       .form-control {
         height: 50px;
         border-radius: 8px;
@@ -474,14 +472,13 @@
   }
 }
 
-
 @media (max-width: 321px) {
   .value-index-wrapper {
     .loader {
       position: absolute;
       top: 185%;
       left: 50%;
-      margin-top: -50px;  
+      margin-top: -50px;
       margin-left: -100px;
       z-index: 1;
     }
