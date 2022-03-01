@@ -202,12 +202,11 @@
     .contact-wrapper {
       margin-top: 30px;
 
-
       .item1 {
         display: inline-flex;
         width: 310px;
         margin-left: -510px !important;
-        
+
         text-align: left;
 
         i {
@@ -275,7 +274,7 @@
       width: 100%;
       margin-top: 45px;
       font-size: 35px;
-        margin-left: -500px;
+      margin-left: -500px;
 
       p {
         font-size: 15px;
@@ -289,7 +288,7 @@
           width: 100%;
           margin-top: 40px;
           font-size: 35px;
-        margin-left: -200px !important;
+          margin-left: -200px !important;
 
           p {
             font-size: 15px;
@@ -327,7 +326,7 @@
         display: inline-flex;
         width: 310px;
         margin-left: -550px;
-        
+
         text-align: left;
 
         i {
@@ -395,7 +394,7 @@
       width: 100%;
       margin-top: 45px;
       font-size: 35px;
-        margin-left: -500px;
+      margin-left: -500px;
 
       p {
         font-size: 15px;
@@ -409,7 +408,7 @@
           width: 100%;
           margin-top: 40px;
           font-size: 35px;
-        margin-left: -230px;
+          margin-left: -230px;
 
           p {
             font-size: 15px;
@@ -544,7 +543,6 @@
   }
 }
 
-
 .terms-wrapper {
   padding: 30px;
 }
@@ -553,14 +551,10 @@
   padding: 30px;
 }
 
-
 /* ----------- iPad Pro ----------- */
 /* Portrait and Landscape */
-@media only screen 
-  and (min-width: 1024px) 
-  and (max-height: 1366px) 
-  and (-webkit-min-device-pixel-ratio: 1.5) {
-    .footer-wrapper {
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (max-width: 1300px) and (-webkit-min-device-pixel-ratio: 1.5) {
+  .footer-wrapper {
     height: 442px;
 
     .container {
@@ -574,7 +568,7 @@
         display: inline-flex;
         width: 310px;
         margin-left: -680px;
-        
+
         text-align: left;
 
         i {
@@ -642,7 +636,7 @@
       width: 100%;
       margin-top: 45px;
       font-size: 35px;
-        margin-left: -327px !important;
+      margin-left: -327px !important;
 
       p {
         font-size: 15px;
@@ -656,7 +650,7 @@
           width: 100%;
           margin-top: 40px;
           font-size: 35px;
-        margin-left: -230px;
+          margin-left: -230px;
 
           p {
             font-size: 15px;
@@ -679,18 +673,9 @@
 }
 
 /* Portrait */
-@media only screen 
-  and (min-width: 1024px) 
-  and (max-height: 1366px) 
-  and (orientation: portrait) 
-  and (-webkit-min-device-pixel-ratio: 1.5) {
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
 }
 
 /* Landscape */
-@media only screen 
-  and (min-width: 1024px) 
-  and (max-height: 1366px) 
-  and (orientation: landscape) 
-  and (-webkit-min-device-pixel-ratio: 1.5) {
-
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
 }
