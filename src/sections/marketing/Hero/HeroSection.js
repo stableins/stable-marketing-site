@@ -147,14 +147,7 @@ export default function HeroSection() {
           payload: false,
         })
 
-        if (response.data.status !== "Email Address Collected") {
-          setShowExistingEmailModal(true)
-        } else if (!response.data.confirmed) {
-          setShowShowNewUserModal(true)
-          // navigate("/join-stable/")
-        } else {
-          navigate("/join-stable/")
-        }
+        navigate("/join-stable/")
       } catch (e) {
         alert("Request failed please try again")
         setLoading(false)
