@@ -147,7 +147,11 @@ export default function HeroSection() {
           payload: false,
         })
 
-        navigate("/join-stable/")
+        if (response.data.status !== "") {
+          setShowExistingEmailModal(true)
+        } else {
+          navigate("/join-stable/")
+        }
       } catch (e) {
         alert("Request failed please try again")
         setLoading(false)
