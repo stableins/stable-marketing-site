@@ -147,7 +147,7 @@ export default function HeroSection() {
           payload: false,
         })
 
-        if (response.data.confirmed !== null {
+        if (response.data.confirmed !== null) {
           setShowExistingEmailModal(true)
         } else {
           navigate("/join-stable/")
