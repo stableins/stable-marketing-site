@@ -1,4 +1,4 @@
-@media (min-width: 500px) {
+@media (min-width: 1025px) {
   .menu-wrapper {
     .logo {
       display: none;
@@ -9,7 +9,7 @@
     }
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 1024px) {
   .menu-wrapper {
     .divider {
       width: 351px;

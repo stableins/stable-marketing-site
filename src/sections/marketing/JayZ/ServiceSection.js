@@ -51,7 +51,7 @@ export default function ServiceSection() {
   return (
     <div className="jayz-wrapper">
       <Service className="border-top border-default-color-2 bg-default">
-        <Container>
+        <Container className="container">
           <Slide left>
             <Row className="align-items-end justify-content-center text-start">
               <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
@@ -63,7 +63,7 @@ export default function ServiceSection() {
               </Col>
               <Col xs="12" className="col-lg-5 col-md-12 col-xs-10">
                 {/* <CounterBlock /> */}
-                <div className="quote-wrapper">
+                <div className="title">
                   <p>
                     The tools <span>YOU</span> need to run your business.{" "}
                   </p>

@@ -5,6 +5,8 @@ public
 .cache
 trash
 .vscode
+.DS_Store
+static/.DS_Store
 
 # Local Netlify folder
 .netlify

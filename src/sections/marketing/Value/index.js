@@ -13,7 +13,7 @@ import { Images } from "~data"
 import { Redirect, Link, redirectTo } from "@reach/router"
 import { navigate } from "gatsby"
 import TabContentWidget from "./Component/TabContentWidget"
-import DriverReport from "../../../assets/image/logo/driver-report.png"
+import DriverReport from "../../../../static/app_image.png"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
 import TabNavWidget from "./Component/TabNavWidget"
 import Slide from "react-reveal/Slide"
@@ -109,7 +109,7 @@ const FeatureSection = ({ ...rest }) => {
       <a name="driver-report" className="anchor3"></a>
       <Feature className="bg-blue-ribbon">
         <div className="inner-wrapper">
-          <Container>
+          <Container className="container">
             <Slide left>
               <Row>
                 <Col xs="auto" className="col-xl-8 col-lg-10">
@@ -133,8 +133,26 @@ const FeatureSection = ({ ...rest }) => {
                               much you’re earning and how efficient you are
                               across platforms.
                             </p>
+                            <p className="p-text2">
+                              {" "}
+                              Check out this quick video from our good friend{" "}
+                              <i className="bold">
+                                {" "}
+                                Harry, founder of The Rideshare Guy.
+                              </i>{" "}
+                              He'll fill you in on the need for tools like our
+                              driver report to run your rideshare business and
+                              why we connect to your platform accounts.
+                            </p>
                           </div>
                         </Feature.Title>
+                        <iframe
+                          className="vimeo-player"
+                          title="vimeo-player"
+                          src="https://player.vimeo.com/video/681912242?h=0aa7b47345"
+                          frameborder="0"
+                          allowfullscreen
+                        ></iframe>
                       </Feature.Box>
                       <Feature.Box mb="35px" mbMD="80px" mbLG="148px">
                         <div className="right">
