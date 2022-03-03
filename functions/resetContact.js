@@ -5,7 +5,7 @@ exports.handler = async (event, context, callback) => {
   const { email } = JSON.parse(event.body)
 
   try {
-    const status = "Email Address Collected"
+    const status = "Email Address Only"
 
     const uri = process.env.MONGO_URI.replace(
       "<password>",

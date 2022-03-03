@@ -109,7 +109,7 @@ export default function individualFleetForm() {
       setPasswordMismatch(true)
     }
     try {
-      if (dropdownInputValue1 === "Rideshare Driver") {
+      if (dropdownInputValue1 === "Rideshare Owner Operator") {
         dispatch({
           type: "FORM::SET_STATUS",
           payload: "emailZipAndNameAndEligible",
@@ -180,7 +180,7 @@ export default function individualFleetForm() {
           let userType
 
           if (driverReport) {
-            userType = "Rideshare Driver"
+            userType = "Rideshare Owner Operator"
           } else if (dropdownInputValue1 && dropdownInputValue1 !== "") {
             userType = dropdownInputValue1
           } else if (dropdownInputValue2 && dropdownInputValue2 !== "") {
@@ -413,7 +413,7 @@ export default function individualFleetForm() {
                             setDropdownInputValue1("")
                           }
                           if (e.target.value === "1") {
-                            setDropdownInputValue1("Rideshare Driver")
+                            setDropdownInputValue1("Rideshare Owner Operator")
                             setDropdownInputValue2("")
                           }
                           if (e.target.value === "2") {
@@ -571,7 +571,7 @@ export default function individualFleetForm() {
             </div>
           )}
 
-          {status === "Email Address Collected" && !driverReport && (
+          {status === "Email Address Only" && !driverReport && (
             <div className="join-stable-wrapper">
               <div className="form">
                 <Form onSubmit={handleAdditionalInfoSubmit}>
@@ -651,7 +651,7 @@ export default function individualFleetForm() {
                             setDropdownInputValue1("")
                           }
                           if (e.target.value === "1") {
-                            setDropdownInputValue1("Rideshare Driver")
+                            setDropdownInputValue1("Rideshare Owner Operator")
                             setDropdownInputValue2("")
                           }
                           if (e.target.value === "2") {
@@ -793,7 +793,7 @@ export default function individualFleetForm() {
             </div>
           )}
 
-          {status === "Email Address Collected" && driverReport && (
+          {status === "Email Address Only" && driverReport && (
             <div className="join-stable-wrapper">
               <div className="form">
                 <Form onSubmit={handleAdditionalInfoSubmit}>
@@ -879,8 +879,8 @@ export default function individualFleetForm() {
             </div>
           )}
 
-          {status === "Email Address & Additional Info" &&
-            userType === "Rideshare Driver" && (
+          {status === "Form Complete" &&
+            userType === "Rideshare Owner Operator" && (
               <>
                 <div className="join-stable-wrapper">
                   <div className="form">
@@ -957,8 +957,8 @@ export default function individualFleetForm() {
               </>
             )}
 
-          {status === "Email Address & Additional Info" &&
-            userType !== "Rideshare Driver" &&
+          {status === "Form Complete" &&
+            userType !== "Rideshare Owner Operator" &&
             !calendlyScheduled && (
               <>
                 <div className="join-stable-wrapper">
@@ -1103,7 +1103,7 @@ export default function individualFleetForm() {
             </div>
           )}
 
-          {status === "Email Address & Additional Info" && calendlyScheduled && (
+          {status === "Form Complete" && calendlyScheduled && (
             <>
               <div className="join-stable-wrapper">
                 <div className="form">

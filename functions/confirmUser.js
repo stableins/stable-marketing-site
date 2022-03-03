@@ -85,7 +85,7 @@ exports.handler = async (event, context, callback) => {
     )
 
     // if not individual rideshare driver, send to Zoho
-    if (user.userType && user.userType !== "Rideshare Driver" && user.name) {
+    if (user.userType && user.userType !== "Rideshare Owner Operator" && user.name) {
       const form = new FormData()
       form.append("refresh_token", process.env.ZOHO_REFRESH_TOKEN)
       form.append("client_id", process.env.ZOHO_CLIENT_ID)

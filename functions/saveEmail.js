@@ -10,7 +10,7 @@ const client = new MongoClient(uri)
 
 exports.handler = async (event, context, callback) => {
   const { email } = JSON.parse(event.body)
-  let status = "Email Address Collected"
+  let status = "Email Address Only"
   let statusCode = 200
   let userType
   let confirmed = false
