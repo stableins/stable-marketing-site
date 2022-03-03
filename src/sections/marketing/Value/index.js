@@ -88,9 +88,6 @@ const FeatureSection = ({ ...rest }) => {
 
         if (response.data.status !== "Email Address Collected") {
           setShowExistingEmailModal(true)
-        } else if (!response.data.confirmed) {
-          setShowNewUserModal(true)
-          // navigate("/join-stable/")
         } else {
           navigate("/join-stable/")
         }
