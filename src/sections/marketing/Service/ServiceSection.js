@@ -46,16 +46,7 @@ export default function ServiceSection() {
   return (
     <div className="service-wrapper1">
       <Service className="border-top border-default-color-2 bg-default">
-        {/* <Service.Shape className="service-shape service-shape--l1">
-          <Img
-            src="../../../assets/image/marketing/services-shape-l1.png"
-            alt="shape dot"
-            layout="fullWidth"
-            placeholder="blurred"
-          />
-        </Service.Shape> */}
-        <Container>
-          {/* Section Title */}
+        <Container className="container">
           <Slide left>
             <Row className="align-items-end justify-content-center text-start">
               <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
@@ -91,32 +82,32 @@ export default function ServiceSection() {
                             Vehicle owners and counting have joined the Stable
                             community. Will you?
                           </p>
-                            <button
-                              onClick={() => {
-                                dispatch({
-                                  type: "FORM::SET_STATUS",
-                                  payload: "",
-                                })
+                          <button
+                            onClick={() => {
+                              dispatch({
+                                type: "FORM::SET_STATUS",
+                                payload: "",
+                              })
 
-                                dispatch({
-                                  type: "FORM::SET_EMAIL",
-                                  payload: null,
-                                })
+                              dispatch({
+                                type: "FORM::SET_EMAIL",
+                                payload: null,
+                              })
 
-                                dispatch({
-                                  type: "FORM::SET_DRIVER_REPORT",
-                                  payload: false,
-                                })
+                              dispatch({
+                                type: "FORM::SET_DRIVER_REPORT",
+                                payload: false,
+                              })
 
-                                dispatch({
-                                  type: "FORM::SET_CALENDLY_SCHEDULED",
-                                  payload: false,
-                                })
-                              navigate('/join-stable/')
-                              }}
-                            >
-                              Join Now
-                            </button>
+                              dispatch({
+                                type: "FORM::SET_CALENDLY_SCHEDULED",
+                                payload: false,
+                              })
+                              navigate("/join-stable/")
+                            }}
+                          >
+                            Join Now
+                          </button>
                         </div>
                       </>
                     )}
