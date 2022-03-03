@@ -14,7 +14,7 @@ exports.handler = async (event, context, callback) => {
   const { email, zipcode, name, userType } = JSON.parse(event.body)
   const nameSplit = name.split(" ")
   let statusCode = 200
-  let status = "Email Address & Additional Info"
+  let status = "Form Complete"
   let confirmed = false
 
   const zip = zipcodes.lookup(zipcode)
@@ -71,7 +71,7 @@ exports.handler = async (event, context, callback) => {
         }
       )
     } else {
-      if (user.status !== "Email Address Collected") {
+      if (user.status !== "Email Address Only") {
         status = user.status
       }
       confirmed = user.confirmed
@@ -117,7 +117,7 @@ exports.handler = async (event, context, callback) => {
 
         // TODO: if not rideshare driver, send updated info to Zoho
         if (
-          userType !== "Rideshare Driver"
+          userType !== "Rideshare Owner Operator"
         ) {
           const form = new FormData()
           form.append("refresh_token", process.env.ZOHO_REFRESH_TOKEN)

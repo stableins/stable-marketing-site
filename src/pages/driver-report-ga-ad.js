@@ -85,7 +85,7 @@ export default function individualFleetForm() {
     SessionInfoCapture({ email: emailInputValue })
 
     try {
-      const userType = "Rideshare Driver"
+      const userType = "Rideshare Owner Operator"
 
       const response = await axios.post(
         "/.netlify/functions/saveFullContactInfo",
@@ -333,8 +333,8 @@ export default function individualFleetForm() {
             </div>
           )}
 
-          {status === "Email Address & Additional Info" &&
-            userType === "Rideshare Driver" && (
+          {status === "Form Complete" &&
+            userType === "Rideshare Owner Operator" && (
               <>
                 <div className="join-stable-wrapper">
                   <div className="form">
