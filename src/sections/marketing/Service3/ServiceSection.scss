@@ -517,7 +517,12 @@
 @media (max-width: 600px) {
   .service-section-3-wrapper {
     text-align: center;
-    min-height: 505px;
+    min-height: 455px;
+
+    .container {
+      max-width: 97%;
+    }
+
     .title {
       color: #002e6d;
       text-align: left;

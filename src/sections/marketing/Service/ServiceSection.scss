@@ -862,6 +862,10 @@
         background: white;
         height: 1000px !important;
 
+        .container {
+          max-width: 97%;
+        }
+
         @media not all and (min-resolution: 0.001dpcm) {
           @supports (-webkit-appearance: none) {
             .title {
