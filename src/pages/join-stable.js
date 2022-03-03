@@ -219,9 +219,9 @@ export default function individualFleetForm() {
             payload: response.data.confirmed,
           })
 
-          if (response.data.confirmed === false && emailInputValue !== "") {
-            setShowNewUserModal(true)
-          }
+          // if (response.data.confirmed === false && emailInputValue !== "") {
+          //   // setShowNewUserModal(true)
+          // }
         } catch (e) {
           console.log(e)
           setLoading(false)
