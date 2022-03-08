@@ -86,7 +86,7 @@ const FeatureSection = ({ ...rest }) => {
           payload: false,
         })
 
-        if (response.data.status !== "Email Address Collected") {
+        if (response.data.status !== "Email Address Only") {
           setShowExistingEmailModal(true)
         } else {
           navigate("/join-stable/")
