@@ -132,6 +132,8 @@ exports.handler = async (event, context, callback) => {
             }
           )
 
+          console.log(response);
+
           const createResponse = await axios.post(
             "https://www.zohoapis.com/crm/v2/contacts/upsert",
             {
@@ -155,6 +157,7 @@ exports.handler = async (event, context, callback) => {
               },
             }
           )
+          console.log(createResponse);
         }
       }
     }
