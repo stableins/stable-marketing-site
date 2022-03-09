@@ -75,8 +75,6 @@ export default function individualFleetForm() {
   const [color, setColor] = useState("#3b358a;")
   const [invalidEmail, setInvalidEmail] = useState(true)
 
-  console.log(status)
-
   useEffect(() => {
     setHasMounted(true)
     setInvalidEmail(false)
