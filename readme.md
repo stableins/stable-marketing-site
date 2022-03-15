@@ -17,13 +17,13 @@ Open your browser and visit  [http://localhost:8000](http://localhost:8000/).
 ### CLI Commands 
 Some useful commands to work with the project.
 
-1.  `yarn start` to Start development server at  [http://localhost:8000](http://localhost:8000/)
+1.  `yarn start` to start development server at  [http://localhost:8000](http://localhost:8000/)
     
-2.  `yarn clean` for Cleaning / to clean .cache, public directory etc.
+2.  `yarn clean`  to wipe out the cache (`.cache` folder) and public directories
     
-3.  `yarn build` for Generating production build
+3.  `yarn build` for generating a production build
     
-4.  `yarn serve` To serve build files at  [http://localhost:9000](http://localhost:9000/)
+4.  `yarn serve` to serve build files at  [http://localhost:9000](http://localhost:9000/)
 
 ### Deployment 
 
