@@ -1,12 +1,14 @@
-## Stable Marketing Site Readme 
+# Stable Marketing Site  
 
-Move into project root directory and run command below to install dependencies:
+The Stable marketing site is a static site built in GatsbyJS and deployed to Netlify.
+
+### Getting Started
+Move into project root directory and run the below command to install all required dependencies:
 
     yarn
 
-After the installation, you should have a folder named /node_modules in the project root directory..
 
-### How To Run Development Server To start our development server run command below:
+### To start the development server run the below command:
 
     yarn start 
 
@@ -25,8 +27,15 @@ Some useful commands to work with the project.
 
 ### Deployment 
 
-Creating a pull request to the master branch automatically deploys a preview build on Netlify that can be used for testing. 
+Creating a pull request to the master branch automatically deploys a preview build on Netlify that can be used for testing. Merging pull requests to the master branch builds a new production version of the site. 
 
-You can access our Netlify account here: https://app.netlify.com/teams/stableinsurance/overview. 
+You can view builds on our Netlify account here: https://app.netlify.com/teams/stableinsurance/overview. 
 
-Merging pull request to main builds a new production version of the site. Additional documentation for Netlify's continues deployment configuarion can be found here: https://docs.netlify.com/configurebuilds/overview/
+Additional documentation for Netlify's continues deployment configuarion can be found here: https://docs.netlify.com/configurebuilds/overview/
+
+### API Calls
+
+The site uses serverless functions called [Netlify functions](https://docs.netlify.com/functions/overview/) to make front end api calls to in house and 3rd party APIs. API keys are stored as environment variables within the Netlify dashboard. Netlify functions added to the `/functions` folder in the project root directory are automatically integrated on deployment.  
+
+Documention for Netlify functions can be found here: https://docs.netlify.com/functions/overview/
+
