@@ -268,7 +268,7 @@ export default function HeroSection() {
                 xs={12}
                 className="col-xl-6 col-lg-5 col-md-10 order-1 order-lg-2 position-static"
               >
-                <img src={HeroImage} className="image" />
+                <img src={HeroImage} className="image" alt="Stable Insurance" />
               </Col>
               {/*/ .Welcome Image Area */}
             </Row>

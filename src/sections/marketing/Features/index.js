@@ -97,7 +97,10 @@ const FeatureSection = ({ ...rest }) => {
                         >
                           <div className="item1">
                             <div className="inner-item-wrapper">
-                              <i class="fas fa-user"></i>
+                              <span
+                                class="fas fa-user"
+                                aria-hidden="true"
+                              ></span>
                               <div className="text-wrapper">
                                 <div className="item-title">
                                   User Based Pricing
@@ -111,7 +114,10 @@ const FeatureSection = ({ ...rest }) => {
                           </div>
                           <div className="item2">
                             <div className="inner-item-wrapper">
-                              <i class="fas fa-tools"></i>
+                              <span
+                                class="fas fa-tools"
+                                aria-hidden="true"
+                              ></span>
                               <div className="text-wrapper">
                                 <div className="item-title">
                                   Additional Tools
@@ -125,10 +131,11 @@ const FeatureSection = ({ ...rest }) => {
                           </div>
                           <div className="item3">
                             <div className="inner-item-wrapper">
-                              <i
+                              <span
                                 style={{ fontSize: ".8em" }}
                                 class="fas fa-car-crash"
-                              ></i>
+                                aria-hidden="true"
+                              ></span>
 
                               <div className="text-wrapper">
                                 <div className="item-title">
@@ -228,7 +235,10 @@ const FeatureSection = ({ ...rest }) => {
                       >
                         <div className="item1">
                           <div className="inner-item-wrapper">
-                            <i class="fas fa-route"></i>{" "}
+                            <span
+                              class="fas fa-route"
+                              aria-hidden="true"
+                            ></span>{" "}
                             <div className="text-wrapper">
                               <div className="item-title">
                                 Usage Based Pricing{" "}
@@ -242,7 +252,10 @@ const FeatureSection = ({ ...rest }) => {
                         </div>
                         <div className="item2">
                           <div className="inner-item-wrapper">
-                            <i class="fas fa-tools"></i>
+                            <span
+                              class="fas fa-tools"
+                              aria-hidden="true"
+                            ></span>
                             <div className="text-wrapper">
                               <div className="item-title">Additional Tools</div>
                               <div className="text">
@@ -254,10 +267,11 @@ const FeatureSection = ({ ...rest }) => {
                         </div>
                         <div className="item3">
                           <div className="inner-item-wrapper">
-                            <i
+                            <span
                               style={{ fontSize: ".8em" }}
                               class="fas fa-car-crash"
-                            ></i>
+                              aria-hidden="true"
+                            ></span>
 
                             <div className="text-wrapper">
                               <div className="item-title">Improved Claims</div>

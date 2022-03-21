@@ -27,6 +27,12 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-html-attributes",
+      options: {
+        lang: "en",
+      },
+    },
+    {
       resolve: `gatsby-plugin-clarity`,
       options: {
         clarity_project_id: "aaujprt08a",

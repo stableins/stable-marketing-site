@@ -103,7 +103,7 @@ const SiteNavbar = ({ buttonBlock, darkLogo, customLogo, defaultLogo }) => {
                 ) : (
                   <img
                     src={darkLogo ? siteBrandDark : siteBrandLight}
-                    alt="site-brand"
+                    alt="Stable Insurance"
                     width={130}
                   />
                 )}

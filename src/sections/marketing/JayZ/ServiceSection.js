@@ -57,7 +57,10 @@ export default function ServiceSection() {
               <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
                 <Service.Title as="h2" mb="0" style={{ fontSize: "50px" }}>
                   <div className="image">
-                    <img src={Image} />
+                    <img
+                      src={Image}
+                      alt="Stable tools, operations, banking, lending, community, taxes and legal, insurance, benefits"
+                    />
                   </div>
                 </Service.Title>
               </Col>

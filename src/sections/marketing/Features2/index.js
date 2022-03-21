@@ -90,7 +90,7 @@ const FeatureSection = ({ ...rest }) => {
                         >
                           <div className="item-wrapper">
                             <div className="inner-item-wrapper">
-                              <i class="fas fa-user"></i>
+                              <span class="fas fa-user"></span>
                               <div className="text-wrapper">
                                 <div className="item-title">
                                   User Based Pricing
@@ -104,7 +104,7 @@ const FeatureSection = ({ ...rest }) => {
                           </div>
                           <div className="item-wrapper">
                             <div className="inner-item-wrapper">
-                              <i class="fas fa-tools"></i>
+                              <span class="fas fa-tools"></span>
                               <div className="text-wrapper">
                                 <div className="item-title">
                                   Additional Tools
@@ -118,10 +118,10 @@ const FeatureSection = ({ ...rest }) => {
                           </div>
                           <div className="item-wrapper">
                             <div className="inner-item-wrapper">
-                              <i
+                              <span
                                 style={{ fontSize: ".8em" }}
                                 class="fas fa-car-crash"
-                              ></i>
+                              ></span>
 
                               <div className="text-wrapper">
                                 <div className="item-title">
@@ -153,7 +153,7 @@ const FeatureSection = ({ ...rest }) => {
       >
         <Modal.Header>
           <Modal.Title id="example-custom-modal-styling-title">
-            <img src={StableLogo} width={150} />
+            <spanmg src={StableLogo} width={150} />
           </Modal.Title>
         </Modal.Header>
         <div style={{ padding: "20px" }}>
