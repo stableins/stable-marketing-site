@@ -108,7 +108,7 @@ export default function ServiceSection() {
                         controlId="formBasicPassword"
                       >
                         {" "}
-                        <Form.Label>Message:</Form.Label>
+                        <Form.Label htmlFor="comment">Message:</Form.Label>
                         <textarea
                           class="form-control"
                           onChange={e => setMessageInputValue(e.target.value)}
