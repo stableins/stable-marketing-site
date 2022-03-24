@@ -14,7 +14,6 @@
     height: 900px;
     background: #ebeeff;
     margin-top: 20px;
-    
 
     .form {
       width: 45%;
@@ -23,15 +22,14 @@
       margin-top: 90px;
       color: #92afd6;
 
-
-    .invalid-email {
-      font-size: 17px;
-      margin-top: -20px;
-      margin-left: 0px;
-      font-weight: bold;
-      color: #ffae13;
-      // position: absolute;
-    }
+      .invalid-email {
+        font-size: 17px;
+        margin-top: -20px;
+        margin-left: 0px;
+        font-weight: bold;
+        color: #ffae13;
+        // position: absolute;
+      }
 
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {
@@ -46,14 +44,75 @@
         color: #92afd6;
       }
 
+      .mb-9 {
+        margin-top: -30px;
+      }
+
       .input {
         width: 335px;
-        margin: auto;
+        margin-top: 40px;
         size: 18px;
         border-radius: 8px;
         padding: 0.7rem 0.9rem;
         color: #92afd6;
-        border: 1px solid #92AFD6;
+        border: 1px solid #92afd6;
+      }
+
+      .label1 {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: #002e6d;
+        margin-top: -27px;
+        margin-left: -165px;
+        position: absolute;
+      }
+      .label2 {
+       font-family: "Rubik";
+        font-style: normal;
+
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: #002e6d;
+        margin-top: -27px;
+        margin-left: -165px;
+        position: absolute;
+      }
+      .label3 {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: #002e6d;
+        margin-top: -27px;
+        margin-left: -165px;
+        position: absolute;
+      }
+      .label4 {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: #002e6d;
+        margin-top: 207px;
+        margin-left: -330px;
+        position: absolute;
+      }
+      .label5 {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: #002e6d;
+        margin-top: -27px;
+        margin-left: -165px;
+        position: absolute;
       }
 
       .text {
@@ -317,18 +376,81 @@
       margin: auto;
       margin-top: 120px;
 
-       .invalid-email {
-      font-size: 17px;
-      margin-top: -25px;
-      margin-left: 30px;
-      font-weight: bold;
-      color: #ffae13;
-      position: absolute;
-    }
+      .invalid-email {
+        font-size: 17px;
+        margin-top: -25px;
+        margin-left: 30px;
+        font-weight: bold;
+        color: #ffae13;
+        position: absolute;
+      }
 
       .input {
         width: 335px;
         margin: auto;
+        margin-top: 40px;
+      }
+
+       .mb-9 {
+        margin-top: 0px;
+      }
+
+       .label1 {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: #002e6d;
+        margin-top: -27px;
+        margin-left: -165px;
+        position: absolute;
+      }
+      .label2 {
+       font-family: "Rubik";
+        font-style: normal;
+
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: #002e6d;
+        margin-top: -27px;
+        margin-left: -165px;
+        position: absolute;
+      }
+      .label3 {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: #002e6d;
+        margin-top: -27px;
+        margin-left: -165px;
+        position: absolute;
+      }
+
+      .label4 {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: #002e6d;
+        margin-top: 207px;
+        margin-left: -330px;
+        position: absolute;
+      }
+      .label5 {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: #002e6d;
+        margin-top: -27px;
+        margin-left: -165px;
+        position: absolute;
       }
 
       .text {

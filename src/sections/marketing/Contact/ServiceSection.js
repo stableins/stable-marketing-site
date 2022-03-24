@@ -85,6 +85,7 @@ export default function ServiceSection() {
                         </p>
                       )}
                       <Form.Group className="mb-3">
+                        <Form.Label>Full Name:</Form.Label>
                         <Form.Control
                           onChange={e => setNameInputValue(e.target.value)}
                           required
@@ -93,6 +94,7 @@ export default function ServiceSection() {
                         />
                       </Form.Group>
                       <Form.Group className="mb-3">
+                        <Form.Label>Email Address:</Form.Label>
                         <Form.Control
                           onChange={e => setEmailInputValue(e.target.value)}
                           required
@@ -105,6 +107,8 @@ export default function ServiceSection() {
                         className="mb-3"
                         controlId="formBasicPassword"
                       >
+                        {" "}
+                        <Form.Label>Message:</Form.Label>
                         <textarea
                           class="form-control"
                           onChange={e => setMessageInputValue(e.target.value)}
