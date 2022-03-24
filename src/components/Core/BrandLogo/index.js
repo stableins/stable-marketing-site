@@ -4,7 +4,7 @@ import lightLogo from '../../../assets/image/logo/logo-white.png'
 export default function BrandLogo({logoWhite=false,...rest}){
 return(
 <>
-    <img src={logoWhite ? lightLogo : darklogo } alt="brand logo" {...rest}/>
+    <img src={logoWhite ? lightLogo : darklogo } alt="stable logo" {...rest}/>
 </>
 )
 }

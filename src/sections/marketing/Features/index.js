@@ -35,7 +35,7 @@ const FeatureSection = ({ ...rest }) => {
   return (
     <div className="features-index-wrapper1">
       <Feature style={{ background: "#EBEEFF" }} className="bg-blue-ribbon">
-        <img src={BackgroundImage} />
+        <img src={BackgroundImage} alt="background image/>
         <div className="inner-wrapper1">
           <a className="anchor"></a>
           <Container className="container">

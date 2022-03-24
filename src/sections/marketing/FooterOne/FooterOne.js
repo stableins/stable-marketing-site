@@ -148,7 +148,7 @@ export default function FooterOne() {
       >
         <Modal.Header className="modal-header" closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
-            <img src={StableLogo} width={150} />
+            <img src={StableLogo} width={150} alt="stable logo"/>
           </Modal.Title>
           Terms
         </Modal.Header>
@@ -998,7 +998,7 @@ export default function FooterOne() {
       >
         <Modal.Header className="modal-header" closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
-            <img src={StableLogo} width={150} />
+            <img src={StableLogo} width={150} alt="stable logo"/>
           </Modal.Title>
           Privacy Policy
         </Modal.Header>
