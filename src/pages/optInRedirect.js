@@ -71,7 +71,7 @@ export default function Redirect() {
   return (
     // <PageWrapper headerConfig={header} innerPage={true}>
     <>
-      <img src="/Stable-S-logo_RGB.svg" width={1} />
+      <img src="/Stable-S-logo_RGB.svg" width={1} alt="stable logo" />
       <div className="redirect-wrapper"></div>
 
       {/* <FooterOne /> */}

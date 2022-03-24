@@ -44,19 +44,19 @@ export default function ServiceSection() {
                         className="ils"
                         width={230}
                         src={Mltply}
-                        alt="shape dot"
+                        alt="mltply"
                       />
                       <img
                         className="guy"
                         width={320}
                         src={Ils}
-                        alt="shape dot"
+                        alt="Ils"
                       />
                       <img
                         className="mltply"
                         width={220}
                         src={GuyCarpenter}
-                        alt="shape dot"
+                        alt="Guy Carpenter"
                       />
                     </div>
                   </div>

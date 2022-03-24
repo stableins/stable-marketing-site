@@ -31,20 +31,32 @@ export default function FooterOne() {
                         <div className="contact-wrapper">
                           <Footer.AddressItem>
                             <div className="item1">
-                              <i className="fa fa-map-marker-alt" />
+                              <span
+                                aria-hidden="true"
+                                className="fa fa-map-marker-alt"
+                                id="icon"
+                              />
                               <span>245 8th Ave #1111 New York, NY 10011</span>
                             </div>
                           </Footer.AddressItem>
                           <Footer.AddressItem>
                             <div className="item2">
-                              <i className="fa fa-phone-alt" />
+                              <span
+                                aria-hidden="true"
+                                className="fa fa-phone-alt"
+                                id="icon"
+                              />
 
                               <a href="#">+1 (347) 464-6390</a>
                             </div>
                           </Footer.AddressItem>
                           <Footer.AddressItem>
                             <div className="item3">
-                              <i className="fa fa-envelope" />
+                              <span
+                                aria-hidden="true"
+                                className="fa fa-envelope"
+                                id="icon"
+                              />
                               <a
                                 href="mailto:hello@stableins.com"
                                 target="_blank"
@@ -59,7 +71,7 @@ export default function FooterOne() {
                               className="item4"
                               onClick={() => setShowPrivacyModal(true)}
                             >
-                              <i className="fa" />
+                              <span aria-hidden="true" className="fa" />
                               <a>Privacy Policy</a>
                             </div>
                           </Footer.AddressItem>
@@ -67,7 +79,7 @@ export default function FooterOne() {
                             onClick={() => setShowTermsModal(true)}
                           >
                             <div className="item5">
-                              <i className="fa" />
+                              <span aria-hidden="true" className="fa" />
                               <a>Terms</a>
                             </div>
                           </Footer.AddressItem>
@@ -87,16 +99,21 @@ export default function FooterOne() {
                     <a
                       href="https://www.facebook.com/stableinsurance"
                       target="_blank"
+                      aria-label="stable facebook page"
                     >
-                      <i className="fab fa-facebook-square" />
+                      <span
+                        aria-hidden="true"
+                        className="fab fa-facebook-square"
+                      />
                     </a>
                   </Footer.SocialShareItem>
                   <Footer.SocialShareItem>
                     <a
                       target="_blank"
                       href="https://twitter.com/coveredbystable"
+                      aria-label="stable twitter page"
                     >
-                      <i className="fab fa-twitter" />
+                      <span aria-hidden="true" className="fab fa-twitter" />
                     </a>
                   </Footer.SocialShareItem>
                   {/* <Footer.SocialShareItem>
@@ -109,8 +126,9 @@ export default function FooterOne() {
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.linkedin.com/company/stable-insurance"
+                      aria-label="stable linkedin page"
                     >
-                      <i className="fab fa-linkedin" />
+                      <span aria-hidden="true" className="fab fa-linkedin" />
                     </a>
                   </Footer.SocialShareItem>
                 </div>
@@ -133,7 +151,7 @@ export default function FooterOne() {
       >
         <Modal.Header className="modal-header" closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
-            <img src={StableLogo} width={150} />
+            <img src={StableLogo} width={150} alt="stable logo" />
           </Modal.Title>
           Terms
         </Modal.Header>
@@ -983,7 +1001,7 @@ export default function FooterOne() {
       >
         <Modal.Header className="modal-header" closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
-            <img src={StableLogo} width={150} />
+            <img src={StableLogo} width={150} alt="stable logo" />
           </Modal.Title>
           Privacy Policy
         </Modal.Header>

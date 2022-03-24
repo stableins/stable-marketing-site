@@ -1,7 +1,7 @@
 const initialState = {
   email: "",
-  status: "",
-  driverReport: false,
+  status: "Argyle Authenticated",
+  driverReport: true,
   userType: "",
   calendlyScheduled: false,
   confirmed: false,

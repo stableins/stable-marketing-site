@@ -303,8 +303,7 @@ export default function individualFleetForm() {
                       coming online through the year!
                     </p>
                   </Form.Label>
-
-                  <Form.Group className="mb-3">
+                  <Form.Group className="mb-9">
                     <br />
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                       {invalidEmail && (
@@ -312,6 +311,9 @@ export default function individualFleetForm() {
                           Please enter a valid email address
                         </p>
                       )}
+                      <Form.Label className="label1">
+                        Email Address:{" "}
+                      </Form.Label>
                       <Form.Control
                         required={true}
                         className="input"
@@ -331,6 +333,7 @@ export default function individualFleetForm() {
                       />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
+                      <Form.Label className="label2">Full Name: </Form.Label>
                       <Form.Control
                         required={true}
                         className="input"
@@ -352,6 +355,8 @@ export default function individualFleetForm() {
                     </Form.Group>
                     <Form.Group>
                       {invalidZip && <p>Please enter a 5 digit zip code</p>}
+                      <Form.Label className="label3">Zip Code: </Form.Label>
+
                       <Form.Control
                         required={true}
                         className="input"
@@ -585,9 +590,11 @@ export default function individualFleetForm() {
                     </p>
                   </Form.Label>
 
-                  <Form.Group className="mb-3">
+                  <Form.Group className="mb-9">
                     <br />
                     <Form.Group className="mb-3" controlId="formBasicPassword">
+                      <Form.Label className="label1">Full Name: </Form.Label>
+
                       <Form.Control
                         required={true}
                         className="input"
@@ -599,6 +606,7 @@ export default function individualFleetForm() {
                     </Form.Group>
                     <Form.Group minLength="5">
                       {invalidZip && <p>Please enter a 5 digit zip code</p>}
+                      <Form.Label className="label2">Zip Code: </Form.Label>
 
                       <Form.Control
                         required={true}
@@ -807,9 +815,10 @@ export default function individualFleetForm() {
                     </p>
                   </Form.Label>
 
-                  <Form.Group className="mb-3">
+                  <Form.Group className="mb-9">
                     <br />
                     <Form.Group className="mb-3" controlId="formBasicPassword">
+                      <Form.Label className="label1">Full Name:</Form.Label>
                       <Form.Control
                         required={true}
                         className="input"
@@ -821,6 +830,7 @@ export default function individualFleetForm() {
                     </Form.Group>
                     <Form.Group>
                       {invalidZip && <p>Please enter a 5 digit zip code</p>}
+                      <Form.Label className="label2">Zip Code:</Form.Label>
 
                       <Form.Control
                         required={true}
@@ -987,7 +997,7 @@ export default function individualFleetForm() {
                 {!existingAccount && (
                   <div className="form">
                     <Form onSubmit={handlePasswordSubmit}>
-                      <Form.Group className="mb-3">
+                      <Form.Group className="mb-9">
                         <Form.Label>
                           <p className="text">
                             <span className="bold">
@@ -1000,6 +1010,9 @@ export default function individualFleetForm() {
                             so you can come back and check out your updates as
                             often as you like.
                           </p>
+                        </Form.Label>
+                        <Form.Label className="label4">
+                          Password:
                         </Form.Label>
                         <Form.Control
                           required={true}
@@ -1016,6 +1029,10 @@ export default function individualFleetForm() {
                         className="mb-3"
                         controlId="formBasicPassword"
                       >
+                        <Form.Label className="label5">
+                          Verify Password:
+                        </Form.Label>
+
                         <Form.Control
                           required={true}
                           className="input"
@@ -1139,7 +1156,7 @@ export default function individualFleetForm() {
           >
             <Modal.Header className="modal-header" closeButton>
               <Modal.Title id="example-custom-modal-styling-title">
-                <img src={StableLogo} width={150} />
+                <img src={StableLogo} width={150} alt="stable logo"/>
               </Modal.Title>
               Terms
             </Modal.Header>
@@ -2024,7 +2041,7 @@ export default function individualFleetForm() {
           >
             <Modal.Header className="modal-header" closeButton>
               <Modal.Title id="example-custom-modal-styling-title">
-                <img src={StableLogo} width={150} />
+                <img src={StableLogo} width={150} alt="stable logo"/>
               </Modal.Title>
               Privacy Policy
             </Modal.Header>

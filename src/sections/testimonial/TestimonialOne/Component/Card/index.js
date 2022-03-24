@@ -5,7 +5,7 @@ export default function TestimonialCard({userImage, userName, text, userPosition
 return(
   <Card>
   <Card.Image>
-    <img src={userImage} alt />
+    <img src={userImage} alt="user image" />
   </Card.Image>
   <Card.Text as="p">{text}</Card.Text>
   <Card.Body>

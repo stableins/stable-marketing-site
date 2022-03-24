@@ -57,7 +57,10 @@ export default function ServiceSection() {
               <Col xs="12" className="col-lg-7 col-md-12 col-xs-10">
                 <Service.Title as="h2" mb="0" style={{ fontSize: "50px" }}>
                   <div className="image">
-                    <img src={Image} />
+                    <img
+                      src={Image}
+                      alt="Stable tools, operations, banking, lending, community, taxes and legal, insurance, benefits"
+                    />
                   </div>
                 </Service.Title>
               </Col>
@@ -98,7 +101,7 @@ export default function ServiceSection() {
           </Service.Box>
         </Container>
       </Service>
-      <Modal
+      {/* <Modal
         show={modal}
         onHide={() => setModal(false)}
         dialogClassName="modal-90w"
@@ -106,7 +109,7 @@ export default function ServiceSection() {
       >
         <Modal.Header className="modal-header" closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
-            <img src={StableLogo} width={150} />
+            <img src={StableLogo} width={150} alt="stable logo"/>
           </Modal.Title>
         </Modal.Header>
         <div style={{ padding: "20px" }}>
@@ -166,7 +169,7 @@ export default function ServiceSection() {
             </button>
           </Form>
         </div>
-      </Modal>
+      </Modal> */}
       <Modal
         show={showConfirmation}
         onHide={() => setShowConfirmation(false)}

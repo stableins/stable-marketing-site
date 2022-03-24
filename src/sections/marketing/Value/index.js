@@ -149,6 +149,7 @@ const FeatureSection = ({ ...rest }) => {
                         <iframe
                           className="vimeo-player"
                           title="vimeo-player"
+                          alt="harry the rideshare guy"
                           src="https://player.vimeo.com/video/683962035?h=e2e6afe1f5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                           frameborder="0"
                           allowfullscreen
@@ -165,7 +166,7 @@ const FeatureSection = ({ ...rest }) => {
                           </Feature.Box>
                         </div>
                         <div className="image">
-                          <img src={DriverReport} />
+                          <img src={DriverReport} alt="Driver report image" />
                         </div>
                         <Feature.Title
                           className="mb-5"
@@ -174,11 +175,15 @@ const FeatureSection = ({ ...rest }) => {
                         >
                           <div className="form-wrapper">
                             <form onSubmit={handleEmailSubmit}>
+                              <label htmlFor="form-control">
+                                Enter Email Address:
+                              </label>
                               <input
                                 required
                                 type={"email"}
                                 name={"email"}
                                 placeholder="Enter your email"
+                                aria-label="Enter your email"
                                 className="form-control"
                                 onChange={e =>
                                   setEmailInputValue(e.target.value)

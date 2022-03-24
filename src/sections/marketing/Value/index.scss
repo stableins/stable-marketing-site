@@ -215,6 +215,12 @@
         display: inline-flex;
         padding-top: 20px;
 
+        label {
+          color: black;
+          position: absolute;
+          opacity: .0;
+        }
+
         #button {
           padding: 0.7rem 0.9rem;
           border-radius: 8px;
@@ -469,6 +475,12 @@
         margin-top: 500px;
         display: block;
         padding-top: 20px;
+
+          label {
+          color: black;
+          position: absolute;
+          opacity: .0;
+        }
 
         #button {
           height: 50px;

@@ -82,7 +82,7 @@ const Menu = ({ ...rest }) => {
     <div className="menu-wrapper">
       <Navbar.Collapse id="responsive-navbar-nav" {...rest}>
         <div className="logo">
-          <img src={StableLogo} />
+          <img src={StableLogo} alt="stable logo"/>
         </div>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -431,7 +431,7 @@ const Menu = ({ ...rest }) => {
           )}
         </Nav>
       </Navbar.Collapse>
-      <Modal
+      {/* <Modal
         show={modal}
         onHide={() => setModal(false)}
         dialogClassName="modal-90w"
@@ -439,7 +439,7 @@ const Menu = ({ ...rest }) => {
       >
         <Modal.Header className="modal-header" closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
-            <img src={StableLogo} width={150} />
+            <img src={StableLogo} width={150} alt="stable logo"/>
           </Modal.Title>
         </Modal.Header>
         <div style={{ padding: "20px" }}>
@@ -499,7 +499,7 @@ const Menu = ({ ...rest }) => {
             </button>
           </Form>
         </div>
-      </Modal>
+      </Modal> */}
     </div>
   )
 }

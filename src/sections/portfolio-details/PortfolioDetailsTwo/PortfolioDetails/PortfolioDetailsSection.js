@@ -81,19 +81,19 @@ return(
           {...sliderConfig1}
           >
               <PortfolioDetails.Slide>
-                <img src={pimageOne}/>
+                {/* <img src={pimageOne}/> */}
               </PortfolioDetails.Slide>
               <PortfolioDetails.Slide>
-                <img src={pimageTwo}/>
+                {/* <img src={pimageTwo}/> */}
               </PortfolioDetails.Slide>
               <PortfolioDetails.Slide>
-                <img src={pimageThree}/>
+                {/* <img src={pimageThree}/> */}
               </PortfolioDetails.Slide>
               <PortfolioDetails.Slide>
-                <img src={pimageThree}/>
+                {/* <img src={pimageThree}/> */}
               </PortfolioDetails.Slide>
               <PortfolioDetails.Slide>
-                <img src={pimageThree}/>
+                {/* <img src={pimageThree}/> */}
               </PortfolioDetails.Slide>
           </Slider>
         </PortfolioDetails.SliderWrapper>

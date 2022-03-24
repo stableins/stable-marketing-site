@@ -213,10 +213,14 @@ export default function HeroSection() {
                     <Hero.Newsletter>
                       <div className="form-wrapper">
                         <form onSubmit={handleEmailSubmit}>
+                          <label htmlFor="form-control">
+                            Enter Email Address:
+                          </label>
                           <input
                             required
                             type={"email"}
                             name={"email"}
+                            aria-label="Enter email address"
                             placeholder="Enter email address"
                             className="form-control"
                             onChange={e => setEmailInputValue(e.target.value)}
@@ -268,7 +272,7 @@ export default function HeroSection() {
                 xs={12}
                 className="col-xl-6 col-lg-5 col-md-10 order-1 order-lg-2 position-static"
               >
-                <img src={HeroImage} className="image" />
+                <img src={HeroImage} className="image" alt="Stable Insurance" />
               </Col>
               {/*/ .Welcome Image Area */}
             </Row>

@@ -7,7 +7,7 @@ return(
   <Card.Body>
     <Card.UserInfo>
     <Card.Image>
-        <img src={userImage} alt />
+        <img src={userImage} alt="user image" />
       </Card.Image>
       <Card.UserBody>
         <Card.Title as="h3">{userName}</Card.Title>

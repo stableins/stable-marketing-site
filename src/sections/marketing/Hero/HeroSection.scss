@@ -3,6 +3,14 @@
     background: linear-gradient(251.6deg, #5b84c4 60.73%, #3b358a 90.24%);
     // height: 100vh;
 
+    label {
+      color: white;
+      opacity: .0;
+      margin-top: -90px;
+      position: absolute;
+      font-size: 10px;
+    }
+
     .loader {
       position: absolute;
       top: 50%;
@@ -123,6 +131,12 @@
         background: linear-gradient(1.76deg, #5b84c4 37.18%, #3b358a 71.78%);
         height: 670px;
 
+          label {
+          color: black;
+          position: absolute;
+          opacity: .0;
+        }
+
         .container {
           max-width: 98%;
         }
@@ -141,7 +155,7 @@
         }
         .title {
           // width: 100%;
-          margin-left: -5px;
+          margin-left: 0px;
           margin-top: -300px;
           color: #f7f7f7;
           font-family: Rubik;
@@ -228,6 +242,7 @@
           top: 10px;
           max-width: 420px;
           padding-top: 20px;
+          
         }
         .form-control {
           height: 100%;
@@ -552,6 +567,12 @@
   .hero-section-wrapper {
     background: linear-gradient(1.76deg, #5b84c4 37.18%, #3b358a 71.78%);
     height: 670px;
+
+      label {
+          color: black;
+          position: absolute;
+          opacity: .0;
+        }
 
     .container {
       max-width: 98%;
@@ -1364,7 +1385,7 @@
     }
     .title {
       // width: 100%;
-      margin-left: -5px;
+      margin-left: 0px;
       margin-top: 170px;
       top: -100px;
       color: #f7f7f7;
@@ -1586,7 +1607,7 @@
         }
         .title {
           // width: 100%;
-          margin-left: -5px;
+          margin-left: 0px;
           margin-top: 170px;
           top: -100px;
           color: #f7f7f7;
@@ -1809,7 +1830,7 @@
         }
         .title {
           // width: 100%;
-          margin-left: -5px;
+          margin-left: 0px;
           margin-top: 170px;
           top: -100px;
           color: #f7f7f7;
@@ -2032,7 +2053,7 @@
     }
     .title {
       // width: 100%;
-      margin-left: -5px;
+      margin-left: 0px;
       margin-top: 170px;
       top: -100px;
       color: #f7f7f7;
@@ -2253,7 +2274,7 @@
     }
     .title {
       // width: 100%;
-      margin-left: -5px;
+      margin-left: 0px;
       margin-top: 170px;
       top: -100px;
       color: #f7f7f7;
