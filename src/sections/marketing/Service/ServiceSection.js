@@ -126,7 +126,7 @@ export default function ServiceSection() {
                 <div className="widget-wrapper">
                   <div className="widget">
                     <p>
-                      <i class="fas fa-tasks"></i>
+                      <span class="fas fa-tasks" aria-hidden="true"></span>
                     </p>
                     <div className="widget-title-1">
                       Put Your Data to Work <br />
@@ -139,7 +139,11 @@ export default function ServiceSection() {
                   </div>
                   <div className="widget">
                     <p>
-                      <i id="road" class="fas fa-road"></i>
+                      <span
+                        spand="road"
+                        class="fas fa-road"
+                        aria-hidden="true"
+                      ></span>
                     </p>
                     <div className="widget-title">
                       Help Develop Our Roadmap <br />
@@ -152,7 +156,7 @@ export default function ServiceSection() {
                   </div>
                   <div className="widget">
                     <p>
-                      <i class="fas fa-sync-alt"></i>
+                      <span class="fas fa-sync-alt" aria-hidden="true"></span>
                     </p>{" "}
                     <div className="widget-title3">
                       A Community Effort <br />
