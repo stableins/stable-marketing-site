@@ -431,7 +431,7 @@ const Menu = ({ ...rest }) => {
           )}
         </Nav>
       </Navbar.Collapse>
-      <Modal
+      {/* <Modal
         show={modal}
         onHide={() => setModal(false)}
         dialogClassName="modal-90w"
@@ -499,7 +499,7 @@ const Menu = ({ ...rest }) => {
             </button>
           </Form>
         </div>
-      </Modal>
+      </Modal> */}
     </div>
   )
 }

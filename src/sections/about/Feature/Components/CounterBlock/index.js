@@ -8,10 +8,10 @@ import "./index.scss"
 
 export default function CounterBlock({ ...rest }) {
   const [showModal, setShowModal] = useState(false)
-   const [emailInputValue, setEmailInputValue] = useState("")
-   const [nameInputValue, setNameInputValue] = useState("")
-   const [zipcodeInputValue, setZipcodeInputValue] = useState("")
-   const [dropdownInputValue, setDropdownInputValue] = useState("")
+  const [emailInputValue, setEmailInputValue] = useState("")
+  const [nameInputValue, setNameInputValue] = useState("")
+  const [zipcodeInputValue, setZipcodeInputValue] = useState("")
+  const [dropdownInputValue, setDropdownInputValue] = useState("")
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -49,8 +49,7 @@ export default function CounterBlock({ ...rest }) {
           >
             Join them now
           </Button>
-          ∫
-          <Modal
+          {/* <Modal
             show={showModal}
             onHide={() => setShowModal(false)}
             dialogClassName="modal-9/.0w"
@@ -118,10 +117,9 @@ export default function CounterBlock({ ...rest }) {
                 </Button>
               </Form>
             </div>
-          </Modal>
+          </Modal> */}
         </Counter.Single>
       </Counter.Wrapper>
     </Counter>
   )
 }
-  

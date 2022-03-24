@@ -101,7 +101,7 @@ export default function ServiceSection() {
           </Service.Box>
         </Container>
       </Service>
-      <Modal
+      {/* <Modal
         show={modal}
         onHide={() => setModal(false)}
         dialogClassName="modal-90w"
@@ -169,7 +169,7 @@ export default function ServiceSection() {
             </button>
           </Form>
         </div>
-      </Modal>
+      </Modal> */}
       <Modal
         show={showConfirmation}
         onHide={() => setShowConfirmation(false)}
