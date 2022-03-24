@@ -99,6 +99,7 @@ export default function FooterOne() {
                     <a
                       href="https://www.facebook.com/stableinsurance"
                       target="_blank"
+                      alt="stable facebook page"
                     >
                       <span
                         aria-hidden="true"
@@ -110,6 +111,7 @@ export default function FooterOne() {
                     <a
                       target="_blank"
                       href="https://twitter.com/coveredbystable"
+                      alt="stable twitter page"
                     >
                       <span aria-hidden="true" className="fab fa-twitter" />
                     </a>
@@ -124,6 +126,7 @@ export default function FooterOne() {
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.linkedin.com/company/stable-insurance"
+                      alt="stable linkedin page"
                     >
                       <span aria-hidden="true" className="fab fa-linkedin" />
                     </a>
@@ -148,7 +151,7 @@ export default function FooterOne() {
       >
         <Modal.Header className="modal-header" closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
-            <img src={StableLogo} width={150} alt="stable logo"/>
+            <img src={StableLogo} width={150} alt="stable logo" />
           </Modal.Title>
           Terms
         </Modal.Header>
@@ -998,7 +1001,7 @@ export default function FooterOne() {
       >
         <Modal.Header className="modal-header" closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
-            <img src={StableLogo} width={150} alt="stable logo"/>
+            <img src={StableLogo} width={150} alt="stable logo" />
           </Modal.Title>
           Privacy Policy
         </Modal.Header>
