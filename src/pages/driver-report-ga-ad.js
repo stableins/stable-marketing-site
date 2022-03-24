@@ -181,7 +181,7 @@ export default function individualFleetForm() {
             <div className="driver-report-ads-wrapper">
               <div className="title">Get Your Free Driver Report </div>
               <div className="image">
-                <img src={DriverReport} width={300}  alt="driver report/>
+                <img src={DriverReport} width={300}  alt="driver report"/>
               </div>
               <div className="form">
                 <Form onSubmit={handleAdditionalInfoSubmit}>
@@ -557,7 +557,7 @@ export default function individualFleetForm() {
           >
             <Modal.Header className="modal-header" closeButton>
               <Modal.Title id="example-custom-modal-styling-title">
-                <img src={StableLogo} width={150} alt="stable logo/>
+                <img src={StableLogo} width={150} alt="stable logo"/>
               </Modal.Title>
               Terms
             </Modal.Header>

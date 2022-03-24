@@ -109,7 +109,7 @@ export default function ServiceSection() {
       >
         <Modal.Header className="modal-header" closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
-            <img src={StableLogo} width={150} alt="stable logo/>
+            <img src={StableLogo} width={150} alt="stable logo"/>
           </Modal.Title>
         </Modal.Header>
         <div style={{ padding: "20px" }}>
