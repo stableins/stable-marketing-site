@@ -88,6 +88,7 @@ export default function ServiceSection() {
                         <Form.Label>Full Name:</Form.Label>
                         <Form.Control
                           onChange={e => setNameInputValue(e.target.value)}
+                          aria-label="full name"
                           required
                           type="text"
                           placeholder="Full Name"
@@ -98,6 +99,7 @@ export default function ServiceSection() {
                         <Form.Control
                           onChange={e => setEmailInputValue(e.target.value)}
                           required
+                          aria-label="email address"
                           type="email"
                           placeholder="Email"
                         />

@@ -99,7 +99,7 @@ export default function FooterOne() {
                     <a
                       href="https://www.facebook.com/stableinsurance"
                       target="_blank"
-                      alt="stable facebook page"
+                      aria-label="stable facebook page"
                     >
                       <span
                         aria-hidden="true"
@@ -111,7 +111,7 @@ export default function FooterOne() {
                     <a
                       target="_blank"
                       href="https://twitter.com/coveredbystable"
-                      alt="stable twitter page"
+                      aria-label="stable twitter page"
                     >
                       <span aria-hidden="true" className="fab fa-twitter" />
                     </a>
@@ -126,7 +126,7 @@ export default function FooterOne() {
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.linkedin.com/company/stable-insurance"
-                      alt="stable linkedin page"
+                      aria-label="stable linkedin page"
                     >
                       <span aria-hidden="true" className="fab fa-linkedin" />
                     </a>

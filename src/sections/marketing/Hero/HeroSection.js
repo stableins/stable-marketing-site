@@ -212,13 +212,15 @@ export default function HeroSection() {
                   <Col xs="12" className="col-xxl-10">
                     <Hero.Newsletter>
                       <div className="form-wrapper">
-
                         <form onSubmit={handleEmailSubmit}>
-                        <label htmlFor="form-control">Enter Email Address:</label>
+                          <label htmlFor="form-control">
+                            Enter Email Address:
+                          </label>
                           <input
                             required
                             type={"email"}
                             name={"email"}
+                            aria-label="Enter email address"
                             placeholder="Enter email address"
                             className="form-control"
                             onChange={e => setEmailInputValue(e.target.value)}

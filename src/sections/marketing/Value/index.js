@@ -178,12 +178,12 @@ const FeatureSection = ({ ...rest }) => {
                               <label htmlFor="form-control">
                                 Enter Email Address:
                               </label>
-
                               <input
                                 required
                                 type={"email"}
                                 name={"email"}
                                 placeholder="Enter your email"
+                                aria-label="Enter your email"
                                 className="form-control"
                                 onChange={e =>
                                   setEmailInputValue(e.target.value)
