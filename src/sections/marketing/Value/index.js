@@ -175,9 +175,6 @@ const FeatureSection = ({ ...rest }) => {
                         >
                           <div className="form-wrapper">
                             <form onSubmit={handleEmailSubmit}>
-                              <label htmlFor="form-control">
-                                Enter Email Address:
-                              </label>
                               <input
                                 required
                                 type={"email"}
