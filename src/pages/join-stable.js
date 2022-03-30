@@ -13,7 +13,6 @@ import { Form, Button, Modal } from "react-bootstrap"
 import { Link } from "@reach/router"
 import { useDispatch } from "react-redux"
 import Fade from "react-reveal/Fade"
-import { ArgyleLink } from "../components/Argyle/ArgyleLink.tsx"
 import { PopupButton } from "react-calendly"
 import HeaderButton from "../sections/marketing/Header"
 import Intake from "../api/intake"
@@ -21,6 +20,9 @@ import { useSelector } from "react-redux"
 import SessionInfoCapture from "../utility/sessionInfo"
 import PulseLoader from "react-spinners/PulseLoader"
 import DefaultJoinForm from "../sections/JoinStable/DefaultJoinForm"
+import EmailAddressJoinForm from "../sections/JoinStable/EmailAddressJoinForm"
+import EmailAddressDriveReportJoinForm from "../sections/JoinStable/EmailAddressDriveReportJoinForm"
+import CompleteJoinForm from "../sections/JoinStable/CompleteJoinForm"
 import "./join-stable.scss"
 
 const header = {
@@ -291,7 +293,7 @@ export default function individualFleetForm() {
         <PageWrapper headerConfig={header} innerPage={true}>
           {status === "" && (
             <DefaultJoinForm 
-              onSubmitForm={handleAdditionalInfoSubmit}
+              handleAdditionalInfoSubmit={handleAdditionalInfoSubmit}
               setEmailInputValue={setEmailInputValue}
               setNameInputValue={setNameInputValue}
               setZipcodeInputValue={setZipcodeInputValue}
@@ -308,398 +310,51 @@ export default function individualFleetForm() {
               dropdownInputValue2={dropdownInputValue2}
               setDropdownInputValue1={setDropdownInputValue1}
               setDropdownInputValue2={setDropdownInputValue2}
-              setDisableOption1={setDisableOption1}/>
+              setDisableOption1={setDisableOption1}
+              setShowTermsModal={setShowTermsModal}
+              setShowPrivacyModal={setShowPrivacyModal}/>
           )}
 
           {status === "Email Address Only" && !driverReport && (
-            <div className="join-stable-wrapper">
-              <div className="form">
-                <Form onSubmit={handleAdditionalInfoSubmit}>
-                  <Form.Label>
-                    <p className="text">
-                      <span className="bold">Tell us more about you.</span>{" "}
-                      <br /> <br />
-                      You'll get early access to tools to better run your
-                      mobility business. We'll also let you know when Stable's
-                      insurance will be live in your state. <br /> <br />
-                      We're launching in Illinois this Spring with more states
-                      coming online through the year!
-                    </p>
-                  </Form.Label>
-
-                  <Form.Group className="mb-9">
-                    <br />
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Label className="label1">Full Name: </Form.Label>
-
-                      <Form.Control
-                        required={true}
-                        className="input"
-                        onChange={e => setNameInputValue(e.target.value)}
-                        // required
-                        type="text"
-                        placeholder="Name"
-                      />
-                    </Form.Group>
-                    <Form.Group minLength="5">
-                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
-                      <Form.Label className="label2">Zip Code: </Form.Label>
-
-                      <Form.Control
-                        required={true}
-                        className="input"
-                        pattern=".{3,}"
-                        minlength="5"
-                        maxlength="5"
-                        type="number"
-                        onInput={e =>
-                          (e.target.value = e.target.value.slice(0, 5))
-                        }
-                        onChange={e => setZipcodeInputValue(e.target.value)}
-                        // required
-                        placeholder="Zip Code"
-                      />
-                    </Form.Group>
-                    <h4>I am a...</h4>
-                    <div className="select-wrapper">
-                      <select
-                        primary
-                        onMouseEnter={
-                          isMobile
-                            ? () => {
-                                setClicked("1")
-                                setResetSelect1(true)
-                                setResetSelect2(false)
-                                setDropdownInputValue2("")
-                                setDisableOption1(true)
-                              }
-                            : null
-                        }
-                        onFocus={() => {
-                          setClicked("1")
-                          setResetSelect1(true)
-                          setResetSelect2(false)
-                          setDropdownInputValue2("")
-                          setDisableOption1(true)
-                        }}
-                        onClick={() => {
-                          setClicked("1")
-                          setResetSelect1(true)
-                          setResetSelect2(false)
-                          setDropdownInputValue2("")
-                        }}
-                        className={`select-1-${clicked}`}
-                        onChange={e => {
-                          if (e.target.value === "") {
-                            setDropdownInputValue1("")
-                          }
-                          if (e.target.value === "1") {
-                            setDropdownInputValue1("Rideshare Owner Operator")
-                            setDropdownInputValue2("")
-                          }
-                          if (e.target.value === "2") {
-                            setDropdownInputValue1("Carshare Owner")
-                            setDropdownInputValue2("")
-                          }
-                        }}
-                        as="select"
-                      >
-                        <option
-                          required
-                          value=""
-                          // disabled={disableOption1}
-                          selected={!resetSelect1}
-                        >
-                          {clicked === "1" ? "Select Option" : "Driver"}
-                        </option>
-                        <option
-                          disabled={clicked === "1" ? false : true}
-                          required
-                          value="1"
-                        >
-                          Rideshare Driver
-                        </option>
-                        <option
-                          disabled={clicked === "1" ? false : true}
-                          required
-                          value="2"
-                        >
-                          Carshare Owner
-                        </option>
-                      </select>
-                      <select
-                        onMouseEnter={
-                          isMobile
-                            ? () => {
-                                setClicked("2")
-                                setResetSelect1(false)
-                                setResetSelect2(true)
-                                setDropdownInputValue1("")
-                              }
-                            : null
-                        }
-                        onFocus={() => {
-                          setClicked("2")
-                          setResetSelect1(false)
-                          setResetSelect2(true)
-                          setDropdownInputValue1("")
-                        }}
-                        onClick={() => {
-                          setClicked("2")
-                          setResetSelect1(false)
-                          setResetSelect2(true)
-                          setDropdownInputValue1("")
-                        }}
-                        className={`select-2-${clicked}`}
-                        onChange={e => {
-                          if (e.target.value === "") {
-                            setDropdownInputValue2("")
-                          }
-                          if (e.target.value === "3") {
-                            setDropdownInputValue2("Rideshare Fleet")
-                            setDropdownInputValue1("")
-                          }
-                          if (e.target.value === "4") {
-                            setDropdownInputValue2("Carshare Fleet")
-                            setDropdownInputValue1("")
-                          }
-                        }}
-                        as="select"
-                      >
-                        <option
-                          value=""
-                          // disabled={clicked === "2" ? true : false}
-                          selected={!resetSelect2}
-                        >
-                          {clicked === "2" ? "Select Option" : "Fleet"}
-                        </option>
-                        <option
-                          value="3"
-                          disabled={clicked === "2" ? false : true}
-                        >
-                          Rideshare Fleet
-                        </option>
-                        <option
-                          value="4"
-                          disabled={clicked === "2" ? false : true}
-                        >
-                          Carshare Fleet
-                        </option>
-                      </select>
-                    </div>
-                    <div className="check-wrapper">
-                      <div className="checkbox">
-                        <input
-                          required={true}
-                          class="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="flexCheckIndeterminate"
-                        />
-
-                        <p>
-                          I agree to the Stable{" "}
-                          <span onClick={() => setTermsModalShow(true)}>
-                            {" "}
-                            Terms{" "}
-                          </span>{" "}
-                          and{" "}
-                          <span onClick={() => setShowPrivacyModal(true)}>
-                            {" "}
-                            Privacy Policy
-                          </span>
-                          .
-                        </p>
-                      </div>
-                    </div>
-                    <br />
-                    <button
-                      disabled={
-                        dropdownInputValue1 === "" && dropdownInputValue2 === ""
-                          ? true
-                          : false
-                      }
-                      className="button"
-                      variant="primary"
-                      type="submit"
-                    >
-                      <span>Submit &nbsp;</span>
-                    </button>
-                  </Form.Group>
-                  {/* <Form.Label>
-                We've sent you an email to confirm your email address. If you
-                don't see something from us shortly, please check your junk
-                mail.
-              </Form.Label> */}
-                </Form>
-              </div>
-            </div>
+            <EmailAddressJoinForm
+              handleAdditionalInfoSubmit={handleAdditionalInfoSubmit}
+              setNameInputValue={setNameInputValue}
+              setZipcodeInputValue={setZipcodeInputValue}
+              setClicked={setClicked}
+              setResetSelect1={setResetSelect1}
+              setResetSelect2={setResetSelect2}
+              setDropdownInputValue2={setDropdownInputValue2}
+              setDisableOption1={setDisableOption1}
+              setDropdownInputValue1={setDropdownInputValue1}
+              resetSelect2={resetSelect2}
+              clicked={clicked}
+              dropdownInputValue1={dropdownInputValue1}
+              dropdownInputValue2={dropdownInputValue2}
+              invalidZip={invalidZip}
+              isMobile={isMobile}
+              resetSelect1={resetSelect1}
+              setShowTermsModal={setShowTermsModal}
+              setShowPrivacyModal={setShowPrivacyModal}
+            />
           )}
-
           {status === "Email Address Only" && driverReport && (
-            <div className="join-stable-wrapper">
-              <div className="form">
-                <Form onSubmit={handleAdditionalInfoSubmit}>
-                  <Form.Label>
-                    <p className="text">
-                      <span className="bold">Tell us more about you.</span>{" "}
-                      <br /> <br />
-                      You'll get early access to tools to better run your
-                      mobility business. We'll also let you know when Stable's
-                      insurance will be live in your state. <br /> <br />
-                      We're launching in Illinois this Spring with more states
-                      coming online through the year!
-                    </p>
-                  </Form.Label>
-
-                  <Form.Group className="mb-9">
-                    <br />
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Label className="label1">Full Name:</Form.Label>
-                      <Form.Control
-                        required={true}
-                        className="input"
-                        onChange={e => setNameInputValue(e.target.value)}
-                        // required
-                        type="text"
-                        placeholder="Name"
-                      />
-                    </Form.Group>
-                    <Form.Group>
-                      {invalidZip && <p>Please enter a 5 digit zip code</p>}
-                      <Form.Label className="label2">Zip Code:</Form.Label>
-
-                      <Form.Control
-                        required={true}
-                        className="input"
-                        type="tel"
-                        pattern=".{3,}"
-                        minlength="5"
-                        maxlength="5"
-                        onInput={e =>
-                          (e.target.value = e.target.value.slice(0, 5))
-                        }
-                        onChange={e => setZipcodeInputValue(e.target.value)}
-                        // required
-                        placeholder="Zip Code"
-                      />
-                    </Form.Group>
-                    <div className="check-wrapper">
-                      <div className="checkbox">
-                        <input
-                          required={true}
-                          class="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="flexCheckIndeterminate"
-                        />
-
-                        <p>
-                          I agree to the Stable{" "}
-                          <span onClick={() => setTermsModalShow(true)}>
-                            {" "}
-                            Terms{" "}
-                          </span>{" "}
-                          and{" "}
-                          <span onClick={() => setShowPrivacyModal(true)}>
-                            {" "}
-                            Privacy Policy
-                          </span>
-                          .
-                        </p>
-                      </div>
-                    </div>
-                    <br />
-                    <button className="button" variant="primary" type="submit">
-                      <span>Get Driver Report&nbsp;</span>
-                    </button>
-                  </Form.Group>
-                  {/* <Form.Label>
-                We've sent you an email to confirm your email address. If you
-                don't see something from us shortly, please check your junk
-                mail.
-              </Form.Label> */}
-                </Form>
-              </div>
-            </div>
+            <EmailAddressDriveReportJoinForm
+              handleAdditionalInfoSubmit={handleAdditionalInfoSubmit}
+              setNameInputValue={setNameInputValue}
+              setZipcodeInputValue={setZipcodeInputValue}
+              setShowTermsModal={setShowTermsModal}
+              setShowPrivacyModal={setShowPrivacyModal}
+              invalidZip={invalidZip}
+            />
           )}
 
           {status === "Form Complete" &&
             userType === "Rideshare Owner Operator" && (
-              <>
-                <div className="join-stable-wrapper">
-                  <div className="form">
-                    <p className="text">
-                      <span className="bold">
-                        To deliver better insurance and tools (like our Free
-                        Driver Report) to you, we need to connect to your
-                        rideshare account(s).
-                      </span>{" "}
-                      <br /> <br />
-                      This is done securely and you can turn off our access to
-                      your account at any time.
-                      <br /> <br />
-                      Right now, we only can connect to Uber and Lyft, but we
-                      will add access to more rideshare and delivery platforms
-                      soon.
-                    </p>
-                    <ArgyleLink
-                      className="button"
-                      open={true}
-                      options={{
-                        pluginKey: "017aac27-2894-ac65-9c91-f956858ad649",
-                        linkItems: ["uber", "lyft"],
-                        apiHost: "https://api.argyle.io/v1",
-                        customizationId: "38XAT8YO",
-                        showCategories: false,
-                        showSearch: false,
-                        onAccountCreated: async ({ accountId, userId }) => {
-                          try {
-                            const response = await axios.post(
-                              "/.netlify/functions/linkArgyleAccount",
-                              {
-                                email: email,
-                                argyleUserId: userId,
-                                argyleAccountId: accountId,
-                              }
-                            )
-                            dispatch({
-                              type: "FORM::SET_CONFIRMED",
-                              payload: response.data.confirmed,
-                            })
-
-                            setArgyleLinked(true)
-                          } catch (e) {
-                            console.log(e)
-                          }
-                        },
-                      }}
-                    >
-                      Connect Your Accounts
-                    </ArgyleLink>
-                    {argyleLinked && (
-                      <>
-                        <br />
-                        <p>Done Linking your account(s)?</p>
-                        <button
-                          onClick={() => {
-                            dispatch({
-                              type: "FORM::SET_STATUS",
-                              payload: "Argyle Authenticated",
-                            })
-                            setDropdownInputValue1(null)
-                          }}
-                          className="button"
-                          variant="primary"
-                          // type="submit"
-                        >
-                          Complete the final step &nbsp;
-                        </button>
-                      </>
-                    )}
-                  </div>
-                </div>
-              </>
+              <CompleteJoinForm
+                argyleLinked={argyleLinked}
+                setArgyleLinked={setArgyleLinked}
+                setDropdownInputValue1={setDropdownInputValue1}
+              />
             )}
 
           {status === "Form Complete" &&

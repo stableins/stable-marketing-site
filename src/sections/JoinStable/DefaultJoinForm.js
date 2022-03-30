@@ -1,10 +1,10 @@
 import React from 'react'
-import { Form, Button, Modal } from "react-bootstrap"
+import { Form } from "react-bootstrap"
 
 import "../../pages/join-stable.scss"
 
 const DefaultJoinForm = ({
-  onSubmitForm,
+  handleAdditionalInfoSubmit,
   setEmailInputValue,
   invalidEmail,
   setNameInputValue,
@@ -21,11 +21,14 @@ const DefaultJoinForm = ({
   dropdownInputValue2,
   setDropdownInputValue1,
   setDropdownInputValue2,
-  setDisableOption1})=>{
+  setDisableOption1,
+  setShowTermsModal,
+  setShowPrivacyModal
+})=>{
     return(
         <div className="join-stable-wrapper">
           <div className="form">
-            <Form onSubmit={onSubmitForm}>
+            <Form onSubmit={handleAdditionalInfoSubmit}>
               <Form.Label>
                 <p className="text">
                   <span className="bold">Tell us more about you.</span>{" "}
