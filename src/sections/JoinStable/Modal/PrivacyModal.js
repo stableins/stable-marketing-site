@@ -5,11 +5,11 @@ import { Modal } from "react-bootstrap"
 
 import "../../../pages/join-stable.scss"
 
-const PrivacyModal = ({ showPrivacyModal, setShowPrivacyModal}) => {
+const PrivacyModal = ({ onShowPrivacyModal, onSetShowPrivacyModal }) => {
     return (
         <Modal
-            show={showPrivacyModal}
-            onHide={() => setShowPrivacyModal(false)}
+            show={onShowPrivacyModal}
+            onHide={() => onSetShowPrivacyModal(false)}
             dialogClassName="modal-90w"
             aria-labelledby="example-custom-modal-styling-title"
         >

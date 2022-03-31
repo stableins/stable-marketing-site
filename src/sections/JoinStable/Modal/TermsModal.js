@@ -5,11 +5,11 @@ import { Modal } from "react-bootstrap"
 
 import "../../../pages/join-stable.scss"
 
-const TermsModal = ({ showTermsModal, setShowTermsModal }) => {
+const TermsModal = ({ onShowTermsModal, onSetShowTermsModal }) => {
     return (
         <Modal
-            show={showTermsModal}
-            onHide={() => setShowTermsModal(false)}
+            show={onShowTermsModal}
+            onHide={() => onSetShowTermsModal(false)}
             dialogClassName="modal-90w"
             aria-labelledby="example-custom-modal-styling-title"
         >

@@ -4,17 +4,17 @@ import { Form } from "react-bootstrap"
 import "../../pages/join-stable.scss"
 
 const EmailAddressDriveReportJoinForm = ({
-    handleAdditionalInfoSubmit,
-    setNameInputValue,
-    setZipcodeInputValue,
-    setShowTermsModal,
-    setShowPrivacyModal,
+    onHandleAdditionalInfoSubmit,
+    onSetNameInputValue,
+    onSetZipcodeInputValue,
+    onSetShowTermsModal,
+    onSetShowPrivacyModal,
     invalidZip
 }) => {
     return (
         <div className="join-stable-wrapper">
             <div className="form">
-                <Form onSubmit={handleAdditionalInfoSubmit}>
+                <Form onSubmit={onHandleAdditionalInfoSubmit}>
                     <Form.Label>
                         <p className="text">
                             <span className="bold">Tell us more about you.</span>{" "}
@@ -34,7 +34,7 @@ const EmailAddressDriveReportJoinForm = ({
                             <Form.Control
                                 required={true}
                                 className="input"
-                                onChange={e => setNameInputValue(e.target.value)}
+                                onChange={e => onSetNameInputValue(e.target.value)}
                                 // required
                                 type="text"
                                 placeholder="Name"
@@ -54,7 +54,7 @@ const EmailAddressDriveReportJoinForm = ({
                                 onInput={e =>
                                     (e.target.value = e.target.value.slice(0, 5))
                                 }
-                                onChange={e => setZipcodeInputValue(e.target.value)}
+                                onChange={e => onSetZipcodeInputValue(e.target.value)}
                                 // required
                                 placeholder="Zip Code"
                             />
@@ -71,12 +71,12 @@ const EmailAddressDriveReportJoinForm = ({
 
                                 <p>
                                     I agree to the Stable{" "}
-                                    <span onClick={() => setShowTermsModal(true)}>
+                                    <span onClick={() => onSetShowTermsModal(true)}>
                                         {" "}
                                         Terms{" "}
                                     </span>{" "}
                                     and{" "}
-                                    <span onClick={() => setShowPrivacyModal(true)}>
+                                    <span onClick={() => onSetShowPrivacyModal(true)}>
                                         {" "}
                                         Privacy Policy
                                     </span>

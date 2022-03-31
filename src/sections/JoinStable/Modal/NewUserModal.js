@@ -4,12 +4,12 @@ import { Form, Modal, Button } from "react-bootstrap"
 
 import "../../../pages/join-stable.scss"
 
-const NewUserModal = ({ showNewUserModal, setShowNewUserModal }) => {
+const NewUserModal = ({ onShowNewUserModal, onSetShowNewUserModal }) => {
     return (
         <Modal
-            show={showNewUserModal}
+            show={onShowNewUserModal}
             onHide={() => {
-                setShowNewUserModal(false)
+                onSetShowNewUserModal(false)
                 // navigate("/join-stable/")
             }}
             dialogClassName="modal-9/.0w"
@@ -37,7 +37,7 @@ const NewUserModal = ({ showNewUserModal, setShowNewUserModal }) => {
                         style={{ marginLeft: "10px", width: "150px" }}
                         className="hero-modal-button"
                         onClick={() => {
-                            setShowNewUserModal(false)
+                            onSetShowNewUserModal(false)
                             // navigate("/join-stable/")
                         }}
                         type="submit"

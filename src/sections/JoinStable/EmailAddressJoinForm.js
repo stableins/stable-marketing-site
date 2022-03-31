@@ -1,32 +1,32 @@
 import React from 'react'
 import { Form } from "react-bootstrap"
+import { isMobile } from "react-device-detect"
 
 import "../../pages/join-stable.scss"
 
 const EmailAddressJoinForm = ({
-  handleAdditionalInfoSubmit,
-  setNameInputValue,
-  setZipcodeInputValue,
-  setClicked,
-  setResetSelect1,
-  setResetSelect2,
-  setDropdownInputValue2,
-  setDisableOption1,
-  setDropdownInputValue1,
+  onHandleAdditionalInfoSubmit,
+  onSetNameInputValue,
+  onSetZipcodeInputValue,
+  onSetClicked,
+  onSetResetSelect1,
+  onSetResetSelect2,
+  onSetDropdownInputValue2,
+  onSetDisableOption1,
+  onSetDropdownInputValue1,
   resetSelect2,
   clicked,
   dropdownInputValue1,
   dropdownInputValue2,
   invalidZip,
-  isMobile,
   resetSelect1,
-  setShowTermsModal,
-  setShowPrivacyModal
+  onSetShowTermsModal,
+  onSetShowPrivacyModal
 }) => {
   return (
     <div className="join-stable-wrapper">
       <div className="form">
-        <Form onSubmit={handleAdditionalInfoSubmit}>
+        <Form onSubmit={onHandleAdditionalInfoSubmit}>
           <Form.Label>
             <p className="text">
               <span className="bold">Tell us more about you.</span>{" "}
@@ -47,7 +47,7 @@ const EmailAddressJoinForm = ({
               <Form.Control
                 required={true}
                 className="input"
-                onChange={e => setNameInputValue(e.target.value)}
+                onChange={e => onSetNameInputValue(e.target.value)}
                 // required
                 type="text"
                 placeholder="Name"
@@ -67,7 +67,7 @@ const EmailAddressJoinForm = ({
                 onInput={e =>
                   (e.target.value = e.target.value.slice(0, 5))
                 }
-                onChange={e => setZipcodeInputValue(e.target.value)}
+                onChange={e => onSetZipcodeInputValue(e.target.value)}
                 // required
                 placeholder="Zip Code"
               />
@@ -79,39 +79,39 @@ const EmailAddressJoinForm = ({
                 onMouseEnter={
                   isMobile
                     ? () => {
-                      setClicked("1")
-                      setResetSelect1(true)
-                      setResetSelect2(false)
-                      setDropdownInputValue2("")
-                      setDisableOption1(true)
+                      onSetClicked("1")
+                      onSetResetSelect1(true)
+                      onSetResetSelect2(false)
+                      onSetDropdownInputValue2("")
+                      onSetDisableOption1(true)
                     }
                     : null
                 }
                 onFocus={() => {
-                  setClicked("1")
-                  setResetSelect1(true)
-                  setResetSelect2(false)
-                  setDropdownInputValue2("")
-                  setDisableOption1(true)
+                  onSetClicked("1")
+                  onSetResetSelect1(true)
+                  onSetResetSelect2(false)
+                  onSetDropdownInputValue2("")
+                  onSetDisableOption1(true)
                 }}
                 onClick={() => {
-                  setClicked("1")
-                  setResetSelect1(true)
-                  setResetSelect2(false)
-                  setDropdownInputValue2("")
+                  onSetClicked("1")
+                  onSetResetSelect1(true)
+                  onSetResetSelect2(false)
+                  onSetDropdownInputValue2("")
                 }}
                 className={`select-1-${clicked}`}
                 onChange={e => {
                   if (e.target.value === "") {
-                    setDropdownInputValue1("")
+                    onSetDropdownInputValue1("")
                   }
                   if (e.target.value === "1") {
-                    setDropdownInputValue1("Rideshare Owner Operator")
-                    setDropdownInputValue2("")
+                    onSetDropdownInputValue1("Rideshare Owner Operator")
+                    onSetDropdownInputValue2("")
                   }
                   if (e.target.value === "2") {
-                    setDropdownInputValue1("Carshare Owner")
-                    setDropdownInputValue2("")
+                    onSetDropdownInputValue1("Carshare Owner")
+                    onSetDropdownInputValue2("")
                   }
                 }}
                 as="select"
@@ -143,37 +143,37 @@ const EmailAddressJoinForm = ({
                 onMouseEnter={
                   isMobile
                     ? () => {
-                      setClicked("2")
-                      setResetSelect1(false)
-                      setResetSelect2(true)
-                      setDropdownInputValue1("")
+                      onSetClicked("2")
+                      onSetResetSelect1(false)
+                      onSetResetSelect2(true)
+                      onSetDropdownInputValue1("")
                     }
                     : null
                 }
                 onFocus={() => {
-                  setClicked("2")
-                  setResetSelect1(false)
-                  setResetSelect2(true)
-                  setDropdownInputValue1("")
+                  onSetClicked("2")
+                  onSetResetSelect1(false)
+                  onSetResetSelect2(true)
+                  onSetDropdownInputValue1("")
                 }}
                 onClick={() => {
-                  setClicked("2")
-                  setResetSelect1(false)
-                  setResetSelect2(true)
-                  setDropdownInputValue1("")
+                  onSetClicked("2")
+                  onSetResetSelect1(false)
+                  onSetResetSelect2(true)
+                  onSetDropdownInputValue1("")
                 }}
                 className={`select-2-${clicked}`}
                 onChange={e => {
                   if (e.target.value === "") {
-                    setDropdownInputValue2("")
+                    onSetDropdownInputValue2("")
                   }
                   if (e.target.value === "3") {
-                    setDropdownInputValue2("Rideshare Fleet")
-                    setDropdownInputValue1("")
+                    onSetDropdownInputValue2("Rideshare Fleet")
+                    onSetDropdownInputValue1("")
                   }
                   if (e.target.value === "4") {
-                    setDropdownInputValue2("Carshare Fleet")
-                    setDropdownInputValue1("")
+                    onSetDropdownInputValue2("Carshare Fleet")
+                    onSetDropdownInputValue1("")
                   }
                 }}
                 as="select"
@@ -211,12 +211,12 @@ const EmailAddressJoinForm = ({
 
                 <p>
                   I agree to the Stable{" "}
-                  <span onClick={() => setShowTermsModal(true)}>
+                  <span onClick={() => onSetShowTermsModal(true)}>
                     {" "}
                     Terms{" "}
                   </span>{" "}
                   and{" "}
-                  <span onClick={() => setShowPrivacyModal(true)}>
+                  <span onClick={() => onSetShowPrivacyModal(true)}>
                     {" "}
                     Privacy Policy
                   </span>

@@ -4,11 +4,11 @@ import { Link } from "@reach/router"
 
 import "../../pages/join-stable.scss"
 
-const SimpleCompleteJoinForm = ({ handleSubmit }) => {
+const SimpleCompleteJoinForm = ({ onHandleSubmit }) => {
     return (
         <div className="join-stable-wrapper">
             <div className="form">
-                <Form onSubmit={handleSubmit}>
+                <Form onSubmit={onHandleSubmit}>
                     <Form.Group className="mb-3">
                         <Form.Label>
                             <p className="text">

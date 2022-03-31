@@ -6,16 +6,16 @@ import "../../pages/join-stable.scss"
 
 const ArgyleAuthenticatedJoinForm = ({
     existingAccount,
-    handlePasswordSubmit,
-    setPasswordInputValue,
-    setPasswordConfirmInputValue,
+    onHandlePasswordSubmit,
+    onSetPasswordInputValue,
+    onSetPasswordConfirmInputValue,
     passwordMismatch
 }) => {
     return (
         <div className="join-stable-wrapper">
             {!existingAccount && (
                 <div className="form">
-                    <Form onSubmit={handlePasswordSubmit}>
+                    <Form onSubmit={onHandlePasswordSubmit}>
                         <Form.Group className="mb-9">
                             <Form.Label>
                                 <p className="text">
@@ -37,7 +37,7 @@ const ArgyleAuthenticatedJoinForm = ({
                                 required={true}
                                 className="input"
                                 minLength="8"
-                                onChange={e => setPasswordInputValue(e.target.value)}
+                                onChange={e => onSetPasswordInputValue(e.target.value)}
                                 // required
                                 type="password"
                                 placeholder="Password"
@@ -57,7 +57,7 @@ const ArgyleAuthenticatedJoinForm = ({
                                 className="input"
                                 minLength="8"
                                 onChange={e =>
-                                    setPasswordConfirmInputValue(e.target.value)
+                                    onSetPasswordConfirmInputValue(e.target.value)
                                 }
                                 // required
                                 placeholder="Verify Password"
@@ -85,7 +85,7 @@ const ArgyleAuthenticatedJoinForm = ({
             )}
             {existingAccount && (
                 <div className="form">
-                    <Form onSubmit={handlePasswordSubmit}>
+                    <Form onSubmit={onHandlePasswordSubmit}>
                         <Form.Label>
                             <p className="text">
                                 <span className="bold">

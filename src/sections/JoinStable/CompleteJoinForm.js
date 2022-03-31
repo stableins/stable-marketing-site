@@ -5,8 +5,8 @@ import "../../pages/join-stable.scss"
 
 const CompleteJoinForm = ({
     argyleLinked,
-    setArgyleLinked,
-    setDropdownInputValue1
+    onSetArgyleLinked,
+    onSetDropdownInputValue1
 }) => {
     return (
         <div className="join-stable-wrapper">
@@ -50,7 +50,7 @@ const CompleteJoinForm = ({
                                     payload: response.data.confirmed,
                                 })
 
-                                setArgyleLinked(true)
+                                onSetArgyleLinked(true)
                             } catch (e) {
                                 console.log(e)
                             }
@@ -69,7 +69,7 @@ const CompleteJoinForm = ({
                                     type: "FORM::SET_STATUS",
                                     payload: "Argyle Authenticated",
                                 })
-                                setDropdownInputValue1(null)
+                                onSetDropdownInputValue1(null)
                             }}
                             className="button"
                             variant="primary"

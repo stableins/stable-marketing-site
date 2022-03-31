@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import { PageWrapper } from "~components/Core"
-import { isMobile } from "react-device-detect"
 import axios from "axios"
 import FooterOne from "../sections/marketing/FooterOne"
 import { useDispatch } from "react-redux"
@@ -20,6 +19,8 @@ import AccountCreatedJoinForm from "../sections/JoinStable/AccountCreatedJoinFor
 import TermsModal from "../sections/JoinStable/Modal/TermsModal"
 import PrivacyModal from "../sections/JoinStable/Modal/PrivacyModal"
 import NewUserModal from "../sections/JoinStable/Modal/NewUserModal"
+import UserStatus from "../common/UserStatus"
+
 
 import "./join-stable.scss"
 
@@ -289,100 +290,98 @@ export default function individualFleetForm() {
       </div>
       <Fade>
         <PageWrapper headerConfig={header} innerPage={true}>
-          {status === "" && (
+          {status === UserStatus.default && (
             <DefaultJoinForm
-              handleAdditionalInfoSubmit={handleAdditionalInfoSubmit}
-              setEmailInputValue={setEmailInputValue}
-              setNameInputValue={setNameInputValue}
-              setZipcodeInputValue={setZipcodeInputValue}
+              onHandleAdditionalInfoSubmit={handleAdditionalInfoSubmit}
+              onSetEmailInputValue={setEmailInputValue}
+              onSetNameInputValue={setNameInputValue}
+              onSetZipcodeInputValue={setZipcodeInputValue}
               invalidEmail={invalidEmail}
               invalidZip={invalidZip}
-              isMobile={isMobile}
               clicked={clicked}
-              setClicked={setClicked}
-              setResetSelect1={setResetSelect1}
-              setResetSelect2={setResetSelect2}
+              onSetClicked={setClicked}
+              onSetResetSelect1={setResetSelect1}
+              onSetResetSelect2={setResetSelect2}
               resetSelect1={resetSelect1}
               resetSelect2={resetSelect2}
               dropdownInputValue1={dropdownInputValue1}
               dropdownInputValue2={dropdownInputValue2}
-              setDropdownInputValue1={setDropdownInputValue1}
-              setDropdownInputValue2={setDropdownInputValue2}
-              setDisableOption1={setDisableOption1}
-              setShowTermsModal={setShowTermsModal}
-              setShowPrivacyModal={setShowPrivacyModal} />
+              onSetDropdownInputValue1={setDropdownInputValue1}
+              onSetDropdownInputValue2={setDropdownInputValue2}
+              onSetDisableOption1={setDisableOption1}
+              onSetShowTermsModal={setShowTermsModal}
+              onSetShowPrivacyModal={setShowPrivacyModal} />
           )}
 
-          {status === "Email Address Only" && !driverReport && (
+          {status === UserStatus.emailAdressOnly && !driverReport && (
             <EmailAddressJoinForm
-              handleAdditionalInfoSubmit={handleAdditionalInfoSubmit}
-              setNameInputValue={setNameInputValue}
-              setZipcodeInputValue={setZipcodeInputValue}
-              setClicked={setClicked}
-              setResetSelect1={setResetSelect1}
-              setResetSelect2={setResetSelect2}
-              setDropdownInputValue2={setDropdownInputValue2}
-              setDisableOption1={setDisableOption1}
-              setDropdownInputValue1={setDropdownInputValue1}
+              onHandleAdditionalInfoSubmit={handleAdditionalInfoSubmit}
+              onSetNameInputValue={setNameInputValue}
+              onSetZipcodeInputValue={setZipcodeInputValue}
+              onSetClicked={setClicked}
+              onSetResetSelect1={setResetSelect1}
+              onSetResetSelect2={setResetSelect2}
+              onSetDropdownInputValue2={setDropdownInputValue2}
+              onSetDisableOption1={setDisableOption1}
+              onSetDropdownInputValue1={setDropdownInputValue1}
               resetSelect2={resetSelect2}
               clicked={clicked}
               dropdownInputValue1={dropdownInputValue1}
               dropdownInputValue2={dropdownInputValue2}
               invalidZip={invalidZip}
-              isMobile={isMobile}
               resetSelect1={resetSelect1}
-              setShowTermsModal={setShowTermsModal}
-              setShowPrivacyModal={setShowPrivacyModal}
+              onSetShowTermsModal={setShowTermsModal}
+              onSetShowPrivacyModal={setShowPrivacyModal}
             />
           )}
-          {status === "Email Address Only" && driverReport && (
+          {status === UserStatus.emailAdressOnly && driverReport && (
             <EmailAddressDriveReportJoinForm
-              handleAdditionalInfoSubmit={handleAdditionalInfoSubmit}
-              setNameInputValue={setNameInputValue}
-              setZipcodeInputValue={setZipcodeInputValue}
-              setShowTermsModal={setShowTermsModal}
-              setShowPrivacyModal={setShowPrivacyModal}
+              onHandleAdditionalInfoSubmit={handleAdditionalInfoSubmit}
+              onSetNameInputValue={setNameInputValue}
+              onSetZipcodeInputValue={setZipcodeInputValue}
+              onSetShowTermsModal={setShowTermsModal}
+              onSetShowPrivacyModal={setShowPrivacyModal}
               invalidZip={invalidZip}
             />
           )}
 
-          {status === "Form Complete" &&
+          {status === UserStatus.formComplete &&
             userType === "Rideshare Owner Operator" && (
               <CompleteJoinForm
                 argyleLinked={argyleLinked}
-                setArgyleLinked={setArgyleLinked}
-                setDropdownInputValue1={setDropdownInputValue1}
+                onSetArgyleLinked={setArgyleLinked}
+                onSetDropdownInputValue1={setDropdownInputValue1}
               />
             )}
 
-          {status === "Form Complete" &&
+          {status === UserStatus.formComplete &&
             userType !== "Rideshare Owner Operator" &&
             !calendlyScheduled && (
               <CompleteConnectJoinForm />
             )}
 
-          {status === "Argyle Authenticated" && (
+          {status === UserStatus.formComplete && calendlyScheduled && (
+            <SimpleCompleteJoinForm onHandleSubmit={handleSubmit} />
+          )}
+
+          {status === UserStatus.argyleAuthenticated && (
             <>
               <ArgyleAuthenticatedJoinForm
                 existingAccount={existingAccount}
-                handlePasswordSubmit={handlePasswordSubmit}
-                setPasswordInputValue={setPasswordInputValue}
-                setPasswordConfirmInputValue={setPasswordConfirmInputValue}
+                onHandlePasswordSubmit={handlePasswordSubmit}
+                onSetPasswordInputValue={setPasswordInputValue}
+                onSetPasswordConfirmInputValue={setPasswordConfirmInputValue}
                 passwordMismatch={passwordMismatch} />
             </>
           )}
 
-          {status === "Argyle Authenticated and Account Created" && (
-            <AccountCreatedJoinForm handleSubmit={handleSubmit} />
+          {status === UserStatus.argyleAuthenticatedAndAccountCreated && (
+            <AccountCreatedJoinForm onHandleSubmit={handleSubmit} />
           )}
 
-          {status === "Form Complete" && calendlyScheduled && (
-            <SimpleCompleteJoinForm handleSubmit={handleSubmit} />
-          )}
-
-          <TermsModal showTermsModal={showTermsModal} setShowTermsModal={setShowTermsModal} />
-          <PrivacyModal showPrivacyModal={showPrivacyModal} setShowPrivacyModal={setShowPrivacyModal} />
-          <NewUserModal showNewUserModal={showNewUserModal} setShowNewUserModal={setShowNewUserModal} />
+          <TermsModal onShowTermsModal={showTermsModal} onSetShowTermsModal={setShowTermsModal} />
+          <PrivacyModal onShowPrivacyModal={showPrivacyModal} onSetShowPrivacyModal={setShowPrivacyModal} />
+          <NewUserModal onShowNewUserModal={showNewUserModal} onSetShowNewUserModal={setShowNewUserModal} />
           <FooterOne />
         </PageWrapper>
       </Fade>
