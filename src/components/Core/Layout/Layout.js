@@ -1,15 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import favicon from '~image/favicon.png';
 import Header from "../Header";
-const axios = require("axios")
+import withApiConfiguration from "./withApiConfiguration";
 
-export default function Layout({
+function Layout({
   children,
 }) {
-  useEffect(() => {
-    axios.defaults.baseURL = process.env.GATSBY_API_URL
-  }, [])
   return (
     <>
     <Helmet>
@@ -21,3 +18,5 @@ export default function Layout({
     </>
   )
 }
+
+export default withApiConfiguration(Layout);
