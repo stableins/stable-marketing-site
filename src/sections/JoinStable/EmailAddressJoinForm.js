@@ -5,7 +5,7 @@ import { isMobile } from "react-device-detect"
 import "../../pages/join-stable.scss"
 
 const EmailAddressJoinForm = ({
-  onHandleAdditionalInfoSubmit,
+  onSubmitForm,
   onSetNameInputValue,
   onSetZipcodeInputValue,
   onSetClicked,
@@ -26,7 +26,7 @@ const EmailAddressJoinForm = ({
   return (
     <div className="join-stable-wrapper">
       <div className="form">
-        <Form onSubmit={onHandleAdditionalInfoSubmit}>
+        <Form onSubmit={onSubmitForm}>
           <Form.Label>
             <p className="text">
               <span className="bold">Tell us more about you.</span>{" "}

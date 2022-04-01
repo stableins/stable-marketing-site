@@ -19,8 +19,7 @@ import AccountCreatedJoinForm from "../sections/JoinStable/AccountCreatedJoinFor
 import TermsModal from "../sections/JoinStable/Modal/TermsModal"
 import PrivacyModal from "../sections/JoinStable/Modal/PrivacyModal"
 import NewUserModal from "../sections/JoinStable/Modal/NewUserModal"
-import UserStatus from "../common/UserStatus"
-
+import UserStatus from "../data/types/UserStatus"
 
 import "./join-stable.scss"
 
@@ -292,7 +291,7 @@ export default function individualFleetForm() {
         <PageWrapper headerConfig={header} innerPage={true}>
           {status === UserStatus.default && (
             <DefaultJoinForm
-              onHandleAdditionalInfoSubmit={handleAdditionalInfoSubmit}
+              onSubmitForm={handleAdditionalInfoSubmit}
               onSetEmailInputValue={setEmailInputValue}
               onSetNameInputValue={setNameInputValue}
               onSetZipcodeInputValue={setZipcodeInputValue}
@@ -315,7 +314,7 @@ export default function individualFleetForm() {
 
           {status === UserStatus.emailAdressOnly && !driverReport && (
             <EmailAddressJoinForm
-              onHandleAdditionalInfoSubmit={handleAdditionalInfoSubmit}
+              onSubmitForm={handleAdditionalInfoSubmit}
               onSetNameInputValue={setNameInputValue}
               onSetZipcodeInputValue={setZipcodeInputValue}
               onSetClicked={setClicked}
@@ -336,7 +335,7 @@ export default function individualFleetForm() {
           )}
           {status === UserStatus.emailAdressOnly && driverReport && (
             <EmailAddressDriveReportJoinForm
-              onHandleAdditionalInfoSubmit={handleAdditionalInfoSubmit}
+              onSubmitForm={handleAdditionalInfoSubmit}
               onSetNameInputValue={setNameInputValue}
               onSetZipcodeInputValue={setZipcodeInputValue}
               onSetShowTermsModal={setShowTermsModal}
@@ -361,14 +360,14 @@ export default function individualFleetForm() {
             )}
 
           {status === UserStatus.formComplete && calendlyScheduled && (
-            <SimpleCompleteJoinForm onHandleSubmit={handleSubmit} />
+            <SimpleCompleteJoinForm onSubmitForm={handleSubmit} />
           )}
 
           {status === UserStatus.argyleAuthenticated && (
             <>
               <ArgyleAuthenticatedJoinForm
                 existingAccount={existingAccount}
-                onHandlePasswordSubmit={handlePasswordSubmit}
+                onSubmitForm={handlePasswordSubmit}
                 onSetPasswordInputValue={setPasswordInputValue}
                 onSetPasswordConfirmInputValue={setPasswordConfirmInputValue}
                 passwordMismatch={passwordMismatch} />
@@ -376,7 +375,7 @@ export default function individualFleetForm() {
           )}
 
           {status === UserStatus.argyleAuthenticatedAndAccountCreated && (
-            <AccountCreatedJoinForm onHandleSubmit={handleSubmit} />
+            <AccountCreatedJoinForm onSubmitForm={handleSubmit} />
           )}
 
           <TermsModal onShowTermsModal={showTermsModal} onSetShowTermsModal={setShowTermsModal} />

@@ -6,7 +6,7 @@ import "../../pages/join-stable.scss"
 
 const ArgyleAuthenticatedJoinForm = ({
     existingAccount,
-    onHandlePasswordSubmit,
+    onSubmitForm,
     onSetPasswordInputValue,
     onSetPasswordConfirmInputValue,
     passwordMismatch
@@ -15,7 +15,7 @@ const ArgyleAuthenticatedJoinForm = ({
         <div className="join-stable-wrapper">
             {!existingAccount && (
                 <div className="form">
-                    <Form onSubmit={onHandlePasswordSubmit}>
+                    <Form onSubmit={onSubmitForm}>
                         <Form.Group className="mb-9">
                             <Form.Label>
                                 <p className="text">
@@ -85,7 +85,7 @@ const ArgyleAuthenticatedJoinForm = ({
             )}
             {existingAccount && (
                 <div className="form">
-                    <Form onSubmit={onHandlePasswordSubmit}>
+                    <Form onSubmit={onSubmitForm}>
                         <Form.Label>
                             <p className="text">
                                 <span className="bold">

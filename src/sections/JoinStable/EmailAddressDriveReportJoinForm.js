@@ -4,7 +4,7 @@ import { Form } from "react-bootstrap"
 import "../../pages/join-stable.scss"
 
 const EmailAddressDriveReportJoinForm = ({
-    onHandleAdditionalInfoSubmit,
+    onSubmitForm,
     onSetNameInputValue,
     onSetZipcodeInputValue,
     onSetShowTermsModal,
@@ -14,7 +14,7 @@ const EmailAddressDriveReportJoinForm = ({
     return (
         <div className="join-stable-wrapper">
             <div className="form">
-                <Form onSubmit={onHandleAdditionalInfoSubmit}>
+                <Form onSubmit={onSubmitForm}>
                     <Form.Label>
                         <p className="text">
                             <span className="bold">Tell us more about you.</span>{" "}

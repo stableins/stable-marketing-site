@@ -1,7 +1,7 @@
 const UserStatus = {
     default: "",
-    emailAddressAndAdditionalInfoReceived: "email address and additional info received", // maybe must be removed
-    createPassword: "createPassword", // maybe must be removed
+    emailAddressAndAdditionalInfoReceived: "email address and additional info received",
+    createPassword: "createPassword",
     emailAdressOnly: "Email Address Only",
     formComplete: "Form Complete",
     argyleAuthenticated: "Argyle Authenticated",
