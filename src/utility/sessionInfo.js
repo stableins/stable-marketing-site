@@ -11,7 +11,7 @@ export default async function getData({ email }) {
     const referrer = document.referrer
     const url = window.location.href
 
-    const response = await axios.post("/.netlify/functions/saveSessionInfo", {
+    const response = await axios.post("/api/saveSessionInfo", {
       session: {
         ...res?.data,
         deviceInfo,

@@ -105,7 +105,7 @@ export default function HeroSection() {
     setLoading(true)
 
     const response = await axios.post(
-      "/.netlify/functions/sendgridValidation",
+      "/api/sendgridValidation",
       {
         email: emailInputValue,
       }
@@ -114,7 +114,7 @@ export default function HeroSection() {
     if (response.data[1].result.verdict !== "Invalid") {
       setInvalidEmail(false)
       try {
-        const response = await axios.post("/.netlify/functions/saveEmail", {
+        const response = await axios.post("/api/saveEmail", {
           email: emailInputValue,
         })
         if (response.data) {
@@ -306,7 +306,7 @@ export default function HeroSection() {
                 style={{ width: "150px" }}
                 onClick={async () => {
                   const response = await axios.post(
-                    "/.netlify/functions/resetContact",
+                    "/api/resetContact",
                     {
                       email: emailInputValue,
                     }
