@@ -51,7 +51,13 @@ exports.handler = async (event, context, callback) => {
 
     await users.updateOne(
       { _id: user._id },
-      { $set: { status: status, userType: null } }
+      { 
+        $set: { 
+          status: status,
+          userType: null,
+          updateAt: new Date()
+        }
+      }
     )
 
     return {

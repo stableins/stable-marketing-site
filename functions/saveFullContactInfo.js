@@ -41,6 +41,7 @@ exports.handler = async (event, context, callback) => {
         state: state,
         confirmed: false,
         confirmationId: confirmationId,
+        createAt: new Date()
       })
 
       await axios.post(
@@ -84,6 +85,7 @@ exports.handler = async (event, context, callback) => {
             status: status,
             userType: userType,
             state: state,
+            updateAt: new Date()
           },
         }
       )
