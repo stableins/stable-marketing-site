@@ -350,6 +350,7 @@ export default function individualFleetForm() {
                 argyleLinked={argyleLinked}
                 onSetArgyleLinked={setArgyleLinked}
                 onSetDropdownInputValue1={setDropdownInputValue1}
+                email={email}
               />
             )}
 

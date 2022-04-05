@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from "axios"
+import { useDispatch } from "react-redux"
 import { ArgyleLink } from "../../components/Argyle/ArgyleLink.tsx"
 
 import "../../pages/join-stable.scss"
@@ -7,8 +8,11 @@ import "../../pages/join-stable.scss"
 const CompleteJoinForm = ({
     argyleLinked,
     onSetArgyleLinked,
-    onSetDropdownInputValue1
+    onSetDropdownInputValue1,
+    email
 }) => {
+  const dispatch = useDispatch()
+
     return (
         <div className="join-stable-wrapper">
             <div className="form">
