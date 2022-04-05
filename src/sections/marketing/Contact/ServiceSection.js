@@ -28,7 +28,7 @@ export default function ServiceSection() {
     setLoading(true)
 
     const response = await axios.post(
-      "/.netlify/functions/sendgridValidation",
+      "/api/sendgridValidation",
       {
         email: emailInputValue,
       }
@@ -37,7 +37,7 @@ export default function ServiceSection() {
     if (response.data[1].result.verdict !== "Invalid") {
       setInvalidEmail(false)
       try {
-        const response = await axios.post("/.netlify/functions/sendgridEmail", {
+        const response = await axios.post("/api/sendgridEmail", {
           email: emailInputValue,
           message: messageInputValue,
           name: nameInputValue,

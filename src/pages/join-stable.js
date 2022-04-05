@@ -113,7 +113,7 @@ export default function individualFleetForm() {
           payload: "emailZipAndNameAndEligible",
         })
         const response = await axios.post(
-          "/.netlify/functions/sendgridContact",
+          "/api/sendgridContact",
           {
             email: email ? email : emailInputValue,
             zipcode: zipcodeInputValue,
@@ -165,7 +165,7 @@ export default function individualFleetForm() {
       setInvalidZip(false)
 
       const response = await axios.post(
-        "/.netlify/functions/sendgridValidation",
+        "/api/sendgridValidation",
         {
           email: email && email !== "" ? email : emailInputValue,
         }
@@ -185,7 +185,7 @@ export default function individualFleetForm() {
             userType = dropdownInputValue2
           }
           const response = await axios.post(
-            "/.netlify/functions/saveFullContactInfo",
+            "/api/saveFullContactInfo",
             {
               email: email ?? emailInputValue,
               zipcode: zipcodeInputValue,
@@ -245,7 +245,7 @@ export default function individualFleetForm() {
       setPasswordMismatch(false)
       try {
         const response = await axios.post(
-          "/.netlify/functions/passwordCreated",
+          "/api/passwordCreated",
           {
             email: email,
             password: passwordInputValue,
@@ -919,7 +919,7 @@ export default function individualFleetForm() {
                         onAccountCreated: async ({ accountId, userId }) => {
                           try {
                             const response = await axios.post(
-                              "/.netlify/functions/linkArgyleAccount",
+                              "/api/linkArgyleAccount",
                               {
                                 email: email,
                                 argyleUserId: userId,
