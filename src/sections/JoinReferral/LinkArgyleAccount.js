@@ -1,17 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from "react"
+import { useSelector } from "react-redux"
 import axios from "axios"
-import { useDispatch } from "react-redux"
 import { ArgyleLink } from "../../components/Argyle/ArgyleLink.tsx"
+
 
 import "../../pages/join-stable.scss"
 
-const CompleteJoinForm = ({
-    argyleLinked,
-    onSetArgyleLinked,
-    onSetDropdownInputValue1,
-    email
+const LinkArgyleAccount = ({
+    onAccountLinked
 }) => {
-  const dispatch = useDispatch()
+    const email = useSelector(state => state.form.email)
+    const [argyleLinked, setArgyleLinked] = useState(false)
 
     return (
         <div className="join-stable-wrapper">
@@ -42,7 +41,7 @@ const CompleteJoinForm = ({
                         showSearch: false,
                         onAccountCreated: async ({ accountId, userId }) => {
                             try {
-                                const response = await axios.post(
+                                await axios.post(
                                     "/api/linkArgyleAccount",
                                     {
                                         email: email,
@@ -50,12 +49,7 @@ const CompleteJoinForm = ({
                                         argyleAccountId: accountId,
                                     }
                                 )
-                                dispatch({
-                                    type: "FORM::SET_CONFIRMED",
-                                    payload: response.data.confirmed,
-                                })
-
-                                onSetArgyleLinked(true)
+                                setArgyleLinked(true)
                             } catch (e) {
                                 console.log(e)
                             }
@@ -70,15 +64,10 @@ const CompleteJoinForm = ({
                         <p>Done Linking your account(s)?</p>
                         <button
                             onClick={() => {
-                                dispatch({
-                                    type: "FORM::SET_STATUS",
-                                    payload: "Argyle Authenticated",
-                                })
-                                onSetDropdownInputValue1(null)
+                                onAccountLinked()
                             }}
                             className="button"
                             variant="primary"
-                        // type="submit"
                         >
                             Complete the final step &nbsp;
                         </button>
@@ -89,4 +78,4 @@ const CompleteJoinForm = ({
     )
 }
 
-export default CompleteJoinForm;
+export default LinkArgyleAccount;

@@ -85,7 +85,7 @@ const ArgyleAuthenticatedJoinForm = ({
             )}
             {existingAccount && (
                 <div className="form">
-                    <Form onSubmit={onSubmitForm}>
+                    <Form>
                         <Form.Label>
                             <p className="text">
                                 <span className="bold">
