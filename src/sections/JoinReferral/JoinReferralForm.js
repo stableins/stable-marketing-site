@@ -4,7 +4,8 @@ import axios from "axios"
 import { Form } from "react-bootstrap"
 import PulseLoader from "react-spinners/PulseLoader"
 import SessionInfoCapture from "../../utility/sessionInfo"
-
+import TermsModal from "../../sections/JoinStable/Modal/TermsModal"
+import PrivacyModal from "../../sections/JoinStable/Modal/PrivacyModal"
 
 import "../../pages/join-stable.scss"
 
@@ -20,6 +21,8 @@ const JoinReferralForm = ({
     const [isAcceptedAgreement, setIsAcceptedAgreement] = useState(false)
     const [isBlockedSubmit, setIsBlockedSubmit] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [showTermsModal, setShowTermsModal] = useState(false)
+    const [showPrivacyModal, setShowPrivacyModal] = useState(false)
 
     useEffect(() => {
         const isFilledFormFields = !!emailInputValue &&
@@ -36,20 +39,22 @@ const JoinReferralForm = ({
 
         SessionInfoCapture({ email: emailInputValue })
 
-        const response = await axios.post(
-            "/api/sendgridValidation",
-            {
-                email: emailInputValue,
-            }
-        )
+        let response
+        try {
+            response = await axios.post(
+                "/api/sendgridValidation",
+                {
+                    email: emailInputValue,
+                }
+            )
 
-        if (response.data[1].result.verdict !== "Invalid") {
-            dispatch({
-                type: "FORM::SET_EMAIL",
-                payload: emailInputValue,
-              })
-            try {
-                const response = await axios.post(
+            if (response.data[1].result.verdict !== "Invalid") {
+                dispatch({
+                    type: "FORM::SET_EMAIL",
+                    payload: emailInputValue,
+                })
+
+                response = await axios.post(
                     "/api/saveFullContactInfo",
                     {
                         email: emailInputValue,
@@ -63,12 +68,11 @@ const JoinReferralForm = ({
                     setLoading(false)
                     onFormSubmit()
                 }
-
-            } catch (e) {
-                console.log(e)
+            } else {
                 setLoading(false)
             }
-        } else {
+        } catch (e) {
+            console.log(e)
             setLoading(false)
         }
     }
@@ -115,17 +119,18 @@ const JoinReferralForm = ({
                         <Form.Group>
                             <Form.Label className="label3">Zip Code: </Form.Label>
                             <Form.Control
-                                required
-                                placeholder="Zip Code"
+                                required={true}
                                 className="input"
                                 type="tel"
-                                pattern=".{3,}"
-                                minLength="5"
-                                maxLength="5"
+                                pattern=".{5,5}"
+                                minlength="5"
+                                maxlength="5"
+                                onInput={e => {
+                                    const text = e.target.value.match(/\d+/g)?.join('')
+                                    e.target.value = text || ''
+                                }}
                                 onChange={e => setZipcodeInputValue(e.target.value)}
-                                onInput={e =>
-                                    (e.target.value = e.target.value.slice(0, 5))
-                                }
+                                placeholder="Zip Code"
                             />
                         </Form.Group>
 
@@ -169,6 +174,8 @@ const JoinReferralForm = ({
                     </Form.Group>
                 </Form>
             </div>
+            <TermsModal onShowTermsModal={showTermsModal} onSetShowTermsModal={setShowTermsModal} />
+            <PrivacyModal onShowPrivacyModal={showPrivacyModal} onSetShowPrivacyModal={setShowPrivacyModal} />
         </div>
     )
 }
