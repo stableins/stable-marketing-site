@@ -34,7 +34,7 @@ export default function Redirect() {
 
   useEffect(async () => {
     try {
-      const response = await axios.post("/.netlify/functions/confirmUser", {
+      const response = await axios.post("/api/confirmUser", {
         confirmationId: confirmationId,
       })
 

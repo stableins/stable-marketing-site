@@ -88,7 +88,7 @@ export default function individualFleetForm() {
       const userType = "Rideshare Owner Operator"
 
       const response = await axios.post(
-        "/.netlify/functions/saveFullContactInfo",
+        "/api/saveFullContactInfo",
         {
           email: emailInputValue,
           zipcode: zipcodeInputValue,
@@ -141,7 +141,7 @@ export default function individualFleetForm() {
       setPasswordMismatch(false)
       try {
         const response = await axios.post(
-          "/.netlify/functions/passwordCreated",
+          "/api/passwordCreated",
           {
             email: email,
             password: passwordInputValue,
@@ -365,7 +365,7 @@ export default function individualFleetForm() {
                         onAccountCreated: async ({ accountId, userId }) => {
                           try {
                             const response = await axios.post(
-                              "/.netlify/functions/linkArgyleAccount",
+                              "/api/linkArgyleAccount",
                               {
                                 email: email,
                                 argyleUserId: userId,
