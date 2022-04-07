@@ -1,0 +1,67 @@
+@use "../../../src/styles/common/mixins.scss";
+@use "../../../src/styles/common/variables.scss";
+
+
+.description-srapper {
+    color: variables.$base-color;
+
+    padding: 45px 0 40px;
+    margin-top: 70px;
+    background-color: #ebeeff;
+
+    .button {
+        @include mixins.submitButton;
+        margin-top: 35px;
+    }
+
+    .drive-report-img {
+        width: 450px;
+    }
+
+    > div{
+        text-align: center;
+    }
+
+    .description-title {
+        color: variables.$secondary-color;
+        font-size: 60px;
+        line-height: 70px;
+    }
+
+    .description-tool {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 45px;
+
+        p {
+            max-width: 460px;
+            margin-bottom: 0;
+        }
+
+        b {
+            color: variables.$secondary-color;
+        }
+    }
+
+    .description-logo {
+        margin-top: 40px;
+    }
+
+    .description-rideshare-drivers {
+        margin-top: 35px;
+        margin-bottom: 20px;
+        font-size: 36px;
+        color: variables.$secondary-color;
+    }
+
+    .description-benefits {
+        display: flex;
+        
+        .description-benefits-block {
+            b {
+                color: variables.$secondary-color;
+            }
+            max-width: 330px;
+        }
+    }
+}

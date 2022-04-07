@@ -6,9 +6,11 @@ import Fade from "react-reveal/Fade"
 import queryString from "query-string";
 import AcccountRegistration from "../sections/JoinReferral/AcccountRegistration/AcccountRegistration"
 import JoinReferralForm from "../sections/JoinReferral/JoinReferralForm"
+import JoinReferralDescription from "../sections/JoinReferral/JoinReferralDescription"
 import LinkArgyleAccount from "../sections/JoinReferral/LinkArgyleAccount"
 
 import "./join-stable.scss"
+import "./join-referral.scss"
 
 const header = {
     headerClasses:
@@ -41,21 +43,24 @@ export default function joinReferral({ location }) {
         <>
             <Fade>
                 <PageWrapper headerConfig={header} innerPage={true}>
-                    {currentStep === '' &&
-                        <JoinReferralForm
-                            referral={referral}
-                            onFormSubmit={() => setCurrentStep('linkArgyleAccount')}
-                        />
-                    }
-                    {currentStep === 'linkArgyleAccount' &&
-                        <LinkArgyleAccount
-                            onAccountLinked={() => setCurrentStep('argyleRegistration')}
-                        />
-                    }
-                    {currentStep === 'argyleRegistration' &&
-                        <AcccountRegistration />
-                    }
-                    <FooterOne />
+                    <div>
+                        <JoinReferralDescription />
+                        {currentStep === '' &&
+                            <JoinReferralForm
+                                referral={referral}
+                                onFormSubmit={() => setCurrentStep('linkArgyleAccount')}
+                            />
+                        }
+                        {currentStep === 'linkArgyleAccount' &&
+                            <LinkArgyleAccount
+                                onAccountLinked={() => setCurrentStep('argyleRegistration')}
+                            />
+                        }
+                        {currentStep === 'argyleRegistration' &&
+                            <AcccountRegistration />
+                        }
+                        <FooterOne />
+                    </div>
                 </PageWrapper>
             </Fade>
         </>
