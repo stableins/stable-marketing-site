@@ -21,11 +21,9 @@ const JoinReferralDescription = () => {
                     </p>
                 </div>
                 <div className="">
-                    <Link to="/">
-                        <button className="button" variant="primary" type="submit">
-                            <span>Get yours now</span>
-                        </button>
-                    </Link>
+                    <button className="button" variant="primary" type="submit">
+                        <span>Get yours now</span>
+                    </button>
                 </div>
                 <div className="description-logo">
                     <img className="drive-report-img" src={DriverReportImg} alt="Driver report image" />
@@ -52,7 +50,7 @@ const JoinReferralDescription = () => {
                     </div>
                     <div className="description-benefits-block">
                         <div className="inner-item-wrapper">
-                        <span
+                            <span
                                 class="fas fa-clock"
                                 aria-hidden="true"
                             />
@@ -85,11 +83,9 @@ const JoinReferralDescription = () => {
 
                 </div>
                 <div className="">
-                    <Link to="/">
-                        <button className="button" variant="primary" type="submit">
-                            <span>Get yours now</span>
-                        </button>
-                    </Link>
+                    <button className="button" variant="primary" type="submit">
+                        <span>Get yours now</span>
+                    </button>
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@ const ArgyleRegistration = () => {
     }
 
     return (
-        <div className="join-stable-wrapper">
+        <div>
             {!isAccountCreated &&
                 <RegistrationForm onAccountCreacted={handleAccountCreated} />
             }

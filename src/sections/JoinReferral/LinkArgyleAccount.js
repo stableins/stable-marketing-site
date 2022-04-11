@@ -13,7 +13,7 @@ const LinkArgyleAccount = ({
     const [argyleLinked, setArgyleLinked] = useState(false)
 
     return (
-        <div className="join-stable-wrapper">
+        <div className="">
             <div className="form">
                 <p className="text">
                     <span className="bold">

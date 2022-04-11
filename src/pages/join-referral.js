@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, createRef } from "react"
 import FooterOne from "../sections/marketing/FooterOne"
 import { PageWrapper } from "~components/Core"
 import HeaderButton from "../sections/marketing/Header"
 import Fade from "react-reveal/Fade"
-import queryString from "query-string";
 import AcccountRegistration from "../sections/JoinReferral/AcccountRegistration/AcccountRegistration"
 import JoinReferralForm from "../sections/JoinReferral/JoinReferralForm"
 import JoinReferralDescription from "../sections/JoinReferral/JoinReferralDescription"
+import Presentation from "../sections/JoinReferral/Presentation"
 import LinkArgyleAccount from "../sections/JoinReferral/LinkArgyleAccount"
+import DriverReportRegistration from "../sections/JoinReferral/DriverReportRegistration"
 
 import "./join-stable.scss"
 import "./join-referral.scss"
@@ -30,35 +31,14 @@ const header = {
 }
 
 export default function joinReferral({ location }) {
-    const [referral, setReferral] = useState('')
-
-    const [currentStep, setCurrentStep] = useState('')
-
-    useEffect(() => {
-        const { referral } = queryString.parse(location.search);
-        setReferral(referral)
-    }, [])
-
     return (
         <>
             <Fade>
                 <PageWrapper headerConfig={header} innerPage={true}>
                     <div>
                         <JoinReferralDescription />
-                        {currentStep === '' &&
-                            <JoinReferralForm
-                                referral={referral}
-                                onFormSubmit={() => setCurrentStep('linkArgyleAccount')}
-                            />
-                        }
-                        {currentStep === 'linkArgyleAccount' &&
-                            <LinkArgyleAccount
-                                onAccountLinked={() => setCurrentStep('argyleRegistration')}
-                            />
-                        }
-                        {currentStep === 'argyleRegistration' &&
-                            <AcccountRegistration />
-                        }
+                        <Presentation />
+                        <DriverReportRegistration />
                         <FooterOne />
                     </div>
                 </PageWrapper>

@@ -13,3 +13,20 @@
     border: none;
     color: #f7f7f7 !important;
 }
+
+@mixin baseForm {
+    label {
+        font-family: Rubik;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: #002e6d;
+        margin-bottom: 2px;
+        & + input {
+            padding: 0.7rem 0.9rem;
+            border: 1px solid #92afd6;
+            color: #92afd6;
+        }
+    }
+}

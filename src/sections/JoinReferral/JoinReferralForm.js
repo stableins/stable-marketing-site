@@ -8,6 +8,8 @@ import TermsModal from "../../sections/JoinStable/Modal/TermsModal"
 import PrivacyModal from "../../sections/JoinStable/Modal/PrivacyModal"
 
 import "../../pages/join-stable.scss"
+import "./joinReferralForm.scss"
+
 
 
 const JoinReferralForm = ({
@@ -78,21 +80,13 @@ const JoinReferralForm = ({
     }
 
     return (
-        <div className="join-stable-wrapper">
+        <div className="">
             <div className="loader">
                 <PulseLoader color={"#3b358a"} loading={loading} size={50} />
             </div>
             <div className="form">
                 <Form onSubmit={onSubmit}>
-                    <Form.Label>
-                        <p className="text">
-                            To start, fill in below. We'll then connect
-                            to your rideshare accounts and with a few simple
-                            steps can generate your <b>Free Driver Report</b>!
-                        </p>
-                    </Form.Label>
                     <Form.Group className="mb-9">
-                        <br />
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label className="label1">
                                 Email Address:{" "}
