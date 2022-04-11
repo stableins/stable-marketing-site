@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react"
-import { Link } from "@reach/router"
+import React from "react"
 import DriverReportImg from "../../../static/app_image.png"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClock } from '@fortawesome/free-solid-svg-icons'
 
 import "../../pages/join-stable.scss"
 import "./joinReferralDescription.scss"
 
 
-const JoinReferralDescription = () => {
+const JoinReferralDescription = React.forwardRef((props, ref) => {
+
+    function scrollToForm() {
+        ref.current.scrollIntoView();
+    }
 
     return (
         <div className="description-wrapper">
@@ -21,7 +22,7 @@ const JoinReferralDescription = () => {
                     </p>
                 </div>
                 <div className="">
-                    <button className="button" variant="primary" type="submit">
+                    <button className="button" variant="primary" type="submit" onClick={() => scrollToForm()}>
                         <span>Get yours now</span>
                     </button>
                 </div>
@@ -82,14 +83,14 @@ const JoinReferralDescription = () => {
                     </div>
 
                 </div>
-                <div className="">
-                    <button className="button" variant="primary" type="submit">
+                <div>
+                    <button className="button" variant="primary" type="submit" onClick={() => scrollToForm()}>
                         <span>Get yours now</span>
                     </button>
                 </div>
             </div>
         </div>
     )
-}
+})
 
 export default JoinReferralDescription;

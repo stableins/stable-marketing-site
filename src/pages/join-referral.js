@@ -1,13 +1,10 @@
-import React, { useState, useEffect, createRef } from "react"
+import React, { useRef } from "react"
 import FooterOne from "../sections/marketing/FooterOne"
 import { PageWrapper } from "~components/Core"
 import HeaderButton from "../sections/marketing/Header"
 import Fade from "react-reveal/Fade"
-import AcccountRegistration from "../sections/JoinReferral/AcccountRegistration/AcccountRegistration"
-import JoinReferralForm from "../sections/JoinReferral/JoinReferralForm"
 import JoinReferralDescription from "../sections/JoinReferral/JoinReferralDescription"
 import Presentation from "../sections/JoinReferral/Presentation"
-import LinkArgyleAccount from "../sections/JoinReferral/LinkArgyleAccount"
 import DriverReportRegistration from "../sections/JoinReferral/DriverReportRegistration"
 
 import "./join-stable.scss"
@@ -30,15 +27,17 @@ const header = {
     ),
 }
 
-export default function joinReferral({ location }) {
+export default function joinReferral() {
+    const ref = useRef();
+
     return (
         <>
             <Fade>
                 <PageWrapper headerConfig={header} innerPage={true}>
                     <div>
-                        <JoinReferralDescription />
+                        <JoinReferralDescription ref={ref} />
                         <Presentation />
-                        <DriverReportRegistration />
+                        <DriverReportRegistration ref={ref} />
                         <FooterOne />
                     </div>
                 </PageWrapper>

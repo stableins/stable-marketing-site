@@ -18,7 +18,7 @@ const JoinReferralForm = ({
 }) => {
     const dispatch = useDispatch()
     const [emailInputValue, setEmailInputValue] = useState('')
-    const [nameInputValue, setNameInputValue] = useState('')
+    // const [nameInputValue, setNameInputValue] = useState('')
     const [zipcodeInputValue, setZipcodeInputValue] = useState('')
     const [isAcceptedAgreement, setIsAcceptedAgreement] = useState(false)
     const [isBlockedSubmit, setIsBlockedSubmit] = useState(false)
@@ -28,11 +28,10 @@ const JoinReferralForm = ({
 
     useEffect(() => {
         const isFilledFormFields = !!emailInputValue &&
-            !!nameInputValue &&
             !!zipcodeInputValue &&
             isAcceptedAgreement
         setIsBlockedSubmit(!isFilledFormFields)
-    }, [emailInputValue, nameInputValue, zipcodeInputValue, isAcceptedAgreement])
+    }, [emailInputValue, zipcodeInputValue, isAcceptedAgreement])
 
 
     async function onSubmit(event) {
@@ -61,7 +60,7 @@ const JoinReferralForm = ({
                     {
                         email: emailInputValue,
                         zipcode: zipcodeInputValue,
-                        name: nameInputValue,
+                        name: '',
                         userType: "Rideshare Owner Operator",
                         referral: referral
                     }
@@ -100,7 +99,7 @@ const JoinReferralForm = ({
                                 onChange={e => setEmailInputValue(e.target.value)}
                             />
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                        {/* <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label className="label2">Full Name: </Form.Label>
                             <Form.Control
                                 required={true}
@@ -109,7 +108,7 @@ const JoinReferralForm = ({
                                 type="text"
                                 placeholder="Name"
                             />
-                        </Form.Group>
+                        </Form.Group> */}
                         <Form.Group>
                             <Form.Label className="label3">Zip Code: </Form.Label>
                             <Form.Control

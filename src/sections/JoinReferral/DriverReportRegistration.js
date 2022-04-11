@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect,  } from "react"
 import queryString from "query-string";
 import AcccountRegistration from "./AcccountRegistration/AcccountRegistration"
 import JoinReferralForm from "./JoinReferralForm"
@@ -7,7 +7,7 @@ import LinkArgyleAccount from "./LinkArgyleAccount"
 import "./driverReportRegistration.scss"
 
 
-export default function DriverReportRegistration() {
+const DriverReportRegistration = React.forwardRef((props, ref) => {
     const [referral, setReferral] = useState('')
     const [currentStep, setCurrentStep] = useState('')
 
@@ -18,7 +18,7 @@ export default function DriverReportRegistration() {
 
     return (
         <div className="driver-report-registration-wrapper">
-            <div className="registration-progress">
+            <div ref={ref} className="registration-progress">
                 <div className="driver-report-content">
                     <div className="registration-title">
                         Complete the Process in 3 Simple Steps
@@ -64,4 +64,6 @@ export default function DriverReportRegistration() {
             </div>
         </div>
     )
-}
+})
+
+export default DriverReportRegistration
