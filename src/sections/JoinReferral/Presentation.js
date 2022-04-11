@@ -1,9 +1,4 @@
-import React, { useState, useEffect } from "react"
-import { Link } from "@reach/router"
-import DriverReportImg from "../../../static/app_image.png"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClock } from '@fortawesome/free-solid-svg-icons'
-
+import React from "react"
 import "../../pages/join-stable.scss"
 import "./presentation.scss"
 
