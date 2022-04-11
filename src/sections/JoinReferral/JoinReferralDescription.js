@@ -1,5 +1,9 @@
 import React from "react"
 import DriverReportImg from "../../../static/app_image.png"
+import ShieldSVG from "../../../static/shield.svg"
+import ClockSVG from "../../../static/clock.svg"
+import GraphSVG from "../../../static/graph.svg"
+
 
 import "../../pages/join-stable.scss"
 import "./joinReferralDescription.scss"
@@ -35,10 +39,7 @@ const JoinReferralDescription = React.forwardRef((props, ref) => {
                 <div className="description-benefits">
                     <div className="description-benefits-block">
                         <div className="inner-item-wrapper">
-                            <span
-                                class="fas fa-clock"
-                                aria-hidden="true"
-                            />
+                            <img src={GraphSVG} />
                         </div>
                         <div className="inner-item-content">
                             <b>Track Profits</b>
@@ -51,10 +52,7 @@ const JoinReferralDescription = React.forwardRef((props, ref) => {
                     </div>
                     <div className="description-benefits-block">
                         <div className="inner-item-wrapper">
-                            <span
-                                class="fas fa-clock"
-                                aria-hidden="true"
-                            />
+                            <img src={ClockSVG} />
                         </div>
                         <div className="inner-item-content">
                             <b>Save Time</b>
@@ -67,10 +65,7 @@ const JoinReferralDescription = React.forwardRef((props, ref) => {
                     </div>
                     <div className="description-benefits-block">
                         <div className="inner-item-wrapper">
-                            <span
-                                class="fas fa-clock"
-                                aria-hidden="true"
-                            />
+                            <img src={ShieldSVG} />
                         </div>
                         <div className="inner-item-content">
                             <b>Get Protected</b>

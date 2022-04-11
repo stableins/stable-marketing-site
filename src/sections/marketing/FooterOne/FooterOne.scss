@@ -313,7 +313,7 @@
 @media (max-width: 1024px) {
   .footer-wrapper {
     height: 442px;
-
+    
     .container {
       max-width: 100%;
     }
@@ -561,7 +561,6 @@
 @media only screen and (min-width: 1024px) and (max-height: 1366px) and (max-width: 1300px) and (-webkit-min-device-pixel-ratio: 1.5) {
   .footer-wrapper {
     height: 442px;
-
     .container {
       max-width: 100%;
     }
@@ -682,4 +681,8 @@
 
 /* Landscape */
 @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+}
+
+.footer-wrapper {
+  overflow: hidden;
 }

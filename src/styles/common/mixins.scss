@@ -12,6 +12,10 @@
     outline: none;
     border: none;
     color: #f7f7f7 !important;
+
+    &:disabled {
+        background: #868686;
+    }
 }
 
 @mixin baseForm {

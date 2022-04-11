@@ -70,13 +70,12 @@
                 .inner-item-wrapper {
                     font-size: 60px;
                     margin-bottom: 8px;
-                    
-                    .fas {
-                        display: flex;
-                        justify-content: center;
-                        color: #ffae13;
-                        margin: auto;
-                        font-size: 1em;
+                    display: block;
+
+                    img {
+                        display: block;
+                        margin-right: auto;
+                        margin-left: auto;
                     }
                 }
 
