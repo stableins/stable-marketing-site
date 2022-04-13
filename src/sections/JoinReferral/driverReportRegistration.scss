@@ -28,8 +28,6 @@
                 justify-content: center;
             }
 
-
-
             .registration-step {
                 b {
                     color: variables.$font-secondary-color;
@@ -79,28 +77,6 @@
         justify-content: center;
         padding: 26px;
         background-color: #F7F7F7;
-
-        @include mixins.baseForm;
-
-        .check-wrapper {
-            width: 100%;
-            display: block;
-            margin-bottom: -30px;
-            margin-top: 20px;
-
-            .checkbox {
-                display: inline-flex;
-                margin: auto;
-            }
-
-            p {
-                color: variables.$font-secondary-color;
-            }
-        }
-
-        button {
-            @include mixins.submitButton;
-        }
     }
 
     .driver-report-content {

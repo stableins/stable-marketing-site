@@ -4,15 +4,15 @@ import axios from "axios"
 import { Form } from "react-bootstrap"
 import PulseLoader from "react-spinners/PulseLoader"
 import SessionInfoCapture from "../../utility/sessionInfo"
-import TermsModal from "../../sections/JoinStable/Modal/TermsModal"
-import PrivacyModal from "../../sections/JoinStable/Modal/PrivacyModal"
+import TermsModal from "../JoinStable/Modal/TermsModal"
+import PrivacyModal from "../JoinStable/Modal/PrivacyModal"
 
 import "../../pages/join-stable.scss"
-import "./joinReferralForm.scss"
+import "./rideShareSignupForm.scss"
 
 
 
-const JoinReferralForm = ({
+const RideShareSignupForm = ({
     referral,
     onFormSubmit
 }) => {
@@ -79,7 +79,7 @@ const JoinReferralForm = ({
     }
 
     return (
-        <div className="">
+        <div className="signup-form-wrapper">
             <div className="loader">
                 <PulseLoader color={"#3b358a"} loading={loading} size={50} />
             </div>
@@ -173,4 +173,4 @@ const JoinReferralForm = ({
     )
 }
 
-export default JoinReferralForm;
+export default RideShareSignupForm;

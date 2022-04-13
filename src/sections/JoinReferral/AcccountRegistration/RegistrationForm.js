@@ -58,9 +58,7 @@ const RegistrationForm = ({
                         <Form.Label>
                             <p className="text">
                                 <span className="bold">
-                                    To deliver better insurance and tools (like our
-                                    Free Driver Report) to you, we need to connect to
-                                    your rideshare account(s).
+                                    It can take up to a few hours to collect all yours pas data. We'll send you an email when its ready.
                                 </span>{" "}
                                 <br /> <br />
                                 In the meantime let's get an account set up for you

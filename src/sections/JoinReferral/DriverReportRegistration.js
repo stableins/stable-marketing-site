@@ -1,15 +1,15 @@
 import React, { useState, useEffect,  } from "react"
 import queryString from "query-string";
 import AcccountRegistration from "./AcccountRegistration/AcccountRegistration"
-import JoinReferralForm from "./JoinReferralForm"
-import LinkArgyleAccount from "./LinkArgyleAccount"
+import RideShareSignupForm from "../Rideshare/RideShareSignupForm"
+import LinkArgyleAccount from "../Rideshare/LinkArgyleAccount"
+import { redirectTo, navigate } from "@reach/router"
 
 import "./driverReportRegistration.scss"
 
 
 const DriverReportRegistration = React.forwardRef((props, ref) => {
     const [referral, setReferral] = useState('')
-    const [currentStep, setCurrentStep] = useState('')
 
     useEffect(() => {
         const { referral } = queryString.parse(location.search);
@@ -46,20 +46,10 @@ const DriverReportRegistration = React.forwardRef((props, ref) => {
             </div>
             <div className="driver-report-registration">
                 <div className="driver-report-content content">
-                    {currentStep === '' &&
-                        <JoinReferralForm
-                            referral={referral}
-                            onFormSubmit={() => setCurrentStep('linkArgyleAccount')}
-                        />
-                    }
-                    {currentStep === 'linkArgyleAccount' &&
-                        <LinkArgyleAccount
-                            onAccountLinked={() => setCurrentStep('argyleRegistration')}
-                        />
-                    }
-                    {currentStep === 'argyleRegistration' &&
-                        <AcccountRegistration />
-                    }
+                    <RideShareSignupForm
+                        referral={referral}
+                        onFormSubmit={() => navigate("/rideshare-signup/")}
+                    />
                 </div>
             </div>
         </div>

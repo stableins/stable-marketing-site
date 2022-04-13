@@ -1,0 +1,27 @@
+@use "../../src/styles/common/mixins.scss";
+@use "../../src/styles/common/variables.scss";
+
+.rideshare-signup-wrapper {
+    margin-top: 70px;
+    padding: 30px 20px;
+    min-height: 700px;
+    display: flex;
+    justify-content: center;
+
+    color: variables.$font-base-color;
+    padding: 26px;
+    background-color: #ebeeff;
+
+    .content {
+        max-width: 1000px;
+        width: 100%;
+
+        .form {
+            margin-top: 0;
+        }
+    }
+
+    button {
+        @include mixins.submitButton;
+    }
+}
