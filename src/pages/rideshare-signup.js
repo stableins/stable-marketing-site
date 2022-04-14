@@ -6,7 +6,6 @@ import HeaderButton from "../sections/marketing/Header"
 import Fade from "react-reveal/Fade"
 import RideShareSignupForm from "../sections/Rideshare/RideShareSignupForm"
 import LinkArgyleAccount from "../sections/Rideshare/LinkArgyleAccount"
-import LinkAdditionalArgyleAccount from "../sections/Rideshare/LinkAdditionalArgyleAccount"
 import AcccountRegistration from "../sections/JoinReferral/AcccountRegistration/AcccountRegistration"
 
 import "./rideshare-signup.scss"
@@ -48,18 +47,10 @@ export default function rideshareSignup() {
                                 <div className="signup-column">
                                     <LinkArgyleAccount
                                         email={email}
-                                        onAccountLinked={() => setCurrentStep('linkAdditionalArgyleAccount')}
-                                    />
-                                </div>
-                            }
-                            {/* {currentStep === 'linkAdditionalArgyleAccount' &&
-                                <div className="signup-column">
-                                    <LinkAdditionalArgyleAccount
-                                        email={email}
                                         onAccountLinked={() => setCurrentStep('argyleRegistration')}
                                     />
                                 </div>
-                            } */}
+                            }
                             {currentStep === 'argyleRegistration' &&
                                 <div className="signup-column">
                                     <AcccountRegistration />
