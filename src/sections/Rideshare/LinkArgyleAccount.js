@@ -7,10 +7,9 @@ import "../../pages/join-stable.scss"
 import "../../../src/styles/scss/bootstrap.scss"
 
 const LinkArgyleAccount = ({
+    email,
     onAccountLinked
 }) => {
-    const email = useSelector(state => state.form.email)
-
     return (
         <div className="">
             <div className="form">

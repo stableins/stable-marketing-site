@@ -54,6 +54,7 @@ export default function rideshareSignup() {
                             {currentStep === 'linkBaseArgyleAccount' &&
                                 <div className="signup-column">
                                     <LinkArgyleAccount
+                                        email={email}
                                         onAccountLinked={() => setCurrentStep('linkAdditionalArgyleAccount')}
                                     />
                                 </div>
@@ -61,6 +62,7 @@ export default function rideshareSignup() {
                             {currentStep === 'linkAdditionalArgyleAccount' &&
                                 <div className="signup-column">
                                     <LinkAdditionalArgyleAccount
+                                        email={email}
                                         onAccountLinked={() => setCurrentStep('argyleRegistration')}
                                     />
                                 </div>
