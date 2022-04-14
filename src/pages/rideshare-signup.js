@@ -31,13 +31,12 @@ const header = {
 
 export default function rideshareSignup() {
     const [currentStep, setCurrentStep] = useState('')
-    //
     const email = useSelector(state => state.form.email)
 
 
     useEffect(() => {
         if (email !== '') {
-            setCurrentStep('linkArgyleAccount')
+            setCurrentStep('linkBaseArgyleAccount')
         }
     }, [])
 
