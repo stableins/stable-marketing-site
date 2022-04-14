@@ -52,14 +52,14 @@ export default function rideshareSignup() {
                                     />
                                 </div>
                             }
-                            {currentStep === 'linkAdditionalArgyleAccount' &&
+                            {/* {currentStep === 'linkAdditionalArgyleAccount' &&
                                 <div className="signup-column">
                                     <LinkAdditionalArgyleAccount
                                         email={email}
                                         onAccountLinked={() => setCurrentStep('argyleRegistration')}
                                     />
                                 </div>
-                            }
+                            } */}
                             {currentStep === 'argyleRegistration' &&
                                 <div className="signup-column">
                                     <AcccountRegistration />
