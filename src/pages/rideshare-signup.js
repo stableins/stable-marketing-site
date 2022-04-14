@@ -30,15 +30,8 @@ const header = {
 }
 
 export default function rideshareSignup() {
-    const [currentStep, setCurrentStep] = useState('')
     const email = useSelector(state => state.form.email)
-
-
-    useEffect(() => {
-        if (email !== '') {
-            setCurrentStep('linkBaseArgyleAccount')
-        }
-    }, [])
+    const [currentStep, setCurrentStep] = useState(!!email ? 'linkBaseArgyleAccount' : '')
 
     return (
         <>
