@@ -48,25 +48,25 @@ const RegistrationForm = ({
     }
 
     return (
-        <div className="join-stable-wrapper">
+        <div className="">
             <div className="loader">
                 <PulseLoader color={"#3b358a"} loading={loading} size={50} />
             </div>
-            <div className="form">
+            <div className="baseForm">
                 <Form onSubmit={handleSubmit}>
-                    <Form.Group className="mb-9">
-                        <Form.Label>
-                            <p className="text">
-                                <span className="bold">
+                    <Form.Group className="mb-3">
+                        <div>
+                            <p>
+                                <b className="capital">
                                     It can take up to a few hours to collect all yours pas data. We'll send you an email when its ready.
-                                </span>{" "}
+                                </b>
                                 <br /> <br />
                                 In the meantime let's get an account set up for you
                                 so you can come back and check out your updates as
                                 often as you like.
                             </p>
-                        </Form.Label>
-                        <Form.Label className="label4">
+                        </div>
+                        <Form.Label>
                             Password:
                         </Form.Label>
                         <Form.Control
@@ -109,7 +109,7 @@ const RegistrationForm = ({
                         </Form.Label>
                     )}
                     <button
-                        className="button"
+                        className="btn-submit"
                         variant="primary"
                         type="submit"
                     >

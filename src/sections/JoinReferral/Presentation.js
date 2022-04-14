@@ -18,13 +18,14 @@ const Presentation = () => {
                 </div>
                 <div className="presentation-media-container">
                     <iframe
+                        src="https://player.vimeo.com/video/699166797?h=57425e8459"
                         className="vimeo-player"
-                        title="vimeo-player"
-                        alt="harry the rideshare guy"
-                        src="https://player.vimeo.com/video/683962035?h=e2e6afe1f5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                        width="640"
+                        height="360"
                         frameborder="0"
-                        allowfullscreen
-                    ></iframe>
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>

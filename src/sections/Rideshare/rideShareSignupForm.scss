@@ -1,5 +1,5 @@
-@use "../../../src/styles/common/mixins.scss";
-@use "../../../src/styles/common/variables.scss";
+@use "../../../src/styles/scss/helpers/mixins";
+@use "../../../src/styles/scss/helpers/variables.scss";
 
 
 .site-navbar {
@@ -9,6 +9,9 @@
 
 .signup-form-wrapper {
     @include mixins.baseForm;
+
+    flex: 1 1 auto;
+    
     .check-wrapper {
         font-size: 14px;
         .form-check-input {

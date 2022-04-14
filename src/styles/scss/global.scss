@@ -1,14 +1,15 @@
+@use "helpers/mixins";
+@use "helpers/variables";
 @import "helpers/theme-media-query";
 @import "bs-theming/bs-theming";
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/mixins";
 @import "bs-theming/bs-theming";
-@import "helpers/variables";
 @import "helpers/functions";
-@import "helpers/mixins";
 // @import "./react-header";
 @import "bs-theming/fonts";
+
 span,
 a {
   display: inline-block;
@@ -174,4 +175,12 @@ body {
   &.text-center {
     text-align: center;
   }
+}
+
+.baseForm {
+  @include mixins.baseForm;
+}
+
+b.capital {
+  color: variables.$font-secondary-color;
 }

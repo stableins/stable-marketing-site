@@ -158,7 +158,7 @@ const RideShareSignupForm = ({
                         <br />
                         <button
                             disabled={isBlockedSubmit}
-                            className="button"
+                            className="btn-submit"
                             variant="primary"
                             type="submit"
                         >

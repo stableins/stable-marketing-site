@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { useSelector } from "react-redux"
 import FooterOne from "../sections/marketing/FooterOne"
 import { PageWrapper } from "~components/Core"
@@ -6,6 +6,7 @@ import HeaderButton from "../sections/marketing/Header"
 import Fade from "react-reveal/Fade"
 import RideShareSignupForm from "../sections/Rideshare/RideShareSignupForm"
 import LinkArgyleAccount from "../sections/Rideshare/LinkArgyleAccount"
+import LinkAdditionalArgyleAccount from "../sections/Rideshare/LinkAdditionalArgyleAccount"
 import AcccountRegistration from "../sections/JoinReferral/AcccountRegistration/AcccountRegistration"
 
 import "./rideshare-signup.scss"
@@ -29,17 +30,12 @@ const header = {
 }
 
 export default function rideshareSignup() {
-    const [referral, setReferral] = useState('')
     const [currentStep, setCurrentStep] = useState('')
     //
     const email = useSelector(state => state.form.email)
 
 
     useEffect(() => {
-        // const { referral } = queryString.parse(location.search);
-        // setReferral(referral)
-        console.log(email)
-
         if (email !== '') {
             setCurrentStep('linkArgyleAccount')
         }
@@ -53,17 +49,27 @@ export default function rideshareSignup() {
                         <div className="content">
                             {currentStep === '' &&
                                 <RideShareSignupForm
-                                    referral={referral}
-                                    onFormSubmit={() => setCurrentStep('linkArgyleAccount')}
+                                    onFormSubmit={() => setCurrentStep('linkBaseArgyleAccount')}
                                 />
                             }
-                            {currentStep === 'linkArgyleAccount' &&
-                                <LinkArgyleAccount
-                                    onAccountLinked={() => setCurrentStep('argyleRegistration')}
-                                />
+                            {currentStep === 'linkBaseArgyleAccount' &&
+                                <div className="signup-column">
+                                    <LinkArgyleAccount
+                                        onAccountLinked={() => setCurrentStep('linkAdditionalArgyleAccount')}
+                                    />
+                                </div>
+                            }
+                            {currentStep === 'linkAdditionalArgyleAccount' &&
+                                <div className="signup-column">
+                                    <LinkAdditionalArgyleAccount
+                                        onAccountLinked={() => setCurrentStep('argyleRegistration')}
+                                    />
+                                </div>
                             }
                             {currentStep === 'argyleRegistration' &&
-                                <AcccountRegistration />
+                                <div className="signup-column">
+                                    <AcccountRegistration />
+                                </div>
                             }
                         </div>
                     </div>

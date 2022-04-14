@@ -1,36 +1,30 @@
-import React, { useState, useEffect, useRef } from "react"
+import React from "react"
 import { useSelector } from "react-redux"
 import axios from "axios"
 import { ArgyleLink } from "../../components/Argyle/ArgyleLink.tsx"
 
-
 import "../../pages/join-stable.scss"
+import "../../../src/styles/scss/bootstrap.scss"
 
 const LinkArgyleAccount = ({
     onAccountLinked
 }) => {
     const email = useSelector(state => state.form.email)
-    const [argyleLinked, setArgyleLinked] = useState(false)
 
     return (
         <div className="">
             <div className="form">
                 <p className="text">
-                    <span className="bold">
-                        To deliver better insurance and tools (like our Free
-                        Driver Report) to you, we need to connect to your
-                        rideshare account(s).
-                    </span>{" "}
+                    <b className="capital">
+                    Our tool works by pulling data from your rideshare account. 
+                    To do this, we use Argyle, an independent company trusted by the rideshare community.
+                    </b>{" "}
                     <br /> <br />
-                    This is done securely and you can turn off our access to
-                    your account at any time.
-                    <br /> <br />
-                    Right now, we only can connect to Uber and Lyft, but we
-                    will add access to more rideshare and delivery platforms
-                    soon.
+                    We never have access to your athentication credentials. 
+                    The process is secure and you can turn off access to your data at any time.
                 </p>
                 <ArgyleLink
-                    className="button"
+                    className="btn-submit"
                     open={true}
                     options={{
                         pluginKey: "017aac27-2894-ac65-9c91-f956858ad649",
@@ -49,7 +43,7 @@ const LinkArgyleAccount = ({
                                         argyleAccountId: accountId,
                                     }
                                 )
-                                setArgyleLinked(true)
+                                onAccountLinked()
                             } catch (e) {
                                 console.log(e)
                             }
@@ -58,21 +52,6 @@ const LinkArgyleAccount = ({
                 >
                     Connect Your Accounts
                 </ArgyleLink>
-                {argyleLinked && (
-                    <>
-                        <br />
-                        <p>Done Linking your account(s)?</p>
-                        <button
-                            onClick={() => {
-                                onAccountLinked()
-                            }}
-                            className="button"
-                            variant="primary"
-                        >
-                            Complete the final step &nbsp;
-                        </button>
-                    </>
-                )}
             </div>
         </div>
     )

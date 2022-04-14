@@ -20,6 +20,7 @@ import TermsModal from "../sections/JoinStable/Modal/TermsModal"
 import PrivacyModal from "../sections/JoinStable/Modal/PrivacyModal"
 import NewUserModal from "../sections/JoinStable/Modal/NewUserModal"
 import UserStatus from "../data/types/UserStatus"
+import { navigate } from "@reach/router"
 
 import "./join-stable.scss"
 
@@ -194,9 +195,6 @@ export default function individualFleetForm() {
               userType: userType,
             }
           )
-          if (response.data) {
-            setLoading(false)
-          }
 
           dispatch({
             type: "FORM::SET_EMAIL",
@@ -217,6 +215,14 @@ export default function individualFleetForm() {
             type: "FORM::SET_CONFIRMED",
             payload: response.data.confirmed,
           })
+
+          if (response.data) {
+            setLoading(false)
+
+            if (userType === "Rideshare Owner Operator") {
+              navigate("/rideshare-signup/")
+            }
+          }
 
           // if (response.data.confirmed === false && emailInputValue !== "") {
           //   // setShowNewUserModal(true)

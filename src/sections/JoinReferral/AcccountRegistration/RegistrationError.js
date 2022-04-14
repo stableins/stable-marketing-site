@@ -19,12 +19,12 @@ const RegistrationError = () => {
                 </Form.Label>
             </Form>
             <a href="https://driver.stablelabs.io/" target="_blank">
-                <button className="button" variant="primary">
+                <button className="btn-submit" variant="primary">
                     <span>Driver Portal</span>
                 </button>
             </a>
             <Link to="/">
-                <button className="button" variant="primary">
+                <button className="btn-submit" variant="primary">
                     <span>Back to home</span>
                 </button>
             </Link>
