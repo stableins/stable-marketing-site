@@ -31,7 +31,7 @@ const header = {
 
 export default function rideshareSignup() {
     const email = useSelector(state => state.form.email)
-    const [currentStep, setCurrentStep] = useState(!!email ? 'linkBaseArgyleAccount' : '')
+    const [currentStep, setCurrentStep] = useState(!!email ? 'linkBaseArgyleAccount' : 'rideShareSignup')
 
     return (
         <>
@@ -39,7 +39,7 @@ export default function rideshareSignup() {
                 <PageWrapper headerConfig={header} innerPage={true}>
                     <div className="rideshare-signup-wrapper">
                         <div className="content">
-                            {currentStep === '' &&
+                            {currentStep === 'rideShareSignup' &&
                                 <RideShareSignupForm
                                     onFormSubmit={() => setCurrentStep('linkBaseArgyleAccount')}
                                 />
