@@ -76,7 +76,6 @@ const LinkArgyleAccount = ({
                 {(argyleLinked) && (
                     <div>
                         <br />
-                        <div className="text-center">Done Linking your account(s)?</div>
                         <button
                             className="btn-submit mt-0"
                             onClick={() => {
@@ -88,7 +87,7 @@ const LinkArgyleAccount = ({
                             }}
                             variant="primary"
                         >
-                            Proceed
+                            I Have Finished Connecting
                         </button>
                     </div>
                 )}
