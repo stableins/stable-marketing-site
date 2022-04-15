@@ -201,16 +201,6 @@ export default function individualFleetForm() {
           })
 
           dispatch({
-            type: "FORM::SET_STATUS",
-            payload: response.data.status,
-          })
-
-          dispatch({
-            type: "FORM::SET_USER_TYPE",
-            payload: response.data.userType,
-          })
-
-          dispatch({
             type: "FORM::SET_CONFIRMED",
             payload: response.data.confirmed,
           })
@@ -221,7 +211,18 @@ export default function individualFleetForm() {
             if (userType === "Rideshare Owner Operator") {
               navigate("/rideshare-signup/")
             }
+            return
           }
+
+          dispatch({
+            type: "FORM::SET_STATUS",
+            payload: response.data.status,
+          })
+
+          dispatch({
+            type: "FORM::SET_USER_TYPE",
+            payload: response.data.userType,
+          })
 
           // if (response.data.confirmed === false && emailInputValue !== "") {
           //   // setShowNewUserModal(true)
