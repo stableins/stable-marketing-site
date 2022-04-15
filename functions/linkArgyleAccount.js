@@ -35,6 +35,7 @@ exports.handler = async (event, context, callback) => {
           argyleAccounts: argyleAccounts,
           argyleUserId: argyleUserId,
           status: status,
+          updateAt: new Date()
         },
       }
     )

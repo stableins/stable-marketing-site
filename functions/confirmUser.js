@@ -42,6 +42,7 @@ exports.handler = async (event, context, callback) => {
         $set: {
           confirmed: true,
           status: status,
+          updateAt: new Date()
         },
       }
     )

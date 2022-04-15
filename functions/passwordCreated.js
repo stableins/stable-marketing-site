@@ -45,6 +45,7 @@ exports.handler = async (event, context, callback) => {
         $set: {
           status: status,
           userId: decoded.id,
+          updateAt: new Date()
         },
       }
     )

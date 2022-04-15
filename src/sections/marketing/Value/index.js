@@ -9,24 +9,21 @@ import {
   Button,
   Form,
 } from "react-bootstrap"
-import { Images } from "~data"
-import { Redirect, Link, redirectTo } from "@reach/router"
 import { navigate } from "gatsby"
-import TabContentWidget from "./Component/TabContentWidget"
 import DriverReport from "../../../../static/app_image.png"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
-import TabNavWidget from "./Component/TabNavWidget"
 import Slide from "react-reveal/Slide"
 import axios from "axios"
-import Intake from "../../../api/intake"
 import PulseLoader from "react-spinners/PulseLoader"
 import Feature from "./style"
-import { Spinner } from "react-bootstrap"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { getRegistrationRoute } from "../../../utility/navigationHelper"
+
 import "./index.scss"
 
 const FeatureSection = ({ ...rest }) => {
   const dispatch = useDispatch()
+  const userType = useSelector(state => state.form.userType)
   const [showExistingEmailModal, setShowExistingEmailModal] = useState(false)
   const [showNewUserModal, setShowNewUserModal] = useState(false)
   const [statusResponse, setStatusResponse] = useState("")
@@ -89,7 +86,7 @@ const FeatureSection = ({ ...rest }) => {
         if (response.data.status !== "Email Address Only") {
           setShowExistingEmailModal(true)
         } else {
-          navigate("/join-stable/")
+          navigate(getRegistrationRoute(response.data.userType))
         }
       } catch (e) {
         alert(e)
@@ -277,7 +274,7 @@ const FeatureSection = ({ ...rest }) => {
                   payload: emailInputValue,
                 })
 
-                navigate("/join-stable/")
+                navigate(getRegistrationRoute(null))
               }}
               type="submit"
             >
@@ -288,7 +285,7 @@ const FeatureSection = ({ ...rest }) => {
               className="hero-modal-button"
               onClick={() => {
                 setShowExistingEmailModal(false)
-                navigate("/join-stable/")
+                navigate(getRegistrationRoute(userType))
               }}
               type="submit"
             >
@@ -301,7 +298,7 @@ const FeatureSection = ({ ...rest }) => {
         show={showNewUserModal}
         onHide={() => {
           setShowNewUserModal(false)
-          navigate("/join-stable/")
+          navigate(getRegistrationRoute(null))
         }}
         dialogClassName="modal-9/.0w"
         aria-labelledby="example-custom-modal-styling-title"
@@ -329,7 +326,7 @@ const FeatureSection = ({ ...rest }) => {
               className="hero-modal-button"
               onClick={() => {
                 setShowNewUserModal(false)
-                navigate("/join-stable/")
+                navigate(getRegistrationRoute(null))
               }}
               type="submit"
             >

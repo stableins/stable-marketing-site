@@ -11,15 +11,13 @@ import PulseLoader from "react-spinners/PulseLoader"
 import DefaultJoinForm from "../sections/JoinStable/DefaultJoinForm"
 import EmailAddressJoinForm from "../sections/JoinStable/EmailAddressJoinForm"
 import EmailAddressDriveReportJoinForm from "../sections/JoinStable/EmailAddressDriveReportJoinForm"
-import CompleteJoinForm from "../sections/JoinStable/CompleteJoinForm"
 import CompleteConnectJoinForm from "../sections/JoinStable/CompleteConnectJoinForm"
 import SimpleCompleteJoinForm from "../sections/JoinStable/SimpleCompleteJoinForm"
-import ArgyleAuthenticatedJoinForm from "../sections/JoinStable/ArgyleAuthenticatedJoinForm"
-import AccountCreatedJoinForm from "../sections/JoinStable/AccountCreatedJoinForm"
 import TermsModal from "../sections/JoinStable/Modal/TermsModal"
 import PrivacyModal from "../sections/JoinStable/Modal/PrivacyModal"
 import NewUserModal from "../sections/JoinStable/Modal/NewUserModal"
 import UserStatus from "../data/types/UserStatus"
+import { navigate } from "@reach/router"
 
 import "./join-stable.scss"
 
@@ -114,7 +112,7 @@ export default function individualFleetForm() {
           payload: "emailZipAndNameAndEligible",
         })
         const response = await axios.post(
-          "/.netlify/functions/sendgridContact",
+          "/api/sendgridContact",
           {
             email: email ? email : emailInputValue,
             zipcode: zipcodeInputValue,
@@ -129,7 +127,7 @@ export default function individualFleetForm() {
       }
 
       if (
-        status === "createPassword" &&
+        status === UserStatus.createPassword &&
         passwordConfirmInputValue === passwordInputValue
       ) {
         setPasswordMismatch(false)
@@ -166,13 +164,12 @@ export default function individualFleetForm() {
       setInvalidZip(false)
 
       const response = await axios.post(
-        "/.netlify/functions/sendgridValidation",
+        "/api/sendgridValidation",
         {
           email: email && email !== "" ? email : emailInputValue,
         }
       )
 
-      console.log(response)
       if (response.data[1].result.verdict !== "Invalid") {
         setInvalidEmail(false)
         try {
@@ -186,7 +183,7 @@ export default function individualFleetForm() {
             userType = dropdownInputValue2
           }
           const response = await axios.post(
-            "/.netlify/functions/saveFullContactInfo",
+            "/api/saveFullContactInfo",
             {
               email: email ?? emailInputValue,
               zipcode: zipcodeInputValue,
@@ -194,13 +191,15 @@ export default function individualFleetForm() {
               userType: userType,
             }
           )
-          if (response.data) {
-            setLoading(false)
-          }
 
           dispatch({
             type: "FORM::SET_EMAIL",
             payload: response.data.email,
+          })
+
+          dispatch({
+            type: "FORM::SET_CONFIRMED",
+            payload: response.data.confirmed,
           })
 
           dispatch({
@@ -213,10 +212,15 @@ export default function individualFleetForm() {
             payload: response.data.userType,
           })
 
-          dispatch({
-            type: "FORM::SET_CONFIRMED",
-            payload: response.data.confirmed,
-          })
+          if (response.data) {
+            if (userType === "Rideshare Owner Operator") {
+              navigate("/rideshare-signup/")
+              return
+            } else {
+              setLoading(false)
+            }
+
+          }
 
           // if (response.data.confirmed === false && emailInputValue !== "") {
           //   // setShowNewUserModal(true)
@@ -246,7 +250,7 @@ export default function individualFleetForm() {
       setPasswordMismatch(false)
       try {
         const response = await axios.post(
-          "/.netlify/functions/passwordCreated",
+          "/api/passwordCreated",
           {
             email: email,
             password: passwordInputValue,
@@ -283,7 +287,7 @@ export default function individualFleetForm() {
   }
 
   return (
-    <>
+    <div className="join-stable">
       <div className="loader">
         <PulseLoader color={color} loading={loading} size={50} />
       </div>
@@ -345,16 +349,6 @@ export default function individualFleetForm() {
           )}
 
           {status === UserStatus.formComplete &&
-            userType === "Rideshare Owner Operator" && (
-              <CompleteJoinForm
-                argyleLinked={argyleLinked}
-                onSetArgyleLinked={setArgyleLinked}
-                onSetDropdownInputValue1={setDropdownInputValue1}
-                email={email}
-              />
-            )}
-
-          {status === UserStatus.formComplete &&
             userType !== "Rideshare Owner Operator" &&
             !calendlyScheduled && (
               <CompleteConnectJoinForm />
@@ -364,27 +358,12 @@ export default function individualFleetForm() {
             <SimpleCompleteJoinForm onSubmitForm={handleSubmit} />
           )}
 
-          {status === UserStatus.argyleAuthenticated && (
-            <>
-              <ArgyleAuthenticatedJoinForm
-                existingAccount={existingAccount}
-                onSubmitForm={handlePasswordSubmit}
-                onSetPasswordInputValue={setPasswordInputValue}
-                onSetPasswordConfirmInputValue={setPasswordConfirmInputValue}
-                passwordMismatch={passwordMismatch} />
-            </>
-          )}
-
-          {status === UserStatus.argyleAuthenticatedAndAccountCreated && (
-            <AccountCreatedJoinForm onSubmitForm={handleSubmit} />
-          )}
-
           <TermsModal onShowTermsModal={showTermsModal} onSetShowTermsModal={setShowTermsModal} />
           <PrivacyModal onShowPrivacyModal={showPrivacyModal} onSetShowPrivacyModal={setShowPrivacyModal} />
           <NewUserModal onShowNewUserModal={showNewUserModal} onSetShowNewUserModal={setShowNewUserModal} />
           <FooterOne />
         </PageWrapper>
       </Fade>
-    </>
+    </div>
   )
 }

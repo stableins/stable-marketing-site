@@ -1,0 +1,42 @@
+@use "../../../src/styles/scss/helpers/mixins";
+@use "../../../src/styles/scss/helpers/variables.scss";
+
+
+.site-navbar {
+    border-bottom: 1px solid #002E6D;
+}
+
+
+.signup-form-wrapper {
+    @include mixins.baseForm;
+
+    flex: 1 1 auto;
+    
+    .check-wrapper {
+        font-size: 14px;
+        .form-check-input {
+            margin-right: 15px;
+        }
+    }
+
+    .check-wrapper {
+        width: 100%;
+        display: block;
+        margin-bottom: -30px;
+        margin-top: 20px;
+
+        .checkbox {
+            display: inline-flex;
+            margin: auto;
+        }
+
+        p {
+            color: variables.$font-secondary-color;
+        }
+    }
+
+    button {
+        @include mixins.submitButton;
+    }
+}
+

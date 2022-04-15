@@ -3,6 +3,7 @@ const axios = require("axios")
 const FormData = require("form-data")
 const zipcodes = require("zipcodes")
 const uuidv4 = require("uuid").v4
+const moment = require("moment")
 
 const uri = process.env.MONGO_URI.replace(
   "<password>",
@@ -11,7 +12,7 @@ const uri = process.env.MONGO_URI.replace(
 const client = new MongoClient(uri)
 
 exports.handler = async (event, context, callback) => {
-  const { email, zipcode, name, userType } = JSON.parse(event.body)
+  const { email, zipcode, name, userType, referral } = JSON.parse(event.body)
   const nameSplit = name.split(" ")
   let statusCode = 200
   let status = "Form Complete"
@@ -29,6 +30,7 @@ exports.handler = async (event, context, callback) => {
     const users = database.collection("users")
 
     const user = await users.findOne({ email: email })
+    
     if (!user) {
       const confirmationId = uuidv4()
 
@@ -41,6 +43,8 @@ exports.handler = async (event, context, callback) => {
         state: state,
         confirmed: false,
         confirmationId: confirmationId,
+        createAt: new Date(),
+        referral: referral
       })
 
       await axios.post(
@@ -84,6 +88,8 @@ exports.handler = async (event, context, callback) => {
             status: status,
             userType: userType,
             state: state,
+            updateAt: new Date(),
+            referral: referral
           },
         }
       )

@@ -1,0 +1,40 @@
+@use "../../src/styles/scss/helpers/mixins";
+@use "../../src/styles/scss/helpers/variables.scss";
+
+.rideshare-signup-wrapper {
+    margin-top: 70px;
+    padding: 30px 20px;
+    min-height: 700px;
+    display: flex;
+    justify-content: center;
+
+    color: variables.$font-base-color;
+    padding: 26px;
+    background-color: #ebeeff;
+
+    .content {
+        max-width: 1000px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .form {
+            margin-top: 0;
+        }
+
+        .signup-column {
+            max-width: 350px;
+        }
+    }
+
+    button.btn-submit {
+        @include mixins.submitButton;
+    }
+
+    button.btn-link {
+        @include mixins.linkButton;
+    }
+
+    b.capital {
+        font-size: 18;
+    }
+}

@@ -31,3 +31,50 @@
     }
     
 }
+
+@mixin submitButton {
+  background: #3b358a;
+  border-radius: 8px;
+  width: 334px;
+  margin-top: 20px;
+  height: 50px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  color: #f7f7f7 !important;
+
+  &:disabled {
+      background: #868686;
+  }
+}
+
+@mixin linkButton {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  font-size: 15px;
+  color: #002e6d;
+  font-weight: 600;
+  width: 334px;
+}
+
+@mixin baseForm {
+  label {
+      font-family: Rubik;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 26px;
+      color: #002e6d;
+      margin-bottom: 2px;
+      & + input {
+          padding: 0.7rem 0.9rem;
+          border: 1px solid #92afd6;
+          color: #92afd6;
+      }
+  }
+}

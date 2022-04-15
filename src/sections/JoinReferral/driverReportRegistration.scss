@@ -1,0 +1,86 @@
+@use "../../../src/styles/scss/helpers/mixins";
+@use "../../../src/styles/scss/helpers/variables.scss";
+
+
+
+.driver-report-registration-wrapper {
+    .registration-progress {
+        color: variables.$font-base-color;
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+        margin-top: 70px;
+        background-color: #ebeeff;
+
+        .registration-title {
+            color: variables.$font-secondary-color;
+            font-size: 40px;
+            line-height: 50px;
+        }
+
+        .registration-steps {
+            display: flex;
+            margin-top: 7px;
+
+            .split-line {
+                margin-left: 30px;
+                margin-right: 30px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .registration-step {
+                b {
+                    color: variables.$font-secondary-color;
+                }
+            }
+
+            @media (min-width: 950px) {
+                .split-line-horisontal {
+                    display: none;
+                }
+
+                .split-line-vertical {
+                    display: block;
+                }
+            }
+
+            @media (max-width: 950px) {
+                flex-direction: column;
+                text-align: center;
+
+                .registration-step {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .split-line-horisontal {
+                    display: block;
+                    width: 120px;
+
+                    hr {
+                        background-color: #303030;
+                        opacity: 1;
+                        margin: 7px 0;
+                    }
+                }
+
+                .split-line-vertical {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .driver-report-registration {
+        color: variables.$font-base-color;
+        display: flex;
+        justify-content: center;
+        padding: 26px;
+        background-color: #F7F7F7;
+    }
+
+    .driver-report-content {
+        width: 850px;
+    }
+}

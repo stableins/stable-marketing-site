@@ -1,37 +1,43 @@
-import React from 'react'
-import axios from "axios"
+import React, {useState} from "react"
 import { useDispatch } from "react-redux"
+import axios from "axios"
 import { ArgyleLink } from "../../components/Argyle/ArgyleLink.tsx"
+import UserStatus from "../../data/types/UserStatus"
 
 import "../../pages/join-stable.scss"
+import "../../../src/styles/scss/bootstrap.scss"
 
-const CompleteJoinForm = ({
-    argyleLinked,
-    onSetArgyleLinked,
-    onSetDropdownInputValue1,
-    email
+const LinkArgyleAccount = ({
+    email,
+    onAccountLinked
 }) => {
-  const dispatch = useDispatch()
-
+    const dispatch = useDispatch()
+    const [argyleLinked, setArgyleLinked] = useState(false)
     return (
-        <div className="join-stable-wrapper">
+        <div className="">
             <div className="form">
                 <p className="text">
-                    <span className="bold">
-                        To deliver better insurance and tools (like our Free
-                        Driver Report) to you, we need to connect to your
-                        rideshare account(s).
-                    </span>{" "}
-                    <br /> <br />
-                    This is done securely and you can turn off our access to
-                    your account at any time.
-                    <br /> <br />
-                    Right now, we only can connect to Uber and Lyft, but we
-                    will add access to more rideshare and delivery platforms
-                    soon.
+                    {argyleLinked &&
+                        <>
+                            <b className="capital">
+                                If you need to connect more accounts, you can do so.&nbsp;
+                            </b>
+                            Otherwise select "I have Finished Connecting" to finish by registering.
+                        </>}
+                    {!argyleLinked &&
+                        <>
+                            <b className="capital">
+                                Our tool works by pulling data from your rideshare account.
+                                To do this, we use Argyle, an independent company trusted by the rideshare community.
+                            </b>{" "}
+                            <br /> <br />
+                            We never have access to your athentication credentials.
+                            The process is secure and you can turn off access to your data at any time.
+                        </>}
                 </p>
+                <br />
                 <ArgyleLink
-                    className="button"
+                    className={argyleLinked ? "btn-link" : "btn-submit"}
                     open={true}
                     options={{
                         pluginKey: "017aac27-2894-ac65-9c91-f956858ad649",
@@ -43,19 +49,22 @@ const CompleteJoinForm = ({
                         onAccountCreated: async ({ accountId, userId }) => {
                             try {
                                 const response = await axios.post(
-                                    "/.netlify/functions/linkArgyleAccount",
+                                    "/api/linkArgyleAccount",
                                     {
                                         email: email,
                                         argyleUserId: userId,
                                         argyleAccountId: accountId,
                                     }
                                 )
+
                                 dispatch({
                                     type: "FORM::SET_CONFIRMED",
                                     payload: response.data.confirmed,
                                 })
 
-                                onSetArgyleLinked(true)
+                                if (!argyleLinked) {
+                                    setArgyleLinked(true)
+                                }
                             } catch (e) {
                                 console.log(e)
                             }
@@ -64,29 +73,27 @@ const CompleteJoinForm = ({
                 >
                     Connect Your Accounts
                 </ArgyleLink>
-                {argyleLinked && (
-                    <>
+                {(argyleLinked) && (
+                    <div>
                         <br />
-                        <p>Done Linking your account(s)?</p>
                         <button
+                            className="btn-submit mt-0"
                             onClick={() => {
                                 dispatch({
                                     type: "FORM::SET_STATUS",
-                                    payload: "Argyle Authenticated",
+                                    payload: UserStatus.argyleAuthenticated,
                                 })
-                                onSetDropdownInputValue1(null)
+                                onAccountLinked()
                             }}
-                            className="button"
                             variant="primary"
-                        // type="submit"
                         >
-                            Complete the final step &nbsp;
+                            I Have Finished Connecting
                         </button>
-                    </>
+                    </div>
                 )}
             </div>
         </div>
     )
 }
 
-export default CompleteJoinForm;
+export default LinkArgyleAccount;

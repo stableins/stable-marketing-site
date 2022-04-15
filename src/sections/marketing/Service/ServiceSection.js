@@ -13,6 +13,7 @@ import CountUp from "react-countup"
 import VisibilitySensor from "react-visibility-sensor"
 import Service from "./style"
 import "./ServiceSection.scss"
+import { getRegistrationRoute } from "../../../utility/navigationHelper"
 
 export default function ServiceSection() {
   const dispatch = useDispatch()
@@ -103,7 +104,7 @@ export default function ServiceSection() {
                                 type: "FORM::SET_CALENDLY_SCHEDULED",
                                 payload: false,
                               })
-                              navigate("/join-stable/")
+                              navigate(getRegistrationRoute(null))
                             }}
                           >
                             Join Now

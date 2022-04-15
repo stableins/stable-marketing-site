@@ -1,0 +1,111 @@
+@use "../../../src/styles/scss/helpers/mixins";
+@use "../../../src/styles/scss/helpers/variables.scss";
+
+
+.description-wrapper {
+    color: variables.$font-base-color;
+    display: flex;
+    justify-content: center;
+    padding: 45px 0 40px;
+    margin-top: 70px;
+    background-color: #ebeeff;
+
+    .content {
+        max-width: 1000px;
+        width: 100%;
+
+        .button {
+            @include mixins.submitButton;
+            margin-top: 35px;
+        }
+
+        .drive-report-img {
+            width: 450px;
+        }
+
+        >div {
+            text-align: center;
+        }
+
+        .description-title {
+            color: variables.$font-secondary-color;
+            font-size: 60px;
+            line-height: 70px;
+        }
+
+        .description-tool {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 45px;
+
+            p {
+                max-width: 460px;
+                margin-bottom: 0;
+            }
+
+            b {
+                color: variables.$font-secondary-color;
+            }
+        }
+
+        .description-logo {
+            margin-top: 40px;
+        }
+
+        .description-rideshare-drivers {
+            margin-top: 35px;
+            margin-bottom: 20px;
+            font-size: 36px;
+            color: variables.$font-secondary-color;
+        }
+
+        .description-benefits {
+            display: flex;
+            justify-content: space-between;
+
+            .description-benefits-block {
+                display: flex;
+                flex-direction: column;
+
+                .inner-item-wrapper {
+                    font-size: 60px;
+                    margin-bottom: 8px;
+                    display: block;
+
+                    img {
+                        display: block;
+                        margin-right: auto;
+                        margin-left: auto;
+                    }
+                }
+
+                .inner-item-content {
+                    max-width: 330px;
+
+                    b {
+                        color: variables.$font-secondary-color;
+                    }
+                }
+            }
+
+            @media (max-width: 950px) {
+                align-items: center;
+                flex-direction: column;
+
+                .description-benefits-block {
+                    text-align: left;
+                    flex-direction: row;
+
+                    br {
+                        display: none;
+                    }
+
+                    .inner-item-wrapper {
+                        margin-right: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+}

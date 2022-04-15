@@ -1,0 +1,50 @@
+@use "../../../src/styles/scss/helpers/mixins";
+@use "../../../src/styles/scss/helpers/variables.scss";
+
+
+.presentation-wrapper {
+    color: variables.$font-base-color;
+    display: flex;
+    justify-content: center;
+    padding-top: 42px;
+    background-color: variables.$background-secondary-color;
+
+    .content {
+        max-width: 1000px;
+        width: 100%;
+        padding-left: 26px;
+        padding-right: 26px;
+        .presentation-title {
+            text-align: center;
+
+            b {
+                color: variables.$font-secondary-color;
+            }
+        }
+
+        .presentation-media-container {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+
+
+            iframe {
+                width: 711px;
+                height: 435px;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 950px) {
+            br {
+                display: none;
+            }
+
+            .presentation-media-container iframe{
+                height: 170px;
+            
+            }
+
+        }
+    }
+}
