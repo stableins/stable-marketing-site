@@ -50,10 +50,6 @@ const RideShareSignupForm = ({
             )
 
             if (response.data[1].result.verdict !== "Invalid") {
-                dispatch({
-                    type: "FORM::SET_EMAIL",
-                    payload: emailInputValue,
-                })
 
                 response = await axios.post(
                     "/api/saveFullContactInfo",
@@ -65,6 +61,27 @@ const RideShareSignupForm = ({
                         referral: referral
                     }
                 )
+
+                dispatch({
+                    type: "FORM::SET_EMAIL",
+                    payload: response.data.email,
+                  })
+        
+                  dispatch({
+                    type: "FORM::SET_CONFIRMED",
+                    payload: response.data.confirmed,
+                  })
+        
+                  dispatch({
+                    type: "FORM::SET_STATUS",
+                    payload: response.data.status,
+                  })
+        
+                  dispatch({
+                    type: "FORM::SET_USER_TYPE",
+                    payload: response.data.userType,
+                  })
+
                 if (response.data) {
                     setLoading(false)
                     onFormSubmit()

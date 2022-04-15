@@ -13,20 +13,18 @@ const LinkArgyleAccount = ({
 }) => {
     const dispatch = useDispatch()
     const [argyleLinked, setArgyleLinked] = useState(false)
-    const [isShowAdditionalLink, setIsShowAdditionalLink] = useState(false)
     return (
         <div className="">
             <div className="form">
                 <p className="text">
-                    {isShowAdditionalLink &&
+                    {argyleLinked &&
                         <>
                             <b className="capital">
                                 If you need to connect more accounts, you can do so.&nbsp;
                             </b>
                             Otherwise select "I have Finished Connecting" to finish by registering.
                         </>}
-
-                    {!isShowAdditionalLink &&
+                    {!argyleLinked &&
                         <>
                             <b className="capital">
                                 Our tool works by pulling data from your rideshare account.
@@ -39,7 +37,7 @@ const LinkArgyleAccount = ({
                 </p>
                 <br />
                 <ArgyleLink
-                    className={isShowAdditionalLink ? "btn-link" : "btn-submit"}
+                    className={argyleLinked ? "btn-link" : "btn-submit"}
                     open={true}
                     options={{
                         pluginKey: "017aac27-2894-ac65-9c91-f956858ad649",
@@ -75,7 +73,7 @@ const LinkArgyleAccount = ({
                 >
                     Connect Your Accounts
                 </ArgyleLink>
-                {(argyleLinked && !isShowAdditionalLink) && (
+                {(argyleLinked) && (
                     <div>
                         <br />
                         <div className="text-center">Done Linking your account(s)?</div>
@@ -86,27 +84,13 @@ const LinkArgyleAccount = ({
                                     type: "FORM::SET_STATUS",
                                     payload: UserStatus.argyleAuthenticated,
                                 })
-                                setIsShowAdditionalLink(true)
+                                onAccountLinked()
                             }}
                             variant="primary"
                         >
                             Proceed
                         </button>
                     </div>
-                )}
-                {isShowAdditionalLink && (
-                    <>
-                        <br />
-                        <button
-                            className="btn-submit"
-                            onClick={() => {
-                                onAccountLinked()
-                            }}
-                            variant="primary"
-                        >
-                            I Have Finished Connecting
-                        </button>
-                    </>
                 )}
             </div>
         </div>
