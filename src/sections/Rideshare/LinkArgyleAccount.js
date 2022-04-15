@@ -22,7 +22,7 @@ const LinkArgyleAccount = ({
                             <b className="capital">
                                 If you need to connect more accounts, you can do so.&nbsp;
                             </b>
-                            Otherwise select "I have Finished Connecting" to finish by registering.
+                            Otherwise select "I have Finished Connecting" to finish by registering an account with us.
                         </>}
                     {!argyleLinked &&
                         <>
@@ -31,7 +31,7 @@ const LinkArgyleAccount = ({
                                 To do this, we use Argyle, an independent company trusted by the rideshare community.
                             </b>{" "}
                             <br /> <br />
-                            We never have access to your athentication credentials.
+                            We never have access to your authentication credentials.
                             The process is secure and you can turn off access to your data at any time.
                         </>}
                 </p>
