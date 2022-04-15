@@ -11,7 +11,6 @@ import PulseLoader from "react-spinners/PulseLoader"
 import DefaultJoinForm from "../sections/JoinStable/DefaultJoinForm"
 import EmailAddressJoinForm from "../sections/JoinStable/EmailAddressJoinForm"
 import EmailAddressDriveReportJoinForm from "../sections/JoinStable/EmailAddressDriveReportJoinForm"
-import CompleteJoinForm from "../sections/JoinStable/CompleteJoinForm"
 import CompleteConnectJoinForm from "../sections/JoinStable/CompleteConnectJoinForm"
 import SimpleCompleteJoinForm from "../sections/JoinStable/SimpleCompleteJoinForm"
 import ArgyleAuthenticatedJoinForm from "../sections/JoinStable/ArgyleAuthenticatedJoinForm"
@@ -349,16 +348,6 @@ export default function individualFleetForm() {
               invalidZip={invalidZip}
             />
           )}
-
-          {status === UserStatus.formComplete &&
-            userType === "Rideshare Owner Operator" && (
-              <CompleteJoinForm
-                argyleLinked={argyleLinked}
-                onSetArgyleLinked={setArgyleLinked}
-                onSetDropdownInputValue1={setDropdownInputValue1}
-                email={email}
-              />
-            )}
 
           {status === UserStatus.formComplete &&
             userType !== "Rideshare Owner Operator" &&
