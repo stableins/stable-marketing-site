@@ -17,7 +17,7 @@ const AccountCreatedJoinForm = ({ onSubmitForm }) => {
                         <br />
                         Head back to Stable to learn more about our rideshare 
                         insurance product and when and where it's available. 
-                        First in Illinois June!
+                        Coming first to Illinois in June!
                     </p>
                     <br />
                     <div className="d-flex justify-content-center">

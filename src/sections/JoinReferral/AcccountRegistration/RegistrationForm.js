@@ -58,7 +58,7 @@ const RegistrationForm = ({
                         <div>
                             <p>
                                 <b className="capital">
-                                    It can take up to a few hours to collect all yours pas data. We'll send you an email when its ready.
+                                    It can take up to a few hours to collect all your past data. We'll send you an email when its ready.
                                 </b>
                                 <br /> <br />
                                 In the meantime let's get an account set up for you

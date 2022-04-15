@@ -2,3 +2,21 @@
     max-width: 1000px;
     width: 100%;
 }
+
+p {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  margin: auto;
+  /* or 171% */
+
+  color: #000000;
+
+  span {
+    color: #ffae13;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
