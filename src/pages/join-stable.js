@@ -126,9 +126,8 @@ export default function individualFleetForm() {
         setLoading(false)
       }
 
-      //check if ever will execute
       if (
-        status === "createPassword" &&
+        status === UserStatus.createPassword &&
         passwordConfirmInputValue === passwordInputValue
       ) {
         setPasswordMismatch(false)
@@ -212,7 +211,7 @@ export default function individualFleetForm() {
             type: "FORM::SET_USER_TYPE",
             payload: response.data.userType,
           })
-
+          
           if (response.data) {
             setLoading(false)
 
@@ -286,7 +285,7 @@ export default function individualFleetForm() {
   }
 
   return (
-    <>
+    <div className="join-stable">
       <div className="loader">
         <PulseLoader color={color} loading={loading} size={50} />
       </div>
@@ -363,6 +362,6 @@ export default function individualFleetForm() {
           <FooterOne />
         </PageWrapper>
       </Fade>
-    </>
+    </div>
   )
 }
