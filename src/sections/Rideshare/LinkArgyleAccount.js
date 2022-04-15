@@ -1,7 +1,8 @@
 import React, {useState} from "react"
-import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import axios from "axios"
 import { ArgyleLink } from "../../components/Argyle/ArgyleLink.tsx"
+import UserStatus from "../../data/types/UserStatus"
 
 import "../../pages/join-stable.scss"
 import "../../../src/styles/scss/bootstrap.scss"
@@ -10,6 +11,7 @@ const LinkArgyleAccount = ({
     email,
     onAccountLinked
 }) => {
+    const dispatch = useDispatch()
     const [argyleLinked, setArgyleLinked] = useState(false)
     const [isShowAdditionalLink, setIsShowAdditionalLink] = useState(false)
     return (
@@ -48,7 +50,7 @@ const LinkArgyleAccount = ({
                         showSearch: false,
                         onAccountCreated: async ({ accountId, userId }) => {
                             try {
-                                await axios.post(
+                                const response = await axios.post(
                                     "/api/linkArgyleAccount",
                                     {
                                         email: email,
@@ -56,6 +58,12 @@ const LinkArgyleAccount = ({
                                         argyleAccountId: accountId,
                                     }
                                 )
+
+                                dispatch({
+                                    type: "FORM::SET_CONFIRMED",
+                                    payload: response.data.confirmed,
+                                })
+
                                 if (!argyleLinked) {
                                     setArgyleLinked(true)
                                 }
@@ -74,11 +82,15 @@ const LinkArgyleAccount = ({
                         <button
                             className="btn-submit mt-0"
                             onClick={() => {
+                                dispatch({
+                                    type: "FORM::SET_STATUS",
+                                    payload: UserStatus.argyleAuthenticated,
+                                })
                                 setIsShowAdditionalLink(true)
                             }}
                             variant="primary"
                         >
-                            Complete the final step &nbsp;
+                            Proceed
                         </button>
                     </div>
                 )}

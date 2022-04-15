@@ -22,6 +22,7 @@ import Feature from "./style"
 import "./index.scss"
 import { useDispatch } from "react-redux"
 import { navigate } from "gatsby"
+import { getRegistrationRoute } from "../../../utility/navigationHelper"
 
 const FeatureSection = ({ ...rest }) => {
   const dispatch = useDispatch()
@@ -301,7 +302,7 @@ const FeatureSection = ({ ...rest }) => {
                                     type: "FORM::SET_CALENDLY_SCHEDULED",
                                     payload: false,
                                   })
-                                  navigate("/join-stable/")
+                                  navigate(getRegistrationRoute(null))
                                 }}
                               >
                                 Get Early Access &nbsp;

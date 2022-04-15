@@ -13,8 +13,6 @@ import EmailAddressJoinForm from "../sections/JoinStable/EmailAddressJoinForm"
 import EmailAddressDriveReportJoinForm from "../sections/JoinStable/EmailAddressDriveReportJoinForm"
 import CompleteConnectJoinForm from "../sections/JoinStable/CompleteConnectJoinForm"
 import SimpleCompleteJoinForm from "../sections/JoinStable/SimpleCompleteJoinForm"
-import ArgyleAuthenticatedJoinForm from "../sections/JoinStable/ArgyleAuthenticatedJoinForm"
-import AccountCreatedJoinForm from "../sections/JoinStable/AccountCreatedJoinForm"
 import TermsModal from "../sections/JoinStable/Modal/TermsModal"
 import PrivacyModal from "../sections/JoinStable/Modal/PrivacyModal"
 import NewUserModal from "../sections/JoinStable/Modal/NewUserModal"
@@ -205,15 +203,6 @@ export default function individualFleetForm() {
             payload: response.data.confirmed,
           })
 
-          if (response.data) {
-            setLoading(false)
-
-            if (userType === "Rideshare Owner Operator") {
-              navigate("/rideshare-signup/")
-            }
-            return
-          }
-
           dispatch({
             type: "FORM::SET_STATUS",
             payload: response.data.status,
@@ -223,6 +212,14 @@ export default function individualFleetForm() {
             type: "FORM::SET_USER_TYPE",
             payload: response.data.userType,
           })
+
+          if (response.data) {
+            setLoading(false)
+
+            if (userType === "Rideshare Owner Operator") {
+              navigate("/rideshare-signup/")
+            }
+          }
 
           // if (response.data.confirmed === false && emailInputValue !== "") {
           //   // setShowNewUserModal(true)
@@ -358,21 +355,6 @@ export default function individualFleetForm() {
 
           {status === UserStatus.formComplete && calendlyScheduled && (
             <SimpleCompleteJoinForm onSubmitForm={handleSubmit} />
-          )}
-
-          {status === UserStatus.argyleAuthenticated && (
-            <>
-              <ArgyleAuthenticatedJoinForm
-                existingAccount={existingAccount}
-                onSubmitForm={handlePasswordSubmit}
-                onSetPasswordInputValue={setPasswordInputValue}
-                onSetPasswordConfirmInputValue={setPasswordConfirmInputValue}
-                passwordMismatch={passwordMismatch} />
-            </>
-          )}
-
-          {status === UserStatus.argyleAuthenticatedAndAccountCreated && (
-            <AccountCreatedJoinForm onSubmitForm={handleSubmit} />
           )}
 
           <TermsModal onShowTermsModal={showTermsModal} onSetShowTermsModal={setShowTermsModal} />

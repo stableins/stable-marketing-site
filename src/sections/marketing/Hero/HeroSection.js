@@ -2,22 +2,18 @@ import React, { useState, useEffect } from "react"
 import { Col, Container, Row, Modal, Form, Button } from "react-bootstrap"
 import ReactTypingEffect from "react-typing-effect"
 import StableLogo from "../../../assets/image/logo/Stable-logo_site.png"
-import SingleAniamtion from "../../../components/Animation/singleAnimation"
 import { navigate } from "gatsby"
 import { Link } from "~components"
-import Intake from "../../../api/intake"
 import HeroImage from "../../../assets/image/logo/hero_car_img2.png"
 import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
 import { scroller } from "react-scroll"
 import smoothscroll from "smoothscroll-polyfill"
-import { Redirect, redirectTo, browserHistory } from "@reach/router"
-import Sendgrid from "../../../../functions/sendgridContact"
-import ImageGroup from "./Components/ImageGroup"
 import Fade from "react-reveal/Fade"
 import Hero from "./style"
 import PulseLoader from "react-spinners/PulseLoader"
 import "./HeroSection.scss"
+import { getRegistrationRoute } from "../../../utility/navigationHelper"
 
 export default function HeroSection() {
   const dispatch = useDispatch()
@@ -150,7 +146,7 @@ export default function HeroSection() {
         if (response.data.status !== "Email Address Only") {
           setShowExistingEmailModal(true)
         } else {
-          navigate("/join-stable/")
+          navigate(getRegistrationRoute(response.data.userType))
         }
       } catch (e) {
         alert("Request failed please try again")
@@ -326,8 +322,7 @@ export default function HeroSection() {
                     type: "FORM::SET_EMAIL",
                     payload: emailInputValue,
                   })
-
-                  navigate("/join-stable/")
+                  navigate(getRegistrationRoute(null))
                 }}
                 type="submit"
               >
@@ -338,7 +333,7 @@ export default function HeroSection() {
                 className="hero-modal-button"
                 onClick={() => {
                   setShowExistingEmailModal(false)
-                  navigate("/join-stable/")
+                  navigate(getRegistrationRoute(userType))
                 }}
                 type="submit"
               >
@@ -351,7 +346,7 @@ export default function HeroSection() {
           show={showShowNewUserModal}
           onHide={() => {
             setShowShowNewUserModal(false)
-            navigate("/join-stable/")
+            navigate(getRegistrationRoute(null))
           }}
           dialogClassName="modal-9/.0w"
           aria-labelledby="example-custom-modal-styling-title"
@@ -379,7 +374,7 @@ export default function HeroSection() {
                 className="hero-modal-button"
                 onClick={() => {
                   setShowShowNewUserModal(false)
-                  navigate("/join-stable/")
+                  navigate(getRegistrationRoute(null))
                 }}
                 type="submit"
               >
