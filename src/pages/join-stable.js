@@ -211,13 +211,15 @@ export default function individualFleetForm() {
             type: "FORM::SET_USER_TYPE",
             payload: response.data.userType,
           })
-          
-          if (response.data) {
-            setLoading(false)
 
+          if (response.data) {
             if (userType === "Rideshare Owner Operator") {
               navigate("/rideshare-signup/")
+              return
+            } else {
+              setLoading(false)
             }
+
           }
 
           // if (response.data.confirmed === false && emailInputValue !== "") {
