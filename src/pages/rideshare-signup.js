@@ -35,7 +35,7 @@ const SignupSteps = {
 }
 
 function getDefaultStep(email, status) {
-    if (status === UserStatus.argyleAuthenticated) {
+    if (!!email && status === UserStatus.argyleAuthenticated) {
         return SignupSteps.argyleRegistration
     } else if (!!email) {
         return SignupSteps.linkBaseArgyleAccount

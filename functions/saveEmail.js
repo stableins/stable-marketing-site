@@ -14,6 +14,8 @@ exports.handler = async (event, context, callback) => {
   let statusCode = 200
   let userType
   let confirmed = false
+  let userId
+
 
   try {
     await client.connect()
@@ -64,6 +66,7 @@ exports.handler = async (event, context, callback) => {
       userType = user.userType
       status = user.status
       confirmed = user.confirmed ?? false
+      userId = user.userId
     }
   } catch (e) {
     statusCode = 500
@@ -80,6 +83,7 @@ exports.handler = async (event, context, callback) => {
       email,
       userType,
       confirmed,
+      userId
     }),
   }
 }

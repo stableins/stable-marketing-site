@@ -51,6 +51,10 @@ const RideShareSignupForm = ({
 
             if (response.data[1].result.verdict !== "Invalid") {
 
+                if (!!response.data.userId) {
+                    navigate('/account-exist/')
+                }
+
                 response = await axios.post(
                     "/api/saveFullContactInfo",
                     {

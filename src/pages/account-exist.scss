@@ -1,0 +1,26 @@
+@use "../../src/styles/scss/helpers/mixins";
+@use "../../src/styles/scss/helpers/variables.scss";
+
+.page-wrapper {
+    margin-top: 70px;
+    padding: 30px 20px;
+    min-height: 700px;
+    display: flex;
+    justify-content: center;
+
+    color: variables.$font-base-color;
+    padding: 26px;
+    background-color: #ebeeff;
+
+    .content {
+        max-width: 1000px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        width: 336px;
+    }
+
+    button.btn-submit {
+        @include mixins.submitButton;
+    }
+}

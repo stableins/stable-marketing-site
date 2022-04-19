@@ -83,10 +83,14 @@ const FeatureSection = ({ ...rest }) => {
           payload: false,
         })
 
-        if (response.data.status !== "Email Address Only") {
-          setShowExistingEmailModal(true)
+        if (!!response.data.userId) {
+          navigate('/account-exist/')
         } else {
-          navigate(getRegistrationRoute(response.data.userType))
+          if (response.data.status !== "Email Address Only") {
+            setShowExistingEmailModal(true)
+          } else {
+            navigate(getRegistrationRoute(response.data.userType))
+          }
         }
       } catch (e) {
         alert(e)
