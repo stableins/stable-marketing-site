@@ -46,6 +46,7 @@ const DriverReportRegistration = React.forwardRef((props, ref) => {
                 <div className="driver-report-content content">
                     <RideShareSignupForm
                         referral={referral}
+                        isValidateEmail={true}
                         onFormSubmit={() => navigate("/rideshare-signup/")}
                     />
                 </div>

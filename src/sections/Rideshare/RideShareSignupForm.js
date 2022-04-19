@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux"
 import axios from "axios"
 import { Form } from "react-bootstrap"
 import PulseLoader from "react-spinners/PulseLoader"
+import { navigate } from "@reach/router"
 import SessionInfoCapture from "../../utility/sessionInfo"
 import TermsModal from "../JoinStable/Modal/TermsModal"
 import PrivacyModal from "../JoinStable/Modal/PrivacyModal"
@@ -14,7 +15,8 @@ import "./rideShareSignupForm.scss"
 
 const RideShareSignupForm = ({
     referral,
-    onFormSubmit
+    onFormSubmit,
+    isValidateEmail
 }) => {
     const dispatch = useDispatch()
     const [emailInputValue, setEmailInputValue] = useState('')
@@ -42,6 +44,17 @@ const RideShareSignupForm = ({
 
         let response
         try {
+            if (isValidateEmail) {
+                const response = await axios.post("/api/saveEmail", {
+                    email: emailInputValue,
+                })
+    
+                if (!!response.data.userId) {
+                    navigate('/account-exist/')
+                    return
+                }
+            }
+
             response = await axios.post(
                 "/api/sendgridValidation",
                 {
@@ -50,11 +63,6 @@ const RideShareSignupForm = ({
             )
 
             if (response.data[1].result.verdict !== "Invalid") {
-
-                if (!!response.data.userId) {
-                    navigate('/account-exist/')
-                }
-
                 response = await axios.post(
                     "/api/saveFullContactInfo",
                     {
@@ -69,22 +77,22 @@ const RideShareSignupForm = ({
                 dispatch({
                     type: "FORM::SET_EMAIL",
                     payload: response.data.email,
-                  })
-        
-                  dispatch({
+                })
+
+                dispatch({
                     type: "FORM::SET_CONFIRMED",
                     payload: response.data.confirmed,
-                  })
-        
-                  dispatch({
+                })
+
+                dispatch({
                     type: "FORM::SET_STATUS",
                     payload: response.data.status,
-                  })
-        
-                  dispatch({
+                })
+
+                dispatch({
                     type: "FORM::SET_USER_TYPE",
                     payload: response.data.userType,
-                  })
+                })
 
                 if (response.data) {
                     setLoading(false)
