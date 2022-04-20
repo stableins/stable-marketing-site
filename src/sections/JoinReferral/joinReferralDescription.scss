@@ -71,15 +71,24 @@
         .description-rideshare-drivers {
             margin-top: 35px;
             margin-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
             font-size: 36px;
             line-height: 40px;
             color: variables.$font-secondary-color;
+
+
+            @media (max-width: 768px) {
+                text-align: left;
+            }
         }
 
         .description-benefits {
             display: flex;
             justify-content: space-between;
-
+            padding-left: 20px;
+            padding-right: 20px;
+            
             .description-benefits-block {
                 display: flex;
                 flex-direction: column;
@@ -107,9 +116,18 @@
                         font-size: 16px;
                         line-height: 24px;
 
-                        @media (max-width: 768px) {
-                            line-height: 22px;
-                        }
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    align-items: normal;
+
+                    img {
+                        width: 48px;
+                    }
+
+                    p {
+                        line-height: 22px;
                     }
                 }
             }
