@@ -20,13 +20,23 @@
             b {
                 color: variables.$font-secondary-color;
             }
+
+            p {
+                font-size: 18px;
+                line-height: 28px;
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                    line-height: 22px;
+                    text-align: left;
+                }
+            }
         }
 
         .presentation-media-container {
             align-items: center;
             display: flex;
             flex-direction: column;
-
+            margin-top: 15px;
 
             iframe {
                 width: 711px;
