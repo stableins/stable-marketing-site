@@ -57,6 +57,7 @@ export default function rideshareSignup() {
                             {currentStep === SignupSteps.signupForm &&
                                 <RideShareSignupForm
                                     onFormSubmit={() => setCurrentStep(SignupSteps.linkBaseArgyleAccount)}
+                                    isValidateEmail={true}
                                 />
                             }
                             {currentStep === SignupSteps.linkBaseArgyleAccount &&
