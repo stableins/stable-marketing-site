@@ -1,6 +1,6 @@
 @media (min-width: 1000px) {
   .loader {
-    position: absolute;
+    position: fixed;
     top: 60%;
     left: 50%;
     margin-top: -50px;
@@ -367,7 +367,7 @@
 
 @media (max-width: 999px) {
   .loader {
-    position: absolute;
+    position: fixed;
     top: 60%;
     left: 50%;
     margin-top: -50px;
