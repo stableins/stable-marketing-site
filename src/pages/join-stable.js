@@ -239,53 +239,6 @@ export default function individualFleetForm() {
     }
   }
 
-  async function handlePasswordSubmit(event) {
-    event.preventDefault()
-    setLoading(true)
-
-    if (passwordConfirmInputValue !== passwordInputValue) {
-      setPasswordMismatch(true)
-      setLoading(false)
-    } else if (passwordConfirmInputValue === passwordInputValue) {
-      setPasswordMismatch(false)
-      try {
-        const response = await axios.post(
-          "/api/passwordCreated",
-          {
-            email: email,
-            password: passwordInputValue,
-            confirmPassword: passwordConfirmInputValue,
-          }
-        )
-
-        if (response.data) {
-          setLoading(false)
-        }
-
-        dispatch({
-          type: "FORM::SET_STATUS",
-          payload: response.data.status,
-        })
-
-        dispatch({
-          type: "FORM::SET_CONFIRMED",
-          payload: response.data.confirmed,
-        })
-      } catch (e) {
-        console.log(e)
-        setLoading(false)
-        setExistingAccount(true)
-      }
-    }
-  }
-
-  function numberOnly(id) {
-    // Get element by id which passed as parameter within HTML element event
-    var element = document.getElementById(id)
-    // This removes any other character but numbers as entered by user
-    element.value = element.value.replace(/[^0-9]/gi, "")
-  }
-
   return (
     <div className="join-stable">
       <div className="loader">

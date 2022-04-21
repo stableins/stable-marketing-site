@@ -1,9 +1,7 @@
 import React, { useState, useEffect,  } from "react"
 import queryString from "query-string";
-import AcccountRegistration from "./AcccountRegistration/AcccountRegistration"
 import RideShareSignupForm from "../Rideshare/RideShareSignupForm"
-import LinkArgyleAccount from "../Rideshare/LinkArgyleAccount"
-import { redirectTo, navigate } from "@reach/router"
+import { navigate } from "@reach/router"
 
 import "./driverReportRegistration.scss"
 
@@ -48,6 +46,7 @@ const DriverReportRegistration = React.forwardRef((props, ref) => {
                 <div className="driver-report-content content">
                     <RideShareSignupForm
                         referral={referral}
+                        isValidateEmail={true}
                         onFormSubmit={() => navigate("/rideshare-signup/")}
                     />
                 </div>

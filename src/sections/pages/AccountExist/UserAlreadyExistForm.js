@@ -2,9 +2,7 @@ import React from "react"
 import { Form } from "react-bootstrap"
 import { Link } from "@reach/router"
 
-import "../../../pages/join-stable.scss"
-
-const RegistrationError = () => {
+const UserAlreadyExistForm = () => {
     return (
         <div className="form">
             <Form>
@@ -32,4 +30,4 @@ const RegistrationError = () => {
     )
 }
 
-export default RegistrationError;
+export default UserAlreadyExistForm;

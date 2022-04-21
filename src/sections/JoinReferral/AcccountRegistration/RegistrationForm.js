@@ -42,7 +42,7 @@ const RegistrationForm = ({
             } catch (e) {
                 console.log(e)
                 setLoading(false)
-                onAccountCreacted(false)
+                alert("Request failed please try again")
             }
         }
     }
