@@ -126,6 +126,7 @@ const RideShareSignupForm = ({
                                 placeholder="Email"
                                 className="input"
                                 onChange={e => setEmailInputValue(e.target.value)}
+                                autoComplete="off"
                             />
                         </Form.Group>
                         {/* <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -153,6 +154,7 @@ const RideShareSignupForm = ({
                                 }}
                                 onChange={e => setZipcodeInputValue(e.target.value)}
                                 placeholder="Zip Code"
+                                autoComplete="off"
                             />
                         </Form.Group>
 
