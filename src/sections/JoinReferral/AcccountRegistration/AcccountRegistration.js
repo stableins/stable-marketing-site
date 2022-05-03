@@ -16,7 +16,7 @@ const ArgyleRegistration = () => {
             {!isAccountCreated &&
                 <RegistrationForm onAccountCreacted={handleAccountCreated} />
             }
-            {(isAccountCreated && !isError) &&
+            {isAccountCreated &&
                 <AccountCreatedJoinForm />
             }
         </div>
