@@ -1,6 +1,5 @@
 const { MongoClient } = require("mongodb")
 const axios = require("axios")
-const jwt = require("jwt-decode")
 
 const uri = process.env.MONGO_URI.replace(
   "<password>",
@@ -27,16 +26,19 @@ exports.handler = async (event, context, callback) => {
     const database = client.db("marketing")
     const users = database.collection("users")
 
+    const auth0Url = `https://${process.env.AUTH0_DOMAIN}/dbconnections/signup`
+
     const response = await axios.post(
-      "https://auth.stablelabs.io/api/users/signup",
+      auth0Url,
       {
+        client_id: process.env.AUTH0_CLIENT_ID,
         email: email,
         password: password,
+        connection: "Username-Password-Authentication"
       }
     )
 
-    const { token } = response.data
-    const decoded = jwt(token)
+    const { _id } = response.data
 
     const user = await users.findOne({ email: email })
     await users.updateOne(
@@ -44,7 +46,7 @@ exports.handler = async (event, context, callback) => {
       {
         $set: {
           status: status,
-          userId: decoded.id,
+          userId: _id,
           updateAt: new Date()
         },
       }
@@ -53,16 +55,16 @@ exports.handler = async (event, context, callback) => {
 
     const hariDb = client.db("hari")
     const hariUsers = hariDb.collection("users")
-    hariUsers.findOneAndUpdate(
+    await hariUsers.findOneAndUpdate(
       { email: email },
       {
         $set: {
-          userId: decoded.id,
+          userId: _id,
         },
       }
     )
 
-    if (user.confirmed) {
+    if (confirmed) {
       await axios.put(
         "https://api.sendgrid.com/v3/marketing/contacts",
         {

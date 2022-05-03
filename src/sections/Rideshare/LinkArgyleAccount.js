@@ -40,9 +40,9 @@ const LinkArgyleAccount = ({
                     className={argyleLinked ? "btn-link" : "btn-submit"}
                     open={true}
                     options={{
-                        pluginKey: "017aac27-2894-ac65-9c91-f956858ad649",
-                        apiHost: "https://api.argyle.io/v1",
-                        customizationId: "38XAT8YO",
+                        pluginKey: process.env.GATSBY_ARGYLE_LINK_PLUGIN_KEY,
+                        apiHost: process.env.GATSBY_ARGYLE_LINK_URL,
+                        customizationId: process.env.GATSBY_ARGYLE_LINK_CUSTOMIZATION_ID,
                         showCategories: false,
                         showSearch: false,
                         onAccountCreated: async ({ accountId, userId }) => {
